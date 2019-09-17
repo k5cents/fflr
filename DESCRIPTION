@@ -1,17 +1,20 @@
 Package: fflr
-Title: What the Package Does (One Line, Title Case)
+Title: Query the ESPN Fantasy Football API
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Kiernan",
+           family = "Nicholls",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+           email = "kiernann@protonmail.com")
+Description: This package provides an R interface to the ESPN Fantasy Football
+    API using the httr package for a backend. Programatic collection of 
+    statistics for both fantasy teams and individual players.
 License: GPL-3
 Suggests: 
-    testthat
+    testthat (>= 2.1.1)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
+Imports: 
+    httr (>= 1.4.1)
