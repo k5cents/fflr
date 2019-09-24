@@ -24,10 +24,9 @@ roster_entry <- function(entry) {
     owner = entry$playerPoolEntry$onTeamId,
     slot = factor(
       x = entry$lineupSlotId,
-      levels = c("0", "2", "4", "6", "16", "17", "20", "23"),
-      labels = c("QB", "RB", "WR", "TE", "DS", "KI", "BE", "FX")
+      levels = c("0", "2", "4", "6", "23", "16", "17", "20"),
+      labels = c("QB", "RB", "WR", "TE", "FX", "DS", "KI", "BE")
     ),
-    id    = as.character(abs(entry$playerId)),
     first = entry$playerPoolEntry$player$firstName,
     last  = entry$playerPoolEntry$player$lastName,
     team  = entry$playerPoolEntry$player$proTeamId,
