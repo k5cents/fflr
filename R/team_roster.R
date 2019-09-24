@@ -8,7 +8,10 @@
 #' team <- data$teams[[5]]
 #' team_roster(team)
 #' @importFrom purrr map_df
+#' @importFrom dplyr arrange
 #' @export
 team_roster <- function(team) {
-  map_df(team$roster$entries, roster_entry)
+  team$roster$entries %>%
+    purrr::map_df(roster_entry) %>%
+    dplyr::arrange(slot)
 }
