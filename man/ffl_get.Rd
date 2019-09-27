@@ -4,13 +4,16 @@
 \alias{ffl_get}
 \title{Get Fantasy Current Data}
 \usage{
-ffl_get(lid, ...)
+ffl_get(lid, ..., v3 = TRUE)
 }
 \arguments{
 \item{lid}{The ESPN Leaugue ID.}
 
 \item{...}{Query arguments passed to \code{\link[httr:GET]{httr::GET()}} \code{query} argument (coerced
 as a single list).}
+
+\item{v3}{logical; if \code{TRUE} the v3 API (for 2019 and later) will be used; if
+\code{FALSE} the \emph{historical} API will be used.}
 }
 \value{
 A nested list of API results.
