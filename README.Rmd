@@ -49,7 +49,7 @@ teams <- fantasy_members(lid) %>%
 
 left_join(scores, teams) %>%
   filter(score != 0) %>% 
-  mutate(week = as_factor(week)) %>% 
+  mutate(week = fct_rev(as_factor(week))) %>% 
   ggplot(aes(x = reorder(abbrev, score), y = score)) +
   geom_col(aes(fill = week)) +
   scale_fill_brewer(palette = "Dark2") +
