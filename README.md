@@ -12,14 +12,13 @@ status](https://www.r-pkg.org/badges/version/fflr)](https://CRAN.R-project.org/p
 <!-- badges: end -->
 
 The `fflr` package is used to query the [ESPN Fantasy Football
-API](https://fantasy.espn.com/apis/v3/games/ffl/), (for both the current
-andpast seasons) and format the results into [*tidy* data
+API](https://fantasy.espn.com/apis/v3/games/ffl/), (for current and past
+seasons) and format the results into [tidy data
 frames](https://vita.had.co.nz/papers/tidy-data.pdf).
 
 ## Installation
 
-You can install the released version of `fflr` from
-[GitHub](https://github.com) with:
+You can install the released version of `fflr` from GitHub with:
 
 ``` r
 # install.packages("remotes")
