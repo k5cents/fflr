@@ -28,28 +28,24 @@ remotes::install_github("kiernann/fflr")
 
 ## Usage
 
+Here we see how we can chain together `fantasy_*()` and `form_*()`
+functions to plot the weekly scores of each team in a stacked bar chart.
+
 ``` r
 library(tidyverse)
-library(magrittr)
 library(fflr)
 
-lid <- extract_lid("https://fantasy.espn.com/football/team?leagueId=252353&teamId=6")
-data <- fantasy_data(lid, view = "mMatchup")
-scores <- map_df(data$schedule, weekly_matchup)
+gaa <- extract_lid("https://fantasy.espn.com/football/team?leagueId=252353&teamId=6")
+teams <- form_teams(data = fantasy_members(lid = gaa))
+scores <- form_matchup(data = fantasy_matchup(lid = gaa))
 
-teams <- fantasy_members(lid) %>% 
-  use_series(teams) %>%
-  map_dfr(as_tibble) %>% 
-  select(team = id, abbrev)
-
-left_join(scores, teams) %>%
-  filter(score != 0) %>% 
-  mutate(week = fct_rev(as_factor(week))) %>% 
+right_join(scores, teams) %>% 
   ggplot(aes(x = reorder(abbrev, score), y = score)) +
   geom_col(aes(fill = week)) +
-  scale_fill_brewer(palette = "Dark2") +
+  scale_fill_brewer(palette = "Dark2", guide = guide_legend(reverse = TRUE)) +
   labs(title = "Fantasy Football Scores", x = "team") +
+  theme(legend.position = "bottom") +
   coord_flip()
 ```
 
-<img src="man/figures/README-matchup-1.png" width="100%" />
+<img src="man/figures/README-score_plot-1.png" width="100%" />
