@@ -6,10 +6,10 @@
 #' @return A nested list of API results.
 #' @examples
 #' m <- ffl_get(lid = 252353)
-#' map_tbl(l = m$members)
+#' form_tibble(l = m$members)
 #' @importFrom tibble as_tibble
 #' @importFrom purrr map_df
 #' @export
-map_tbl <- function(l) {
+form_tibble <- function(l) {
   purrr::map_df(.x = l, .f = tibble::as_tibble)
 }
