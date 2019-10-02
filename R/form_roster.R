@@ -1,7 +1,7 @@
 #' @title Format a Team Roster
 #' @description Take a team's list roster entries and applies [roster_entry()]
 #'     to return a single tibble per team.
-#' @param team The `team` index of [ffl_get()] response.
+#' @param data The list object returned by [fantasy_roster()].
 #' @return A tibble with a row for every roster entry.
 #' @examples
 #' data <- ffl_get(lid = 252353, view = "roster", scoringPeriodId = 3)
@@ -10,7 +10,7 @@
 #' @importFrom purrr map_df
 #' @importFrom dplyr arrange
 #' @export
-team_roster <- function(team) {
+form_roster <- function(data) {
   team$roster$entries %>%
     purrr::map_df(roster_entry) %>%
     dplyr::arrange(slot)
