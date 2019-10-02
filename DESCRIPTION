@@ -1,6 +1,6 @@
 Package: fflr
 Title: Query the ESPN Fantasy Football API
-Version: 0.0.0.9004
+Version: 0.0.0.9005
 Authors@R: 
     person(given = "Kiernan",
            family = "Nicholls",
