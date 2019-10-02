@@ -20,14 +20,7 @@ form_matchup <- function(data) {
     )
   }
   mups <- purrr::map_df(sched, ind_matchup)
-  mups$week <- forcats::as_factor(mups$week)
+  mups$week <- forcats::fct_rev(forcats::as_factor(mups$week))
+  mups <- dplyr::filter(mups, score != 0)
   return(mups)
 }
-
-mups %>%
-  right_join(
-    y = form_teams(data = fantasy_members(252353))
-  )
-  ggplot(aes(x = team, y = score)) +
-  geom_col(aes(fill = week)) +
-  coord_flip()

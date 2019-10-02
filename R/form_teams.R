@@ -35,7 +35,3 @@ form_teams <- function(data) {
   )
   return(teams)
 }
-
-
-
-
