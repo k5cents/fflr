@@ -3,7 +3,7 @@
 #' @param entry The `entry` index of `roster` list from a `team` list.
 #' @return A single row tibble roster entry.
 #' @examples
-#' data <- ffl_get(lid = 252353, view = "roster", scoringPeriodId = 3)
+#' data <- fantasy_roster(lid = 252353, scoringPeriodId = 3)
 #' entry <- data$teams[[5]]$roster$entries[[2]]
 #' roster_entry(entry)
 #' @importFrom purrr map

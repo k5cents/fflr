@@ -7,7 +7,7 @@
 #'   used; if `FALSE` the _historical_ API will be used.
 #' @return A nested list of API results.
 #' @examples
-#' ffl_get(lid = 252353, view = "members")
+#' fantasy_data(lid = 252353, view = "members")
 #' @importFrom httr GET content
 #' @export
 fantasy_data <- function(lid, ..., current = TRUE) {

@@ -5,7 +5,7 @@
 #'   bound into a single tibble.
 #' @return A nested list of API results.
 #' @examples
-#' m <- ffl_get(lid = 252353)
+#' m <- fantasy_data(lid = 252353)
 #' form_tibble(l = m$members)
 #' @importFrom tibble as_tibble
 #' @importFrom purrr map_df

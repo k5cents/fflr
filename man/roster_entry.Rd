@@ -16,7 +16,7 @@ A single row tibble roster entry.
 Take a team's roster entry list and return a single row tibble.
 }
 \examples{
-data <- ffl_get(lid = 252353, view = "roster", scoringPeriodId = 3)
+data <- fantasy_roster(lid = 252353, scoringPeriodId = 3)
 entry <- data$teams[[5]]$roster$entries[[2]]
 roster_entry(entry)
 }

@@ -1,5 +1,5 @@
 #' @title Find Optimal Roster
-#' @description Take a team's tibble (via [team_roster()] and return the roster
+#' @description Take a team's tibble (via [form_roster()] and return the roster
 #'   lineup which would have scored the maximum number of points that week.
 #' @param roster A roster tibble, as returned by [form_roster()].
 #' @return A tibble with the best roster, excluding bench.

@@ -13,7 +13,7 @@ best_roster(roster)
 A tibble with the best roster, excluding bench.
 }
 \description{
-Take a team's tibble (via \code{\link[=team_roster]{team_roster()}} and return the roster
+Take a team's tibble (via \code{\link[=form_roster]{form_roster()}} and return the roster
 lineup which would have scored the maximum number of points that week.
 }
 \examples{

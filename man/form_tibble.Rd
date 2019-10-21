@@ -18,6 +18,6 @@ Call \code{\link[purrr:map_df]{purrr::map_df()}} and \code{\link[tibble:as_tibbl
 list.
 }
 \examples{
-m <- ffl_get(lid = 252353)
+m <- fantasy_data(lid = 252353)
 form_tibble(l = m$members)
 }

@@ -22,5 +22,5 @@ A nested list of API results.
 Call \code{\link[httr:GET]{httr::GET()}} on the ESPN Fantasy Football API.
 }
 \examples{
-ffl_get(lid = 252353, view = "members")
+fantasy_data(lid = 252353, view = "members")
 }
