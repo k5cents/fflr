@@ -11,11 +11,11 @@
 #' @export
 form_teams <- function(data) {
   members <- data$members %>%
-    purrr:::map_df(tibble::as_tibble) %>%
+    purrr::map_df(tibble::as_tibble) %>%
     dplyr::rename(owners = id)
   suppressMessages(
     teams <- data$teams %>%
-      purrr:::map_df(tibble::as_tibble) %>%
+      purrr::map_df(tibble::as_tibble) %>%
       tidyr::unnest_longer(col = owners) %>%
       dplyr::right_join(y = members) %>%
       tidyr::unite(
