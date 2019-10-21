@@ -8,29 +8,30 @@
 #' @importFrom purrr map_df
 #' @importFrom dplyr rename right_join arrange select
 #' @importFrom tidyr unnest_longer unite
+#' @importFrom rlang .data
 #' @export
 form_teams <- function(data) {
   members <- data$members %>%
     purrr::map_df(tibble::as_tibble) %>%
-    dplyr::rename(owners = id)
+    dplyr::rename(owners = .data$id)
   suppressMessages(
     teams <- data$teams %>%
       purrr::map_df(tibble::as_tibble) %>%
-      tidyr::unnest_longer(col = owners) %>%
+      tidyr::unnest_longer(col = .data$owners) %>%
       dplyr::right_join(y = members) %>%
       tidyr::unite(
-        location, nickname,
+        .data$location, .data$nickname,
         col = "teamName",
         sep = " "
       ) %>%
-      dplyr::arrange(id) %>%
+      dplyr::arrange(.data$id) %>%
       dplyr::select(
-        id,
-        abbrev,
-        team_name = teamName,
-        owner_id = owners,
-        owner_name = displayName,
-        is_lm = isLeagueManager
+        .data$id,
+        .data$abbrev,
+        team_name = .data$teamName,
+        owner_id = .data$owners,
+        owner_name = .data$displayName,
+        is_lm = .data$isLeagueManager
       )
   )
   return(teams)

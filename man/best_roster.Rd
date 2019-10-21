@@ -7,7 +7,7 @@
 best_roster(roster)
 }
 \arguments{
-\item{roster}{A roster tibble, as returned by \code{\link[=team_roster]{team_roster()}}.}
+\item{roster}{A roster tibble, as returned by \code{\link[=form_roster]{form_roster()}}.}
 }
 \value{
 A tibble with the best roster, excluding bench.
@@ -17,8 +17,8 @@ Take a team's tibble (via \code{\link[=team_roster]{team_roster()}} and return t
 lineup which would have scored the maximum number of points that week.
 }
 \examples{
-data <- ffl_get(lid = 252353, view = "roster", scoringPeriodId = 2)
+data <- fantasy_roster(lid = 252353, scoringPeriodId = 2)
 team <- data$teams[[5]]
-roster <- team_roster(team)
+roster <- form_roster(team)
 best_roster(roster)
 }

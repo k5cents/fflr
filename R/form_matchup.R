@@ -3,10 +3,11 @@
 #' @param data The list object returned by [fantasy_roster()].
 #' @return A two-row tibble fora matchup's `HOME` and `AWAY` scores.
 #' @examples
-#' data <- ffl_get(lid = 252353, view = "mMatchup")
-#' matchup <- data$schedule[[5]]
-#' weekly_matchup(matchup)
+#' data <- fantasy_data(lid = 252353, view = "mMatchup")
+#' form_matchup(data)
 #' @importFrom tibble tibble
+#' @importFrom forcats fct_rev as_factor
+#' @importFrom rlang .data
 #' @export
 form_matchup <- function(data) {
   sched <- data$schedule
@@ -20,7 +21,7 @@ form_matchup <- function(data) {
     )
   }
   mups <- purrr::map_df(sched, ind_matchup)
-  mups$week <- forcats::fct_rev(forcats::as_factor(mups$week))
-  mups <- dplyr::filter(mups, score != 0)
+  mups$week <- as.factor(mups$week)
+  mups <- dplyr::filter(mups, .data$score != 0)
   return(mups)
 }

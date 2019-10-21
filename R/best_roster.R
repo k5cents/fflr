@@ -1,17 +1,18 @@
 #' @title Find Optimal Roster
 #' @description Take a team's tibble (via [team_roster()] and return the roster
 #'   lineup which would have scored the maximum number of points that week.
-#' @param roster A roster tibble, as returned by [team_roster()].
+#' @param roster A roster tibble, as returned by [form_roster()].
 #' @return A tibble with the best roster, excluding bench.
 #' @examples
-#' data <- ffl_get(lid = 252353, view = "roster", scoringPeriodId = 2)
+#' data <- fantasy_roster(lid = 252353, scoringPeriodId = 2)
 #' team <- data$teams[[5]]
-#' roster <- team_roster(team)
+#' roster <- form_roster(team)
 #' best_roster(roster)
 #' @importFrom dplyr filter
+#' @importFrom rlang .data
 #' @export
 best_roster <- function(roster) {
-  y <- dplyr::filter(roster, slot != "BE")
+  y <- dplyr::filter(roster, .data$slot != "BE")
   y[, 5:12] <- NA
   qb <- sort(roster$score[roster$pos == "QB"], decreasing = T)[1]
   y[which(y$slot == "QB"), 5:12] <- roster[which(roster$score == qb), 5:12]

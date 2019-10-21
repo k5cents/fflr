@@ -4,10 +4,10 @@
 \alias{form_roster}
 \title{Format a Team Roster}
 \usage{
-form_roster(data)
+form_roster(team)
 }
 \arguments{
-\item{data}{The list object returned by \code{\link[=fantasy_roster]{fantasy_roster()}}.}
+\item{team}{The list object returned by \code{\link[=fantasy_roster]{fantasy_roster()}}.}
 }
 \value{
 A tibble with a row for every roster entry.
@@ -17,7 +17,7 @@ Take a team's list roster entries and applies \code{\link[=roster_entry]{roster_
 to return a single tibble per team.
 }
 \examples{
-data <- ffl_get(lid = 252353, view = "roster", scoringPeriodId = 3)
+data <- fantasy_roster(lid = 252353, scoringPeriodId = 3)
 team <- data$teams[[5]]
-team_roster(team)
+form_roster(team)
 }

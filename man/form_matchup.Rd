@@ -16,7 +16,6 @@ A two-row tibble fora matchup's \code{HOME} and \code{AWAY} scores.
 Take a weekly matchup and return tidy tibble of scores.
 }
 \examples{
-data <- ffl_get(lid = 252353, view = "mMatchup")
-matchup <- data$schedule[[5]]
-weekly_matchup(matchup)
+data <- fantasy_data(lid = 252353, view = "mMatchup")
+form_matchup(data)
 }
