@@ -18,7 +18,7 @@ roster_entry <- function(entry) {
   names <- names(stats)
   names(stats)[names == max(names[stringr::str_which(names, "112019")])] <- "proj"
   names(stats)[names == max(names[stringr::str_which(names, "014011")])] <- "score"
-  tibble::tibble(
+  roster <- tibble::tibble(
     year  = stats$score$seasonId,
     week  = stats$score$scoringPeriodId,
     owner = entry$playerPoolEntry$onTeamId,
@@ -40,4 +40,10 @@ roster_entry <- function(entry) {
     start = entry$playerPoolEntry$player$ownership$percentStarted/100,
     owned = entry$playerPoolEntry$player$ownership$percentOwned/100
   )
+  aquired = entry$acquisitionType
+  time = as.POSIXct(entry$acquisitionDate/1000, origin = "1970-01-01")
+  if (!is.null(aquired) & !is.null(time)) {
+    roster <- dplyr::mutate(roster, aquired, time)
+  }
+  return(roster)
 }
