@@ -9,6 +9,8 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/fflr)](https://CRAN.R-project.org/package=fflr)
+[![Travis build
+status](https://travis-ci.org/kiernann/fflr.svg?branch=master)](https://travis-ci.org/kiernann/fflr)
 <!-- badges: end -->
 
 The `fflr` package is used to query the [ESPN Fantasy Football
