@@ -23,5 +23,5 @@ Call \code{\link[httr:GET]{httr::GET()}} on the ESPN Fantasy Football API with t
 \code{view} set to "mMatchup"
 }
 \examples{
-fantasy_roster(lid = 252353)
+fantasy_matchup(lid = 252353)
 }
