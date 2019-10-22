@@ -7,16 +7,17 @@
 roster_entry(entry)
 }
 \arguments{
-\item{entry}{The \code{entry} index of \code{roster} list from a \code{team} list.}
+\item{entry}{The \code{entry} element of \code{roster} list from a \code{team} list.}
 }
 \value{
 A single row tibble roster entry.
 }
 \description{
 Take a team's roster entry list and return a single row tibble.
+This function is used in \code{\link[=form_roster]{form_roster()}} to combine the entries from an
+entire team into a single tibble.
 }
 \examples{
 data <- fantasy_roster(lid = 252353, scoringPeriodId = 3)
-entry <- data$teams[[5]]$roster$entries[[2]]
-roster_entry(entry)
+roster_entry(entry = data$teams[[5]]$roster$entries[[2]])
 }

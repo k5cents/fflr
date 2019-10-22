@@ -7,17 +7,18 @@
 form_roster(team)
 }
 \arguments{
-\item{team}{The list object returned by \code{\link[=fantasy_roster]{fantasy_roster()}}.}
+\item{team}{The a single element of the \code{teams} list found in the list
+returned by \code{\link[=fantasy_roster]{fantasy_roster()}}. That is, for an entire \code{\link[=fantasy_roster]{fantasy_roster()}}
+data frame, \code{\link[=form_roster]{form_roster()}} would be applied to every top level list.}
 }
 \value{
 A tibble with a row for every roster entry.
 }
 \description{
-Take a team's list roster entries and applies \code{\link[=roster_entry]{roster_entry()}}
-to return a single tibble per team.
+Take a team's list of roster entries and use \code{\link[purrr:map_df]{purrr::map_df()}}
+to apply \code{\link[=roster_entry]{roster_entry()}} and return a single tibble per team list.
 }
 \examples{
-data <- fantasy_roster(lid = 252353, scoringPeriodId = 3)
-team <- data$teams[[5]]
-form_roster(team)
+data <- fantasy_roster(lid = 252353)
+form_roster(team = data$teams[[5]])
 }
