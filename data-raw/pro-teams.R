@@ -8,25 +8,25 @@ pro_teams <- tibble::tribble(
   6L,    "DAL",
   7L,    "DEN",
   8L,    "DET",
-  9L,    "GRB",
+  9L,    "GB",
   10L,   "TEN",
   11L,   "IND",
-  12L,   "KCC",
+  12L,   "KC",
   13L,   "OAK",
   14L,   "LAR",
   15L,   "MIA",
   16L,   "MIN",
-  17L,   "NEG",
-  18L,   "NOL",
+  17L,   "NE",
+  18L,   "NO",
   19L,   "NYG",
   20L,   "NYJ",
   21L,   "PHI",
   22L,   "ARI",
   23L,   "PIT",
   24L,   "LAC",
-  25L,   "SFO",
+  25L,   "SF",
   26L,   "SEA",
-  27L,   "TPA",
+  27L,   "TB",
   28L,   "WSH",
   29L,   "CAR",
   30L,   "JAX",
@@ -34,4 +34,4 @@ pro_teams <- tibble::tribble(
   34L,   "HOU"
 )
 
-usethis::use_data(pro_teams)
+usethis::use_data(pro_teams, overwrite = T)
