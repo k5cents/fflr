@@ -37,7 +37,7 @@ roster_entry <- function(entry) {
     ),
     first = entry$playerPoolEntry$player$firstName,
     last  = entry$playerPoolEntry$player$lastName,
-    team  = pro_teams$pro[match(entry$playerPoolEntry$player$proTeamId, pro_teams$team)],
+    team  = fflr::pro_teams$pro[match(entry$playerPoolEntry$player$proTeamId, fflr::pro_teams$team)],
     pos = factor(
       x = entry$playerPoolEntry$player$defaultPositionId,
       levels = c("1",  "2",  "3",  "4",  "5",  "16"),
