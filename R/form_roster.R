@@ -11,8 +11,10 @@
 #' @importFrom dplyr arrange
 #' @importFrom rlang .data
 #' @export
-form_roster <- function(team) {
-  team$roster$entries %>%
-    purrr::map_df(roster_entry) %>%
+form_roster <- function(data, teamNumber) {
+  weekId <- data$scoringPeriodId
+  data$teams[[teamNumber]]$roster$entries %>%
+    purrr::map_df(roster_entry, weekId) %>%
     dplyr::arrange(.data$slot)
+ 
 }

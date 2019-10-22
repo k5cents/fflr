@@ -12,15 +12,28 @@
 #' @importFrom dplyr mutate recode
 #' @importFrom magrittr "%>%" use_series
 #' @export
-roster_entry <- function(entry) {
+roster_entry <- function(entry, weekId) {
+  y <- entry$playerPoolEntry$player$stats
+  weekCount = 0
+  for (j in 1:length(y)) {
+    if (y[[j]]$scoringPeriodId == weekId){
+      type <- y[[j]]$statSourceId
+      weekCount <- weekCount + 1
+      if (type == 1) {
+        proj <- y[[j]]$appliedTotal
+      }
+      else {
+        points <- y[[j]]$appliedTotal
+      }
+      week <- y[[j]]$scoringPeriodId
+      year <- y[[j]]$seasonId
+    }
+  }
+  if (weekCount < 2) points <- NA
   stats <- entry$playerPoolEntry$player$stats
-  names(stats) <- purrr::map(stats, magrittr::use_series, "id")
-  names <- names(stats)
-  names(stats)[names == max(names[stringr::str_which(names, "112019")])] <- "proj"
-  names(stats)[names == max(names[stringr::str_which(names, "014011")])] <- "score"
   roster <- tibble::tibble(
-    year  = stats$score$seasonId,
-    week  = stats$score$scoringPeriodId,
+    year  = year,
+    week  = week,
     owner = entry$playerPoolEntry$onTeamId,
     slot = factor(
       x = entry$lineupSlotId,
@@ -35,8 +48,8 @@ roster_entry <- function(entry) {
       levels = c("1", "2", "3", "4", "5", "16"),
       labels = c("QB", "RB", "WR", "TE", "KI", "DS")
     ),
-    score = stats$score$appliedTotal,
-    proj  = stats$proj$appliedTotal,
+    score = points,
+    proj  = proj,
     start = entry$playerPoolEntry$player$ownership$percentStarted/100,
     owned = entry$playerPoolEntry$player$ownership$percentOwned/100
   )
