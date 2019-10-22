@@ -31,3 +31,20 @@ best_roster <- function(roster) {
   y[which(y$slot == "FX"), 5:12] <- roster[which(roster$score %in% fx), 5:12]
   return(y)
 }
+
+#' @title Sum Roster Score
+#' @description For a given roster tibble, sum the starting scores.
+#' @param roster A roster tibble, as returned by [form_roster()] or
+#'   [best_roster()].
+#' @return A double.
+#' @examples
+#' data <- fantasy_roster(lid = 252353, scoringPeriodId = 2)
+#' start_roster <- form_roster(data$teams[[5]])
+#' best_roster <- best_roster(start_roster)
+#' start_score <- roster_score(start_roster)
+#' best_score <- roster_score(best_roster)
+#' start_score/best_score
+#' @export
+roster_score <- function(roster) {
+  sum(roster$score[roster$slot != "BE"], na.rm = TRUE)
+}
