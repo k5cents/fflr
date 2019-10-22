@@ -9,6 +9,5 @@
 #' @importFrom stringr str_extract
 #' @export
 extract_lid <- function(url) {
-  stringr::str_extract(url, "(?<=leagueId=)(.*?)(?=&)")
+  stringr::str_extract(url, "(?<=leagueId=)\\d{6}")
 }
-
