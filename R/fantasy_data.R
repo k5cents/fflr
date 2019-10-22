@@ -55,7 +55,7 @@ fantasy_roster <- function(lid, ..., current = TRUE) {
 #'   used; if `FALSE` the _historical_ API will be used.
 #' @return A nested list of API results.
 #' @examples
-#' fantasy_roster(lid = 252353)
+#' fantasy_members(lid = 252353)
 #' @importFrom httr GET content
 #' @export
 fantasy_members <- function(lid, ..., current = TRUE) {
@@ -79,7 +79,7 @@ fantasy_members <- function(lid, ..., current = TRUE) {
 #'   used; if `FALSE` the _historical_ API will be used.
 #' @return A nested list of API results.
 #' @examples
-#' fantasy_roster(lid = 252353)
+#' fantasy_matchup(lid = 252353)
 #' @importFrom httr GET content
 #' @export
 fantasy_matchup <- function(lid, ..., current = TRUE) {
@@ -90,5 +90,29 @@ fantasy_matchup <- function(lid, ..., current = TRUE) {
     api <- paste0(url, "leagueHistory/", lid)
   }
   data <- httr::content(httr::GET(api, query = list(view = "mMatchup", ...)))
+  return(data)
+}
+
+#' @title Get Fantasy Players
+#' @description Call [httr::GET()] on the ESPN Fantasy Football API with the
+#'   `view` set to "kona_player_info"
+#' @param lid The ESPN Leaugue ID.
+#' @param ... Query arguments passed to [httr::GET()] `query` argument (coerced
+#'   as a single list).
+#' @param current logical; if `TRUE` the v3 API (for 2019 and later) will be
+#'   used; if `FALSE` the _historical_ API will be used.
+#' @return A nested list of API results.
+#' @examples
+#' fantasy_players(lid = 252353)
+#' @importFrom httr GET content
+#' @export
+fantasy_players <- function(lid, ..., current = TRUE) {
+  url <- "https://fantasy.espn.com/apis/v3/games/ffl/"
+  if (current) {
+    api <- paste0(url, "seasons/2019/segments/0/leagues/", lid)
+  } else {
+    api <- paste0(url, "leagueHistory/", lid)
+  }
+  data <- httr::content(httr::GET(api, query = list(view = "kona_player_info", ...)))
   return(data)
 }
