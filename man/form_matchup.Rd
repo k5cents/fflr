@@ -4,18 +4,19 @@
 \alias{form_matchup}
 \title{Format a Weekly Matchup}
 \usage{
-form_matchup(data)
+form_matchup(matchup)
 }
 \arguments{
-\item{data}{The list object returned by \code{\link[=fantasy_roster]{fantasy_roster()}}.}
+\item{data}{The \code{schedule} element of the list object returned by
+\code{\link[=fantasy_matchup]{fantasy_matchup()}}.}
 }
 \value{
-A two-row tibble fora matchup's \code{HOME} and \code{AWAY} scores.
+A two-row tibble from matchup's \code{HOME} and \code{AWAY} scores.
 }
 \description{
 Take a weekly matchup and return tidy tibble of scores.
 }
 \examples{
-data <- fantasy_data(lid = 252353, view = "mMatchup")
-form_matchup(data)
+data <- fantasy_matchup(lid = 252353)
+form_matchup(data$schedule[[10]])
 }
