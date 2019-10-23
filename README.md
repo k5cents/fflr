@@ -6,11 +6,12 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)]( "https://www.tidyverse.org/lifecycle/#experimental")
 [![CRAN
-status](https://www.r-pkg.org/badges/version/fflr)](https://CRAN.R-project.org/package=fflr)
+status](https://www.r-pkg.org/badges/version/fflr)]( "https://CRAN.R-project.org/package=fflr")
 [![Travis build
-status](https://travis-ci.org/kiernann/fflr.svg?branch=master)](https://travis-ci.org/kiernann/fflr)
+status](https://travis-ci.org/kiernann/fflr.svg?branch=master)]( "https://travis-ci.org/kiernann/fflr")
+
 <!-- badges: end -->
 
 The `fflr` package is used to query the [ESPN Fantasy Football
@@ -36,16 +37,22 @@ functions to plot the weekly scores of each team in a stacked bar chart.
 library(tidyverse)
 library(fflr)
 
-gaa <- extract_lid("https://fantasy.espn.com/football/team?leagueId=252353&teamId=6")
+gaa <- extract_lid("https://fantasy.espn.com/football/league?leagueId=252353")
 teams <- form_teams(data = fantasy_members(lid = gaa))
-scores <- form_matchup(data = fantasy_matchup(lid = gaa))
+scores <- fantasy_matchup(lid = gaa) %>% 
+  pluck("schedule") %>%
+  map_df(form_matchup) %>% 
+  right_join(teams) %>% 
+  filter(score != 0)
 
-right_join(scores, teams) %>% 
+scores %>% 
   ggplot(aes(x = reorder(abbrev, score), y = score)) +
+  labs(title = "Fantasy Football Scores", x = "Team", y = "Score") +
   geom_col(aes(fill = week)) +
-  scale_fill_brewer(palette = "Dark2", guide = guide_legend(reverse = TRUE)) +
-  labs(title = "Fantasy Football Scores", x = "team") +
+  scale_fill_brewer(palette = "Dark2") +
+  scale_y_continuous(breaks = seq(0, 800, by = 50)) +
   theme(legend.position = "bottom") +
+  guides(fill = guide_legend(nrow = 1, reverse = TRUE)) +
   coord_flip()
 ```
 
