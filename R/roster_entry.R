@@ -26,6 +26,15 @@ roster_entry <- function(entry) {
   }
   which_proj <- which(s$statSourceId == 1 & s$statSplitTypeId == 1 & s$scoringPeriodId == week_int)
   proj_dbl <- unlist(s$appliedTotal[which_proj])
+  if (entry$playerPoolEntry$player$defaultPositionId != "16") {
+    status_chr <- entry$playerPoolEntry$player$injuryStatus
+    status_chr[which(status_chr == "ACTIVE")] <- "A"
+    status_chr[which(status_chr == "QUESTIONABLE")] <- "Q"
+    status_chr[which(status_chr == "DOUBTFUL")] <- "D"
+    status_chr[which(status_chr == "OUT")] <- "O"
+  } else {
+    status_chr <- "A"
+  }
   roster <- tibble::tibble(
     year  = year_int,
     week  = week_int,
@@ -36,17 +45,24 @@ roster_entry <- function(entry) {
       labels = c("QB", "RB", "WR", "TE", "FX", "DS", "KI", "BE")
     ),
     first = entry$playerPoolEntry$player$firstName,
-    last  = entry$playerPoolEntry$player$lastName,
+    last = entry$playerPoolEntry$player$lastName,
     team  = fflr::pro_teams$pro[match(entry$playerPoolEntry$player$proTeamId, fflr::pro_teams$team)],
+    jersey = if (is.null(entry$playerPoolEntry$player$jersey)) {
+      0L
+    } else {
+      as.integer(entry$playerPoolEntry$player$jersey)
+    },
     pos = factor(
       x = entry$playerPoolEntry$player$defaultPositionId,
       levels = c("1",  "2",  "3",  "4",  "5",  "16"),
       labels = c("QB", "RB", "WR", "TE", "KI", "DS")
     ),
+    status = status_chr,
     proj  = proj_dbl,
     score = score_dbl,
     start = entry$playerPoolEntry$player$ownership$percentStarted/100,
-    rost = entry$playerPoolEntry$player$ownership$percentOwned/100
+    rost = entry$playerPoolEntry$player$ownership$percentOwned/100,
+    change = round(entry$playerPoolEntry$player$ownership$percentChange/100, digits = 3)
   )
   aquired = entry$acquisitionType
   time = as.POSIXct(entry$acquisitionDate/1000, origin = "1970-01-01")
