@@ -1,6 +1,6 @@
 #' @title Format a Weekly Matchup
 #' @description Take a weekly matchup and return tidy tibble of scores.
-#' @param data The `schedule` element of the list object returned by
+#' @param matchup A single `schedule` element of the list object returned by
 #'   [fantasy_matchup()].
 #' @return A two-row tibble from matchup's `HOME` and `AWAY` scores.
 #' @examples
@@ -17,6 +17,6 @@ form_matchup <- function(matchup) {
     home = c(FALSE, TRUE),
     id = c(matchup$away$teamId, matchup$home$teamId),
     score = c(matchup$away$totalPoints, matchup$home$totalPoints),
-    winner = score == max(score)
+    winner = .data$score == max(.data$score)
   )
 }

@@ -7,7 +7,7 @@
 form_matchup(matchup)
 }
 \arguments{
-\item{data}{The \code{schedule} element of the list object returned by
+\item{matchup}{A single \code{schedule} element of the list object returned by
 \code{\link[=fantasy_matchup]{fantasy_matchup()}}.}
 }
 \value{
