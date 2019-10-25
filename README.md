@@ -57,3 +57,9 @@ scores %>%
 ```
 
 <img src="man/figures/README-score_plot-1.png" width="100%" />
+
+## Contribute
+
+Please note that the ‘fflr’ project is released with a [Contributor Code
+of Conduct](.github/CODE_OF_CONDUCT.md). By contributing to this
+project, you agree to abide by its terms.
