@@ -9,7 +9,7 @@
 #' @importFrom ggplot2 scale_fill_manual
 #' @importFrom RColorBrewer brewer.pal
 #' @export
-scale_fill_fantasy <- function(variables) {
+scale_fill_fantasy <- function() {
   pal <- c(
     RColorBrewer::brewer.pal(n = 8, name = "Dark2"),
     RColorBrewer::brewer.pal(n = 8, name = "Set1")

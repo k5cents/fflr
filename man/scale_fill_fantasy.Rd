@@ -4,7 +4,7 @@
 \alias{scale_fill_fantasy}
 \title{Extended qualitative color palettes}
 \usage{
-scale_fill_fantasy(variables)
+scale_fill_fantasy()
 }
 \value{
 A \code{ggplot2} object to define the fill of a plot.
