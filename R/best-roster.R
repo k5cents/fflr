@@ -1,6 +1,8 @@
-#' @title Find Optimal Roster
-#' @description Take a team's tibble (via [form_roster()] and return the roster
-#'   lineup which would have scored the maximum number of points that week.
+#' Find optimal roster
+#'
+#' Take a team's tibble (via [form_roster()] and return the roster lineup which
+#' would have scored the maximum number of points that week.
+#'
 #' @param roster A roster tibble, as returned by [form_roster()].
 #' @return A tibble with the best roster, excluding bench.
 #' @examples
@@ -36,12 +38,15 @@ best_roster <- function(roster) {
   return(y)
 }
 
-#' @title Sum Roster Score
-#' @description For a given roster tibble, sum the starting scores.
+#' Sum a roster score
+#'
+#' For a given roster tibble, sum the starting scores.
+#'
 #' @param roster A roster tibble, as returned by [form_roster()] or
 #'   [best_roster()].
 #' @return A double.
 #' @examples
+#' # asses performance compared to optimal
 #' data <- fantasy_roster(lid = 252353, scoringPeriodId = 2)
 #' start_roster <- form_roster(data$teams[[5]])
 #' best_roster <- best_roster(start_roster)

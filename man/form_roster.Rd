@@ -2,7 +2,7 @@
 % Please edit documentation in R/form-roster.R
 \name{form_roster}
 \alias{form_roster}
-\title{Format a Team Roster}
+\title{Format a team roster}
 \usage{
 form_roster(team)
 }
@@ -15,8 +15,8 @@ data frame, \code{\link[=form_roster]{form_roster()}} would be applied to every 
 A tibble with a row for every roster entry.
 }
 \description{
-Take a team's list of roster entries and use \code{\link[purrr:map_df]{purrr::map_df()}}
-to apply \code{\link[=roster_entry]{roster_entry()}} and return a single tibble per team list.
+Take a team's list of roster entries and use \code{\link[purrr:map_df]{purrr::map_df()}} to apply
+\code{\link[=roster_entry]{roster_entry()}} and return a single tibble per team list.
 }
 \examples{
 data <- fantasy_roster(lid = 252353)

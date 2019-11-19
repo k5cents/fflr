@@ -2,7 +2,7 @@
 % Please edit documentation in R/best-roster.R
 \name{roster_score}
 \alias{roster_score}
-\title{Sum Roster Score}
+\title{Sum a roster score}
 \usage{
 roster_score(roster)
 }
@@ -17,6 +17,7 @@ A double.
 For a given roster tibble, sum the starting scores.
 }
 \examples{
+# asses performance compared to optimal
 data <- fantasy_roster(lid = 252353, scoringPeriodId = 2)
 start_roster <- form_roster(data$teams[[5]])
 best_roster <- best_roster(start_roster)

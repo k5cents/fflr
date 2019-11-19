@@ -1,4 +1,4 @@
-#' @title Extended qualitative color palettes
+#' Extended qualitative color palettes
 #'
 #' This color palette combined the `Dark2` and `Set1` paletts from the Brewer
 #' color system. Each of these palettes has 8 distinct qualitative colors. This

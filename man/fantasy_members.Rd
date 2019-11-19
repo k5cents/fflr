@@ -2,7 +2,7 @@
 % Please edit documentation in R/fantasy-data.R
 \name{fantasy_members}
 \alias{fantasy_members}
-\title{Get Fantasy Member Data}
+\title{Get fantasy member data}
 \usage{
 fantasy_members(lid, ..., current = TRUE)
 }
@@ -19,8 +19,8 @@ used; if \code{FALSE} the \emph{historical} API will be used.}
 A nested list of API results.
 }
 \description{
-Call \code{\link[httr:GET]{httr::GET()}} on the ESPN Fantasy Football API with the
-\code{view} set to "members"
+Call \code{\link[httr:GET]{httr::GET()}} on the ESPN Fantasy Football API with the \code{view} set to
+"members"
 }
 \examples{
 fantasy_members(lid = 252353)

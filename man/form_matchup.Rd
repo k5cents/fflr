@@ -2,7 +2,7 @@
 % Please edit documentation in R/form-matchup.R
 \name{form_matchup}
 \alias{form_matchup}
-\title{Format a Weekly Matchup}
+\title{Format a single weekly matchup}
 \usage{
 form_matchup(matchup)
 }
@@ -14,7 +14,7 @@ form_matchup(matchup)
 A two-row tibble from matchup's \code{HOME} and \code{AWAY} scores.
 }
 \description{
-Take a weekly matchup and return tidy tibble of scores.
+Take a weekly matchup and return tidy tibble of scores for two teams.
 }
 \examples{
 data <- fantasy_matchup(lid = 252353)

@@ -1,6 +1,8 @@
-#' @title Create ESPN Teams Tibble
-#' @description From an ESPN "members" API (via [fantasy_members()]), create a
-#'   tidy tibble of league members and their fantasy teams.
+#' Form a table of league teams
+#'
+#' From an ESPN "members" API (via [fantasy_members()]), create a tidy tibble of
+#' league members and their fantasy teams.
+#'
 #' @param data The list object returned by [fantasy_members()].
 #' @return A tibble of teams and owners.
 #' @examples

@@ -2,7 +2,7 @@
 % Please edit documentation in R/fantasy-data.R
 \name{fantasy_roster}
 \alias{fantasy_roster}
-\title{Get Fantasy Roster Data}
+\title{Get fantasy roster data}
 \usage{
 fantasy_roster(lid, ..., current = TRUE)
 }
@@ -19,8 +19,8 @@ used; if \code{FALSE} the \emph{historical} API will be used.}
 A nested list of API results.
 }
 \description{
-Call \code{\link[httr:GET]{httr::GET()}} on the ESPN Fantasy Football API with the
-\code{view} set to "roster."
+Call \code{\link[httr:GET]{httr::GET()}} on the ESPN Fantasy Football API with the \code{view} set to
+"roster."
 }
 \examples{
 fantasy_roster(lid = 252353)

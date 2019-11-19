@@ -2,7 +2,7 @@
 % Please edit documentation in R/form-teams.R
 \name{form_teams}
 \alias{form_teams}
-\title{Create ESPN Teams Tibble}
+\title{Form a table of league teams}
 \usage{
 form_teams(data)
 }
@@ -13,8 +13,8 @@ form_teams(data)
 A tibble of teams and owners.
 }
 \description{
-From an ESPN "members" API (via \code{\link[=fantasy_members]{fantasy_members()}}), create a
-tidy tibble of league members and their fantasy teams.
+From an ESPN "members" API (via \code{\link[=fantasy_members]{fantasy_members()}}), create a tidy tibble of
+league members and their fantasy teams.
 }
 \examples{
 form_teams(data = fantasy_members(252353))

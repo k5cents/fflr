@@ -1,7 +1,9 @@
-#' @title Format a Roster Entry
-#' @description Take a team's roster entry list and return a single row tibble.
-#'   This function is used in [form_roster()] to combine the entries from an
-#'   entire team into a single tibble.
+#' Format a single roster entry
+#'
+#' Take a team's roster entry list and return a single row tibble. This function
+#' is used in [form_roster()] to combine the entries from an entire team into a
+#' single tibble.
+#'
 #' @param entry The `entry` element of `roster` list from a `team` list.
 #' @return A single row tibble roster entry.
 #' @examples

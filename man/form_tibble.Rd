@@ -14,8 +14,7 @@ bound into a single tibble.}
 A nested list of API results.
 }
 \description{
-Call \code{\link[purrr:map_df]{purrr::map_df()}} and \code{\link[tibble:as_tibble]{tibble::as_tibble()}} on a nested
-list.
+Call \code{\link[purrr:map_df]{purrr::map_df()}} and \code{\link[tibble:as_tibble]{tibble::as_tibble()}} on a nested list.
 }
 \examples{
 m <- fantasy_data(lid = 252353)

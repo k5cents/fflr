@@ -2,12 +2,7 @@
 % Please edit documentation in R/scale-fill-fantasy.R
 \name{scale_fill_fantasy}
 \alias{scale_fill_fantasy}
-\title{Extended qualitative color palettes
-
-This color palette combined the \code{Dark2} and \code{Set1} paletts from the Brewer
-color system. Each of these palettes has 8 distinct qualitative colors. This
-function combines the two palettes to provide enough distinct fill colors to
-identify the 16 weeks of the NFL regular reason.}
+\title{Extended qualitative color palettes}
 \usage{
 scale_fill_fantasy(variables)
 }
@@ -15,8 +10,6 @@ scale_fill_fantasy(variables)
 A \code{ggplot2} object to define the fill of a plot.
 }
 \description{
-Extended qualitative color palettes
-
 This color palette combined the \code{Dark2} and \code{Set1} paletts from the Brewer
 color system. Each of these palettes has 8 distinct qualitative colors. This
 function combines the two palettes to provide enough distinct fill colors to

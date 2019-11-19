@@ -1,5 +1,7 @@
-#' @title Get Fantasy Data
-#' @description Call [httr::GET()] on the ESPN Fantasy Football API.
+#' Get fantasy data
+#'
+#' Call [httr::GET()] on the ESPN Fantasy Football API.
+#'
 #' @param lid The ESPN Leaugue ID.
 #' @param ... Query arguments passed to [httr::GET()] `query` argument (coerced
 #'   as a single list).
@@ -21,9 +23,11 @@ fantasy_data <- function(lid, ..., current = TRUE) {
   return(data)
 }
 
-#' @title Get Fantasy Roster Data
-#' @description Call [httr::GET()] on the ESPN Fantasy Football API with the
-#'   `view` set to "roster."
+#' Get fantasy roster data
+#'
+#' Call [httr::GET()] on the ESPN Fantasy Football API with the `view` set to
+#' "roster."
+#'
 #' @param lid The ESPN Leaugue ID.
 #' @param ... Query arguments passed to [httr::GET()] `query` argument (coerced
 #'   as a single list).
@@ -45,9 +49,11 @@ fantasy_roster <- function(lid, ..., current = TRUE) {
   return(data)
 }
 
-#' @title Get Fantasy Member Data
-#' @description Call [httr::GET()] on the ESPN Fantasy Football API with the
-#'   `view` set to "members"
+#' Get fantasy member data
+#'
+#' Call [httr::GET()] on the ESPN Fantasy Football API with the `view` set to
+#' "members"
+#'
 #' @param lid The ESPN Leaugue ID.
 #' @param ... Query arguments passed to [httr::GET()] `query` argument (coerced
 #'   as a single list).
@@ -69,9 +75,11 @@ fantasy_members <- function(lid, ..., current = TRUE) {
   return(data)
 }
 
-#' @title Get Fantasy Matchup Data
-#' @description Call [httr::GET()] on the ESPN Fantasy Football API with the
-#'   `view` set to "mMatchup"
+#' Get fantasy matchup data
+#'
+#' Call [httr::GET()] on the ESPN Fantasy Football API with the `view` set to
+#' "mMatchup"
+#'
 #' @param lid The ESPN Leaugue ID.
 #' @param ... Query arguments passed to [httr::GET()] `query` argument (coerced
 #'   as a single list).
@@ -93,9 +101,11 @@ fantasy_matchup <- function(lid, ..., current = TRUE) {
   return(data)
 }
 
-#' @title Get Fantasy Players
-#' @description Call [httr::GET()] on the ESPN Fantasy Football API with the
-#'   `view` set to "kona_player_info"
+#' Get fantasy players data
+#'
+#' Call [httr::GET()] on the ESPN Fantasy Football API with the `view` set to
+#' "kona_player_info"
+#'
 #' @param lid The ESPN Leaugue ID.
 #' @param ... Query arguments passed to [httr::GET()] `query` argument (coerced
 #'   as a single list).

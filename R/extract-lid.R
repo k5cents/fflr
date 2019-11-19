@@ -1,7 +1,9 @@
-#' @title Extract ESPN league ID.
-#' @description From any ESPN league page URL (e.g.,
-#'   https://fantasy.espn.com/football/team?leagueId=252353&teamId=6&seasonId=2019),
-#'    extract the league ID digits.
+#' Extract ESPN league ID.
+#'
+#' From any ESPN league page URL (e.g.,
+#' https://fantasy.espn.com/football/team?leagueId=252353&teamId=6&seasonId=2019),
+#' extract the league ID digits.
+#'
 #' @param url Any ESPN leuage page URL.
 #' @return An ESPN league ID.
 #' @examples

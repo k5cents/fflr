@@ -2,7 +2,7 @@
 % Please edit documentation in R/best-roster.R
 \name{best_roster}
 \alias{best_roster}
-\title{Find Optimal Roster}
+\title{Find optimal roster}
 \usage{
 best_roster(roster)
 }
@@ -13,8 +13,8 @@ best_roster(roster)
 A tibble with the best roster, excluding bench.
 }
 \description{
-Take a team's tibble (via \code{\link[=form_roster]{form_roster()}} and return the roster
-lineup which would have scored the maximum number of points that week.
+Take a team's tibble (via \code{\link[=form_roster]{form_roster()}} and return the roster lineup which
+would have scored the maximum number of points that week.
 }
 \examples{
 data <- fantasy_roster(lid = 252353, scoringPeriodId = 9)

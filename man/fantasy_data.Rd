@@ -2,7 +2,7 @@
 % Please edit documentation in R/fantasy-data.R
 \name{fantasy_data}
 \alias{fantasy_data}
-\title{Get Fantasy Data}
+\title{Get fantasy data}
 \usage{
 fantasy_data(lid, ..., current = TRUE)
 }

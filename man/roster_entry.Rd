@@ -2,7 +2,7 @@
 % Please edit documentation in R/roster-entry.R
 \name{roster_entry}
 \alias{roster_entry}
-\title{Format a Roster Entry}
+\title{Format a single roster entry}
 \usage{
 roster_entry(entry)
 }
@@ -13,9 +13,9 @@ roster_entry(entry)
 A single row tibble roster entry.
 }
 \description{
-Take a team's roster entry list and return a single row tibble.
-This function is used in \code{\link[=form_roster]{form_roster()}} to combine the entries from an
-entire team into a single tibble.
+Take a team's roster entry list and return a single row tibble. This function
+is used in \code{\link[=form_roster]{form_roster()}} to combine the entries from an entire team into a
+single tibble.
 }
 \examples{
 data <- fantasy_roster(lid = 252353, scoringPeriodId = 3)

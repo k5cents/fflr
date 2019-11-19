@@ -1,6 +1,7 @@
-#' @title Turn Nested Lists to Tibble Rows
-#' @description Call [purrr::map_df()] and [tibble::as_tibble()] on a nested
-#'   list.
+#' Turn Nested Lists to Tibble Rows
+#'
+#' Call [purrr::map_df()] and [tibble::as_tibble()] on a nested list.
+#'
 #' @param l A list object whose sub-elements should be converted to rows and
 #'   bound into a single tibble.
 #' @return A nested list of API results.

@@ -1,6 +1,8 @@
-#' @title Format a Team Roster
-#' @description Take a team's list of roster entries and use [purrr::map_df()]
-#'   to apply [roster_entry()] and return a single tibble per team list.
+#' Format a team roster
+#'
+#' Take a team's list of roster entries and use [purrr::map_df()] to apply
+#' [roster_entry()] and return a single tibble per team list.
+#'
 #' @param team The a single element of the `teams` list found in the list
 #'   returned by [fantasy_roster()]. That is, for an entire [fantasy_roster()]
 #'   data frame, [form_roster()] would be applied to every top level list.

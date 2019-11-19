@@ -2,7 +2,7 @@
 % Please edit documentation in R/fantasy-data.R
 \name{fantasy_matchup}
 \alias{fantasy_matchup}
-\title{Get Fantasy Matchup Data}
+\title{Get fantasy matchup data}
 \usage{
 fantasy_matchup(lid, ..., current = TRUE)
 }
@@ -19,8 +19,8 @@ used; if \code{FALSE} the \emph{historical} API will be used.}
 A nested list of API results.
 }
 \description{
-Call \code{\link[httr:GET]{httr::GET()}} on the ESPN Fantasy Football API with the
-\code{view} set to "mMatchup"
+Call \code{\link[httr:GET]{httr::GET()}} on the ESPN Fantasy Football API with the \code{view} set to
+"mMatchup"
 }
 \examples{
 fantasy_matchup(lid = 252353)
