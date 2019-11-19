@@ -6,13 +6,13 @@
 #' identify the 16 weeks of the NFL regular reason.
 #'
 #' @return A `ggplot2` object to define the fill of a plot.
-#' @examples
-#' @importFrom stringr str_extract
+#' @importFrom ggplot2 scale_fill_manual
+#' @importFrom RColorBrewer brewer.pal
 #' @export
 scale_fill_fantasy <- function(variables) {
   pal <- c(
     RColorBrewer::brewer.pal(n = 8, name = "Dark2"),
     RColorBrewer::brewer.pal(n = 8, name = "Set1")
   )
-  scale_fill_manual(values = pal)
+  ggplot2::scale_fill_manual(values = pal)
 }
