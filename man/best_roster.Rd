@@ -17,7 +17,7 @@ Take a team's tibble (via \code{\link[=form_roster]{form_roster()}} and return t
 lineup which would have scored the maximum number of points that week.
 }
 \examples{
-data <- fantasy_roster(lid = 252353, scoringPeriodId = 2)
+data <- fantasy_roster(lid = 252353, scoringPeriodId = 9)
 team <- data$teams[[5]]
 roster <- form_roster(team)
 best_roster(roster)
