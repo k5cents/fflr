@@ -46,19 +46,19 @@ scores <- fantasy_matchup(lid = gaa) %>%
 
 scores %>% 
   ggplot(aes(x = reorder(abbrev, score), y = score)) +
+  geom_col(aes(fill = week), position = position_stack(reverse = TRUE)) +
   labs(title = "Fantasy Football Scores", x = "Team", y = "Score") +
-  geom_col(aes(fill = week)) +
-  scale_fill_brewer(palette = "Dark2") +
-  scale_y_continuous(breaks = seq(0, 800, by = 50)) +
+  guides(fill = guide_legend(nrow = 1)) +
   theme(legend.position = "bottom") +
-  guides(fill = guide_legend(nrow = 1, reverse = TRUE)) +
+  scale_fill_fantasy() +
   coord_flip()
 ```
 
 <img src="man/figures/README-score_plot-1.png" width="100%" />
 
-## Contribute
+## Code of Conduct
 
-Please note that the ‘fflr’ project is released with a [Contributor Code
-of Conduct](.github/CODE_OF_CONDUCT.md). By contributing to this
-project, you agree to abide by its terms.
+Please note that the fflr project is released with a [Contributor Code
+of
+Conduct](https://contributor-covenant.org/version/1/0/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
