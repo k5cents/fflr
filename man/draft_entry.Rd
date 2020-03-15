@@ -7,14 +7,14 @@
 draft_entry(pick)
 }
 \arguments{
-\item{entry}{The \code{entry} element of \code{roster} list from a \code{team} list.}
+\item{pick}{The \code{pick} element of \code{draft} list from a \code{team} list.}
 }
 \value{
 A single row tibble roster entry.
 }
 \description{
-Take a team's roster entry list and return a single row tibble. This function
-is used in \code{\link[=form_roster]{form_roster()}} to combine the entries from an entire team into a
+Take a team's draft list and return a single row tibble. This function
+is used in \code{\link[=form_draft]{form_draft()}} to combine the entries from an entire team into a
 single tibble.
 }
 \examples{
