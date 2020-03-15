@@ -9,10 +9,10 @@
 #'   used; if `FALSE` the _historical_ API will be used.
 #' @return A nested list of API results.
 #' @examples
-#' ff_data(lid = 252353, view = "members")
+#' fantasy_data(lid = 252353, view = "members")
 #' @importFrom httr GET content
 #' @export
-ff_data <- function(lid, ..., current = TRUE) {
+fantasy_data <- function(lid, ..., current = TRUE) {
   url <- "https://fantasy.espn.com/apis/v3/games/ffl/"
   if (current) {
     api <- paste0(url, "seasons/2019/segments/0/leagues/", lid)
@@ -35,10 +35,10 @@ ff_data <- function(lid, ..., current = TRUE) {
 #'   used; if `FALSE` the _historical_ API will be used.
 #' @return A nested list of API results.
 #' @examples
-#' ff_roster(lid = 252353)
+#' fantasy_roster(lid = 252353)
 #' @importFrom httr GET content
 #' @export
-ff_roster <- function(lid, ..., current = TRUE) {
+fantasy_roster <- function(lid, ..., current = TRUE) {
   url <- "https://fantasy.espn.com/apis/v3/games/ffl/"
   if (current) {
     api <- paste0(url, "seasons/2019/segments/0/leagues/", lid)
@@ -61,10 +61,10 @@ ff_roster <- function(lid, ..., current = TRUE) {
 #'   used; if `FALSE` the _historical_ API will be used.
 #' @return A nested list of API results.
 #' @examples
-#' ff_members(lid = 252353)
+#' fantasy_members(lid = 252353)
 #' @importFrom httr GET content
 #' @export
-ff_members <- function(lid, ..., current = TRUE) {
+fantasy_members <- function(lid, ..., current = TRUE) {
   url <- "https://fantasy.espn.com/apis/v3/games/ffl/"
   if (current) {
     api <- paste0(url, "seasons/2019/segments/0/leagues/", lid)
@@ -87,10 +87,10 @@ ff_members <- function(lid, ..., current = TRUE) {
 #'   used; if `FALSE` the _historical_ API will be used.
 #' @return A nested list of API results.
 #' @examples
-#' ff_matchup(lid = 252353)
+#' fantasy_matchup(lid = 252353)
 #' @importFrom httr GET content
 #' @export
-ff_matchup <- function(lid, ..., current = TRUE) {
+fantasy_matchup <- function(lid, ..., current = TRUE) {
   url <- "https://fantasy.espn.com/apis/v3/games/ffl/"
   if (current) {
     api <- paste0(url, "seasons/2019/segments/0/leagues/", lid)
@@ -113,10 +113,10 @@ ff_matchup <- function(lid, ..., current = TRUE) {
 #'   used; if `FALSE` the _historical_ API will be used.
 #' @return A nested list of API results.
 #' @examples
-#' ff_players(lid = 252353)
+#' fantasy_players(lid = 252353)
 #' @importFrom httr GET content
 #' @export
-ff_players <- function(lid, ..., current = TRUE) {
+fantasy_players <- function(lid, ..., current = TRUE) {
   url <- "https://fantasy.espn.com/apis/v3/games/ffl/"
   if (current) {
     api <- paste0(url, "seasons/2019/segments/0/leagues/", lid)
@@ -139,10 +139,10 @@ ff_players <- function(lid, ..., current = TRUE) {
 #'   used; if `FALSE` the _historical_ API will be used.
 #' @return A nested list of API results.
 #' @examples
-#' ff_draft(lid = 252353)
+#' fantasy_draft(lid = 252353)
 #' @importFrom httr GET content
 #' @export
-ff_draft <- function(lid, ..., current = TRUE) {
+fantasy_draft <- function(lid, ..., current = TRUE) {
   url <- "https://fantasy.espn.com/apis/v3/games/ffl/"
   if (current) {
     api <- paste0(url, "seasons/2019/segments/0/leagues/", lid)

@@ -6,7 +6,7 @@
 #' @param draft The `draftDetail` list returned by [draft_entry()].
 #' @return A tibble with a row for every draft pick.
 #' @examples
-#' data <- ff_draft(lid = 252353)
+#' data <- fantasy_draft(lid = 252353)
 #' form_draft(draft = data$draftDetail)
 #' @importFrom purrr map_df
 #' @importFrom dplyr arrange mutate

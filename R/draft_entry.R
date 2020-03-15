@@ -7,7 +7,7 @@
 #' @param entry The `entry` element of `roster` list from a `team` list.
 #' @return A single row tibble roster entry.
 #' @examples
-#' data <- ff_draft(lid = 252353)
+#' data <- fantasy_draft(lid = 252353)
 #' draft_entry(pick = data$draftDetail$picks[[2]])
 #' @importFrom purrr map
 #' @importFrom tibble tibble
