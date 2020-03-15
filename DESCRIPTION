@@ -9,7 +9,7 @@ Authors@R:
 Description: This package provides an R interface to the
     ESPN Fantasy Football API using the httr package for a backend.
     Programatic collection of statistics for both fantasy teams and
-    individual players.
+    individual players      .
 License: GPL-3
 URL: https://github.com/kiernann/fflr
 BugReports: https://github.com/kiernann/fflr/issues

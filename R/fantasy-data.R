@@ -9,7 +9,7 @@
 #'   used; if `FALSE` the _historical_ API will be used.
 #' @return A nested list of API results.
 #' @examples
-#' fantasy_data(lid = 252353, view = "members")
+#' members <- fantasy_data(lid = 252353, view = "members")
 #' @importFrom httr GET content
 #' @export
 fantasy_data <- function(lid, ..., current = TRUE) {
@@ -35,7 +35,7 @@ fantasy_data <- function(lid, ..., current = TRUE) {
 #'   used; if `FALSE` the _historical_ API will be used.
 #' @return A nested list of API results.
 #' @examples
-#' fantasy_roster(lid = 252353)
+#' roster <- fantasy_roster(lid = 252353)
 #' @importFrom httr GET content
 #' @export
 fantasy_roster <- function(lid, ..., current = TRUE) {
@@ -61,7 +61,7 @@ fantasy_roster <- function(lid, ..., current = TRUE) {
 #'   used; if `FALSE` the _historical_ API will be used.
 #' @return A nested list of API results.
 #' @examples
-#' fantasy_members(lid = 252353)
+#' members <- fantasy_members(lid = 252353)
 #' @importFrom httr GET content
 #' @export
 fantasy_members <- function(lid, ..., current = TRUE) {
@@ -87,7 +87,7 @@ fantasy_members <- function(lid, ..., current = TRUE) {
 #'   used; if `FALSE` the _historical_ API will be used.
 #' @return A nested list of API results.
 #' @examples
-#' fantasy_matchup(lid = 252353)
+#' matchups <- fantasy_matchup(lid = 252353)
 #' @importFrom httr GET content
 #' @export
 fantasy_matchup <- function(lid, ..., current = TRUE) {
@@ -113,7 +113,7 @@ fantasy_matchup <- function(lid, ..., current = TRUE) {
 #'   used; if `FALSE` the _historical_ API will be used.
 #' @return A nested list of API results.
 #' @examples
-#' fantasy_players(lid = 252353)
+#' players <- fantasy_players(lid = 252353)
 #' @importFrom httr GET content
 #' @export
 fantasy_players <- function(lid, ..., current = TRUE) {
@@ -139,7 +139,7 @@ fantasy_players <- function(lid, ..., current = TRUE) {
 #'   used; if `FALSE` the _historical_ API will be used.
 #' @return A nested list of API results.
 #' @examples
-#' fantasy_draft(lid = 252353)
+#' draft <- fantasy_draft(lid = 252353)
 #' @importFrom httr GET content
 #' @export
 fantasy_draft <- function(lid, ..., current = TRUE) {
