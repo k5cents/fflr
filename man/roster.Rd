@@ -4,7 +4,8 @@
 \name{roster}
 \alias{roster}
 \title{A team roster for week 3 of the 2019 season}
-\format{A tibble with 16 rows and 15 variables:
+\format{
+A tibble with 16 rows and 15 variables:
 \describe{
 \item{year}{Season ID}
 \item{week}{Scoring period ID}
@@ -22,7 +23,8 @@
 \item{rost}{Percent of leagues owned in}
 \item{change}{Change in ownership since last scoring period}
 ...
-}}
+}
+}
 \usage{
 roster
 }

@@ -1,13 +1,3 @@
-#' The ESPN pro team IDs and their NFL abbreviations
-#'
-#' @format A tibble with 32 rows and 2 variables:
-#' \describe{
-#'   \item{team}{The ESPN team ID}
-#'   \item{pro}{The NFL team abbreviation}
-#'   ...
-#' }
-"pro_teams"
-
 #' A team roster for week 3 of the 2019 season
 #'
 #' @format A tibble with 16 rows and 15 variables:

@@ -1,5 +1,5 @@
-pro_teams <- tibble::tribble(
-  ~team, ~pro,
+nfl_teams <- tibble::tribble(
+  ~team, ~nfl,
   1L,    "ATL",
   2L,    "BUF",
   3L,    "CHI",
@@ -34,4 +34,4 @@ pro_teams <- tibble::tribble(
   34L,   "HOU"
 )
 
-usethis::use_data(pro_teams, overwrite = T)
+usethis::use_data(nfl_teams, internal = TRUE, overwrite = TRUE)
