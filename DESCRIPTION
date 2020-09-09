@@ -1,14 +1,13 @@
 Package: fflr
 Title: Collect ESPN Fantasy Football Data
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: 
     person(given = "Kiernan",
            family = "Nicholls",
            role = c("aut", "cre"),
            email = "kiernann@protonmail.com")
-Description: Use the ESPN Fantasy Football API to collect
-    data on fantasy teams and individual players.
-    <https://fantasy.espn.com/apis/v3/games/ffl/>
+Description: Use the v2 and v3 ESPN Fantasy Football API to
+    collect data on fantasy leagues, teams, and individual athletes.
 License: GPL-3
 URL: https://github.com/kiernann/fflr
 BugReports: https://github.com/kiernann/fflr/issues
