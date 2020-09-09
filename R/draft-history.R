@@ -11,48 +11,48 @@
 #' @return A tibble (or list) of draft picks.
 #' @examples
 #' draft_history(lid = 252353)
-#' @importFrom httr GET content
+#' @importFrom jsonlite fromJSON
 #' @importFrom tibble as_tibble
-#' @importFrom dplyr bind_rows
 #' @export
 draft_history <- function(lid, old = FALSE, ...) {
+  a <- "https://fantasy.espn.com/apis/v3/games/ffl/"
   b <- if (old) {
     "leagueHistory/"
   } else {
     sprintf("seasons/%s/segments/0/leagues/", format(Sys.Date(), "%Y"))
   }
-  a <- paste0("https://fantasy.espn.com/apis/v3/games/ffl/", b, lid)
-  data <- httr::content(httr::GET(a, query = list(view = "mDraftDetail")))
+  data <- jsonlite::fromJSON(paste0(a, b, lid, "?view=mDraftDetail"))
   if (old) {
-    out <- rep(list(NA), length(data))
-    for (i in seq_along(data)) {
-      out[[i]] <- parse_draft(data[[i]])
+    out <- rep(list(NA), length(data$seasonId))
+    for (i in seq_along(out)) {
+      x <- tibble::as_tibble(data$draftDetail$picks[[i]])
+      x$type <- t <- data$settings$draftSettings$type[[i]]
+      x$year <- y <- data$seasonId[[i]]
+      out[[i]] <- parse_draft(x, year = y, type = t)
     }
   } else {
-    out <- parse_draft(data)
+    x <- tibble::as_tibble(data$draftDetail$picks)
+    x$type <- t <- data$settings$draftSettings$type
+    x$year <- y <- data$seasonId
+    out <- parse_draft(x, year = y, type = t)
   }
   return(out)
 }
 
-parse_draft <- function(data) {
-  snake_names <- c("pick", "round", "snake", "team", "player")
-  bid_names <- c("pick", "nominator", "team", "bid", "player")
-  x <- dplyr::bind_rows(lapply(data$draftDetail$picks, tibble::as_tibble))
-  x$type <- type <- data$settings$draftSettings$type
-  x$year <- year <- data$seasonId
+parse_draft <- function(x, year = NULL, type = NULL, nm = NULL) {
   n <- length(x)
   if (year < 2019 & type == "SNAKE") {
     x <- x[, c(n, n - 1, 8, 12, 13, 14, 10)]
-    names(x)[3:7] <- snake_names
+    names(x)[3:7] <- c("pick", "round", "snake", "team", "player")
   } else if (year < 2019 & type == "AUCTION") {
     x <- x[, c(n, n - 1, 8, 7, 14, 2, 10)]
-    names(x)[3:7] <- bid_names
+    names(x)[3:7] <- c("pick", "nominator", "team", "bid", "player")
   } else if (year >= 2019 & type == "SNAKE") {
     x <- x[, c(n, n - 1, 8, 11:13, 9)]
-    names(x)[3:7] <- snake_names
+    names(x)[3:7] <- c("pick", "round", "snake", "team", "player")
   } else if (year >= 2019 & type == "AUCTION") {
     x <- x[, c(n, n - 1, 8, 7, 13, 2, 9)]
-    names(x)[3:7] <- bid_names
+    names(x)[3:7] <- c("pick", "nominator", "team", "bid", "player")
   }
   return(x)
 }

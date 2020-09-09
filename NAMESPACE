@@ -3,8 +3,5 @@
 export(draft_history)
 export(league_members)
 export(league_teams)
-importFrom(dplyr,bind_rows)
-importFrom(httr,GET)
-importFrom(httr,content)
 importFrom(jsonlite,fromJSON)
 importFrom(tibble,as_tibble)
