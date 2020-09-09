@@ -4,7 +4,6 @@
 ^README\.Rmd$
 ^cran-comments\.md$
 ^\.github$
-^\.travis\.yml$
 ^data-raw$
 ^_pkgdown\.yml$
 ^docs$
