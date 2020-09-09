@@ -22,7 +22,7 @@ draft_history <- function(lid, old = FALSE, ...) {
     sprintf("seasons/%s/segments/0/leagues/", format(Sys.Date(), "%Y"))
   }
   a <- paste0("https://fantasy.espn.com/apis/v3/games/ffl/", b, lid)
-  data <- httr::content(httr::GET(a, query = list(view = "mDraftDetail", ...)))
+  data <- httr::content(httr::GET(a, query = list(view = "mDraftDetail")))
   if (old) {
     out <- rep(list(NA), length(data))
     for (i in seq_along(data)) {
@@ -48,7 +48,8 @@ parse_draft <- function(data) {
     x <- x[, c(n, n - 1, 8, 7, 14, 2, 10)]
     names(x)[3:7] <- bid_names
   } else if (year >= 2019 & type == "SNAKE") {
-    stop("Need to test this year & type combo")
+    x <- x[, c(n, n - 1, 8, 11:13, 9)]
+    names(x)[3:7] <- snake_names
   } else if (year >= 2019 & type == "AUCTION") {
     x <- x[, c(n, n - 1, 8, 7, 13, 2, 9)]
     names(x)[3:7] <- bid_names

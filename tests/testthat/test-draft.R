@@ -12,3 +12,8 @@ test_that("draft returns for past years", {
   expect_s3_class(d[[1]], "tbl")
   expect_length(d, 5)
 })
+
+test_that("snake draft with v3 API using different league", {
+  d <- draft_history(46920214, old = FALSE)
+  expect_s3_class(d, "tbl")
+})
