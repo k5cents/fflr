@@ -30,6 +30,7 @@ weekly_matchups <- function(lid, old = FALSE, ...) {
 
 parse_matchup <- function(s, y = NULL) {
   n <- length(s$winner)
+  is_home <- c(rep(TRUE, n), rep(FALSE, n))
   winners <- rep(s$winner, 2)
   winners[winners == "UNDECIDED"] <- NA
   x <- tibble::tibble(
@@ -37,9 +38,9 @@ parse_matchup <- function(s, y = NULL) {
     id = rep(s$id, 2),
     week = factor(rep(s$matchupPeriodId, 2), levels = 1:16),
     team = c(s$home$teamId, s$away$teamId),
-    home = c(rep(TRUE, n), rep(FALSE, n)),
+    home = is_home,
     score = c(s$home$totalPoints, s$away$totalPoints),
-    winner = (rep(s$winner, 2) == "HOME") == home
+    winner = (rep(s$winner, 2) == "HOME") == is_home
   )
   return(x[order(x$id),])
 }
