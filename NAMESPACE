@@ -3,5 +3,6 @@
 export(draft_history)
 export(league_members)
 export(league_teams)
+export(weekly_matchups)
 importFrom(jsonlite,fromJSON)
 importFrom(tibble,as_tibble)
