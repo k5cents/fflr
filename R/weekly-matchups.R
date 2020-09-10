@@ -2,7 +2,7 @@
 #'
 #' The weekly matchups between home and away teams, with score and winner.
 #'
-#' @inheritParams draft_history
+#' @inheritParams draft_picks
 #' @return A tibble (or list) of draft picks.
 #' @examples
 #' weekly_matchups(lid = 252353)

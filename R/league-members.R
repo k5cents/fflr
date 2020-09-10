@@ -2,7 +2,7 @@
 #'
 #' Return the ESPN user names, unique owner IDs, and their manager status.
 #'
-#' @inheritParams draft_history
+#' @inheritParams draft_picks
 #' @return A tibble (or list) of league members.
 #' @examples
 #' league_members(lid = 252353)

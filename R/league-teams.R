@@ -2,7 +2,7 @@
 #'
 #' Return the fantasy team names and their owners.
 #'
-#' @inheritParams draft_history
+#' @inheritParams draft_picks
 #' @return A tibble (or list) of league teams.
 #' @examples
 #' league_teams(lid = 252353)
@@ -38,6 +38,6 @@ parse_teams <- function(t) {
     }
     t$owners <- unlist(t$owners)
   }
-  names(t)[2] <- "team"
+  names(t)[1] <- "team"
   tibble::as_tibble(t[, c(2, 1, 5, 6)])
 }

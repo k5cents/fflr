@@ -10,11 +10,11 @@
 #' @param ... Additional API query arguments passed to [httr::GET()].
 #' @return A tibble (or list) of draft picks.
 #' @examples
-#' draft_history(lid = 252353)
+#' draft_picks(lid = 252353)
 #' @importFrom jsonlite fromJSON
 #' @importFrom tibble as_tibble
 #' @export
-draft_history <- function(lid, old = FALSE, ...) {
+draft_picks <- function(lid, old = FALSE, ...) {
   a <- "https://fantasy.espn.com/apis/v3/games/ffl/"
   b <- if (old) {
     "leagueHistory/"
