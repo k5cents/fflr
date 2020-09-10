@@ -38,5 +38,6 @@ parse_teams <- function(t) {
     }
     t$owners <- unlist(t$owners)
   }
+  names(t)[2] <- "team"
   tibble::as_tibble(t[, c(2, 1, 5, 6)])
 }
