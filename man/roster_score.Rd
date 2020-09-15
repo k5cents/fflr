@@ -17,7 +17,7 @@ For a given roster tibble, sum the starting scores.
 }
 \examples{
 # asses performance compared to optimal
-start_roster <- team_roster(lid = 252353)[[5]]
-best_roster <- best_roster(start_roster)
-roster_score(start_roster)/roster_score(best_roster)
+start <- team_roster(lid = 252353, week = 1)[[5]]
+best <- best_roster(start)
+roster_score(start)/roster_score(best)
 }

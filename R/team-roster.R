@@ -80,7 +80,7 @@ parse_roster <- function(entry) {
     id = player$id,
     first = player$firstName,
     last = player$lastName,
-    pro  = fflr:::nfl_teams$nfl[match(player$proTeamId, fflr:::nfl_teams$team)],
+    pro  = nfl_teams$nfl[match(player$proTeamId, nfl_teams$team)],
     pos = factor(
       x = player$defaultPositionId,
       levels = c("1",  "2",  "3",  "4",  "5",  "16"),

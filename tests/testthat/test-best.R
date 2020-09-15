@@ -2,12 +2,7 @@ library(testthat)
 library(fflr)
 
 expect_height <- function(object, n) {
-  stopifnot(is.numeric(n), nrow(n) == 1)
-  act <- testthat::quasi_label(rlang::enquo(object), arg = "object")
-  act$n <- nrow(act$val)
-  msg <- sprintf("%s has %i rows, not %i.", act$lab, act$n, n)
-  testthat::expect(act$n == n, msg)
-  invisible(act$val)
+  expect_equal(object = nrow(object), n)
 }
 
 test_that("can calculate single best roster", {

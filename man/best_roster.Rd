@@ -16,5 +16,5 @@ A tibble of players on a roster.
 The highest scoring 9 man roster using standard roster slots.
 }
 \examples{
-best_roster(team_roster(lid = 252353)[[7]])
+best_roster(team_roster(lid = 252353, week = 1)[[7]])
 }

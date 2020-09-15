@@ -5,7 +5,7 @@
 #' @param roster A roster tibble from [team_roster()].
 #' @return A tibble of players on a roster.
 #' @examples
-#' best_roster(team_roster(lid = 252353)[[7]])
+#' best_roster(team_roster(lid = 252353, week = 1)[[7]])
 #' @export
 best_roster <- function(roster) {
   if (all(is.na(roster$score))) {
@@ -41,8 +41,8 @@ best_roster <- function(roster) {
 #' @examples
 #' # asses performance compared to optimal
 #' start <- team_roster(lid = 252353, week = 1)[[5]]
-#' best <- best_roster(start_roster)
-#' roster_score(start_roster)/roster_score(best_roster)
+#' best <- best_roster(start)
+#' roster_score(start)/roster_score(best)
 #' @export
 roster_score <- function(roster) {
   sum(roster$score[roster$slot != "BE"], na.rm = TRUE)
