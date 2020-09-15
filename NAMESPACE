@@ -3,6 +3,7 @@
 export(best_roster)
 export(draft_picks)
 export(league_members)
+export(league_standings)
 export(league_teams)
 export(roster_score)
 export(team_roster)
