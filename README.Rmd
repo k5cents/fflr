@@ -1,5 +1,7 @@
 ---
 output: github_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -15,6 +17,9 @@ knitr::opts_chunk$set(
   out.width = "100%",
   dpi = 300
 )
+if (!interactive()) {
+  options(width = 99)
+}
 ```
 
 # fflr <img src="man/figures/logo.png" align="right" width="120" />
@@ -38,6 +43,36 @@ You can install the released version of `fflr` from GitHub with:
 ```r
 # install.packages("remotes")
 remotes::install_github("kiernann/fflr")
+```
+
+## Usage
+
+The fflr package can be used to scrape team rosters, weekly matchups, draft
+pick history, and even calculate the optimal scoring roster.
+
+```{r team_roster}
+library(fflr)
+rosters <- team_roster(252353, week = 1)
+rosters[[5]][, -5]
+```
+
+```{r best_roster}
+best_roster(rosters[[5]][, -5])
+```
+
+```{r league_teams}
+(teams <- league_teams(252353))
+scores <- weekly_matchups(252353)
+```
+
+```{r weekly_matchups, echo=FALSE, fig.width=10, fig.height=5}
+library(tidyverse)
+scores[1:8, ] %>% 
+  left_join(teams) %>% 
+  ggplot(aes(x = reorder(abbrev, team), y = score)) +
+  geom_col(aes(fill = winner), position = "dodge") +
+  scale_fill_brewer(palette = "Set1", guide = FALSE) +
+  labs(x = "Team", y = "Score", title = "Week 1 Scores and Match Outcome")
 ```
 
 ***
