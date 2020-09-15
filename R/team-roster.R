@@ -6,7 +6,6 @@
 #' @return A tibble (or list) of players on a roster.
 #' @examples
 #' team_roster(lid = 252353)
-#' @importFrom jsonlite fromJSON
 #' @importFrom tibble as_tibble
 #' @export
 team_roster <- function(lid, old = FALSE, ...) {
@@ -22,6 +21,10 @@ team_roster <- function(lid, old = FALSE, ...) {
   return(out)
 }
 
+#' Return list data from API JSON
+#' @inheritParams draft_picks
+#' @param view The API "view" for data to be returned.
+#' @importFrom jsonlite fromJSON
 ffl_api <- function(lid = NULL, old = FALSE, view = NULL, ...) {
   a <- "https://fantasy.espn.com/apis/v3/games/ffl/"
   b <- if (old) {

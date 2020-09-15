@@ -12,7 +12,6 @@
 #' @return A tibble (or list) of draft picks.
 #' @examples
 #' draft_picks(lid = 252353)
-#' @importFrom jsonlite fromJSON
 #' @importFrom tibble as_tibble
 #' @export
 draft_picks <- function(lid, old = FALSE, ...) {

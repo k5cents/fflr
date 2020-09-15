@@ -6,7 +6,6 @@
 #' @return A tibble (or list) of league teams.
 #' @examples
 #' league_teams(lid = 252353)
-#' @importFrom jsonlite fromJSON
 #' @importFrom tibble as_tibble
 #' @export
 league_teams <- function(lid, old = FALSE, ...) {

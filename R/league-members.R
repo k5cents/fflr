@@ -6,7 +6,6 @@
 #' @return A tibble (or list) of league members.
 #' @examples
 #' league_members(lid = 252353)
-#' @importFrom jsonlite fromJSON
 #' @importFrom tibble as_tibble
 #' @export
 league_members <- function(lid, old = FALSE, ...) {

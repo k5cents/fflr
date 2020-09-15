@@ -6,7 +6,6 @@
 #' @return A tibble (or list) of draft picks.
 #' @examples
 #' weekly_matchups(lid = 252353)
-#' @importFrom jsonlite fromJSON
 #' @importFrom tibble as_tibble
 #' @export
 weekly_matchups <- function(lid, old = FALSE, ...) {
