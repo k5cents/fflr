@@ -1,3 +1,7 @@
+# fflr 0.2.0
+
+* Cover team rosters, best rosters, weekly matchups.
+
 # fflr 0.1.1
 
 * Erase all functions and start over with simplified philosophy.
