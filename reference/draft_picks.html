@@ -143,12 +143,13 @@ winning bid.</p>
     </tr>
     <tr>
       <th>old</th>
-      <td><p>If <code>FALSE</code> (default), return only the current season's draft
-history. If <code>TRUE</code>, return a list with all prior drafts.</p></td>
+      <td><p>If <code>FALSE</code> (default), return only the current season's data. If
+<code>TRUE</code>, return a list with all prior years.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Additional API query arguments passed to <code><a href='https://httr.r-lib.org/reference/GET.html'>httr::GET()</a></code>.</p></td>
+      <td><p>Additional API query arguments; use "week" as a shorthand for
+"ScoringPeriodId" to display past rosters, etc.</p></td>
     </tr>
     </table>
 
