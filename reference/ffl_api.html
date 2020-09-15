@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • fflr</title>
+<title>Return list data from API JSON — ffl_api • fflr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Return list data from API JSON — ffl_api" />
+<meta property="og:description" content="Return list data from API JSON" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -66,7 +67,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -116,102 +117,44 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Return list data from API JSON</h1>
+    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/team-roster.R'><code>R/team-roster.R</code></a></small>
+    <div class="hidden name"><code>ffl_api.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Return list data from API JSON</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>ffl_api</span>(lid = <span class='kw'>NULL</span>, old = <span class='fl'>FALSE</span>, view = <span class='kw'>NULL</span>, <span class='kw'>...</span>)</pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="best_roster.html">best_roster()</a></code> </p>
-        </td>
-        <td><p>Fantasy optimal roster</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="draft_picks.html">draft_picks()</a></code> </p>
-        </td>
-        <td><p>Fantasy draft history</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="ffl_api.html">ffl_api()</a></code> </p>
-        </td>
-        <td><p>Return list data from API JSON</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="league_members.html">league_members()</a></code> </p>
-        </td>
-        <td><p>Fantasy league members</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="league_standings.html">league_standings()</a></code> </p>
-        </td>
-        <td><p>League standings</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="league_teams.html">league_teams()</a></code> </p>
-        </td>
-        <td><p>Fantasy league teams</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="league_transactions.html">league_transactions()</a></code> </p>
-        </td>
-        <td><p>League transactions</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="roster.html">roster</a></code> </p>
-        </td>
-        <td><p>A team roster for week 3 of the 2019 season</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="roster_score.html">roster_score()</a></code> </p>
-        </td>
-        <td><p>Sum a roster score</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="team_roster.html">team_roster()</a></code> </p>
-        </td>
-        <td><p>Fantasy team roster</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="weekly_matchups.html">weekly_matchups()</a></code> </p>
-        </td>
-        <td><p>Fantasy matchups</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>lid</th>
+      <td><p>ESPN League ID.</p></td>
+    </tr>
+    <tr>
+      <th>old</th>
+      <td><p>If <code>FALSE</code> (default), return only the current season's data. If
+<code>TRUE</code>, return a list with all prior years.</p></td>
+    </tr>
+    <tr>
+      <th>view</th>
+      <td><p>The API "view" for data to be returned.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Additional API query arguments; use "week" as a shorthand for
+"ScoringPeriodId" to display past rosters, etc.</p></td>
+    </tr>
     </table>
-  </div>
 
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
