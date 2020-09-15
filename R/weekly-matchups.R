@@ -10,13 +10,7 @@
 #' @importFrom tibble as_tibble
 #' @export
 weekly_matchups <- function(lid, old = FALSE, ...) {
-  a <- "https://fantasy.espn.com/apis/v3/games/ffl/"
-  b <- if (old) {
-    "leagueHistory/"
-  } else {
-    sprintf("seasons/%s/segments/0/leagues/", format(Sys.Date(), "%Y"))
-  }
-  data <- jsonlite::fromJSON(paste0(a, b, lid, "?view=mMatchup"))
+  data <- ffl_api(lid = lid, old = old, view = "mMatchup", ...)
   if (old) {
     out <- rep(list(NA), length(data$schedule))
     for (i in seq_along(out)) {

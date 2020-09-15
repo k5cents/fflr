@@ -10,13 +10,7 @@
 #' @importFrom tibble as_tibble
 #' @export
 league_teams <- function(lid, old = FALSE, ...) {
-  b <- if (old) {
-    "leagueHistory/"
-  } else {
-    sprintf("seasons/%s/segments/0/leagues/", format(Sys.Date(), "%Y"))
-  }
-  a <- paste0("https://fantasy.espn.com/apis/v3/games/ffl/", b, lid)
-  data <- jsonlite::fromJSON(a)
+  data <- ffl_api(lid = lid, old = old, ...)
   if (old) {
     for (i in seq_along(data$teams)) {
       data$teams[[i]] <- parse_teams(data$teams[[i]])

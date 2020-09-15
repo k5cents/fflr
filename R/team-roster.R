@@ -10,13 +10,7 @@
 #' @importFrom tibble as_tibble
 #' @export
 team_roster <- function(lid, old = FALSE, ...) {
-  a <- "https://fantasy.espn.com/apis/v3/games/ffl/"
-  b <- if (old) {
-    "leagueHistory/"
-  } else {
-    sprintf("seasons/%s/segments/0/leagues/", format(Sys.Date(), "%Y"))
-  }
-  data <- jsonlite::fromJSON(paste0(a, b, lid, "?view=mRoster"))
+  data <- ffl_api(lid, old, view = "mRoster", ...)
   if (old) {
     out <- rep(list(NA), length(data$teams))
     for (y in seq_along(out)) {
@@ -26,6 +20,20 @@ team_roster <- function(lid, old = FALSE, ...) {
     out <- lapply(data$teams$roster$entries, parse_roster)
   }
   return(out)
+}
+
+ffl_api <- function(lid = NULL, old = FALSE, view = NULL, ...) {
+  a <- "https://fantasy.espn.com/apis/v3/games/ffl/"
+  b <- if (old) {
+    "leagueHistory/"
+  } else {
+    sprintf("seasons/%s/segments/0/leagues/", format(Sys.Date(), "%Y"))
+  }
+  x <- list(view = view, ...)
+  names(x)[names(x) == "week"] <- "scoringPeriodId"
+  c <- paste(paste(names(x), x, sep = "="), collapse = "&")
+  data <- jsonlite::fromJSON(paste0(a, b, lid, "?", c))
+  return(data)
 }
 
 parse_roster <- function(entry) {

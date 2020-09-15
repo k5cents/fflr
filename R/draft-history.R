@@ -15,13 +15,7 @@
 #' @importFrom tibble as_tibble
 #' @export
 draft_picks <- function(lid, old = FALSE, ...) {
-  a <- "https://fantasy.espn.com/apis/v3/games/ffl/"
-  b <- if (old) {
-    "leagueHistory/"
-  } else {
-    sprintf("seasons/%s/segments/0/leagues/", format(Sys.Date(), "%Y"))
-  }
-  data <- jsonlite::fromJSON(paste0(a, b, lid, "?view=mDraftDetail"))
+  data <- ffl_api(lid = lid, old = old, view = "mDraftDetail", ...)
   if (old) {
     out <- rep(list(NA), length(data$seasonId))
     for (i in seq_along(out)) {
