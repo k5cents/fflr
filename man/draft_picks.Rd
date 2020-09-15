@@ -9,10 +9,11 @@ draft_picks(lid, old = FALSE, ...)
 \arguments{
 \item{lid}{ESPN League ID.}
 
-\item{old}{If \code{FALSE} (default), return only the current season's draft
-history. If \code{TRUE}, return a list with all prior drafts.}
+\item{old}{If \code{FALSE} (default), return only the current season's data. If
+\code{TRUE}, return a list with all prior years.}
 
-\item{...}{Additional API query arguments passed to \code{\link[httr:GET]{httr::GET()}}.}
+\item{...}{Additional API query arguments; use "week" as a shorthand for
+"ScoringPeriodId" to display past rosters, etc.}
 }
 \value{
 A tibble (or list) of draft picks.

@@ -5,9 +5,10 @@
 #' winning bid.
 #'
 #' @param lid ESPN League ID.
-#' @param old If `FALSE` (default), return only the current season's draft
-#'   history. If `TRUE`, return a list with all prior drafts.
-#' @param ... Additional API query arguments passed to [httr::GET()].
+#' @param old If `FALSE` (default), return only the current season's data. If
+#'   `TRUE`, return a list with all prior years.
+#' @param ... Additional API query arguments; use "week" as a shorthand for
+#'   "ScoringPeriodId" to display past rosters, etc.
 #' @return A tibble (or list) of draft picks.
 #' @examples
 #' draft_picks(lid = 252353)
