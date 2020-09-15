@@ -69,6 +69,7 @@ parse_roster <- function(entry) {
       levels = c("0",  "2",  "4",  "6",  "23", "16", "17", "20"),
       labels = c("QB", "RB", "WR", "TE", "FX", "DS", "KI", "BE")
     ),
+    id = player$id,
     first = player$firstName,
     last = player$lastName,
     pro  = fflr:::nfl_teams$nfl[match(player$proTeamId, fflr:::nfl_teams$team)],
