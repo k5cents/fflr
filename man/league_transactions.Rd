@@ -19,7 +19,7 @@ league_transactions(lid, old = FALSE, ...)
 A tibble (or list) of league members.
 }
 \description{
-League transactions
+Summary of transactions and roster changes made during a season.
 }
 \examples{
 league_transactions(lid = 252353)

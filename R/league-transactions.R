@@ -1,5 +1,7 @@
 #' League transactions
 #'
+#' Summary of transactions and roster changes made during a season.
+#'
 #' @inheritParams draft_picks
 #' @return A tibble (or list) of league members.
 #' @examples
