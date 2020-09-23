@@ -48,6 +48,6 @@ id2abbrev <- function(lid = NULL, id, ...) {
   if (is.numeric(lid)) {
     lid <- league_teams(lid, ...)
   }
-  id <- teams$abbrev[match(id, lid$team)]
+  id <- lid$abbrev[match(id, lid$team)]
   return(id)
 }
