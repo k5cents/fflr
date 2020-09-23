@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Fantasy league teams — league_teams • fflr</title>
+<title>Roster moves — roster_moves • fflr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Fantasy league teams — league_teams" />
-<meta property="og:description" content="Return the fantasy team names and their owners." />
+<meta property="og:title" content="Roster moves — roster_moves" />
+<meta property="og:description" content="The individual proposed and executed transactions, trades, and waiver moves." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -119,16 +119,16 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Fantasy league teams</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/league-teams.R'><code>R/league-teams.R</code></a></small>
-    <div class="hidden name"><code>league_teams.Rd</code></div>
+    <h1>Roster moves</h1>
+    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/roster-moves.R'><code>R/roster-moves.R</code></a></small>
+    <div class="hidden name"><code>roster_moves.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Return the fantasy team names and their owners.</p>
+    <p>The individual proposed and executed transactions, trades, and waiver moves.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>league_teams</span>(<span class='kw'>lid</span>, old = <span class='fl'>FALSE</span>, <span class='kw'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>roster_moves</span>(<span class='kw'>lid</span>, old = <span class='fl'>FALSE</span>, <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -151,21 +151,25 @@
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble (or list) of league teams.</p>
+    <p>A tibble of transactions and roster moves.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>league_teams</span>(lid = <span class='fl'>252353</span>)
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 8 x 5</span><span>
-#&gt;    team abbrev owners                               name                    year
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                                </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                  </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span>     1 AGUS   {12E61406-349A-4DC7-A614-06349AADC7… Obi-Wan Mahomey         </span><span style='text-decoration: underline;'>2</span><span>020
-#&gt; </span><span style='color: #555555;'>2</span><span>     3 PEPE   {5FA14794-6573-4189-A147-9465737189… JuJu's Bizarre Advent…  </span><span style='text-decoration: underline;'>2</span><span>020
-#&gt; </span><span style='color: #555555;'>3</span><span>     4 BILL   {91F8B424-1689-472E-B8B4-241689172E… Bill's Fantasy Team     </span><span style='text-decoration: underline;'>2</span><span>020
-#&gt; </span><span style='color: #555555;'>4</span><span>     5 CART   {F33F0723-2CC3-4A1C-BF07-232CC34A1C… Kenyan Younghoes        </span><span style='text-decoration: underline;'>2</span><span>020
-#&gt; </span><span style='color: #555555;'>5</span><span>     6 KIER   {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3B… The Nuklear Option      </span><span style='text-decoration: underline;'>2</span><span>020
-#&gt; </span><span style='color: #555555;'>6</span><span>     8 CORE   {9A722A48-6E16-42BC-9E0E-AC9E4E6D7A… BIG TRUZZZ              </span><span style='text-decoration: underline;'>2</span><span>020
-#&gt; </span><span style='color: #555555;'>7</span><span>    10 NICK   {35D9B7DB-E821-453C-99B7-DBE821353C… Kareemy Johnson         </span><span style='text-decoration: underline;'>2</span><span>020
-#&gt; </span><span style='color: #555555;'>8</span><span>    11 KYLE   {C61F403A-F689-4269-879E-145B897F23… Harry Ruggs             </span><span style='text-decoration: underline;'>2</span><span>020</div></span></pre>
+    <pre class="examples"><div class='input'><span class='fu'>roster_moves</span>(lid = <span class='fl'>252353</span>)
+</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 60 x 14</span><span>
+#&gt;    tx     year  week type    bid status date                 team from_slot
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>              </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #555555;'> 1</span><span> 0ac3…  </span><span style='text-decoration: underline;'>2</span><span>020     3 ROST…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-09-22 </span><span style='color: #555555;'>15:08:13</span><span>     6        20
+#&gt; </span><span style='color: #555555;'> 2</span><span> 0ac3…  </span><span style='text-decoration: underline;'>2</span><span>020     3 ROST…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-09-22 </span><span style='color: #555555;'>15:08:13</span><span>     6         4
+#&gt; </span><span style='color: #555555;'> 3</span><span> 0bb5…  </span><span style='text-decoration: underline;'>2</span><span>020     3 TRAD…    </span><span style='color: #BB0000;'>NA</span><span> CANCE… 2020-09-23 </span><span style='color: #555555;'>00:24:38</span><span>    10        </span><span style='color: #BB0000;'>NA</span><span>
+#&gt; </span><span style='color: #555555;'> 4</span><span> 0bb5…  </span><span style='text-decoration: underline;'>2</span><span>020     3 TRAD…    </span><span style='color: #BB0000;'>NA</span><span> CANCE… 2020-09-23 </span><span style='color: #555555;'>00:24:38</span><span>    10        </span><span style='color: #BB0000;'>NA</span><span>
+#&gt; </span><span style='color: #555555;'> 5</span><span> 0bb5…  </span><span style='text-decoration: underline;'>2</span><span>020     3 TRAD…    </span><span style='color: #BB0000;'>NA</span><span> CANCE… 2020-09-23 </span><span style='color: #555555;'>00:24:38</span><span>    10        </span><span style='color: #BB0000;'>NA</span><span>
+#&gt; </span><span style='color: #555555;'> 6</span><span> 0bb5…  </span><span style='text-decoration: underline;'>2</span><span>020     3 TRAD…    </span><span style='color: #BB0000;'>NA</span><span> CANCE… 2020-09-23 </span><span style='color: #555555;'>00:24:38</span><span>    10        </span><span style='color: #BB0000;'>NA</span><span>
+#&gt; </span><span style='color: #555555;'> 7</span><span> 0bb5…  </span><span style='text-decoration: underline;'>2</span><span>020     3 TRAD…    </span><span style='color: #BB0000;'>NA</span><span> CANCE… 2020-09-23 </span><span style='color: #555555;'>00:24:38</span><span>    10        </span><span style='color: #BB0000;'>NA</span><span>
+#&gt; </span><span style='color: #555555;'> 8</span><span> 129c…  </span><span style='text-decoration: underline;'>2</span><span>020     3 ROST…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-09-22 </span><span style='color: #555555;'>11:24:25</span><span>    11        20
+#&gt; </span><span style='color: #555555;'> 9</span><span> 129c…  </span><span style='text-decoration: underline;'>2</span><span>020     3 ROST…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-09-22 </span><span style='color: #555555;'>11:24:25</span><span>    11        16
+#&gt; </span><span style='color: #555555;'>10</span><span> 13cc…  </span><span style='text-decoration: underline;'>2</span><span>020     3 WAIV…    13 FAILED 2020-09-23 </span><span style='color: #555555;'>15:00:09</span><span>     6        </span><span style='color: #BB0000;'>NA</span><span>
+#&gt; </span><span style='color: #555555;'># … with 50 more rows, and 5 more variables: from_team </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, id </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   to_slot </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, to_team </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, move </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
