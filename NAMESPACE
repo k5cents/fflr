@@ -2,6 +2,7 @@
 
 export(best_roster)
 export(draft_picks)
+export(id2abbrev)
 export(league_members)
 export(league_standings)
 export(league_teams)

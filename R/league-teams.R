@@ -34,3 +34,20 @@ parse_teams <- function(t) {
   names(t)[2] <- "team"
   tibble::as_tibble(t[, c(2, 1, 5, 6)])
 }
+
+#' Convert team ID to abbreviation
+#'
+#' @param lid ESPN League ID passed to [league_teams()] or the table itself.
+#' @param id A integer vector of team IDs to convert.
+#' @param ... Arguments passed to [league_teams()].
+#' @return A character vector of team abbreviations.
+#' @examples
+#' id2abbrev(252353, id = 5)
+#' @export
+id2abbrev <- function(lid = NULL, id, ...) {
+  if (is.numeric(lid)) {
+    lid <- league_teams(lid, ...)
+  }
+  id <- teams$abbrev[match(id, lid$team)]
+  return(id)
+}
