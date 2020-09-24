@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>League transactions — league_transactions • fflr</title>
+<title>Convert team ID to abbreviation — team_abbrev • fflr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="League transactions — league_transactions" />
-<meta property="og:description" content="Summary of transactions and roster changes made during a season." />
+<meta property="og:title" content="Convert team ID to abbreviation — team_abbrev" />
+<meta property="og:description" content="Convert team ID to abbreviation" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -119,53 +119,41 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>League transactions</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/league-transactions.R'><code>R/league-transactions.R</code></a></small>
-    <div class="hidden name"><code>league_transactions.Rd</code></div>
+    <h1>Convert team ID to abbreviation</h1>
+    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/league-teams.R'><code>R/league-teams.R</code></a></small>
+    <div class="hidden name"><code>team_abbrev.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Summary of transactions and roster changes made during a season.</p>
+    <p>Convert team ID to abbreviation</p>
     </div>
 
-    <pre class="usage"><span class='fu'>league_transactions</span>(<span class='kw'>lid</span>, old = <span class='fl'>FALSE</span>, <span class='kw'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>team_abbrev</span>(lid = <span class='kw'>NULL</span>, <span class='kw'>id</span>, <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>lid</th>
-      <td><p>ESPN League ID.</p></td>
+      <td><p>ESPN League ID passed to <code><a href='league_teams.html'>league_teams()</a></code> or the table itself.</p></td>
     </tr>
     <tr>
-      <th>old</th>
-      <td><p>If <code>FALSE</code> (default), return only the current season's data. If
-<code>TRUE</code>, return a list with all prior years.</p></td>
+      <th>id</th>
+      <td><p>A integer vector of team IDs to convert.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Additional API query arguments; use "week" as a shorthand for
-"ScoringPeriodId" to display past rosters, etc.</p></td>
+      <td><p>Arguments passed to <code><a href='league_teams.html'>league_teams()</a></code>.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble (or list) of league members.</p>
+    <p>A character vector of team abbreviations.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>league_transactions</span>(lid = <span class='fl'>252353</span>)
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 8 x 10</span><span>
-#&gt;    year  team abbrev waiver spent acquisitions drops activated reserved trades
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 AGUS        5    20            4     4        11        0      0
-#&gt; </span><span style='color: #555555;'>2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     3 PEPE        1     5            1     1         8        0      0
-#&gt; </span><span style='color: #555555;'>3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     4 BILL        3    48            2     2        16        0      0
-#&gt; </span><span style='color: #555555;'>4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     5 CART        7     6            1     1         2        0      0
-#&gt; </span><span style='color: #555555;'>5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6 KIER        4     9            2     2         5        0      0
-#&gt; </span><span style='color: #555555;'>6</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     8 CORE        8    28            6     5        15        1      0
-#&gt; </span><span style='color: #555555;'>7</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    10 NICK        6     5            3     3         9        0      0
-#&gt; </span><span style='color: #555555;'>8</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    11 KYLE        2     1            1     1         8        0      0</div></span></pre>
+    <pre class="examples"><div class='input'><span class='fu'>team_abbrev</span>(<span class='fl'>252353</span>, id = <span class='fl'>5</span>)
+</div><div class='output co'>#&gt; [1] "CART"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
