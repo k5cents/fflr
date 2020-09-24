@@ -42,8 +42,9 @@ parse_teams <- function(t) {
 #' @param ... Arguments passed to [league_teams()].
 #' @return A character vector of team abbreviations.
 #' @examples
-#' id2abbrev(252353, id = 5)
-id2abbrev <- function(lid = NULL, id, ...) {
+#' team_abbrev(252353, id = 5)
+#' @export
+team_abbrev <- function(lid = NULL, id, ...) {
   if (is.numeric(lid)) {
     lid <- league_teams(lid, ...)
   }
