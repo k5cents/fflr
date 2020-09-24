@@ -40,8 +40,6 @@ all_players <- function(lid = NULL) {
   p <- jsonlite::fromJSON(httr::content(g, "text"))
   if (length(p) == 2) {
     p <- p$players
-  } else {
-    stop("API error")
   }
   z <- tibble::tibble(
     player = p$player$id,
@@ -49,9 +47,6 @@ all_players <- function(lid = NULL) {
     last_szn = NA_real_, this_szn = NA_real_
   )
   y <- max(p$player$stats[[1]]$seasonId)
-  if (!(y %in% c(2020:2021))) {
-    stop("players from last seasons not available")
-  }
   for (i in seq_along(p$player$stats)) {
     s <- p$player$stats[[i]]
     if (length(unique(s$scoringPeriodId)) < 3) {
