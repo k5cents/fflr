@@ -4,10 +4,10 @@
 \alias{team_abbrev}
 \title{Convert team ID to abbreviation}
 \usage{
-team_abbrev(id, lid = getOption("lid"), ...)
+team_abbrev(team, lid = getOption("lid"), ...)
 }
 \arguments{
-\item{id}{A integer vector of team IDs to convert.}
+\item{team}{A integer vector of team numbers to convert.}
 
 \item{lid}{ESPN League ID passed to \code{\link[=league_teams]{league_teams()}} or the table itself.}
 
@@ -20,5 +20,5 @@ A character vector of team abbreviations.
 Convert team ID to abbreviation
 }
 \examples{
-team_abbrev(252353, id = 5)
+team_abbrev(team = 6, lid = 252353)
 }

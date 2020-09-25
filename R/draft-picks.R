@@ -37,16 +37,16 @@ parse_draft <- function(x, year = NULL, type = NULL, nm = NULL) {
   n <- length(x)
   if (year < 2019 & type == "SNAKE") {
     x <- x[, c(n, n - 1, 8, 12, 13, 14, 10)]
-    names(x)[3:7] <- c("pick", "round", "snake", "team", "player")
+    names(x)[3:7] <- c("pick", "round", "snake", "team", "id")
   } else if (year < 2019 & type == "AUCTION") {
     x <- x[, c(n, n - 1, 8, 7, 14, 2, 10)]
-    names(x)[3:7] <- c("pick", "nominator", "team", "bid", "player")
+    names(x)[3:7] <- c("pick", "nominator", "team", "bid", "id")
   } else if (year >= 2019 & type == "SNAKE") {
     x <- x[, c(n, n - 1, 8, 11:13, 9)]
-    names(x)[3:7] <- c("pick", "round", "snake", "team", "player")
+    names(x)[3:7] <- c("pick", "round", "snake", "team", "id")
   } else if (year >= 2019 & type == "AUCTION") {
     x <- x[, c(n, n - 1, 8, 7, 13, 2, 9)]
-    names(x)[3:7] <- c("pick", "nominator", "team", "bid", "player")
+    names(x)[3:7] <- c("pick", "nominator", "team", "bid", "id")
   }
   return(x)
 }
