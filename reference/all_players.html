@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -128,7 +128,7 @@
     <p>List all available players.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>all_players</span>(lid = <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>all_players</span>(lid = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>))</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -146,7 +146,7 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>all_players</span>()
 </div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 1,056 x 17</span><span>
-#&gt;    player first last  pro   pos   status start  rost change   prk  fpts   aav
+#&gt;        id first last  pro   pos   status start  rost change   prk  fpts   aav
 #&gt;     </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
 #&gt; </span><span style='color: #555555;'> 1</span><span> 3.05</span><span style='color: #555555;'>e</span><span>6 Ezek… Elli… DAL   RB    A      0.997 1.00   0.007     5  40.9  57.6
 #&gt; </span><span style='color: #555555;'> 2</span><span> 3.05</span><span style='color: #555555;'>e</span><span>6 Alvin Kama… NO    RB    A      0.997 1.00   0.009     2  48.1  53.8

@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -128,18 +128,18 @@
     <p>Convert team ID to abbreviation</p>
     </div>
 
-    <pre class="usage"><span class='fu'>team_abbrev</span>(lid = <span class='kw'>NULL</span>, <span class='kw'>id</span>, <span class='kw'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>team_abbrev</span>(<span class='kw'>id</span>, lid = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>), <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>lid</th>
-      <td><p>ESPN League ID passed to <code><a href='league_teams.html'>league_teams()</a></code> or the table itself.</p></td>
-    </tr>
-    <tr>
       <th>id</th>
       <td><p>A integer vector of team IDs to convert.</p></td>
+    </tr>
+    <tr>
+      <th>lid</th>
+      <td><p>ESPN League ID passed to <code><a href='league_teams.html'>league_teams()</a></code> or the table itself.</p></td>
     </tr>
     <tr>
       <th>...</th>

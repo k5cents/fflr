@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -128,19 +128,19 @@
     <p>The individual proposed and executed transactions, trades, and waiver moves.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>roster_moves</span>(<span class='kw'>lid</span>, old = <span class='fl'>FALSE</span>, <span class='kw'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>roster_moves</span>(lid = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>), old = <span class='fl'>FALSE</span>, <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>lid</th>
-      <td><p>ESPN League ID.</p></td>
+      <td><p>ESPN League ID, defaults to <code><a href='https://rdrr.io/r/base/options.html'>getOption("lid")</a></code> (see <code><a href='set_lid.html'>set_lid()</a></code>).</p></td>
     </tr>
     <tr>
       <th>old</th>
       <td><p>If <code>FALSE</code> (default), return only the current season's data. If
-<code>TRUE</code>, return a list with all prior years.</p></td>
+<code>TRUE</code>, return a list with all prior seasons.</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -155,7 +155,7 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>roster_moves</span>(lid = <span class='fl'>252353</span>)
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 77 x 14</span><span>
+</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 80 x 14</span><span>
 #&gt;    tx     year  week type    bid status date                 team from_slot
 #&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>              </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
 #&gt; </span><span style='color: #555555;'> 1</span><span> 0168…  </span><span style='text-decoration: underline;'>2</span><span>020     3 ROST…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-09-24 </span><span style='color: #555555;'>15:36:31</span><span>     8         4
@@ -168,7 +168,7 @@
 #&gt; </span><span style='color: #555555;'> 8</span><span> 0bb5…  </span><span style='text-decoration: underline;'>2</span><span>020     3 TRAD…    </span><span style='color: #BB0000;'>NA</span><span> CANCE… 2020-09-23 </span><span style='color: #555555;'>00:24:38</span><span>    10        </span><span style='color: #BB0000;'>NA</span><span>
 #&gt; </span><span style='color: #555555;'> 9</span><span> 0bb5…  </span><span style='text-decoration: underline;'>2</span><span>020     3 TRAD…    </span><span style='color: #BB0000;'>NA</span><span> CANCE… 2020-09-23 </span><span style='color: #555555;'>00:24:38</span><span>    10        </span><span style='color: #BB0000;'>NA</span><span>
 #&gt; </span><span style='color: #555555;'>10</span><span> 0bb5…  </span><span style='text-decoration: underline;'>2</span><span>020     3 TRAD…    </span><span style='color: #BB0000;'>NA</span><span> CANCE… 2020-09-23 </span><span style='color: #555555;'>00:24:38</span><span>    10        </span><span style='color: #BB0000;'>NA</span><span>
-#&gt; </span><span style='color: #555555;'># … with 67 more rows, and 5 more variables: from_team </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, id </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'># … with 70 more rows, and 5 more variables: from_team </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, id </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>,</span><span>
 #&gt; </span><span style='color: #555555;'>#   to_slot </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, to_team </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, move </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

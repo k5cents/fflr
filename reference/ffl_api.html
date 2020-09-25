@@ -47,7 +47,9 @@
 
 
 <meta property="og:title" content="Return list data from API JSON — ffl_api" />
-<meta property="og:description" content="Return list data from API JSON" />
+<meta property="og:description" content="A generic call to the API using jsonlite::fromJSON() with nested data
+set to simplify. Use &quot;week&quot; and &quot;year&quot; as shortcuts for &quot;scoringPeriodId&quot;
+and &quot;seasonId&quot; respectively. Setting old equal to TRUE uses the" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -80,7 +82,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
       </span>
     </div>
 
@@ -125,22 +127,24 @@
     </div>
 
     <div class="ref-description">
-    <p>Return list data from API JSON</p>
+    <p>A generic call to the API using <code><a href='https://rdrr.io/pkg/jsonlite/man/fromJSON.html'>jsonlite::fromJSON()</a></code> with nested data
+set to simplify. Use "week" and "year" as shortcuts for "scoringPeriodId"
+and "seasonId" respectively. Setting <code>old</code> equal to <code>TRUE</code> uses the</p>
     </div>
 
-    <pre class="usage"><span class='fu'>ffl_api</span>(lid = <span class='kw'>NULL</span>, old = <span class='fl'>FALSE</span>, view = <span class='kw'>NULL</span>, <span class='kw'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>ffl_api</span>(lid = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>), old = <span class='fl'>FALSE</span>, view = <span class='kw'>NULL</span>, <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>lid</th>
-      <td><p>ESPN League ID.</p></td>
+      <td><p>ESPN League ID, defaults to <code><a href='https://rdrr.io/r/base/options.html'>getOption("lid")</a></code> (see <code><a href='set_lid.html'>set_lid()</a></code>).</p></td>
     </tr>
     <tr>
       <th>old</th>
       <td><p>If <code>FALSE</code> (default), return only the current season's data. If
-<code>TRUE</code>, return a list with all prior years.</p></td>
+<code>TRUE</code>, return a list with all prior seasons.</p></td>
     </tr>
     <tr>
       <th>view</th>

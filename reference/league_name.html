@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sum a roster score — roster_score • fflr</title>
+<title>League name — league_name • fflr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Sum a roster score — roster_score" />
-<meta property="og:description" content="For a given roster tibble, sum the starting scores." />
+<meta property="og:title" content="League name — league_name" />
+<meta property="og:description" content="League name" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -119,36 +119,43 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Sum a roster score</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/best-roster.R'><code>R/best-roster.R</code></a></small>
-    <div class="hidden name"><code>roster_score.Rd</code></div>
+    <h1>League name</h1>
+    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/league-settings.R'><code>R/league-settings.R</code></a></small>
+    <div class="hidden name"><code>league_name.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>For a given roster tibble, sum the starting scores.</p>
+    <p>League name</p>
     </div>
 
-    <pre class="usage"><span class='fu'>roster_score</span>(<span class='kw'>roster</span>)</pre>
+    <pre class="usage"><span class='fu'>league_name</span>(lid = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>), old = <span class='fl'>FALSE</span>, <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>roster</th>
-      <td><p>A roster tibble from <code><a href='team_roster.html'>team_roster()</a></code> or <code><a href='best_roster.html'>best_roster()</a></code>.</p></td>
+      <th>lid</th>
+      <td><p>ESPN League ID, defaults to <code><a href='https://rdrr.io/r/base/options.html'>getOption("lid")</a></code> (see <code><a href='set_lid.html'>set_lid()</a></code>).</p></td>
+    </tr>
+    <tr>
+      <th>old</th>
+      <td><p>If <code>FALSE</code> (default), return only the current season's data. If
+<code>TRUE</code>, return a list with all prior seasons.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Additional API query arguments; use "week" as a shorthand for
+"ScoringPeriodId" to display past rosters, etc.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A score as double.</p>
+    <p>A character vector.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># asses performance compared to optimal</span>
-<span class='kw'>start</span> <span class='op'>&lt;-</span> <span class='fu'><a href='team_roster.html'>team_roster</a></span>(lid = <span class='fl'>252353</span>, week = <span class='fl'>1</span>)[[<span class='fl'>5</span>]]
-<span class='kw'>best</span> <span class='op'>&lt;-</span> <span class='fu'><a href='best_roster.html'>best_roster</a></span>(<span class='kw'>start</span>)
-<span class='fu'>roster_score</span>(<span class='kw'>start</span>)<span class='op'>/</span><span class='fu'>roster_score</span>(<span class='kw'>best</span>)
-</div><div class='output co'>#&gt; [1] 0.9679612</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>league_name</span>(<span class='fl'>252353</span>)
+</div><div class='output co'>#&gt; [1] "Gambling Addicts Anonymous"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
