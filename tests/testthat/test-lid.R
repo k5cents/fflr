@@ -1,6 +1,5 @@
 library(testthat)
 library(fflr)
-library(fs)
 
 test_that("existing league ID can be retrieved", {
   options(lid = 252353)
