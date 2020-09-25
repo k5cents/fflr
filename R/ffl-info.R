@@ -23,16 +23,16 @@ ffl_info <- function() {
 #' @param offset Add negative or positive values.
 #' @examples
 #' Sys.time()
-#' ffl_season()
+#' ffl_year()
 #' @export
-ffl_season <- function(offset = 0) {
+ffl_year <- function(offset = 0) {
   x <- ffl_info()
   x$year + offset
 }
 
 #' Current fantasy scoring period
 #'
-#' @inheritParams ffl_season
+#' @inheritParams ffl_year
 #' @examples
 #' Sys.time()
 #' ffl_week(-1)
