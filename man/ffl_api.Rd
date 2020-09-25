@@ -4,13 +4,13 @@
 \alias{ffl_api}
 \title{Return list data from API JSON}
 \usage{
-ffl_api(lid = NULL, old = FALSE, view = NULL, ...)
+ffl_api(lid = getOption("lid"), old = FALSE, view = NULL, ...)
 }
 \arguments{
-\item{lid}{ESPN League ID.}
+\item{lid}{ESPN League ID, defaults to \code{getOption("lid")} (see \code{\link[=set_lid]{set_lid()}}).}
 
 \item{old}{If \code{FALSE} (default), return only the current season's data. If
-\code{TRUE}, return a list with all prior years.}
+\code{TRUE}, return a list with all prior seasons.}
 
 \item{view}{The API "view" for data to be returned.}
 
@@ -18,5 +18,7 @@ ffl_api(lid = NULL, old = FALSE, view = NULL, ...)
 "ScoringPeriodId" to display past rosters, etc.}
 }
 \description{
-Return list data from API JSON
+A generic call to the API using \code{\link[jsonlite:fromJSON]{jsonlite::fromJSON()}} with nested data
+set to simplify. Use "week" and "year" as shortcuts for "scoringPeriodId"
+and "seasonId" respectively. Setting \code{old} equal to \code{TRUE} uses the
 }
