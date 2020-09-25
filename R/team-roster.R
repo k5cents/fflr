@@ -8,7 +8,7 @@
 #' team_roster(lid = 252353)
 #' @importFrom tibble as_tibble
 #' @export
-team_roster <- function(lid, old = FALSE, ...) {
+team_roster <- function(lid = getOption("lid"), old = FALSE, ...) {
   data <- ffl_api(lid, old, view = "mRoster", ...)
   if (old) {
     out <- rep(list(NA), length(data$teams))

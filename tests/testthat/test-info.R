@@ -20,6 +20,6 @@ test_that("fantasy information is retrieved", {
   expect_type(i, "list")
   expect_length(i, 6)
   expect_s3_class(i$start_date, "POSIXt")
-  expect_type(ffl_week(), "integer")
-  expect_type(ffl_season(), "integer")
+  expect_type(ffl_week(), "double")
+  expect_type(ffl_year(), "double")
 })

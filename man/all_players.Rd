@@ -4,7 +4,7 @@
 \alias{all_players}
 \title{All fantasy players}
 \usage{
-all_players(lid = NULL)
+all_players(lid = getOption("lid"))
 }
 \arguments{
 \item{lid}{ESPN League ID, defaulted because all return the same data.}

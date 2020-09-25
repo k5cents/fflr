@@ -10,7 +10,7 @@
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom httr GET add_headers accept_json content
 #' @export
-all_players <- function(lid = NULL) {
+all_players <- function(lid = getOption("lid")) {
   if (is.null(lid)) lid <- 252353
   xff <- list(
     players = list(

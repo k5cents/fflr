@@ -8,8 +8,8 @@
 #' league_members(lid = 252353)
 #' @importFrom tibble as_tibble
 #' @export
-league_members <- function(lid, old = FALSE, ...) {
-  data <- ffl_api(lid = lid, old = old, ...)
+league_members <- function(lid = getOption("lid"), old = FALSE, ...) {
+  data <- ffl_api(lid, old, ...)
   member_cols <- c("user", "owners", "lm")
   if (old) {
     for (i in seq_along(data$members)) {

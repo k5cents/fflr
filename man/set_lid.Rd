@@ -15,7 +15,7 @@ is already set. Call \code{\link[usethis:edit]{usethis::edit_r_profile()}} if in
 \item{...}{Arguments passed to \link[usethis:edit]{usethis::edit_r_profile}.}
 }
 \value{
-Invisibly, the league ID.
+The league ID, invisibly.
 }
 \description{
 Once the league ID option is set, the \code{lid} argument in most functions can be

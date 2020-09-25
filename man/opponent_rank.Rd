@@ -4,7 +4,7 @@
 \alias{opponent_rank}
 \title{Fantasy team roster}
 \usage{
-opponent_rank(lid = NULL, type = c("avg", "rank"))
+opponent_rank(lid = getOption("lid"), type = c("avg", "rank"))
 }
 \arguments{
 \item{lid}{ESPN League ID, defaulted because all return the same data.}

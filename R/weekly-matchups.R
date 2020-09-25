@@ -8,8 +8,8 @@
 #' weekly_matchups(lid = 252353)
 #' @importFrom tibble as_tibble
 #' @export
-weekly_matchups <- function(lid, old = FALSE, ...) {
-  data <- ffl_api(lid = lid, old = old, view = "mMatchup", ...)
+weekly_matchups <- function(lid = getOption("lid"), old = FALSE, ...) {
+  data <- ffl_api(lid, old, view = "mMatchup", ...)
   if (old) {
     out <- rep(list(NA), length(data$schedule))
     for (i in seq_along(out)) {

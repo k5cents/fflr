@@ -9,8 +9,8 @@
 #' league_standings(lid = 252353)
 #' @importFrom tibble as_tibble
 #' @export
-league_standings <- function(lid, old = FALSE, ...) {
-  data <- ffl_api(lid, old = old, view = "mTeam", ...)
+league_standings <- function(lid = getOption("lid"), old = FALSE, ...) {
+  data <- ffl_api(lid, old, view = "mTeam", ...)
   member_cols <- c("user", "owners", "lm")
   if (old) {
     out <- rep(list(NA), length(data$teams))

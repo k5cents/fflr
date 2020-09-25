@@ -4,9 +4,9 @@
 #' and pick of each player; for auctions (salary cap), the nominating team and
 #' winning bid.
 #'
-#' @param lid ESPN League ID.
+#' @param lid ESPN League ID, defaults to `getOption("lid")` (see [set_lid()]).
 #' @param old If `FALSE` (default), return only the current season's data. If
-#'   `TRUE`, return a list with all prior years.
+#'   `TRUE`, return a list with all prior seasons.
 #' @param ... Additional API query arguments; use "week" as a shorthand for
 #'   "ScoringPeriodId" to display past rosters, etc.
 #' @return A tibble (or list) of draft picks.
@@ -14,8 +14,8 @@
 #' draft_picks(lid = 252353)
 #' @importFrom tibble as_tibble
 #' @export
-draft_picks <- function(lid, old = FALSE, ...) {
-  data <- ffl_api(lid = lid, old = old, view = "mDraftDetail", ...)
+draft_picks <- function(lid = getOption("lid"), old = FALSE, ...) {
+  data <- ffl_api(lid, old, view = "mDraftDetail", ...)
   if (old) {
     out <- rep(list(NA), length(data$seasonId))
     for (i in seq_along(out)) {

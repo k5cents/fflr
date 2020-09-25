@@ -9,7 +9,7 @@
 #' opponent_rank()
 #' @importFrom tibble as_tibble
 #' @export
-opponent_rank <- function(lid = NULL, type = c("avg", "rank")) {
+opponent_rank <- function(lid = getOption("lid"), type = c("avg", "rank")) {
   if (is.null(lid)) lid <- 252353
   data <- ffl_api(lid, view = "kona_player_info")
   p <- data$positionAgainstOpponent$positionalRatings

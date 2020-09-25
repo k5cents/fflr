@@ -6,7 +6,7 @@
 #' league_info(252353, old = TRUE)
 #' @importFrom tibble as_tibble
 #' @export
-league_info <- function(lid, old = FALSE, ...) {
+league_info <- function(lid = getOption("lid"), old = FALSE, ...) {
   d <- ffl_api(lid, old, view = "mSettings", ...)
   x <- list(
     year = d$seasonId,
@@ -30,7 +30,7 @@ league_info <- function(lid, old = FALSE, ...) {
 #' @examples
 #' league_size(252353, old = TRUE)
 #' @export
-league_size <- function(lid, old = FALSE, ...) {
+league_size <- function(lid = getOption("lid"), old = FALSE, ...) {
   d <- ffl_api(lid, old, view = "mSettings", ...)
   x <- d$settings$size
   names(x) <- d$seasonId
@@ -44,7 +44,7 @@ league_size <- function(lid, old = FALSE, ...) {
 #' @examples
 #' league_name(252353)
 #' @export
-league_name <- function(lid, old = FALSE, ...) {
+league_name <- function(lid = getOption("lid"), old = FALSE, ...) {
   d <- ffl_api(lid, old, ...)
   unique(d$settings$name)
 }
@@ -57,7 +57,7 @@ league_name <- function(lid, old = FALSE, ...) {
 #' draft_settings(252353, old = TRUE)
 #' @importFrom tibble as_tibble
 #' @export
-draft_settings <- function(lid, old = FALSE, ...) {
+draft_settings <- function(lid = getOption("lid"), old = FALSE, ...) {
   d <- ffl_api(lid, old, view = "mSettings", ...)
   s <- d$settings$draftSettings[c(12, 1:2, 4:5, 10:11)]
   names(s) <- c("type", "budget", "date", "trading", "keepers", "order", "time")

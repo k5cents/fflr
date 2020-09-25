@@ -1,16 +1,30 @@
 #' Return list data from API JSON
+#'
+#' A generic call to the API using [jsonlite::fromJSON()] with nested data
+#' set to simplify. Use "week" and "year" as shortcuts for "scoringPeriodId"
+#' and "seasonId" respectively. Setting `old` equal to `TRUE` uses the
+#'
 #' @inheritParams draft_picks
 #' @param view The API "view" for data to be returned.
 #' @importFrom jsonlite fromJSON
-ffl_api <- function(lid = NULL, old = FALSE, view = NULL, ...) {
+#' @export
+ffl_api <- function(lid = getOption("lid"), old = FALSE, view = NULL, ...) {
+  if (is.null(lid)) {
+    stop("no league ID found, define argument or use set_lid()")
+  }
   a <- "https://fantasy.espn.com/apis/v3/games/ffl/"
   b <- if (old) {
     "leagueHistory/"
   } else {
-    sprintf("seasons/%s/segments/0/leagues/", format(Sys.Date(), "%Y"))
+    "seasons/2020/segments/0/leagues/"
   }
-  x <- list(view = view, ...)
+  if (is.null(view)) {
+    x <- list(...)
+  } else {
+    x <- list(view = view, ...)
+  }
   names(x)[names(x) == "week"] <- "scoringPeriodId"
+  names(x)[names(x) == "year"] <- "seasonId"
   c <- paste(paste(names(x), x, sep = "="), collapse = "&")
   data <- jsonlite::fromJSON(paste0(a, b, lid, "?", c))
   return(data)

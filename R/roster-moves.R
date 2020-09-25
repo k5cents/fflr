@@ -8,8 +8,8 @@
 #' roster_moves(lid = 252353)
 #' @importFrom tibble as_tibble
 #' @export
-roster_moves <- function(lid, old = FALSE, ...) {
-  data <- ffl_api(lid, old = old, view = "mTransactions2", ...)
+roster_moves <- function(lid = getOption("lid"), old = FALSE, ...) {
+  data <- ffl_api(lid, old, view = "mTransactions2", ...)
   if (old) {
     stop("not currently supported for past seasons")
   } else {

@@ -4,13 +4,13 @@
 \alias{league_teams}
 \title{Fantasy league teams}
 \usage{
-league_teams(lid, old = FALSE, ...)
+league_teams(lid = getOption("lid"), old = FALSE, ...)
 }
 \arguments{
-\item{lid}{ESPN League ID.}
+\item{lid}{ESPN League ID, defaults to \code{getOption("lid")} (see \code{\link[=set_lid]{set_lid()}}).}
 
 \item{old}{If \code{FALSE} (default), return only the current season's data. If
-\code{TRUE}, return a list with all prior years.}
+\code{TRUE}, return a list with all prior seasons.}
 
 \item{...}{Additional API query arguments; use "week" as a shorthand for
 "ScoringPeriodId" to display past rosters, etc.}

@@ -8,8 +8,8 @@
 #' league_teams(lid = 252353)
 #' @importFrom tibble as_tibble
 #' @export
-league_teams <- function(lid, old = FALSE, ...) {
-  data <- ffl_api(lid = lid, old = old, ...)
+league_teams <- function(lid = getOption("lid"), old = FALSE, ...) {
+  data <- ffl_api(lid, old, ...)
   if (old) {
     for (i in seq_along(data$teams)) {
       data$teams[[i]] <- parse_teams(data$teams[[i]])
@@ -44,7 +44,7 @@ parse_teams <- function(t) {
 #' @examples
 #' team_abbrev(252353, id = 5)
 #' @export
-team_abbrev <- function(id, lid = NULL, ...) {
+team_abbrev <- function(id, lid = getOption("lid"), ...) {
   if (is.numeric(lid)) {
     lid <- league_teams(lid, ...)
   }

@@ -4,7 +4,7 @@
 \alias{team_abbrev}
 \title{Convert team ID to abbreviation}
 \usage{
-team_abbrev(id, lid = NULL, ...)
+team_abbrev(id, lid = getOption("lid"), ...)
 }
 \arguments{
 \item{id}{A integer vector of team IDs to convert.}
