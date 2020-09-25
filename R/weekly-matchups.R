@@ -29,11 +29,12 @@ parse_matchup <- function(s, y = NULL) {
   x <- tibble::tibble(
     year = y,
     id = rep(s$id, 2),
-    week = factor(rep(s$matchupPeriodId, 2), levels = 1:16),
+    week = factor(rep(s$matchupPeriodId, 2), levels = 16:1),
     team = c(s$home$teamId, s$away$teamId),
     home = is_home,
     score = c(s$home$totalPoints, s$away$totalPoints),
     winner = (rep(s$winner, 2) == "HOME") == is_home
   )
+  x$score[x$score == 0] <- NA
   return(x[order(x$id),])
 }
