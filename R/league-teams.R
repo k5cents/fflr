@@ -37,14 +37,14 @@ parse_teams <- function(t) {
 
 #' Convert team ID to abbreviation
 #'
-#' @param lid ESPN League ID passed to [league_teams()] or the table itself.
 #' @param id A integer vector of team IDs to convert.
+#' @param lid ESPN League ID passed to [league_teams()] or the table itself.
 #' @param ... Arguments passed to [league_teams()].
 #' @return A character vector of team abbreviations.
 #' @examples
 #' team_abbrev(252353, id = 5)
 #' @export
-team_abbrev <- function(lid = NULL, id, ...) {
+team_abbrev <- function(id, lid = NULL, ...) {
   if (is.numeric(lid)) {
     lid <- league_teams(lid, ...)
   }
