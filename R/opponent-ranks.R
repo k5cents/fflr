@@ -3,7 +3,6 @@
 #' List all available players.
 #'
 #' @param lid ESPN League ID, defaulted because all return the same data.
-#' @param type Numeric data returned, either points average or rank.
 #' @return A tibble (or list) of players on a roster.
 #' @examples
 #' opponent_ranks()

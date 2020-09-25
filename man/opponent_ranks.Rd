@@ -8,8 +8,6 @@ opponent_ranks(lid = getOption("lid"))
 }
 \arguments{
 \item{lid}{ESPN League ID, defaulted because all return the same data.}
-
-\item{type}{Numeric data returned, either points average or rank.}
 }
 \value{
 A tibble (or list) of players on a roster.
