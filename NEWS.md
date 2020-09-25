@@ -1,3 +1,10 @@
+# fflr 0.3.0
+
+* Rewrite functions to use `getOptions("lid")`.
+* Cover all players, transactions, settings, ESPN information.
+* Imports httr for the headers needed in `all_players()`.
+* Save `players` tibble as of 2020-09-25 01:00.
+
 # fflr 0.2.0
 
 * Cover team rosters, best rosters, weekly matchups.
