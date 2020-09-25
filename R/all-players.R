@@ -68,11 +68,7 @@ all_players <- function(lid = getOption("lid")) {
     first = p$player$firstName,
     last = p$player$lastName,
     pro  = nfl_teams$nfl[match(p$player$proTeamId, nfl_teams$team)],
-    pos = factor(
-      x = p$player$defaultPositionId,
-      levels = c(1:5, 16),
-      labels = c("QB", "RB", "WR", "TE", "KI", "DS")
-    ),
+    pos = pos_abbrev(p$player$defaultPositionId),
     status = abbreviate(p$player$injuryStatus, minlength = 1),
     start = p$player$ownership$percentStarted/100,
     rost = p$player$ownership$percentOwned/100,

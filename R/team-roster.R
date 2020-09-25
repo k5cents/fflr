@@ -57,20 +57,12 @@ parse_roster <- function(entry) {
     year  = year_int,
     week  = week_int,
     team = entry$playerPoolEntry$onTeamId,
-    slot = factor(
-      x = entry$lineupSlotId,
-      levels = c("0",  "2",  "4",  "6",  "23", "16", "17", "20"),
-      labels = c("QB", "RB", "WR", "TE", "FX", "DS", "KI", "BE")
-    ),
+    slot = slot_abbrev(entry$lineupSlotId),
     id = player$id,
     first = player$firstName,
     last = player$lastName,
     pro  = nfl_teams$nfl[match(player$proTeamId, nfl_teams$team)],
-    pos = factor(
-      x = player$defaultPositionId,
-      levels = c("1",  "2",  "3",  "4",  "5",  "16"),
-      labels = c("QB", "RB", "WR", "TE", "KI", "DS")
-    ),
+    pos = pos_abbrev(player$defaultPositionId),
     status = injury_status,
     proj  = proj_dbl,
     score = score_dbl,
@@ -79,4 +71,20 @@ parse_roster <- function(entry) {
     change = round(player$ownership$percentChange, digits = 3)
   )
   return(x[order(x$slot), ])
+}
+
+slot_abbrev <- function(slot) {
+  factor(
+    x = slot,
+    levels = c("0",  "2",  "4",  "6",  "23", "16", "17", "20"),
+    labels = c("QB", "RB", "WR", "TE", "FX", "DS", "KI", "BE")
+  )
+}
+
+pos_abbrev <- function(pos) {
+  factor(
+    x = pos,
+    levels = c("1",  "2",  "3",  "4",  "5",  "16"),
+    labels = c("QB", "RB", "WR", "TE", "KI", "DS")
+  )
 }
