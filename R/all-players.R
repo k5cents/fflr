@@ -42,7 +42,7 @@ all_players <- function(lid = getOption("lid")) {
     p <- p$players
   }
   z <- tibble::tibble(
-    player = p$player$id,
+    id = p$player$id,
     next_wk = NA_real_, last_wk = NA_real_,
     last_szn = NA_real_, this_szn = NA_real_
   )
@@ -64,7 +64,7 @@ all_players <- function(lid = getOption("lid")) {
     }
   }
   out <- data.frame(
-    player = p$player$id,
+    id = p$player$id,
     first = p$player$firstName,
     last = p$player$lastName,
     pro  = nfl_teams$nfl[match(p$player$proTeamId, nfl_teams$team)],
@@ -82,6 +82,6 @@ all_players <- function(lid = getOption("lid")) {
     aav = p$player$ownership$auctionValueAverage,
     adp = p$player$ownership$averageDraftPosition
   )
-  out <- merge(out, z, by = "player", sort = FALSE)
+  out <- merge(out, z, by = "id", sort = FALSE)
   return(tibble::as_tibble(out))
 }
