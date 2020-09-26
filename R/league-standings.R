@@ -15,20 +15,29 @@ league_standings <- function(lid = getOption("lid"), old = FALSE, ...) {
   if (old) {
     out <- rep(list(NA), length(data$teams))
     for (i in seq_along(data$members)) {
-      out[[i]] <- parse_ranks(data$teams[[i]], year = data$seasonId[i])
+      out[[i]] <- parse_ranks(
+        teams = data$teams[[i]],
+        y = data$seasonId[i],
+        w = data$scoringPeriodId[i]
+      )
     }
   } else {
-    out <- parse_ranks(data$teams, year = data$seasonId)
+    out <- parse_ranks(
+      teams = data$teams,
+      y = data$seasonId,
+      w = data$scoringPeriodId
+    )
   }
   return(out)
 }
 
-parse_ranks <- function(teams, year = NULL, week = NULL) {
+parse_ranks <- function(teams, y = NULL, w = NULL) {
   record <- teams$record$overall[, c(1, 2, 8:9, 3:7)]
   record_nms <- c("back", "against", "points", "streak", "type")
   names(record)[c(1, 6:9)] <- record_nms
   x <- tibble::tibble(
-    year = year,
+    year = y,
+    week = w,
     team = teams$id,
     abbrev = teams$abbrev,
     draft = teams$draftDayProjectedRank,

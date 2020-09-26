@@ -4,7 +4,7 @@ library(fflr)
 test_that("standings returns for current year", {
   s <- league_standings(252353, old = FALSE)
   expect_s3_class(s, "tbl")
-  expect_length(s, 15)
+  expect_length(s, 16)
 })
 
 test_that("standings returns for past years", {
