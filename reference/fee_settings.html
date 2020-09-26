@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>League draft settings — draft_settings • fflr</title>
+<title>League finance settings — fee_settings • fflr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="League draft settings — draft_settings" />
-<meta property="og:description" content="League draft settings" />
+<meta property="og:title" content="League finance settings — fee_settings" />
+<meta property="og:description" content="League finance settings" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -119,16 +119,16 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>League draft settings</h1>
+    <h1>League finance settings</h1>
     <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/league-settings.R'><code>R/league-settings.R</code></a></small>
-    <div class="hidden name"><code>draft_settings.Rd</code></div>
+    <div class="hidden name"><code>fee_settings.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>League draft settings</p>
+    <p>League finance settings</p>
     </div>
 
-    <pre class="usage"><span class='fu'>draft_settings</span>(lid = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>), old = <span class='fl'>FALSE</span>, <span class='kw'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>fee_settings</span>(lid = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>), old = <span class='fl'>FALSE</span>, <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -151,18 +151,18 @@
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A list or tibble of draft settings.</p>
+    <p>A list or tibble of finance settings.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>draft_settings</span>(<span class='fl'>252353</span>, old = <span class='fl'>TRUE</span>)
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 5 x 8</span><span>
-#&gt;    year type    budget date                trading keepers order       time
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>              </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;list&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>015 SNAKE   </span><span style='color: #BB0000;'>NA</span><span>     2015-08-15 </span><span style='color: #555555;'>16:00:00</span><span> FALSE         0 </span><span style='color: #555555;'>&lt;int [8]&gt;</span><span>    120
-#&gt; </span><span style='color: #555555;'>2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>016 SNAKE   </span><span style='color: #BB0000;'>NA</span><span>     2016-09-05 </span><span style='color: #555555;'>11:30:00</span><span> TRUE          0 </span><span style='color: #555555;'>&lt;int [10]&gt;</span><span>    90
-#&gt; </span><span style='color: #555555;'>3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>017 AUCTION 200    2017-08-31 </span><span style='color: #555555;'>18:00:00</span><span> FALSE         0 </span><span style='color: #555555;'>&lt;int [10]&gt;</span><span>    90
-#&gt; </span><span style='color: #555555;'>4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018 AUCTION 200    2018-09-05 </span><span style='color: #555555;'>18:00:00</span><span> FALSE         0 </span><span style='color: #555555;'>&lt;int [10]&gt;</span><span>    90
-#&gt; </span><span style='color: #555555;'>5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>019 AUCTION 200    2019-09-01 </span><span style='color: #555555;'>23:00:00</span><span> FALSE         0 </span><span style='color: #555555;'>&lt;int [8]&gt;</span><span>     90</div></span></pre>
+    <pre class="examples"><div class='input'><span class='fu'>fee_settings</span>(<span class='fl'>252353</span>, old = <span class='fl'>TRUE</span>)
+</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 5 x 9</span><span>
+#&gt;    year entry  misc  loss trade   add  drop active reserve
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #555555;'>1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>015     0     0     0     0     0     0      0       0
+#&gt; </span><span style='color: #555555;'>2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>016     0     0     0     0     0     0      0       0
+#&gt; </span><span style='color: #555555;'>3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>017    50     0     0     0     0     0      0       0
+#&gt; </span><span style='color: #555555;'>4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018    50     0     0     0     0     0      0       0
+#&gt; </span><span style='color: #555555;'>5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>019    50     0     0     0     0     0      0       0</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
