@@ -15,3 +15,15 @@ test_that("rosters return for past years", {
   expect_length(r, 5)
   expect_length(r[[1]], 8)
 })
+
+test_that("slots are abbreviated", {
+  x <- pos_abbrev(1:2)
+  expect_equal(as.character(x), c("QB", "RB"))
+  expect_s3_class(x, "factor")
+})
+
+test_that("positions are abbreviated", {
+  x <- slot_abbrev(21)
+  expect_equal(as.character(x), "IR")
+  expect_s3_class(x, "factor")
+})

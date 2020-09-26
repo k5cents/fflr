@@ -76,8 +76,8 @@ parse_roster <- function(entry) {
 slot_abbrev <- function(slot) {
   factor(
     x = slot,
-    levels = c("0",  "2",  "4",  "6",  "23", "16", "17", "20"),
-    labels = c("QB", "RB", "WR", "TE", "FX", "DS", "KI", "BE")
+    levels = c("0",  "2",  "4",  "6",  "23", "16", "17", "20", "21"),
+    labels = c("QB", "RB", "WR", "TE", "FX", "DS", "KI", "BE", "IR")
   )
 }
 
