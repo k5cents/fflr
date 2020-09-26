@@ -29,9 +29,9 @@ if (!interactive()) {
 <!-- badges: start -->
 [![Lifecycle: experimental][life_badge]][life_link]
 [![CRAN status][cran_badge]][cran_link]
-[![Codecov test coverage][cov_badge]][cov_link]
 ![Downloads][dl_badge]
 [![R build status][ga_badge]][ga_link]
+[![Codecov test coverage][cov_badge]][cov_link]
 <!-- badges: end -->
 
 The fflr package is used to query the [ESPN Fantasy Football API][api] for both
@@ -126,7 +126,7 @@ contributing to this project, you agree to abide by its terms.
 [cran_link]: https://CRAN.R-project.org/package=fflr
 [ga_badge]: https://github.com/kiernann/fflr/workflows/R-CMD-check/badge.svg
 [ga_link]: https://github.com/kiernann/fflr/actions
-[cov_badge]: https://img.shields.io/codecov/c/github/kiernann/fflr/master.svg
+[cov_badge]: https://codecov.io/gh/kiernann/ffplot/branch/master/graph/badge.svg
 [cov_link]: https://codecov.io/gh/kiernann/fflr?branch=master
 [dl_badge]: https://cranlogs.r-pkg.org/badges/grand-total/fflr
 [api]: https://fantasy.espn.com/apis/v3/games/ffl/
