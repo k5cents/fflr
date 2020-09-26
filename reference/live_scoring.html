@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Current fantasy season — ffl_year • fflr</title>
+<title>Live matchup scoreboard — live_scoring • fflr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Current fantasy season — ffl_year" />
-<meta property="og:description" content="Current fantasy season" />
+<meta property="og:title" content="Live matchup scoreboard — live_scoring" />
+<meta property="og:description" content="Live matchup scoreboard" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -119,31 +119,53 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Current fantasy season</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/ffl-info.R'><code>R/ffl-info.R</code></a></small>
-    <div class="hidden name"><code>ffl_year.Rd</code></div>
+    <h1>Live matchup scoreboard</h1>
+    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/live-scoring.R'><code>R/live-scoring.R</code></a></small>
+    <div class="hidden name"><code>live_scoring.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Current fantasy season</p>
+    <p>Live matchup scoreboard</p>
     </div>
 
-    <pre class="usage"><span class='fu'>ffl_year</span>(offset = <span class='fl'>0</span>)</pre>
+    <pre class="usage"><span class='fu'>live_scoring</span>(lid = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>), old = <span class='fl'>FALSE</span>, <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>offset</th>
-      <td><p>Add negative or positive values.</p></td>
+      <th>lid</th>
+      <td><p>ESPN League ID, defaults to <code><a href='https://rdrr.io/r/base/options.html'>getOption("lid")</a></code> (see <code><a href='set_lid.html'>set_lid()</a></code>).</p></td>
+    </tr>
+    <tr>
+      <th>old</th>
+      <td><p>If <code>FALSE</code> (default), return only the current season's data. If
+<code>TRUE</code>, return a list with all prior seasons.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Additional API query arguments; use "week" as a shorthand for
+"ScoringPeriodId" to display past rosters, etc.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A tibble of scores.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span>()
-</div><div class='output co'>#&gt; [1] "2020-09-26 02:48:34 UTC"</div><div class='input'><span class='fu'>ffl_year</span>()
-</div><div class='output co'>#&gt; [1] 2020</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>live_scoring</span>(<span class='fl'>252353</span>)
+</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 8 x 5</span><span>
+#&gt;    week match  team score  proj
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #555555;'>1</span><span>     3     9    11   0    99.0
+#&gt; </span><span style='color: #555555;'>2</span><span>     3     9     1   0   102. 
+#&gt; </span><span style='color: #555555;'>3</span><span>     3    10     4  24.9 111. 
+#&gt; </span><span style='color: #555555;'>4</span><span>     3    10     6   9.2  97.1
+#&gt; </span><span style='color: #555555;'>5</span><span>     3    11     3   0    98.3
+#&gt; </span><span style='color: #555555;'>6</span><span>     3    11     8   6.9  89.0
+#&gt; </span><span style='color: #555555;'>7</span><span>     3    12    10   0    85.7
+#&gt; </span><span style='color: #555555;'>8</span><span>     3    12     5   7.5  91.4</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
