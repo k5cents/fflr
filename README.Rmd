@@ -29,9 +29,8 @@ if (!interactive()) {
 <!-- badges: start -->
 [![Lifecycle: experimental][life_badge]][life_link]
 [![CRAN status][cran_badge]][cran_link]
-![Downloads][dl_badge]
-[![R build status][ga_badge]][ga_link]
 [![Codecov test coverage][cov_badge]][cov_link]
+[![R build status][ga_badge]][ga_link]
 <!-- badges: end -->
 
 The fflr package is used to query the [ESPN Fantasy Football API][api] for both
