@@ -7,6 +7,7 @@ test_that("movies returns for current year", {
   expect_length(m, 14)
   expect_s3_class(m$date, "POSIXct")
   expect_equal(unique(nchar(m$tx)), 8)
+  expect_s3_class(m$from_slot, "factor")
 })
 
 test_that("moves error for past years", {

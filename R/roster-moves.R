@@ -31,9 +31,12 @@ parse_moves <- function(t, y = NULL) {
   i_nm <- c("from_slot", "from_team", "id", "to_slot", "to_team", "move")
   names(i)[2:7] <- i_nm
   i$from_slot[i$from_slot == -1L] <- NA_integer_
+  i$from_slot <- slot_abbrev(i$from_slot)
+  i$to_slot <- slot_abbrev(i$to_slot)
   i$from_team[i$from_team == 0] <- NA_integer_
   i$to_slot[i$to_slot == -1L] <- NA_integer_
-  t <- t[, c(11, 14, 1, 12, 9, 13, 3)]
+  i$to_team[i$to_team == 0] <- NA_integer_
+  t <- t[, c(13, 16, 1, 14, 9, 15, 3)]
   names(t) <- c("week", "type", "bid", "status", "date", "team", "tx")
   t$date <- ffl_date(t$date)
   t$bid[t$bid == 0] <- NA_integer_
