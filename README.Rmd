@@ -37,6 +37,9 @@ The fflr package is used to query the [ESPN Fantasy Football API][api] for both
 the current and prior seasons. Get data on fantasy league members, teams, and
 individual athletes.
 
+This package was designed and tested for my own 10-man standard league. Most
+functions should for other leagues, but contributions are welcome.
+
 ## Installation
 
 You can install the released version of `fflr` from [GitHub][fflr] with:
@@ -52,14 +55,19 @@ Here we see how to scrape teams, rosters, scores, and waiver pickups.
 
 Use `set_lid()` to easily define your league ID (from the URL) in `options()`.
 
-```{r team_roster}
+```{r set_lid}
 library(fflr)
-set_lid(252353) 
-# https://fantasy.espn.com/football/team?leagueId=252353&teamId=6
-# get last week's roster
+library(ffplot)
+library(tidyverse)
+set_lid(252353) # check URL
+```
+
+```{r team_roster}
 rosters <- team_roster(week = ffl_week(-1))
 (my_roster <- rosters[[5]][-5])
-# compare vs optimal
+```
+
+```{r best_roster}
 my_best <- best_roster(my_roster)
 roster_score(my_roster)
 roster_score(my_best)
@@ -68,16 +76,14 @@ roster_score(my_best)
 Matchups return as a [tidy](https://w.wiki/Jzz) tibble of weekly scores by team.
 
 ```{r league_teams}
-library(tidyverse)
 (teams <- league_teams()[, -3])
 scores <- weekly_matchups()
 ```
 
-This makes scores over the season easy to plot. The experimental [ffplot] 
-package makes to easy to create those plots. 
+This makes scores over the season easy to plot. The **experimental** [ffplot] 
+package makes such plots automatically. 
 
 ```{r plot_scores, echo=FALSE}
-library(ffplot)
 weekly_scores(scores)
 ```
 

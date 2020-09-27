@@ -20,6 +20,9 @@ API](https://fantasy.espn.com/apis/v3/games/ffl/) for both the current
 and prior seasons. Get data on fantasy league members, teams, and
 individual athletes.
 
+This package was designed and tested for my own 10-man standard league.
+Most functions should for other leagues, but contributions are welcome.
+
 ## Installation
 
 You can install the released version of `fflr` from
@@ -39,9 +42,12 @@ Use `set_lid()` to easily define your league ID (from the URL) in
 
 ``` r
 library(fflr)
-set_lid(252353) 
-# https://fantasy.espn.com/football/team?leagueId=252353&teamId=6
-# get last week's roster
+library(ffplot)
+library(tidyverse)
+set_lid(252353) # check URL
+```
+
+``` r
 rosters <- team_roster(week = ffl_week(-1))
 (my_roster <- rosters[[5]][-5])
 #> # A tibble: 16 x 14
@@ -63,7 +69,9 @@ rosters <- team_roster(week = ffl_week(-1))
 #> 14  2020     2     0 BE    Christian Kirk       ARI   WR    O       6.92   6   0.0194 0.541 -11.6  
 #> 15  2020     2     6 BE    Ronald    Jones II   TB    RB    A      11.4    8.7 0.177  0.840  -5.02 
 #> 16  2020     2     6 BE    Deebo     Samuel     SF    WR    I       0      0   0.0109 0.720  -4.12
-# compare vs optimal
+```
+
+``` r
 my_best <- best_roster(my_roster)
 roster_score(my_roster)
 #> [1] 129.48
@@ -75,7 +83,6 @@ Matchups return as a [tidy](https://w.wiki/Jzz) tibble of weekly scores
 by team.
 
 ``` r
-library(tidyverse)
 (teams <- league_teams()[, -3])
 #> # A tibble: 8 x 4
 #>    team abbrev name                      year
@@ -91,9 +98,9 @@ library(tidyverse)
 scores <- weekly_matchups()
 ```
 
-This makes scores over the season easy to plot. The experimental
-[ffplot](https://github.com/kiernann/ffplot) package makes to easy to
-create those plots.
+This makes scores over the season easy to plot. The **experimental**
+[ffplot](https://github.com/kiernann/ffplot) package makes such plots
+automatically.
 
 <img src="man/figures/README-plot_scores-1.png" width="100%" />
 
