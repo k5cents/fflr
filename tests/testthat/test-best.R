@@ -15,7 +15,11 @@ test_that("can calculate single best roster", {
 })
 
 test_that("scores stop if pre-game", {
-  s <- ffl_api(252353, old = FALSE)
-  r <- team_roster(252353, old = FALSE, week = s$status$currentMatchupPeriod)
-  expect_error(best_roster(r[[1]]))
+  wday <- weekdays(Sys.Date(), abbreviate = TRUE)
+  if (wday %in% c("Mon", "Tue", "Wed", "Thur")) {
+    r <- team_roster(252353, old = FALSE, week = ffl_week())
+    expect_error(best_roster(r[[1]]))
+  } else {
+    skip("games have started, can't test error")
+  }
 })
