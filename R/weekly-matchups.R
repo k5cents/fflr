@@ -29,8 +29,7 @@ parse_matchup <- function(s, y = NULL) {
   x <- tibble::tibble(
     year = y,
     match = rep(s$id, 2),
-    week = rep(s$matchupPeriodId, 2),
-    # week = factor(rep(s$matchupPeriodId, 2), levels = 1:16),
+    week = factor(rep(s$matchupPeriodId, 2), levels = 1:16),
     team = c(s$home$teamId, s$away$teamId),
     home = is_home,
     score = c(s$home$totalPoints, s$away$totalPoints),
