@@ -38,6 +38,7 @@ parse_trans <- function(teams, y = NULL, w = NULL) {
     year = y,
     week = w,
     team = teams$id,
+    abbrev = factor(teams$abbrev, levels = teams$abbrev),
     waiver = teams$waiverRank,
     counter
   )

@@ -39,7 +39,7 @@ parse_ranks <- function(teams, y = NULL, w = NULL) {
     year = y,
     week = w,
     team = teams$id,
-    abbrev = teams$abbrev,
+    abbrev = factor(teams$abbrev, levels = teams$abbrev),
     draft = teams$draftDayProjectedRank,
     current = teams$currentProjectedRank,
     seed = teams$playoffSeed,
