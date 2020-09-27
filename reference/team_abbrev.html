@@ -128,32 +128,29 @@
     <p>Convert team ID to abbreviation</p>
     </div>
 
-    <pre class="usage"><span class='fu'>team_abbrev</span>(<span class='kw'>team</span>, lid = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>), <span class='kw'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>team_abbrev</span>(<span class='kw'>id</span>, teams = <span class='fu'><a href='league_teams.html'>league_teams</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>)))</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>team</th>
+      <th>id</th>
       <td><p>A integer vector of team numbers to convert.</p></td>
     </tr>
     <tr>
-      <th>lid</th>
-      <td><p>ESPN League ID passed to <code><a href='league_teams.html'>league_teams()</a></code> or the table itself.</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>Arguments passed to <code><a href='league_teams.html'>league_teams()</a></code>.</p></td>
+      <th>teams</th>
+      <td><p>A table of teams from <code><a href='league_teams.html'>league_teams()</a></code>.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A character vector of team abbreviations.</p>
+    <p>A factor vector of team abbreviations.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>team_abbrev</span>(team = <span class='fl'>6</span>, lid = <span class='fl'>252353</span>)
-</div><div class='output co'>#&gt; [1] "KIER"</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>team_abbrev</span>(id = <span class='fl'>6</span>)
+</div><div class='output co'>#&gt; [1] KIER
+#&gt; Levels: AGUS PEPE BILL CART KIER CORE NICK KYLE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
