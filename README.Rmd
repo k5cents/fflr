@@ -39,7 +39,7 @@ individual athletes.
 
 ## Installation
 
-You can install the released version of `fflr` from GitHub with:
+You can install the released version of `fflr` from [GitHub][fflr] with:
 
 ```r
 # install.packages("remotes")
@@ -73,22 +73,12 @@ library(tidyverse)
 scores <- weekly_matchups()
 ```
 
-This makes scores over the season easy to plot.
+This makes scores over the season easy to plot. The experimental [ffplot] 
+package makes to easy to create those plots. 
 
 ```{r plot_scores, echo=FALSE}
-scores %>% 
-  mutate(across(week, fct_rev)) %>% 
-  filter(!is.na(score)) %>% 
-  left_join(teams) %>% 
-  group_by(abbrev) %>% 
-  mutate(cum = coalesce(score + lag(score), score))  %>% 
-  ggplot(aes(reorder(abbrev, score), score)) +
-  geom_col(aes(fill = week)) +
-  scale_fill_brewer(palette = "Dark2", guide = FALSE) +
-  scale_y_continuous(breaks = seq(0, 350, by = 25)) +
-  geom_text(aes(label = score, y = cum), nudge_y = -10) +
-  coord_flip() +
-  labs(x = "Team", y = "Score")
+library(ffplot)
+weekly_scores(scores)
 ```
 
 Some functions like `roster_moves()` only define players by their unique ID.
@@ -130,5 +120,7 @@ contributing to this project, you agree to abide by its terms.
 [cov_link]: https://codecov.io/gh/kiernann/fflr?branch=master
 [dl_badge]: https://cranlogs.r-pkg.org/badges/grand-total/fflr
 [api]: https://fantasy.espn.com/apis/v3/games/ffl/
+[ffplot]: https://github.com/kiernann/ffplot
+[fflr]: https://github.com/kiernann/fflr
 [coc]: https://contributor-covenant.org/version/1/0/0/CODE_OF_CONDUCT.html
 <!-- refs: end -->

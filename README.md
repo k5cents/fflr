@@ -22,7 +22,8 @@ individual athletes.
 
 ## Installation
 
-You can install the released version of `fflr` from GitHub with:
+You can install the released version of `fflr` from
+[GitHub](https://github.com/kiernann/fflr) with:
 
 ``` r
 # install.packages("remotes")
@@ -46,22 +47,22 @@ rosters <- team_roster(week = ffl_week(-1))
 #> # A tibble: 16 x 14
 #>     year  week  team slot  first     last       pro   pos   status  proj score  start  rost  change
 #>    <int> <int> <int> <fct> <chr>     <chr>      <chr> <fct> <chr>  <dbl> <dbl>  <dbl> <dbl>   <dbl>
-#>  1  2020     2     6 QB    Drew      Brees      NO    QB    A      18.4   14.5 0.368  0.891  -4.47 
+#>  1  2020     2     6 QB    Drew      Brees      NO    QB    A      18.4   14.5 0.363  0.889  -4.48 
 #>  2  2020     2     6 RB    Alvin     Kamara     NO    RB    A      14.6   29.4 0.997  1.00    0.002
-#>  3  2020     2     6 RB    Jonathan  Taylor     IND   RB    A      12.8   17   0.861  0.982   1.77 
-#>  4  2020     2     6 WR    DeAndre   Hopkins    ARI   WR    A      10.9   12.8 0.996  0.999   0.003
-#>  5  2020     2     6 WR    Marvin    Jones Jr.  DET   WR    A       9.98   8.3 0.381  0.890   0.028
-#>  6  2020     2     6 TE    Travis    Kelce      KC    TE    A      10.1   15   0.997  1.00    0.001
-#>  7  2020     2     6 FX    David     Johnson    HOU   RB    A      12.8    5   0.667  0.978  -0.668
-#>  8  2020     2     6 DS    Steelers  D/ST       PIT   DS    <NA>    6.19  16.5 0.962  0.996   0.168
-#>  9  2020     2     6 KI    Greg      Zuerlein   DAL   KI    A       7.74  11   0.806  0.863  -2.00 
-#> 10  2020     2     6 BE    Odell     Beckham J… CLE   WR    A       8.87  13.4 0.808  0.987   0.144
-#> 11  2020     2     6 BE    Cooper    Kupp       LAR   WR    A       8.58   8   0.683  0.971  -0.672
-#> 12  2020     2     0 BE    D'Andre   Swift      DET   RB    A       6.12   7.2 0.201  0.843  -1.8  
-#> 13  2020     2     6 BE    David     Montgomery CHI   RB    A      10.1   18.7 0.443  0.915   1.53 
-#> 14  2020     2     6 BE    Christian Kirk       ARI   WR    O       6.92   6   0.0246 0.553 -12.4  
-#> 15  2020     2     6 BE    Ronald    Jones II   TB    RB    A      11.4    8.7 0.184  0.843  -4.33 
-#> 16  2020     2     0 BE    Deebo     Samuel     SF    WR    I       0      0   0.0110 0.721  -4.50
+#>  3  2020     2     6 RB    Jonathan  Taylor     IND   RB    A      12.8   17   0.867  0.982   1.71 
+#>  4  2020     2     6 WR    DeAndre   Hopkins    ARI   WR    A      10.9   12.8 0.997  0.999   0.002
+#>  5  2020     2     6 WR    Marvin    Jones Jr.  DET   WR    A       9.98   8.3 0.378  0.889  -0.625
+#>  6  2020     2     6 TE    Travis    Kelce      KC    TE    A      10.1   15   0.997  1.00    0    
+#>  7  2020     2     6 FX    David     Johnson    HOU   RB    A      12.8    5   0.654  0.978  -0.681
+#>  8  2020     2     6 DS    Steelers  D/ST       PIT   DS    <NA>    6.19  16.5 0.963  0.996   0.172
+#>  9  2020     2     6 KI    Greg      Zuerlein   DAL   KI    A       7.74  11   0.805  0.862  -1.89 
+#> 10  2020     2     6 BE    Odell     Beckham J… CLE   WR    A       8.87  13.4 0.809  0.987   0.133
+#> 11  2020     2     6 BE    Cooper    Kupp       LAR   WR    A       8.58   8   0.680  0.971  -0.572
+#> 12  2020     2     0 BE    D'Andre   Swift      DET   RB    A       6.12   7.2 0.202  0.842  -1.71 
+#> 13  2020     2     6 BE    David     Montgomery CHI   RB    A      10.1   18.7 0.447  0.915   1.59 
+#> 14  2020     2     0 BE    Christian Kirk       ARI   WR    O       6.92   6   0.0194 0.541 -11.6  
+#> 15  2020     2     6 BE    Ronald    Jones II   TB    RB    A      11.4    8.7 0.177  0.840  -5.02 
+#> 16  2020     2     6 BE    Deebo     Samuel     SF    WR    I       0      0   0.0109 0.720  -4.12
 # compare vs optimal
 my_best <- best_roster(my_roster)
 roster_score(my_roster)
@@ -78,19 +79,21 @@ library(tidyverse)
 (teams <- league_teams()[, -3])
 #> # A tibble: 8 x 4
 #>    team abbrev name                      year
-#>   <int> <chr>  <chr>                    <int>
+#>   <int> <fct>  <chr>                    <int>
 #> 1     1 AGUS   Obi-Wan Mahomey           2020
 #> 2     3 PEPE   JuJu's Bizarre Adventure  2020
 #> 3     4 BILL   Bill's Fantasy Team       2020
 #> 4     5 CART   Kenyan Younghoes          2020
 #> 5     6 KIER   The Nuklear Option        2020
 #> 6     8 CORE   BIG TRUZZZ                2020
-#> 7    10 NICK   Kareemy Johnson           2020
+#> 7    10 NICK   Dallas Goedert  Pregnant  2020
 #> 8    11 KYLE   Harry Ruggs               2020
 scores <- weekly_matchups()
 ```
 
-This makes scores over the season easy to plot.
+This makes scores over the season easy to plot. The experimental
+[ffplot](https://github.com/kiernann/ffplot) package makes to easy to
+create those plots.
 
 <img src="man/figures/README-plot_scores-1.png" width="100%" />
 
@@ -116,9 +119,9 @@ waiver_adds %>%
   select(15:18, bid, team = to_team) %>%
   left_join(teams[, 1:2]) %>% 
   arrange(desc(bid))
-#> # A tibble: 16 x 7
+#> # A tibble: 19 x 7
 #>    first      last          pro   pos     bid  team abbrev
-#>    <chr>      <chr>         <chr> <fct> <int> <int> <chr> 
+#>    <chr>      <chr>         <chr> <fct> <int> <int> <fct> 
 #>  1 James      Robinson      JAX   RB       32     4 BILL  
 #>  2 Joshua     Kelley        LAC   RB       16     4 BILL  
 #>  3 Jonnu      Smith         TEN   TE        7     1 AGUS  
@@ -128,13 +131,16 @@ waiver_adds %>%
 #>  7 Jarvis     Landry        CLE   WR        5     8 CORE  
 #>  8 Darius     Slayton       NYG   WR        5     1 AGUS  
 #>  9 Mike       Davis         CAR   RB        4     6 KIER  
-#> 10 Darrell    Henderson Jr. LAR   RB        3     8 CORE  
-#> 11 Zane       Gonzalez      ARI   KI        3     1 AGUS  
-#> 12 Russell    Gage          ATL   WR        2    10 NICK  
-#> 13 Devonta    Freeman       NYG   RB        2     8 CORE  
-#> 14 Dallas     Goedert       PHI   TE        1    10 NICK  
-#> 15 Washington D/ST          WSH   DS        1     5 CART  
-#> 16 Jerick     McKinnon      SF    RB        1     4 BILL
+#> 10 Colts      D/ST          IND   DS        4    11 KYLE  
+#> 11 Darrell    Henderson Jr. LAR   RB        3     8 CORE  
+#> 12 Zane       Gonzalez      ARI   KI        3     1 AGUS  
+#> 13 Russell    Gage          ATL   WR        2    10 NICK  
+#> 14 Devonta    Freeman       NYG   RB        2     8 CORE  
+#> 15 Dallas     Goedert       PHI   TE        1    10 NICK  
+#> 16 Washington D/ST          WSH   DS        1     5 CART  
+#> 17 Jason      Myers         SEA   KI        1    11 KYLE  
+#> 18 Deebo      Samuel        SF    WR        1     6 KIER  
+#> 19 Jerick     McKinnon      SF    RB        1     4 BILL
 ```
 
 -----
