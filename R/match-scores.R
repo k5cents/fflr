@@ -1,37 +1,37 @@
-#' Fantasy matchups
+#' Fantasy matchup scores
 #'
 #' The weekly matchups between home and away teams, with score and winner.
 #'
 #' @inheritParams draft_picks
 #' @return A tibble (or list) of draft picks.
 #' @examples
-#' weekly_matchups(lid = 252353)
+#' match_scores(lid = 252353)
 #' @importFrom tibble as_tibble
 #' @export
-weekly_matchups <- function(lid = getOption("lid"), old = FALSE, ...) {
+match_scores <- function(lid = getOption("lid"), old = FALSE, ...) {
   data <- ffl_api(lid, old, view = c("mMatchup", "mTeam"), ...)
   if (old) {
     out <- rep(list(NA), length(data$schedule))
     for (i in seq_along(out)) {
-      teams <- data.frame(
+      t <- data.frame(
         team = data$teams[[i]]$id,
         abbrev = factor(data$teams[[i]]$abbrev, levels = data$teams[[i]]$abbrev)
       )
       out[[i]] <- parse_matchup(
         s = data$schedule[[i]],
         y = data$seasonId[i],
-        t = teams
+        t = t
       )
     }
   } else {
-    teams <- data.frame(
+    t <- data.frame(
       team = data$teams$id,
       abbrev = factor(data$teams$abbrev, levels = data$teams$abbrev)
     )
     out <- parse_matchup(
       s = data$schedule,
       y = data$seasonId,
-      t = teams
+      t = t
     )
   }
   return(out)
@@ -52,12 +52,12 @@ parse_matchup <- function(s, y = NULL, t = NULL) {
     score = c(s$home$totalPoints, s$away$totalPoints),
     winner = (rep(s$winner, 2) == "HOME") == is_home
   )
-  x <- x[order(x$match),]
+  x <- x[order(x$match), ]
   x$score[x$score == 0] <- NA
   x$power = NA_integer_
   for (w in unique(x$week)) {
     y <- x$score[x$week == w]
     x$power[x$week == w] <- match(y, sort(y)) - 1
   }
-  return(x)
+  return(x[!is.na(x$score), ])
 }
