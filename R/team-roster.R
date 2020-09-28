@@ -66,9 +66,11 @@ parse_roster <- function(entry) {
     status = injury_status,
     proj  = proj_dbl,
     score = score_dbl,
-    start = player$ownership$percentStarted/100,
-    rost = player$ownership$percentOwned/100,
-    change = round(player$ownership$percentChange, digits = 3)
+    start = player$ownership$percentStarted,
+    rost = player$ownership$percentOwned,
+    change = round(player$ownership$percentChange, digits = 3),
+    acq_type = entry$acquisitionType,
+    acq_date = ffl_date(entry$acquisitionDate)
   )
   return(x[order(x$slot), ])
 }
