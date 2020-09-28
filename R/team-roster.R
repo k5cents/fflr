@@ -73,6 +73,13 @@ parse_roster <- function(entry) {
   return(x[order(x$slot), ])
 }
 
+# c(
+#   QB = "0", TQ = "1", RB = "2", RW = "3", WR = "4", WT = "5", TE = "6",
+#   FX = "7", OP = "8", DT = "9", DE = "10", LB = "11", ER = "12", DL = "13",
+#   CB = "14", SF = "15", DB = "16", DP = "17", DS = "18", KI = "19", PU = "20",
+#   HC = "21", BE = "22", IR = "23"
+# )
+
 slot_abbrev <- function(slot) {
   factor(
     x = slot,
