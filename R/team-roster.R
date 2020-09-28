@@ -61,7 +61,7 @@ parse_roster <- function(entry) {
     id = player$id,
     first = player$firstName,
     last = player$lastName,
-    pro  = nfl_teams$nfl[match(player$proTeamId, nfl_teams$team)],
+    pro  = fflr::nfl_teams$abbrev[match(player$proTeamId, fflr::nfl_teams$team)],
     pos = pos_abbrev(player$defaultPositionId),
     status = injury_status,
     proj  = proj_dbl,

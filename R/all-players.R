@@ -67,7 +67,7 @@ all_players <- function(lid = getOption("lid")) {
     id = p$player$id,
     first = p$player$firstName,
     last = p$player$lastName,
-    pro  = nfl_teams$nfl[match(p$player$proTeamId, nfl_teams$team)],
+    pro  = fflr::nfl_teams$abbrev[match(p$player$proTeamId, fflr::nfl_teams$team)],
     pos = pos_abbrev(p$player$defaultPositionId),
     status = abbreviate(p$player$injuryStatus, minlength = 1),
     start = p$player$ownership$percentStarted/100,

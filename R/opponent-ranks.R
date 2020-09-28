@@ -1,9 +1,7 @@
-#' Fantasy team roster
-#'
-#' List all available players.
+#' NFL team performance against positions
 #'
 #' @param lid ESPN League ID, defaulted because all return the same data.
-#' @return A tibble (or list) of players on a roster.
+#' @return A tibble of performance stats.
 #' @examples
 #' opponent_ranks()
 #' @importFrom tibble as_tibble
@@ -27,7 +25,7 @@ opponent_ranks <- function(lid = getOption("lid")) {
   )
   for (i in seq_along(oprk)) {
     for (s in 1:6) {
-      oprk[[i]]$pro <- nfl_teams$nfl[i]
+      oprk[[i]]$pro <- fflr::nfl_teams$abbrev[i]
       oprk[[i]]$rank[s] <- p[[s]]$ratingsByOpponent[i][[1]]$rank
       oprk[[i]]$avg[s] <- p[[s]]$ratingsByOpponent[i][[1]]$average
     }

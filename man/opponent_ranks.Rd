@@ -2,7 +2,7 @@
 % Please edit documentation in R/opponent-ranks.R
 \name{opponent_ranks}
 \alias{opponent_ranks}
-\title{Fantasy team roster}
+\title{NFL team performance against positions}
 \usage{
 opponent_ranks(lid = getOption("lid"))
 }
@@ -10,10 +10,10 @@ opponent_ranks(lid = getOption("lid"))
 \item{lid}{ESPN League ID, defaulted because all return the same data.}
 }
 \value{
-A tibble (or list) of players on a roster.
+A tibble of performance stats.
 }
 \description{
-List all available players.
+NFL team performance against positions
 }
 \examples{
 opponent_ranks()
