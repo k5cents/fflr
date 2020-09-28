@@ -3,6 +3,7 @@ library(fflr)
 
 test_that("teams return for current year", {
   t <- league_teams(252353, old = FALSE)
+  expect_type(t$owners, "list")
   expect_s3_class(t, "tbl")
 })
 

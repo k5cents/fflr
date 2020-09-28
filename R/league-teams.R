@@ -24,13 +24,6 @@ league_teams <- function(lid = getOption("lid"), old = FALSE, ...) {
 
 parse_teams <- function(t) {
   t$name <- paste(t$location, t$nickname)
-  if (max(unlist(lapply(t$owners, length))) == 1) {
-    empty <- which(!unlist(lapply(t$owners, length)))
-    if (length(empty) > 0) {
-      t$owners[empty] <- NA_character_
-    }
-    t$owners <- unlist(t$owners)
-  }
   names(t)[2] <- "team"
   t$abbrev <- factor(t$abbrev, levels = t$abbrev)
   tibble::as_tibble(t[, c(2, 1, 5, 6)])
