@@ -18,4 +18,4 @@ gaa_teams <- structure(
   class = c("tbl_df", "tbl", "data.frame")
 )
 
-use_data(gaa_teams, overwrite = TRUE, internal = TRUE)
+use_data(gaa_teams, overwrite = TRUE)
