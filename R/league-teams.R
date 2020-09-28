@@ -14,10 +14,12 @@ league_teams <- function(lid = getOption("lid"), old = FALSE, ...) {
     for (i in seq_along(data$teams)) {
       data$teams[[i]] <- parse_teams(data$teams[[i]])
       data$teams[[i]]$year <- data$seasonId[i]
+      data$teams[[i]] <- data$teams[[i]][, c(5, 1:4)]
     }
   } else {
     data$teams <- parse_teams(data$teams)
     data$teams$year <- data$seasonId
+    data$teams <- data$teams[, c(5, 1:4)]
   }
   return(data$teams)
 }
