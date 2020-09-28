@@ -77,7 +77,7 @@ Matchups return as a [tidy](https://w.wiki/Jzz) tibble of weekly scores by team.
 
 ```{r league_teams}
 (teams <- league_teams()[, -3])
-scores <- weekly_matchups()
+scores <- match_scores()
 ```
 
 This makes scores over the season easy to plot. The **experimental** [ffplot] 
