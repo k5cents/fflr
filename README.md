@@ -51,33 +51,33 @@ set_lid(252353) # check URL
 rosters <- team_roster(week = ffl_week(-1))
 (my_roster <- rosters[[5]][-5])
 #> # A tibble: 16 x 16
-#>     year  week  team slot  first last  pro   pos   status  proj score start  rost  change acq_type
-#>    <int> <int> <int> <fct> <chr> <chr> <chr> <fct> <chr>  <dbl> <dbl> <dbl> <dbl>   <dbl> <lgl>   
-#>  1  2020     2     6 QB    Drew  Brees NO    QB    A      18.4   14.5 35.4   88.7  -4.62  NA      
-#>  2  2020     2     6 RB    Alvin Kama… NO    RB    A      14.6   29.4 99.8  100.    0.002 NA      
-#>  3  2020     2     6 RB    Jona… Tayl… IND   RB    A      12.8   17   87.4   98.2   1.71  NA      
-#>  4  2020     2     6 WR    DeAn… Hopk… ARI   WR    A      10.9   12.8 99.7   99.9   0.002 NA      
-#>  5  2020     2     6 WR    Marv… Jone… DET   WR    A       9.98   8.3 37.6   88.8  -0.763 NA      
-#>  6  2020     2     6 TE    Trav… Kelce KC    TE    A      10.1   15   99.7  100.    0     NA      
-#>  7  2020     2     6 FX    David John… HOU   RB    A      12.8    5   66.0   97.7  -0.694 NA      
-#>  8  2020     2     6 DS    Stee… D/ST  PIT   DS    <NA>    6.19  16.5 96.3   99.6   0.18  NA      
-#>  9  2020     2     6 KI    Greg  Zuer… DAL   KI    A       7.74  11   80.3   86.0  -1.84  NA      
-#> 10  2020     2     6 BE    Odell Beck… CLE   WR    A       8.87  13.4 81.0   98.7   0.113 NA      
-#> 11  2020     2     6 BE    Coop… Kupp  LAR   WR    A       8.58   8   67.6   97.0  -0.632 NA      
-#> 12  2020     2     0 BE    D'An… Swift DET   RB    A       6.12   7.2 20.4   84.0  -1.73  NA      
-#> 13  2020     2     6 BE    David Mont… CHI   RB    A      10.1   18.7 45.4   91.4   1.55  NA      
-#> 14  2020     2     0 BE    Chri… Kirk  ARI   WR    O       6.92   6    1.26  52.8 -12.9   NA      
-#> 15  2020     2     6 BE    Rona… Jone… TB    RB    A      11.4    8.7 16.6   83.7  -5.44  NA      
-#> 16  2020     2     6 BE    Deebo Samu… SF    WR    I       0      0    1.09  71.7  -3.90  NA      
+#>     year  week  team slot  first last  pro   pos   status  proj score  start  rost change acq_type
+#>    <int> <int> <int> <fct> <chr> <chr> <fct> <fct> <chr>  <dbl> <dbl>  <dbl> <dbl>  <dbl> <lgl>   
+#>  1  2020     3     6 QB    Gard… Mins… Jax   QB    A      19.9    9.2 32.4    68.0 48.5   NA      
+#>  2  2020     3     6 RB    Alvin Kama… NO    RB    A      17.1   31.7 99.8   100.   0.002 NA      
+#>  3  2020     3     6 RB    Jona… Tayl… Ind   RB    A      15.3   12.2 87.4    98.2  1.71  NA      
+#>  4  2020     3     6 WR    DeAn… Hopk… Ari   WR    A      11.8   13.7 99.7   100.   0.025 NA      
+#>  5  2020     3     6 WR    Odell Beck… Cle   WR    A       8.82   5.9 83.5    99.3  0.778 NA      
+#>  6  2020     3     6 TE    Trav… Kelce KC    TE    A      10.1    8.7 99.7   100.   0.019 NA      
+#>  7  2020     3     6 FX    David John… Hou   RB    A      11.6   10.6 66.0    97.7 -0.694 NA      
+#>  8  2020     3     6 DS    Stee… D/ST  Pit   DS    <NA>    7.50   7.5 96.1    99.8  0.417 NA      
+#>  9  2020     3     6 KI    Greg  Zuer… Dal   KI    A       7.91   9   83.9    88.8  1.12  NA      
+#> 10  2020     3     6 BE    Drew  Brees NO    QB    A      17.9   23.5 42.4    91.6 -1.60  NA      
+#> 11  2020     3     6 BE    Coop… Kupp  LAR   WR    A       8.37  16.7 79.7    98.7  1.13  NA      
+#> 12  2020     3     6 BE    David Mont… Chi   RB    A       9.32   5.4 45.4    91.4  1.55  NA      
+#> 13  2020     3     6 BE    Rona… Jone… TB    RB    A       7.69   7.3 16.6    83.7 -5.44  NA      
+#> 14  2020     3     6 BE    Marv… Jone… Det   WR    A       8.90   5.1 40.5    93.8  3.95  NA      
+#> 15  2020     3     6 BE    Mike  Davis Car   RB    A       9.32  15.1 44.3    77.6 76.8   NA      
+#> 16  2020     3     6 IR    Deebo Samu… SF    WR    I       0      0    0.811  78.1  3.01  NA      
 #> # … with 1 more variable: acq_date <dttm>
 ```
 
 ``` r
 my_best <- best_roster(my_roster)
 roster_score(my_roster)
-#> [1] 129.48
+#> [1] 108.5
 roster_score(my_best)
-#> [1] 148.28
+#> [1] 138.12
 ```
 
 Matchups return as a [tidy](https://w.wiki/Jzz) tibble of weekly scores
@@ -110,7 +110,7 @@ ID.
 
 ``` r
 waiver_adds <- 
-  roster_moves() %>% 
+  roster_moves(week = 3) %>% 
   filter(
     type == "WAIVER", 
     status == "EXECUTED",
@@ -118,35 +118,35 @@ waiver_adds <-
   )
 ```
 
-The included `players` tibble identifies all 1056 players (as of
-September 25th, 2020).
+The included `nfl_players` tibble identifies all 1059 players (as of
+September 30th, 2020).
 
 ``` r
 waiver_adds %>% 
-  left_join(players) %>% 
+  left_join(nfl_players) %>% 
   select(15:18, bid, team = to_team) %>%
   left_join(teams[, 1:2]) %>% 
   arrange(desc(bid))
 #> # A tibble: 19 x 7
 #>    first      last          pro   pos     bid  team  year
-#>    <chr>      <chr>         <chr> <fct> <int> <int> <int>
-#>  1 James      Robinson      JAX   RB       32     4  2020
+#>    <chr>      <chr>         <fct> <fct> <int> <int> <int>
+#>  1 James      Robinson      Jax   RB       32     4  2020
 #>  2 Joshua     Kelley        LAC   RB       16     4  2020
-#>  3 Jonnu      Smith         TEN   TE        7     1  2020
-#>  4 Mike       Gesicki       MIA   TE        6     5  2020
-#>  5 Gardner    Minshew II    JAX   QB        5     6  2020
+#>  3 Jonnu      Smith         Ten   TE        7     1  2020
+#>  4 Mike       Gesicki       Mia   TE        6     5  2020
+#>  5 Gardner    Minshew II    Jax   QB        5     6  2020
 #>  6 Buccaneers D/ST          TB    DS        5     1  2020
-#>  7 Jarvis     Landry        CLE   WR        5     8  2020
+#>  7 Jarvis     Landry        Cle   WR        5     8  2020
 #>  8 Darius     Slayton       NYG   WR        5     1  2020
-#>  9 Mike       Davis         CAR   RB        4     6  2020
-#> 10 Colts      D/ST          IND   DS        4    11  2020
+#>  9 Mike       Davis         Car   RB        4     6  2020
+#> 10 Colts      D/ST          Ind   DS        4    11  2020
 #> 11 Darrell    Henderson Jr. LAR   RB        3     8  2020
-#> 12 Zane       Gonzalez      ARI   KI        3     1  2020
-#> 13 Russell    Gage          ATL   WR        2    10  2020
+#> 12 Zane       Gonzalez      Ari   KI        3     1  2020
+#> 13 Russell    Gage          Atl   WR        2    10  2020
 #> 14 Devonta    Freeman       NYG   RB        2     8  2020
-#> 15 Dallas     Goedert       PHI   TE        1    10  2020
-#> 16 Washington D/ST          WSH   DS        1     5  2020
-#> 17 Jason      Myers         SEA   KI        1    11  2020
+#> 15 Dallas     Goedert       Phi   TE        1    10  2020
+#> 16 Washington D/ST          Wsh   DS        1     5  2020
+#> 17 Jason      Myers         Sea   KI        1    11  2020
 #> 18 Deebo      Samuel        SF    WR        1     6  2020
 #> 19 Jerick     McKinnon      SF    RB        1     4  2020
 ```

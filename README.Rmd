@@ -91,7 +91,7 @@ Some functions like `roster_moves()` only define players by their unique ID.
 
 ```{r waiver_adds}
 waiver_adds <- 
-  roster_moves() %>% 
+  roster_moves(week = 3) %>% 
   filter(
     type == "WAIVER", 
     status == "EXECUTED",
@@ -99,12 +99,12 @@ waiver_adds <-
   )
 ```
 
-The included `players` tibble identifies all `r nrow(players)` players (as of
-September 25th, 2020).
+The included `nfl_players` tibble identifies all `r nrow(nfl_players)` players
+(as of September 30th, 2020).
 
 ```{r join_player}
 waiver_adds %>% 
-  left_join(players) %>% 
+  left_join(nfl_players) %>% 
   select(15:18, bid, team = to_team) %>%
   left_join(teams[, 1:2]) %>% 
   arrange(desc(bid))
