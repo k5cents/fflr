@@ -3,7 +3,7 @@
 \docType{data}
 \name{gaa_teams}
 \alias{gaa_teams}
-\title{Team abbreviations in the GAA}
+\title{2015-2020 GAA Teams}
 \format{
 A data frame with 13 rows and 3 variables:
 \describe{
