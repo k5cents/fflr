@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Fantasy team roster — opponent_ranks • fflr</title>
+<title>NFL team performance against positions — opponent_ranks • fflr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Fantasy team roster — opponent_ranks" />
-<meta property="og:description" content="List all available players." />
+<meta property="og:title" content="NFL team performance against positions — opponent_ranks" />
+<meta property="og:description" content="NFL team performance against positions" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.2</span>
       </span>
     </div>
 
@@ -119,13 +119,13 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Fantasy team roster</h1>
+    <h1>NFL team performance against positions</h1>
     <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/opponent-ranks.R'><code>R/opponent-ranks.R</code></a></small>
     <div class="hidden name"><code>opponent_ranks.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>List all available players.</p>
+    <p>NFL team performance against positions</p>
     </div>
 
     <pre class="usage"><span class='fu'>opponent_ranks</span>(lid = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>))</pre>
@@ -141,23 +141,23 @@
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble (or list) of players on a roster.</p>
+    <p>A tibble of performance stats.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>opponent_ranks</span>()
 </div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 192 x 4</span><span>
-#&gt;    pro   pos    rank   avg
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span> ATL   DS        4 -</span><span style='color: #BB0000;'>3.25</span><span>
-#&gt; </span><span style='color: #555555;'> 2</span><span> ATL   QB       32 35.8 
-#&gt; </span><span style='color: #555555;'> 3</span><span> ATL   RB       20 22.2 
-#&gt; </span><span style='color: #555555;'> 4</span><span> ATL   WR       29 30.3 
-#&gt; </span><span style='color: #555555;'> 5</span><span> ATL   TE       25 13.2 
-#&gt; </span><span style='color: #555555;'> 6</span><span> ATL   KI       26 10   
-#&gt; </span><span style='color: #555555;'> 7</span><span> BUF   DS       10 -</span><span style='color: #BB0000;'>1</span><span>   
-#&gt; </span><span style='color: #555555;'> 8</span><span> BUF   QB       12 17.8 
-#&gt; </span><span style='color: #555555;'> 9</span><span> BUF   RB       10 16.8 
-#&gt; </span><span style='color: #555555;'>10</span><span> BUF   WR       17 21.5 
+#&gt;    pro   pos    rank    avg
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #555555;'> 1</span><span> FA    DS        4 -</span><span style='color: #BB0000;'>2.17</span><span> 
+#&gt; </span><span style='color: #555555;'> 2</span><span> FA    QB       32 33.5  
+#&gt; </span><span style='color: #555555;'> 3</span><span> FA    RB       12 17.9  
+#&gt; </span><span style='color: #555555;'> 4</span><span> FA    WR       30 32.0  
+#&gt; </span><span style='color: #555555;'> 5</span><span> FA    TE       31 15.3  
+#&gt; </span><span style='color: #555555;'> 6</span><span> FA    KI       17  8.33 
+#&gt; </span><span style='color: #555555;'> 7</span><span> Atl   DS       12  0.667
+#&gt; </span><span style='color: #555555;'> 8</span><span> Atl   QB       24 20.9  
+#&gt; </span><span style='color: #555555;'> 9</span><span> Atl   RB       11 17.8  
+#&gt; </span><span style='color: #555555;'>10</span><span> Atl   WR       23 26.7  
 #&gt; </span><span style='color: #555555;'># … with 182 more rows</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

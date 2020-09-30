@@ -39,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.2</span>
       </span>
     </div>
 
@@ -108,90 +108,91 @@
 <div class="sourceCode" id="cb3"><pre class="downlit">
 <span class="kw">rosters</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/team_roster.html">team_roster</a></span>(week = <span class="fu"><a href="reference/ffl_week.html">ffl_week</a></span>(<span class="op">-</span><span class="fl">1</span>))
 (<span class="kw">my_roster</span> <span class="op">&lt;-</span> <span class="kw">rosters</span>[[<span class="fl">5</span>]][<span class="op">-</span><span class="fl">5</span>])
-<span class="co">#&gt; # A tibble: 16 x 14</span>
-<span class="co">#&gt;     year  week  team slot  first     last       pro   pos   status  proj score  start  rost  change</span>
-<span class="co">#&gt;    &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt; &lt;fct&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;</span>
-<span class="co">#&gt;  1  2020     2     6 QB    Drew      Brees      NO    QB    A      18.4   14.5 0.363  0.889  -4.48 </span>
-<span class="co">#&gt;  2  2020     2     6 RB    Alvin     Kamara     NO    RB    A      14.6   29.4 0.997  1.00    0.002</span>
-<span class="co">#&gt;  3  2020     2     6 RB    Jonathan  Taylor     IND   RB    A      12.8   17   0.867  0.982   1.71 </span>
-<span class="co">#&gt;  4  2020     2     6 WR    DeAndre   Hopkins    ARI   WR    A      10.9   12.8 0.997  0.999   0.002</span>
-<span class="co">#&gt;  5  2020     2     6 WR    Marvin    Jones Jr.  DET   WR    A       9.98   8.3 0.378  0.889  -0.625</span>
-<span class="co">#&gt;  6  2020     2     6 TE    Travis    Kelce      KC    TE    A      10.1   15   0.997  1.00    0    </span>
-<span class="co">#&gt;  7  2020     2     6 FX    David     Johnson    HOU   RB    A      12.8    5   0.654  0.978  -0.681</span>
-<span class="co">#&gt;  8  2020     2     6 DS    Steelers  D/ST       PIT   DS    &lt;NA&gt;    6.19  16.5 0.963  0.996   0.172</span>
-<span class="co">#&gt;  9  2020     2     6 KI    Greg      Zuerlein   DAL   KI    A       7.74  11   0.805  0.862  -1.89 </span>
-<span class="co">#&gt; 10  2020     2     6 BE    Odell     Beckham J… CLE   WR    A       8.87  13.4 0.809  0.987   0.133</span>
-<span class="co">#&gt; 11  2020     2     6 BE    Cooper    Kupp       LAR   WR    A       8.58   8   0.680  0.971  -0.572</span>
-<span class="co">#&gt; 12  2020     2     0 BE    D'Andre   Swift      DET   RB    A       6.12   7.2 0.202  0.842  -1.71 </span>
-<span class="co">#&gt; 13  2020     2     6 BE    David     Montgomery CHI   RB    A      10.1   18.7 0.447  0.915   1.59 </span>
-<span class="co">#&gt; 14  2020     2     0 BE    Christian Kirk       ARI   WR    O       6.92   6   0.0194 0.541 -11.6  </span>
-<span class="co">#&gt; 15  2020     2     6 BE    Ronald    Jones II   TB    RB    A      11.4    8.7 0.177  0.840  -5.02 </span>
-<span class="co">#&gt; 16  2020     2     6 BE    Deebo     Samuel     SF    WR    I       0      0   0.0109 0.720  -4.12</span>
+<span class="co">#&gt; # A tibble: 16 x 16</span>
+<span class="co">#&gt;     year  week  team slot  first last  pro   pos   status  proj score  start  rost change acq_type</span>
+<span class="co">#&gt;    &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;chr&gt; &lt;chr&gt; &lt;fct&gt; &lt;fct&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;lgl&gt;   </span>
+<span class="co">#&gt;  1  2020     3     6 QB    Gard… Mins… Jax   QB    A      19.9    9.2 32.4    68.0 48.5   NA      </span>
+<span class="co">#&gt;  2  2020     3     6 RB    Alvin Kama… NO    RB    A      17.1   31.7 99.8   100.   0.002 NA      </span>
+<span class="co">#&gt;  3  2020     3     6 RB    Jona… Tayl… Ind   RB    A      15.3   12.2 87.4    98.2  1.71  NA      </span>
+<span class="co">#&gt;  4  2020     3     6 WR    DeAn… Hopk… Ari   WR    A      11.8   13.7 99.7   100.   0.025 NA      </span>
+<span class="co">#&gt;  5  2020     3     6 WR    Odell Beck… Cle   WR    A       8.82   5.9 83.5    99.3  0.778 NA      </span>
+<span class="co">#&gt;  6  2020     3     6 TE    Trav… Kelce KC    TE    A      10.1    8.7 99.7   100.   0.019 NA      </span>
+<span class="co">#&gt;  7  2020     3     6 FX    David John… Hou   RB    A      11.6   10.6 66.0    97.7 -0.694 NA      </span>
+<span class="co">#&gt;  8  2020     3     6 DS    Stee… D/ST  Pit   DS    &lt;NA&gt;    7.50   7.5 96.1    99.8  0.417 NA      </span>
+<span class="co">#&gt;  9  2020     3     6 KI    Greg  Zuer… Dal   KI    A       7.91   9   83.9    88.8  1.12  NA      </span>
+<span class="co">#&gt; 10  2020     3     6 BE    Drew  Brees NO    QB    A      17.9   23.5 42.4    91.6 -1.60  NA      </span>
+<span class="co">#&gt; 11  2020     3     6 BE    Coop… Kupp  LAR   WR    A       8.37  16.7 79.7    98.7  1.13  NA      </span>
+<span class="co">#&gt; 12  2020     3     6 BE    David Mont… Chi   RB    A       9.32   5.4 45.4    91.4  1.55  NA      </span>
+<span class="co">#&gt; 13  2020     3     6 BE    Rona… Jone… TB    RB    A       7.69   7.3 16.6    83.7 -5.44  NA      </span>
+<span class="co">#&gt; 14  2020     3     6 BE    Marv… Jone… Det   WR    A       8.90   5.1 40.5    93.8  3.95  NA      </span>
+<span class="co">#&gt; 15  2020     3     6 BE    Mike  Davis Car   RB    A       9.32  15.1 44.3    77.6 76.8   NA      </span>
+<span class="co">#&gt; 16  2020     3     6 IR    Deebo Samu… SF    WR    I       0      0    0.811  78.1  3.01  NA      </span>
+<span class="co">#&gt; # … with 1 more variable: acq_date &lt;dttm&gt;</span>
 </pre></div>
 <div class="sourceCode" id="cb4"><pre class="downlit">
 <span class="kw">my_best</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/best_roster.html">best_roster</a></span>(<span class="kw">my_roster</span>)
 <span class="fu"><a href="reference/roster_score.html">roster_score</a></span>(<span class="kw">my_roster</span>)
-<span class="co">#&gt; [1] 129.48</span>
+<span class="co">#&gt; [1] 108.5</span>
 <span class="fu"><a href="reference/roster_score.html">roster_score</a></span>(<span class="kw">my_best</span>)
-<span class="co">#&gt; [1] 148.28</span>
+<span class="co">#&gt; [1] 138.12</span>
 </pre></div>
 <p>Matchups return as a <a href="https://w.wiki/Jzz">tidy</a> tibble of weekly scores by team.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit">
 (<span class="kw">teams</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/league_teams.html">league_teams</a></span>()[, <span class="op">-</span><span class="fl">3</span>])
 <span class="co">#&gt; # A tibble: 8 x 4</span>
-<span class="co">#&gt;    team abbrev name                      year</span>
-<span class="co">#&gt;   &lt;int&gt; &lt;fct&gt;  &lt;chr&gt;                    &lt;int&gt;</span>
-<span class="co">#&gt; 1     1 AGUS   Obi-Wan Mahomey           2020</span>
-<span class="co">#&gt; 2     3 PEPE   JuJu's Bizarre Adventure  2020</span>
-<span class="co">#&gt; 3     4 BILL   Bill's Fantasy Team       2020</span>
-<span class="co">#&gt; 4     5 CART   Kenyan Younghoes          2020</span>
-<span class="co">#&gt; 5     6 KIER   The Nuklear Option        2020</span>
-<span class="co">#&gt; 6     8 CORE   BIG TRUZZZ                2020</span>
-<span class="co">#&gt; 7    10 NICK   Dallas Goedert  Pregnant  2020</span>
-<span class="co">#&gt; 8    11 KYLE   Harry Ruggs               2020</span>
-<span class="kw">scores</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/weekly_matchups.html">weekly_matchups</a></span>()
+<span class="co">#&gt;    year  team owners    name                    </span>
+<span class="co">#&gt;   &lt;int&gt; &lt;int&gt; &lt;list&gt;    &lt;chr&gt;                   </span>
+<span class="co">#&gt; 1  2020     1 &lt;chr [1]&gt; Obi-Wan Mahomey         </span>
+<span class="co">#&gt; 2  2020     3 &lt;chr [1]&gt; JuJu's Bizarre Adventure</span>
+<span class="co">#&gt; 3  2020     4 &lt;chr [1]&gt; Bill's Fantasy Team     </span>
+<span class="co">#&gt; 4  2020     5 &lt;chr [1]&gt; Kenyan Younghoes        </span>
+<span class="co">#&gt; 5  2020     6 &lt;chr [1]&gt; The Nuklear Option      </span>
+<span class="co">#&gt; 6  2020     8 &lt;chr [1]&gt; BIG TRUZZZ              </span>
+<span class="co">#&gt; 7  2020    10 &lt;chr [1]&gt; Dallas Goedert  Pregnant</span>
+<span class="co">#&gt; 8  2020    11 &lt;chr [1]&gt; Harry Ruggs</span>
+<span class="kw">scores</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/match_scores.html">match_scores</a></span>()
 </pre></div>
 <p>This makes scores over the season easy to plot. The <strong>experimental</strong> <a href="https://github.com/kiernann/ffplot">ffplot</a> package makes such plots automatically.</p>
 <p><img src="reference/figures/README-plot_scores-1.png" width="100%"></p>
 <p>Some functions like <code><a href="reference/roster_moves.html">roster_moves()</a></code> only define players by their unique ID.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit">
 <span class="kw">waiver_adds</span> <span class="op">&lt;-</span> 
-  <span class="fu"><a href="reference/roster_moves.html">roster_moves</a></span>() <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="reference/roster_moves.html">roster_moves</a></span>(week = <span class="fl">3</span>) <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(
     <span class="kw">type</span> <span class="op">==</span> <span class="st">"WAIVER"</span>, 
     <span class="kw">status</span> <span class="op">==</span> <span class="st">"EXECUTED"</span>,
     <span class="kw">move</span> <span class="op">==</span> <span class="st">"ADD"</span>
   )
 </pre></div>
-<p>The included <code>players</code> tibble identifies all 1056 players (as of September 25th, 2020).</p>
+<p>The included <code>nfl_players</code> tibble identifies all 1059 players (as of September 30th, 2020).</p>
 <div class="sourceCode" id="cb7"><pre class="downlit">
 <span class="kw">waiver_adds</span> <span class="op">%&gt;%</span> 
-  <span class="fu">left_join</span>(<span class="kw">players</span>) <span class="op">%&gt;%</span> 
+  <span class="fu">left_join</span>(<span class="kw">nfl_players</span>) <span class="op">%&gt;%</span> 
   <span class="fu">select</span>(<span class="fl">15</span><span class="op">:</span><span class="fl">18</span>, <span class="kw">bid</span>, team = <span class="kw">to_team</span>) <span class="op">%&gt;%</span>
   <span class="fu">left_join</span>(<span class="kw">teams</span>[, <span class="fl">1</span><span class="op">:</span><span class="fl">2</span>]) <span class="op">%&gt;%</span> 
   <span class="fu">arrange</span>(<span class="fu">desc</span>(<span class="kw">bid</span>))
 <span class="co">#&gt; # A tibble: 19 x 7</span>
-<span class="co">#&gt;    first      last          pro   pos     bid  team abbrev</span>
-<span class="co">#&gt;    &lt;chr&gt;      &lt;chr&gt;         &lt;chr&gt; &lt;fct&gt; &lt;int&gt; &lt;int&gt; &lt;fct&gt; </span>
-<span class="co">#&gt;  1 James      Robinson      JAX   RB       32     4 BILL  </span>
-<span class="co">#&gt;  2 Joshua     Kelley        LAC   RB       16     4 BILL  </span>
-<span class="co">#&gt;  3 Jonnu      Smith         TEN   TE        7     1 AGUS  </span>
-<span class="co">#&gt;  4 Mike       Gesicki       MIA   TE        6     5 CART  </span>
-<span class="co">#&gt;  5 Gardner    Minshew II    JAX   QB        5     6 KIER  </span>
-<span class="co">#&gt;  6 Buccaneers D/ST          TB    DS        5     1 AGUS  </span>
-<span class="co">#&gt;  7 Jarvis     Landry        CLE   WR        5     8 CORE  </span>
-<span class="co">#&gt;  8 Darius     Slayton       NYG   WR        5     1 AGUS  </span>
-<span class="co">#&gt;  9 Mike       Davis         CAR   RB        4     6 KIER  </span>
-<span class="co">#&gt; 10 Colts      D/ST          IND   DS        4    11 KYLE  </span>
-<span class="co">#&gt; 11 Darrell    Henderson Jr. LAR   RB        3     8 CORE  </span>
-<span class="co">#&gt; 12 Zane       Gonzalez      ARI   KI        3     1 AGUS  </span>
-<span class="co">#&gt; 13 Russell    Gage          ATL   WR        2    10 NICK  </span>
-<span class="co">#&gt; 14 Devonta    Freeman       NYG   RB        2     8 CORE  </span>
-<span class="co">#&gt; 15 Dallas     Goedert       PHI   TE        1    10 NICK  </span>
-<span class="co">#&gt; 16 Washington D/ST          WSH   DS        1     5 CART  </span>
-<span class="co">#&gt; 17 Jason      Myers         SEA   KI        1    11 KYLE  </span>
-<span class="co">#&gt; 18 Deebo      Samuel        SF    WR        1     6 KIER  </span>
-<span class="co">#&gt; 19 Jerick     McKinnon      SF    RB        1     4 BILL</span>
+<span class="co">#&gt;    first      last          pro   pos     bid  team  year</span>
+<span class="co">#&gt;    &lt;chr&gt;      &lt;chr&gt;         &lt;fct&gt; &lt;fct&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;</span>
+<span class="co">#&gt;  1 James      Robinson      Jax   RB       32     4  2020</span>
+<span class="co">#&gt;  2 Joshua     Kelley        LAC   RB       16     4  2020</span>
+<span class="co">#&gt;  3 Jonnu      Smith         Ten   TE        7     1  2020</span>
+<span class="co">#&gt;  4 Mike       Gesicki       Mia   TE        6     5  2020</span>
+<span class="co">#&gt;  5 Gardner    Minshew II    Jax   QB        5     6  2020</span>
+<span class="co">#&gt;  6 Buccaneers D/ST          TB    DS        5     1  2020</span>
+<span class="co">#&gt;  7 Jarvis     Landry        Cle   WR        5     8  2020</span>
+<span class="co">#&gt;  8 Darius     Slayton       NYG   WR        5     1  2020</span>
+<span class="co">#&gt;  9 Mike       Davis         Car   RB        4     6  2020</span>
+<span class="co">#&gt; 10 Colts      D/ST          Ind   DS        4    11  2020</span>
+<span class="co">#&gt; 11 Darrell    Henderson Jr. LAR   RB        3     8  2020</span>
+<span class="co">#&gt; 12 Zane       Gonzalez      Ari   KI        3     1  2020</span>
+<span class="co">#&gt; 13 Russell    Gage          Atl   WR        2    10  2020</span>
+<span class="co">#&gt; 14 Devonta    Freeman       NYG   RB        2     8  2020</span>
+<span class="co">#&gt; 15 Dallas     Goedert       Phi   TE        1    10  2020</span>
+<span class="co">#&gt; 16 Washington D/ST          Wsh   DS        1     5  2020</span>
+<span class="co">#&gt; 17 Jason      Myers         Sea   KI        1    11  2020</span>
+<span class="co">#&gt; 18 Deebo      Samuel        SF    WR        1     6  2020</span>
+<span class="co">#&gt; 19 Jerick     McKinnon      SF    RB        1     4  2020</span>
 </pre></div>
 <hr>
 <p>The fflr project is released with a <a href="https://contributor-covenant.org/version/1/0/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
