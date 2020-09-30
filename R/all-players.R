@@ -53,6 +53,9 @@ all_players <- function(lid = getOption("lid"), week = ffl_week()) {
   y <- max(p$player$stats[[1]]$seasonId)
   for (i in seq_along(p$player$stats)) {
     s <- p$player$stats[[i]][-2]
+    if (is.null(s)) {
+      next("player states are null can skip")
+    }
     names(s)[1:7] <- c("stat", "id", "pro", "w", "y", "source", "split")
     if (length(unique(s$w)) < 3) {
       next("player doesn't have stats from last week")
@@ -95,5 +98,5 @@ all_players <- function(lid = getOption("lid"), week = ffl_week()) {
   )
   out <- merge(out, z, by = "id", sort = FALSE)
   out <- cbind(year = y, week, out)
-  return(tibble::as_tibble(out))
+  tibble::as_tibble(out)
 }
