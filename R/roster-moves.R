@@ -36,11 +36,11 @@ parse_moves <- function(t, y = NULL) {
   i$from_team[i$from_team == 0] <- NA_integer_
   i$to_slot[i$to_slot == -1L] <- NA_integer_
   i$to_team[i$to_team == 0] <- NA_integer_
-  t <- t[, c(13, 16, 1, 14, 9, 15, 3)]
+  t <- t[, c(11, 14, 1, 12, 9, 13, 3)]
   names(t) <- c("week", "type", "bid", "status", "date", "team", "tx")
   t$date <- ffl_date(t$date)
   t$bid[t$bid == 0] <- NA_integer_
-  t$status[t$status == "FAILED_INVALIDPLAYERSOURCE"] <- "FAILED"
+  t$status[grep("^FAILED", t$status)] <- "FAILED"
   t <- cbind(year = y, t)
   x <- merge(t, i, by = "tx")
   x$tx <- substr(x$tx, start = 1, stop = 8)
