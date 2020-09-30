@@ -1,37 +1,27 @@
-nfl_teams <- tibble::tribble(
-  ~team, ~abbrev,
-  1L,    "ATL",
-  2L,    "BUF",
-  3L,    "CHI",
-  4L,    "CIN",
-  5L,    "CLE",
-  6L,    "DAL",
-  7L,    "DEN",
-  8L,    "DET",
-  9L,    "GB",
-  10L,   "TEN",
-  11L,   "IND",
-  12L,   "KC",
-  13L,   "OAK",
-  14L,   "LAR",
-  15L,   "MIA",
-  16L,   "MIN",
-  17L,   "NE",
-  18L,   "NO",
-  19L,   "NYG",
-  20L,   "NYJ",
-  21L,   "PHI",
-  22L,   "ARI",
-  23L,   "PIT",
-  24L,   "LAC",
-  25L,   "SF",
-  26L,   "SEA",
-  27L,   "TB",
-  28L,   "WSH",
-  29L,   "CAR",
-  30L,   "JAX",
-  33L,   "BAL",
-  34L,   "HOU"
+d <- jsonlite::fromJSON(
+  txt = paste0(
+    "https://fantasy.espn.com/apis/v3/games/ffl/seasons/", year,
+    "?view=proTeamSchedules_wl"
+  )
 )
+
+nfl_teams <- tibble(
+  team = d$settings$proTeams$id,
+  abbrev = factor(
+    x = d$settings$proTeams$abbrev,
+    levels = d$settings$proTeams$abbrev[order(d$settings$proTeams$id)]
+  ),
+  location = d$settings$proTeams$location,
+  name = d$settings$proTeams$name,
+  bye = d$settings$proTeams$byeWeek,
+  conf = d$settings$proTeams$universeId
+)
+
+nfl_teams$name[nfl_teams$name == ""] <- NA
+nfl_teams$location[nfl_teams$location == ""] <- NA
+nfl_teams$conf[nfl_teams$conf == 0] <- NA
+nfl_teams$conf[nfl_teams$conf == 1] <- "AFC"
+nfl_teams$conf[nfl_teams$conf == 2] <- "NFC"
+nfl_teams <- nfl_teams[order(nfl_teams$team), ]
 
 usethis::use_data(nfl_teams, overwrite = TRUE)

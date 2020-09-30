@@ -3,12 +3,16 @@
 \docType{data}
 \name{nfl_teams}
 \alias{nfl_teams}
-\title{Team abbreviations in the NFL}
+\title{2020 NFL Teams}
 \format{
 A data frame with 1,056 rows and 5 variables:
 \describe{
-\item{team}{Unique yearly team ID}
+\item{team}{Unique team ID}
 \item{abbrev}{Team abbreviation}
+\item{location}{Team geographic location}
+\item{name}{Team full nickname}
+\item{bye}{Bye week, no game played}
+\item{conf}{NFL confrence}
 ...
 }
 }
@@ -16,6 +20,6 @@ A data frame with 1,056 rows and 5 variables:
 nfl_teams
 }
 \description{
-Team abbreviations in the NFL
+2020 NFL Teams
 }
 \keyword{datasets}
