@@ -13,3 +13,12 @@ test_that("schedule returns for past years", {
   expect_s3_class(s[[1]], "tbl")
   expect_length(s, 5)
 })
+
+test_that("NFL schedule returns for current year", {
+  s <- pro_schedule()
+  expect_length(s, 6)
+  expect_s3_class(s, "tbl")
+  expect_type(s$home, "logical")
+  expect_s3_class(s$pro, "factor")
+  expect_s3_class(s$kickoff, "POSIXct")
+})
