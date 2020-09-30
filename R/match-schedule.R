@@ -1,10 +1,10 @@
 #' Match schedule
 #'
 #' @inheritParams draft_picks
-#' @return A tibble (or list) of draft picks.
+#' @return A tibble (or list) of match opponents.
 #' @examples
 #' match_schedule(lid = 252353)
-#' @importFrom tibble as_tibble
+#' @importFrom tibble tibble
 #' @export
 match_schedule <- function(lid = getOption("lid"), old = FALSE, ...) {
   data <- ffl_api(lid, old, view = c("mMatchup", "mTeam"), ...)
@@ -41,13 +41,14 @@ match_schedule <- function(lid = getOption("lid"), old = FALSE, ...) {
 
 parse_sched <- function(s, y = NULL, t = NULL) {
   x <- tibble::tibble(
-    year = y,
-    week = s$matchupPeriodId,
-    match = s$id,
-    home = team_abbrev(s$home$teamId, t),
-    away = team_abbrev(s$away$teamId, t)
+    year = as.integer(y),
+    week = rep(s$matchupPeriodId, 2),
+    match = rep(s$id, 2),
+    team = team_abbrev(c(s$home$teamId, s$away$teamId), t),
+    opp = team_abbrev(c(s$away$teamId, s$home$teamId), t),
+    home = c(rep(TRUE, nrow(s)), rep(FALSE, nrow(s)))
   )
-  return(x)
+  x[order(x$match), ]
 }
 
 

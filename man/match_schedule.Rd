@@ -16,7 +16,7 @@ match_schedule(lid = getOption("lid"), old = FALSE, ...)
 "ScoringPeriodId" to display past rosters, etc.}
 }
 \value{
-A tibble (or list) of draft picks.
+A tibble (or list) of match opponents.
 }
 \description{
 Match schedule

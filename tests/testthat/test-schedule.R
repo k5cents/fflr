@@ -4,7 +4,7 @@ library(fflr)
 test_that("schedule returns for current year", {
   s <- match_schedule(252353, old = FALSE)
   expect_s3_class(s, "tbl")
-  expect_s3_class(s$home, "factor")
+  expect_type(s$home, "logical")
 })
 
 test_that("schedule returns for past years", {
