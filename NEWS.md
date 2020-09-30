@@ -1,3 +1,9 @@
+# fflr 0.3.2
+
+* Scrape and improve NFL teams.
+* All `pro_schedule()` and save object.
+* Update NFL players data.
+
 # fflr 0.3.1
 
 * Add power wins calculation to matchups.
