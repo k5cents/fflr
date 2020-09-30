@@ -23,14 +23,16 @@ opponent_ranks <- function(lid = getOption("lid")) {
       avg = rep(NA_real_, 6)
     ))
   )
-  for (i in seq_along(oprk)) {
+  names(oprk) <- names(p[[1]]$ratingsByOpponent)
+  for (i in names(oprk)) {
     for (s in 1:6) {
-      oprk[[i]]$pro <- fflr::nfl_teams$abbrev[i]
+      oprk[[i]]$pro <- i
       oprk[[i]]$rank[s] <- p[[s]]$ratingsByOpponent[i][[1]]$rank
       oprk[[i]]$avg[s] <- p[[s]]$ratingsByOpponent[i][[1]]$average
     }
   }
   oprk <- do.call("rbind", lapply(oprk, as.data.frame))
+  oprk$pro <- team_abbrev(oprk$pro, fflr::nfl_teams)
   tibble::as_tibble(oprk)
 }
 
