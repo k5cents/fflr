@@ -4,10 +4,12 @@
 \alias{all_players}
 \title{All fantasy players}
 \usage{
-all_players(lid = getOption("lid"))
+all_players(lid = getOption("lid"), week = ffl_week())
 }
 \arguments{
 \item{lid}{ESPN League ID, defaulted because all return the same data.}
+
+\item{week}{The scoring period to return, defaults to \code{\link[=ffl_week]{ffl_week()}}.}
 }
 \value{
 A tibble of players.

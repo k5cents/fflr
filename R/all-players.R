@@ -3,6 +3,7 @@
 #' List all available players.
 #'
 #' @param lid ESPN League ID, defaulted because all return the same data.
+#' @param week The scoring period to return, defaults to [ffl_week()].
 #' @return A tibble of players.
 #' @examples
 #' all_players()
@@ -10,7 +11,7 @@
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom httr GET add_headers accept_json content
 #' @export
-all_players <- function(lid = getOption("lid")) {
+all_players <- function(lid = getOption("lid"), week = ffl_week()) {
   if (is.null(lid)) lid <- 252353
   xff <- list(
     players = list(
@@ -20,7 +21,9 @@ all_players <- function(lid = getOption("lid")) {
       ),
       filterStatsForTopScoringPeriodIds = list(
         value = 2,
-        additionalValue = c("002020", "102020", "002019", "1120203", "022020")
+        additionalValue = c(
+          "002020", "102020", "002019", "022020", sprintf("112020%s", week)
+        )
       )
     )
   )
@@ -29,7 +32,8 @@ all_players <- function(lid = getOption("lid")) {
     httr::add_headers(
       `X-Fantasy-Filter` = jsonlite::toJSON(
         x = xff,
-        auto_unbox = TRUE)
+        auto_unbox = TRUE
+      )
     ),
     query = list(view = "kona_player_info"),
     url = paste0(
@@ -48,19 +52,30 @@ all_players <- function(lid = getOption("lid")) {
   )
   y <- max(p$player$stats[[1]]$seasonId)
   for (i in seq_along(p$player$stats)) {
-    s <- p$player$stats[[i]]
-    if (length(unique(s$scoringPeriodId)) < 3) {
+    s <- p$player$stats[[i]][-2]
+    names(s)[1:7] <- c("stat", "id", "pro", "w", "y", "source", "split")
+    if (length(unique(s$w)) < 3) {
       next("player doesn't have stats from last week")
     }
-    if (sum(s$seasonId == y - 1) > 1) {
+    if (sum(s$y == y - 1) > 1) {
       next("player just joined, mostly last season")
     }
-    w <- max(s$scoringPeriodId)
-    z$last_wk[i] <- s$appliedTotal[s$statSourceId == 0 & s$statSplitTypeId == 1 & s$scoringPeriodId == w - 1]
-    z$next_wk[i] <- s$appliedTotal[s$statSourceId == 1 & s$statSplitTypeId == 1 & s$scoringPeriodId == w]
-    z$this_szn[i] <- s$appliedTotal[s$id == paste0("00", y)]
-    if (length(unique(s$seasonId)) > 1) {
-      z$last_szn[i] <- s$appliedTotal[s$id == paste0("00", y - 1)]
+    w <- max(s$w)
+    w_last <- which(s$source == 0 & s$split == 1 & s$w == w - 1)
+    if (length(w_last) != 0) {
+      z$last_wk[i] <- s$stat[w_last]
+    } else {
+      z$last_wk[i] <- NA
+    }
+    w_next <- which(s$source == 1 & s$split == 1 & s$w == w)
+    if (length(w_next) != 0) {
+      z$next_wk[i] <- s$stat[w_next]
+    } else {
+      z$next_wk[i] <- NA
+    }
+    z$this_szn[i] <- s$stat[s$id == paste0("00", y)]
+    if (length(unique(s$y)) > 1) {
+      z$last_szn[i] <- s$stat[s$id == paste0("00", y - 1)]
     }
   }
   out <- data.frame(
@@ -79,5 +94,6 @@ all_players <- function(lid = getOption("lid")) {
     adp = p$player$ownership$averageDraftPosition
   )
   out <- merge(out, z, by = "id", sort = FALSE)
+  out <- cbind(year = y, week, out)
   return(tibble::as_tibble(out))
 }
