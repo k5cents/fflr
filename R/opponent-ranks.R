@@ -27,7 +27,7 @@ opponent_ranks <- function(lid = getOption("lid")) {
   for (i in names(oprk)) {
     for (s in 1:6) {
       oprk[[i]]$pro <- i
-      oprk[[i]]$rank[s] <- abs(p[[s]]$ratingsByOpponent[i][[1]]$rank - 33)
+      oprk[[i]]$rank[s] <- abs(p[[s]]$ratingsByOpponent[i][[1]]$rank - 33L)
       oprk[[i]]$avg[s] <- p[[s]]$ratingsByOpponent[i][[1]]$average
     }
   }
