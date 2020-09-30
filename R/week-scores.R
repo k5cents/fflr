@@ -68,7 +68,6 @@ parse_week <- function(s, y = NULL, t = NULL) {
 
   x <- do.call("rbind", top)
   x <- x[order(x$match, !x$home), ]
-  x$score[x$score == 0] <- NA
   x$power = NA_integer_
   for (w in unique(x$week)) {
     y <- x$score[x$week == w]
