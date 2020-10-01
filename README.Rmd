@@ -122,7 +122,7 @@ contributing to this project, you agree to abide by its terms.
 [cran_link]: https://CRAN.R-project.org/package=fflr
 [ga_badge]: https://github.com/kiernann/fflr/workflows/R-CMD-check/badge.svg
 [ga_link]: https://github.com/kiernann/fflr/actions
-[cov_badge]: https://codecov.io/gh/kiernann/ffplot/branch/master/graph/badge.svg
+[cov_badge]: https://codecov.io/gh/kiernann/fflr/branch/master/graph/badge.svg
 [cov_link]: https://codecov.io/gh/kiernann/fflr?branch=master
 [dl_badge]: https://cranlogs.r-pkg.org/badges/grand-total/fflr
 [api]: https://fantasy.espn.com/apis/v3/games/ffl/
