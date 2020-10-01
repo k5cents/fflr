@@ -12,7 +12,7 @@ best_roster <- function(roster) {
     stop("The score column is empty, the period is likely the future")
   }
   n <- ncol(roster)
-  y <- roster[roster$slot != "BE", ]
+  y <- roster[roster$slot != "BE" & roster$slot != "IR", ]
   qb <- sort(roster$score[roster$pos == "QB"], decreasing = T)[1]
   y[which(y$slot == "QB"), 5:n] <- roster[match(qb, roster$score), 5:n]
   rb <- sort(roster$score[roster$pos == "RB"], decreasing = T)[1:2]
@@ -45,5 +45,5 @@ best_roster <- function(roster) {
 #' roster_score(start)/roster_score(best)
 #' @export
 roster_score <- function(roster) {
-  sum(roster$score[roster$slot != "BE"], na.rm = TRUE)
+  sum(roster$score[roster$slot != "BE" & roster$slot != "IR"], na.rm = TRUE)
 }
