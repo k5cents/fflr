@@ -14,11 +14,27 @@ team_roster <- function(lid = getOption("lid"), old = FALSE, ...) {
     out <- rep(list(NA), length(data$teams))
     for (y in seq_along(out)) {
       t <- parse_teams(data$teams[[y]])
-      out[[y]] <- lapply(data$teams[[y]]$roster$entries, parse_roster, t)
+      e <- data$teams[[y]]$roster$entries
+      out[[y]] <- rep(list(NA), length(e))
+      names(out[[y]]) <- t$abbrev
+      for (i in seq_along(e)) {
+        if (is.null(e[[i]])) {
+          next()
+        } else {
+          out[[y]][[i]] <- parse_roster(e[[i]])
+          out[[y]][[i]]$team <- t$abbrev[i]
+        }
+      }
     }
   } else {
     t <- parse_teams(data$teams)
-    out <- lapply(data$teams$roster$entries, parse_roster, t)
+    e <- data$teams$roster$entries
+    out <- rep(list(NA), length(e))
+    names(out) <- t$abbrev
+    for (i in seq_along(e)) {
+      out[[i]] <- parse_roster(e[[i]])
+      out[[i]]$team <- t$abbrev[i]
+    }
   }
   return(out)
 }
@@ -52,13 +68,14 @@ parse_roster <- function(entry, t = NULL) {
   }
   if (year_int >= 2018) {
     injury_status <- abbreviate(player$injuryStatus, minlength = 1)
+    injury_status[is.na(injury_status)] <- "A"
   } else {
     injury_status <- abbreviate(entry$injuryStatus, minlength = 1)
   }
   x <- tibble::tibble(
     year  = year_int,
     week  = week_int,
-    team = team_abbrev(entry$playerPoolEntry$onTeamId, t),
+    team = entry$playerPoolEntry$onTeamId,
     slot = slot_abbrev(entry$lineupSlotId),
     id = player$id,
     first = player$firstName,
