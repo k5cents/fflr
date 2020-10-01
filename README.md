@@ -50,26 +50,25 @@ set_lid(252353) # check URL
 ``` r
 rosters <- team_roster(week = ffl_week(-1))
 (my_roster <- rosters[[5]][-5])
-#> # A tibble: 16 x 16
-#>     year  week  team slot  first last  pro   pos   status  proj score start  rost change acq_type
-#>    <int> <int> <int> <fct> <chr> <chr> <fct> <fct> <chr>  <dbl> <dbl> <dbl> <dbl>  <dbl> <lgl>   
-#>  1  2020     3     6 QB    Gard… Mins… Jax   QB    A      19.9    9.2 18.0   45.8  3.8   NA      
-#>  2  2020     3     6 RB    Alvin Kama… NO    RB    A      17.1   31.7 99.7  100.  -0.002 NA      
-#>  3  2020     3     6 RB    Jona… Tayl… Ind   RB    A      15.3   12.2 84.8   98.5  0.499 NA      
-#>  4  2020     3     6 WR    DeAn… Hopk… Ari   WR    Q      11.8   13.7 99.7  100.   0.003 NA      
-#>  5  2020     3     6 WR    Odell Beck… Cle   WR    Q       8.82   5.9 79.4   98.5 -0.346 NA      
-#>  6  2020     3     6 TE    Trav… Kelce KC    TE    A      10.1    8.7 99.7  100.   0.001 NA      
-#>  7  2020     3     6 FX    David John… Hou   RB    A      11.6   10.6 74.8   97.7 -0.55  NA      
-#>  8  2020     3     6 DS    Stee… D/ST  Pit   DS    <NA>    7.50   7.5 70.5   98.0 -1.57  NA      
-#>  9  2020     3     6 KI    Greg  Zuer… Dal   KI    A       7.91   9   78.3   84.0 -3.48  NA      
-#> 10  2020     3     6 BE    Drew  Brees NO    QB    A      17.9   23.5 41.0   89.2 -1.78  NA      
-#> 11  2020     3     6 BE    Coop… Kupp  LAR   WR    A       8.37  16.7 80.0   97.6  0.065 NA      
-#> 12  2020     3     6 BE    David Mont… Chi   RB    A       9.32   5.4 43.9   91.8 -0.032 NA      
-#> 13  2020     3     6 BE    Rona… Jone… TB    RB    A       7.69   7.3 21.9   83.9 -3.51  NA      
-#> 14  2020     3     6 BE    Marv… Jone… Det   WR    A       8.90   5.1 33.8   87.3 -2.83  NA      
-#> 15  2020     3     6 BE    Mike  Davis Car   RB    A       9.32  15.1 70.0   87.9 29.9   NA      
-#> 16  2020     3     6 IR    Deebo Samu… SF    WR    I       0      0    1.14  72.0 -1.93  NA      
-#> # … with 1 more variable: acq_date <dttm>
+#> # A tibble: 16 x 14
+#>     year  week  team slot  first    last        pro   pos   status  proj score start  rost change
+#>    <int> <int> <int> <fct> <chr>    <chr>       <fct> <fct> <chr>  <dbl> <dbl> <dbl> <dbl>  <dbl>
+#>  1  2020     3     6 QB    Gardner  Minshew II  Jax   QB    A      19.9    9.2 18.0   45.8  3.8  
+#>  2  2020     3     6 RB    Alvin    Kamara      NO    RB    A      17.1   31.7 99.7  100.  -0.002
+#>  3  2020     3     6 RB    Jonathan Taylor      Ind   RB    A      15.3   12.2 84.8   98.5  0.499
+#>  4  2020     3     6 WR    DeAndre  Hopkins     Ari   WR    Q      11.8   13.7 99.7  100.   0.003
+#>  5  2020     3     6 WR    Odell    Beckham Jr. Cle   WR    Q       8.82   5.9 79.4   98.5 -0.346
+#>  6  2020     3     6 TE    Travis   Kelce       KC    TE    A      10.1    8.7 99.7  100.   0.001
+#>  7  2020     3     6 FX    David    Johnson     Hou   RB    A      11.6   10.6 74.8   97.7 -0.55 
+#>  8  2020     3     6 DS    Steelers D/ST        Pit   DS    <NA>    7.50   7.5 70.5   98.0 -1.57 
+#>  9  2020     3     6 KI    Greg     Zuerlein    Dal   KI    A       7.91   9   78.3   84.0 -3.48 
+#> 10  2020     3     6 BE    Drew     Brees       NO    QB    A      17.9   23.5 41.0   89.2 -1.78 
+#> 11  2020     3     6 BE    Cooper   Kupp        LAR   WR    A       8.37  16.7 80.0   97.6  0.065
+#> 12  2020     3     6 BE    David    Montgomery  Chi   RB    A       9.32   5.4 43.9   91.8 -0.032
+#> 13  2020     3     6 BE    Ronald   Jones II    TB    RB    A       7.69   7.3 21.9   83.9 -3.51 
+#> 14  2020     3     6 BE    Marvin   Jones Jr.   Det   WR    A       8.90   5.1 33.8   87.3 -2.83 
+#> 15  2020     3     6 BE    Mike     Davis       Car   RB    A       9.32  15.1 70.0   87.9 29.9  
+#> 16  2020     3     6 IR    Deebo    Samuel      SF    WR    I       0      0    1.14  72.0 -1.93
 ```
 
 ``` r
@@ -84,18 +83,18 @@ Matchups return as a [tidy](https://w.wiki/Jzz) tibble of weekly scores
 by team.
 
 ``` r
-(teams <- league_teams()[, -3])
+(teams <- league_teams()[, -4])
 #> # A tibble: 8 x 4
-#>    year  team owners    name                    
-#>   <int> <int> <list>    <chr>                   
-#> 1  2020     1 <chr [1]> Obi-Wan Mahomey         
-#> 2  2020     3 <chr [1]> JuJu's Bizarre Adventure
-#> 3  2020     4 <chr [1]> Bill's Fantasy Team     
-#> 4  2020     5 <chr [1]> Kenyan Younghoes        
-#> 5  2020     6 <chr [1]> The Nuklear Option      
-#> 6  2020     8 <chr [1]> BIG TRUZZZ              
-#> 7  2020    10 <chr [1]> The Silence Of The Lamb 
-#> 8  2020    11 <chr [1]> Harry Ruggs
+#>    year  team abbrev name                    
+#>   <int> <int> <fct>  <chr>                   
+#> 1  2020     1 AGUS   Obi-Wan Mahomey         
+#> 2  2020     3 PEPE   JuJu's Bizarre Adventure
+#> 3  2020     4 BILL   Bill's Fantasy Team     
+#> 4  2020     5 CART   Kenyan Younghoes        
+#> 5  2020     6 KIER   The Nuklear Option      
+#> 6  2020     8 CORE   BIG TRUZZZ              
+#> 7  2020    10 NICK   The Silence Of The Lamb 
+#> 8  2020    11 KYLE   Harry Ruggs
 scores <- match_scores()
 ```
 

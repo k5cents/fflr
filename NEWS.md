@@ -1,3 +1,8 @@
+# fflr 0.3.4
+
+* Add `player_news()`.
+* Improve acquisition data for teams. 
+
 # fflr 0.3.3
 
 * Invert opponent ranks.

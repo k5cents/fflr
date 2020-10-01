@@ -76,7 +76,7 @@ roster_score(my_best)
 Matchups return as a [tidy](https://w.wiki/Jzz) tibble of weekly scores by team.
 
 ```{r league_teams}
-(teams <- league_teams()[, -3])
+(teams <- league_teams()[, -4])
 scores <- match_scores()
 ```
 
