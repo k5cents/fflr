@@ -9,19 +9,21 @@
 #' @importFrom tibble as_tibble
 #' @export
 team_roster <- function(lid = getOption("lid"), old = FALSE, ...) {
-  data <- ffl_api(lid, old, view = "mRoster", ...)
+  data <- ffl_api(lid, old, view = list("mRoster", "mTeam"), ...)
   if (old) {
     out <- rep(list(NA), length(data$teams))
     for (y in seq_along(out)) {
-      out[[y]] <- lapply(data$teams[[y]]$roster$entries, parse_roster)
+      t <- parse_teams(data$teams[[y]])
+      out[[y]] <- lapply(data$teams[[y]]$roster$entries, parse_roster, t)
     }
   } else {
-    out <- lapply(data$teams$roster$entries, parse_roster)
+    t <- parse_teams(data$teams)
+    out <- lapply(data$teams$roster$entries, parse_roster, t)
   }
   return(out)
 }
 
-parse_roster <- function(entry) {
+parse_roster <- function(entry, t = NULL) {
   if (is.null(entry)) {
     return(entry)
   }
@@ -56,7 +58,7 @@ parse_roster <- function(entry) {
   x <- tibble::tibble(
     year  = year_int,
     week  = week_int,
-    team = entry$playerPoolEntry$onTeamId,
+    team = team_abbrev(entry$playerPoolEntry$onTeamId, t),
     slot = slot_abbrev(entry$lineupSlotId),
     id = player$id,
     first = player$firstName,
