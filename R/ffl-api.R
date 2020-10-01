@@ -26,7 +26,11 @@ ffl_api <- function(lid = getOption("lid"), old = FALSE, view = NULL, ...) {
   names(x)[names(x) == "week"] <- "scoringPeriodId"
   names(x)[names(x) == "year"] <- "seasonId"
   y <- unlist(x)
-  names(y) <- gsub("\\d", "", names(y))
+  if (is.null(y)) {
+    y <- list()
+  } else {
+    names(y) <- gsub("\\d", "", names(y))
+  }
   c <- paste(paste(names(y), y, sep = "="), collapse = "&")
   data <- jsonlite::fromJSON(paste0(a, b, lid, "?", c))
   return(data)
