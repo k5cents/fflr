@@ -51,24 +51,24 @@ set_lid(252353) # check URL
 rosters <- team_roster(week = ffl_week(-1))
 (my_roster <- rosters[[5]][-5])
 #> # A tibble: 16 x 14
-#>     year  week  team slot  first    last        pro   pos   status  proj score start  rost change
-#>    <int> <int> <int> <fct> <chr>    <chr>       <fct> <fct> <chr>  <dbl> <dbl> <dbl> <dbl>  <dbl>
-#>  1  2020     3     6 QB    Gardner  Minshew II  Jax   QB    A      19.9    9.2 18.0   45.8  3.8  
-#>  2  2020     3     6 RB    Alvin    Kamara      NO    RB    A      17.1   31.7 99.7  100.  -0.002
-#>  3  2020     3     6 RB    Jonathan Taylor      Ind   RB    A      15.3   12.2 84.8   98.5  0.499
-#>  4  2020     3     6 WR    DeAndre  Hopkins     Ari   WR    Q      11.8   13.7 99.7  100.   0.003
-#>  5  2020     3     6 WR    Odell    Beckham Jr. Cle   WR    Q       8.82   5.9 79.4   98.5 -0.346
-#>  6  2020     3     6 TE    Travis   Kelce       KC    TE    A      10.1    8.7 99.7  100.   0.001
-#>  7  2020     3     6 FX    David    Johnson     Hou   RB    A      11.6   10.6 74.8   97.7 -0.55 
-#>  8  2020     3     6 DS    Steelers D/ST        Pit   DS    <NA>    7.50   7.5 70.5   98.0 -1.57 
-#>  9  2020     3     6 KI    Greg     Zuerlein    Dal   KI    A       7.91   9   78.3   84.0 -3.48 
-#> 10  2020     3     6 BE    Drew     Brees       NO    QB    A      17.9   23.5 41.0   89.2 -1.78 
-#> 11  2020     3     6 BE    Cooper   Kupp        LAR   WR    A       8.37  16.7 80.0   97.6  0.065
-#> 12  2020     3     6 BE    David    Montgomery  Chi   RB    A       9.32   5.4 43.9   91.8 -0.032
-#> 13  2020     3     6 BE    Ronald   Jones II    TB    RB    A       7.69   7.3 21.9   83.9 -3.51 
-#> 14  2020     3     6 BE    Marvin   Jones Jr.   Det   WR    A       8.90   5.1 33.8   87.3 -2.83 
-#> 15  2020     3     6 BE    Mike     Davis       Car   RB    A       9.32  15.1 70.0   87.9 29.9  
-#> 16  2020     3     6 IR    Deebo    Samuel      SF    WR    I       0      0    1.14  72.0 -1.93
+#>     year  week team  slot  first    last        pro   pos   status  proj score start  rost change
+#>    <int> <int> <fct> <fct> <chr>    <chr>       <fct> <fct> <chr>  <dbl> <dbl> <dbl> <dbl>  <dbl>
+#>  1  2020     3 KIER  QB    Gardner  Minshew II  Jax   QB    A      19.9    9.2 18.0   45.8  3.8  
+#>  2  2020     3 KIER  RB    Alvin    Kamara      NO    RB    A      17.1   31.7 99.7  100.  -0.002
+#>  3  2020     3 KIER  RB    Jonathan Taylor      Ind   RB    A      15.3   12.2 84.8   98.5  0.499
+#>  4  2020     3 KIER  WR    DeAndre  Hopkins     Ari   WR    Q      11.8   13.7 99.7  100.   0.003
+#>  5  2020     3 KIER  WR    Odell    Beckham Jr. Cle   WR    Q       8.82   5.9 79.4   98.5 -0.346
+#>  6  2020     3 KIER  TE    Travis   Kelce       KC    TE    A      10.1    8.7 99.7  100.   0.001
+#>  7  2020     3 KIER  FX    David    Johnson     Hou   RB    A      11.6   10.6 74.8   97.7 -0.55 
+#>  8  2020     3 KIER  DS    Steelers D/ST        Pit   DS    A       7.50   7.5 70.5   98.0 -1.57 
+#>  9  2020     3 KIER  KI    Greg     Zuerlein    Dal   KI    A       7.91   9   78.3   84.0 -3.48 
+#> 10  2020     3 KIER  BE    Drew     Brees       NO    QB    A      17.9   23.5 41.0   89.2 -1.78 
+#> 11  2020     3 KIER  BE    Cooper   Kupp        LAR   WR    A       8.37  16.7 80.0   97.6  0.065
+#> 12  2020     3 KIER  BE    David    Montgomery  Chi   RB    A       9.32   5.4 43.9   91.8 -0.032
+#> 13  2020     3 KIER  BE    Ronald   Jones II    TB    RB    A       7.69   7.3 21.9   83.9 -3.51 
+#> 14  2020     3 KIER  BE    Marvin   Jones Jr.   Det   WR    A       8.90   5.1 33.8   87.3 -2.83 
+#> 15  2020     3 KIER  BE    Mike     Davis       Car   RB    A       9.32  15.1 70.0   87.9 29.9  
+#> 16  2020     3 KIER  IR    Deebo    Samuel      SF    WR    I       0      0    1.14  72.0 -1.93
 ```
 
 ``` r
