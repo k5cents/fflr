@@ -1,3 +1,10 @@
+# fflr 0.3.3
+
+* Invert opponent ranks.
+* Pivot fantasy schedule long-wise.
+* Skip players without stats in `all_players()`.
+* Remove IR slots from `best_roster()` and `roster_score()`.
+
 # fflr 0.3.2
 
 * Scrape and improve NFL teams.
