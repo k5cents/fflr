@@ -68,11 +68,13 @@ parse_roster <- function(entry) {
     score = score_dbl,
     start = player$ownership$percentStarted,
     rost = player$ownership$percentOwned,
-    change = round(player$ownership$percentChange, digits = 3),
-    acq_type = entry$acquisitionType,
-    acq_date = ffl_date(entry$acquisitionDate)
+    change = round(player$ownership$percentChange, digits = 3)
   )
-  return(x[order(x$slot), ])
+  if (!all(is.na(entry$acquisitionType))) {
+    x$acq_type = entry$acquisitionType
+    x$acq_date = ffl_date(entry$acquisitionDate)
+  }
+  x[order(x$slot), ]
 }
 
 # c(
