@@ -1,4 +1,4 @@
-library(tidyverse)
+library(testthat)
 library(fflr)
 
 test_that("multiplication works", {
