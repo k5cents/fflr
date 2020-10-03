@@ -40,13 +40,16 @@ player_outlook <- function(lid = getOption("lid")) {
   }
   y <- max(p$player$stats[[1]]$seasonId)
   w <- length(p$player$outlooks$outlooksByWeek)
-  outlooks <- as.vector(t(as.data.frame(p$player$outlooks$outlooksByWeek)))
+  x <- p$player$outlooks$outlooksByWeek
+  x$`0` <- p$player$seasonOutlook
+  x <- x[c(length(x), 1:length(x) - 1)]
+  outlooks <- as.vector(t(as.data.frame(x)))
   out <- tibble::tibble(
     year = y,
-    week = rep(seq(w), length(outlooks)/w),
-    id = rep(p$player$id, each = w),
-    first = rep(p$player$firstName, each = w),
-    last = rep(p$player$lastName, each = w),
+    week = rep(seq(0, w), length(outlooks)/(w + 1)),
+    id = rep(p$player$id, each = w + 1),
+    first = rep(p$player$firstName, each = w + 1),
+    last = rep(p$player$lastName, each = w + 1),
     outlook = outlooks
   )
   out[!is.na(out$outlook), ]
