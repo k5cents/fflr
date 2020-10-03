@@ -20,7 +20,7 @@ test_that("news returns for multiple players", {
 })
 
 test_that("news warns when limit is reached", {
-  expect_warning(player_news(nfl_players$id[1:20]))
+  expect_warning(player_news(nfl_players$id[1:10]))
 })
 
 test_that("news body can be parsed as an HTML document", {
