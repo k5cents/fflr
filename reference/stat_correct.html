@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Live matchup scoreboard — live_scoring • fflr</title>
+<title>Stat corrections — stat_correct • fflr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Live matchup scoreboard — live_scoring" />
-<meta property="og:description" content="Live matchup scoreboard" />
+<meta property="og:title" content="Stat corrections — stat_correct" />
+<meta property="og:description" content="Weekly retroactive stat corrections by player." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -119,53 +119,35 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Live matchup scoreboard</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/live-scoring.R'><code>R/live-scoring.R</code></a></small>
-    <div class="hidden name"><code>live_scoring.Rd</code></div>
+    <h1>Stat corrections</h1>
+    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/stat-correct.R'><code>R/stat-correct.R</code></a></small>
+    <div class="hidden name"><code>stat_correct.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Live matchup scoreboard</p>
+    <p>Weekly retroactive stat corrections by player.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>live_scoring</span>(lid = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>), old = <span class='fl'>FALSE</span>, <span class='kw'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>stat_correct</span>(date = <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span>())</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>lid</th>
-      <td><p>ESPN League ID, defaults to <code><a href='https://rdrr.io/r/base/options.html'>getOption("lid")</a></code> (see <code><a href='set_lid.html'>set_lid()</a></code>).</p></td>
-    </tr>
-    <tr>
-      <th>old</th>
-      <td><p>If <code>FALSE</code> (default), return only the current season's data. If
-<code>TRUE</code>, return a list with all prior seasons.</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>Additional API query arguments; use "week" as a shorthand for
-"ScoringPeriodId" to display past rosters, etc.</p></td>
+      <th>date</th>
+      <td><p>A date in the scoring week to return. Defaults to system date.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble of scores.</p>
+    <p>A tibble of player corrections.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>live_scoring</span>(<span class='fl'>252353</span>)
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 8 x 5</span><span>
-#&gt;    week match  team score  proj
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span>     4    13     1  23.8 115. 
-#&gt; </span><span style='color: #555555;'>2</span><span>     4    13     6   0    96.1
-#&gt; </span><span style='color: #555555;'>3</span><span>     4    14     8   0    87.1
-#&gt; </span><span style='color: #555555;'>4</span><span>     4    14    11   0   102. 
-#&gt; </span><span style='color: #555555;'>5</span><span>     4    15     5   0   111. 
-#&gt; </span><span style='color: #555555;'>6</span><span>     4    15     4   3.5  96.7
-#&gt; </span><span style='color: #555555;'>7</span><span>     4    16    10   0    88.4
-#&gt; </span><span style='color: #555555;'>8</span><span>     4    16     3   0    98.5</div></span></pre>
+    <pre class="examples"><div class='input'><span class='fu'>stat_correct</span>()
+</div><div class='output co'>#&gt; <span class='warning'>Warning: no stat corrections for this week (yet)</span></div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 0 x 6</span><span>
+#&gt; </span><span style='color: #555555;'># … with 6 variables: date </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span style='color: #555555;'>, id </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, type </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, stat </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   name </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, change </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
