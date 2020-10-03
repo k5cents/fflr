@@ -64,7 +64,11 @@ set_lid(252353) # check URL
 
 ```{r team_roster}
 rosters <- team_roster(week = ffl_week(-1))
-(my_roster <- rosters[[5]][-5])
+my_roster <- rosters[[5]]
+```
+
+```{r echo=FALSE}
+(my_roster <- rosters[[5]][c(-1, -5)])
 ```
 
 ```{r best_roster}
