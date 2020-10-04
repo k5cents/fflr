@@ -48,7 +48,7 @@
 
 <meta property="og:title" content="League standings — league_standings" />
 <meta property="og:description" content="Return the current and projected standings, win streak, total wins, losses,
-points for and against." />
+and points scored for and against each team." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -127,7 +127,7 @@ points for and against." />
 
     <div class="ref-description">
     <p>Return the current and projected standings, win streak, total wins, losses,
-points for and against.</p>
+and points scored for and against each team.</p>
     </div>
 
     <pre class="usage"><span class='fu'>league_standings</span>(lid = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>), old = <span class='fl'>FALSE</span>, <span class='kw'>...</span>)</pre>
@@ -146,8 +146,8 @@ points for and against.</p>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Additional API query arguments; use "week" as a shorthand for
-"ScoringPeriodId" to display past rosters, etc.</p></td>
+      <td><p>Additional API query arguments. Use "week" and "year" as a
+shorthand for "ScoringPeriodId" and "seasonId" respectively.</p></td>
     </tr>
     </table>
 

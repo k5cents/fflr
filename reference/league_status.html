@@ -47,7 +47,8 @@
 
 
 <meta property="og:title" content="League status — league_status" />
-<meta property="og:description" content="League status" />
+<meta property="og:description" content="Current information about a league: the date activated, current week,
+starting week, final week, past seasons, teams joined, and waiver status." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -125,7 +126,8 @@
     </div>
 
     <div class="ref-description">
-    <p>League status</p>
+    <p>Current information about a league: the date activated, current week,
+starting week, final week, past seasons, teams joined, and waiver status.</p>
     </div>
 
     <pre class="usage"><span class='fu'>league_status</span>(lid = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>), old = <span class='fl'>FALSE</span>, <span class='kw'>...</span>)</pre>
@@ -144,8 +146,8 @@
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Additional API query arguments; use "week" as a shorthand for
-"ScoringPeriodId" to display past rosters, etc.</p></td>
+      <td><p>Additional API query arguments. Use "week" and "year" as a
+shorthand for "ScoringPeriodId" and "seasonId" respectively.</p></td>
     </tr>
     </table>
 

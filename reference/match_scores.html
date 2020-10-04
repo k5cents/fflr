@@ -47,7 +47,8 @@
 
 
 <meta property="og:title" content="Fantasy matchup scores — match_scores" />
-<meta property="og:description" content="The weekly matchups between home and away teams, with score and winner." />
+<meta property="og:description" content="The score of each team in a matchup period, the match outcome, and the number
+of league teams outscored (power wins)." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -125,7 +126,8 @@
     </div>
 
     <div class="ref-description">
-    <p>The weekly matchups between home and away teams, with score and winner.</p>
+    <p>The score of each team in a matchup period, the match outcome, and the number
+of league teams outscored (power wins).</p>
     </div>
 
     <pre class="usage"><span class='fu'>match_scores</span>(lid = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>), old = <span class='fl'>FALSE</span>, <span class='kw'>...</span>)</pre>
@@ -144,8 +146,8 @@
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Additional API query arguments; use "week" as a shorthand for
-"ScoringPeriodId" to display past rosters, etc.</p></td>
+      <td><p>Additional API query arguments. Use "week" and "year" as a
+shorthand for "ScoringPeriodId" and "seasonId" respectively.</p></td>
     </tr>
     </table>
 

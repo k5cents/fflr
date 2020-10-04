@@ -49,7 +49,8 @@
 <meta property="og:title" content="Return list data from API JSON — ffl_api" />
 <meta property="og:description" content="A generic call to the API using jsonlite::fromJSON() with nested data
 set to simplify. Use &quot;week&quot; and &quot;year&quot; as shortcuts for &quot;scoringPeriodId&quot;
-and &quot;seasonId&quot; respectively. Setting old equal to TRUE uses the" />
+and &quot;seasonId&quot; respectively. Setting old equal to TRUE uses the
+&quot;leagueHistory&quot; API instead of accessing 2020 season data." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -129,7 +130,8 @@ and &quot;seasonId&quot; respectively. Setting old equal to TRUE uses the" />
     <div class="ref-description">
     <p>A generic call to the API using <code><a href='https://rdrr.io/pkg/jsonlite/man/fromJSON.html'>jsonlite::fromJSON()</a></code> with nested data
 set to simplify. Use "week" and "year" as shortcuts for "scoringPeriodId"
-and "seasonId" respectively. Setting <code>old</code> equal to <code>TRUE</code> uses the</p>
+and "seasonId" respectively. Setting <code>old</code> equal to <code>TRUE</code> uses the
+"leagueHistory" API instead of accessing 2020 season data.</p>
     </div>
 
     <pre class="usage"><span class='fu'>ffl_api</span>(lid = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>), old = <span class='fl'>FALSE</span>, view = <span class='kw'>NULL</span>, <span class='kw'>...</span>)</pre>
@@ -152,8 +154,8 @@ and "seasonId" respectively. Setting <code>old</code> equal to <code>TRUE</code>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Additional API query arguments; use "week" as a shorthand for
-"ScoringPeriodId" to display past rosters, etc.</p></td>
+      <td><p>Additional API query arguments. Use "week" and "year" as a
+shorthand for "ScoringPeriodId" and "seasonId" respectively.</p></td>
     </tr>
     </table>
 
