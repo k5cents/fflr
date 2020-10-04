@@ -1,6 +1,6 @@
 Package: fflr
 Title: Collect ESPN Fantasy Football Data
-Version: 0.3.4
+Version: 0.3.5
 Authors@R: 
     person(given = "Kiernan",
            family = "Nicholls",

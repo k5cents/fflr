@@ -1,3 +1,8 @@
+# fflr 0.3.5
+
+* Update function documentation.
+* Let `best_roster()` use projections.
+
 # fflr 0.3.4
 
 * Add `player_news()`.
