@@ -23,6 +23,6 @@ A data frame with 1,059 rows and 5 variables:
 nfl_schedule
 }
 \description{
-All available ESPN fantasy football players as of the 2020 season, week 4.
+The initial 2020 NFL season schedule by team.
 }
 \keyword{datasets}

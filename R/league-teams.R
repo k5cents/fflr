@@ -1,6 +1,6 @@
 #' Fantasy league teams
 #'
-#' Return the fantasy team names and their owners.
+#' The teams in a league and their owners.
 #'
 #' @inheritParams draft_picks
 #' @return A tibble (or list) of league teams.

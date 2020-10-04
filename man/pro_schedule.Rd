@@ -2,7 +2,7 @@
 % Please edit documentation in R/pro-schedule.R
 \name{pro_schedule}
 \alias{pro_schedule}
-\title{The professional NFL schedule}
+\title{Professional NFL schedule}
 \usage{
 pro_schedule(year = ffl_year())
 }
@@ -13,7 +13,7 @@ pro_schedule(year = ffl_year())
 Tibble of NFL team opponents by week.
 }
 \description{
-The professional NFL schedule
+The opponents each team faces every week in an NFL regular season.
 }
 \examples{
 pro_schedule(year = ffl_year(-2))

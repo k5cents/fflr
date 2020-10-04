@@ -1,6 +1,7 @@
-#' Fantasy optimal roster
+#' Optimal fantasy roster
 #'
-#' The highest scoring 9 man roster using standard roster slots.
+#' The highest scoring 9 man roster using standard roster slots. In the future
+#' this function may be adapted to take roster slots from [roster_settings()].
 #'
 #' @param roster A roster tibble from [team_roster()].
 #' @return A tibble of players on a roster.

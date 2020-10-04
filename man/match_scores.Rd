@@ -12,14 +12,15 @@ match_scores(lid = getOption("lid"), old = FALSE, ...)
 \item{old}{If \code{FALSE} (default), return only the current season's data. If
 \code{TRUE}, return a list with all prior seasons.}
 
-\item{...}{Additional API query arguments; use "week" as a shorthand for
-"ScoringPeriodId" to display past rosters, etc.}
+\item{...}{Additional API query arguments. Use "week" and "year" as a
+shorthand for "ScoringPeriodId" and "seasonId" respectively.}
 }
 \value{
 A tibble (or list) of draft picks.
 }
 \description{
-The weekly matchups between home and away teams, with score and winner.
+The score of each team in a matchup period, the match outcome, and the number
+of league teams outscored (power wins).
 }
 \examples{
 match_scores(lid = 252353)

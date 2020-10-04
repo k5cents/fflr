@@ -15,8 +15,8 @@ player_news(id, parse = FALSE)
 A tibble of news stories.
 }
 \description{
-Return the free and premium ESPN stories on given players. A maximum of 50
-stories can be returned at a time.
+The free and premium ESPN stories on given players. A maximum of 50 stories
+can be returned at a time.
 }
 \examples{
 player_news(15847)

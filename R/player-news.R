@@ -1,7 +1,7 @@
 #' Player news
 #'
-#' Return the free and premium ESPN stories on given players. A maximum of 50
-#' stories can be returned at a time.
+#' The free and premium ESPN stories on given players. A maximum of 50 stories
+#' can be returned at a time.
 #'
 #' @param id A vector of player ID numbers.
 #' @param parse Should HTML stories be parsed with [xml2::read_html()]?

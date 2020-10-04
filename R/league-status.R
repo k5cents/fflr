@@ -1,5 +1,8 @@
 #' League status
 #'
+#' Current information about a league: the date activated, current week,
+#' starting week, final week, past seasons, teams joined, and waiver status.
+#'
 #' @inheritParams draft_picks
 #' @return A tibble or list of league status.
 #' @examples

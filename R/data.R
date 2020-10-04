@@ -16,7 +16,7 @@
 
 #' 2020 NFL Schedule
 #'
-#' All available ESPN fantasy football players as of the 2020 season, week 4.
+#' The initial 2020 NFL season schedule by team.
 #'
 #' @format A data frame with 1,059 rows and 5 variables:
 #' \describe{
@@ -32,6 +32,8 @@
 "nfl_schedule"
 
 #' 2020 NFL Teams
+#'
+#' The 32 professional NFL teams as of the 2020 season.
 #'
 #' @format A data frame with 1,056 rows and 5 variables:
 #' \describe{

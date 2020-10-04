@@ -14,11 +14,12 @@ ffl_api(lid = getOption("lid"), old = FALSE, view = NULL, ...)
 
 \item{view}{The API "view" for data to be returned.}
 
-\item{...}{Additional API query arguments; use "week" as a shorthand for
-"ScoringPeriodId" to display past rosters, etc.}
+\item{...}{Additional API query arguments. Use "week" and "year" as a
+shorthand for "ScoringPeriodId" and "seasonId" respectively.}
 }
 \description{
 A generic call to the API using \code{\link[jsonlite:fromJSON]{jsonlite::fromJSON()}} with nested data
 set to simplify. Use "week" and "year" as shortcuts for "scoringPeriodId"
 and "seasonId" respectively. Setting \code{old} equal to \code{TRUE} uses the
+"leagueHistory" API instead of accessing 2020 season data.
 }

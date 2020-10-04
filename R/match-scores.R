@@ -1,6 +1,7 @@
 #' Fantasy matchup scores
 #'
-#' The weekly matchups between home and away teams, with score and winner.
+#' The score of each team in a matchup period, the match outcome, and the number
+#' of league teams outscored (power wins).
 #'
 #' @inheritParams draft_picks
 #' @return A tibble (or list) of draft picks.

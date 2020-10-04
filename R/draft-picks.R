@@ -7,8 +7,8 @@
 #' @param lid ESPN League ID, defaults to `getOption("lid")` (see [set_lid()]).
 #' @param old If `FALSE` (default), return only the current season's data. If
 #'   `TRUE`, return a list with all prior seasons.
-#' @param ... Additional API query arguments; use "week" as a shorthand for
-#'   "ScoringPeriodId" to display past rosters, etc.
+#' @param ... Additional API query arguments. Use "week" and "year" as a
+#'   shorthand for "ScoringPeriodId" and "seasonId" respectively.
 #' @return A tibble (or list) of draft picks.
 #' @examples
 #' draft_picks(lid = 252353)

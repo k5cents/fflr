@@ -10,7 +10,7 @@ ffl_info()
 A list of season information.
 }
 \description{
-Get fantasy football info
+Information on the current fantasy football season.
 }
 \examples{
 str(ffl_info())

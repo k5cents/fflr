@@ -13,7 +13,7 @@ opponent_ranks(lid = getOption("lid"))
 A tibble of performance stats.
 }
 \description{
-NFL team performance against positions
+The average opposition team point differential by position.
 }
 \examples{
 opponent_ranks()

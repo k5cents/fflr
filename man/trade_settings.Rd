@@ -12,14 +12,14 @@ trade_settings(lid = getOption("lid"), old = FALSE, ...)
 \item{old}{If \code{FALSE} (default), return only the current season's data. If
 \code{TRUE}, return a list with all prior seasons.}
 
-\item{...}{Additional API query arguments; use "week" as a shorthand for
-"ScoringPeriodId" to display past rosters, etc.}
+\item{...}{Additional API query arguments. Use "week" and "year" as a
+shorthand for "ScoringPeriodId" and "seasonId" respectively.}
 }
 \value{
 A list or tibble of trade settings.
 }
 \description{
-League trade settings
+The time each trade can stand, votes needed to veto, and season deadline.
 }
 \examples{
 trade_settings(252353, old = TRUE)

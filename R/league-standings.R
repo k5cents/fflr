@@ -1,7 +1,7 @@
 #' League standings
 #'
 #' Return the current and projected standings, win streak, total wins, losses,
-#' points for and against.
+#' and points scored for and against each team.
 #'
 #' @inheritParams draft_picks
 #' @return A tibble (or list) of league members.

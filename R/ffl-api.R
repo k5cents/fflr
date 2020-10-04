@@ -3,6 +3,7 @@
 #' A generic call to the API using [jsonlite::fromJSON()] with nested data
 #' set to simplify. Use "week" and "year" as shortcuts for "scoringPeriodId"
 #' and "seasonId" respectively. Setting `old` equal to `TRUE` uses the
+#' "leagueHistory" API instead of accessing 2020 season data.
 #'
 #' @inheritParams draft_picks
 #' @param view The API "view" for data to be returned.

@@ -1,5 +1,8 @@
 #' League information
 #'
+#' Basic information on a ESPN fantasy football league, like the name, size,
+#' and season length.
+#'
 #' @inheritParams draft_picks
 #' @return A list or tibble of season settings.
 #' @examples
@@ -51,6 +54,8 @@ league_name <- function(lid = getOption("lid"), old = FALSE, ...) {
 
 #' League draft settings
 #'
+#' The type, date, and pick order of a league draft.
+#'
 #' @inheritParams draft_picks
 #' @return A list or tibble of draft settings.
 #' @examples
@@ -73,6 +78,8 @@ draft_settings <- function(lid = getOption("lid"), old = FALSE, ...) {
 }
 
 #' League waiver settings
+#'
+#' The type, days, and details of a league waiver process.
 #'
 #' @inheritParams draft_picks
 #' @return A list or tibble of waiver settings.
@@ -98,6 +105,8 @@ waiver_settings <- function(lid = getOption("lid"), old = FALSE, ...) {
 
 #' League finance settings
 #'
+#' The off-site fees assigned to various roster movies and transactions.
+#'
 #' @inheritParams draft_picks
 #' @return A list or tibble of finance settings.
 #' @examples
@@ -120,6 +129,8 @@ fee_settings <- function(lid = getOption("lid"), old = FALSE, ...) {
 }
 
 #' League roster settings
+#'
+#' The number of players and positions on a fantasy football roster.
 #'
 #' @inheritParams draft_picks
 #' @return A list or tibble of roster settings.
@@ -171,6 +182,8 @@ roster_settings <- function(lid = getOption("lid"), old = FALSE, ...) {
 
 #' League schedule settings
 #'
+#' The length of a fantasy season and the match periods for each week.
+#'
 #' @inheritParams draft_picks
 #' @return A list or tibble of schedule settings.
 #' @examples
@@ -220,6 +233,8 @@ schedule_settings <- function(lid = getOption("lid"), old = FALSE, ...) {
 
 #' League scoring settings
 #'
+#' The scoring system used and points awarded for various actions.
+#'
 #' @inheritParams draft_picks
 #' @return A list or tibble of scoring settings.
 #' @examples
@@ -260,6 +275,8 @@ scoring_settings <- function(lid = getOption("lid"), old = FALSE, ...) {
 }
 
 #' League trade settings
+#'
+#' The time each trade can stand, votes needed to veto, and season deadline.
 #'
 #' @inheritParams draft_picks
 #' @return A list or tibble of trade settings.

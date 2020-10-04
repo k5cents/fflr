@@ -2,7 +2,7 @@
 % Please edit documentation in R/match-schedule.R
 \name{match_schedule}
 \alias{match_schedule}
-\title{Match schedule}
+\title{Fantasy match schedule}
 \usage{
 match_schedule(lid = getOption("lid"), old = FALSE, ...)
 }
@@ -12,14 +12,14 @@ match_schedule(lid = getOption("lid"), old = FALSE, ...)
 \item{old}{If \code{FALSE} (default), return only the current season's data. If
 \code{TRUE}, return a list with all prior seasons.}
 
-\item{...}{Additional API query arguments; use "week" as a shorthand for
-"ScoringPeriodId" to display past rosters, etc.}
+\item{...}{Additional API query arguments. Use "week" and "year" as a
+shorthand for "ScoringPeriodId" and "seasonId" respectively.}
 }
 \value{
 A tibble (or list) of match opponents.
 }
 \description{
-Match schedule
+The opponents each team faces every week in a fantasy regular season.
 }
 \examples{
 match_schedule(lid = 252353)

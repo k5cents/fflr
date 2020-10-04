@@ -1,4 +1,6 @@
-#' The professional NFL schedule
+#' Professional NFL schedule
+#'
+#' The opponents each team faces every week in an NFL regular season.
 #'
 #' @param year Season schedule (2004-present), defaults to [ffl_year()].
 #' @return Tibble of NFL team opponents by week.

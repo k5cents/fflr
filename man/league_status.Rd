@@ -12,14 +12,15 @@ league_status(lid = getOption("lid"), old = FALSE, ...)
 \item{old}{If \code{FALSE} (default), return only the current season's data. If
 \code{TRUE}, return a list with all prior seasons.}
 
-\item{...}{Additional API query arguments; use "week" as a shorthand for
-"ScoringPeriodId" to display past rosters, etc.}
+\item{...}{Additional API query arguments. Use "week" and "year" as a
+shorthand for "ScoringPeriodId" and "seasonId" respectively.}
 }
 \value{
 A tibble or list of league status.
 }
 \description{
-League status
+Current information about a league: the date activated, current week,
+starting week, final week, past seasons, teams joined, and waiver status.
 }
 \examples{
 league_status(lid = 252353)

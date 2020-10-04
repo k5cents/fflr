@@ -1,5 +1,7 @@
 #' Live matchup scoreboard
 #'
+#' The current and projected score for each ongoing match.
+#'
 #' @inheritParams draft_picks
 #' @return A tibble of scores.
 #' @examples

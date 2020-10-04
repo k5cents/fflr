@@ -12,14 +12,14 @@ league_members(lid = getOption("lid"), old = FALSE, ...)
 \item{old}{If \code{FALSE} (default), return only the current season's data. If
 \code{TRUE}, return a list with all prior seasons.}
 
-\item{...}{Additional API query arguments; use "week" as a shorthand for
-"ScoringPeriodId" to display past rosters, etc.}
+\item{...}{Additional API query arguments. Use "week" and "year" as a
+shorthand for "ScoringPeriodId" and "seasonId" respectively.}
 }
 \value{
 A tibble (or list) of league members.
 }
 \description{
-Return the ESPN user names, unique owner IDs, and their manager status.
+The ESPN team owner users belonging to a fantasy football league.
 }
 \examples{
 league_members(lid = 252353)

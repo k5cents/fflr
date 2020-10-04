@@ -20,6 +20,6 @@ A data frame with 1,056 rows and 5 variables:
 nfl_teams
 }
 \description{
-2020 NFL Teams
+The 32 professional NFL teams as of the 2020 season.
 }
 \keyword{datasets}

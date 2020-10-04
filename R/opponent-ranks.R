@@ -1,5 +1,7 @@
 #' NFL team performance against positions
 #'
+#' The average opposition team point differential by position.
+#'
 #' @param lid ESPN League ID, defaulted because all return the same data.
 #' @return A tibble of performance stats.
 #' @examples

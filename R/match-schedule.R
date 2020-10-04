@@ -1,4 +1,6 @@
-#' Match schedule
+#' Fantasy match schedule
+#'
+#' The opponents each team faces every week in a fantasy regular season.
 #'
 #' @inheritParams draft_picks
 #' @return A tibble (or list) of match opponents.

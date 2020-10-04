@@ -1,6 +1,6 @@
 #' Fantasy league members
 #'
-#' Return the ESPN user names, unique owner IDs, and their manager status.
+#' The ESPN team owner users belonging to a fantasy football league.
 #'
 #' @inheritParams draft_picks
 #' @return A tibble (or list) of league members.

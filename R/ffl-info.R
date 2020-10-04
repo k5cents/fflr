@@ -1,5 +1,7 @@
 #' Get fantasy football info
 #'
+#' Information on the current fantasy football season.
+#'
 #' @return A list of season information.
 #' @examples
 #' str(ffl_info())
