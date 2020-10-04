@@ -9,8 +9,12 @@
 #' best_roster(team_roster(lid = 252353, week = 1)[[7]])
 #' @export
 best_roster <- function(roster) {
-  if (all(is.na(roster$score))) {
-    stop("The score column is empty, the period is likely the future")
+  if (sum(is.na(roster$score)) > 3) {
+    use_proj <- TRUE
+    roster$score <- roster$proj
+    roster$proj <- NULL
+  } else {
+    use_proj <- FALSE
   }
   n <- ncol(roster)
   y <- roster[roster$slot != "BE" & roster$slot != "IR", ]
