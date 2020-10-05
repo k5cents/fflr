@@ -25,5 +25,6 @@ live_scoring <- function(lid = getOption("lid"), old = FALSE, ...) {
   )
   s <- s[!is.na(s$proj), ]
   s <- s[order(s$match), ]
+  s$team <- team_abbrev(s$team, teams = parse_teams(d$teams))
   return(s)
 }
