@@ -16,5 +16,5 @@ A tibble of players.
 Individual player information
 }
 \examples{
-player_info()
+str(player_info(15847))
 }

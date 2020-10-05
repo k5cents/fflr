@@ -3,7 +3,7 @@
 #' @param id A single player ID number.
 #' @return A tibble of players.
 #' @examples
-#' player_info()
+#' str(player_info(15847))
 #' @importFrom tibble as_tibble
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom httr GET add_headers accept_json content
