@@ -27,4 +27,5 @@ zzz <- relocate(zzz, pro, pos, .after = last)
 
 nfl_players <- bind_rows(zzz, def_players)
 nfl_players <- select(nfl_players, -birth_place, -draft)
+nfl_players <- rename(nfl_players, birth = birth_date)
 usethis::use_data(nfl_players, overwrite = TRUE)
