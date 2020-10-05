@@ -1,3 +1,9 @@
+# fflr 0.3.6
+
+* Add `player_info()` and add to `nfl_players`.
+* Update `nfl_schedule` for COVID-19 delays.
+* Allow `live_scoring()` to show players yet to play.
+
 # fflr 0.3.5
 
 * Update function documentation.
