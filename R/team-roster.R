@@ -107,14 +107,14 @@ slot_abbrev <- function(slot) {
   factor(
     x = slot,
     levels = c("0",  "2",  "4",  "6",  "23", "16", "17", "20", "21"),
-    labels = c("QB", "RB", "WR", "TE", "FX", "DS", "KI", "BE", "IR")
+    labels = c("QB", "RB", "WR", "TE", "FX", "DS", "PK", "BE", "IR")
   )
 }
 
 pos_abbrev <- function(pos) {
   factor(
     x = pos,
-    levels = c("1",  "2",  "3",  "4",  "5",  "16"),
-    labels = c("QB", "RB", "WR", "TE", "KI", "DS")
+    levels = c("1",  "2",  "3",  "4",  "5",  "9",  "16"),
+    labels = c("QB", "RB", "WR", "TE", "PK", "DT", "DS")
   )
 }

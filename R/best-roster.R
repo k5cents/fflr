@@ -28,9 +28,9 @@ best_roster <- function(roster) {
   y[which(y$slot == "TE"), 5:n] <- roster[match(te, roster$score), 5:n]
   ds <- sort(roster$score[roster$pos == "DS"], decreasing = T)[1]
   y[which(y$slot == "DS"), 5:n] <- roster[match(ds, roster$score), 5:n]
-  ki <- sort(roster$score[roster$pos == "KI"], decreasing = T)[1]
-  ki <- which(roster$score == ki & roster$pos == "KI")
-  y[which(y$slot == "KI"), 5:n] <- roster[ki, 5:n]
+  ki <- sort(roster$score[roster$pos == "PK"], decreasing = T)[1]
+  ki <- which(roster$score == ki & roster$pos == "PK")
+  y[which(y$slot == "PK"), 5:n] <- roster[ki, 5:n]
   fx <- sort(roster$score[roster$pos %in% c("RB", "WR", "TE")], decreasing = T)
   fx <- fx[which(!(fx %in% c(rb, wr, te)))][1]
   y[which(y$slot == "FX"), 5:n] <- roster[match(fx, roster$score), 5:n]
