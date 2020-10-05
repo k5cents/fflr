@@ -22,7 +22,9 @@
 
 #' 2020 NFL Schedule
 #'
-#' The initial 2020 NFL season schedule by team.
+#' The 2020 NFL season schedule by team, as of October 5th. Due to COVID-19 game
+#' delays, the schedule is more in flux than usual. See [pro_schedule()] for the
+#' most current version.
 #'
 #' @format A data frame with 1,059 rows and 5 variables:
 #' \describe{
