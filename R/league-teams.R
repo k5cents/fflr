@@ -28,7 +28,11 @@ parse_teams <- function(t) {
   t$name <- paste(t$location, t$nickname)
   names(t)[names(t) == "id"] <- "team"
   t$abbrev <- factor(t$abbrev, levels = t$abbrev)
-  tibble::as_tibble(t[, c("team", "abbrev", "owners", "name")])
+  if ("owners" %in% names(t)) {
+    tibble::as_tibble(t[, c("team", "abbrev", "owners", "name")])
+  } else {
+    tibble::as_tibble(t[, c("team", "abbrev", "name")])
+  }
 }
 
 #' Convert team ID to abbreviation
