@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Fantasy matchup scores — match_scores • fflr</title>
+<title>Starting roster — start_roster • fflr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,9 +46,9 @@
 
 
 
-<meta property="og:title" content="Fantasy matchup scores — match_scores" />
-<meta property="og:description" content="The score of each team in a matchup period, the match outcome, and the number
-of league teams outscored (power wins)." />
+<meta property="og:title" content="Starting roster — start_roster" />
+<meta property="og:description" content="The starting 9 man roster using standard roster slots. In the future this
+function may be adapted to take roster slots from roster_settings()." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -120,57 +120,46 @@ of league teams outscored (power wins)." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Fantasy matchup scores</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/match-scores.R'><code>R/match-scores.R</code></a></small>
-    <div class="hidden name"><code>match_scores.Rd</code></div>
+    <h1>Starting roster</h1>
+    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/best-roster.R'><code>R/best-roster.R</code></a></small>
+    <div class="hidden name"><code>start_roster.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>The score of each team in a matchup period, the match outcome, and the number
-of league teams outscored (power wins).</p>
+    <p>The starting 9 man roster using standard roster slots. In the future this
+function may be adapted to take roster slots from <code><a href='roster_settings.html'>roster_settings()</a></code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>match_scores</span>(lid = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>), old = <span class='fl'>FALSE</span>, <span class='kw'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>start_roster</span>(<span class='kw'>roster</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>lid</th>
-      <td><p>ESPN League ID, defaults to <code><a href='https://rdrr.io/r/base/options.html'>getOption("lid")</a></code> (see <code><a href='set_lid.html'>set_lid()</a></code>).</p></td>
-    </tr>
-    <tr>
-      <th>old</th>
-      <td><p>If <code>FALSE</code> (default), return only the current season's data. If
-<code>TRUE</code>, return a list with all prior seasons.</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>Additional API query arguments. Use "week" and "year" as a
-shorthand for "ScoringPeriodId" and "seasonId" respectively.</p></td>
+      <th>roster</th>
+      <td><p>A roster tibble from <code><a href='team_roster.html'>team_roster()</a></code>.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble (or list) of draft picks.</p>
+    <p>A tibble of starters on a roster.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>match_scores</span>(lid = <span class='fl'>252353</span>)
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 24 x 9</span><span>
-#&gt;     year match week   team abbrev home  score winner power
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 1         3 PEPE   TRUE  103.  TRUE       4
-#&gt; </span><span style='color: #555555;'> 2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 1         1 AGUS   FALSE  68.5 FALSE      0
-#&gt; </span><span style='color: #555555;'> 3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     2 1        10 NICK   TRUE   86.0 FALSE      1
-#&gt; </span><span style='color: #555555;'> 4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     2 1         4 BILL   FALSE 134.  TRUE       6
-#&gt; </span><span style='color: #555555;'> 5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     3 1         5 CART   TRUE  149.  TRUE       7
-#&gt; </span><span style='color: #555555;'> 6</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     3 1        11 KYLE   FALSE  94.7 FALSE      2
-#&gt; </span><span style='color: #555555;'> 7</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     4 1         8 CORE   TRUE  119.  TRUE       5
-#&gt; </span><span style='color: #555555;'> 8</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     4 1         6 KIER   FALSE  99.7 FALSE      3
-#&gt; </span><span style='color: #555555;'> 9</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     5 2         1 AGUS   TRUE  144.  TRUE       7
-#&gt; </span><span style='color: #555555;'>10</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     5 2         4 BILL   FALSE 110.  FALSE      2
-#&gt; </span><span style='color: #555555;'># … with 14 more rows</span><span></div></span></pre>
+    <pre class="examples"><div class='input'><span class='fu'>start_roster</span>(<span class='fu'><a href='team_roster.html'>team_roster</a></span>(lid = <span class='fl'>252353</span>, week = <span class='fl'>1</span>)[[<span class='fl'>7</span>]])
+</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 9 x 15</span><span>
+#&gt;    year  week team  slot       id first last  pro   pos   status  proj score
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #555555;'>1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  QB    3</span><span style='text-decoration: underline;'>122</span><span>840 Desh… Wats… Hou   QB    A      21.9   20.8
+#&gt; </span><span style='color: #555555;'>2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  RB    3</span><span style='text-decoration: underline;'>043</span><span>078 Derr… Henry Ten   RB    A      15.5   13.1
+#&gt; </span><span style='color: #555555;'>3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  RB    2</span><span style='text-decoration: underline;'>977</span><span>644 Todd  Gurl… Atl   RB    A      12.5   11.7
+#&gt; </span><span style='color: #555555;'>4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  WR    2</span><span style='text-decoration: underline;'>976</span><span>499 Amari Coop… Dal   WR    A       8.90   8.1
+#&gt; </span><span style='color: #555555;'>5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  WR      </span><span style='text-decoration: underline;'>13</span><span>982 Julio Jones Atl   WR    Q      10.6   15.7
+#&gt; </span><span style='color: #555555;'>6</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  TE    3</span><span style='text-decoration: underline;'>040</span><span>151 Geor… Kitt… SF    TE    A      10.4    5.3
+#&gt; </span><span style='color: #555555;'>7</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  FX      </span><span style='text-decoration: underline;'>14</span><span>924 T.Y.  Hilt… Ind   WR    A       9.90   5.3
+#&gt; </span><span style='color: #555555;'>8</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  DS     -</span><span style='color: #BB0000;text-decoration: underline;'>16</span><span style='color: #BB0000;'>011</span><span> Colts D/ST  Ind   DS    A       5.41   2  
+#&gt; </span><span style='color: #555555;'>9</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  PK    3</span><span style='text-decoration: underline;'>050</span><span>478 Jake  Elli… Phi   PK    A       7.64   4  
+#&gt; </span><span style='color: #555555;'># … with 3 more variables: start </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, rost </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, change </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

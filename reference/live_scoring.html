@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.6</span>
       </span>
     </div>
 
@@ -128,7 +128,7 @@
     <p>The current and projected score for each ongoing match.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>live_scoring</span>(lid = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>), old = <span class='fl'>FALSE</span>, <span class='kw'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>live_scoring</span>(lid = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>), yet = <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -138,14 +138,9 @@
       <td><p>ESPN League ID, defaults to <code><a href='https://rdrr.io/r/base/options.html'>getOption("lid")</a></code> (see <code><a href='set_lid.html'>set_lid()</a></code>).</p></td>
     </tr>
     <tr>
-      <th>old</th>
-      <td><p>If <code>FALSE</code> (default), return only the current season's data. If
-<code>TRUE</code>, return a list with all prior seasons.</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>Additional API query arguments. Use "week" and "year" as a
-shorthand for "ScoringPeriodId" and "seasonId" respectively.</p></td>
+      <th>yet</th>
+      <td><p>If <code>TRUE</code>, <code><a href='pro_schedule.html'>pro_schedule()</a></code> and the "mRoster" view are called to
+determine how many starting players have <em>yet</em> started playing.</p></td>
     </tr>
     </table>
 
@@ -156,16 +151,16 @@ shorthand for "ScoringPeriodId" and "seasonId" respectively.</p></td>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>live_scoring</span>(<span class='fl'>252353</span>)
 </div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 8 x 5</span><span>
-#&gt;    week match  team score  proj
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span>     4    13     1  23.8 120. 
-#&gt; </span><span style='color: #555555;'>2</span><span>     4    13     6   0   106. 
-#&gt; </span><span style='color: #555555;'>3</span><span>     4    14     8   0    95.4
-#&gt; </span><span style='color: #555555;'>4</span><span>     4    14    11   0   105. 
-#&gt; </span><span style='color: #555555;'>5</span><span>     4    15     5   0   111. 
-#&gt; </span><span style='color: #555555;'>6</span><span>     4    15     4   3.5  98.4
-#&gt; </span><span style='color: #555555;'>7</span><span>     4    16    10   0    96.1
-#&gt; </span><span style='color: #555555;'>8</span><span>     4    16     3   0   100. </div></span></pre>
+#&gt;    week match team  score  proj
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #555555;'>1</span><span>     4    13 AGUS   51.2 102. 
+#&gt; </span><span style='color: #555555;'>2</span><span>     4    13 KIER   87.8  97.4
+#&gt; </span><span style='color: #555555;'>3</span><span>     4    14 CORE   86.9  96.1
+#&gt; </span><span style='color: #555555;'>4</span><span>     4    14 KYLE   75.9  86.9
+#&gt; </span><span style='color: #555555;'>5</span><span>     4    15 CART  102.  111. 
+#&gt; </span><span style='color: #555555;'>6</span><span>     4    15 BILL  112.  112. 
+#&gt; </span><span style='color: #555555;'>7</span><span>     4    16 NICK   88   118. 
+#&gt; </span><span style='color: #555555;'>8</span><span>     4    16 PEPE   64.9  79.6</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

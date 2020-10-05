@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Fantasy matchup scores — match_scores • fflr</title>
+<title>Individual player information — player_info • fflr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,9 +46,8 @@
 
 
 
-<meta property="og:title" content="Fantasy matchup scores — match_scores" />
-<meta property="og:description" content="The score of each team in a matchup period, the match outcome, and the number
-of league teams outscored (power wins)." />
+<meta property="og:title" content="Individual player information — player_info" />
+<meta property="og:description" content="Individual player information" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -120,57 +119,45 @@ of league teams outscored (power wins)." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Fantasy matchup scores</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/match-scores.R'><code>R/match-scores.R</code></a></small>
-    <div class="hidden name"><code>match_scores.Rd</code></div>
+    <h1>Individual player information</h1>
+    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/player-info.R'><code>R/player-info.R</code></a></small>
+    <div class="hidden name"><code>player_info.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>The score of each team in a matchup period, the match outcome, and the number
-of league teams outscored (power wins).</p>
+    <p>Individual player information</p>
     </div>
 
-    <pre class="usage"><span class='fu'>match_scores</span>(lid = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>), old = <span class='fl'>FALSE</span>, <span class='kw'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>player_info</span>(<span class='kw'>id</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>lid</th>
-      <td><p>ESPN League ID, defaults to <code><a href='https://rdrr.io/r/base/options.html'>getOption("lid")</a></code> (see <code><a href='set_lid.html'>set_lid()</a></code>).</p></td>
-    </tr>
-    <tr>
-      <th>old</th>
-      <td><p>If <code>FALSE</code> (default), return only the current season's data. If
-<code>TRUE</code>, return a list with all prior seasons.</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>Additional API query arguments. Use "week" and "year" as a
-shorthand for "ScoringPeriodId" and "seasonId" respectively.</p></td>
+      <th>id</th>
+      <td><p>A single player ID number.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble (or list) of draft picks.</p>
+    <p>A tibble of players.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>match_scores</span>(lid = <span class='fl'>252353</span>)
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 24 x 9</span><span>
-#&gt;     year match week   team abbrev home  score winner power
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 1         3 PEPE   TRUE  103.  TRUE       4
-#&gt; </span><span style='color: #555555;'> 2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 1         1 AGUS   FALSE  68.5 FALSE      0
-#&gt; </span><span style='color: #555555;'> 3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     2 1        10 NICK   TRUE   86.0 FALSE      1
-#&gt; </span><span style='color: #555555;'> 4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     2 1         4 BILL   FALSE 134.  TRUE       6
-#&gt; </span><span style='color: #555555;'> 5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     3 1         5 CART   TRUE  149.  TRUE       7
-#&gt; </span><span style='color: #555555;'> 6</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     3 1        11 KYLE   FALSE  94.7 FALSE      2
-#&gt; </span><span style='color: #555555;'> 7</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     4 1         8 CORE   TRUE  119.  TRUE       5
-#&gt; </span><span style='color: #555555;'> 8</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     4 1         6 KIER   FALSE  99.7 FALSE      3
-#&gt; </span><span style='color: #555555;'> 9</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     5 2         1 AGUS   TRUE  144.  TRUE       7
-#&gt; </span><span style='color: #555555;'>10</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     5 2         4 BILL   FALSE 110.  FALSE      2
-#&gt; </span><span style='color: #555555;'># … with 14 more rows</span><span></div></span></pre>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='fu'>player_info</span>(<span class='fl'>15847</span>))
+</div><div class='output co'>#&gt; List of 12
+#&gt;  $ id         : num 15847
+#&gt;  $ first      : chr "Travis"
+#&gt;  $ last       : chr "Kelce"
+#&gt;  $ pos        : chr "TE"
+#&gt;  $ jersey     : chr "87"
+#&gt;  $ weight     : num 260
+#&gt;  $ height     : num 77
+#&gt;  $ age        : int 30
+#&gt;  $ birth_date : chr "1989-10-05T07:00Z"
+#&gt;  $ birth_place: chr "Westlake, OH"
+#&gt;  $ debut      : int 2013
+#&gt;  $ draft      : int 63</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
