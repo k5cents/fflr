@@ -13,6 +13,9 @@ A data frame with 13 rows and 3 variables:
 ...
 }
 }
+\source{
+\url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2020/segments/0/leagues/252353}
+}
 \usage{
 gaa_teams
 }

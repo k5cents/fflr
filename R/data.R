@@ -9,9 +9,14 @@
 #'   \item{last}{Last name}
 #'   \item{pro}{Professional NFL team}
 #'   \item{pos}{Position: QB, RB, WR, TE, D/ST}
+#'   \item{jersey}{Jersey number}
+#'   \item{weight}{Weight in even pounds}
+#'   \item{height}{Weight in even inches}
+#'   \item{age}{Current age in year}
+#'   \item{birth}{Date of birth}
 #'   ...
 #' }
-#' @source \url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2020/segments/0/leagues/252353?view=kona_player_info}
+#' @source \url{http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2020/athletes/}
 "nfl_players"
 
 #' 2020 NFL Schedule
@@ -28,7 +33,7 @@
 #'   \item{kickoff}{Match date and time}
 #'   ...
 #' }
-#' @source \url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2020/segments/0/leagues/252353?view=kona_player_info}
+#' @source \url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2020?view=proTeamSchedules_wl}
 "nfl_schedule"
 
 #' 2020 NFL Teams
@@ -45,6 +50,7 @@
 #'   \item{conf}{NFL confrence}
 #'   ...
 #' }
+#' @source \url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2020?view=proTeamSchedules_wl}
 "nfl_teams"
 
 #' 2015-2020 GAA Teams
@@ -58,4 +64,5 @@
 #'   \item{years}{Nested list of active years}
 #'   ...
 #' }
+#' @source \url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2020/segments/0/leagues/252353}
 "gaa_teams"

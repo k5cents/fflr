@@ -16,6 +16,9 @@ A data frame with 1,056 rows and 5 variables:
 ...
 }
 }
+\source{
+\url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2020?view=proTeamSchedules_wl}
+}
 \usage{
 nfl_teams
 }

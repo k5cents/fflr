@@ -12,11 +12,16 @@ A data frame with 1,059 rows and 5 variables:
 \item{last}{Last name}
 \item{pro}{Professional NFL team}
 \item{pos}{Position: QB, RB, WR, TE, D/ST}
+\item{jersey}{Jersey number}
+\item{weight}{Weight in even pounds}
+\item{height}{Weight in even inches}
+\item{age}{Current age in year}
+\item{birth}{Date of birth}
 ...
 }
 }
 \source{
-\url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2020/segments/0/leagues/252353?view=kona_player_info}
+\url{http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2020/athletes/}
 }
 \usage{
 nfl_players
