@@ -17,6 +17,7 @@ A data frame with 1,059 rows and 5 variables:
 \item{height}{Weight in even inches}
 \item{age}{Current age in year}
 \item{birth}{Date of birth}
+\item{debut}{Season debuted in league}
 ...
 }
 }

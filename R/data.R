@@ -14,6 +14,7 @@
 #'   \item{height}{Weight in even inches}
 #'   \item{age}{Current age in year}
 #'   \item{birth}{Date of birth}
+#'   \item{debut}{Season debuted in league}
 #'   ...
 #' }
 #' @source \url{http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2020/athletes/}
