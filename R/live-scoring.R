@@ -2,17 +2,20 @@
 #'
 #' The current and projected score for each ongoing match.
 #'
-#' @inheritParams draft_picks
+#' @param lid ESPN League ID, defaults to `getOption("lid")` (see [set_lid()]).
+#' @param yet If `TRUE`, [pro_schedule()] and the "mRoster" view are called to
+#'   determine how many starting players have _yet_ started playing.
 #' @return A tibble of scores.
 #' @examples
 #' live_scoring(252353)
 #' @importFrom tibble tibble
 #' @export
-live_scoring <- function(lid = getOption("lid"), old = FALSE, ...) {
-  if (old) {
-    stop("live scoring for past seasons?")
+live_scoring <- function(lid = getOption("lid"), yet = FALSE) {
+  v <- "mScoreboard"
+  if (yet) {
+    v <- list(v, "mRoster")
   }
-  d <- ffl_api(lid, view = "mScoreboard", ...)
+  d <- ffl_api(lid, view = v)
   s <- tibble::tibble(
     week = d$status$currentMatchupPeriod,
     match = c(d$schedule$id, d$schedule$id),
@@ -25,6 +28,25 @@ live_scoring <- function(lid = getOption("lid"), old = FALSE, ...) {
   )
   s <- s[!is.na(s$proj), ]
   s <- s[order(s$match), ]
-  s$team <- team_abbrev(s$team, teams = parse_teams(d$teams))
+  t <- parse_teams(d$teams)
+  s$team <- team_abbrev(s$team, teams = t)
+  if (yet) {
+    r <- do.call("rbind", lapply(d$teams$roster$entries, parse_roster))
+    r <- start_roster(r)
+    r <- merge(r, pro_schedule())
+    r$team <- team_abbrev(r$team, teams = t)
+    y <- by(
+      data = r,
+      INDICES = r$team,
+      FUN = function(data) sum(data$kickoff > Sys.time(), na.rm = TRUE)
+    )
+    y <- data.frame(
+      team = names(y),
+      yet = as.vector(y)
+    )
+    s <- tibble::as_tibble(merge(y, s)[, c(3:4, 1:2, 5:6)])
+  }
   return(s)
 }
+
+

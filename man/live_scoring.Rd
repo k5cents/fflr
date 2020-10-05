@@ -4,16 +4,13 @@
 \alias{live_scoring}
 \title{Live matchup scoreboard}
 \usage{
-live_scoring(lid = getOption("lid"), old = FALSE, ...)
+live_scoring(lid = getOption("lid"), yet = FALSE)
 }
 \arguments{
 \item{lid}{ESPN League ID, defaults to \code{getOption("lid")} (see \code{\link[=set_lid]{set_lid()}}).}
 
-\item{old}{If \code{FALSE} (default), return only the current season's data. If
-\code{TRUE}, return a list with all prior seasons.}
-
-\item{...}{Additional API query arguments. Use "week" and "year" as a
-shorthand for "ScoringPeriodId" and "seasonId" respectively.}
+\item{yet}{If \code{TRUE}, \code{\link[=pro_schedule]{pro_schedule()}} and the "mRoster" view are called to
+determine how many starting players have \emph{yet} started playing.}
 }
 \value{
 A tibble of scores.
