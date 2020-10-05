@@ -37,6 +37,20 @@ best_roster <- function(roster) {
   return(y)
 }
 
+#' Starting roster
+#'
+#' The starting 9 man roster using standard roster slots. In the future this
+#' function may be adapted to take roster slots from [roster_settings()].
+#'
+#' @param roster A roster tibble from [team_roster()].
+#' @return A tibble of starters on a roster.
+#' @examples
+#' start_roster(team_roster(lid = 252353, week = 1)[[7]])
+#' @export
+start_roster <- function(roster) {
+  roster[roster$slot != "BE" & roster$slot != "IR", ]
+}
+
 #' Sum a roster score
 #'
 #' For a given roster tibble, sum the starting scores.
