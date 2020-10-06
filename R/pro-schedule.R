@@ -37,5 +37,6 @@ pro_schedule <- function(year = ffl_year()) {
   sched <- do.call("rbind", sched)
   sched$pro <- team_abbrev(sched$pro, fflr::nfl_teams)
   sched$opp <- team_abbrev(sched$opp, fflr::nfl_teams)
+  sched$future <- sched$kickoff > Sys.time()
   return(sched)
 }

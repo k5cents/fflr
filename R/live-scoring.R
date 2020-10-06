@@ -38,7 +38,7 @@ live_scoring <- function(lid = getOption("lid"), yet = FALSE) {
     y <- by(
       data = r,
       INDICES = r$team,
-      FUN = function(data) sum(data$kickoff > Sys.time(), na.rm = TRUE)
+      FUN = function(data) sum(data$future, na.rm = TRUE)
     )
     y <- data.frame(
       team = names(y),
