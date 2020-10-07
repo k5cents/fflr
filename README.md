@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+experimental](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/fflr)](https://CRAN.R-project.org/package=fflr)
 [![Codecov test
@@ -55,29 +55,29 @@ my_roster <- rosters[[5]]
     #> # A tibble: 16 x 13
     #>     week team  slot  first    last        pro   pos   status  proj score start  rost change
     #>    <int> <fct> <fct> <chr>    <chr>       <fct> <fct> <chr>  <dbl> <dbl> <dbl> <dbl>  <dbl>
-    #>  1     3 KIER  QB    Gardner  Minshew II  Jax   QB    A      19.9    9.2 18.0   45.8  3.8  
-    #>  2     3 KIER  RB    Alvin    Kamara      NO    RB    A      17.1   31.7 99.7  100.  -0.002
-    #>  3     3 KIER  RB    Jonathan Taylor      Ind   RB    A      15.3   12.2 84.8   98.5  0.499
-    #>  4     3 KIER  WR    DeAndre  Hopkins     Ari   WR    Q      11.8   13.7 99.7  100.   0.003
-    #>  5     3 KIER  WR    Odell    Beckham Jr. Cle   WR    Q       8.82   5.9 79.4   98.5 -0.346
-    #>  6     3 KIER  TE    Travis   Kelce       KC    TE    A      10.1    8.7 99.7  100.   0.001
-    #>  7     3 KIER  FX    David    Johnson     Hou   RB    A      11.6   10.6 74.8   97.7 -0.55 
-    #>  8     3 KIER  DS    Steelers D/ST        Pit   DS    A       7.50   7.5 70.5   98.0 -1.57 
-    #>  9     3 KIER  KI    Greg     Zuerlein    Dal   KI    A       7.91   9   78.3   84.0 -3.48 
-    #> 10     3 KIER  BE    Drew     Brees       NO    QB    A      17.9   23.5 41.0   89.2 -1.78 
-    #> 11     3 KIER  BE    Cooper   Kupp        LAR   WR    A       8.37  16.7 80.0   97.6  0.065
-    #> 12     3 KIER  BE    David    Montgomery  Chi   RB    A       9.32   5.4 43.9   91.8 -0.032
-    #> 13     3 KIER  BE    Ronald   Jones II    TB    RB    A       7.69   7.3 21.9   83.9 -3.51 
-    #> 14     3 KIER  BE    Marvin   Jones Jr.   Det   WR    A       8.90   5.1 33.8   87.3 -2.83 
-    #> 15     3 KIER  BE    Mike     Davis       Car   RB    A       9.32  15.1 70.0   87.9 29.9  
-    #> 16     3 KIER  IR    Deebo    Samuel      SF    WR    I       0      0    1.14  72.0 -1.93
+    #>  1     4 KIER  QB    Joe      Burrow      Cin   QB    A      19.3   15.1  35.9  83.4 30.4  
+    #>  2     4 KIER  RB    Alvin    Kamara      NO    RB    A      17.6   17.9  99.8 100.   0.025
+    #>  3     4 KIER  RB    Jonathan Taylor      Ind   RB    A      12.6    7.9  88.1  99.4  1.21 
+    #>  4     4 KIER  WR    DeAndre  Hopkins     Ari   WR    A      11.6    4.1  98.9 100.   0.025
+    #>  5     4 KIER  WR    Cooper   Kupp        LAR   WR    A       9.38  12.7  89.3  99.2  2.19 
+    #>  6     4 KIER  TE    Travis   Kelce       KC    TE    A       9.55   7    93.2 100.   0.012
+    #>  7     4 KIER  FX    Mike     Davis       Car   RB    A      11.5   17.1  89.5  96.3 18.7  
+    #>  8     4 KIER  DS    Rams     D/ST        LAR   DS    A       6.30  11    85.4  93.4 72.6  
+    #>  9     4 KIER  PK    Greg     Zuerlein    Dal   PK    A       7.90   2    80.9  85.7 -0.333
+    #> 10     4 KIER  BE    Odell    Beckham Jr. Cle   WR    A       9.16  33.4  86.6  99.1  0.437
+    #> 11     4 KIER  BE    David    Johnson     Hou   RB    A      11.3    9.2  83.5  98.8  1.07 
+    #> 12     4 KIER  BE    David    Montgomery  Chi   RB    A      10.0    7.7  53.2  96.1  4.75 
+    #> 13     4 KIER  BE    Ronald   Jones II    TB    RB    A      12.0   12.8  50.7  93.3  9.63 
+    #> 14     4 KIER  BE    Gardner  Minshew II  Jax   QB    A      18.6   20.9  26.2  56.3  0.262
+    #> 15     4 KIER  BE    Myles    Gaskin      Mia   RB    A       9.75   6.2  51.3  89.7 44.0  
+    #> 16     4 KIER  BE    Zach     Ertz        Phi   TE    A       7.04   2.9  91.0  99.5  0.411
 
 ``` r
 my_best <- best_roster(my_roster)
 roster_score(my_roster)
-#> [1] 108.5
+#> [1] 94.8
 roster_score(my_best)
-#> [1] 138.12
+#> [1] 134.84
 ```
 
 Matchups return as a [tidy](https://w.wiki/Jzz) tibble of weekly scores
@@ -118,44 +118,44 @@ waiver_adds <-
   )
 ```
 
-The included `nfl_players` tibble identifies all 1059 players (as of
+The included `nfl_players` tibble identifies all 1062 players (as of
 September 30th, 2020).
 
 ``` r
 waiver_adds %>% 
-  left_join(nfl_players) %>% 
-  select(15:18, bid, team = to_team) %>%
-  left_join(teams[, 1:2]) %>% 
+  left_join(nfl_players[, 1:3]) %>% 
+  select(15:16, bid, team = to_team) %>%
+  left_join(teams[, 2:3]) %>% 
   arrange(desc(bid))
-#> # A tibble: 19 x 7
-#>    first      last          pro   pos     bid  team  year
-#>    <chr>      <chr>         <fct> <fct> <int> <int> <int>
-#>  1 James      Robinson      Jax   RB       32     4  2020
-#>  2 Joshua     Kelley        LAC   RB       16     4  2020
-#>  3 Jonnu      Smith         Ten   TE        7     1  2020
-#>  4 Mike       Gesicki       Mia   TE        6     5  2020
-#>  5 Gardner    Minshew II    Jax   QB        5     6  2020
-#>  6 Buccaneers D/ST          TB    DS        5     1  2020
-#>  7 Jarvis     Landry        Cle   WR        5     8  2020
-#>  8 Darius     Slayton       NYG   WR        5     1  2020
-#>  9 Mike       Davis         Car   RB        4     6  2020
-#> 10 Colts      D/ST          Ind   DS        4    11  2020
-#> 11 Darrell    Henderson Jr. LAR   RB        3     8  2020
-#> 12 Zane       Gonzalez      Ari   KI        3     1  2020
-#> 13 Russell    Gage          Atl   WR        2    10  2020
-#> 14 Devonta    Freeman       NYG   RB        2     8  2020
-#> 15 Dallas     Goedert       Phi   TE        1    10  2020
-#> 16 Washington D/ST          Wsh   DS        1     5  2020
-#> 17 Jason      Myers         Sea   KI        1    11  2020
-#> 18 Deebo      Samuel        SF    WR        1     6  2020
-#> 19 Jerick     McKinnon      SF    RB        1     4  2020
+#> # A tibble: 19 x 5
+#>    first      last            bid  team abbrev
+#>    <chr>      <chr>         <int> <int> <fct> 
+#>  1 James      Robinson         32     4 BILL  
+#>  2 Joshua     Kelley           16     4 BILL  
+#>  3 Jonnu      Smith             7     1 AGUS  
+#>  4 Mike       Gesicki           6     5 CART  
+#>  5 Gardner    Minshew II        5     6 KIER  
+#>  6 Buccaneers D/ST              5     1 AGUS  
+#>  7 Jarvis     Landry            5     8 CORE  
+#>  8 Darius     Slayton           5     1 AGUS  
+#>  9 Mike       Davis             4     6 KIER  
+#> 10 Colts      D/ST              4    11 KYLE  
+#> 11 Darrell    Henderson Jr.     3     8 CORE  
+#> 12 Zane       Gonzalez          3     1 AGUS  
+#> 13 Russell    Gage              2    10 NICK  
+#> 14 Devonta    Freeman           2     8 CORE  
+#> 15 Dallas     Goedert           1    10 NICK  
+#> 16 Washington D/ST              1     5 CART  
+#> 17 Jason      Myers             1    11 KYLE  
+#> 18 Deebo      Samuel            1     6 KIER  
+#> 19 Jerick     McKinnon          1     4 BILL
 ```
 
 -----
 
 The fflr project is released with a [Contributor Code of
-Conduct](https://contributor-covenant.org/version/1/0/0/CODE_OF_CONDUCT.html).
-By contributing to this project, you agree to abide by its terms.
+Conduct](https://kiernann.com/fflr/CODE_OF_CONDUCT.html). By
+contributing to this project, you agree to abide by its terms.
 
 <!-- refs: start -->
 
