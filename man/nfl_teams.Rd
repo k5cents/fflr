@@ -12,7 +12,7 @@ A data frame with 1,056 rows and 5 variables:
 \item{location}{Team geographic location}
 \item{name}{Team full nickname}
 \item{bye}{Bye week, no game played}
-\item{conf}{NFL confrence}
+\item{conf}{NFL conference}
 ...
 }
 }

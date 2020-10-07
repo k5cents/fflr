@@ -20,7 +20,7 @@ The league ID, invisibly.
 \description{
 Once the league ID option is set, the \code{lid} argument in most functions can be
 ignored and will be automatically set. This function uses \code{\link[=options]{options()}} to
-define the "lid" option. To persit this option, set \code{edit} to \code{TRUE} and
+define the "lid" option. To persist this option, set \code{edit} to \code{TRUE} and
 open the \code{.Rprofile} package, where \code{\link[=options]{options()}} can be added to define "lid".
 }
 \examples{

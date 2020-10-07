@@ -2,7 +2,7 @@
 #'
 #' Once the league ID option is set, the `lid` argument in most functions can be
 #' ignored and will be automatically set. This function uses [options()] to
-#' define the "lid" option. To persit this option, set `edit` to `TRUE` and
+#' define the "lid" option. To persist this option, set `edit` to `TRUE` and
 #' open the `.Rprofile` package, where [options()] can be added to define "lid".
 #'
 #' @param lid ESPN league ID.

@@ -50,7 +50,7 @@
 #'   \item{location}{Team geographic location}
 #'   \item{name}{Team full nickname}
 #'   \item{bye}{Bye week, no game played}
-#'   \item{conf}{NFL confrence}
+#'   \item{conf}{NFL conference}
 #'   ...
 #' }
 #' @source \url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2020?view=proTeamSchedules_wl}

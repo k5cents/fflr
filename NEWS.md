@@ -30,7 +30,7 @@
 # fflr 0.3.1
 
 * Add power wins calculation to matchups.
-* Make team abbreviatins factors ordered by ID.
+* Make team abbreviations factors ordered by ID.
 * `ffl_api()` can now take multiple views as list.
 * Scrape live scoring with updated projections.
 
