@@ -238,10 +238,10 @@ schedule_settings <- function(lid = getOption("lid"), old = FALSE, ...) {
 #' @inheritParams draft_picks
 #' @return A list or tibble of scoring settings.
 #' @examples
-#' scoring_settings(252353, old = TRUE)
+#' score_settings(252353, old = TRUE)
 #' @importFrom tibble as_tibble tibble
 #' @export
-scoring_settings <- function(lid = getOption("lid"), old = FALSE, ...) {
+score_settings <- function(lid = getOption("lid"), old = FALSE, ...) {
   d <- ffl_api(lid, old, view = "mSettings", ...)
   s <- d$settings$scoringSettings
   if (old) {

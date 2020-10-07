@@ -135,14 +135,14 @@ test_that("schedule settings for past seasons", {
 Sys.sleep(30)
 
 test_that("scoring settings for a single season", {
-  s <- scoring_settings(252353, old = FALSE)
+  s <- score_settings(252353, old = FALSE)
   expect_type(s, "list")
   expect_length(s, 7)
   expect_s3_class(s$scoring, "tbl")
 })
 
 test_that("scoring settings for past seasons", {
-  s <- scoring_settings(252353, old = TRUE)
+  s <- score_settings(252353, old = TRUE)
   expect_s3_class(s, "tbl")
   expect_length(s, 7)
   expect_equal(nrow(s), 5)
