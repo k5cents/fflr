@@ -10,6 +10,9 @@
 #' @importFrom jsonlite fromJSON
 #' @export
 stat_correct <- function(date = Sys.Date()) {
+  if (!inherits(date, c("Date", "character"))) {
+    stop("date must be date class or coercible character")
+  }
   d <- fromJSON(
     txt = paste0(
       "https://sports.core.api.espn.com/",
