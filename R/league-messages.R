@@ -25,6 +25,7 @@ parse_coms <- function(t) {
     author = t$EMAIL$author,
     date = ffl_date(t$EMAIL$date),
     content = t$EMAIL$content,
+    messages = list(NULL),
     view_by = t$EMAIL$viewableBy
   )
   note <- tibble::tibble(
@@ -33,24 +34,37 @@ parse_coms <- function(t) {
     author = t$NOTt$author,
     date = ffl_date(t$NOTt$date),
     content = t$NOTt$content,
+    messages = list(NULL),
     view_by = list(NULL)
   )
-  board <- tibble::tibble(
+  board1 <- tibble::tibble(
     id = substr(t$MSG_BOARD_GROUP$id, 1, 8),
     type = t$MSG_BOARD_GROUP$type,
     author = t$MSG_BOARD_GROUP$author,
     date = ffl_date(t$MSG_BOARD_GROUP$date),
     content = t$MSG_BOARD_GROUP$content,
+    messages = t$MSG_BOARD_GROUP$messages,
     view_by = list(NULL)
   )
-  board$type <- "BOARD"
+  board2 <- tibble::tibble(
+    id = substr(t$MSG_BOARD$id, 1, 8),
+    type = t$MSG_BOARD$type,
+    author = t$MSG_BOARD$author,
+    date = ffl_date(t$MSG_BOARD$date),
+    content = t$MSG_BOARD$content,
+    messages = t$MSG_BOARD_GROUP$messages,
+    view_by = list(NULL)
+  )
+  board1$type <- "BOARD"
+  board2$type <- "BOARD"
   chat <- tibble::tibble(
     id = substr(t$CHAT$messages[[1]]$id, 1, 8),
     type = t$CHAT$type,
     author = t$CHAT$message[[1]]$author,
     date = ffl_date(t$CHAT$messages[[1]]$date),
     content = t$CHAT$messages[[1]]$content,
+    messages = list(NULL),
     view_by = list(NULL)
   )
-  tibble::as_tibble(rbind(email, chat, board, note))
+  tibble::as_tibble(rbind(email, chat, board1, board2, note))
 }
