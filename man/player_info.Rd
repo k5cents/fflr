@@ -4,10 +4,12 @@
 \alias{player_info}
 \title{Individual player information}
 \usage{
-player_info(id)
+player_info(id, row = FALSE)
 }
 \arguments{
 \item{id}{A single player ID number.}
+
+\item{row}{Should list be converted to a single row data frame?}
 }
 \value{
 A tibble of players.

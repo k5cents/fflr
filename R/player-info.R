@@ -1,6 +1,7 @@
 #' Individual player information
 #'
 #' @param id A single player ID number.
+#' @param row Should list be converted to a single row data frame?
 #' @return A tibble of players.
 #' @examples
 #' str(player_info(15847))
