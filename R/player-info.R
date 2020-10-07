@@ -5,10 +5,9 @@
 #' @examples
 #' str(player_info(15847))
 #' @importFrom tibble as_tibble
-#' @importFrom jsonlite fromJSON toJSON
-#' @importFrom httr GET add_headers accept_json content
+#' @importFrom jsonlite fromJSON
 #' @export
-player_info <- function(id) {
+player_info <- function(id, row = FALSE) {
   if (as.numeric(id) < 0) {
     stop("no information available for defenses")
   }
@@ -36,5 +35,13 @@ player_info <- function(id) {
     debut = d$debutYear,
     draft = d$draft$selection
   )
+  out <- out[!sapply(out, is.null)]
+  out <- out[sapply(out, function(x) length(x) > 0)]
+  if ("birth_date" %in% names(out)) {
+    out$birth_date <- as.Date(out$birth_date)
+  }
+  if (row) {
+    out <- tibble::as_tibble(out)
+  }
   return(out)
 }
