@@ -145,19 +145,19 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>pro_schedule</span>(year = <span class='fu'><a href='ffl_year.html'>ffl_year</a></span>(<span class='op'>-</span><span class='fl'>2</span>))
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 512 x 6</span><span>
-#&gt;     year  week pro   opp   home  kickoff            
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>             
-#&gt; </span><span style='color: #555555;'> 1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018     1 Atl   Phi   FALSE 2018-09-07 </span><span style='color: #555555;'>00:55:00</span><span>
-#&gt; </span><span style='color: #555555;'> 2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018     1 Buf   Bal   FALSE 2018-09-09 </span><span style='color: #555555;'>17:00:00</span><span>
-#&gt; </span><span style='color: #555555;'> 3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018     1 Chi   GB    FALSE 2018-09-10 </span><span style='color: #555555;'>00:20:00</span><span>
-#&gt; </span><span style='color: #555555;'> 4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018     1 Cin   Ind   FALSE 2018-09-09 </span><span style='color: #555555;'>17:00:00</span><span>
-#&gt; </span><span style='color: #555555;'> 5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018     1 Cle   Pit   TRUE  2018-09-09 </span><span style='color: #555555;'>17:00:00</span><span>
-#&gt; </span><span style='color: #555555;'> 6</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018     1 Dal   Car   FALSE 2018-09-09 </span><span style='color: #555555;'>20:25:00</span><span>
-#&gt; </span><span style='color: #555555;'> 7</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018     1 Den   Sea   TRUE  2018-09-09 </span><span style='color: #555555;'>20:25:00</span><span>
-#&gt; </span><span style='color: #555555;'> 8</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018     1 Det   NYJ   TRUE  2018-09-10 </span><span style='color: #555555;'>23:10:00</span><span>
-#&gt; </span><span style='color: #555555;'> 9</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018     1 GB    Chi   TRUE  2018-09-10 </span><span style='color: #555555;'>00:20:00</span><span>
-#&gt; </span><span style='color: #555555;'>10</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018     1 Ten   Mia   FALSE 2018-09-09 </span><span style='color: #555555;'>17:00:00</span><span>
+</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 512 x 7</span><span>
+#&gt;     year  week pro   opp   home  kickoff             future
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>              </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span> 
+#&gt; </span><span style='color: #555555;'> 1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018     1 Atl   Phi   FALSE 2018-09-07 </span><span style='color: #555555;'>00:55:00</span><span> FALSE 
+#&gt; </span><span style='color: #555555;'> 2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018     1 Buf   Bal   FALSE 2018-09-09 </span><span style='color: #555555;'>17:00:00</span><span> FALSE 
+#&gt; </span><span style='color: #555555;'> 3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018     1 Chi   GB    FALSE 2018-09-10 </span><span style='color: #555555;'>00:20:00</span><span> FALSE 
+#&gt; </span><span style='color: #555555;'> 4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018     1 Cin   Ind   FALSE 2018-09-09 </span><span style='color: #555555;'>17:00:00</span><span> FALSE 
+#&gt; </span><span style='color: #555555;'> 5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018     1 Cle   Pit   TRUE  2018-09-09 </span><span style='color: #555555;'>17:00:00</span><span> FALSE 
+#&gt; </span><span style='color: #555555;'> 6</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018     1 Dal   Car   FALSE 2018-09-09 </span><span style='color: #555555;'>20:25:00</span><span> FALSE 
+#&gt; </span><span style='color: #555555;'> 7</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018     1 Den   Sea   TRUE  2018-09-09 </span><span style='color: #555555;'>20:25:00</span><span> FALSE 
+#&gt; </span><span style='color: #555555;'> 8</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018     1 Det   NYJ   TRUE  2018-09-10 </span><span style='color: #555555;'>23:10:00</span><span> FALSE 
+#&gt; </span><span style='color: #555555;'> 9</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018     1 GB    Chi   TRUE  2018-09-10 </span><span style='color: #555555;'>00:20:00</span><span> FALSE 
+#&gt; </span><span style='color: #555555;'>10</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018     1 Ten   Mia   FALSE 2018-09-09 </span><span style='color: #555555;'>17:00:00</span><span> FALSE 
 #&gt; </span><span style='color: #555555;'># … with 502 more rows</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

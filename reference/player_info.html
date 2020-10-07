@@ -128,7 +128,7 @@
     <p>Individual player information</p>
     </div>
 
-    <pre class="usage"><span class='fu'>player_info</span>(<span class='kw'>id</span>)</pre>
+    <pre class="usage"><span class='fu'>player_info</span>(<span class='kw'>id</span>, row = <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -136,6 +136,10 @@
     <tr>
       <th>id</th>
       <td><p>A single player ID number.</p></td>
+    </tr>
+    <tr>
+      <th>row</th>
+      <td><p>Should list be converted to a single row data frame?</p></td>
     </tr>
     </table>
 
@@ -153,8 +157,8 @@
 #&gt;  $ jersey     : chr "87"
 #&gt;  $ weight     : num 260
 #&gt;  $ height     : num 77
-#&gt;  $ age        : int 30
-#&gt;  $ birth_date : chr "1989-10-05T07:00Z"
+#&gt;  $ age        : int 31
+#&gt;  $ birth_date : Date[1:1], format: "1989-10-05"
 #&gt;  $ birth_place: chr "Westlake, OH"
 #&gt;  $ debut      : int 2013
 #&gt;  $ draft      : int 63</div></pre>
