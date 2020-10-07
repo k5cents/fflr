@@ -77,7 +77,7 @@ roster_score(my_roster)
 roster_score(my_best)
 ```
 
-Matchups return as a [tidy](https://w.wiki/Jzz) tibble of weekly scores by team.
+Matchups return as a [tidy][tidy] tibble of weekly scores by team.
 
 ```{r league_teams}
 (teams <- league_teams()[, -4])
@@ -133,4 +133,5 @@ contributing to this project, you agree to abide by its terms.
 [ffplot]: https://github.com/kiernann/ffplot
 [fflr]: https://github.com/kiernann/fflr
 [coc]: https://kiernann.com/fflr/CODE_OF_CONDUCT.html
+[tidy]: https://en.wikipedia.org/wiki/Tidy_data
 <!-- refs: end -->

@@ -80,8 +80,8 @@ roster_score(my_best)
 #> [1] 134.84
 ```
 
-Matchups return as a [tidy](https://w.wiki/Jzz) tibble of weekly scores
-by team.
+Matchups return as a [tidy](https://en.wikipedia.org/wiki/Tidy_data)
+tibble of weekly scores by team.
 
 ``` r
 (teams <- league_teams()[, -4])
