@@ -1,7 +1,7 @@
 library(testthat)
 library(fflr)
 
-test_that("multiplication works", {
+test_that("outlooks return without league ID", {
   o <- player_outlook(lid = NULL)
   expect_s3_class(o, "tbl")
   expect_length(o, 6)
