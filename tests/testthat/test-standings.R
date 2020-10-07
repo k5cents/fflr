@@ -2,13 +2,13 @@ library(testthat)
 library(fflr)
 
 test_that("standings returns for current year", {
-  s <- league_standings(252353, old = FALSE)
+  s <- score_summary(252353, old = FALSE)
   expect_s3_class(s, "tbl")
   expect_length(s, 16)
 })
 
 test_that("standings returns for past years", {
-  s <- league_standings(252353, old = TRUE)
+  s <- score_summary(252353, old = TRUE)
   expect_type(s, "list")
   expect_s3_class(s[[1]], "tbl")
   expect_length(s, 5)

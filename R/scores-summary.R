@@ -6,10 +6,10 @@
 #' @inheritParams draft_picks
 #' @return A tibble (or list) of league members.
 #' @examples
-#' league_standings(lid = 252353)
+#' score_summary(lid = 252353)
 #' @importFrom tibble as_tibble
 #' @export
-league_standings <- function(lid = getOption("lid"), old = FALSE, ...) {
+score_summary <- function(lid = getOption("lid"), old = FALSE, ...) {
   data <- ffl_api(lid, old, view = "mTeam", ...)
   member_cols <- c("user", "owners", "lm")
   if (old) {
