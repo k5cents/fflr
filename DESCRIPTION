@@ -6,8 +6,8 @@ Authors@R:
            family = "Nicholls",
            role = c("aut", "cre"),
            email = "kiernann@protonmail.com")
-Description: Use the v2 and v3 ESPN Fantasy Football API to
-    collect data on fantasy leagues, teams, and individual athletes.
+Description: Format the JSON data from ESPN's fantasy football
+    API into tidy tables. Scrape data on leagues, teams, and athletes.
 License: GPL-3
 URL: https://github.com/kiernann/fflr
 BugReports: https://github.com/kiernann/fflr/issues
