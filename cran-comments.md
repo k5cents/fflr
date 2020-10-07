@@ -1,7 +1,9 @@
 ## Test environments
 
-* local: linux-gnu-3.6.1
-* travis: 3.1, 3.2, 3.3, oldrel, release, devel
+* local: ubuntu-20.04 (release)\
+* github actions: ubuntu-20.04 (release, devel)
+* github actions: macOS-latest (release)
+* github actions: windows-latest (release) 
 * r-hub: windows-x86_64-devel, ubuntu-gcc-release, fedora-clang-devel
 * win-builder: windows-x86_64-devel
 
