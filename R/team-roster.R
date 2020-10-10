@@ -89,10 +89,6 @@ parse_roster <- function(entry, t = NULL) {
     rost = player$ownership$percentOwned,
     change = round(player$ownership$percentChange, digits = 3)
   )
-  if (!all(is.na(entry$acquisitionType))) {
-    x$acq_type = entry$acquisitionType
-    x$acq_date = ffl_date(entry$acquisitionDate)
-  }
   x[order(x$slot), ]
 }
 
