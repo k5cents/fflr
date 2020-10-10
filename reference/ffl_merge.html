@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Fantasy team roster — team_roster • fflr</title>
+<title>Merge fantasy data — ffl_merge • fflr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,9 @@
 
 
 
-<meta property="og:title" content="Fantasy team roster — team_roster" />
-<meta property="og:description" content="The players on a team roster with position, injury status, and playing stats." />
+<meta property="og:title" content="Merge fantasy data — ffl_merge" />
+<meta property="og:description" content="This is a shortcut for the base merge() method that does not reorder
+columns or rows and returns the merged data as a tibble." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -131,42 +132,37 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Fantasy team roster</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/team-roster.R'><code>R/team-roster.R</code></a></small>
-    <div class="hidden name"><code>team_roster.Rd</code></div>
+    <h1>Merge fantasy data</h1>
+    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/ffl-merge.R'><code>R/ffl-merge.R</code></a></small>
+    <div class="hidden name"><code>ffl_merge.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>The players on a team roster with position, injury status, and playing stats.</p>
+    <p>This is a shortcut for the base <code><a href='https://rdrr.io/r/base/merge.html'>merge()</a></code> method that does not reorder
+columns or rows and returns the merged data as a tibble.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>team_roster</span>(lid = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>), old = <span class='fl'>FALSE</span>, <span class='kw'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>ffl_merge</span>(<span class='kw'>x</span>, <span class='kw'>y</span>, <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>lid</th>
-      <td><p>ESPN League ID, defaults to <code><a href='https://rdrr.io/r/base/options.html'>getOption("lid")</a></code> (see <code><a href='set_lid.html'>set_lid()</a></code>).</p></td>
-    </tr>
-    <tr>
-      <th>old</th>
-      <td><p>If <code>FALSE</code> (default), return only the current season's data. If
-<code>TRUE</code>, return a list with all prior seasons.</p></td>
+      <th>x, y</th>
+      <td><p>Fantasy data frames to be merged together.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Additional API query arguments. Use "week" and "year" as a
-shorthand for "ScoringPeriodId" and "seasonId" respectively.</p></td>
+      <td><p>Arguments passed to <code><a href='https://rdrr.io/r/base/merge.html'>merge()</a></code>.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble (or list) of players on a roster.</p>
+    <p>A merged tibble.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>team_roster</span>(lid = <span class='fl'>252353</span>)
+    <pre class="examples"><div class='input'><span class='fu'><a href='team_roster.html'>team_roster</a></span>(lid = <span class='fl'>252353</span>)
 </div><div class='output co'>#&gt; $AGUS
 #&gt; <span style='color: #555555;'># A tibble: 16 x 15</span><span>
 #&gt;     year  week team  slot       id first last  pro   pos   status  proj score
