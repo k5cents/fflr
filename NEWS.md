@@ -1,3 +1,9 @@
+# fflr 0.3.7
+
+* Add `ffl_merge()` shortcut.
+* Separate `player_aquire()` from `team_roster()`.
+* Add overview vignette on all features.
+
 # fflr 0.3.6
 
 * Add `player_info()` and add to `nfl_players`.
