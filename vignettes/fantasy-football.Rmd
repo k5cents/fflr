@@ -38,7 +38,7 @@ espn_games()
 ```
 
 This package is designed to retrieve both current and historical data from the
-ESPN api. There are 17 years of seasons listed in the API!
+ESPN API. There are 17 years of seasons listed in the API!
 
 ```{r ffl_seasons}
 ffl_seasons()
@@ -166,7 +166,7 @@ News on an individual player can also be helpful.
 player_news(id = 15847)
 ```
 
-ESPN analysts publish weekly and pre-season outlooks on most players.
+ESPN analysts publish weekly and preseason outlooks on most players.
 
 ```{r player_outlook, results='asis'}
 outlooks <- player_outlook()
@@ -298,7 +298,7 @@ schedule_settings()
 If you want to return scores by _week_, use a different function. These
 functions also return "power wins" which are the total number of wins a team
 would get if they played every other team in the league; the lowest score gets
-zero power wins and the highest get's one less than the number of teams.
+zero power wins and the highest gets one less than the number of teams.
 
 ```{r week_scores}
 week_scores()
