@@ -14,6 +14,9 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+if (!interactive()) {
+  options(width = 99)
+}
 ```
 
 ```{r setup}
@@ -305,4 +308,22 @@ A summary of scores and wins is also available.
 
 ```{r score_summary}
 score_summary()
+```
+
+## Historical
+
+Most functions have an `old` argument that can be used to specify access to the
+historical endpoint of the API. If the recent data is usually returned as a 
+dataframe, like rosters, then a _list_ of dataframes is returned instead; if the
+recent data is a list, then a single dataframe is returned instead.
+
+```{r past_scores}
+past <- week_scores(old = TRUE)
+names(past) <- 2015:2019
+str(past, max.level = 1)
+```
+
+```{r past_info}
+str(league_info())
+league_info(old = TRUE)
 ```
