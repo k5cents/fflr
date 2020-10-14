@@ -12,3 +12,8 @@
 0 errors | 0 warnings | 1 note
 
 * This is a new release.
+
+## Resubmission
+
+* [ESPN](https://en.wikipedia.org/wiki/ESPN) is not really an acronym, it no
+longer stands for anything and doesn't need to be explained in the DESCRIPTION.
