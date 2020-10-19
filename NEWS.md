@@ -1,3 +1,8 @@
+# fflr 0.3.8
+
+* Remove `set_lid()`.
+* Fix system sleeping between settings tests.
+
 # fflr 0.3.7
 
 * Add `ffl_merge()` shortcut.

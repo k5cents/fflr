@@ -21,3 +21,7 @@ longer stands for anything and doesn't need to be explained in the DESCRIPTION.
 * `Sys.sleep()` has been removed from `test-settings.R`, reducing the overall
 run time from 159.9 to 44.9 seconds. Running all tests without sleeping can
 occasionally produce an API error, but it works right now.
+
+* `set_lid()`, which used `usethis::edit_r_profile()` to open `.Rprofile` and
+set an `option()`, has been removed. Users will manually set their global
+option. The 'usethis' package is no longer suggested or conditionally tested.
