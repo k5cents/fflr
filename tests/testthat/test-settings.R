@@ -20,7 +20,6 @@ test_that("draft settings for past seasons", {
 })
 
 # league info -------------------------------------------------------------
-Sys.sleep(30)
 
 test_that("league info for a single season", {
   d <- league_info(252353, old = FALSE)
@@ -53,7 +52,6 @@ test_that("league name returns as single character element", {
 })
 
 # waiver setting ----------------------------------------------------------
-Sys.sleep(30)
 
 test_that("waiver settings for a single season", {
   w <- waiver_settings(252353, old = FALSE)
@@ -92,7 +90,6 @@ test_that("fee settings for past seasons", {
 })
 
 # roster settings ---------------------------------------------------------
-Sys.sleep(30)
 
 test_that("roster settings for a single season", {
   r <- roster_settings(252353, old = FALSE)
@@ -132,7 +129,6 @@ test_that("schedule settings for past seasons", {
 })
 
 # scoring settings --------------------------------------------------------
-Sys.sleep(30)
 
 test_that("scoring settings for a single season", {
   s <- score_settings(252353, old = FALSE)
