@@ -7,7 +7,9 @@
 live_scoring(lid = getOption("lid"), yet = FALSE)
 }
 \arguments{
-\item{lid}{ESPN League ID, defaults to \code{getOption("lid")} (see \code{\link[=set_lid]{set_lid()}}).}
+\item{lid}{ESPN League ID, defaults to \code{getOption("lid")}. Use
+\verb{options(lid = <League ID>)} to set your league ID; put that line in your
+\code{.Rprofile} file to set the option at start up.}
 
 \item{yet}{If \code{TRUE}, \code{\link[=pro_schedule]{pro_schedule()}} and the "mRoster" view are called to
 determine how many starting players have \emph{yet} started playing.}

@@ -2,7 +2,9 @@
 #'
 #' The current and projected score for each ongoing match.
 #'
-#' @param lid ESPN League ID, defaults to `getOption("lid")` (see [set_lid()]).
+#' @param lid ESPN League ID, defaults to `getOption("lid")`. Use
+#'   `options(lid = <League ID>)` to set your league ID; put that line in your
+#'   `.Rprofile` file to set the option at start up.
 #' @param yet If `TRUE`, [pro_schedule()] and the "mRoster" view are called to
 #'   determine how many starting players have _yet_ started playing.
 #' @return A tibble of scores.

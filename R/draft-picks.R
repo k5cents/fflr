@@ -4,7 +4,9 @@
 #' and pick of each player; for auctions (salary cap), the nominating team and
 #' winning bid.
 #'
-#' @param lid ESPN League ID, defaults to `getOption("lid")` (see [set_lid()]).
+#' @param lid ESPN League ID, defaults to `getOption("lid")`. Use
+#'   `options(lid = <League ID>)` to set your league ID; put that line in your
+#'   `.Rprofile` file to set the option at start up.
 #' @param old If `FALSE` (default), return only the current season's data. If
 #'   `TRUE`, return a list with all prior seasons.
 #' @param ... Additional API query arguments. Use "week" and "year" as a

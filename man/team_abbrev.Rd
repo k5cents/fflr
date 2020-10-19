@@ -4,7 +4,7 @@
 \alias{team_abbrev}
 \title{Convert team ID to abbreviation}
 \usage{
-team_abbrev(id, teams = league_teams(getOption("lid")))
+team_abbrev(id, teams = league_teams(lid = getOption("lid")))
 }
 \arguments{
 \item{id}{A integer vector of team numbers to convert.}
@@ -18,5 +18,5 @@ A factor vector of team abbreviations.
 Convert team ID to abbreviation
 }
 \examples{
-team_abbrev(id = 6)
+team_abbrev(id = 6, teams = league_teams(lid = 252353))
 }

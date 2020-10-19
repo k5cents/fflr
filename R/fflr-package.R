@@ -6,7 +6,7 @@
 #' viewable to the public by the league manager, which can be done on the basic
 #' settings page on the ESPN website. Functions can then take the numeric league
 #' ID found in the URL to return data from the API. This league ID can be set
-#' as an option with [set_lid()].
+#' as a global option named "lid" with `options()`.
 #'
 #' @docType package
 #' @name fflr

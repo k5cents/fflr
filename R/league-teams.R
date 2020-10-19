@@ -41,8 +41,8 @@ parse_teams <- function(t) {
 #' @param teams A table of teams from [league_teams()].
 #' @return A factor vector of team abbreviations.
 #' @examples
-#' team_abbrev(id = 6)
+#' team_abbrev(id = 6, teams = league_teams(lid = 252353))
 #' @export
-team_abbrev <- function(id, teams = league_teams(getOption("lid"))) {
+team_abbrev <- function(id, teams = league_teams(lid = getOption("lid"))) {
   teams$abbrev[match(id, teams$team)]
 }

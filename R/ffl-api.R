@@ -11,7 +11,7 @@
 #' @export
 ffl_api <- function(lid = getOption("lid"), old = FALSE, view = NULL, ...) {
   if (is.null(lid)) {
-    stop("no league ID found, define argument or use set_lid()")
+    stop("no league ID found, define argument or use options()")
   }
   a <- "https://fantasy.espn.com/apis/v3/games/ffl/"
   b <- if (old) {

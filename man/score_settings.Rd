@@ -7,7 +7,9 @@
 score_settings(lid = getOption("lid"), old = FALSE, ...)
 }
 \arguments{
-\item{lid}{ESPN League ID, defaults to \code{getOption("lid")} (see \code{\link[=set_lid]{set_lid()}}).}
+\item{lid}{ESPN League ID, defaults to \code{getOption("lid")}. Use
+\verb{options(lid = <League ID>)} to set your league ID; put that line in your
+\code{.Rprofile} file to set the option at start up.}
 
 \item{old}{If \code{FALSE} (default), return only the current season's data. If
 \code{TRUE}, return a list with all prior seasons.}
