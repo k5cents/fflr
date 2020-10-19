@@ -83,7 +83,7 @@ and &quot;seasonId&quot; respectively. Setting old equal to TRUE uses the
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.8</span>
       </span>
     </div>
 
@@ -153,7 +153,9 @@ and "seasonId" respectively. Setting <code>old</code> equal to <code>TRUE</code>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>lid</th>
-      <td><p>ESPN League ID, defaults to <code><a href='https://rdrr.io/r/base/options.html'>getOption("lid")</a></code> (see <code><a href='set_lid.html'>set_lid()</a></code>).</p></td>
+      <td><p>ESPN League ID, defaults to <code><a href='https://rdrr.io/r/base/options.html'>getOption("lid")</a></code>. Use
+<code>options(lid = &lt;League ID&gt;)</code> to set your league ID; put that line in your
+<code>.Rprofile</code> file to set the option at start up.</p></td>
     </tr>
     <tr>
       <th>old</th>

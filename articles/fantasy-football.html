@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.8</span>
       </span>
     </div>
 
@@ -102,7 +102,7 @@
 <div class="sourceCode" id="cb1"><pre class="downlit">
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://github.com/kiernann/fflr">fflr</a></span>)
 <span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html">packageVersion</a></span>(<span class="st">"fflr"</span>)
-<span class="co">#&gt; [1] '0.3.7'</span>
+<span class="co">#&gt; [1] '0.3.8'</span>
 </pre></div>
 <p>The fflr package helps easily access data from the ESPN fantasy football v3 API. Both current and historical data can be</p>
 <div id="games" class="section level2">
@@ -176,10 +176,9 @@
 <pre>
 https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
 </pre>
-<p>For convenience, the <code>lid</code> argument to most functions defaults to looking for an “lid” global option. This option can be easily set using the <code><a href="../reference/set_lid.html">set_lid()</a></code> function, which uses <code><a href="https://rdrr.io/r/base/options.html">options()</a></code> to save your league ID in your R profile which is loaded on start up.</p>
+<p>For convenience, the <code>lid</code> argument to most functions defaults to looking for an “lid” global option. Use <code><a href="https://rdrr.io/r/base/options.html">options()</a></code> to set your league ID and put the line in your <code>~/.Rprofile</code> file to set at start up.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit">
-<span class="fu"><a href="../reference/set_lid.html">set_lid</a></span>(<span class="fl">252353</span>)
-<span class="co">#&gt; new league ID set</span>
+<span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span>(lid = <span class="fl">252353</span>)
 </pre></div>
 <p>With our league ID option set, we can now easily retrieve league information.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit">
@@ -703,13 +702,13 @@ https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
 <span class="co">#&gt;    year  week  team abbrev draft current  seed final  back losses  ties  wins percentage against</span>
 <span class="co">#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;fct&gt;  &lt;int&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt;  &lt;int&gt; &lt;int&gt; &lt;int&gt;      &lt;dbl&gt;   &lt;dbl&gt;</span>
 <span class="co">#&gt; 1  2020     6     1 AGUS       1       2     3    NA     1      2     0     3        0.6    515.</span>
-<span class="co">#&gt; 2  2020     6     3 PEPE       7       7     7    NA     2      3     0     2        0.4    476.</span>
-<span class="co">#&gt; 3  2020     6     4 BILL       8       5     2    NA     1      2     0     3        0.6    527.</span>
+<span class="co">#&gt; 2  2020     6     3 PEPE       7       6     7    NA     2      3     0     2        0.4    476.</span>
+<span class="co">#&gt; 3  2020     6     4 BILL       8       4     2    NA     1      2     0     3        0.6    527.</span>
 <span class="co">#&gt; 4  2020     6     5 CART       5       1     1    NA     0      1     0     4        0.8    489.</span>
-<span class="co">#&gt; 5  2020     6     6 KIER       4       6     4    NA     2      3     0     2        0.4    597.</span>
+<span class="co">#&gt; 5  2020     6     6 KIER       4       7     4    NA     2      3     0     2        0.4    597.</span>
 <span class="co">#&gt; 6  2020     6     8 CORE       6       8     8    NA     2      3     0     2        0.4    545.</span>
 <span class="co">#&gt; 7  2020     6    10 NICK       3       3     6    NA     2      3     0     2        0.4    522.</span>
-<span class="co">#&gt; 8  2020     6    11 KYLE       2       4     5    NA     2      3     0     2        0.4    613.</span>
+<span class="co">#&gt; 8  2020     6    11 KYLE       2       5     5    NA     2      3     0     2        0.4    613.</span>
 <span class="co">#&gt; # … with 2 more variables: points &lt;dbl&gt;, streak &lt;dbl&gt;</span>
 </pre></div>
 </div>

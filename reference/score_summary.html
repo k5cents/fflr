@@ -81,7 +81,7 @@ and points scored for and against each team." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.8</span>
       </span>
     </div>
 
@@ -149,7 +149,9 @@ and points scored for and against each team.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>lid</th>
-      <td><p>ESPN League ID, defaults to <code><a href='https://rdrr.io/r/base/options.html'>getOption("lid")</a></code> (see <code><a href='set_lid.html'>set_lid()</a></code>).</p></td>
+      <td><p>ESPN League ID, defaults to <code><a href='https://rdrr.io/r/base/options.html'>getOption("lid")</a></code>. Use
+<code>options(lid = &lt;League ID&gt;)</code> to set your league ID; put that line in your
+<code>.Rprofile</code> file to set the option at start up.</p></td>
     </tr>
     <tr>
       <th>old</th>
@@ -173,13 +175,13 @@ shorthand for "ScoringPeriodId" and "seasonId" respectively.</p></td>
 #&gt;    year  week  team abbrev draft current  seed final  back losses  ties  wins
 #&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
 #&gt; </span><span style='color: #555555;'>1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6     1 AGUS       1       2     3    </span><span style='color: #BB0000;'>NA</span><span>     1      2     0     3
-#&gt; </span><span style='color: #555555;'>2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6     3 PEPE       7       7     7    </span><span style='color: #BB0000;'>NA</span><span>     2      3     0     2
-#&gt; </span><span style='color: #555555;'>3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6     4 BILL       8       5     2    </span><span style='color: #BB0000;'>NA</span><span>     1      2     0     3
+#&gt; </span><span style='color: #555555;'>2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6     3 PEPE       7       6     7    </span><span style='color: #BB0000;'>NA</span><span>     2      3     0     2
+#&gt; </span><span style='color: #555555;'>3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6     4 BILL       8       4     2    </span><span style='color: #BB0000;'>NA</span><span>     1      2     0     3
 #&gt; </span><span style='color: #555555;'>4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6     5 CART       5       1     1    </span><span style='color: #BB0000;'>NA</span><span>     0      1     0     4
-#&gt; </span><span style='color: #555555;'>5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6     6 KIER       4       6     4    </span><span style='color: #BB0000;'>NA</span><span>     2      3     0     2
+#&gt; </span><span style='color: #555555;'>5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6     6 KIER       4       7     4    </span><span style='color: #BB0000;'>NA</span><span>     2      3     0     2
 #&gt; </span><span style='color: #555555;'>6</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6     8 CORE       6       8     8    </span><span style='color: #BB0000;'>NA</span><span>     2      3     0     2
 #&gt; </span><span style='color: #555555;'>7</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6    10 NICK       3       3     6    </span><span style='color: #BB0000;'>NA</span><span>     2      3     0     2
-#&gt; </span><span style='color: #555555;'>8</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6    11 KYLE       2       4     5    </span><span style='color: #BB0000;'>NA</span><span>     2      3     0     2
+#&gt; </span><span style='color: #555555;'>8</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6    11 KYLE       2       5     5    </span><span style='color: #BB0000;'>NA</span><span>     2      3     0     2
 #&gt; </span><span style='color: #555555;'># … with 4 more variables: percentage </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, against </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, points </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>,</span><span>
 #&gt; </span><span style='color: #555555;'>#   streak </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span></div></span></pre>
   </div>

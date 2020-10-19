@@ -40,7 +40,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.8</span>
       </span>
     </div>
 
@@ -111,42 +111,45 @@
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
 <p>Here we see how to scrape teams, rosters, scores, and waiver pickups.</p>
-<p>Use <code><a href="reference/set_lid.html">set_lid()</a></code> to easily define your league ID (from the URL) in <code><a href="https://rdrr.io/r/base/options.html">options()</a></code>.</p>
+<p>Define your <em>public</em> league ID (from the URL) with <code><a href="https://rdrr.io/r/base/options.html">options()</a></code>.</p>
+<pre>
+https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
+</pre>
 <div class="sourceCode" id="cb2"><pre class="downlit">
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://github.com/kiernann/fflr">fflr</a></span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw">ffplot</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw">tidyverse</span>)
-<span class="fu"><a href="reference/set_lid.html">set_lid</a></span>(<span class="fl">252353</span>) <span class="co"># check URL</span>
+<span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span>(lid = <span class="fl">252353</span>)
 </pre></div>
 <div class="sourceCode" id="cb3"><pre class="downlit">
 <span class="kw">rosters</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/team_roster.html">team_roster</a></span>(week = <span class="fu"><a href="reference/ffl_week.html">ffl_week</a></span>(<span class="op">-</span><span class="fl">1</span>))
 <span class="kw">my_roster</span> <span class="op">&lt;-</span> <span class="kw">rosters</span>[[<span class="fl">5</span>]]
 </pre></div>
 <div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">#&gt; # A tibble: 16 x 13</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="co">#&gt;     week team  slot  first    last        pro   pos   status  proj score start  rost change</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="co">#&gt;    &lt;int&gt; &lt;fct&gt; &lt;fct&gt; &lt;chr&gt;    &lt;chr&gt;       &lt;fct&gt; &lt;fct&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="co">#&gt;  1     4 KIER  QB    Joe      Burrow      Cin   QB    A      19.3   15.1  35.9  83.4 30.4  </span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="co">#&gt;  2     4 KIER  RB    Alvin    Kamara      NO    RB    A      17.6   17.9  99.8 100.   0.025</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="co">#&gt;  3     4 KIER  RB    Jonathan Taylor      Ind   RB    A      12.6    7.9  88.1  99.4  1.21 </span></span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="co">#&gt;  4     4 KIER  WR    DeAndre  Hopkins     Ari   WR    A      11.6    4.1  98.9 100.   0.025</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="co">#&gt;  5     4 KIER  WR    Cooper   Kupp        LAR   WR    A       9.38  12.7  89.3  99.2  2.19 </span></span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="co">#&gt;  6     4 KIER  TE    Travis   Kelce       KC    TE    A       9.55   7    93.2 100.   0.012</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="co">#&gt;  7     4 KIER  FX    Mike     Davis       Car   RB    A      11.5   17.1  89.5  96.3 18.7  </span></span>
-<span id="cb4-11"><a href="#cb4-11"></a><span class="co">#&gt;  8     4 KIER  DS    Rams     D/ST        LAR   DS    A       6.30  11    85.4  93.4 72.6  </span></span>
-<span id="cb4-12"><a href="#cb4-12"></a><span class="co">#&gt;  9     4 KIER  PK    Greg     Zuerlein    Dal   PK    A       7.90   2    80.9  85.7 -0.333</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a><span class="co">#&gt; 10     4 KIER  BE    Odell    Beckham Jr. Cle   WR    A       9.16  33.4  86.6  99.1  0.437</span></span>
-<span id="cb4-14"><a href="#cb4-14"></a><span class="co">#&gt; 11     4 KIER  BE    David    Johnson     Hou   RB    A      11.3    9.2  83.5  98.8  1.07 </span></span>
-<span id="cb4-15"><a href="#cb4-15"></a><span class="co">#&gt; 12     4 KIER  BE    David    Montgomery  Chi   RB    A      10.0    7.7  53.2  96.1  4.75 </span></span>
-<span id="cb4-16"><a href="#cb4-16"></a><span class="co">#&gt; 13     4 KIER  BE    Ronald   Jones II    TB    RB    A      12.0   12.8  50.7  93.3  9.63 </span></span>
-<span id="cb4-17"><a href="#cb4-17"></a><span class="co">#&gt; 14     4 KIER  BE    Gardner  Minshew II  Jax   QB    A      18.6   20.9  26.2  56.3  0.262</span></span>
-<span id="cb4-18"><a href="#cb4-18"></a><span class="co">#&gt; 15     4 KIER  BE    Myles    Gaskin      Mia   RB    A       9.75   6.2  51.3  89.7 44.0  </span></span>
-<span id="cb4-19"><a href="#cb4-19"></a><span class="co">#&gt; 16     4 KIER  BE    Zach     Ertz        Phi   TE    A       7.04   2.9  91.0  99.5  0.411</span></span></code></pre></div>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="co">#&gt;     week team  slot  first    last        pro   pos   status  proj score start  rost  change</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="co">#&gt;    &lt;int&gt; &lt;fct&gt; &lt;fct&gt; &lt;chr&gt;    &lt;chr&gt;       &lt;fct&gt; &lt;fct&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="co">#&gt;  1     5 KIER  QB    Gardner  Minshew II  Jax   QB    A      19.4  19.8  34.1   60.6   4.54 </span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="co">#&gt;  2     5 KIER  RB    Alvin    Kamara      NO    RB    A      16.4  11.9  15.7   99.9  -0.02 </span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="co">#&gt;  3     5 KIER  RB    Mike     Davis       Car   RB    A      14.1  20.9  95.2   97.4   2.66 </span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="co">#&gt;  4     5 KIER  WR    DeAndre  Hopkins     Ari   WR    A      11.6  19.1  99.6   99.9  -0.001</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="co">#&gt;  5     5 KIER  WR    Odell    Beckham Jr. Cle   WR    A       9.27  6.42 84.0   98.6  -0.034</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="co">#&gt;  6     5 KIER  TE    Travis   Kelce       KC    TE    A      10.8  16.8  99.5  100.   -0.001</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="co">#&gt;  7     5 KIER  FX    David    Johnson     Hou   RB    A      12.9  10.3  74.6   96.3  -0.788</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="co">#&gt;  8     5 KIER  DS    Rams     D/ST        LAR   DS    A       5.79 12.5  74.7   86.3  -0.064</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="co">#&gt;  9     5 KIER  PK    Rodrigo  Blankenship Ind   PK    A       9.49 11    78.9   83.5   0.157</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="co">#&gt; 10     5 KIER  BE    Cooper   Kupp        LAR   WR    A       9.40  6.6  78.6   97.2  -0.387</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="co">#&gt; 11     5 KIER  BE    Jonathan Taylor      Ind   RB    A      12.4  13.4  79.6   97.3  -0.42 </span></span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="co">#&gt; 12     5 KIER  BE    David    Montgomery  Chi   RB    A       9.83 11.9  70.4   92.9   2.46 </span></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="co">#&gt; 13     5 KIER  BE    Ronald   Jones II    TB    RB    A      11.9  12.5  57.9   90.3   0.63 </span></span>
+<span id="cb4-17"><a href="#cb4-17"></a><span class="co">#&gt; 14     5 KIER  BE    Myles    Gaskin      Mia   RB    A       9.46 15.1  76.0   87.9   9.33 </span></span>
+<span id="cb4-18"><a href="#cb4-18"></a><span class="co">#&gt; 15     5 KIER  BE    Joe      Burrow      Cin   QB    A      16.9   4.32  9.45  49.0 -18.6  </span></span>
+<span id="cb4-19"><a href="#cb4-19"></a><span class="co">#&gt; 16     5 KIER  BE    Zach     Ertz        Phi   TE    Q       7.45  0.6  77.0   96.9  -2.02</span></span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit">
 <span class="kw">my_best</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/best_roster.html">best_roster</a></span>(<span class="kw">my_roster</span>)
 <span class="fu"><a href="reference/roster_score.html">roster_score</a></span>(<span class="kw">my_roster</span>)
-<span class="co">#&gt; [1] 94.8</span>
+<span class="co">#&gt; [1] 128.76</span>
 <span class="fu"><a href="reference/roster_score.html">roster_score</a></span>(<span class="kw">my_best</span>)
-<span class="co">#&gt; [1] 134.84</span>
+<span class="co">#&gt; [1] 135.24</span>
 </pre></div>
 <p>Matchups return as a <a href="https://en.wikipedia.org/wiki/Tidy_data">tidy</a> tibble of weekly scores by team.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit">
@@ -157,11 +160,11 @@
 <span class="co">#&gt; 1  2020     1 AGUS   Obi-Wan Mahomey         </span>
 <span class="co">#&gt; 2  2020     3 PEPE   JuJu's Bizarre Adventure</span>
 <span class="co">#&gt; 3  2020     4 BILL   Bill's Fantasy Team     </span>
-<span class="co">#&gt; 4  2020     5 CART   Kenyan Younghoes        </span>
+<span class="co">#&gt; 4  2020     5 CART   Ashley Mattison         </span>
 <span class="co">#&gt; 5  2020     6 KIER   The Nuklear Option      </span>
 <span class="co">#&gt; 6  2020     8 CORE   BIG TRUZZZ              </span>
 <span class="co">#&gt; 7  2020    10 NICK   The Silence Of The Lamb </span>
-<span class="co">#&gt; 8  2020    11 KYLE   Harry Ruggs</span>
+<span class="co">#&gt; 8  2020    11 KYLE   Ashley Hill</span>
 <span class="kw">scores</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/match_scores.html">match_scores</a></span>()
 </pre></div>
 <p>This makes scores over the season easy to plot. The <strong>experimental</strong> <a href="https://github.com/kiernann/ffplot">ffplot</a> package makes such plots automatically.</p>
