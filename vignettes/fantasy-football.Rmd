@@ -81,16 +81,11 @@ https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
 </pre>
 
 For convenience, the `lid` argument to most functions defaults to looking for
-an "lid" global option. This option can be easily set using the `set_lid()`
-function, which uses `options()` to save your league ID in your R profile which
-is loaded on start up.
+an "lid" global option. Use `options()` to set your league ID and put the line
+in your `~/.Rprofile` file to set at start up.
 
-```{r rm_lid, echo=FALSE}
-options(lid = NULL)
-```
-
-```{r set_lid}
-set_lid(252353)
+```{r options}
+options(lid = 252353)
 ```
 
 With our league ID option set, we can now easily retrieve league information.

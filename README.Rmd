@@ -53,13 +53,17 @@ remotes::install_github("kiernann/fflr")
 
 Here we see how to scrape teams, rosters, scores, and waiver pickups.
 
-Use `set_lid()` to easily define your league ID (from the URL) in `options()`.
+Define your _public_ league ID (from the URL) with `options()`.
 
-```{r set_lid}
+<pre>
+https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
+</pre>
+
+```{r library}
 library(fflr)
 library(ffplot)
 library(tidyverse)
-set_lid(252353) # check URL
+options(lid = 252353)
 ```
 
 ```{r team_roster}
