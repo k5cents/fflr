@@ -17,3 +17,7 @@
 
 * [ESPN](https://en.wikipedia.org/wiki/ESPN) is not really an acronym, it no
 longer stands for anything and doesn't need to be explained in the DESCRIPTION.
+
+* `Sys.sleep()` has been removed from `test-settings.R`, reducing the overall
+run time from 159.9 to 44.9 seconds. Running all tests without sleeping can
+occasionally produce an API error, but it works right now.
