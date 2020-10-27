@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.9</span>
       </span>
     </div>
 
@@ -103,7 +103,7 @@
 <div class="sourceCode" id="cb1"><pre class="downlit">
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kiernann/fflr">fflr</a></span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html">packageVersion</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span>
-<span class="co">#&gt; [1] '0.3.8'</span></pre></div>
+<span class="co">#&gt; [1] '0.3.9'</span></pre></div>
 <p>The fflr package helps easily access data from the ESPN fantasy football v3 API. Both current and historical data can be</p>
 <div id="games" class="section level2">
 <h2 class="hasAnchor">
@@ -371,7 +371,7 @@ https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
 <span class="co">#&gt;  2  2020     8 KIER  RB    3054850 Alvin  Kamara  NO    RB    A      15.3     NA  97.9 100.   0.042</span>
 <span class="co">#&gt;  3  2020     8 KIER  RB    3025433 Mike   Davis   Car   RB    A      13.6     NA  94.7  98.9  1.52 </span>
 <span class="co">#&gt;  4  2020     8 KIER  WR      15795 DeAnd… Hopkins Ari   WR    A       0       NA  60.7 100.   0.026</span>
-<span class="co">#&gt;  5  2020     8 KIER  WR      16733 Odell  Beckha… Cle   WR    O       0       NA  52.8  89.8 -8.81 </span>
+<span class="co">#&gt;  5  2020     8 KIER  WR      16733 Odell  Beckha… Cle   WR    I       0       NA  52.8  89.8 -8.81 </span>
 <span class="co">#&gt;  6  2020     8 KIER  TE      15847 Travis Kelce   KC    TE    A      10.3     NA  99.6 100.   0.023</span>
 <span class="co">#&gt;  7  2020     8 KIER  FX    2508176 David  Johnson Hou   RB    A       0       NA  58.0  98.7  2.42 </span>
 <span class="co">#&gt;  8  2020     8 KIER  DS     -16005 Browns D/ST    Cle   DS    A       3.92    NA  50.1  60.0 45.1  </span>
@@ -393,7 +393,7 @@ https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
 <span class="co">#&gt; 2  2020     8 KIER  RB    3054850 Alvin  Kamara   NO    RB    A      15.3     NA  97.9 100.   0.042</span>
 <span class="co">#&gt; 3  2020     8 KIER  RB    3025433 Mike   Davis    Car   RB    A      13.6     NA  94.7  98.9  1.52 </span>
 <span class="co">#&gt; 4  2020     8 KIER  WR      15795 DeAnd… Hopkins  Ari   WR    A       0       NA  60.7 100.   0.026</span>
-<span class="co">#&gt; 5  2020     8 KIER  WR      16733 Odell  Beckham… Cle   WR    O       0       NA  52.8  89.8 -8.81 </span>
+<span class="co">#&gt; 5  2020     8 KIER  WR      16733 Odell  Beckham… Cle   WR    I       0       NA  52.8  89.8 -8.81 </span>
 <span class="co">#&gt; 6  2020     8 KIER  TE      15847 Travis Kelce    KC    TE    A      10.3     NA  99.6 100.   0.023</span>
 <span class="co">#&gt; 7  2020     8 KIER  FX    2508176 David  Johnson  Hou   RB    A       0       NA  58.0  98.7  2.42 </span>
 <span class="co">#&gt; 8  2020     8 KIER  DS     -16005 Browns D/ST     Cle   DS    A       3.92    NA  50.1  60.0 45.1  </span>
@@ -493,28 +493,20 @@ https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
   x <span class="op">=</span> <span class="fu"><a href="../reference/roster_moves.html">roster_moves</a></span><span class="op">(</span><span class="op">)</span><span class="op">[</span>, <span class="fl">7</span><span class="op">:</span><span class="fl">14</span><span class="op">]</span>, 
   y <span class="op">=</span> <span class="va">nfl_players</span><span class="op">[</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span>
 <span class="op">)</span>
-<span class="co">#&gt; # A tibble: 19 x 10</span>
-<span class="co">#&gt;    date                 team from_slot from_team      id to_slot to_team move   first     last     </span>
-<span class="co">#&gt;    &lt;dttm&gt;              &lt;int&gt; &lt;fct&gt;         &lt;int&gt;   &lt;int&gt; &lt;fct&gt;     &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;    </span>
-<span class="co">#&gt;  1 2020-10-27 12:23:16     4 &lt;NA&gt;              4 2985659 &lt;NA&gt;         NA DROP   Wil       Lutz     </span>
-<span class="co">#&gt;  2 2020-10-27 12:21:03     4 PK               NA 2985659 BE           NA LINEUP Wil       Lutz     </span>
-<span class="co">#&gt;  3 2020-10-27 12:21:03     4 RB               NA 4360294 BE           NA LINEUP Antonio   Gibson   </span>
-<span class="co">#&gt;  4 2020-10-27 12:21:03     4 BE               NA 3116593 RB           NA LINEUP Dalvin    Cook     </span>
-<span class="co">#&gt;  5 2020-10-27 12:21:03     4 BE               NA   16782 RB           NA LINEUP Jerick    McKinnon </span>
-<span class="co">#&gt;  6 2020-10-27 12:21:03     4 RB               NA 4052042 BE           NA LINEUP James     Robinson </span>
-<span class="co">#&gt;  7 2020-10-27 12:21:03     4 BE               NA   13229 TE           NA LINEUP Rob       Gronkows…</span>
-<span class="co">#&gt;  8 2020-10-27 12:21:03     4 TE               NA 4036131 BE           NA LINEUP Noah      Fant     </span>
-<span class="co">#&gt;  9 2020-10-27 12:21:03     4 BE               NA   15683 PK           NA LINEUP Justin    Tucker   </span>
-<span class="co">#&gt; 10 2020-10-27 15:19:14     3 BE               NA 4259545 RB           NA LINEUP D'Andre   Swift    </span>
-<span class="co">#&gt; 11 2020-10-27 15:19:14     3 RB               NA 3919596 BE           NA LINEUP Chris     Carson   </span>
-<span class="co">#&gt; 12 2020-10-27 11:01:10    10 BE               NA   13994 QB           NA LINEUP Cam       Newton   </span>
-<span class="co">#&gt; 13 2020-10-27 11:01:10    10 QB               NA 3122840 BE           NA LINEUP Deshaun   Watson   </span>
-<span class="co">#&gt; 14 2020-10-27 15:08:30     1 FX               NA 2577327 WR           NA LINEUP Tyler     Lockett  </span>
-<span class="co">#&gt; 15 2020-10-27 15:08:30     1 BE               NA 3042519 FX           NA LINEUP Aaron     Jones    </span>
-<span class="co">#&gt; 16 2020-10-27 15:08:30     1 FX               NA 4046692 BE           NA LINEUP Chase     Claypool </span>
-<span class="co">#&gt; 17 2020-10-27 15:08:30     1 DS               NA  -16028 BE           NA LINEUP Washingt… D/ST     </span>
-<span class="co">#&gt; 18 2020-10-27 15:08:30     1 BE               NA 3054212 TE           NA LINEUP Jonnu     Smith    </span>
-<span class="co">#&gt; 19 2020-10-27 15:08:30     1 TE               NA 4036133 BE           NA LINEUP T.J.      Hockenson</span></pre></div>
+<span class="co">#&gt; # A tibble: 21 x 10</span>
+<span class="co">#&gt;    date                 team from_slot from_team      id to_slot to_team move   first   last      </span>
+<span class="co">#&gt;    &lt;dttm&gt;              &lt;int&gt; &lt;fct&gt;         &lt;int&gt;   &lt;int&gt; &lt;fct&gt;     &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;     </span>
+<span class="co">#&gt;  1 2020-10-27 12:23:16     4 &lt;NA&gt;              4 2985659 &lt;NA&gt;         NA DROP   Wil     Lutz      </span>
+<span class="co">#&gt;  2 2020-10-27 12:21:03     4 PK               NA 2985659 BE           NA LINEUP Wil     Lutz      </span>
+<span class="co">#&gt;  3 2020-10-27 12:21:03     4 RB               NA 4360294 BE           NA LINEUP Antonio Gibson    </span>
+<span class="co">#&gt;  4 2020-10-27 12:21:03     4 BE               NA 3116593 RB           NA LINEUP Dalvin  Cook      </span>
+<span class="co">#&gt;  5 2020-10-27 12:21:03     4 BE               NA   16782 RB           NA LINEUP Jerick  McKinnon  </span>
+<span class="co">#&gt;  6 2020-10-27 12:21:03     4 RB               NA 4052042 BE           NA LINEUP James   Robinson  </span>
+<span class="co">#&gt;  7 2020-10-27 12:21:03     4 BE               NA   13229 TE           NA LINEUP Rob     Gronkowski</span>
+<span class="co">#&gt;  8 2020-10-27 12:21:03     4 TE               NA 4036131 BE           NA LINEUP Noah    Fant      </span>
+<span class="co">#&gt;  9 2020-10-27 12:21:03     4 BE               NA   15683 PK           NA LINEUP Justin  Tucker    </span>
+<span class="co">#&gt; 10 2020-10-27 15:19:14     3 BE               NA 4259545 RB           NA LINEUP D'Andre Swift     </span>
+<span class="co">#&gt; # … with 11 more rows</span></pre></div>
 <p>We can also get the entire history of the draft, either snake or auction.</p>
 <div class="sourceCode" id="cb27"><pre class="downlit">
 <span class="fu"><a href="../reference/ffl_merge.html">ffl_merge</a></span><span class="op">(</span>
@@ -548,7 +540,7 @@ https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
 <span class="co">#&gt; 5  2020     8     6 KIER        2    58           12    12        25        1      0</span>
 <span class="co">#&gt; 6  2020     8     8 CORE        1    42           14    13        43        1      0</span>
 <span class="co">#&gt; 7  2020     8    10 NICK        4    35           15    15        33        2      0</span>
-<span class="co">#&gt; 8  2020     8    11 KYLE        3    43            9     8        30        1      0</span></pre></div>
+<span class="co">#&gt; 8  2020     8    11 KYLE        3    43            9     8        31        1      0</span></pre></div>
 </div>
 <div id="scores" class="section level2">
 <h2 class="hasAnchor">
@@ -597,7 +589,7 @@ https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
 <span class="co">#&gt; 2     8    29 PEPE      0  92.9</span>
 <span class="co">#&gt; 3     8    30 BILL      0  99.1</span>
 <span class="co">#&gt; 4     8    30 NICK      0 115. </span>
-<span class="co">#&gt; 5     8    31 KYLE      0  81.4</span>
+<span class="co">#&gt; 5     8    31 KYLE      0  80.0</span>
 <span class="co">#&gt; 6     8    31 CART      0 108. </span>
 <span class="co">#&gt; 7     8    32 KIER      0  67.4</span>
 <span class="co">#&gt; 8     8    32 CORE      0  85.2</span></pre></div>
