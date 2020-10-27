@@ -40,7 +40,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.8.9000</span>
       </span>
     </div>
 
@@ -104,8 +104,7 @@
 <p>You can install the released version of <code>fflr</code> from <a href="https://github.com/kiernann/fflr">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit">
 <span class="co"># install.packages("remotes")</span>
-<span class="kw">remotes</span>::<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"kiernann/fflr"</span>)
-</pre></div>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"kiernann/fflr"</span><span class="op">)</span></pre></div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
@@ -116,15 +115,13 @@
 https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
 </pre>
 <div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://github.com/kiernann/fflr">fflr</a></span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw">ffplot</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw">tidyverse</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span>(lid = <span class="fl">252353</span>)
-</pre></div>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kiernann/fflr">fflr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">ffplot</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>lid <span class="op">=</span> <span class="fl">252353</span><span class="op">)</span></pre></div>
 <div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="kw">rosters</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/team_roster.html">team_roster</a></span>(week = <span class="fu"><a href="reference/ffl_week.html">ffl_week</a></span>(<span class="op">-</span><span class="fl">1</span>))
-<span class="kw">my_roster</span> <span class="op">&lt;-</span> <span class="kw">rosters</span>[[<span class="fl">5</span>]]
-</pre></div>
+<span class="va">rosters</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/team_roster.html">team_roster</a></span><span class="op">(</span>week <span class="op">=</span> <span class="fu"><a href="reference/ffl_week.html">ffl_week</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span>
+<span class="va">my_roster</span> <span class="op">&lt;-</span> <span class="va">rosters</span><span class="op">[[</span><span class="fl">5</span><span class="op">]</span><span class="op">]</span></pre></div>
 <div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">#&gt; # A tibble: 16 x 13</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="co">#&gt;     week team  slot  first    last        pro   pos   status  proj score start  rost  change</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="co">#&gt;    &lt;int&gt; &lt;fct&gt; &lt;fct&gt; &lt;chr&gt;    &lt;chr&gt;       &lt;fct&gt; &lt;fct&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;</span></span>
@@ -145,15 +142,14 @@ https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
 <span id="cb4-18"><a href="#cb4-18"></a><span class="co">#&gt; 15     5 KIER  BE    Joe      Burrow      Cin   QB    A      16.9   4.32  9.45  49.0 -18.6  </span></span>
 <span id="cb4-19"><a href="#cb4-19"></a><span class="co">#&gt; 16     5 KIER  BE    Zach     Ertz        Phi   TE    Q       7.45  0.6  77.0   96.9  -2.02</span></span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="kw">my_best</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/best_roster.html">best_roster</a></span>(<span class="kw">my_roster</span>)
-<span class="fu"><a href="reference/roster_score.html">roster_score</a></span>(<span class="kw">my_roster</span>)
+<span class="va">my_best</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/best_roster.html">best_roster</a></span><span class="op">(</span><span class="va">my_roster</span><span class="op">)</span>
+<span class="fu"><a href="reference/roster_score.html">roster_score</a></span><span class="op">(</span><span class="va">my_roster</span><span class="op">)</span>
 <span class="co">#&gt; [1] 128.76</span>
-<span class="fu"><a href="reference/roster_score.html">roster_score</a></span>(<span class="kw">my_best</span>)
-<span class="co">#&gt; [1] 135.24</span>
-</pre></div>
+<span class="fu"><a href="reference/roster_score.html">roster_score</a></span><span class="op">(</span><span class="va">my_best</span><span class="op">)</span>
+<span class="co">#&gt; [1] 135.24</span></pre></div>
 <p>Matchups return as a <a href="https://en.wikipedia.org/wiki/Tidy_data">tidy</a> tibble of weekly scores by team.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit">
-(<span class="kw">teams</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/league_teams.html">league_teams</a></span>()[, <span class="op">-</span><span class="fl">4</span>])
+<span class="op">(</span><span class="va">teams</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/league_teams.html">league_teams</a></span><span class="op">(</span><span class="op">)</span><span class="op">[</span>, <span class="op">-</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 8 x 4</span>
 <span class="co">#&gt;    year  team abbrev name                    </span>
 <span class="co">#&gt;   &lt;int&gt; &lt;int&gt; &lt;fct&gt;  &lt;chr&gt;                   </span>
@@ -165,27 +161,25 @@ https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
 <span class="co">#&gt; 6  2020     8 CORE   BIG TRUZZZ              </span>
 <span class="co">#&gt; 7  2020    10 NICK   The Silence Of The Lamb </span>
 <span class="co">#&gt; 8  2020    11 KYLE   Ashley Hill</span>
-<span class="kw">scores</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/match_scores.html">match_scores</a></span>()
-</pre></div>
+<span class="va">scores</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/match_scores.html">match_scores</a></span><span class="op">(</span><span class="op">)</span></pre></div>
 <p>This makes scores over the season easy to plot. The <strong>experimental</strong> <a href="https://github.com/kiernann/ffplot">ffplot</a> package makes such plots automatically.</p>
 <p><img src="reference/figures/README-plot_scores-1.png" width="100%"></p>
 <p>Some functions like <code><a href="reference/roster_moves.html">roster_moves()</a></code> only define players by their unique ID.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit">
-<span class="kw">waiver_adds</span> <span class="op">&lt;-</span> 
-  <span class="fu"><a href="reference/roster_moves.html">roster_moves</a></span>(week = <span class="fl">3</span>) <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(
-    <span class="kw">type</span> <span class="op">==</span> <span class="st">"WAIVER"</span>, 
-    <span class="kw">status</span> <span class="op">==</span> <span class="st">"EXECUTED"</span>,
-    <span class="kw">move</span> <span class="op">==</span> <span class="st">"ADD"</span>
-  )
-</pre></div>
+<span class="va">waiver_adds</span> <span class="op">&lt;-</span> 
+  <span class="fu"><a href="reference/roster_moves.html">roster_moves</a></span><span class="op">(</span>week <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span>
+    <span class="va">type</span> <span class="op">==</span> <span class="st">"WAIVER"</span>, 
+    <span class="va">status</span> <span class="op">==</span> <span class="st">"EXECUTED"</span>,
+    <span class="va">move</span> <span class="op">==</span> <span class="st">"ADD"</span>
+  <span class="op">)</span></pre></div>
 <p>The included <code>nfl_players</code> tibble identifies all 1062 players (as of September 30th, 2020).</p>
 <div class="sourceCode" id="cb8"><pre class="downlit">
-<span class="kw">waiver_adds</span> <span class="op">%&gt;%</span> 
-  <span class="fu">left_join</span>(<span class="kw">nfl_players</span>[, <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>]) <span class="op">%&gt;%</span> 
-  <span class="fu">select</span>(<span class="fl">15</span><span class="op">:</span><span class="fl">16</span>, <span class="kw">bid</span>, team = <span class="kw">to_team</span>) <span class="op">%&gt;%</span>
-  <span class="fu">left_join</span>(<span class="kw">teams</span>[, <span class="fl">2</span><span class="op">:</span><span class="fl">3</span>]) <span class="op">%&gt;%</span> 
-  <span class="fu">arrange</span>(<span class="fu">desc</span>(<span class="kw">bid</span>))
+<span class="va">waiver_adds</span> <span class="op">%&gt;%</span> 
+  <span class="fu">left_join</span><span class="op">(</span><span class="va">nfl_players</span><span class="op">[</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">select</span><span class="op">(</span><span class="fl">15</span><span class="op">:</span><span class="fl">16</span>, <span class="va">bid</span>, team <span class="op">=</span> <span class="va">to_team</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">left_join</span><span class="op">(</span><span class="va">teams</span><span class="op">[</span>, <span class="fl">2</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">arrange</span><span class="op">(</span><span class="fu">desc</span><span class="op">(</span><span class="va">bid</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 19 x 5</span>
 <span class="co">#&gt;    first      last            bid  team abbrev</span>
 <span class="co">#&gt;    &lt;chr&gt;      &lt;chr&gt;         &lt;int&gt; &lt;int&gt; &lt;fct&gt; </span>
@@ -207,8 +201,7 @@ https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
 <span class="co">#&gt; 16 Washington D/ST              1     5 CART  </span>
 <span class="co">#&gt; 17 Jason      Myers             1    11 KYLE  </span>
 <span class="co">#&gt; 18 Deebo      Samuel            1     6 KIER  </span>
-<span class="co">#&gt; 19 Jerick     McKinnon          1     4 BILL</span>
-</pre></div>
+<span class="co">#&gt; 19 Jerick     McKinnon          1     4 BILL</span></pre></div>
 <hr>
 <p>The fflr project is released with a <a href="https://kiernann.com/fflr/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 <!-- refs: start -->
@@ -221,6 +214,8 @@ https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
+<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=fflr">https://​cloud.r-project.org/​package=fflr</a>
+</li>
 <li>Browse source code at <br><a href="https://github.com/kiernann/fflr/">https://​github.com/​kiernann/​fflr/​</a>
 </li>
 <li>Report a bug at <br><a href="https://github.com/kiernann/fflr/issues">https://​github.com/​kiernann/​fflr/​issues</a>

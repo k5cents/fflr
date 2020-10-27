@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.8.9000</span>
       </span>
     </div>
 
@@ -140,7 +140,7 @@
     <p>List all available players.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>all_players</span>(lid = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>), week = <span class='fu'><a href='ffl_week.html'>ffl_week</a></span>())</pre>
+    <pre class="usage"><span class='fu'>all_players</span><span class='op'>(</span>lid <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"lid"</span><span class='op'>)</span>, week <span class='op'>=</span> <span class='fu'><a href='ffl_week.html'>ffl_week</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -160,21 +160,21 @@
     <p>A tibble of players.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>all_players</span>()
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 1,065 x 19</span><span>
+    <pre class="examples"><div class='input'><span class='fu'>all_players</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 1,072 x 19</span><span>
 #&gt;     year  week     id first last  pro   pos   status start  rost change   prk
 #&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6 3.05</span><span style='color: #555555;'>e</span><span>6 Ezek… Elli… Dal   RB    A      0.998 1.00  -</span><span style='color: #BB0000;'>0.001</span><span>     5
-#&gt; </span><span style='color: #555555;'> 2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6 1.58</span><span style='color: #555555;'>e</span><span>4 Trav… Kelce KC    TE    A      0.995 1.00  -</span><span style='color: #BB0000;'>0.001</span><span>     1
-#&gt; </span><span style='color: #555555;'> 3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6 3.14</span><span style='color: #555555;'>e</span><span>6 Patr… Maho… KC    QB    A      0.976 0.999  0.002     2
-#&gt; </span><span style='color: #555555;'> 4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6 1.58</span><span style='color: #555555;'>e</span><span>4 DeAn… Hopk… Ari   WR    A      0.996 0.999 -</span><span style='color: #BB0000;'>0.001</span><span>     8
-#&gt; </span><span style='color: #555555;'> 5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6 3.12</span><span style='color: #555555;'>e</span><span>6 Tyre… Hill  KC    WR    A      0.990 0.999 -</span><span style='color: #BB0000;'>0.001</span><span>     6
-#&gt; </span><span style='color: #555555;'> 6</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6 3.04</span><span style='color: #555555;'>e</span><span>6 Derr… Henry Ten   RB    A      0.973 0.999  0.005     2
-#&gt; </span><span style='color: #555555;'> 7</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6 3.05</span><span style='color: #555555;'>e</span><span>6 Alvin Kama… NO    RB    A      0.157 0.999 -</span><span style='color: #BB0000;'>0.02</span><span>      1
-#&gt; </span><span style='color: #555555;'> 8</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6 1.68</span><span style='color: #555555;'>e</span><span>4 Dava… Adams GB    WR    A      0.929 0.999  0.043    43
-#&gt; </span><span style='color: #555555;'> 9</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6 3.04</span><span style='color: #555555;'>e</span><span>6 Geor… Kitt… SF    TE    A      0.968 0.999 -</span><span style='color: #BB0000;'>0.006</span><span>     4
-#&gt; </span><span style='color: #555555;'>10</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     6 3.92</span><span style='color: #555555;'>e</span><span>6 Lamar Jack… Bal   QB    A      0.912 0.999 -</span><span style='color: #BB0000;'>0.011</span><span>     7
-#&gt; </span><span style='color: #555555;'># … with 1,055 more rows, and 7 more variables: fpts </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, aav </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'> 1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     8 3.05</span><span style='color: #555555;'>e</span><span>6 Alvin Kama… NO    RB    A      0.979  1.00  0.042     1
+#&gt; </span><span style='color: #555555;'> 2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     8 1.68</span><span style='color: #555555;'>e</span><span>4 Dava… Adams GB    WR    A      0.981  1.00  0.041    15
+#&gt; </span><span style='color: #555555;'> 3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     8 3.04</span><span style='color: #555555;'>e</span><span>6 Derr… Henry Ten   RB    A      0.991  1.00  0.037     2
+#&gt; </span><span style='color: #555555;'> 4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     8 1.58</span><span style='color: #555555;'>e</span><span>4 Trav… Kelce KC    TE    A      0.996  1.00  0.023     1
+#&gt; </span><span style='color: #555555;'> 5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     8 3.05</span><span style='color: #555555;'>e</span><span>6 Ezek… Elli… Dal   RB    A      0.987  1.00  0.01      8
+#&gt; </span><span style='color: #555555;'> 6</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     8 3.04</span><span style='color: #555555;'>e</span><span>6 Geor… Kitt… SF    TE    A      0.987  1.00  0.046     2
+#&gt; </span><span style='color: #555555;'> 7</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     8 1.58</span><span style='color: #555555;'>e</span><span>4 DeAn… Hopk… Ari   WR    A      0.607  1.00  0.026     4
+#&gt; </span><span style='color: #555555;'> 8</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     8 3.14</span><span style='color: #555555;'>e</span><span>6 Patr… Maho… KC    QB    A      0.968  1.00  0.02      3
+#&gt; </span><span style='color: #555555;'> 9</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     8 3.12</span><span style='color: #555555;'>e</span><span>6 Tyre… Hill  KC    WR    A      0.983  1.00  0.018     5
+#&gt; </span><span style='color: #555555;'>10</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     8 1.40</span><span style='color: #555555;'>e</span><span>4 Julio Jones Atl   WR    Q      0.964  1.00  0.11     28
+#&gt; </span><span style='color: #555555;'># … with 1,062 more rows, and 7 more variables: fpts </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, aav </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>,</span><span>
 #&gt; </span><span style='color: #555555;'>#   adp </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, next_wk </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, last_wk </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, last_szn </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, this_szn </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

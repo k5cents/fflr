@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.8.9000</span>
       </span>
     </div>
 
@@ -140,7 +140,7 @@
     <p>The current and projected score for each ongoing match.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>live_scoring</span>(lid = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"lid"</span>), yet = <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>live_scoring</span><span class='op'>(</span>lid <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"lid"</span><span class='op'>)</span>, yet <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -163,18 +163,18 @@ determine how many starting players have <em>yet</em> started playing.</p></td>
     <p>A tibble of scores.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>live_scoring</span>(<span class='fl'>252353</span>)
+    <pre class="examples"><div class='input'><span class='fu'>live_scoring</span><span class='op'>(</span><span class='fl'>252353</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 8 x 5</span><span>
 #&gt;    week match team  score  proj
 #&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span>     6    21 AGUS   79.3 103. 
-#&gt; </span><span style='color: #555555;'>2</span><span>     6    21 CART   57.5  70.0
-#&gt; </span><span style='color: #555555;'>3</span><span>     6    22 NICK  131.  139. 
-#&gt; </span><span style='color: #555555;'>4</span><span>     6    22 CORE   49.5  68.1
-#&gt; </span><span style='color: #555555;'>5</span><span>     6    23 PEPE   21.9  79.5
-#&gt; </span><span style='color: #555555;'>6</span><span>     6    23 KIER   53.4  77.1
-#&gt; </span><span style='color: #555555;'>7</span><span>     6    24 BILL   86.3  86.3
-#&gt; </span><span style='color: #555555;'>8</span><span>     6    24 KYLE   44.5  97.8</div></span></pre>
+#&gt; </span><span style='color: #555555;'>1</span><span>     8    29 AGUS      0 101. 
+#&gt; </span><span style='color: #555555;'>2</span><span>     8    29 PEPE      0  83.5
+#&gt; </span><span style='color: #555555;'>3</span><span>     8    30 BILL      0  99.1
+#&gt; </span><span style='color: #555555;'>4</span><span>     8    30 NICK      0 115. 
+#&gt; </span><span style='color: #555555;'>5</span><span>     8    31 KYLE      0  81.4
+#&gt; </span><span style='color: #555555;'>6</span><span>     8    31 CART      0 108. 
+#&gt; </span><span style='color: #555555;'>7</span><span>     8    32 KIER      0  67.4
+#&gt; </span><span style='color: #555555;'>8</span><span>     8    32 CORE      0  85.2</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
