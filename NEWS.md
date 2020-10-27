@@ -1,3 +1,7 @@
+# fflr 0.3.9
+
+* Improve package tests and failures.
+
 # fflr 0.3.8
 
 * Remove `set_lid()`.
