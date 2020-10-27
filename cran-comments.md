@@ -15,13 +15,13 @@
 
 ## Resubmission
 
+* Functions and tests that rely on date or internet services fail more
+gracefully or skip if the function is not applicable when the test is run.
+
+* Functions that cannot be trusted to return consistent data are not tested in
+a way that might fail.
+
+## Previous Submission
+
 * [ESPN](https://en.wikipedia.org/wiki/ESPN) is not really an acronym, it no
 longer stands for anything and doesn't need to be explained in the DESCRIPTION.
-
-* `Sys.sleep()` has been removed from `test-settings.R`, reducing the overall
-run time from 159.9 to 44.9 seconds. Running all tests without sleeping can
-occasionally produce an API error, but it works right now.
-
-* `set_lid()`, which used `usethis::edit_r_profile()` to open `.Rprofile` and
-set an `option()`, has been removed. Users will manually set their global
-option. The 'usethis' package is no longer suggested or conditionally tested.
