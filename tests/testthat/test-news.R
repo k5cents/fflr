@@ -24,7 +24,7 @@ test_that("news warns when limit is reached", {
 })
 
 test_that("news body can be parsed as an HTML document", {
-  n <- player_news(15795, parse = TRUE)
+  n <- player_news(15847, parse = TRUE)
   types <- unlist(lapply(lapply(n$body, class), `[[`, 1))
   expect_true("xml_document" %in% types)
   expect_true("character" %in% types)
