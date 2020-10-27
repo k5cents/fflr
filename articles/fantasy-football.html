@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.8.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.8</span>
       </span>
     </div>
 
@@ -103,7 +103,7 @@
 <div class="sourceCode" id="cb1"><pre class="downlit">
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kiernann/fflr">fflr</a></span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html">packageVersion</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span>
-<span class="co">#&gt; [1] '0.3.8.9000'</span></pre></div>
+<span class="co">#&gt; [1] '0.3.8'</span></pre></div>
 <p>The fflr package helps easily access data from the ESPN fantasy football v3 API. Both current and historical data can be</p>
 <div id="games" class="section level2">
 <h2 class="hasAnchor">
@@ -493,7 +493,7 @@ https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
   x <span class="op">=</span> <span class="fu"><a href="../reference/roster_moves.html">roster_moves</a></span><span class="op">(</span><span class="op">)</span><span class="op">[</span>, <span class="fl">7</span><span class="op">:</span><span class="fl">14</span><span class="op">]</span>, 
   y <span class="op">=</span> <span class="va">nfl_players</span><span class="op">[</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span>
 <span class="op">)</span>
-<span class="co">#&gt; # A tibble: 17 x 10</span>
+<span class="co">#&gt; # A tibble: 19 x 10</span>
 <span class="co">#&gt;    date                 team from_slot from_team      id to_slot to_team move   first     last     </span>
 <span class="co">#&gt;    &lt;dttm&gt;              &lt;int&gt; &lt;fct&gt;         &lt;int&gt;   &lt;int&gt; &lt;fct&gt;     &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;    </span>
 <span class="co">#&gt;  1 2020-10-27 12:23:16     4 &lt;NA&gt;              4 2985659 &lt;NA&gt;         NA DROP   Wil       Lutz     </span>
@@ -505,14 +505,16 @@ https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
 <span class="co">#&gt;  7 2020-10-27 12:21:03     4 BE               NA   13229 TE           NA LINEUP Rob       Gronkows…</span>
 <span class="co">#&gt;  8 2020-10-27 12:21:03     4 TE               NA 4036131 BE           NA LINEUP Noah      Fant     </span>
 <span class="co">#&gt;  9 2020-10-27 12:21:03     4 BE               NA   15683 PK           NA LINEUP Justin    Tucker   </span>
-<span class="co">#&gt; 10 2020-10-27 11:01:10    10 BE               NA   13994 QB           NA LINEUP Cam       Newton   </span>
-<span class="co">#&gt; 11 2020-10-27 11:01:10    10 QB               NA 3122840 BE           NA LINEUP Deshaun   Watson   </span>
-<span class="co">#&gt; 12 2020-10-27 15:08:30     1 FX               NA 2577327 WR           NA LINEUP Tyler     Lockett  </span>
-<span class="co">#&gt; 13 2020-10-27 15:08:30     1 BE               NA 3042519 FX           NA LINEUP Aaron     Jones    </span>
-<span class="co">#&gt; 14 2020-10-27 15:08:30     1 FX               NA 4046692 BE           NA LINEUP Chase     Claypool </span>
-<span class="co">#&gt; 15 2020-10-27 15:08:30     1 DS               NA  -16028 BE           NA LINEUP Washingt… D/ST     </span>
-<span class="co">#&gt; 16 2020-10-27 15:08:30     1 BE               NA 3054212 TE           NA LINEUP Jonnu     Smith    </span>
-<span class="co">#&gt; 17 2020-10-27 15:08:30     1 TE               NA 4036133 BE           NA LINEUP T.J.      Hockenson</span></pre></div>
+<span class="co">#&gt; 10 2020-10-27 15:19:14     3 BE               NA 4259545 RB           NA LINEUP D'Andre   Swift    </span>
+<span class="co">#&gt; 11 2020-10-27 15:19:14     3 RB               NA 3919596 BE           NA LINEUP Chris     Carson   </span>
+<span class="co">#&gt; 12 2020-10-27 11:01:10    10 BE               NA   13994 QB           NA LINEUP Cam       Newton   </span>
+<span class="co">#&gt; 13 2020-10-27 11:01:10    10 QB               NA 3122840 BE           NA LINEUP Deshaun   Watson   </span>
+<span class="co">#&gt; 14 2020-10-27 15:08:30     1 FX               NA 2577327 WR           NA LINEUP Tyler     Lockett  </span>
+<span class="co">#&gt; 15 2020-10-27 15:08:30     1 BE               NA 3042519 FX           NA LINEUP Aaron     Jones    </span>
+<span class="co">#&gt; 16 2020-10-27 15:08:30     1 FX               NA 4046692 BE           NA LINEUP Chase     Claypool </span>
+<span class="co">#&gt; 17 2020-10-27 15:08:30     1 DS               NA  -16028 BE           NA LINEUP Washingt… D/ST     </span>
+<span class="co">#&gt; 18 2020-10-27 15:08:30     1 BE               NA 3054212 TE           NA LINEUP Jonnu     Smith    </span>
+<span class="co">#&gt; 19 2020-10-27 15:08:30     1 TE               NA 4036133 BE           NA LINEUP T.J.      Hockenson</span></pre></div>
 <p>We can also get the entire history of the draft, either snake or auction.</p>
 <div class="sourceCode" id="cb27"><pre class="downlit">
 <span class="fu"><a href="../reference/ffl_merge.html">ffl_merge</a></span><span class="op">(</span>
@@ -540,7 +542,7 @@ https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
 <span class="co">#&gt;    year  week  team abbrev waiver spent acquisitions drops activated reserved trades</span>
 <span class="co">#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;fct&gt;   &lt;int&gt; &lt;int&gt;        &lt;int&gt; &lt;int&gt;     &lt;int&gt;    &lt;int&gt;  &lt;int&gt;</span>
 <span class="co">#&gt; 1  2020     8     1 AGUS        7    42           12    12        33        0      0</span>
-<span class="co">#&gt; 2  2020     8     3 PEPE        5    33            8     7        30        2      0</span>
+<span class="co">#&gt; 2  2020     8     3 PEPE        5    33            8     7        31        2      0</span>
 <span class="co">#&gt; 3  2020     8     4 BILL        8    83           13    13        45        4      0</span>
 <span class="co">#&gt; 4  2020     8     5 CART        6    43            8     8        30        0      0</span>
 <span class="co">#&gt; 5  2020     8     6 KIER        2    58           12    12        25        1      0</span>
@@ -592,7 +594,7 @@ https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
 <span class="co">#&gt;    week match team  score  proj</span>
 <span class="co">#&gt;   &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
 <span class="co">#&gt; 1     8    29 AGUS      0 101. </span>
-<span class="co">#&gt; 2     8    29 PEPE      0  83.5</span>
+<span class="co">#&gt; 2     8    29 PEPE      0  92.9</span>
 <span class="co">#&gt; 3     8    30 BILL      0  99.1</span>
 <span class="co">#&gt; 4     8    30 NICK      0 115. </span>
 <span class="co">#&gt; 5     8    31 KYLE      0  81.4</span>
