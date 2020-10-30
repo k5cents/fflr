@@ -33,6 +33,27 @@ ffl_api <- function(lid = getOption("lid"), old = FALSE, view = NULL, ...) {
     names(y) <- gsub("\\d", "", names(y))
   }
   c <- paste(paste(names(y), y, sep = "="), collapse = "&")
-  data <- jsonlite::fromJSON(paste0(a, b, lid, "?", c))
+  data <- try_api(txt = paste0(a, b, lid, "?", c))
   return(data)
+}
+
+try_api <- function(txt) {
+  out <- tryCatch(
+    expr = jsonlite::fromJSON(txt = txt),
+    error = function(e) return(NULL)
+  )
+  attempt <- 0
+  old <- prev <- getOption("timeout")
+  while (is.null(out) & attempt < 4) {
+    attempt <- attempt + 1
+    Sys.sleep(30)
+    prev <- prev * 1.5
+    options(timeout = prev)
+    out <- tryCatch(
+      expr = jsonlite::fromJSON(txt = txt),
+      error = function(e) return(NULL)
+    )
+    options(timeout = old)
+  }
+  return(out)
 }
