@@ -45,6 +45,7 @@ try_api <- function(txt) {
   attempt <- 0
   old <- prev <- getOption("timeout")
   while (is.null(out) & attempt < 4) {
+    message("API ERROR ATTEMPTING AGAIN")
     attempt <- attempt + 1
     Sys.sleep(30)
     prev <- prev * 1.5

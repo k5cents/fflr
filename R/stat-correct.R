@@ -7,13 +7,12 @@
 #' @examples
 #' stat_correct()
 #' @importFrom tibble as_tibble tibble
-#' @importFrom jsonlite fromJSON
 #' @export
 stat_correct <- function(date = Sys.Date()) {
   if (!inherits(date, c("Date", "character"))) {
     stop("date must be date class or coercible character")
   }
-  d <- fromJSON(
+  d <- try_api(
     txt = paste0(
       "https://sports.core.api.espn.com/",
       "v2/sports/football/leagues/nfl/seasons/2020/corrections",

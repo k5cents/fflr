@@ -9,13 +9,12 @@
 #' @examples
 #' player_news(15847)
 #' @importFrom tibble tibble
-#' @importFrom jsonlite fromJSON
 #' @export
 player_news <- function(id, parse = FALSE) {
   api_base <- "https://site.api.espn.com"
   api_path <- "/apis/fantasy/v2/games/ffl/news/players?playerId="
   id_all <- paste(id, collapse = "&playerId=")
-  d <- fromJSON(paste0(api_base, api_path, id_all))
+  d <- try_api(paste0(api_base, api_path, id_all))
   if (d$resultsCount == d$resultsLimit) {
     warning("Feed limit of 50 reached")
   }

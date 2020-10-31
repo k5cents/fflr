@@ -6,11 +6,10 @@
 #' @return Tibble of NFL team opponents by week.
 #' @examples
 #' pro_schedule(year = ffl_year(-2))
-#' @importFrom jsonlite fromJSON
 #' @importFrom tibble tibble
 #' @export
 pro_schedule <- function(year = ffl_year()) {
-  d <- jsonlite::fromJSON(
+  d <- try_api(
     txt = paste0(
       "https://fantasy.espn.com/apis/v3/games/ffl/seasons/", year,
       "?view=proTeamSchedules_wl"

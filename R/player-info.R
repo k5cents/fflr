@@ -6,13 +6,12 @@
 #' @examples
 #' str(player_info(15847))
 #' @importFrom tibble as_tibble
-#' @importFrom jsonlite fromJSON
 #' @export
 player_info <- function(id, row = FALSE) {
   if (as.numeric(id) < 0) {
     stop("no information available for defenses")
   }
-  d <- jsonlite::fromJSON(
+  d <- try_api(
     txt = paste0(
       "http://sports.core.api.espn.com/",
       "v2/sports/football/leagues/nfl/seasons/2020/athletes/", id

@@ -8,7 +8,7 @@
 #' @examples
 #' all_players()
 #' @importFrom tibble as_tibble
-#' @importFrom jsonlite fromJSON toJSON
+#' @importFrom jsonlite toJSON
 #' @importFrom httr GET add_headers accept_json content
 #' @export
 all_players <- function(lid = getOption("lid"), week = ffl_week()) {
@@ -41,7 +41,7 @@ all_players <- function(lid = getOption("lid"), week = ffl_week()) {
       "/seasons/2020/segments/0/leagues/", lid
     )
   )
-  p <- jsonlite::fromJSON(httr::content(g, "text"))
+  p <- try_api(httr::content(g, "text"))
   if (length(p) == 2) {
     p <- p$players
   }

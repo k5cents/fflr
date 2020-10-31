@@ -5,11 +5,9 @@
 #' @return A list of season information.
 #' @examples
 #' str(ffl_info())
-#' @importFrom tibble as_tibble
-#' @importFrom jsonlite fromJSON
 #' @export
 ffl_info <- function() {
-  f <- jsonlite::fromJSON("https://fantasy.espn.com/apis/v3/games/ffl")
+  f <- try_api("https://fantasy.espn.com/apis/v3/games/ffl")
   list(
     game = f$abbrev,
     active = f$active,
@@ -50,10 +48,9 @@ ffl_week <- function(offset = 0) {
 #' @examples
 #' ffl_seasons()
 #' @importFrom tibble as_tibble
-#' @importFrom jsonlite fromJSON
 #' @export
 ffl_seasons <- function() {
-  s <- jsonlite::fromJSON("https://fantasy.espn.com/apis/v3/games/ffl/seasons")
+  s <- try_api("https://fantasy.espn.com/apis/v3/games/ffl/seasons")
   s$week <- s$currentScoringPeriod$id
   s$currentScoringPeriod <- NULL
   s$pro_league <- "NFL"
@@ -71,10 +68,9 @@ ffl_seasons <- function() {
 #' @examples
 #' espn_games()
 #' @importFrom tibble as_tibble
-#' @importFrom jsonlite fromJSON
 #' @export
 espn_games <- function() {
-  g <- jsonlite::fromJSON("https://fantasy.espn.com/apis/v3/games")
+  g <- try_api("https://fantasy.espn.com/apis/v3/games")
   g$start_date <- ffl_date(g$currentSeason$startDate)
   g$end_date <- ffl_date(g$currentSeason$endDate)
   g$currentSeason <- NULL
