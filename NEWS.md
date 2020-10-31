@@ -1,3 +1,7 @@
+# fflr 0.3.11
+
+* Use `try_api()` for all other JSON calls (.e.g., `ffl_seasons()`).
+
 # fflr 0.3.10
 
 * `ffl_api()` now uses `tryCatch()` with `Sys.sleep()` on failures.
