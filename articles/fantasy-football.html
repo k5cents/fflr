@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.11</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.11.9000</span>
       </span>
     </div>
 
@@ -103,7 +103,7 @@
 <div class="sourceCode" id="cb1"><pre class="downlit">
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kiernann/fflr">fflr</a></span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html">packageVersion</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span>
-<span class="co">#&gt; [1] '0.3.11'</span></pre></div>
+<span class="co">#&gt; [1] '0.3.11.9000'</span></pre></div>
 <p>The fflr package helps easily access data from the ESPN fantasy football v3 API. Both current and historical data can be</p>
 <div id="games" class="section level2">
 <h2 class="hasAnchor">
@@ -368,7 +368,7 @@ https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
 <span class="co">#&gt;     year  week team  slot       id first  last   pro   pos   status  proj score start  rost  change</span>
 <span class="co">#&gt;    &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;fct&gt;   &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;  &lt;fct&gt; &lt;fct&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;</span>
 <span class="co">#&gt;  1  2020     8 KIER  QB      14876 Ryan   Tanne… Ten   QB    A      17.0   17.3 43.3   72.8   4.40 </span>
-<span class="co">#&gt;  2  2020     8 KIER  RB    3054850 Alvin  Kamara NO    RB    A      16.1   13.8 98.1  100.   -0.002</span>
+<span class="co">#&gt;  2  2020     8 KIER  RB    3054850 Alvin  Kamara NO    RB    A      16.1   14.8 98.1  100.   -0.002</span>
 <span class="co">#&gt;  3  2020     8 KIER  RB    3025433 Mike   Davis  Car   RB    A      13.6    7.7 94.0   97.6  -0.189</span>
 <span class="co">#&gt;  4  2020     8 KIER  WR    2977187 Cooper Kupp   LAR   WR    A       8.94  11   71.3   95.8  -0.472</span>
 <span class="co">#&gt;  5  2020     8 KIER  WR    3139522 Travis Fulgh… Phi   WR    A       9.43  NA   66.8   82.6  14.2  </span>
@@ -390,7 +390,7 @@ https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
 <span class="co">#&gt;    year  week team  slot       id first   last    pro   pos   status  proj score start  rost change</span>
 <span class="co">#&gt;   &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;fct&gt;   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;fct&gt; &lt;fct&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
 <span class="co">#&gt; 1  2020     8 KIER  QB      14876 Ryan    Tanneh… Ten   QB    A      17.0   17.3  43.3  72.8  4.40 </span>
-<span class="co">#&gt; 2  2020     8 KIER  RB    3054850 Alvin   Kamara  NO    RB    A      16.1   13.8  98.1 100.  -0.002</span>
+<span class="co">#&gt; 2  2020     8 KIER  RB    3054850 Alvin   Kamara  NO    RB    A      16.1   14.8  98.1 100.  -0.002</span>
 <span class="co">#&gt; 3  2020     8 KIER  RB    3025433 Mike    Davis   Car   RB    A      13.6    7.7  94.0  97.6 -0.189</span>
 <span class="co">#&gt; 4  2020     8 KIER  WR    2977187 Cooper  Kupp    LAR   WR    A       8.94  11    71.3  95.8 -0.472</span>
 <span class="co">#&gt; 5  2020     8 KIER  WR    3139522 Travis  Fulgham Phi   WR    A       9.43  NA    66.8  82.6 14.2  </span>
@@ -582,17 +582,17 @@ https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
 <p>If a matchup period is currently ongoing, the live score and projection can also be found.</p>
 <div class="sourceCode" id="cb31"><pre class="downlit">
 <span class="fu"><a href="../reference/live_scoring.html">live_scoring</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 8 x 5</span>
-<span class="co">#&gt;    week match team  score  proj</span>
-<span class="co">#&gt;   &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt; 1     8    29 AGUS   74.3  76.7</span>
-<span class="co">#&gt; 2     8    29 PEPE   61.6  88.9</span>
-<span class="co">#&gt; 3     8    30 BILL  124.  136. </span>
-<span class="co">#&gt; 4     8    30 NICK  104.  105. </span>
-<span class="co">#&gt; 5     8    31 KYLE   85.3 109. </span>
-<span class="co">#&gt; 6     8    31 CART   68.3  89.1</span>
-<span class="co">#&gt; 7     8    32 KIER   78.3  88.7</span>
-<span class="co">#&gt; 8     8    32 CORE   85.5  86.2</span></pre></div>
+<span class="co">#&gt; # A tibble: 8 x 6</span>
+<span class="co">#&gt;    week match team  score  proj   line</span>
+<span class="co">#&gt; * &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
+<span class="co">#&gt; 1     8    29 AGUS   79.3  79.3  -9.56</span>
+<span class="co">#&gt; 2     8    29 PEPE   61.6  88.9   9.56</span>
+<span class="co">#&gt; 3     8    30 BILL  126.  135.   30.5 </span>
+<span class="co">#&gt; 4     8    30 NICK  104.  104.  -30.5 </span>
+<span class="co">#&gt; 5     8    31 KYLE   85.3 109.   19.7 </span>
+<span class="co">#&gt; 6     8    31 CART   70.1  89.4 -19.7 </span>
+<span class="co">#&gt; 7     8    32 KIER   79.3  88.8   3.23</span>
+<span class="co">#&gt; 8     8    32 CORE   85.5  85.5  -3.23</span></pre></div>
 <p>It’s worth noting that matchups and weeks are different units of time. For this league, for example, regular season matchups last one week and playoff matches last two.</p>
 <div class="sourceCode" id="cb32"><pre class="downlit">
 <span class="fu"><a href="../reference/schedule_settings.html">schedule_settings</a></span><span class="op">(</span><span class="op">)</span>

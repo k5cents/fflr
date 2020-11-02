@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.11</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.11.9000</span>
       </span>
     </div>
 
@@ -164,17 +164,17 @@ determine how many starting players have <em>yet</em> started playing.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>live_scoring</span><span class='op'>(</span><span class='fl'>252353</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 8 x 5</span><span>
-#&gt;    week match team  score  proj
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span>     8    29 AGUS   74.3  76.8
-#&gt; </span><span style='color: #555555;'>2</span><span>     8    29 PEPE   61.6  88.9
-#&gt; </span><span style='color: #555555;'>3</span><span>     8    30 BILL  124.  136. 
-#&gt; </span><span style='color: #555555;'>4</span><span>     8    30 NICK  104.  105. 
-#&gt; </span><span style='color: #555555;'>5</span><span>     8    31 KYLE   85.3 109. 
-#&gt; </span><span style='color: #555555;'>6</span><span>     8    31 CART   68.3  89.1
-#&gt; </span><span style='color: #555555;'>7</span><span>     8    32 KIER   78.3  88.7
-#&gt; </span><span style='color: #555555;'>8</span><span>     8    32 CORE   85.5  86.2</div></span></pre>
+</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 8 x 6</span><span>
+#&gt;    week match team  score  proj   line
+#&gt; </span><span style='color: #555555;'>*</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #555555;'>1</span><span>     8    29 AGUS   79.3  79.3  -</span><span style='color: #BB0000;'>9.56</span><span>
+#&gt; </span><span style='color: #555555;'>2</span><span>     8    29 PEPE   61.6  88.9   9.56
+#&gt; </span><span style='color: #555555;'>3</span><span>     8    30 BILL  126.  135.   30.5 
+#&gt; </span><span style='color: #555555;'>4</span><span>     8    30 NICK  104.  104.  -</span><span style='color: #BB0000;'>30.5</span><span> 
+#&gt; </span><span style='color: #555555;'>5</span><span>     8    31 KYLE   85.3 109.   19.7 
+#&gt; </span><span style='color: #555555;'>6</span><span>     8    31 CART   70.1  89.4 -</span><span style='color: #BB0000;'>19.7</span><span> 
+#&gt; </span><span style='color: #555555;'>7</span><span>     8    32 KIER   79.3  88.8   3.23
+#&gt; </span><span style='color: #555555;'>8</span><span>     8    32 CORE   85.5  85.5  -</span><span style='color: #BB0000;'>3.23</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
