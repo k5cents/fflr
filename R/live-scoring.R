@@ -32,6 +32,11 @@ live_scoring <- function(lid = getOption("lid"), yet = FALSE) {
   s <- s[order(s$match), ]
   t <- parse_teams(d$teams)
   s$team <- team_abbrev(s$team, teams = t)
+  x <- split(s, s$match)
+  for (i in seq_along(x)) {
+    x[[i]]$line <- x[[i]]$proj - (sum(x[[i]]$proj) - x[[i]]$proj)
+  }
+  s <- do.call("rbind", x)
   if (yet) {
     r <- do.call("rbind", lapply(d$teams$roster$entries, parse_roster))
     r <- start_roster(r)
@@ -46,7 +51,8 @@ live_scoring <- function(lid = getOption("lid"), yet = FALSE) {
       team = names(y),
       yet = as.vector(y)
     )
-    s <- tibble::as_tibble(merge(y, s)[, c(3:4, 1:2, 5:6)])
+    s <- ffl_merge(y, s)[, c(3:4, 1:2, 5:7)]
+    s <- s[order(s$match), ]
   }
   return(s)
 }
