@@ -16,8 +16,7 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   fig.height = 4,
   fig.width = 9,
-  out.width = "100%",
-  dpi = 300
+  out.width = "100%"
 )
 if (!interactive()) {
   options(width = 99)
@@ -29,6 +28,7 @@ if (!interactive()) {
 <!-- badges: start -->
 [![Lifecycle: experimental][life_badge]][life_link]
 [![CRAN status][cran_badge]][cran_link]
+![Downloads][dl_badge]
 [![Codecov test coverage][cov_badge]][cov_link]
 [![R build status][ga_badge]][ga_link]
 <!-- badges: end -->
@@ -42,29 +42,44 @@ functions should for other leagues, but contributions are welcome.
 
 ## Installation
 
-You can install the released version of `fflr` from [GitHub][fflr] with:
+You can install the released version of `fflr` from [CRAN][cran] with:
 
-```r
+```{r install_cran, eval=FALSE}
+install.packages("fflr")
+```
+
+The development version can be installed from [GitHub][fflr] with:
+
+```{r install_github, eval=FALSE}
 # install.packages("remotes")
 remotes::install_github("kiernann/fflr")
 ```
 
 ## Usage
 
-Here we see how to scrape teams, rosters, scores, and waiver pickups.
+```{r library}
+library(fflr)
+library(ffplot)
+library(tidyverse)
+```
 
-Define your _public_ league ID (from the URL) with `options()`.
+Here we see how to scrape teams, rosters, scores, and waiver pickups, etc.
+
+Most data can only be retrieved from _public_ leagues. [This ESPN help
+page][help] has instructions for making a league viewable.
+
+For convenience, define your league ID as "lid" with `options()`.
 
 <pre>
 https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
 </pre>
 
-```{r library}
-library(fflr)
-library(ffplot)
-library(tidyverse)
+```{r options}
 options(lid = 252353)
+getOption("lid")
 ```
+
+Then data can be scraped and automatically formatted as rectangles and lists.
 
 ```{r team_roster}
 rosters <- team_roster(week = ffl_week(-1))
@@ -74,6 +89,8 @@ my_roster <- rosters[[5]]
 ```{r echo=FALSE}
 (my_roster <- rosters[[5]][c(-1, -5)])
 ```
+
+Some functions help calculate statistics like the optimal roster score.
 
 ```{r best_roster}
 my_best <- best_roster(my_roster)
@@ -99,7 +116,7 @@ Some functions like `roster_moves()` only define players by their unique ID.
 
 ```{r waiver_adds}
 waiver_adds <- 
-  roster_moves(week = 3) %>% 
+  roster_moves(week = 5) %>% 
   filter(
     type == "WAIVER", 
     status == "EXECUTED",
@@ -110,18 +127,24 @@ waiver_adds <-
 The included `nfl_players` tibble identifies all `r nrow(nfl_players)` players
 (as of September 30th, 2020).
 
+```{r nfl_players, echo=FALSE}
+nfl_players
+```
+
+This can be joined against other data to identify players.
+
 ```{r join_player}
 waiver_adds %>% 
-  left_join(nfl_players[, 1:3]) %>% 
+  ffl_merge(nfl_players[, 1:3]) %>% 
   select(15:16, bid, team = to_team) %>%
-  left_join(teams[, 2:3]) %>% 
+  ffl_merge(teams[, 2:3]) %>% 
   arrange(desc(bid))
 ```
 
 ***
 
 The fflr project is released with a [Contributor Code of Conduct][coc]. By
-contributing to this project, you agree to abide by its terms.
+contributing, you agree to abide by its terms.
 
 <!-- refs: start -->
 [life_badge]: https://img.shields.io/badge/lifecycle-maturing-blue.svg
@@ -133,9 +156,12 @@ contributing to this project, you agree to abide by its terms.
 [cov_badge]: https://codecov.io/gh/kiernann/fflr/branch/master/graph/badge.svg
 [cov_link]: https://codecov.io/gh/kiernann/fflr?branch=master
 [dl_badge]: https://cranlogs.r-pkg.org/badges/grand-total/fflr
+[dl_badge]: https://cranlogs.r-pkg.org/badges/grand-total/usa
 [api]: https://fantasy.espn.com/apis/v3/games/ffl/
 [ffplot]: https://github.com/kiernann/ffplot
 [fflr]: https://github.com/kiernann/fflr
+[cran]: https://cran.r-project.org/package=fflr
 [coc]: https://kiernann.com/fflr/CODE_OF_CONDUCT.html
 [tidy]: https://en.wikipedia.org/wiki/Tidy_data
+[help]: https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public
 <!-- refs: end -->
