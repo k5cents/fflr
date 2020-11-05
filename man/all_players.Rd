@@ -18,5 +18,7 @@ A tibble of players.
 List all available players.
 }
 \examples{
+\dontrun{
 all_players()
+}
 }
