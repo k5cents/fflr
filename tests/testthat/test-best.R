@@ -6,7 +6,7 @@ expect_height <- function(object, n) {
 }
 
 test_that("scores stop if pre-game", {
-  r <- team_roster(252353, week = ffl_week())[[5]]
+  r <- team_roster(252353, week = 3)[[5]]
   b <- best_roster(r)
   expect_s3_class(b, "tbl")
   if (sum(is.na(r$score)) > 3) {
