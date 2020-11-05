@@ -1,4 +1,9 @@
-# fflr (development version)
+# fflr 0.3.12
+
+* Use known weekly rosters in all tests, examples, and vignettes.
+* Improve the way `all_players()` safely handles bye week stats.
+* Skip `all_players()` tests and examples on CRAN for time reasons.
+* Remove changes to `options()` in `try_api()`, keep `Sys.sleep()`.
 
 # fflr 0.3.11
 
