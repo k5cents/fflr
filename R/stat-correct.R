@@ -9,8 +9,11 @@
 #' @importFrom tibble as_tibble tibble
 #' @export
 stat_correct <- function(date = Sys.Date()) {
-  if (!inherits(date, c("Date", "character"))) {
-    stop("date must be date class or coercible character")
+  if (!inherits(date, "Date")) {
+    date <- tryCatch(expr = as.Date(date), error = function(e) date)
+    if (!inherits(date, "Date")) {
+      stop(paste(date, "is not a date object"))
+    }
   }
   d <- try_api(
     txt = paste0(
