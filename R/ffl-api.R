@@ -43,18 +43,14 @@ try_api <- function(txt) {
     error = function(e) return(NULL)
   )
   attempt <- 0
-  old <- prev <- getOption("timeout")
   while (is.null(out) & attempt < 4) {
     message("API ERROR ATTEMPTING AGAIN")
     attempt <- attempt + 1
     Sys.sleep(30)
-    prev <- prev * 1.5
-    options(timeout = prev)
     out <- tryCatch(
       expr = jsonlite::fromJSON(txt = txt),
       error = function(e) return(NULL)
     )
-    options(timeout = old)
   }
   return(out)
 }
