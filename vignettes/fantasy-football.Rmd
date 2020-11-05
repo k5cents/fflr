@@ -174,7 +174,7 @@ cat(paste(">", outlooks$outlook[1]))
 For the team rosters in your league, a list of data frames can be returned.
 
 ```{r team_roster}
-rosters <- team_roster()
+rosters <- team_roster(week = 3)
 ```
 
 The elements of this list are named for their team abbreviation.
