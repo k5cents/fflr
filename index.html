@@ -40,7 +40,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.12</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.12.9000</span>
       </span>
     </div>
 
@@ -97,14 +97,14 @@
 <!-- badges: start -->
 
 <p>The fflr package is used to query the <a href="https://fantasy.espn.com/apis/v3/games/ffl/">ESPN Fantasy Football API</a> for both the current and prior seasons. Get data on fantasy league members, teams, and individual athletes.</p>
-<p>This package was designed and tested for my own 10-man standard league. Most functions should for other leagues, but contributions are welcome.</p>
+<p>This package was designed and tested for a standard 10-team league. Most functions should for other leagues, but contributions are welcome.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the released version of <code>fflr</code> from <a href="https://cran.r-project.org/package=fflr">CRAN</a> with:</p>
+<p>You can install the released version of fflr from <a href="https://cran.r-project.org/package=fflr">CRAN</a>:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit">
 <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span></pre></div>
-<p>The development version can be installed from <a href="https://github.com/kiernann/fflr">GitHub</a> with:</p>
+<p>The development version can be installed from <a href="https://github.com/kiernann/fflr">GitHub</a>:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit">
 <span class="co"># install.packages("remotes")</span>
 <span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"kiernann/fflr"</span><span class="op">)</span></pre></div>
@@ -117,8 +117,8 @@
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">ffplot</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span></pre></div>
 <p>Here we see how to scrape teams, rosters, scores, and waiver pickups, etc.</p>
-<p>Most data can only be retrieved from <em>public</em> leagues. <a href="https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public">This ESPN help page</a> has instructions for making a league viewable.</p>
-<p>For convenience, define your league ID as “lid” with <code><a href="https://rdrr.io/r/base/options.html">options()</a></code>.</p>
+<p>Most data can only be scraped from <em>public</em> leagues. <a href="https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public">This ESPN help page</a> has instructions for making a league viewable.</p>
+<p>For convenience, you can define a league ID as <code>lid</code> with <code><a href="https://rdrr.io/r/base/options.html">options()</a></code>.</p>
 <pre>
 https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
 </pre>
@@ -126,52 +126,54 @@ https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
 <span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>lid <span class="op">=</span> <span class="fl">252353</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/options.html">getOption</a></span><span class="op">(</span><span class="st">"lid"</span><span class="op">)</span>
 <span class="co">#&gt; [1] 252353</span></pre></div>
-<p>Then data can be scraped and automatically formatted as rectangles and lists.</p>
+<p>Then data can be scraped and automatically formatted into data frames.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit">
 <span class="va">rosters</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/team_roster.html">team_roster</a></span><span class="op">(</span>week <span class="op">=</span> <span class="fu"><a href="reference/ffl_week.html">ffl_week</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span>
 <span class="va">my_roster</span> <span class="op">&lt;-</span> <span class="va">rosters</span><span class="op">[[</span><span class="fl">5</span><span class="op">]</span><span class="op">]</span></pre></div>
 <div class="sourceCode" id="cb6"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">#&gt; # A tibble: 16 x 13</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="co">#&gt;     week team  slot  first    last        pro   pos   status  proj score start  rost  change</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="co">#&gt;    &lt;int&gt; &lt;fct&gt; &lt;fct&gt; &lt;chr&gt;    &lt;chr&gt;       &lt;fct&gt; &lt;fct&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="co">#&gt;  1     7 KIER  QB    Ryan     Tannehill   Ten   QB    A      17.9   17.3 43.3   72.8   4.40 </span></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="co">#&gt;  2     7 KIER  RB    Alvin    Kamara      NO    RB    A      16.8   14.8 98.1  100.   -0.002</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="co">#&gt;  3     7 KIER  RB    Mike     Davis       Car   RB    A      14.4    3.6 94.0   97.6  -0.189</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="co">#&gt;  4     7 KIER  WR    DeAndre  Hopkins     Ari   WR    A      13.0   14.3 18.1   99.9  -0.023</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a><span class="co">#&gt;  5     7 KIER  WR    Odell    Beckham Jr. Cle   WR    I       9.01   0   18.7   45.2 -52.8  </span></span>
-<span id="cb6-9"><a href="#cb6-9"></a><span class="co">#&gt;  6     7 KIER  TE    Travis   Kelce       KC    TE    A      10.6    3.1 99.4  100.   -0.004</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a><span class="co">#&gt;  7     7 KIER  FX    David    Johnson     Hou   RB    A      13.0   12.4 15.0   95.5  -0.902</span></span>
-<span id="cb6-11"><a href="#cb6-11"></a><span class="co">#&gt;  8     7 KIER  DS    Browns   D/ST        Cle   DS    A       6.24   3   21.0   30.1 -15.8  </span></span>
-<span id="cb6-12"><a href="#cb6-12"></a><span class="co">#&gt;  9     7 KIER  PK    Graham   Gano        NYG   PK    A       8.96   3   14.6   22.6 -35.0  </span></span>
-<span id="cb6-13"><a href="#cb6-13"></a><span class="co">#&gt; 10     7 KIER  BE    Cooper   Kupp        LAR   WR    A       8.51   5.9 71.3   95.8  -0.472</span></span>
-<span id="cb6-14"><a href="#cb6-14"></a><span class="co">#&gt; 11     7 KIER  BE    Jonathan Taylor      Ind   RB    A       0     NA   74.5   96.9   0.178</span></span>
-<span id="cb6-15"><a href="#cb6-15"></a><span class="co">#&gt; 12     7 KIER  BE    David    Montgomery  Chi   RB    A      11.7    6.9 67.7   93.7   0.478</span></span>
-<span id="cb6-16"><a href="#cb6-16"></a><span class="co">#&gt; 13     7 KIER  BE    Ronald   Jones II    TB    RB    A      12.1    9.6 68.6   93.6  -0.011</span></span>
-<span id="cb6-17"><a href="#cb6-17"></a><span class="co">#&gt; 14     7 KIER  BE    Gardner  Minshew II  Jax   QB    D      17.0   19.0  2.57  34.0 -15.4  </span></span>
-<span id="cb6-18"><a href="#cb6-18"></a><span class="co">#&gt; 15     7 KIER  BE    Myles    Gaskin      Mia   RB    A       0     NA   69.8   90.5   4.03 </span></span>
-<span id="cb6-19"><a href="#cb6-19"></a><span class="co">#&gt; 16     7 KIER  BE    Travis   Fulgham     Phi   WR    A       9.03   7.3 66.8   82.6  14.2</span></span></code></pre></div>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="co">#&gt;     week team  slot  first    last       pro   pos   status  proj score start  rost  change</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co">#&gt;    &lt;int&gt; &lt;fct&gt; &lt;fct&gt; &lt;chr&gt;    &lt;chr&gt;      &lt;fct&gt; &lt;fct&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="co">#&gt;  1     8 KIER  QB    Ryan     Tannehill  Ten   QB    A      17.0   17.3 27.1   69.1  -3.65 </span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="co">#&gt;  2     8 KIER  RB    Alvin    Kamara     NO    RB    A      16.1   16.3 98.6  100.    0.002</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="co">#&gt;  3     8 KIER  RB    Mike     Davis      Car   RB    A      13.6    7.7 15.2   75.1 -22.8  </span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="co">#&gt;  4     8 KIER  WR    Cooper   Kupp       LAR   WR    A       8.94  11   16.0   95.6  -0.266</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="co">#&gt;  5     8 KIER  WR    Travis   Fulgham    Phi   WR    A       9.43  13.8  3.28  83.0   1.77 </span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="co">#&gt;  6     8 KIER  TE    Travis   Kelce      KC    TE    A      10.3   16.9 99.6  100.    0.001</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="co">#&gt;  7     8 KIER  FX    Jonathan Taylor     Ind   RB    A      12.4    3.1 53.2   95.8  -1.10 </span></span>
+<span id="cb6-11"><a href="#cb6-11"></a><span class="co">#&gt;  8     8 KIER  DS    Rams     D/ST       LAR   DS    A       5.48   3.5 11.0   58.0 -27.2  </span></span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="co">#&gt;  9     8 KIER  PK    Joey     Slye       Car   PK    A       9.53   5   40.4   45.2  -9.85 </span></span>
+<span id="cb6-13"><a href="#cb6-13"></a><span class="co">#&gt; 10     8 KIER  BE    DeAndre  Hopkins    Ari   WR    A       0     NA   90.6   99.9   0.015</span></span>
+<span id="cb6-14"><a href="#cb6-14"></a><span class="co">#&gt; 11     8 KIER  BE    David    Johnson    Hou   RB    A       0     NA   78.6   96.7   0.959</span></span>
+<span id="cb6-15"><a href="#cb6-15"></a><span class="co">#&gt; 12     8 KIER  BE    David    Montgomery Chi   RB    A      12.2   10.5 74.1   94.7   0.753</span></span>
+<span id="cb6-16"><a href="#cb6-16"></a><span class="co">#&gt; 13     8 KIER  BE    Ronald   Jones II   TB    RB    A      11.0    2.6 53.5   92.5  -1.31 </span></span>
+<span id="cb6-17"><a href="#cb6-17"></a><span class="co">#&gt; 14     8 KIER  BE    Gardner  Minshew II Jax   QB    O       0     NA    1.55  21.1 -14.8  </span></span>
+<span id="cb6-18"><a href="#cb6-18"></a><span class="co">#&gt; 15     8 KIER  BE    Myles    Gaskin     Mia   RB    I      12.2   10.3  6.47  79.6 -11.0  </span></span>
+<span id="cb6-19"><a href="#cb6-19"></a><span class="co">#&gt; 16     8 KIER  BE    A.J.     Green      Cin   WR    A       8.05   1.9  7.90  72.4  -7.84</span></span></code></pre></div>
 <p>Some functions help calculate statistics like the optimal roster score.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit">
 <span class="va">my_best</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/best_roster.html">best_roster</a></span><span class="op">(</span><span class="va">my_roster</span><span class="op">)</span>
 <span class="fu"><a href="reference/roster_score.html">roster_score</a></span><span class="op">(</span><span class="va">my_roster</span><span class="op">)</span>
-<span class="co">#&gt; [1] 71.5</span>
+<span class="co">#&gt; [1] 94.62</span>
 <span class="fu"><a href="reference/roster_score.html">roster_score</a></span><span class="op">(</span><span class="va">my_best</span><span class="op">)</span>
-<span class="co">#&gt; [1] 86.52</span></pre></div>
+<span class="co">#&gt; [1] 104.62</span></pre></div>
 <p>Matchups return as a <a href="https://en.wikipedia.org/wiki/Tidy_data">tidy</a> tibble of weekly scores by team.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit">
-<span class="op">(</span><span class="va">teams</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/league_teams.html">league_teams</a></span><span class="op">(</span><span class="op">)</span><span class="op">[</span>, <span class="op">-</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 8 x 4</span>
-<span class="co">#&gt;    year  team abbrev name                    </span>
-<span class="co">#&gt;   &lt;int&gt; &lt;int&gt; &lt;fct&gt;  &lt;chr&gt;                   </span>
-<span class="co">#&gt; 1  2020     1 AGUS   Obi-Wan Mahomey         </span>
-<span class="co">#&gt; 2  2020     3 PEPE   JuJu's Bizarre Adventure</span>
-<span class="co">#&gt; 3  2020     4 BILL   Bill's Fantasy Team     </span>
-<span class="co">#&gt; 4  2020     5 CART   Ashley Mattison         </span>
-<span class="co">#&gt; 5  2020     6 KIER   The Nuklear Option      </span>
-<span class="co">#&gt; 6  2020     8 CORE   Fuller Up               </span>
-<span class="co">#&gt; 7  2020    10 NICK   The Silence Of The Lamb </span>
-<span class="co">#&gt; 8  2020    11 KYLE   Ashley Hill</span>
-<span class="va">scores</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/match_scores.html">match_scores</a></span><span class="op">(</span><span class="op">)</span></pre></div>
-<p>This makes scores over the season easy to plot. The <strong>experimental</strong> <a href="https://github.com/kiernann/ffplot">ffplot</a> package makes such plots automatically.</p>
+<span class="op">(</span><span class="va">scores</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/match_scores.html">match_scores</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; # A tibble: 64 x 9</span>
+<span class="co">#&gt;     year match week   team abbrev home  score winner power</span>
+<span class="co">#&gt;    &lt;int&gt; &lt;int&gt; &lt;fct&gt; &lt;int&gt; &lt;fct&gt;  &lt;lgl&gt; &lt;dbl&gt; &lt;lgl&gt;  &lt;dbl&gt;</span>
+<span class="co">#&gt;  1  2020     1 1         3 PEPE   TRUE  103.  TRUE       4</span>
+<span class="co">#&gt;  2  2020     1 1         1 AGUS   FALSE  68.5 FALSE      0</span>
+<span class="co">#&gt;  3  2020     2 1        10 NICK   TRUE   86.0 FALSE      1</span>
+<span class="co">#&gt;  4  2020     2 1         4 BILL   FALSE 134.  TRUE       6</span>
+<span class="co">#&gt;  5  2020     3 1         5 CART   TRUE  149.  TRUE       7</span>
+<span class="co">#&gt;  6  2020     3 1        11 KYLE   FALSE  94.7 FALSE      2</span>
+<span class="co">#&gt;  7  2020     4 1         8 CORE   TRUE  119.  TRUE       5</span>
+<span class="co">#&gt;  8  2020     4 1         6 KIER   FALSE  99.7 FALSE      3</span>
+<span class="co">#&gt;  9  2020     5 2         1 AGUS   TRUE  144.  TRUE       7</span>
+<span class="co">#&gt; 10  2020     5 2         4 BILL   FALSE 110.  FALSE      2</span>
+<span class="co">#&gt; # … with 54 more rows</span></pre></div>
+<p>This makes scores over the season easy to plot, especially with the <strong>experimental</strong> <a href="https://github.com/kiernann/ffplot">ffplot</a> package.</p>
 <p><img src="reference/figures/README-plot_scores-1.png" width="100%"></p>
 <p>Some functions like <code><a href="reference/roster_moves.html">roster_moves()</a></code> only define players by their unique ID.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit">
@@ -202,25 +204,25 @@ https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
 <span class="va">waiver_adds</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="reference/ffl_merge.html">ffl_merge</a></span><span class="op">(</span><span class="va">nfl_players</span><span class="op">[</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu">select</span><span class="op">(</span><span class="fl">15</span><span class="op">:</span><span class="fl">16</span>, <span class="va">bid</span>, team <span class="op">=</span> <span class="va">to_team</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="reference/ffl_merge.html">ffl_merge</a></span><span class="op">(</span><span class="va">teams</span><span class="op">[</span>, <span class="fl">2</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">mutate</span><span class="op">(</span><span class="fu">across</span><span class="op">(</span><span class="va">team</span>, <span class="va">team_abbrev</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu">arrange</span><span class="op">(</span><span class="fu">desc</span><span class="op">(</span><span class="va">bid</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 14 x 5</span>
-<span class="co">#&gt;    first    last          bid  team abbrev</span>
-<span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;       &lt;int&gt; &lt;int&gt; &lt;fct&gt; </span>
-<span class="co">#&gt;  1 Le'Veon  Bell           14    11 KYLE  </span>
-<span class="co">#&gt;  2 Damien   Harris          7    11 KYLE  </span>
-<span class="co">#&gt;  3 Steelers D/ST            3    10 NICK  </span>
-<span class="co">#&gt;  4 Robert   Tonyan          3     3 PEPE  </span>
-<span class="co">#&gt;  5 Stephen  Gostkowski      2    10 NICK  </span>
-<span class="co">#&gt;  6 Dalton   Schultz         2     4 BILL  </span>
-<span class="co">#&gt;  7 Randy    Bullock         1    10 NICK  </span>
-<span class="co">#&gt;  8 Cole     Beasley         1    10 NICK  </span>
-<span class="co">#&gt;  9 Justin   Jackson         1     8 CORE  </span>
-<span class="co">#&gt; 10 Nyheim   Hines           1     8 CORE  </span>
-<span class="co">#&gt; 11 Rodrigo  Blankenship     1     6 KIER  </span>
-<span class="co">#&gt; 12 D'Ernest Johnson         1    11 KYLE  </span>
-<span class="co">#&gt; 13 Chiefs   D/ST            1     4 BILL  </span>
-<span class="co">#&gt; 14 Matthew  Stafford        1     5 CART</span></pre></div>
+<span class="co">#&gt; # A tibble: 14 x 4</span>
+<span class="co">#&gt;    first    last          bid team </span>
+<span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;       &lt;int&gt; &lt;fct&gt;</span>
+<span class="co">#&gt;  1 Le'Veon  Bell           14 KYLE </span>
+<span class="co">#&gt;  2 Damien   Harris          7 KYLE </span>
+<span class="co">#&gt;  3 Steelers D/ST            3 NICK </span>
+<span class="co">#&gt;  4 Robert   Tonyan          3 PEPE </span>
+<span class="co">#&gt;  5 Stephen  Gostkowski      2 NICK </span>
+<span class="co">#&gt;  6 Dalton   Schultz         2 BILL </span>
+<span class="co">#&gt;  7 Randy    Bullock         1 NICK </span>
+<span class="co">#&gt;  8 Nyheim   Hines           1 CORE </span>
+<span class="co">#&gt;  9 Rodrigo  Blankenship     1 KIER </span>
+<span class="co">#&gt; 10 Justin   Jackson         1 CORE </span>
+<span class="co">#&gt; 11 Cole     Beasley         1 NICK </span>
+<span class="co">#&gt; 12 D'Ernest Johnson         1 KYLE </span>
+<span class="co">#&gt; 13 Chiefs   D/ST            1 BILL </span>
+<span class="co">#&gt; 14 Matthew  Stafford        1 CART</span></pre></div>
 <hr>
 <p>The fflr project is released with a <a href="https://kiernann.com/fflr/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing, you agree to abide by its terms.</p>
 <!-- refs: start -->
