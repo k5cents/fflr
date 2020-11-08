@@ -21,20 +21,20 @@ API](https://fantasy.espn.com/apis/v3/games/ffl/) for both the current
 and prior seasons. Get data on fantasy league members, teams, and
 individual athletes.
 
-This package was designed and tested for my own 10-man standard league.
-Most functions should for other leagues, but contributions are welcome.
+This package was designed and tested for a standard 10-team league. Most
+functions should for other leagues, but contributions are welcome.
 
 ## Installation
 
-You can install the released version of `fflr` from
-[CRAN](https://cran.r-project.org/package=fflr) with:
+You can install the released version of fflr from
+[CRAN](https://cran.r-project.org/package=fflr):
 
 ``` r
 install.packages("fflr")
 ```
 
 The development version can be installed from
-[GitHub](https://github.com/kiernann/fflr) with:
+[GitHub](https://github.com/kiernann/fflr):
 
 ``` r
 # install.packages("remotes")
@@ -52,11 +52,11 @@ library(tidyverse)
 Here we see how to scrape teams, rosters, scores, and waiver pickups,
 etc.
 
-Most data can only be retrieved from *public* leagues. [This ESPN help
+Most data can only be scraped from *public* leagues. [This ESPN help
 page](https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public)
 has instructions for making a league viewable.
 
-For convenience, define your league ID as “lid” with `options()`.
+For convenience, you can define a league ID as `lid` with `options()`.
 
 <pre>
 https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
@@ -68,8 +68,7 @@ getOption("lid")
 #> [1] 252353
 ```
 
-Then data can be scraped and automatically formatted as rectangles and
-lists.
+Then data can be scraped and automatically formatted into data frames.
 
 ``` r
 rosters <- team_roster(week = ffl_week(-1))
@@ -77,57 +76,58 @@ my_roster <- rosters[[5]]
 ```
 
     #> # A tibble: 16 x 13
-    #>     week team  slot  first    last        pro   pos   status  proj score start  rost  change
-    #>    <int> <fct> <fct> <chr>    <chr>       <fct> <fct> <chr>  <dbl> <dbl> <dbl> <dbl>   <dbl>
-    #>  1     7 KIER  QB    Ryan     Tannehill   Ten   QB    A      17.9   17.3 43.3   72.8   4.40 
-    #>  2     7 KIER  RB    Alvin    Kamara      NO    RB    A      16.8   14.8 98.1  100.   -0.002
-    #>  3     7 KIER  RB    Mike     Davis       Car   RB    A      14.4    3.6 94.0   97.6  -0.189
-    #>  4     7 KIER  WR    DeAndre  Hopkins     Ari   WR    A      13.0   14.3 18.1   99.9  -0.023
-    #>  5     7 KIER  WR    Odell    Beckham Jr. Cle   WR    I       9.01   0   18.7   45.2 -52.8  
-    #>  6     7 KIER  TE    Travis   Kelce       KC    TE    A      10.6    3.1 99.4  100.   -0.004
-    #>  7     7 KIER  FX    David    Johnson     Hou   RB    A      13.0   12.4 15.0   95.5  -0.902
-    #>  8     7 KIER  DS    Browns   D/ST        Cle   DS    A       6.24   3   21.0   30.1 -15.8  
-    #>  9     7 KIER  PK    Graham   Gano        NYG   PK    A       8.96   3   14.6   22.6 -35.0  
-    #> 10     7 KIER  BE    Cooper   Kupp        LAR   WR    A       8.51   5.9 71.3   95.8  -0.472
-    #> 11     7 KIER  BE    Jonathan Taylor      Ind   RB    A       0     NA   74.5   96.9   0.178
-    #> 12     7 KIER  BE    David    Montgomery  Chi   RB    A      11.7    6.9 67.7   93.7   0.478
-    #> 13     7 KIER  BE    Ronald   Jones II    TB    RB    A      12.1    9.6 68.6   93.6  -0.011
-    #> 14     7 KIER  BE    Gardner  Minshew II  Jax   QB    D      17.0   19.0  2.57  34.0 -15.4  
-    #> 15     7 KIER  BE    Myles    Gaskin      Mia   RB    A       0     NA   69.8   90.5   4.03 
-    #> 16     7 KIER  BE    Travis   Fulgham     Phi   WR    A       9.03   7.3 66.8   82.6  14.2
+    #>     week team  slot  first    last       pro   pos   status  proj score start  rost  change
+    #>    <int> <fct> <fct> <chr>    <chr>      <fct> <fct> <chr>  <dbl> <dbl> <dbl> <dbl>   <dbl>
+    #>  1     8 KIER  QB    Ryan     Tannehill  Ten   QB    A      17.0   17.3 27.1   69.1  -3.65 
+    #>  2     8 KIER  RB    Alvin    Kamara     NO    RB    A      16.1   16.3 98.6  100.    0.002
+    #>  3     8 KIER  RB    Mike     Davis      Car   RB    A      13.6    7.7 15.2   75.1 -22.8  
+    #>  4     8 KIER  WR    Cooper   Kupp       LAR   WR    A       8.94  11   16.0   95.6  -0.266
+    #>  5     8 KIER  WR    Travis   Fulgham    Phi   WR    A       9.43  13.8  3.28  83.0   1.77 
+    #>  6     8 KIER  TE    Travis   Kelce      KC    TE    A      10.3   16.9 99.6  100.    0.001
+    #>  7     8 KIER  FX    Jonathan Taylor     Ind   RB    A      12.4    3.1 53.2   95.8  -1.10 
+    #>  8     8 KIER  DS    Rams     D/ST       LAR   DS    A       5.48   3.5 11.0   58.0 -27.2  
+    #>  9     8 KIER  PK    Joey     Slye       Car   PK    A       9.53   5   40.4   45.2  -9.85 
+    #> 10     8 KIER  BE    DeAndre  Hopkins    Ari   WR    A       0     NA   90.6   99.9   0.015
+    #> 11     8 KIER  BE    David    Johnson    Hou   RB    A       0     NA   78.6   96.7   0.959
+    #> 12     8 KIER  BE    David    Montgomery Chi   RB    A      12.2   10.5 74.1   94.7   0.753
+    #> 13     8 KIER  BE    Ronald   Jones II   TB    RB    A      11.0    2.6 53.5   92.5  -1.31 
+    #> 14     8 KIER  BE    Gardner  Minshew II Jax   QB    O       0     NA    1.55  21.1 -14.8  
+    #> 15     8 KIER  BE    Myles    Gaskin     Mia   RB    I      12.2   10.3  6.47  79.6 -11.0  
+    #> 16     8 KIER  BE    A.J.     Green      Cin   WR    A       8.05   1.9  7.90  72.4  -7.84
 
 Some functions help calculate statistics like the optimal roster score.
 
 ``` r
 my_best <- best_roster(my_roster)
 roster_score(my_roster)
-#> [1] 71.5
+#> [1] 94.62
 roster_score(my_best)
-#> [1] 86.52
+#> [1] 104.62
 ```
 
 Matchups return as a [tidy](https://en.wikipedia.org/wiki/Tidy_data)
 tibble of weekly scores by team.
 
 ``` r
-(teams <- league_teams()[, -4])
-#> # A tibble: 8 x 4
-#>    year  team abbrev name                    
-#>   <int> <int> <fct>  <chr>                   
-#> 1  2020     1 AGUS   Obi-Wan Mahomey         
-#> 2  2020     3 PEPE   JuJu's Bizarre Adventure
-#> 3  2020     4 BILL   Bill's Fantasy Team     
-#> 4  2020     5 CART   Ashley Mattison         
-#> 5  2020     6 KIER   The Nuklear Option      
-#> 6  2020     8 CORE   Fuller Up               
-#> 7  2020    10 NICK   The Silence Of The Lamb 
-#> 8  2020    11 KYLE   Ashley Hill
-scores <- match_scores()
+(scores <- match_scores())
+#> # A tibble: 64 x 9
+#>     year match week   team abbrev home  score winner power
+#>    <int> <int> <fct> <int> <fct>  <lgl> <dbl> <lgl>  <dbl>
+#>  1  2020     1 1         3 PEPE   TRUE  103.  TRUE       4
+#>  2  2020     1 1         1 AGUS   FALSE  68.5 FALSE      0
+#>  3  2020     2 1        10 NICK   TRUE   86.0 FALSE      1
+#>  4  2020     2 1         4 BILL   FALSE 134.  TRUE       6
+#>  5  2020     3 1         5 CART   TRUE  149.  TRUE       7
+#>  6  2020     3 1        11 KYLE   FALSE  94.7 FALSE      2
+#>  7  2020     4 1         8 CORE   TRUE  119.  TRUE       5
+#>  8  2020     4 1         6 KIER   FALSE  99.7 FALSE      3
+#>  9  2020     5 2         1 AGUS   TRUE  144.  TRUE       7
+#> 10  2020     5 2         4 BILL   FALSE 110.  FALSE      2
+#> # … with 54 more rows
 ```
 
-This makes scores over the season easy to plot. The **experimental**
-[ffplot](https://github.com/kiernann/ffplot) package makes such plots
-automatically.
+This makes scores over the season easy to plot, especially with the
+**experimental** [ffplot](https://github.com/kiernann/ffplot) package.
 
 <img src="man/figures/README-plot_scores-1.png" width="100%" />
 
@@ -168,25 +168,25 @@ This can be joined against other data to identify players.
 waiver_adds %>% 
   ffl_merge(nfl_players[, 1:3]) %>% 
   select(15:16, bid, team = to_team) %>%
-  ffl_merge(teams[, 2:3]) %>% 
+  mutate(across(team, team_abbrev)) %>% 
   arrange(desc(bid))
-#> # A tibble: 14 x 5
-#>    first    last          bid  team abbrev
-#>    <chr>    <chr>       <int> <int> <fct> 
-#>  1 Le'Veon  Bell           14    11 KYLE  
-#>  2 Damien   Harris          7    11 KYLE  
-#>  3 Steelers D/ST            3    10 NICK  
-#>  4 Robert   Tonyan          3     3 PEPE  
-#>  5 Stephen  Gostkowski      2    10 NICK  
-#>  6 Dalton   Schultz         2     4 BILL  
-#>  7 Randy    Bullock         1    10 NICK  
-#>  8 Cole     Beasley         1    10 NICK  
-#>  9 Justin   Jackson         1     8 CORE  
-#> 10 Nyheim   Hines           1     8 CORE  
-#> 11 Rodrigo  Blankenship     1     6 KIER  
-#> 12 D'Ernest Johnson         1    11 KYLE  
-#> 13 Chiefs   D/ST            1     4 BILL  
-#> 14 Matthew  Stafford        1     5 CART
+#> # A tibble: 14 x 4
+#>    first    last          bid team 
+#>    <chr>    <chr>       <int> <fct>
+#>  1 Le'Veon  Bell           14 KYLE 
+#>  2 Damien   Harris          7 KYLE 
+#>  3 Steelers D/ST            3 NICK 
+#>  4 Robert   Tonyan          3 PEPE 
+#>  5 Stephen  Gostkowski      2 NICK 
+#>  6 Dalton   Schultz         2 BILL 
+#>  7 Randy    Bullock         1 NICK 
+#>  8 Nyheim   Hines           1 CORE 
+#>  9 Rodrigo  Blankenship     1 KIER 
+#> 10 Justin   Jackson         1 CORE 
+#> 11 Cole     Beasley         1 NICK 
+#> 12 D'Ernest Johnson         1 KYLE 
+#> 13 Chiefs   D/ST            1 BILL 
+#> 14 Matthew  Stafford        1 CART
 ```
 
 -----

@@ -16,7 +16,8 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   fig.height = 4,
   fig.width = 9,
-  out.width = "100%"
+  out.width = "100%",
+  dpi = 300
 )
 if (!interactive()) {
   options(width = 99)
@@ -37,18 +38,18 @@ The fflr package is used to query the [ESPN Fantasy Football API][api] for both
 the current and prior seasons. Get data on fantasy league members, teams, and
 individual athletes.
 
-This package was designed and tested for my own 10-man standard league. Most
+This package was designed and tested for a standard 10-team league. Most
 functions should for other leagues, but contributions are welcome.
 
 ## Installation
 
-You can install the released version of `fflr` from [CRAN][cran] with:
+You can install the released version of fflr from [CRAN][cran]:
 
 ```{r install_cran, eval=FALSE}
 install.packages("fflr")
 ```
 
-The development version can be installed from [GitHub][fflr] with:
+The development version can be installed from [GitHub][fflr]:
 
 ```{r install_github, eval=FALSE}
 # install.packages("remotes")
@@ -65,10 +66,10 @@ library(tidyverse)
 
 Here we see how to scrape teams, rosters, scores, and waiver pickups, etc.
 
-Most data can only be retrieved from _public_ leagues. [This ESPN help
+Most data can only be scraped from _public_ leagues. [This ESPN help
 page][help] has instructions for making a league viewable.
 
-For convenience, define your league ID as "lid" with `options()`.
+For convenience, you can define a league ID as `lid` with `options()`.
 
 <pre>
 https://fantasy.espn.com/football/league?leagueId=<b>252353</b>
@@ -79,7 +80,7 @@ options(lid = 252353)
 getOption("lid")
 ```
 
-Then data can be scraped and automatically formatted as rectangles and lists.
+Then data can be scraped and automatically formatted into data frames.
 
 ```{r team_roster}
 rosters <- team_roster(week = ffl_week(-1))
@@ -101,15 +102,15 @@ roster_score(my_best)
 Matchups return as a [tidy][tidy] tibble of weekly scores by team.
 
 ```{r league_teams}
-(teams <- league_teams()[, -4])
-scores <- match_scores()
+(scores <- match_scores())
 ```
 
-This makes scores over the season easy to plot. The **experimental** [ffplot] 
-package makes such plots automatically. 
+This makes scores over the season easy to plot, especially with the
+**experimental** [ffplot] package.
 
 ```{r plot_scores, echo=FALSE}
-weekly_scores(scores)
+# remotes::install_github("kiernann/ffplot")
+ffplot::weekly_scores(scores)
 ```
 
 Some functions like `roster_moves()` only define players by their unique ID.
@@ -137,7 +138,7 @@ This can be joined against other data to identify players.
 waiver_adds %>% 
   ffl_merge(nfl_players[, 1:3]) %>% 
   select(15:16, bid, team = to_team) %>%
-  ffl_merge(teams[, 2:3]) %>% 
+  mutate(across(team, team_abbrev)) %>% 
   arrange(desc(bid))
 ```
 
