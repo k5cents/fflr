@@ -2,7 +2,7 @@ library(testthat)
 library(fflr)
 
 test_that("movies returns for current year", {
-  m <- roster_moves(252353, old = FALSE)
+  m <- roster_moves(252353, old = FALSE, week = 5)
   expect_s3_class(m, "tbl")
   expect_length(m, 14)
   expect_s3_class(m$date, "POSIXct")
