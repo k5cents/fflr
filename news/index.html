@@ -79,7 +79,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.12.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.13</span>
       </span>
     </div>
 
@@ -134,10 +134,14 @@
       <small>Source: <a href='https://github.com/kiernann/fflr/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div id="fflr-development-version" class="section level1">
-<h1 class="page-header" data-toc-text="development version">
-<a href="#fflr-development-version" class="anchor"></a>fflr (development version)<small> Unreleased </small>
+    <div id="fflr-0313" class="section level1">
+<h1 class="page-header" data-toc-text="0.3.13">
+<a href="#fflr-0313" class="anchor"></a>fflr 0.3.13<small> Unreleased </small>
 </h1>
+<ul>
+<li>
+<code><a href="../reference/player_outlook.html">player_outlook()</a></code> and <code><a href="../reference/all_players.html">all_players()</a></code>, which both call the <code>kona_player_info</code> endpoint, now have arguments to pass a <em>limit</em> to the “X-Fantasy-Filter” JSON list in the request. Without a limit, the requests can take a long time. Use an empty string (<code>""</code>) or <code>NULL</code> to omit the limit (default to 50, the same default limit used by ESPN).</li>
+</ul>
 </div>
     <div id="fflr-0312" class="section level1">
 <h1 class="page-header" data-toc-text="0.3.12">

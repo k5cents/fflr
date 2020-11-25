@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.12.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.13</span>
       </span>
     </div>
 
@@ -140,7 +140,7 @@
     <p>List all available players.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>all_players</span><span class='op'>(</span>lid <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"lid"</span><span class='op'>)</span>, week <span class='op'>=</span> <span class='fu'><a href='ffl_week.html'>ffl_week</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>all_players</span><span class='op'>(</span>lid <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"lid"</span><span class='op'>)</span>, week <span class='op'>=</span> <span class='fu'><a href='ffl_week.html'>ffl_week</a></span><span class='op'>(</span><span class='op'>)</span>, limit <span class='op'>=</span> <span class='fl'>50</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -152,6 +152,12 @@
     <tr>
       <th>week</th>
       <td><p>The scoring period to return, defaults to <code><a href='ffl_week.html'>ffl_week()</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>limit</th>
+      <td><p>The limit of players to return, <code>""</code> or <code>NULL</code> returns all.
+Defaults to 50, which is the default limit used by ESPN. Removing the limit
+can make the request take a long time.</p></td>
     </tr>
     </table>
 
