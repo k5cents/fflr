@@ -3,6 +3,9 @@
 #' All available weekly ESPN outlook writeups for NFL players.
 #'
 #' @param lid ESPN League ID, defaulted because all return the same data.
+#' @param limit The limit of players to return, `""` or `NULL` returns all.
+#'   Defaults to 50, which is the default limit used by ESPN. Removing the limit
+#'   can make the request take a long time.
 #' @return A tibble of player outlooks.
 #' @examples
 #' player_outlook()
@@ -10,10 +13,12 @@
 #' @importFrom jsonlite toJSON
 #' @importFrom httr GET add_headers accept_json content
 #' @export
-player_outlook <- function(lid = getOption("lid")) {
+player_outlook <- function(lid = getOption("lid"), limit = 50) {
   if (is.null(lid)) lid <- 252353
+  if (is.null(limit)) limit <- ""
   xff <- list(
     players = list(
+      limit = limit,
       sortPercOwned = list(
         sortAsc = FALSE,
         sortPriority = 1

@@ -135,24 +135,24 @@ score_settings()
 ## Players
 
 There are over a thousand players in the NFL eligible for fantasy football. The
-full list of current players can be retrieved at any time.
+full list of current players can be retrieved at any time by setting the limit
+to `NULL`, which can take some time.
 
-```{r all_players}
-all_players()
+```{r all_players, eval=FALSE}
+all_players(limit = 5)
 ```
 
-Each player is identified by their unique ID. Sometimes, only those player IDs
-are given. Team positions like defenses have negative IDs, but information on
-individual players can be retrieved from the generic ESPN (non-fantasy) API.
-
-```{r player_info}
-player_info(id = 3054850, row = TRUE)
-```
-
-For your convenience, a table of active players is saved as a data frame.
+For your convenience, a table of _all_ active players is saved as a data frame.
 
 ```{r nfl_players}
 nfl_players
+```
+
+This table also has additional biographical data from the generic (non-fantasy)
+ESPN API, which uses the same unique player ID.
+
+```{r player_info}
+player_info(id = 3054850, row = TRUE)
 ```
 
 News on an individual player can also be helpful.
@@ -164,7 +164,7 @@ player_news(id = 15847)
 ESPN analysts publish weekly and preseason outlooks on most players.
 
 ```{r player_outlook, results='asis'}
-outlooks <- player_outlook()
+outlooks <- player_outlook(limit = 1)
 nrow(outlooks)
 cat(paste(">", outlooks$outlook[1]))
 ```

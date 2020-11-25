@@ -4,12 +4,16 @@
 \alias{all_players}
 \title{All fantasy players}
 \usage{
-all_players(lid = getOption("lid"), week = ffl_week())
+all_players(lid = getOption("lid"), week = ffl_week(), limit = 50)
 }
 \arguments{
 \item{lid}{ESPN League ID, defaulted because all return the same data.}
 
 \item{week}{The scoring period to return, defaults to \code{\link[=ffl_week]{ffl_week()}}.}
+
+\item{limit}{The limit of players to return, \code{""} or \code{NULL} returns all.
+Defaults to 50, which is the default limit used by ESPN. Removing the limit
+can make the request take a long time.}
 }
 \value{
 A tibble of players.

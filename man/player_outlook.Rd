@@ -4,10 +4,14 @@
 \alias{player_outlook}
 \title{Player outlooks}
 \usage{
-player_outlook(lid = getOption("lid"))
+player_outlook(lid = getOption("lid"), limit = 50)
 }
 \arguments{
 \item{lid}{ESPN League ID, defaulted because all return the same data.}
+
+\item{limit}{The limit of players to return, \code{""} or \code{NULL} returns all.
+Defaults to 50, which is the default limit used by ESPN. Removing the limit
+can make the request take a long time.}
 }
 \value{
 A tibble of player outlooks.
