@@ -1,4 +1,10 @@
-# fflr (development version)
+# fflr 0.3.13
+
+* `player_outlook()` and `all_players()`, which both call the `kona_player_info`
+endpoint, now have arguments to pass a _limit_ to the "X-Fantasy-Filter" JSON
+list in the request. Without a limit, the requests can take a long time. Use
+an empty string (`""`) or `NULL` to omit the limit (default to 50, the same
+default limit used by ESPN).
 
 # fflr 0.3.12
 

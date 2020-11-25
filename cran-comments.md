@@ -2,15 +2,15 @@
 
 * local: ubuntu-20.04 (release)
 * github actions: ubuntu-20.04 (release, devel)
-  * https://github.com/kiernann/fflr/actions
+  * <https://github.com/kiernann/fflr/actions>
 * github actions: macOS-latest (release)
 * github actions: windows-latest (release) 
 * win-builder: windows-x86_64-devel
-  * https://win-builder.r-project.org/ANV0wwGa2RnH/
+  * <https://win-builder.r-project.org/ANV0wwGa2RnH/>
 * r-hub: windows-x86_64-devel, ubuntu-gcc-release, fedora-clang-devel
-  * https://builder.r-hub.io/status/fflr_0.3.12.tar.gz-b850b4a77c694edbb30f071e6230e021
-  * https://builder.r-hub.io/status/fflr_0.3.12.tar.gz-c251fe8fcb3e4b3d950a44d28bd2f9d8
-  * https://builder.r-hub.io/status/fflr_0.3.12.tar.gz-ab2074eef0d940d099c778c177ab8d04
+  * <https://builder.r-hub.io/status/fflr_0.3.13.tar.gz-d8cea1ed204941b1ba28160c7c744546>
+  * <https://builder.r-hub.io/status/fflr_0.3.13.tar.gz-9330d670a0a24cfc8c8f257f85b43d9b>
+  * <https://builder.r-hub.io/status/fflr_0.3.13.tar.gz-b06da0383a334823aace7d7631fe76b2>
 
 ## R CMD check results
 
@@ -19,6 +19,14 @@
 * This is a new release.
 
 ## Resubmission
+
+* The `player_outlook()` and `all_players()` functions now have new arguments
+with a default _limit_ to return less data much faster.
+
+* A known past week is used for `roster_moves()` tests. Week to week, this
+function returns different data so tests must use a working week.
+
+## Previous Submission
 
 * _All_ calls to an external API use `tryCatch()` and repeat the request should
 it fail initially. The timeout options are no longer changed between attempts,
@@ -31,8 +39,6 @@ able to run at any time.
 * The vignette uses a know, past data point and no longer changes depending on
 when it was run; this should prevent calls to `team_roster()`, etc from
 returning some data that might not work in the rest of the vignette.
-
-## Previous Submission
 
 * The `ffl_api()` now uses `tryCatch()` and re-tries to call the API when it
 fails, waiting with `Sys.sleep()` between attempts and adjusting the timeout
