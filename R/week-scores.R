@@ -18,6 +18,7 @@ week_scores <- function(lid = getOption("lid"), old = FALSE, ...) {
         s = data$schedule[[i]],
         y = data$seasonId[i],
         t = data.frame(
+          stringsAsFactors = FALSE,
           team = data$teams[[i]]$id,
           abbrev = factor(
             x = data$teams[[i]]$abbrev,
@@ -31,6 +32,7 @@ week_scores <- function(lid = getOption("lid"), old = FALSE, ...) {
       s = data$schedule,
       y = data$seasonId,
       t = data.frame(
+        stringsAsFactors = FALSE,
         team = data$teams$id,
         abbrev = factor(
           x = data$teams$abbrev,

@@ -37,6 +37,7 @@ parse_moves <- function(t, y = NULL) {
   i$to_slot[i$to_slot == -1L] <- NA_integer_
   i$to_team[i$to_team == 0] <- NA_integer_
   t <- data.frame(
+    stringsAsFactors = FALSE,
     week = t$scoringPeriodId,
     type = t$type,
     bid = t$bidAmount,

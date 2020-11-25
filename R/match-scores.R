@@ -15,6 +15,7 @@ match_scores <- function(lid = getOption("lid"), old = FALSE, ...) {
     out <- rep(list(NA), length(data$schedule))
     for (i in seq_along(out)) {
       t <- data.frame(
+        stringsAsFactors = FALSE,
         team = data$teams[[i]]$id,
         abbrev = factor(data$teams[[i]]$abbrev, levels = data$teams[[i]]$abbrev)
       )
@@ -26,6 +27,7 @@ match_scores <- function(lid = getOption("lid"), old = FALSE, ...) {
     }
   } else {
     t <- data.frame(
+      stringsAsFactors = FALSE,
       team = data$teams$id,
       abbrev = factor(data$teams$abbrev, levels = data$teams$abbrev)
     )

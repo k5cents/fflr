@@ -17,6 +17,7 @@ pro_schedule <- function(year = ffl_year()) {
   )
   p <- d$settings$proTeams$proGamesByScoringPeriod
   t <- data.frame(
+    stringsAsFactors = FALSE,
     team = d$settings$proTeams$id,
     abbrev = d$settings$proTeams$abbrev
   )

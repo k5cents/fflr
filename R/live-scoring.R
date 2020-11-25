@@ -48,6 +48,7 @@ live_scoring <- function(lid = getOption("lid"), yet = FALSE) {
       FUN = function(data) sum(data$future, na.rm = TRUE)
     )
     y <- data.frame(
+      stringsAsFactors = FALSE,
       team = names(y),
       yet = as.vector(y)
     )

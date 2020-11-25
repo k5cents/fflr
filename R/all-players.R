@@ -84,6 +84,7 @@ all_players <- function(lid = getOption("lid"), week = ffl_week()) {
     }
   }
   out <- data.frame(
+    stringsAsFactors = FALSE,
     id = p$player$id,
     first = p$player$firstName,
     last = p$player$lastName,
