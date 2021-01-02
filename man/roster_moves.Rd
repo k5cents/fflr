@@ -24,5 +24,5 @@ A tibble of transactions and roster moves.
 The individual proposed and executed transactions, trades, and waiver moves.
 }
 \examples{
-roster_moves(lid = 252353)
+roster_moves(lid = 252353, week = 5)
 }

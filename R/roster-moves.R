@@ -5,7 +5,7 @@
 #' @inheritParams draft_picks
 #' @return A tibble of transactions and roster moves.
 #' @examples
-#' roster_moves(lid = 252353)
+#' roster_moves(lid = 252353, week = 5)
 #' @importFrom tibble as_tibble
 #' @export
 roster_moves <- function(lid = getOption("lid"), old = FALSE, ...) {
