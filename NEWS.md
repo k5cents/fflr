@@ -1,3 +1,8 @@
+# fflr 0.3.14
+
+* `roster_moves()` calls a specific week in the vignette and example. Without a
+specific week, the _current_ week is used (which no longer returns data).
+
 # fflr 0.3.13
 
 * `player_outlook()` and `all_players()`, which both call the `kona_player_info`
