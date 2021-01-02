@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.13</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.14</span>
       </span>
     </div>
 
@@ -88,7 +88,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -114,7 +114,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/kiernann/fflr/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -168,21 +168,21 @@ shorthand for "ScoringPeriodId" and "seasonId" respectively.</p></td>
     <p>A tibble of transactions and roster moves.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>roster_moves</span><span class='op'>(</span>lid <span class='op'>=</span> <span class='fl'>252353</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 21 x 14</span><span>
+    <pre class="examples"><div class='input'><span class='fu'>roster_moves</span><span class='op'>(</span>lid <span class='op'>=</span> <span class='fl'>252353</span>, week <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 129 x 14</span><span>
 #&gt;    tx     year  week type    bid status date                 team from_slot
 #&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>              </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>    
-#&gt; </span><span style='color: #555555;'> 1</span><span> 0630…  </span><span style='text-decoration: underline;'>2</span><span>020    12 ROST…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-11-25 </span><span style='color: #555555;'>01:18:33</span><span>    10 BE       
-#&gt; </span><span style='color: #555555;'> 2</span><span> 0630…  </span><span style='text-decoration: underline;'>2</span><span>020    12 ROST…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-11-25 </span><span style='color: #555555;'>01:18:33</span><span>    10 WR       
-#&gt; </span><span style='color: #555555;'> 3</span><span> 0630…  </span><span style='text-decoration: underline;'>2</span><span>020    12 ROST…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-11-25 </span><span style='color: #555555;'>01:18:33</span><span>    10 BE       
-#&gt; </span><span style='color: #555555;'> 4</span><span> 0630…  </span><span style='text-decoration: underline;'>2</span><span>020    12 ROST…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-11-25 </span><span style='color: #555555;'>01:18:33</span><span>    10 WR       
-#&gt; </span><span style='color: #555555;'> 5</span><span> 0bdc…  </span><span style='text-decoration: underline;'>2</span><span>020    12 ROST…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-11-24 </span><span style='color: #555555;'>16:05:16</span><span>     5 BE       
-#&gt; </span><span style='color: #555555;'> 6</span><span> 0bdc…  </span><span style='text-decoration: underline;'>2</span><span>020    12 ROST…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-11-24 </span><span style='color: #555555;'>16:05:16</span><span>     5 PK       
-#&gt; </span><span style='color: #555555;'> 7</span><span> 5dfb…  </span><span style='text-decoration: underline;'>2</span><span>020    12 ROST…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-11-24 </span><span style='color: #555555;'>19:06:21</span><span>    11 QB       
-#&gt; </span><span style='color: #555555;'> 8</span><span> 5dfb…  </span><span style='text-decoration: underline;'>2</span><span>020    12 ROST…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-11-24 </span><span style='color: #555555;'>19:06:21</span><span>    11 RB       
-#&gt; </span><span style='color: #555555;'> 9</span><span> 5dfb…  </span><span style='text-decoration: underline;'>2</span><span>020    12 ROST…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-11-24 </span><span style='color: #555555;'>19:06:21</span><span>    11 RB       
-#&gt; </span><span style='color: #555555;'>10</span><span> 5dfb…  </span><span style='text-decoration: underline;'>2</span><span>020    12 ROST…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-11-24 </span><span style='color: #555555;'>19:06:21</span><span>    11 WR       
-#&gt; </span><span style='color: #555555;'># … with 11 more rows, and 5 more variables: from_team </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, id </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'> 1</span><span> 05ae…  </span><span style='text-decoration: underline;'>2</span><span>020     5 ROST…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-10-07 </span><span style='color: #555555;'>15:44:30</span><span>     6 BE       
+#&gt; </span><span style='color: #555555;'> 2</span><span> 0b53…  </span><span style='text-decoration: underline;'>2</span><span>020     5 WAIV…     1 EXECU… 2020-10-11 </span><span style='color: #555555;'>15:00:47</span><span>    10 </span><span style='color: #BB0000;'>NA</span><span>       
+#&gt; </span><span style='color: #555555;'> 3</span><span> 0b53…  </span><span style='text-decoration: underline;'>2</span><span>020     5 WAIV…     1 EXECU… 2020-10-11 </span><span style='color: #555555;'>15:00:47</span><span>    10 </span><span style='color: #BB0000;'>NA</span><span>       
+#&gt; </span><span style='color: #555555;'> 4</span><span> 1054…  </span><span style='text-decoration: underline;'>2</span><span>020     5 WAIV…     1 EXECU… 2020-10-08 </span><span style='color: #555555;'>15:00:26</span><span>     8 </span><span style='color: #BB0000;'>NA</span><span>       
+#&gt; </span><span style='color: #555555;'> 5</span><span> 1054…  </span><span style='text-decoration: underline;'>2</span><span>020     5 WAIV…     1 EXECU… 2020-10-08 </span><span style='color: #555555;'>15:00:26</span><span>     8 </span><span style='color: #BB0000;'>NA</span><span>       
+#&gt; </span><span style='color: #555555;'> 6</span><span> 11e6…  </span><span style='text-decoration: underline;'>2</span><span>020     6 FUTU…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-10-13 </span><span style='color: #555555;'>15:45:00</span><span>     8 BE       
+#&gt; </span><span style='color: #555555;'> 7</span><span> 11e6…  </span><span style='text-decoration: underline;'>2</span><span>020     6 FUTU…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-10-13 </span><span style='color: #555555;'>15:45:00</span><span>     8 RB       
+#&gt; </span><span style='color: #555555;'> 8</span><span> 11e6…  </span><span style='text-decoration: underline;'>2</span><span>020     6 FUTU…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-10-13 </span><span style='color: #555555;'>15:45:00</span><span>     8 BE       
+#&gt; </span><span style='color: #555555;'> 9</span><span> 11e6…  </span><span style='text-decoration: underline;'>2</span><span>020     6 FUTU…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-10-13 </span><span style='color: #555555;'>15:45:00</span><span>     8 WR       
+#&gt; </span><span style='color: #555555;'>10</span><span> 181b…  </span><span style='text-decoration: underline;'>2</span><span>020     5 WAIV…     1 EXECU… 2020-10-07 </span><span style='color: #555555;'>15:01:36</span><span>     6 </span><span style='color: #BB0000;'>NA</span><span>       
+#&gt; </span><span style='color: #555555;'># … with 119 more rows, and 5 more variables: from_team </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, id </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>,</span><span>
 #&gt; </span><span style='color: #555555;'>#   to_slot </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>, to_team </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, move </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
