@@ -3,8 +3,13 @@ library(fflr)
 
 # check if first game has begun
 nfl_sched <- pro_schedule()
-first_game <- min(nfl_sched$kickoff[nfl_sched$week == ffl_week()])
-pre_game <- first_game > Sys.time()
+now_games <- nfl_sched$kickoff[which(nfl_sched$week == ffl_week())]
+if (length(now_games) == 0) {
+  pre_game <- TRUE
+} else {
+  first_game <- min(now_games)
+  pre_game <- first_game > Sys.time()
+}
 
 test_that("live scoreboard works if gameday", {
   s <- live_scoring(252353)
