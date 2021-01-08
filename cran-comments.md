@@ -8,9 +8,9 @@
 * win-builder: windows-x86_64-devel
   * <https://win-builder.r-project.org/ANV0wwGa2RnH/>
 * r-hub: windows-x86_64-devel, ubuntu-gcc-release, fedora-clang-devel
-  * <https://builder.r-hub.io/status/fflr_0.3.13.tar.gz-d8cea1ed204941b1ba28160c7c744546>
-  * <https://builder.r-hub.io/status/fflr_0.3.13.tar.gz-9330d670a0a24cfc8c8f257f85b43d9b>
-  * <https://builder.r-hub.io/status/fflr_0.3.13.tar.gz-b06da0383a334823aace7d7631fe76b2>
+  * <https://builder.r-hub.io/status/fflr_0.3.14.tar.gz-a7c01bf630c84ee6aec27a295a0b463d>
+  * <https://builder.r-hub.io/status/fflr_0.3.14.tar.gz-757b9e3b5057454fbaa85d3653528c93>
+  * <https://builder.r-hub.io/status/fflr_0.3.14.tar.gz-40b0130eb3464ddaa7db895d371b8190>
 
 ## R CMD check results
 
@@ -20,13 +20,18 @@
 
 ## Resubmission
 
+* More uses of `roster_moves()` now use a known past week. Examples and vignette
+should not error week to week, now that new data from _current_ week errors.
+
+## Previous Submission(s)
+
 * The `player_outlook()` and `all_players()` functions now have new arguments
 with a default _limit_ to return less data much faster.
 
 * A known past week is used for `roster_moves()` tests. Week to week, this
 function returns different data so tests must use a working week.
 
-## Previous Submission
+-----
 
 * _All_ calls to an external API use `tryCatch()` and repeat the request should
 it fail initially. The timeout options are no longer changed between attempts,
@@ -40,6 +45,8 @@ able to run at any time.
 when it was run; this should prevent calls to `team_roster()`, etc from
 returning some data that might not work in the rest of the vignette.
 
+-----
+
 * The `ffl_api()` now uses `tryCatch()` and re-tries to call the API when it
 fails, waiting with `Sys.sleep()` between attempts and adjusting the timeout
 `options()`. This should help prevent timeout failures in
@@ -50,6 +57,8 @@ fails, waiting with `Sys.sleep()` between attempts and adjusting the timeout
 ── 1. Error: teams return for current year (@test-teams.R#5) ──────────────────
 Timeout was reached: [fantasy.espn.com] Resolving timed out after 10001 milliseconds
 ```
+
+-----
 
 * [ESPN](https://en.wikipedia.org/wiki/ESPN) is not really an acronym, it no
 longer stands for anything and doesn't need to be explained in the DESCRIPTION.
