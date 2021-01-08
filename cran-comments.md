@@ -20,6 +20,9 @@
 
 ## Resubmission
 
+* Tests now respond properly to functions that only work during a certain 
+period of time. They either check for warnings or skip when appropriate.
+
 * More uses of `roster_moves()` now use a known past week. Examples and vignette
 should not error week to week, now that new data from _current_ week errors.
 
