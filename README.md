@@ -3,6 +3,8 @@
 
 # fflr <img src="man/figures/logo.png" align="right" width="120" />
 
+### This package is currently not working during the NFL offseason. Work will be done to ensure fflr is operational before the 2021 season. 
+
 <!-- badges: start -->
 
 [![Lifecycle:
