@@ -29,6 +29,7 @@ jobs:
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
       RSPM: ${{ matrix.config.rspm }}
+      ESPN_LEAGUE_ID: ${{ secrets.ESPN_LEAGUE_ID }}
 
     steps:
       - uses: actions/checkout@v2

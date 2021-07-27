@@ -11,6 +11,7 @@ jobs:
     runs-on: macOS-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      ESPN_LEAGUE_ID: ${{ secrets.ESPN_LEAGUE_ID }}
     steps:
       - uses: actions/checkout@v2
 
