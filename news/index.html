@@ -8,13 +8,6 @@
 
 <title>Changelog • fflr</title>
 
-<!-- favicons -->
-<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -47,7 +40,6 @@
 
 
 <meta property="og:title" content="Changelog" />
-<meta property="og:image" content="/logo.png" />
 
 
 
@@ -79,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.15</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
       </span>
     </div>
 
@@ -94,29 +86,12 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/fantasy-football.html">fantasy-football</a>
-    </li>
-  </ul>
-</li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="https://github.com/kiernann/fflr/">
-    <span class="fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
+        
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -131,13 +106,16 @@
   <div class="col-md-9 contents">
     <div class="page-header">
       <h1 data-toc-skip>Changelog <small></small></h1>
-      <small>Source: <a href='https://github.com/kiernann/fflr/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
+      
     </div>
 
-    <div id="fflr-0315" class="section level1">
-<h1 class="page-header" data-toc-text="0.3.15">
-<a href="#fflr-0315" class="anchor"></a>fflr 0.3.15<small> 2021-01-08 </small>
+    <div id="fflr-040" class="section level1">
+<h1 class="page-header" data-toc-text="0.4.0">
+<a href="#fflr-040" class="anchor"></a>fflr 0.4.0<small> Unreleased </small>
 </h1>
+<ul>
+<li>Completely reset the package and start from scratch.</li>
+</ul>
 </div>
     <div id="fflr-0314" class="section level1">
 <h1 class="page-header" data-toc-text="0.3.14">
@@ -145,7 +123,7 @@
 </h1>
 <ul>
 <li>
-<code><a href="../reference/roster_moves.html">roster_moves()</a></code> calls a specific week in the vignette and example. Without a specific week, the <em>current</em> week is used (which no longer returns data).</li>
+<code>roster_moves()</code> calls a specific week in the vignette and example. Without a specific week, the <em>current</em> week is used (which no longer returns data).</li>
 </ul>
 </div>
     <div id="fflr-0313" class="section level1">
@@ -154,7 +132,7 @@
 </h1>
 <ul>
 <li>
-<code><a href="../reference/player_outlook.html">player_outlook()</a></code> and <code><a href="../reference/all_players.html">all_players()</a></code>, which both call the <code>kona_player_info</code> endpoint, now have arguments to pass a <em>limit</em> to the “X-Fantasy-Filter” JSON list in the request. Without a limit, the requests can take a long time. Use an empty string (<code>""</code>) or <code>NULL</code> to omit the limit (default to 50, the same default limit used by ESPN).</li>
+<code>player_outlook()</code> and <code>all_players()</code>, which both call the <code>kona_player_info</code> endpoint, now have arguments to pass a <em>limit</em> to the “X-Fantasy-Filter” JSON list in the request. Without a limit, the requests can take a long time. Use an empty string (<code>""</code>) or <code>NULL</code> to omit the limit (default to 50, the same default limit used by ESPN).</li>
 </ul>
 </div>
     <div id="fflr-0312" class="section level1">
@@ -163,8 +141,8 @@
 </h1>
 <ul>
 <li>Use known weekly rosters in all tests, examples, and vignettes.</li>
-<li>Improve the way <code><a href="../reference/all_players.html">all_players()</a></code> safely handles bye week stats.</li>
-<li>Skip <code><a href="../reference/all_players.html">all_players()</a></code> tests and examples on CRAN for time reasons.</li>
+<li>Improve the way <code>all_players()</code> safely handles bye week stats.</li>
+<li>Skip <code>all_players()</code> tests and examples on CRAN for time reasons.</li>
 <li>Remove changes to <code><a href="https://rdrr.io/r/base/options.html">options()</a></code> in <code>try_api()</code>, keep <code><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep()</a></code>.</li>
 </ul>
 </div>
@@ -173,7 +151,7 @@
 <a href="#fflr-0311" class="anchor"></a>fflr 0.3.11<small> Unreleased </small>
 </h1>
 <ul>
-<li>Use <code>try_api()</code> for all other JSON calls (.e.g., <code><a href="../reference/ffl_seasons.html">ffl_seasons()</a></code>).</li>
+<li>Use <code>try_api()</code> for all other JSON calls (.e.g., <code>ffl_seasons()</code>).</li>
 </ul>
 </div>
     <div id="fflr-0310" class="section level1">
@@ -182,7 +160,7 @@
 </h1>
 <ul>
 <li>
-<code><a href="../reference/ffl_api.html">ffl_api()</a></code> now uses <code><a href="https://rdrr.io/r/base/conditions.html">tryCatch()</a></code> with <code><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep()</a></code> on failures.</li>
+<code>ffl_api()</code> now uses <code><a href="https://rdrr.io/r/base/conditions.html">tryCatch()</a></code> with <code><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep()</a></code> on failures.</li>
 </ul>
 </div>
     <div id="fflr-039" class="section level1">
@@ -207,8 +185,8 @@
 <a href="#fflr-037" class="anchor"></a>fflr 0.3.7<small> Unreleased </small>
 </h1>
 <ul>
-<li>Add <code><a href="../reference/ffl_merge.html">ffl_merge()</a></code> shortcut.</li>
-<li>Separate <code>player_aquire()</code> from <code><a href="../reference/team_roster.html">team_roster()</a></code>.</li>
+<li>Add <code>ffl_merge()</code> shortcut.</li>
+<li>Separate <code>player_aquire()</code> from <code>team_roster()</code>.</li>
 <li>Add overview vignette on all features.</li>
 </ul>
 </div>
@@ -217,9 +195,9 @@
 <a href="#fflr-036" class="anchor"></a>fflr 0.3.6<small> Unreleased </small>
 </h1>
 <ul>
-<li>Add <code><a href="../reference/player_info.html">player_info()</a></code> and add to <code>nfl_players</code>.</li>
+<li>Add <code>player_info()</code> and add to <code>nfl_players</code>.</li>
 <li>Update <code>nfl_schedule</code> for COVID-19 delays.</li>
-<li>Allow <code><a href="../reference/live_scoring.html">live_scoring()</a></code> to show players yet to play.</li>
+<li>Allow <code>live_scoring()</code> to show players yet to play.</li>
 </ul>
 </div>
     <div id="fflr-035" class="section level1">
@@ -228,7 +206,7 @@
 </h1>
 <ul>
 <li>Update function documentation.</li>
-<li>Let <code><a href="../reference/best_roster.html">best_roster()</a></code> use projections.</li>
+<li>Let <code>best_roster()</code> use projections.</li>
 </ul>
 </div>
     <div id="fflr-034" class="section level1">
@@ -236,7 +214,7 @@
 <a href="#fflr-034" class="anchor"></a>fflr 0.3.4<small> Unreleased </small>
 </h1>
 <ul>
-<li>Add <code><a href="../reference/player_news.html">player_news()</a></code>.</li>
+<li>Add <code>player_news()</code>.</li>
 <li>Improve acquisition data for teams.</li>
 </ul>
 </div>
@@ -247,8 +225,8 @@
 <ul>
 <li>Invert opponent ranks.</li>
 <li>Pivot fantasy schedule long-wise.</li>
-<li>Skip players without stats in <code><a href="../reference/all_players.html">all_players()</a></code>.</li>
-<li>Remove IR slots from <code><a href="../reference/best_roster.html">best_roster()</a></code> and <code><a href="../reference/roster_score.html">roster_score()</a></code>.</li>
+<li>Skip players without stats in <code>all_players()</code>.</li>
+<li>Remove IR slots from <code>best_roster()</code> and <code>roster_score()</code>.</li>
 </ul>
 </div>
     <div id="fflr-032" class="section level1">
@@ -257,7 +235,7 @@
 </h1>
 <ul>
 <li>Scrape and improve NFL teams.</li>
-<li>All <code><a href="../reference/pro_schedule.html">pro_schedule()</a></code> and save object.</li>
+<li>All <code>pro_schedule()</code> and save object.</li>
 <li>Update NFL players data.</li>
 </ul>
 </div>
@@ -269,7 +247,7 @@
 <li>Add power wins calculation to matchups.</li>
 <li>Make team abbreviations factors ordered by ID.</li>
 <li>
-<code><a href="../reference/ffl_api.html">ffl_api()</a></code> can now take multiple views as list.</li>
+<code>ffl_api()</code> can now take multiple views as list.</li>
 <li>Scrape live scoring with updated projections.</li>
 </ul>
 </div>
@@ -280,7 +258,7 @@
 <ul>
 <li>Rewrite functions to use <code>getOptions("lid")</code>.</li>
 <li>Cover all players, transactions, settings, ESPN information.</li>
-<li>Imports httr for the headers needed in <code><a href="../reference/all_players.html">all_players()</a></code>.</li>
+<li>Imports httr for the headers needed in <code>all_players()</code>.</li>
 <li>Save <code>players</code> tibble as of 2020-09-25 01:00.</li>
 </ul>
 </div>
