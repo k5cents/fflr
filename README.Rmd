@@ -1,5 +1,7 @@
 ---
 output: github_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -7,50 +9,75 @@ output: github_document
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  error = FALSE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%"
+  fig.height = 4,
+  fig.width = 9,
+  out.width = "100%",
+  dpi = 300
 )
+if (!interactive()) {
+  options(width = 99)
+}
 ```
 
-# fflr
+# fflr <img src="man/figures/logo.png" align="right" width="120" />
 
 <!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![CRAN status](https://www.r-pkg.org/badges/version/fflr)](https://CRAN.R-project.org/package=fflr)
+[![Lifecycle: experimental][life_badge]][life_link]
+[![CRAN status][cran_badge]][cran_link]
+![Downloads][dl_badge]
+[![Codecov test coverage][cov_badge]][cov_link]
+[![R build status][ga_badge]][ga_link]
 <!-- badges: end -->
 
-The goal of fflr is to ...
+The fflr package is used to query the [ESPN Fantasy Football API][api] for both
+the current and prior seasons. Get data on fantasy league members, teams, and
+individual athletes.
+
+This package was designed and tested for a standard 10-team league. Most
+functions should for other leagues, but contributions are welcome.
 
 ## Installation
 
-You can install the released version of fflr from [CRAN](https://CRAN.R-project.org) with:
+You can install the development version of fflr from [GitHub][fflr]::
 
-``` r
-install.packages("fflr")
+```{r install_github, eval=FALSE}
+# install.packages("remotes")
+remotes::install_github("kiernann/fflr")
 ```
 
-## Example
+## Usage
 
-This is a basic example which shows you how to solve a common problem:
+starting at version 0.4.0, the bulk of this package has been removed and is
+under active development from the ground up. Some functionality in versions
+prior to 0.4.0 may still work, but much of the package was developed and tested
+to only work during the 2020 NFL season and thus has broken over time. Efforts
+are being made to develop future versions of fflr to better adapt over time.
 
-```{r example}
-library(fflr)
-## basic example code
-```
+***
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+The fflr project is released with a [Contributor Code of Conduct][coc]. By
+contributing, you agree to abide by its terms.
 
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/master/examples>.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+<!-- refs: start -->
+[life_badge]: https://img.shields.io/badge/lifecycle-maturing-blue.svg
+[life_link]: https://www.tidyverse.org/lifecycle/#maturing
+[cran_badge]: https://www.r-pkg.org/badges/version/fflr
+[cran_link]: https://CRAN.R-project.org/package=fflr
+[ga_badge]: https://github.com/kiernann/fflr/workflows/R-CMD-check/badge.svg
+[ga_link]: https://github.com/kiernann/fflr/actions
+[cov_badge]: https://codecov.io/gh/kiernann/fflr/branch/master/graph/badge.svg
+[cov_link]: https://codecov.io/gh/kiernann/fflr?branch=master
+[dl_badge]: https://cranlogs.r-pkg.org/badges/grand-total/fflr
+[api]: https://fantasy.espn.com/apis/v3/games/ffl/
+[ffplot]: https://github.com/kiernann/ffplot
+[fflr]: https://github.com/kiernann/fflr
+[cran]: https://cran.r-project.org/package=fflr
+[coc]: https://kiernann.com/fflr/CODE_OF_CONDUCT.html
+[tidy]: https://en.wikipedia.org/wiki/Tidy_data
+[help]: https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public
+<!-- refs: end -->
