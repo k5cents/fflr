@@ -8,6 +8,13 @@
 
 <title>Find your ESPN fantasy league ID — fflr_id • fflr</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -41,6 +48,7 @@
 
 <meta property="og:title" content="Find your ESPN fantasy league ID — fflr_id" />
 <meta property="og:description" content="Find your ESPN fantasy league ID" />
+<meta property="og:image" content="/logo.png" />
 
 
 
@@ -132,7 +140,7 @@ any URL from an ESPN fantasy website and automatically extract the ID.</p></td>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>fflr_id</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"252353"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; [1] "252353"</div><div class='input'><span class='fu'>fflr_id</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"ESPN_LEAGUE_ID"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='warning'>Warning: No league ID found, see help(fflr_id)</span></div><div class='output co'>#&gt; [1] ""</div><div class='input'><span class='fu'>fflr_id</span><span class='op'>(</span><span class='st'>"https://fantasy.espn.com/football/team?leagueId=252353&amp;teamId=6"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "252353"</div><div class='input'><span class='fu'>fflr_id</span><span class='op'>(</span><span class='st'>"https://fantasy.espn.com/football/team?leagueId=252353&amp;teamId=6"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; [1] "252353"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
