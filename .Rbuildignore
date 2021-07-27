@@ -11,3 +11,7 @@
 ^codecov\.yml$
 ^\.covrignore$
 ^CRAN-RELEASE$
+^fflr-full-logo\.png$
+^fflr-og-1280x640\.png$
+^man/figures/fflr-full-logo\.png$
+^man/figures/fflr-og-1280x640\.png$
