@@ -4,7 +4,7 @@
 \alias{fflr_api}
 \title{Call the ESPN Fantasy API}
 \usage{
-fflr_api(path = "", query = NULL, leagueId = fflr_id())
+fflr_api(path = "", query = NULL, leagueId = fflr_id(), ...)
 }
 \arguments{
 \item{path}{Character vector of API path elements to append to
@@ -12,10 +12,9 @@ fflr_api(path = "", query = NULL, leagueId = fflr_id())
 
 \item{query}{Additional queries also passed, possibly \code{seasonId} or similar.}
 
-\item{leagueId}{Your 6-digit league ID. Defaults to \code{Sys.getenv("ESPN_ID")};
-use \code{\link[=Sys.setenv]{Sys.setenv()}} or edit your \code{.Renviron} file to set a default ID.
-Alternatively, pass any URL from an ESPN fantasy website and automatically
-extract the ID.}
+\item{leagueId}{Numeric league ID. Defaults to \code{Sys.getenv("ESPN_LEAGUE_ID")}
+set with \code{\link[=Sys.setenv]{Sys.setenv()}} or from your \code{.Renviron} file. Alternatively, pass
+any URL from an ESPN fantasy website and automatically extract the ID.}
 
 \item{...}{Arguments passed to \code{\link[jsonlite:fromJSON]{jsonlite::fromJSON()}} for parsing.}
 }

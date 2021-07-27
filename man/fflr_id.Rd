@@ -4,14 +4,18 @@
 \alias{fflr_id}
 \title{Find your ESPN fantasy league ID}
 \usage{
-fflr_id(leagueId = Sys.getenv("ESPN_ID"))
+fflr_id(leagueId = Sys.getenv("ESPN_LEAGUE_ID"))
 }
 \arguments{
-\item{leagueId}{Your 6-digit league ID. Defaults to \code{Sys.getenv("ESPN_ID")};
-use \code{\link[=Sys.setenv]{Sys.setenv()}} or edit your \code{.Renviron} file to set a default ID.
-Alternatively, pass any URL from an ESPN fantasy website and automatically
-extract the ID.}
+\item{leagueId}{Numeric league ID. Defaults to \code{Sys.getenv("ESPN_LEAGUE_ID")}
+set with \code{\link[=Sys.setenv]{Sys.setenv()}} or from your \code{.Renviron} file. Alternatively, pass
+any URL from an ESPN fantasy website and automatically extract the ID.}
 }
 \description{
 Find your ESPN fantasy league ID
+}
+\examples{
+fflr_id(leagueId = "252353")
+fflr_id(leagueId = Sys.getenv("ESPN_LEAGUE_ID"))
+fflr_id("https://fantasy.espn.com/football/team?leagueId=252353&teamId=6")
 }
