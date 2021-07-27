@@ -1,4 +1,6 @@
-# fflr 0.3.15
+# fflr 0.4.0
+
+* Completely reset the package and start from scratch.
 
 # fflr 0.3.14
 
