@@ -1,19 +1,30 @@
-#' Find your ESPN fantasy league ID
-#' @param leagueId Numeric league ID. Defaults to `Sys.getenv("ESPN_LEAGUE_ID")`
-#'   set with [Sys.setenv()] or from your `.Renviron` file. Alternatively, pass
-#'   any URL from an ESPN fantasy website and automatically extract the ID.
+#' Find your default ESPN fantasy league ID
+#'
+#' Since many users request data from the same ESPN league when using this
+#' package, you can use this function to set, call, or extract the unique
+#' ESPN league ID. By default, this function uses `getOption("fflr.leagueId")`
+#' to look for a default league ID defined in your `options()`. If no such
+#' option exists, and one is provided to the `leagueId` argument, the option
+#' will be temporarily defined for your current session. If a URL starting with
+#' `http` is provided, the numeric league ID will be extracted, defined as the
+#' temporary option, and returned as a character string.
+#'
+#' @param leagueId Numeric league ID or ESPN fantasy page URL. Defaults to
+#'   `getOption("fflr.leagueId")`. Function fails if no ID is found.
 #' @examples
 #' fflr_id(leagueId = "252353")
-#' fflr_id(leagueId = Sys.getenv("ESPN_LEAGUE_ID"))
+#' fflr_id(leagueId = getOption("fflr.leagueId"))
 #' fflr_id("https://fantasy.espn.com/football/team?leagueId=252353&teamId=6")
 #' @export
-fflr_id <- function(leagueId = Sys.getenv("ESPN_LEAGUE_ID")) {
-  stopifnot(!grepl("\\D", leagueId) || grepl("^http", leagueId))
-  if (identical(leagueId, "")) {
-    warning("No league ID found, see help(fflr_id)", call. = FALSE)
+fflr_id <- function(leagueId = getOption("fflr.leagueId")) {
+  if (is.null(leagueId)) {
+    stop("No `fflr.leagueId` option found, set with `options()` or `fflr_id()`")
   } else if (grepl("^http", leagueId)) {
     pattern <- regexpr(pattern = "leagueId\\=\\d{2,}", text = leagueId)
     leagueId <- gsub("\\D", "", regmatches(leagueId, m = pattern))
+  } else if (!grepl("\\D", leagueId) & is.null(getOption("fflr.leagueId"))) {
+    message(sprintf("Temporarily set `fflr.leagueId` option to %s", leagueId))
+    options(fflr.leagueId = leagueId)
   }
   return(as.character(leagueId))
 }

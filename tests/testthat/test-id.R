@@ -1,23 +1,33 @@
-test_that("league ID can be found in environment", {
-  id <- fflr_id(leagueId = Sys.getenv("ESPN_LEAGUE_ID"))
-  expect_equal(id, "252353")
+options(fflr.leagueId = "42654852")
+
+test_that("league ID can be found as option", {
+  id <- fflr_id(leagueId = getOption("fflr.leagueId"))
+  expect_equal(id, "42654852")
 })
 
 test_that("league ID can be supplied manually", {
-  skip_if_not(nzchar(Sys.getenv("ESPN_LEAGUE_ID")))
-  id <- fflr_id(leagueId = 252353)
-  expect_equal(id, "252353")
+  skip_if_not(nzchar(getOption("fflr.leagueId")))
+  id <- fflr_id(leagueId = 42654852)
+  expect_equal(id, "42654852")
 })
 
-test_that("league ID returns empty if not found", {
-  skip_if_not(nzchar(Sys.getenv("ESPN_LEAGUE_ID")))
-  old_id <- Sys.getenv("ESPN_LEAGUE_ID")
-  Sys.unsetenv("ESPN_LEAGUE_ID")
-  expect_warning(nzchar(fflr_id()))
-  Sys.setenv("ESPN_LEAGUE_ID" = old_id)
+test_that("league ID fails if none found or set", {
+  skip_if(is.null(getOption("fflr.leagueId")))
+  old_id <- getOption("fflr.leagueId")
+  options(fflr.leagueId = NULL)
+  expect_error(fflr_id())
+  options(fflr.leagueId = old_id)
 })
 
 test_that("league ID can be extracted from URL", {
-  id <- fflr_id("https://fantasy.espn.com/football/team?leagueId=252353")
-  expect_equal(id, "252353")
+  id <- fflr_id("https://fantasy.espn.com/football/team?leagueId=42654852")
+  expect_equal(id, "42654852")
+})
+
+test_that("league ID option can be set if one is provided", {
+  old_id <- getOption("fflr.leagueId")
+  options(fflr.leagueId = NULL)
+  expect_message(fflr_id(leagueId = "123456"))
+  expect_equal(getOption("fflr.leagueId"), "123456")
+  options(fflr.leagueId = old_id)
 })
