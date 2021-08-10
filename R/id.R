@@ -12,13 +12,13 @@
 #' @param leagueId Numeric league ID or ESPN fantasy page URL. Defaults to
 #'   `getOption("fflr.leagueId")`. Function fails if no ID is found.
 #' @examples
-#' fflr_id(leagueId = "252353")
-#' fflr_id(leagueId = getOption("fflr.leagueId"))
-#' fflr_id("https://fantasy.espn.com/football/team?leagueId=252353&teamId=6")
+#' ffl_id(leagueId = "252353")
+#' ffl_id(leagueId = getOption("fflr.leagueId"))
+#' ffl_id("https://fantasy.espn.com/football/team?leagueId=252353&teamId=6")
 #' @export
-fflr_id <- function(leagueId = getOption("fflr.leagueId")) {
+ffl_id <- function(leagueId = getOption("fflr.leagueId")) {
   if (is.null(leagueId)) {
-    stop("No `fflr.leagueId` option found, set with `options()` or `fflr_id()`")
+    stop("No `fflr.leagueId` option found, set with `options()` or `ffl_id()`")
   } else if (grepl("^http", leagueId)) {
     pattern <- regexpr(pattern = "leagueId\\=\\d{2,}", text = leagueId)
     leagueId <- gsub("\\D", "", regmatches(leagueId, m = pattern))

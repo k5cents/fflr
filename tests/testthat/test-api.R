@@ -1,5 +1,5 @@
 test_that("empty API call returns fantasy league info", {
-  x <- fflr_api()
+  x <- ffl_api()
   expect_type(x, "list")
-  expect_length(x, 10)
+  expect_length(x, 9)
 })

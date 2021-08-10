@@ -4,15 +4,20 @@
 #' list from the JSON data. The function uses [httr::RETRY()], so the call will
 #' repeat up to three times if there is a failure.
 #'
-#' @param path Character vector of API path elements to append to
-#'   `/apis/v3/games/ffl`.
-#' @param query Additional queries also passed, possibly `seasonId` or similar.
+#' @param view Character vector of specific API "views" which describe the data
+#'   returned (e.g., "mRoster", "mSettings").
+#' @param seasonId Integer year of NFL season. By default, the season is
+#'   currently set to 2021. Use a recent year or set `leagueHistory` to `TRUE`
+#'   to obtain past data.
+#' @param leagueId Unique league ID, defaults to [ffl_id()].
+#' @param leagueHistory logical; Should the `leagueHistory` version of the API
+#'   be called? If `TRUE`, a list of results is returned, with one element for
+#'   each historical year of the league.
 #' @param ... Arguments passed to [jsonlite::fromJSON()] for parsing.
-#' @inheritParams fflr_id
-#' @inheritParams fflr_id
+#' @inheritParams ffl_id
 #' @examples
 #' \dontrun{
-#' fflr_api()
+#' ffl_api()
 #' }
 #' @return A single JSON string.
 #' @importFrom httr RETRY accept_json add_headers user_agent http_type content
@@ -20,11 +25,24 @@
 #' @importFrom jsonlite fromJSON
 #' @keywords internal
 #' @export
-fflr_api <- function(path = "", query = NULL, leagueId = fflr_id(), ...) {
+ffl_api <- function(view = NULL, seasonId = 2021, leagueId = ffl_id(),
+                    leagueHistory = FALSE, ...) {
+  age_path <- ifelse(
+    test = isTRUE(leagueHistory),
+    yes = "leagueHistory",
+    no = sprintf("seasons/%i/segments/0/leagues", seasonId)
+  )
+  try_json(
+    url = "https://fantasy.espn.com",
+    path = paste("apis/v3/games/ffl", age_path, leagueId, sep = "/"),
+    query = list(view = view),
+  )
+}
+
+try_json <- function(url, path = "", query = NULL, ...) {
   resp <- httr::RETRY(
     verb = "GET",
-    url = "https://fantasy.espn.com",
-    path = c("apis", "v3", "games", "ffl", path),
+    url = paste(url, paste(path, collapse = "/"), sep = "/"),
     query = query,
     httr::accept_json(),
     httr::user_agent("https://github.com/kiernann/fflr/"),
@@ -44,5 +62,4 @@ fflr_api <- function(path = "", query = NULL, leagueId = fflr_id(), ...) {
       call. = FALSE
     )
   }
-  parsed
 }
