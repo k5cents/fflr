@@ -61,5 +61,7 @@ try_json <- function(url, path = "", query = NULL, ...) {
       ),
       call. = FALSE
     )
+  } else {
+    return(parsed)
   }
 }
