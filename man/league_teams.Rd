@@ -2,7 +2,7 @@
 % Please edit documentation in R/teams.R
 \name{league_teams}
 \alias{league_teams}
-\title{Bus Schedule at Stop}
+\title{Fantasy league teams}
 \format{
 A tibble with 1 row per bus departure and 8 variables:
 \describe{
@@ -14,24 +14,24 @@ A tibble with 1 row per bus departure and 8 variables:
 }
 }
 \usage{
-league_teams(seasonId = 2021, leagueId = ffl_id(), leagueHistory = FALSE)
+league_teams(leagueId = ffl_id(), seasonId = 2021, leagueHistory = FALSE)
 }
 \arguments{
+\item{leagueId}{Unique league ID, defaults to \code{\link[=ffl_id]{ffl_id()}}.}
+
 \item{seasonId}{Integer year of NFL season. By default, the season is
 currently set to 2021. Use a recent year or set \code{leagueHistory} to \code{TRUE}
 to obtain past data.}
-
-\item{leagueId}{Unique league ID, defaults to \code{\link[=ffl_id]{ffl_id()}}.}
 
 \item{leagueHistory}{logical; Should the \code{leagueHistory} version of the API
 be called? If \code{TRUE}, a list of results is returned, with one element for
 each historical year of the league.}
 }
 \value{
-Data frame containing scheduled arrival information.
+A dataframe (or list) with league teams.
 }
 \description{
-Returns a set of buses scheduled at a stop for a given date.
+The teams in a league and their owners.
 }
 \examples{
 league_teams(leagueId = "42654852")
