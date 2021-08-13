@@ -2,14 +2,6 @@
 #'
 #' The teams in a league and their owners.
 #'
-#' @format A tibble with 1 row per bus departure and 8 variables:
-#' \describe{
-#'   \item{abbrev}{Team name abbreviation}
-#'   \item{id}{League team ID}
-#'   \item{location}{Team location}
-#'   \item{nickname}{Team nickname}
-#'   \item{owners}{List of all team owner user IDs}
-#' }
 #' @inheritParams ffl_api
 #' @examples
 #' league_teams(leagueId = "42654852")

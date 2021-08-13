@@ -2,7 +2,7 @@
 % Please edit documentation in R/id.R
 \name{ffl_id}
 \alias{ffl_id}
-\title{Find your default ESPN fantasy league ID}
+\title{Get ESPN fantasy league ID}
 \usage{
 ffl_id(leagueId = getOption("fflr.leagueId"))
 }
@@ -11,6 +11,9 @@ ffl_id(leagueId = getOption("fflr.leagueId"))
 \code{getOption("fflr.leagueId")}. Function fails if no ID is found.}
 }
 \description{
+Retrieve league ID from global options, as an input, or from a URL.
+}
+\details{
 Since many users request data from the same ESPN league when using this
 package, you can use this function to set, call, or extract the unique
 ESPN league ID. By default, this function uses \code{getOption("fflr.leagueId")}

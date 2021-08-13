@@ -4,17 +4,16 @@
 #' list from the JSON data. The function uses [httr::RETRY()], so the call will
 #' repeat up to three times if there is a failure.
 #'
+#' @inheritParams ffl_id
 #' @param view Character vector of specific API "views" which describe the data
 #'   returned (e.g., "mRoster", "mSettings").
-#' @param seasonId Integer year of NFL season. By default, the season is
-#'   currently set to 2021. Use a recent year or set `leagueHistory` to `TRUE`
-#'   to obtain past data.
-#' @param leagueId Unique league ID, defaults to [ffl_id()].
 #' @param leagueHistory logical; Should the `leagueHistory` version of the API
 #'   be called? If `TRUE`, a list of results is returned, with one element for
 #'   each historical year of the league.
+#' @param seasonId Integer year of NFL season. By default, the season is
+#'   currently set to 2021. Use a recent year or set `leagueHistory` to `TRUE`
+#'   to obtain all past data.
 #' @param ... Arguments passed to [jsonlite::fromJSON()] for parsing.
-#' @inheritParams ffl_id
 #' @examples
 #' \dontrun{
 #' ffl_api()
@@ -25,8 +24,8 @@
 #' @importFrom jsonlite fromJSON
 #' @keywords internal
 #' @export
-ffl_api <- function(view = NULL, seasonId = 2021, leagueId = ffl_id(),
-                    leagueHistory = FALSE, ...) {
+ffl_api <- function(leagueId = ffl_id(), view = NULL, leagueHistory = FALSE,
+                    seasonId = 2021, ...) {
   age_path <- ifelse(
     test = isTRUE(leagueHistory),
     yes = "leagueHistory",

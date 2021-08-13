@@ -1,4 +1,6 @@
-#' Find your default ESPN fantasy league ID
+#' Get ESPN fantasy league ID
+#'
+#' Retrieve league ID from global options, as an input, or from a URL.
 #'
 #' Since many users request data from the same ESPN league when using this
 #' package, you can use this function to set, call, or extract the unique

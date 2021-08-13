@@ -5,26 +5,27 @@
 \title{Call the ESPN Fantasy API}
 \usage{
 ffl_api(
-  view = NULL,
-  seasonId = 2021,
   leagueId = ffl_id(),
+  view = NULL,
   leagueHistory = FALSE,
+  seasonId = 2021,
   ...
 )
 }
 \arguments{
+\item{leagueId}{Numeric league ID or ESPN fantasy page URL. Defaults to
+\code{getOption("fflr.leagueId")}. Function fails if no ID is found.}
+
 \item{view}{Character vector of specific API "views" which describe the data
 returned (e.g., "mRoster", "mSettings").}
-
-\item{seasonId}{Integer year of NFL season. By default, the season is
-currently set to 2021. Use a recent year or set \code{leagueHistory} to \code{TRUE}
-to obtain past data.}
-
-\item{leagueId}{Unique league ID, defaults to \code{\link[=ffl_id]{ffl_id()}}.}
 
 \item{leagueHistory}{logical; Should the \code{leagueHistory} version of the API
 be called? If \code{TRUE}, a list of results is returned, with one element for
 each historical year of the league.}
+
+\item{seasonId}{Integer year of NFL season. By default, the season is
+currently set to 2021. Use a recent year or set \code{leagueHistory} to \code{TRUE}
+to obtain all past data.}
 
 \item{...}{Arguments passed to \code{\link[jsonlite:fromJSON]{jsonlite::fromJSON()}} for parsing.}
 }

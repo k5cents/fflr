@@ -3,25 +3,16 @@
 \name{league_teams}
 \alias{league_teams}
 \title{Fantasy league teams}
-\format{
-A tibble with 1 row per bus departure and 8 variables:
-\describe{
-\item{abbrev}{Team name abbreviation}
-\item{id}{League team ID}
-\item{location}{Team location}
-\item{nickname}{Team nickname}
-\item{owners}{List of all team owner user IDs}
-}
-}
 \usage{
 league_teams(leagueId = ffl_id(), seasonId = 2021, leagueHistory = FALSE)
 }
 \arguments{
-\item{leagueId}{Unique league ID, defaults to \code{\link[=ffl_id]{ffl_id()}}.}
+\item{leagueId}{Numeric league ID or ESPN fantasy page URL. Defaults to
+\code{getOption("fflr.leagueId")}. Function fails if no ID is found.}
 
 \item{seasonId}{Integer year of NFL season. By default, the season is
 currently set to 2021. Use a recent year or set \code{leagueHistory} to \code{TRUE}
-to obtain past data.}
+to obtain all past data.}
 
 \item{leagueHistory}{logical; Should the \code{leagueHistory} version of the API
 be called? If \code{TRUE}, a list of results is returned, with one element for
