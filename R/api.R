@@ -34,7 +34,8 @@ ffl_api <- function(leagueId = ffl_id(), view = NULL, leagueHistory = FALSE,
   try_json(
     url = "https://fantasy.espn.com",
     path = paste("apis/v3/games/ffl", age_path, leagueId, sep = "/"),
-    query = list(view = view),
+    query = list(view = paste(view, collapse = ",")),
+    ...
   )
 }
 
