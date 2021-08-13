@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Current fantasy scoring period — ffl_week • fflr</title>
+<title>Get ESPN fantasy league ID — ffl_id • fflr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Current fantasy scoring period — ffl_week" />
-<meta property="og:description" content="Current fantasy scoring period" />
+<meta property="og:title" content="Get ESPN fantasy league ID — ffl_id" />
+<meta property="og:description" content="Retrieve league ID from global options, as an input, or from a URL." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -114,31 +114,43 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Current fantasy scoring period</h1>
+    <h1>Get ESPN fantasy league ID</h1>
     
-    <div class="hidden name"><code>ffl_week.Rd</code></div>
+    <div class="hidden name"><code>ffl_id.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Current fantasy scoring period</p>
+    <p>Retrieve league ID from global options, as an input, or from a URL.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>ffl_week</span><span class='op'>(</span>offset <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>ffl_id</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"fflr.leagueId"</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>offset</th>
-      <td><p>Add negative or positive values.</p></td>
+      <th>leagueId</th>
+      <td><p>Numeric league ID or ESPN fantasy page URL. Defaults to
+<code><a href='https://rdrr.io/r/base/options.html'>getOption("fflr.leagueId")</a></code>. Function fails if no ID is found.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Since many users request data from the same ESPN league when using this
+package, you can use this function to set, call, or extract the unique
+ESPN league ID. By default, this function uses <code><a href='https://rdrr.io/r/base/options.html'>getOption("fflr.leagueId")</a></code>
+to look for a default league ID defined in your <code><a href='https://rdrr.io/r/base/options.html'>options()</a></code>. If no such
+option exists, and one is provided to the <code>leagueId</code> argument, the option
+will be temporarily defined for your current session. If a URL starting with
+<code>http</code> is provided, the numeric league ID will be extracted, defined as the
+temporary option, and returned as a character string.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.time</a></span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] "2021-08-13 03:00:18 UTC"</div><div class='input'><span class='fu'>ffl_week</span><span class='op'>(</span><span class='op'>-</span><span class='fl'>1</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] 0</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>ffl_id</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"252353"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>Temporarily set `fflr.leagueId` option to 252353</span></div><div class='output co'>#&gt; [1] "252353"</div><div class='input'><span class='fu'>ffl_id</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"fflr.leagueId"</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "252353"</div><div class='input'><span class='fu'>ffl_id</span><span class='op'>(</span><span class='st'>"https://fantasy.espn.com/football/team?leagueId=252353&amp;teamId=6"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "252353"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

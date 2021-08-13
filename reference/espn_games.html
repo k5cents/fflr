@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.15</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
       </span>
     </div>
 
@@ -95,29 +95,12 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/fantasy-football.html">fantasy-football</a>
-    </li>
-  </ul>
-</li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="https://github.com/kiernann/fflr/">
-    <span class="fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
+        
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -132,7 +115,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>List all fantasy games</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/ffl-info.R'><code>R/ffl-info.R</code></a></small>
+    
     <div class="hidden name"><code>espn_games.Rd</code></div>
     </div>
 
@@ -145,18 +128,18 @@
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble fantasy games.</p>
+    <p>A tibble of fantasy games.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>espn_games</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 4 x 7</span><span>
-#&gt;   game  active  year pro_league pro_sport start_date         
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>             
-#&gt; </span><span style='color: #555555;'>1</span><span> FFL   TRUE    </span><span style='text-decoration: underline;'>2</span><span>020 NFL        football  2020-03-09 </span><span style='color: #555555;'>07:00:00</span><span>
-#&gt; </span><span style='color: #555555;'>2</span><span> FLB   TRUE    </span><span style='text-decoration: underline;'>2</span><span>020 MLB        baseball  2020-01-22 </span><span style='color: #555555;'>08:00:00</span><span>
-#&gt; </span><span style='color: #555555;'>3</span><span> FBA   TRUE    </span><span style='text-decoration: underline;'>2</span><span>021 NBA        basketba… 2020-11-13 </span><span style='color: #555555;'>08:00:00</span><span>
-#&gt; </span><span style='color: #555555;'>4</span><span> FHL   TRUE    </span><span style='text-decoration: underline;'>2</span><span>021 NHL        hockey    2020-11-13 </span><span style='color: #555555;'>08:00:00</span><span>
-#&gt; </span><span style='color: #555555;'># … with 1 more variable: end_date </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span></div></span></pre>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 4 × 9</span>
+#&gt;   abbrev active currentSeasonId display displayOrder    id name   proSportAbbrev
+#&gt;   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>            <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>          <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>         
+#&gt; <span style='color: #BCBCBC;'>1</span> FFL    TRUE              <span style='text-decoration: underline;'>2</span>021 TRUE               1     1 Fanta… NFL           
+#&gt; <span style='color: #BCBCBC;'>2</span> FLB    TRUE              <span style='text-decoration: underline;'>2</span>021 TRUE               2     2 Fanta… MLB           
+#&gt; <span style='color: #BCBCBC;'>3</span> FBA    TRUE              <span style='text-decoration: underline;'>2</span>022 TRUE               3     3 Fanta… NBA           
+#&gt; <span style='color: #BCBCBC;'>4</span> FHL    TRUE              <span style='text-decoration: underline;'>2</span>022 TRUE               4     4 Fanta… NHL           
+#&gt; <span style='color: #949494;'># … with 1 more variable: proSportName &lt;chr&gt;</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
