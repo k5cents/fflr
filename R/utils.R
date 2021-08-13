@@ -13,3 +13,19 @@ as_tibble <- function(x) {
 is_installed <- function(pkg) {
   isTRUE(requireNamespace(pkg, quietly = TRUE))
 }
+
+slot_abbrev <- function(slot) {
+  factor(
+    x = slot,
+    levels = c("0",  "2",  "4",  "6",  "23", "16", "17", "20", "21"),
+    labels = c("QB", "RB", "WR", "TE", "FX", "DS", "PK", "BE", "IR")
+  )
+}
+
+pos_abbrev <- function(pos) {
+  factor(
+    x = pos,
+    levels = c("1",  "2",  "3",  "4",  "5",  "9",  "16"),
+    labels = c("QB", "RB", "WR", "TE", "PK", "DT", "DS")
+  )
+}
