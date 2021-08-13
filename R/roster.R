@@ -1,0 +1,76 @@
+#' Fantasy team rosters
+#'
+#' The roster of all teams in a league.
+#'
+#' @inheritParams ffl_api
+#' @examples
+#' team_roster(leagueId = "42654852")
+#' @return A dataframe (or list) with league teams.
+#' @export
+team_roster <- function(leagueId = ffl_id(), seasonId = 2021,
+                        leagueHistory = FALSE, ...) {
+  dat <- ffl_api(
+    leagueId = leagueId,
+    view = "mRoster",
+    leagueHistory = leagueHistory,
+    ...
+  )
+  if (leagueHistory) {
+    lapply(dat$teams, function(x) lapply(x$roster$entries, out_roster))
+  } else {
+    lapply(dat$teams$roster$entries, out_roster)
+  }
+}
+
+out_roster <- function(entry, t = NULL) {
+  if (is.null(entry)) {
+    return(entry)
+  }
+  player <- entry$playerPoolEntry$player
+  stats <- player$stats
+  proj_dbl <- score_dbl <- rep(NA, length(player$stats))
+  for (i in seq_along(player$stats)) {
+    s <- player$stats[[i]]
+    week_int <- max(s$scoringPeriodId)
+    year_int <- max(s$seasonId)
+    if (year_int >= 2018) {
+      is_split <- s$statSplitTypeId == 1
+      is_week <- s$scoringPeriodId == week_int
+      which_score <- which(s$statSourceId == 0 & is_split & is_week)
+      if (length(which_score) == 0) {
+        score_dbl[i] <- NA_real_
+      } else {
+        score_dbl[i] <- s$appliedTotal[which_score]
+      }
+      which_proj <- which(s$statSourceId == 1 & is_split & is_week)
+      proj_dbl[i] <- s$appliedTotal[which_proj]
+    } else {
+      score_dbl[i] <- s$appliedTotal
+      proj_dbl[i] <- NA_real_
+    }
+  }
+  if (year_int >= 2018) {
+    injury_status <- abbreviate(player$injuryStatus, minlength = 1)
+    injury_status[is.na(injury_status)] <- "A"
+  } else {
+    injury_status <- abbreviate(entry$injuryStatus, minlength = 1)
+  }
+  x <- data.frame(
+    seasonId  = year_int,
+    scoringPeriodId  = week_int,
+    team = entry$playerPoolEntry$onTeamId,
+    slot = slot_abbrev(entry$lineupSlotId),
+    id = player$id,
+    firstName = player$firstName,
+    lastName = player$lastName,
+    proTeam  = fflr::nfl_teams$abbrev[match(player$proTeamId, fflr::nfl_teams$team)],
+    PositionId = pos_abbrev(player$defaultPositionId),
+    injuryStatus = injury_status,
+    proj  = proj_dbl,
+    score = score_dbl,
+    percentStarted = player$ownership$percentStarted,
+    percentOwned = player$ownership$percentOwned,
+    percentChange = round(player$ownership$percentChange, digits = 3)
+  )
+  as_tibble(x[order(x$slot), ])
+}
