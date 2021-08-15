@@ -48,7 +48,6 @@ ffl_week <- function(offset = 0) {
 #' @return A tibble of fantasy football seasons.
 #' @examples
 #' ffl_seasons()
-#' @importFrom tibble as_tibble
 #' @importFrom jsonlite fromJSON
 #' @export
 ffl_seasons <- function() {
@@ -63,7 +62,6 @@ ffl_seasons <- function() {
 #' @return A tibble of fantasy games.
 #' @examples
 #' espn_games()
-#' @importFrom tibble as_tibble
 #' @export
 espn_games <- function() {
   g <- try_json("https://fantasy.espn.com/apis/v3/games")
