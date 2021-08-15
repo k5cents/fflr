@@ -123,7 +123,7 @@
     <p>The roster of all teams in a league.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>team_roster</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='ffl_id.html'>ffl_id</a></span><span class='op'>(</span><span class='op'>)</span>, seasonId <span class='op'>=</span> <span class='fl'>2021</span>, leagueHistory <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>team_roster</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='ffl_id.html'>ffl_id</a></span><span class='op'>(</span><span class='op'>)</span>, seasonId <span class='op'>=</span> <span class='fl'>2021</span>, leagueHistory <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -145,6 +145,10 @@ to obtain all past data.</p></td>
 be called? If <code>TRUE</code>, a list of results is returned, with one element for
 each historical year of the league.</p></td>
     </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Arguments passed to <code><a href='https://rdrr.io/pkg/jsonlite/man/fromJSON.html'>jsonlite::fromJSON()</a></code> for parsing.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -152,14 +156,103 @@ each historical year of the league.</p></td>
     <p>A dataframe (or list) with league teams.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='league_teams.html'>league_teams</a></span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 4 × 5</span>
-#&gt;   abbrev    id location nickname   owners   
-#&gt;   <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;list&gt;</span>   
-#&gt; <span style='color: #BCBCBC;'>1</span> AUS        1 Austin   Astronauts <span style='color: #949494;'>&lt;chr [1]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'>2</span> BOS        2 Boston   Birds      <span style='color: #949494;'>&lt;chr [1]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'>3</span> CHI        3 Chicago  Crowns     <span style='color: #949494;'>&lt;chr [1]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'>4</span> DEN        4 Denver   Devils     <span style='color: #949494;'>&lt;chr [1]&gt;</span></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>team_roster</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [[1]]
+#&gt; <span style='color: #949494;'># A tibble: 16 × 15</span>
+#&gt;    seasonId scoringPeriodId  team slot       id firstName  lastName    proTeam
+#&gt;       <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>  
+#&gt; <span style='color: #BCBCBC;'> 1</span>     <span style='text-decoration: underline;'>2</span>021               1     1 QB    3<span style='text-decoration: underline;'>139</span>477 Patrick    Mahomes     KC     
+#&gt; <span style='color: #BCBCBC;'> 2</span>     <span style='text-decoration: underline;'>2</span>021               1     1 RB    3<span style='text-decoration: underline;'>117</span>251 Christian  McCaffrey   Car    
+#&gt; <span style='color: #BCBCBC;'> 3</span>     <span style='text-decoration: underline;'>2</span>021               1     1 RB    4<span style='text-decoration: underline;'>242</span>335 Jonathan   Taylor      Ind    
+#&gt; <span style='color: #BCBCBC;'> 4</span>     <span style='text-decoration: underline;'>2</span>021               1     1 WR      <span style='text-decoration: underline;'>16</span>800 Davante    Adams       GB     
+#&gt; <span style='color: #BCBCBC;'> 5</span>     <span style='text-decoration: underline;'>2</span>021               1     1 WR    3<span style='text-decoration: underline;'>925</span>357 Calvin     Ridley      Atl    
+#&gt; <span style='color: #BCBCBC;'> 6</span>     <span style='text-decoration: underline;'>2</span>021               1     1 TE    3<span style='text-decoration: underline;'>116</span>365 Mark       Andrews     Bal    
+#&gt; <span style='color: #BCBCBC;'> 7</span>     <span style='text-decoration: underline;'>2</span>021               1     1 FX    4<span style='text-decoration: underline;'>360</span>294 Antonio    Gibson      Wsh    
+#&gt; <span style='color: #BCBCBC;'> 8</span>     <span style='text-decoration: underline;'>2</span>021               1     1 DS     -<span style='color: #BB0000; text-decoration: underline;'>16</span><span style='color: #BB0000;'>027</span> Buccaneers D/ST        TB     
+#&gt; <span style='color: #BCBCBC;'> 9</span>     <span style='text-decoration: underline;'>2</span>021               1     1 PK    2<span style='text-decoration: underline;'>473</span>037 Jason      Myers       Sea    
+#&gt; <span style='color: #BCBCBC;'>10</span>     <span style='text-decoration: underline;'>2</span>021               1     1 BE    4<span style='text-decoration: underline;'>259</span>545 D'Andre    Swift       Det    
+#&gt; <span style='color: #BCBCBC;'>11</span>     <span style='text-decoration: underline;'>2</span>021               1     1 BE    4<span style='text-decoration: underline;'>045</span>163 Miles      Sanders     Phi    
+#&gt; <span style='color: #BCBCBC;'>12</span>     <span style='text-decoration: underline;'>2</span>021               1     1 BE    3<span style='text-decoration: underline;'>919</span>596 Chris      Carson      Sea    
+#&gt; <span style='color: #BCBCBC;'>13</span>     <span style='text-decoration: underline;'>2</span>021               1     1 BE      <span style='text-decoration: underline;'>16</span>799 Allen      Robinson II Chi    
+#&gt; <span style='color: #BCBCBC;'>14</span>     <span style='text-decoration: underline;'>2</span>021               1     1 BE      <span style='text-decoration: underline;'>16</span>460 Adam       Thielen     Min    
+#&gt; <span style='color: #BCBCBC;'>15</span>     <span style='text-decoration: underline;'>2</span>021               1     1 BE    3<span style='text-decoration: underline;'>932</span>905 Diontae    Johnson     Pit    
+#&gt; <span style='color: #BCBCBC;'>16</span>     <span style='text-decoration: underline;'>2</span>021               1     1 BE    3<span style='text-decoration: underline;'>128</span>429 Courtland  Sutton      Den    
+#&gt; <span style='color: #949494;'># … with 7 more variables: PositionId &lt;fct&gt;, injuryStatus &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   projectedScore &lt;dbl&gt;, actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;</span>
+#&gt; 
+#&gt; [[2]]
+#&gt; <span style='color: #949494;'># A tibble: 16 × 15</span>
+#&gt;    seasonId scoringPeriodId  team slot       id firstName lastName       proTeam
+#&gt;       <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>          <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>  
+#&gt; <span style='color: #BCBCBC;'> 1</span>     <span style='text-decoration: underline;'>2</span>021               1     2 QB    2<span style='text-decoration: underline;'>577</span>417 Dak       Prescott       Dal    
+#&gt; <span style='color: #BCBCBC;'> 2</span>     <span style='text-decoration: underline;'>2</span>021               1     2 RB    3<span style='text-decoration: underline;'>116</span>593 Dalvin    Cook           Min    
+#&gt; <span style='color: #BCBCBC;'> 3</span>     <span style='text-decoration: underline;'>2</span>021               1     2 RB    3<span style='text-decoration: underline;'>051</span>392 Ezekiel   Elliott        Dal    
+#&gt; <span style='color: #BCBCBC;'> 4</span>     <span style='text-decoration: underline;'>2</span>021               1     2 WR    3<span style='text-decoration: underline;'>116</span>406 Tyreek    Hill           KC     
+#&gt; <span style='color: #BCBCBC;'> 5</span>     <span style='text-decoration: underline;'>2</span>021               1     2 WR    4<span style='text-decoration: underline;'>047</span>650 DK        Metcalf        Sea    
+#&gt; <span style='color: #BCBCBC;'> 6</span>     <span style='text-decoration: underline;'>2</span>021               1     2 TE    3<span style='text-decoration: underline;'>040</span>151 George    Kittle         SF     
+#&gt; <span style='color: #BCBCBC;'> 7</span>     <span style='text-decoration: underline;'>2</span>021               1     2 FX    3<span style='text-decoration: underline;'>128</span>720 Nick      Chubb          Cle    
+#&gt; <span style='color: #BCBCBC;'> 8</span>     <span style='text-decoration: underline;'>2</span>021               1     2 DS     -<span style='color: #BB0000; text-decoration: underline;'>16</span><span style='color: #BB0000;'>023</span> Steelers  D/ST           Pit    
+#&gt; <span style='color: #BCBCBC;'> 9</span>     <span style='text-decoration: underline;'>2</span>021               1     2 PK      <span style='text-decoration: underline;'>16</span>339 Brandon   McManus        Den    
+#&gt; <span style='color: #BCBCBC;'>10</span>     <span style='text-decoration: underline;'>2</span>021               1     2 BE    4<span style='text-decoration: underline;'>242</span>214 Clyde     Edwards-Helai… KC     
+#&gt; <span style='color: #BCBCBC;'>11</span>     <span style='text-decoration: underline;'>2</span>021               1     2 BE    3<span style='text-decoration: underline;'>121</span>422 Terry     McLaurin       Wsh    
+#&gt; <span style='color: #BCBCBC;'>12</span>     <span style='text-decoration: underline;'>2</span>021               1     2 BE    2<span style='text-decoration: underline;'>976</span>499 Amari     Cooper         Dal    
+#&gt; <span style='color: #BCBCBC;'>13</span>     <span style='text-decoration: underline;'>2</span>021               1     2 BE    4<span style='text-decoration: underline;'>039</span>359 Darrell   Henderson Jr.  LAR    
+#&gt; <span style='color: #BCBCBC;'>14</span>     <span style='text-decoration: underline;'>2</span>021               1     2 BE      <span style='text-decoration: underline;'>13</span>982 Julio     Jones          Ten    
+#&gt; <span style='color: #BCBCBC;'>15</span>     <span style='text-decoration: underline;'>2</span>021               1     2 BE    2<span style='text-decoration: underline;'>977</span>187 Cooper    Kupp           LAR    
+#&gt; <span style='color: #BCBCBC;'>16</span>     <span style='text-decoration: underline;'>2</span>021               1     2 BE    2<span style='text-decoration: underline;'>974</span>858 Kenny     Golladay       NYG    
+#&gt; <span style='color: #949494;'># … with 7 more variables: PositionId &lt;fct&gt;, injuryStatus &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   projectedScore &lt;dbl&gt;, actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;</span>
+#&gt; 
+#&gt; [[3]]
+#&gt; <span style='color: #949494;'># A tibble: 16 × 15</span>
+#&gt;    seasonId scoringPeriodId  team slot       id firstName lastName  proTeam
+#&gt;       <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>  
+#&gt; <span style='color: #BCBCBC;'> 1</span>     <span style='text-decoration: underline;'>2</span>021               1     3 QB    3<span style='text-decoration: underline;'>918</span>298 Josh      Allen     Buf    
+#&gt; <span style='color: #BCBCBC;'> 2</span>     <span style='text-decoration: underline;'>2</span>021               1     3 RB    3<span style='text-decoration: underline;'>929</span>630 Saquon    Barkley   NYG    
+#&gt; <span style='color: #BCBCBC;'> 3</span>     <span style='text-decoration: underline;'>2</span>021               1     3 RB    3<span style='text-decoration: underline;'>043</span>078 Derrick   Henry     Ten    
+#&gt; <span style='color: #BCBCBC;'> 4</span>     <span style='text-decoration: underline;'>2</span>021               1     3 WR      <span style='text-decoration: underline;'>15</span>795 DeAndre   Hopkins   Ari    
+#&gt; <span style='color: #BCBCBC;'> 5</span>     <span style='text-decoration: underline;'>2</span>021               1     3 WR    4<span style='text-decoration: underline;'>262</span>921 Justin    Jefferson Min    
+#&gt; <span style='color: #BCBCBC;'> 6</span>     <span style='text-decoration: underline;'>2</span>021               1     3 TE    2<span style='text-decoration: underline;'>576</span>925 Darren    Waller    LV     
+#&gt; <span style='color: #BCBCBC;'> 7</span>     <span style='text-decoration: underline;'>2</span>021               1     3 FX    3<span style='text-decoration: underline;'>068</span>267 Austin    Ekeler    LAC    
+#&gt; <span style='color: #BCBCBC;'> 8</span>     <span style='text-decoration: underline;'>2</span>021               1     3 DS     -<span style='color: #BB0000; text-decoration: underline;'>16</span><span style='color: #BB0000;'>033</span> Ravens    D/ST      Bal    
+#&gt; <span style='color: #BCBCBC;'> 9</span>     <span style='text-decoration: underline;'>2</span>021               1     3 PK      <span style='text-decoration: underline;'>15</span>683 Justin    Tucker    Bal    
+#&gt; <span style='color: #BCBCBC;'>10</span>     <span style='text-decoration: underline;'>2</span>021               1     3 BE    3<span style='text-decoration: underline;'>116</span>385 Joe       Mixon     Cin    
+#&gt; <span style='color: #BCBCBC;'>11</span>     <span style='text-decoration: underline;'>2</span>021               1     3 BE      <span style='text-decoration: underline;'>15</span>818 Keenan    Allen     LAC    
+#&gt; <span style='color: #BCBCBC;'>12</span>     <span style='text-decoration: underline;'>2</span>021               1     3 BE      <span style='text-decoration: underline;'>16</span>737 Mike      Evans     TB     
+#&gt; <span style='color: #BCBCBC;'>13</span>     <span style='text-decoration: underline;'>2</span>021               1     3 BE    4<span style='text-decoration: underline;'>047</span>365 Josh      Jacobs    LV     
+#&gt; <span style='color: #BCBCBC;'>14</span>     <span style='text-decoration: underline;'>2</span>021               1     3 BE    3<span style='text-decoration: underline;'>886</span>818 Myles     Gaskin    Mia    
+#&gt; <span style='color: #BCBCBC;'>15</span>     <span style='text-decoration: underline;'>2</span>021               1     3 BE    4<span style='text-decoration: underline;'>362</span>628 Ja'Marr   Chase     Cin    
+#&gt; <span style='color: #BCBCBC;'>16</span>     <span style='text-decoration: underline;'>2</span>021               1     3 BE    4<span style='text-decoration: underline;'>360</span>438 Brandon   Aiyuk     SF     
+#&gt; <span style='color: #949494;'># … with 7 more variables: PositionId &lt;fct&gt;, injuryStatus &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   projectedScore &lt;dbl&gt;, actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;</span>
+#&gt; 
+#&gt; [[4]]
+#&gt; <span style='color: #949494;'># A tibble: 16 × 15</span>
+#&gt;    seasonId scoringPeriodId  team slot       id firstName lastName   proTeam
+#&gt;       <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>  
+#&gt; <span style='color: #BCBCBC;'> 1</span>     <span style='text-decoration: underline;'>2</span>021               1     4 QB    3<span style='text-decoration: underline;'>917</span>315 Kyler     Murray     Ari    
+#&gt; <span style='color: #BCBCBC;'> 2</span>     <span style='text-decoration: underline;'>2</span>021               1     4 RB    3<span style='text-decoration: underline;'>054</span>850 Alvin     Kamara     NO     
+#&gt; <span style='color: #BCBCBC;'> 3</span>     <span style='text-decoration: underline;'>2</span>021               1     4 RB    3<span style='text-decoration: underline;'>042</span>519 Aaron     Jones      GB     
+#&gt; <span style='color: #BCBCBC;'> 4</span>     <span style='text-decoration: underline;'>2</span>021               1     4 WR    2<span style='text-decoration: underline;'>976</span>212 Stefon    Diggs      Buf    
+#&gt; <span style='color: #BCBCBC;'> 5</span>     <span style='text-decoration: underline;'>2</span>021               1     4 WR    4<span style='text-decoration: underline;'>047</span>646 A.J.      Brown      Ten    
+#&gt; <span style='color: #BCBCBC;'> 6</span>     <span style='text-decoration: underline;'>2</span>021               1     4 TE      <span style='text-decoration: underline;'>15</span>847 Travis    Kelce      KC     
+#&gt; <span style='color: #BCBCBC;'> 7</span>     <span style='text-decoration: underline;'>2</span>021               1     4 FX    4<span style='text-decoration: underline;'>241</span>457 Najee     Harris     Pit    
+#&gt; <span style='color: #BCBCBC;'> 8</span>     <span style='text-decoration: underline;'>2</span>021               1     4 DS     -<span style='color: #BB0000; text-decoration: underline;'>16</span><span style='color: #BB0000;'>025</span> 49ers     D/ST       SF     
+#&gt; <span style='color: #BCBCBC;'> 9</span>     <span style='text-decoration: underline;'>2</span>021               1     4 PK    3<span style='text-decoration: underline;'>055</span>899 Harrison  Butker     KC     
+#&gt; <span style='color: #BCBCBC;'>10</span>     <span style='text-decoration: underline;'>2</span>021               1     4 BE    4<span style='text-decoration: underline;'>035</span>538 David     Montgomery Chi    
+#&gt; <span style='color: #BCBCBC;'>11</span>     <span style='text-decoration: underline;'>2</span>021               1     4 BE    4<span style='text-decoration: underline;'>241</span>985 J.K.      Dobbins    Bal    
+#&gt; <span style='color: #BCBCBC;'>12</span>     <span style='text-decoration: underline;'>2</span>021               1     4 BE      <span style='text-decoration: underline;'>15</span>880 Robert    Woods      LAR    
+#&gt; <span style='color: #BCBCBC;'>13</span>     <span style='text-decoration: underline;'>2</span>021               1     4 BE    4<span style='text-decoration: underline;'>241</span>389 CeeDee    Lamb       Dal    
+#&gt; <span style='color: #BCBCBC;'>14</span>     <span style='text-decoration: underline;'>2</span>021               1     4 BE    3<span style='text-decoration: underline;'>915</span>416 DJ        Moore      Car    
+#&gt; <span style='color: #BCBCBC;'>15</span>     <span style='text-decoration: underline;'>2</span>021               1     4 BE    3<span style='text-decoration: underline;'>116</span>165 Chris     Godwin     TB     
+#&gt; <span style='color: #BCBCBC;'>16</span>     <span style='text-decoration: underline;'>2</span>021               1     4 BE    2<span style='text-decoration: underline;'>577</span>327 Tyler     Lockett    Sea    
+#&gt; <span style='color: #949494;'># … with 7 more variables: PositionId &lt;fct&gt;, injuryStatus &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   projectedScore &lt;dbl&gt;, actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;</span>
+#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
