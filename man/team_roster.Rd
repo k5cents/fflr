@@ -4,7 +4,7 @@
 \alias{team_roster}
 \title{Fantasy team rosters}
 \usage{
-team_roster(leagueId = ffl_id(), seasonId = 2021, leagueHistory = FALSE)
+team_roster(leagueId = ffl_id(), seasonId = 2021, leagueHistory = FALSE, ...)
 }
 \arguments{
 \item{leagueId}{Numeric league ID or ESPN fantasy page URL. Defaults to
@@ -17,6 +17,8 @@ to obtain all past data.}
 \item{leagueHistory}{logical; Should the \code{leagueHistory} version of the API
 be called? If \code{TRUE}, a list of results is returned, with one element for
 each historical year of the league.}
+
+\item{...}{Arguments passed to \code{\link[jsonlite:fromJSON]{jsonlite::fromJSON()}} for parsing.}
 }
 \value{
 A dataframe (or list) with league teams.
@@ -25,5 +27,5 @@ A dataframe (or list) with league teams.
 The roster of all teams in a league.
 }
 \examples{
-league_teams(leagueId = "42654852")
+team_roster(leagueId = "42654852")
 }
