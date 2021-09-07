@@ -5,10 +5,9 @@
 #' @return A list of season information.
 #' @examples
 #' str(ffl_info())
-#' @importFrom jsonlite fromJSON
 #' @export
 ffl_info <- function() {
-  x <- jsonlite::fromJSON("https://fantasy.espn.com/apis/v3/games/ffl")
+  x <- try_json("https://fantasy.espn.com/apis/v3/games/ffl")
   list(
     abbrev = x$abbrev,
     active = x$active,
@@ -48,10 +47,9 @@ ffl_week <- function(offset = 0) {
 #' @return A tibble of fantasy football seasons.
 #' @examples
 #' ffl_seasons()
-#' @importFrom jsonlite fromJSON
 #' @export
 ffl_seasons <- function() {
-  s <- jsonlite::fromJSON("https://fantasy.espn.com/apis/v3/games/ffl/seasons")
+  s <- try_json("https://fantasy.espn.com/apis/v3/games/ffl/seasons")
   s$startDate <- ffl_date(s$startDate)
   s$endDate <- ffl_date(s$endDate)
   as_tibble(s)
