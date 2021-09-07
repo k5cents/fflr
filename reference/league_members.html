@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Fantasy league members — league_members • fflr</title>
+<title>Fantasy league teams — league_members • fflr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Fantasy league members — league_members" />
-<meta property="og:description" content="The ESPN team owner users belonging to a fantasy football league." />
+<meta property="og:title" content="Fantasy league teams — league_members" />
+<meta property="og:description" content="The teams in a league and their owners." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.15</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
       </span>
     </div>
 
@@ -95,29 +95,12 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/fantasy-football.html">fantasy-football</a>
-    </li>
-  </ul>
-</li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="https://github.com/kiernann/fflr/">
-    <span class="fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
+        
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -131,55 +114,56 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Fantasy league members</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/league-members.R'><code>R/league-members.R</code></a></small>
+    <h1>Fantasy league teams</h1>
+    
     <div class="hidden name"><code>league_members.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>The ESPN team owner users belonging to a fantasy football league.</p>
+    <p>The teams in a league and their owners.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>league_members</span><span class='op'>(</span>lid <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"lid"</span><span class='op'>)</span>, old <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>league_members</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='ffl_id.html'>ffl_id</a></span><span class='op'>(</span><span class='op'>)</span>, seasonId <span class='op'>=</span> <span class='fl'>2021</span>, leagueHistory <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>lid</th>
-      <td><p>ESPN League ID, defaults to <code><a href='https://rdrr.io/r/base/options.html'>getOption("lid")</a></code>. Use
-<code>options(lid = &lt;League ID&gt;)</code> to set your league ID; put that line in your
-<code>.Rprofile</code> file to set the option at start up.</p></td>
+      <th>leagueId</th>
+      <td><p>Numeric league ID or ESPN fantasy page URL. Defaults to
+<code><a href='https://rdrr.io/r/base/options.html'>getOption("fflr.leagueId")</a></code>. Function fails if no ID is found.</p></td>
     </tr>
     <tr>
-      <th>old</th>
-      <td><p>If <code>FALSE</code> (default), return only the current season's data. If
-<code>TRUE</code>, return a list with all prior seasons.</p></td>
+      <th>seasonId</th>
+      <td><p>Integer year of NFL season. By default, the season is
+currently set to 2021. Use a recent year or set <code>leagueHistory</code> to <code>TRUE</code>
+to obtain all past data.</p></td>
     </tr>
     <tr>
-      <th>...</th>
-      <td><p>Additional API query arguments. Use "week" and "year" as a
-shorthand for "ScoringPeriodId" and "seasonId" respectively.</p></td>
+      <th>leagueHistory</th>
+      <td><p>logical; Should the <code>leagueHistory</code> version of the API
+be called? If <code>TRUE</code>, a list of results is returned, with one element for
+each historical year of the league.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble (or list) of league members.</p>
+    <p>A dataframe (or list) with league teams.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>Other League information: 
+<code><a href='league_teams.html'>league_teams</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>league_members</span><span class='op'>(</span>lid <span class='op'>=</span> <span class='fl'>252353</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 8 x 4</span><span>
-#&gt;    year user              owners                                 lm   
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                                  </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020 Angusg396         {12E61406-349A-4DC7-A614-06349AADC797} FALSE
-#&gt; </span><span style='color: #555555;'>2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020 k5cents_          {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2} TRUE 
-#&gt; </span><span style='color: #555555;'>3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020 NAudet14          {35D9B7DB-E821-453C-99B7-DBE821353C36} FALSE
-#&gt; </span><span style='color: #555555;'>4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020 b.pepe            {5FA14794-6573-4189-A147-9465737189B2} FALSE
-#&gt; </span><span style='color: #555555;'>5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020 Billy.Slocum      {91F8B424-1689-472E-B8B4-241689172E35} FALSE
-#&gt; </span><span style='color: #555555;'>6</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020 ESPNfan0199065799 {9A722A48-6E16-42BC-9E0E-AC9E4E6D7ABC} FALSE
-#&gt; </span><span style='color: #555555;'>7</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020 espnfan1043876390 {C61F403A-F689-4269-879E-145B897F2308} FALSE
-#&gt; </span><span style='color: #555555;'>8</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020 MrBruiser12       {F33F0723-2CC3-4A1C-BF07-232CC34A1C15} FALSE</div></span></pre>
+    <pre class="examples"><div class='input'><span class='fu'>league_members</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 4 × 5</span>
+#&gt;   abbrev    id location nickname   owners   
+#&gt;   <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;list&gt;</span>   
+#&gt; <span style='color: #BCBCBC;'>1</span> AUS        1 Austin   Astronauts <span style='color: #949494;'>&lt;chr [1]&gt;</span>
+#&gt; <span style='color: #BCBCBC;'>2</span> BOS        2 Boston   Birds      <span style='color: #949494;'>&lt;chr [1]&gt;</span>
+#&gt; <span style='color: #BCBCBC;'>3</span> CHI        3 Chicago  Crowns     <span style='color: #949494;'>&lt;chr [1]&gt;</span>
+#&gt; <span style='color: #BCBCBC;'>4</span> DEN        4 Denver   Devils     <span style='color: #949494;'>&lt;chr [1]&gt;</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
