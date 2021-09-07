@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.15</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
       </span>
     </div>
 
@@ -95,29 +95,12 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/fantasy-football.html">fantasy-football</a>
-    </li>
-  </ul>
-</li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="https://github.com/kiernann/fflr/">
-    <span class="fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
+        
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -132,7 +115,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>League scoring settings</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/league-settings.R'><code>R/league-settings.R</code></a></small>
+    
     <div class="hidden name"><code>score_settings.Rd</code></div>
     </div>
 
@@ -140,43 +123,61 @@
     <p>The scoring system used and points awarded for various actions.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>score_settings</span><span class='op'>(</span>lid <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"lid"</span><span class='op'>)</span>, old <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>score_settings</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='ffl_id.html'>ffl_id</a></span><span class='op'>(</span><span class='op'>)</span>, leagueHistory <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>lid</th>
-      <td><p>ESPN League ID, defaults to <code><a href='https://rdrr.io/r/base/options.html'>getOption("lid")</a></code>. Use
-<code>options(lid = &lt;League ID&gt;)</code> to set your league ID; put that line in your
-<code>.Rprofile</code> file to set the option at start up.</p></td>
+      <th>leagueId</th>
+      <td><p>Numeric league ID or ESPN fantasy page URL. Defaults to
+<code><a href='https://rdrr.io/r/base/options.html'>getOption("fflr.leagueId")</a></code>. Function fails if no ID is found.</p></td>
     </tr>
     <tr>
-      <th>old</th>
-      <td><p>If <code>FALSE</code> (default), return only the current season's data. If
-<code>TRUE</code>, return a list with all prior seasons.</p></td>
+      <th>leagueHistory</th>
+      <td><p>logical; Should the <code>leagueHistory</code> version of the API
+be called? If <code>TRUE</code>, a list of results is returned, with one element for
+each historical year of the league.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Additional API query arguments. Use "week" and "year" as a
-shorthand for "ScoringPeriodId" and "seasonId" respectively.</p></td>
+      <td><p>Arguments passed to <code><a href='https://rdrr.io/pkg/jsonlite/man/fromJSON.html'>jsonlite::fromJSON()</a></code> for parsing.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A list or tibble of scoring settings.</p>
+    <p>A data frame of league scoring settings by season.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>Other League settings: 
+<code><a href='draft_settings.html'>draft_settings</a>()</code>,
+<code><a href='fee_settings.html'>fee_settings</a>()</code>,
+<code><a href='league_info.html'>league_info</a>()</code>,
+<code><a href='league_name.html'>league_name</a>()</code>,
+<code><a href='league_size.html'>league_size</a>()</code>,
+<code><a href='roster_settings.html'>roster_settings</a>()</code>,
+<code><a href='schedule_settings.html'>schedule_settings</a>()</code>,
+<code><a href='trade_settings.html'>trade_settings</a>()</code>,
+<code><a href='waiver_settings.html'>waiver_settings</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>score_settings</span><span class='op'>(</span><span class='fl'>252353</span>, old <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 5 x 7</span><span>
-#&gt;    year score_type rank_type home_bonus playoff_bonus playoff_tie scoring       
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>         </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;list&gt;</span><span>        
-#&gt; </span><span style='color: #555555;'>1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>015 H2H_POINTS STANDARD           0             0 NONE        </span><span style='color: #555555;'>&lt;tibble [44 ×</span><span>…
-#&gt; </span><span style='color: #555555;'>2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>016 H2H_POINTS STANDARD           0             0 NONE        </span><span style='color: #555555;'>&lt;tibble [44 ×</span><span>…
-#&gt; </span><span style='color: #555555;'>3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>017 H2H_POINTS STANDARD           0             0 NONE        </span><span style='color: #555555;'>&lt;tibble [44 ×</span><span>…
-#&gt; </span><span style='color: #555555;'>4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>018 H2H_POINTS STANDARD           0             0 NONE        </span><span style='color: #555555;'>&lt;tibble [43 ×</span><span>…
-#&gt; </span><span style='color: #555555;'>5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>019 H2H_POINTS STANDARD           0             0 NONE        </span><span style='color: #555555;'>&lt;tibble [43 ×</span><span>…</div></span></pre>
+    <pre class="examples"><div class='input'><span class='fu'>score_settings</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 1 × 7</span>
+#&gt;   seasonId scoringType playerRankType homeTeamBonus playoffHomeTeamBonus
+#&gt;      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>                <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
+#&gt; <span style='color: #BCBCBC;'>1</span>     <span style='text-decoration: underline;'>2</span>021 H2H_POINTS  PPR                        1                    0
+#&gt; <span style='color: #949494;'># … with 2 more variables: playoffMatchupTieRule &lt;chr&gt;, scoringItems &lt;list&gt;</span></div><div class='input'><span class='fu'>score_settings</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"252353"</span>, leagueHistory <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 6 × 7</span>
+#&gt;   seasonId scoringType playerRankType homeTeamBonus playoffHomeTeamBonus
+#&gt;      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>                <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
+#&gt; <span style='color: #BCBCBC;'>1</span>     <span style='text-decoration: underline;'>2</span>015 H2H_POINTS  STANDARD                   0                    0
+#&gt; <span style='color: #BCBCBC;'>2</span>     <span style='text-decoration: underline;'>2</span>016 H2H_POINTS  STANDARD                   0                    0
+#&gt; <span style='color: #BCBCBC;'>3</span>     <span style='text-decoration: underline;'>2</span>017 H2H_POINTS  STANDARD                   0                    0
+#&gt; <span style='color: #BCBCBC;'>4</span>     <span style='text-decoration: underline;'>2</span>018 H2H_POINTS  STANDARD                   0                    0
+#&gt; <span style='color: #BCBCBC;'>5</span>     <span style='text-decoration: underline;'>2</span>019 H2H_POINTS  STANDARD                   0                    0
+#&gt; <span style='color: #BCBCBC;'>6</span>     <span style='text-decoration: underline;'>2</span>020 H2H_POINTS  STANDARD                   0                    0
+#&gt; <span style='color: #949494;'># … with 2 more variables: playoffMatchupTieRule &lt;chr&gt;, scoringItems &lt;list&gt;</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
