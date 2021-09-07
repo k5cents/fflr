@@ -52,7 +52,7 @@ draft_picks <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
     x$autoDraftTypeId <- as.logical(x$autoDraftTypeId)
     x$nominatingTeamId <- team_abbrev(x$nominatingTeamId, teams = tm)
     x$teamId <- team_abbrev(x$teamId, teams = tm)
-    x$seasonId <- dat$seasonId[i]
+    x$seasonId <- dat$seasonId
     x <- x[c(length(x), seq(x) - 1)]
     x$bidAmount[x$bidAmount == 0] <- NA_integer_
     as_tibble(x)
