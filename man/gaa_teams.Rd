@@ -3,13 +3,13 @@
 \docType{data}
 \name{gaa_teams}
 \alias{gaa_teams}
-\title{2015-2020 GAA Teams}
+\title{2015-2021 GAA Teams}
 \format{
 A data frame with 13 rows and 3 variables:
 \describe{
 \item{team}{Unique yearly team ID}
 \item{abbrev}{Team abbreviation}
-\item{years}{Nested list of active years}
+\item{years}{Nested vector of active years}
 ...
 }
 }

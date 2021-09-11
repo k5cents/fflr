@@ -37,7 +37,24 @@
 #' @source \url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2020?view=proTeamSchedules_wl}
 "nfl_teams"
 
-#' 2015-2020 GAA Teams
+#' 2021 NFL Schedule
+#'
+#' The 2021 NFL season schedule by team, as of September 10th.
+#'
+#' @format A data frame with 544 rows and 6 variables:
+#' \describe{
+#'   \item{seasonId}{Season year}
+#'   \item{scoringPeriodId}{Matchup period}
+#'   \item{proTeam}{Team abbreviation}
+#'   \item{opponent}{Team opponent}
+#'   \item{isHome}{Team the home?}
+#'   \item{date}{Match date and time}
+#'   ...
+#' }
+#' @source \url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2020?view=proTeamSchedules_wl}
+"nfl_schedule"
+
+#' 2015-2021 GAA Teams
 #'
 #' The GAA is the fantasy league of this package's author.
 #'
@@ -45,7 +62,7 @@
 #' \describe{
 #'   \item{team}{Unique yearly team ID}
 #'   \item{abbrev}{Team abbreviation}
-#'   \item{years}{Nested list of active years}
+#'   \item{years}{Nested vector of active years}
 #'   ...
 #' }
 #' @source \url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2021/segments/0/leagues/252353}
