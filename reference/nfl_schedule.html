@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>2020 NFL Schedule — nfl_schedule • fflr</title>
+<title>2021 NFL Schedule — nfl_schedule • fflr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,10 +46,8 @@
 
 
 
-<meta property="og:title" content="2020 NFL Schedule — nfl_schedule" />
-<meta property="og:description" content="The 2020 NFL season schedule by team, as of October 5th. Due to COVID-19 game
-delays, the schedule is more in flux than usual. See pro_schedule() for the
-most current version." />
+<meta property="og:title" content="2021 NFL Schedule — nfl_schedule" />
+<meta property="og:description" content="The 2021 NFL season schedule by team, as of September 10th." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -82,7 +80,7 @@ most current version." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.15</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
       </span>
     </div>
 
@@ -97,29 +95,12 @@ most current version." />
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/fantasy-football.html">fantasy-football</a>
-    </li>
-  </ul>
-</li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="https://github.com/kiernann/fflr/">
-    <span class="fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
+        
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -133,15 +114,13 @@ most current version." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>2020 NFL Schedule</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/data.R'><code>R/data.R</code></a></small>
+    <h1>2021 NFL Schedule</h1>
+    
     <div class="hidden name"><code>nfl_schedule.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>The 2020 NFL season schedule by team, as of October 5th. Due to COVID-19 game
-delays, the schedule is more in flux than usual. See <code><a href='pro_schedule.html'>pro_schedule()</a></code> for the
-most current version.</p>
+    <p>The 2021 NFL season schedule by team, as of September 10th.</p>
     </div>
 
     <pre class="usage"><span class='va'>nfl_schedule</span></pre>
@@ -149,13 +128,13 @@ most current version.</p>
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 1,059 rows and 5 variables:</p><dl>
-<dt>year</dt><dd><p>Season year</p></dd>
-<dt>week</dt><dd><p>Matchup period</p></dd>
-<dt>pro</dt><dd><p>Team abbreviation</p></dd>
-<dt>opp</dt><dd><p>Team opponent</p></dd>
-<dt>home</dt><dd><p>Team the home?</p></dd>
-<dt>kickoff</dt><dd><p>Match date and time</p></dd>
+    <p>A data frame with 544 rows and 6 variables:</p><dl>
+<dt>seasonId</dt><dd><p>Season year</p></dd>
+<dt>scoringPeriodId</dt><dd><p>Matchup period</p></dd>
+<dt>proTeam</dt><dd><p>Team abbreviation</p></dd>
+<dt>opponent</dt><dd><p>Team opponent</p></dd>
+<dt>isHome</dt><dd><p>Team the home?</p></dd>
+<dt>date</dt><dd><p>Match date and time</p></dd>
 ...
 
 </dl>

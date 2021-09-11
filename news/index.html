@@ -140,7 +140,7 @@
 </h1>
 <ul>
 <li>
-<code>player_outlook()</code> and <code>all_players()</code>, which both call the <code>kona_player_info</code> endpoint, now have arguments to pass a <em>limit</em> to the “X-Fantasy-Filter” JSON list in the request. Without a limit, the requests can take a long time. Use an empty string (<code>""</code>) or <code>NULL</code> to omit the limit (default to 50, the same default limit used by ESPN).</li>
+<code>player_outlook()</code> and <code><a href="../reference/all_players.html">all_players()</a></code>, which both call the <code>kona_player_info</code> endpoint, now have arguments to pass a <em>limit</em> to the “X-Fantasy-Filter” JSON list in the request. Without a limit, the requests can take a long time. Use an empty string (<code>""</code>) or <code>NULL</code> to omit the limit (default to 50, the same default limit used by ESPN).</li>
 </ul>
 </div>
     <div id="fflr-0312" class="section level1">
@@ -149,8 +149,8 @@
 </h1>
 <ul>
 <li>Use known weekly rosters in all tests, examples, and vignettes.</li>
-<li>Improve the way <code>all_players()</code> safely handles bye week stats.</li>
-<li>Skip <code>all_players()</code> tests and examples on CRAN for time reasons.</li>
+<li>Improve the way <code><a href="../reference/all_players.html">all_players()</a></code> safely handles bye week stats.</li>
+<li>Skip <code><a href="../reference/all_players.html">all_players()</a></code> tests and examples on CRAN for time reasons.</li>
 <li>Remove changes to <code><a href="https://rdrr.io/r/base/options.html">options()</a></code> in <code>try_api()</code>, keep <code><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep()</a></code>.</li>
 </ul>
 </div>
@@ -203,7 +203,7 @@
 <a href="#fflr-036" class="anchor"></a>fflr 0.3.6<small> Unreleased </small>
 </h1>
 <ul>
-<li>Add <code>player_info()</code> and add to <code>nfl_players</code>.</li>
+<li>Add <code><a href="../reference/player_info.html">player_info()</a></code> and add to <code>nfl_players</code>.</li>
 <li>Update <code>nfl_schedule</code> for COVID-19 delays.</li>
 <li>Allow <code>live_scoring()</code> to show players yet to play.</li>
 </ul>
@@ -233,7 +233,7 @@
 <ul>
 <li>Invert opponent ranks.</li>
 <li>Pivot fantasy schedule long-wise.</li>
-<li>Skip players without stats in <code>all_players()</code>.</li>
+<li>Skip players without stats in <code><a href="../reference/all_players.html">all_players()</a></code>.</li>
 <li>Remove IR slots from <code>best_roster()</code> and <code>roster_score()</code>.</li>
 </ul>
 </div>
@@ -243,7 +243,7 @@
 </h1>
 <ul>
 <li>Scrape and improve NFL teams.</li>
-<li>All <code>pro_schedule()</code> and save object.</li>
+<li>All <code><a href="../reference/pro_schedule.html">pro_schedule()</a></code> and save object.</li>
 <li>Update NFL players data.</li>
 </ul>
 </div>
@@ -266,7 +266,7 @@
 <ul>
 <li>Rewrite functions to use <code>getOptions("lid")</code>.</li>
 <li>Cover all players, transactions, settings, ESPN information.</li>
-<li>Imports httr for the headers needed in <code>all_players()</code>.</li>
+<li>Imports httr for the headers needed in <code><a href="../reference/all_players.html">all_players()</a></code>.</li>
 <li>Save <code>players</code> tibble as of 2020-09-25 01:00.</li>
 </ul>
 </div>
