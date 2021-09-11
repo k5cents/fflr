@@ -29,3 +29,7 @@ pos_abbrev <- function(pos) {
     labels = c("QB", "RB", "WR", "TE", "PK", "DT", "DS")
   )
 }
+
+pro_abbrev <- function(proTeamId) {
+  fflr::nfl_teams$abbrev[match(proTeamId, fflr::nfl_teams$team)]
+}

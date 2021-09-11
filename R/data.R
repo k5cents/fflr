@@ -1,3 +1,25 @@
+#' 2021 NFL Players
+#'
+#' All available ESPN fantasy football players as of the 2021 season, week 1.
+#'
+#' @format A data frame with 1,063 rows and 11 variables:
+#' \describe{
+#'   \item{id}{Unique ESPN player ID}
+#'   \item{firstName}{First name}
+#'   \item{lastName}{Last name}
+#'   \item{proTeam}{Professional NFL team}
+#'   \item{defaultPositionId}{Position: QB, RB, WR, TE, D/ST}
+#'   \item{jersey}{Jersey number}
+#'   \item{weight}{Weight in integer pounds}
+#'   \item{height}{Height in integer inches}
+#'   \item{age}{Current age in integer year}
+#'   \item{dateOfBirth}{Date of birth}
+#'   \item{debutYear}{Season debuted in league}
+#'   ...
+#' }
+#' @source \url{http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2021/athletes/}
+"nfl_players"
+
 #' 2021 NFL Teams
 #'
 #' The 32 professional NFL teams as of the 2021 season.
