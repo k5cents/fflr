@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.15</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
       </span>
     </div>
 
@@ -95,29 +95,12 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/fantasy-football.html">fantasy-football</a>
-    </li>
-  </ul>
-</li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="https://github.com/kiernann/fflr/">
-    <span class="fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
+        
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -132,7 +115,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Roster moves</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/roster-moves.R'><code>R/roster-moves.R</code></a></small>
+    
     <div class="hidden name"><code>roster_moves.Rd</code></div>
     </div>
 
@@ -140,50 +123,50 @@
     <p>The individual proposed and executed transactions, trades, and waiver moves.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>roster_moves</span><span class='op'>(</span>lid <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"lid"</span><span class='op'>)</span>, old <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>roster_moves</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='ffl_id.html'>ffl_id</a></span><span class='op'>(</span><span class='op'>)</span>, leagueHistory <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>lid</th>
-      <td><p>ESPN League ID, defaults to <code><a href='https://rdrr.io/r/base/options.html'>getOption("lid")</a></code>. Use
-<code>options(lid = &lt;League ID&gt;)</code> to set your league ID; put that line in your
-<code>.Rprofile</code> file to set the option at start up.</p></td>
+      <th>leagueId</th>
+      <td><p>Numeric league ID or ESPN fantasy page URL. Defaults to
+<code><a href='https://rdrr.io/r/base/options.html'>getOption("fflr.leagueId")</a></code>. Function fails if no ID is found.</p></td>
     </tr>
     <tr>
-      <th>old</th>
-      <td><p>If <code>FALSE</code> (default), return only the current season's data. If
-<code>TRUE</code>, return a list with all prior seasons.</p></td>
+      <th>leagueHistory</th>
+      <td><p>logical; Should the <code>leagueHistory</code> version of the API
+be called? If <code>TRUE</code>, a list of results is returned, with one element for
+each historical year of the league.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Additional API query arguments. Use "week" and "year" as a
-shorthand for "ScoringPeriodId" and "seasonId" respectively.</p></td>
+      <td><p>Arguments passed to <code><a href='https://rdrr.io/pkg/jsonlite/man/fromJSON.html'>jsonlite::fromJSON()</a></code> for parsing.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble of transactions and roster moves.</p>
+    <p>A data frame of transactions and roster moves.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>roster_moves</span><span class='op'>(</span>lid <span class='op'>=</span> <span class='fl'>252353</span>, week <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 129 x 14</span><span>
-#&gt;    tx     year  week type    bid status date                 team from_slot
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>              </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>    
-#&gt; </span><span style='color: #555555;'> 1</span><span> 05ae…  </span><span style='text-decoration: underline;'>2</span><span>020     5 ROST…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-10-07 </span><span style='color: #555555;'>15:44:30</span><span>     6 BE       
-#&gt; </span><span style='color: #555555;'> 2</span><span> 0b53…  </span><span style='text-decoration: underline;'>2</span><span>020     5 WAIV…     1 EXECU… 2020-10-11 </span><span style='color: #555555;'>15:00:47</span><span>    10 </span><span style='color: #BB0000;'>NA</span><span>       
-#&gt; </span><span style='color: #555555;'> 3</span><span> 0b53…  </span><span style='text-decoration: underline;'>2</span><span>020     5 WAIV…     1 EXECU… 2020-10-11 </span><span style='color: #555555;'>15:00:47</span><span>    10 </span><span style='color: #BB0000;'>NA</span><span>       
-#&gt; </span><span style='color: #555555;'> 4</span><span> 1054…  </span><span style='text-decoration: underline;'>2</span><span>020     5 WAIV…     1 EXECU… 2020-10-08 </span><span style='color: #555555;'>15:00:26</span><span>     8 </span><span style='color: #BB0000;'>NA</span><span>       
-#&gt; </span><span style='color: #555555;'> 5</span><span> 1054…  </span><span style='text-decoration: underline;'>2</span><span>020     5 WAIV…     1 EXECU… 2020-10-08 </span><span style='color: #555555;'>15:00:26</span><span>     8 </span><span style='color: #BB0000;'>NA</span><span>       
-#&gt; </span><span style='color: #555555;'> 6</span><span> 11e6…  </span><span style='text-decoration: underline;'>2</span><span>020     6 FUTU…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-10-13 </span><span style='color: #555555;'>15:45:00</span><span>     8 BE       
-#&gt; </span><span style='color: #555555;'> 7</span><span> 11e6…  </span><span style='text-decoration: underline;'>2</span><span>020     6 FUTU…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-10-13 </span><span style='color: #555555;'>15:45:00</span><span>     8 RB       
-#&gt; </span><span style='color: #555555;'> 8</span><span> 11e6…  </span><span style='text-decoration: underline;'>2</span><span>020     6 FUTU…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-10-13 </span><span style='color: #555555;'>15:45:00</span><span>     8 BE       
-#&gt; </span><span style='color: #555555;'> 9</span><span> 11e6…  </span><span style='text-decoration: underline;'>2</span><span>020     6 FUTU…    </span><span style='color: #BB0000;'>NA</span><span> EXECU… 2020-10-13 </span><span style='color: #555555;'>15:45:00</span><span>     8 WR       
-#&gt; </span><span style='color: #555555;'>10</span><span> 181b…  </span><span style='text-decoration: underline;'>2</span><span>020     5 WAIV…     1 EXECU… 2020-10-07 </span><span style='color: #555555;'>15:01:36</span><span>     6 </span><span style='color: #BB0000;'>NA</span><span>       
-#&gt; </span><span style='color: #555555;'># … with 119 more rows, and 5 more variables: from_team </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, id </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   to_slot </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span style='color: #555555;'>, to_team </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, move </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span></div></span></pre>
+    <pre class="examples"><div class='input'><span class='fu'>roster_moves</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 66 × 13</span>
+#&gt;    id       seaonId scoringPeriodId bidAmount status  proposedDate        teamId
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;dttm&gt;</span>               <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 1</span> 062292e8    <span style='text-decoration: underline;'>2</span>021               1        <span style='color: #BB0000;'>NA</span> EXECUT… 2021-08-03 <span style='color: #949494;'>15:16:36</span>      4
+#&gt; <span style='color: #BCBCBC;'> 2</span> 079a96a2    <span style='text-decoration: underline;'>2</span>021               1        <span style='color: #BB0000;'>NA</span> EXECUT… 2021-08-03 <span style='color: #949494;'>15:16:36</span>      3
+#&gt; <span style='color: #BCBCBC;'> 3</span> 08e8044a    <span style='text-decoration: underline;'>2</span>021               1        <span style='color: #BB0000;'>NA</span> EXECUT… 2021-08-03 <span style='color: #949494;'>15:16:36</span>      3
+#&gt; <span style='color: #BCBCBC;'> 4</span> 13b7c29a    <span style='text-decoration: underline;'>2</span>021               1        <span style='color: #BB0000;'>NA</span> EXECUT… 2021-08-03 <span style='color: #949494;'>15:16:36</span>      3
+#&gt; <span style='color: #BCBCBC;'> 5</span> 172b6b5f    <span style='text-decoration: underline;'>2</span>021               1        <span style='color: #BB0000;'>NA</span> EXECUT… 2021-08-03 <span style='color: #949494;'>15:16:36</span>      3
+#&gt; <span style='color: #BCBCBC;'> 6</span> 1b53d425    <span style='text-decoration: underline;'>2</span>021               1        <span style='color: #BB0000;'>NA</span> EXECUT… 2021-08-03 <span style='color: #949494;'>15:16:36</span>      4
+#&gt; <span style='color: #BCBCBC;'> 7</span> 20d2e4a1    <span style='text-decoration: underline;'>2</span>021               1        <span style='color: #BB0000;'>NA</span> EXECUT… 2021-08-03 <span style='color: #949494;'>15:16:36</span>      1
+#&gt; <span style='color: #BCBCBC;'> 8</span> 241ffb13    <span style='text-decoration: underline;'>2</span>021               1        <span style='color: #BB0000;'>NA</span> EXECUT… 2021-08-03 <span style='color: #949494;'>15:16:36</span>      2
+#&gt; <span style='color: #BCBCBC;'> 9</span> 2460ef90    <span style='text-decoration: underline;'>2</span>021               1        <span style='color: #BB0000;'>NA</span> EXECUT… 2021-08-03 <span style='color: #949494;'>15:16:36</span>      4
+#&gt; <span style='color: #BCBCBC;'>10</span> 252e3cc0    <span style='text-decoration: underline;'>2</span>021               1        <span style='color: #BB0000;'>NA</span> EXECUT… 2021-08-03 <span style='color: #949494;'>15:16:36</span>      4
+#&gt; <span style='color: #949494;'># … with 56 more rows, and 6 more variables: fromLineupSlotId &lt;fct&gt;,</span>
+#&gt; <span style='color: #949494;'>#   fromTeamId &lt;int&gt;, playerId &lt;int&gt;, toLineupSlotId &lt;fct&gt;, toTeamId &lt;int&gt;,</span>
+#&gt; <span style='color: #949494;'>#   type &lt;chr&gt;</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
