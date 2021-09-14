@@ -3,7 +3,6 @@
 #' All available weekly ESPN outlook writeups for NFL players.
 #'
 #' @inheritParams ffl_id
-#' @param scoringPeriodId A scoring period to return, defaults to [ffl_week()].
 #' @param limit The limit of players to return. Use `""` or `NULL` to return
 #'   all. Defaults to 50, which is the default limit used by ESPN. Removing the
 #'   limit can make the request take a long time.

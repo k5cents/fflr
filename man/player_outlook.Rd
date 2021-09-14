@@ -13,8 +13,6 @@ player_outlook(leagueId = ffl_id(), limit = 50)
 \item{limit}{The limit of players to return. Use \code{""} or \code{NULL} to return
 all. Defaults to 50, which is the default limit used by ESPN. Removing the
 limit can make the request take a long time.}
-
-\item{scoringPeriodId}{A scoring period to return, defaults to \code{\link[=ffl_week]{ffl_week()}}.}
 }
 \value{
 A data frame of player outlooks by scoring period.
