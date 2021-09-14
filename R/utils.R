@@ -33,3 +33,13 @@ pos_abbrev <- function(pos) {
 pro_abbrev <- function(proTeamId) {
   fflr::nfl_teams$abbrev[match(proTeamId, fflr::nfl_teams$team)]
 }
+
+list_ifnot <- function(x) {
+  if (!is.list(x)) {
+    list(x)
+  } else if (is.data.frame(x)) {
+    list(x)
+  } else {
+    x
+  }
+}

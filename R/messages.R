@@ -82,11 +82,3 @@ out_msg_type <- function(l) {
     view_by = list_ifnot(l$viewableBy)
   )
 }
-
-list_ifnot <- function(x) {
-  if (!is.list(x)) {
-    list(x)
-  } else {
-    return(x)
-  }
-}
