@@ -77,8 +77,8 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>The fflr package is used to query the <a href="https://fantasy.espn.com/apis/v3/games/ffl/">ESPN Fantasy Football API</a> for both the current and prior seasons. Get data on fantasy league members, teams, and individual athletes.</p>
-<p>This package was designed and tested for a standard 10-team league. Most functions should for other leagues, but contributions are welcome.</p>
+<p>The fflr package is used to query the <a href="https://fantasy.espn.com/apis/v3/games/ffl/">ESPN Fantasy Football API</a>. Get data on fantasy football league members, teams, and individual athletes.</p>
+<p>This package has been tested with a narrow subset of possible league settings. If a function doesn’t work as intended, please file an <a href="https://github.com/kiernann/fflr/issues">issue on GitHub</a>.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -90,7 +90,68 @@
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
-<p>starting at version 0.4.0, the bulk of this package has been removed and is under active development from the ground up. Some functionality in versions prior to 0.4.0 may still work, but much of the package was developed and tested to only work during the 2020 NFL season and thus has broken over time. Efforts are being made to develop future versions of fflr to better adapt over time.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">fflr</span><span class="op">)</span></code></pre></div>
+<p>League information is only available for public leagues. See the ESPN <a href="https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public">help documentation</a> on how to make a private league viewable to the public.</p>
+<p>Functions require a unique <code>leagueId</code>, which can be found on any ESPN page URL.</p>
+<p>A default league ID can be set and retrieved with the <code>fflr.leagueId</code> option using <code><a href="reference/ffl_id.html">ffl_id()</a></code>.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/ffl_id.html">ffl_id</a></span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span><span class="op">)</span>
+<span class="co">#&gt; Temporarily set `fflr.leagueId` option to 42654852</span>
+<span class="co">#&gt; [1] "42654852"</span></code></pre></div>
+<p>The <code>leagueId</code> argument defaults to <code><a href="reference/ffl_id.html">ffl_id()</a></code> and can be omitted once set.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/league_info.html">league_info</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; # A tibble: 1 × 6</span>
+<span class="co">#&gt;         id seasonId name             isPublic  size finalScoringPeriod</span>
+<span class="co">#&gt;      &lt;int&gt;    &lt;int&gt; &lt;chr&gt;            &lt;lgl&gt;    &lt;int&gt;              &lt;int&gt;</span>
+<span class="co">#&gt; 1 42654852     2021 FFLR Test League TRUE         4                 14</span>
+<span class="fu"><a href="reference/league_teams.html">league_teams</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; # A tibble: 4 × 5</span>
+<span class="co">#&gt;   abbrev    id location nickname   owners   </span>
+<span class="co">#&gt;   &lt;fct&gt;  &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;      &lt;list&gt;   </span>
+<span class="co">#&gt; 1 AUS        1 Austin   Astronauts &lt;chr [1]&gt;</span>
+<span class="co">#&gt; 2 BOS        2 Boston   Birds      &lt;chr [1]&gt;</span>
+<span class="co">#&gt; 3 CHI        3 Chicago  Crowns     &lt;chr [1]&gt;</span>
+<span class="co">#&gt; 4 DEN        4 Denver   Devils     &lt;chr [1]&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/team_roster.html">team_roster</a></span><span class="op">(</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span>, <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, <span class="fl">5</span>, <span class="fl">13</span><span class="op">:</span><span class="fl">15</span><span class="op">)</span><span class="op">]</span>
+<span class="co">#&gt; # A tibble: 16 × 8</span>
+<span class="co">#&gt;    lineupSlotId firstName  lastName    proTeam PositionId injuryStatus projectedScore actualScore</span>
+<span class="co">#&gt;    &lt;fct&gt;        &lt;chr&gt;      &lt;chr&gt;       &lt;fct&gt;   &lt;fct&gt;      &lt;chr&gt;                 &lt;dbl&gt;       &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 QB           Patrick    Mahomes     KC      QB         A                     22.2         33.3</span>
+<span class="co">#&gt;  2 RB           Christian  McCaffrey   Car     RB         A                     21.3         27.7</span>
+<span class="co">#&gt;  3 RB           Jonathan   Taylor      Ind     RB         A                     15.6         17.6</span>
+<span class="co">#&gt;  4 WR           Davante    Adams       GB      WR         A                     19.9         10.6</span>
+<span class="co">#&gt;  5 WR           Calvin     Ridley      Atl     WR         A                     16.0         10.1</span>
+<span class="co">#&gt;  6 TE           Mark       Andrews     Bal     TE         A                     12.2          5  </span>
+<span class="co">#&gt;  7 FX           Antonio    Gibson      Wsh     RB         Q                     16.0         11.8</span>
+<span class="co">#&gt;  8 DS           Buccaneers D/ST        TB      DS         A                      4.51        -3  </span>
+<span class="co">#&gt;  9 PK           Jason      Myers       Sea     PK         A                      8.04         4  </span>
+<span class="co">#&gt; 10 BE           D'Andre    Swift       Det     RB         A                     13.5         24.4</span>
+<span class="co">#&gt; 11 BE           Miles      Sanders     Phi     RB         A                     14.3         17.3</span>
+<span class="co">#&gt; 12 BE           Chris      Carson      Sea     RB         A                     12.8         12.7</span>
+<span class="co">#&gt; 13 BE           Allen      Robinson II Chi     WR         A                     14.6          9.5</span>
+<span class="co">#&gt; 14 BE           Adam       Thielen     Min     WR         A                     14.4         30.2</span>
+<span class="co">#&gt; 15 BE           Diontae    Johnson     Pit     WR         A                     13.4         14.6</span>
+<span class="co">#&gt; 16 BE           Courtland  Sutton      Den     WR         A                     11.9          2.4</span></code></pre></div>
+<p>There are included objects for NFL teams and players.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">nfl_players</span><span class="op">[</span>, <span class="op">-</span><span class="fl">1</span><span class="op">]</span>
+<span class="co">#&gt; # A tibble: 1,063 × 10</span>
+<span class="co">#&gt;    firstName lastName  proTeam defaultPositionId jersey weight height   age dateOfBirth debutYear</span>
+<span class="co">#&gt;    &lt;chr&gt;     &lt;chr&gt;     &lt;fct&gt;   &lt;fct&gt;             &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;int&gt; &lt;date&gt;          &lt;int&gt;</span>
+<span class="co">#&gt;  1 Christian McCaffrey Car     RB                22        205     71    25 1996-06-07       2017</span>
+<span class="co">#&gt;  2 Dalvin    Cook      Min     RB                33        210     70    26 1995-08-10       2017</span>
+<span class="co">#&gt;  3 Davante   Adams     GB      WR                17        215     73    28 1992-12-24       2014</span>
+<span class="co">#&gt;  4 Derrick   Henry     Ten     RB                22        247     75    27 1994-01-04       2016</span>
+<span class="co">#&gt;  5 Travis    Kelce     KC      TE                87        260     77    31 1989-10-05       2013</span>
+<span class="co">#&gt;  6 Alvin     Kamara    NO      RB                41        215     70    26 1995-07-25       2017</span>
+<span class="co">#&gt;  7 Tyreek    Hill      KC      WR                10        185     70    27 1994-03-01       2016</span>
+<span class="co">#&gt;  8 Stefon    Diggs     Buf     WR                14        191     72    27 1993-11-29       2015</span>
+<span class="co">#&gt;  9 Patrick   Mahomes   KC      QB                15        230     75    25 1995-09-17       2017</span>
+<span class="co">#&gt; 10 DK        Metcalf   Sea     WR                14        235     76    23 1997-12-14       2019</span>
+<span class="co">#&gt; # … with 1,053 more rows</span></code></pre></div>
 <hr>
 <p>The fflr project is released with a <a href="https://kiernann.com/fflr/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing, you agree to abide by its terms.</p>
 <!-- refs: start -->
