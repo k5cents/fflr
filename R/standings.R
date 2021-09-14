@@ -83,7 +83,7 @@ league_simulation <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
     out <- parse_sim(
       teams = dat$teams,
       y = dat$seasonId,
-      w = dat$scoringPeriodId
+      w = dat$settings$scheduleSettings$matchupPeriodCount
     )
   }
   return(out)
@@ -92,7 +92,7 @@ league_simulation <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
 parse_sim <- function(teams, y = NULL, w = NULL) {
   tibble::tibble(
     seasonId = y,
-    scoringPeriodId = dat$settings$scheduleSettings$matchupPeriodCount,
+    scoringPeriodId = w,
     teamId = teams$id,
     abbrev = factor(teams$abbrev, levels = teams$abbrev),
     draftDayProjectedRank = teams$draftDayProjectedRank,
