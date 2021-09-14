@@ -47,3 +47,8 @@ list_ifnot <- function(x) {
     x
   }
 }
+
+ffl_merge <- function(x, y, ...) {
+  out <- merge(x, y, sort = FALSE, ...)[, union(names(x), names(y))]
+  as_tibble(out)
+}
