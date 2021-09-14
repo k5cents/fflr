@@ -13,7 +13,9 @@
 #' @param seasonId Integer year of NFL season. By default, the season is
 #'   currently set to 2021. Use a recent year or set `leagueHistory` to `TRUE`
 #'   to obtain all past data.
-#' @param ... Arguments passed to [jsonlite::fromJSON()] for parsing.
+#' @param ... Additional queries passed to [httr::GET()]
+#'   (e.g., `scoringPeriodId`). Arguments are converted to a named list to be
+#'   passed alongside `view`.
 #' @examples
 #' \dontrun{
 #' ffl_api()
@@ -26,6 +28,7 @@
 #' @export
 ffl_api <- function(leagueId = ffl_id(), view = NULL, leagueHistory = FALSE,
                     seasonId = 2021, ...) {
+  dots <- list(...)
   age_path <- ifelse(
     test = isTRUE(leagueHistory),
     yes = "leagueHistory",
@@ -36,12 +39,15 @@ ffl_api <- function(leagueId = ffl_id(), view = NULL, leagueHistory = FALSE,
   try_json(
     url = "https://fantasy.espn.com",
     path = paste("apis/v3/games/ffl", age_path, leagueId, sep = "/"),
-    query = view,
-    ...
+    query = if (!is.null(names(dots))) {
+      c(view, dots)
+    } else {
+      view
+    }
   )
 }
 
-try_json <- function(url, path = "", query = NULL, ...) {
+try_json <- function(url, path = "", query = NULL) {
   resp <- httr::RETRY(
     verb = "GET",
     url = ifelse(
@@ -58,7 +64,7 @@ try_json <- function(url, path = "", query = NULL, ...) {
     stop("API did not return JSON", call. = FALSE)
   }
   raw <- httr::content(resp, as = "text", encoding = "UTF-8")
-  parsed <- jsonlite::fromJSON(raw, ...)
+  parsed <- jsonlite::fromJSON(raw)
   if (httr::http_error(resp) && "message" %in% names(parsed)) {
     stop(
       sprintf(

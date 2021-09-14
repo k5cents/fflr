@@ -14,7 +14,9 @@ roster_moves(leagueId = ffl_id(), leagueHistory = FALSE, ...)
 be called? If \code{TRUE}, a list of results is returned, with one element for
 each historical year of the league.}
 
-\item{...}{Arguments passed to \code{\link[jsonlite:fromJSON]{jsonlite::fromJSON()}} for parsing.}
+\item{...}{Additional queries passed to \code{\link[httr:GET]{httr::GET()}}
+(e.g., \code{scoringPeriodId}). Arguments are converted to a named list to be
+passed alongside \code{view}.}
 }
 \value{
 A data frame of transactions and roster moves.
@@ -23,5 +25,5 @@ A data frame of transactions and roster moves.
 The individual proposed and executed transactions, trades, and waiver moves.
 }
 \examples{
-roster_moves(leagueId = "42654852")
+roster_moves(leagueId = "42654852", scoringPeriodId = 1)
 }

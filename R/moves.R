@@ -5,7 +5,7 @@
 #' @inheritParams ffl_api
 #' @return A data frame of transactions and roster moves.
 #' @examples
-#' roster_moves(leagueId = "42654852")
+#' roster_moves(leagueId = "42654852", scoringPeriodId = 1)
 #' @export
 roster_moves <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   dat <- ffl_api(
@@ -16,13 +16,13 @@ roster_moves <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   )
   if (leagueHistory) {
     stop("not currently supported for past seasons")
+  } else if (is.null(dat$transactions)) {
+    message("no roster moves for current period")
+    return(data.frame())
   } else {
-    t <- as_tibble(dat$transactions)
+    t <- dat$transactions
     for (i in seq_along(t$items)) {
-      if (!is.null(t$items[[i]])) {
-        if (is.matrix(t$items[[i]])) {
-
-        }
+      if (!is.null(t$items[[i]]) & length(t$items[[i]]) > 0) {
         t$items[[i]] <- cbind(id = t$id[i], t$items[[i]])
       }
     }

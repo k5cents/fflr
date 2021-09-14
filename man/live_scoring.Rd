@@ -13,7 +13,9 @@ live_scoring(leagueId = ffl_id(), yetToPlay = FALSE, ...)
 \item{yetToPlay}{If \code{TRUE}, \code{\link[=pro_schedule]{pro_schedule()}} and the "mRoster" view are
 called to determine how many starting players have \emph{yet} started playing.}
 
-\item{...}{Arguments passed to \code{\link[jsonlite:fromJSON]{jsonlite::fromJSON()}} for parsing.}
+\item{...}{Additional queries passed to \code{\link[httr:GET]{httr::GET()}}
+(e.g., \code{scoringPeriodId}). Arguments are converted to a named list to be
+passed alongside \code{view}.}
 }
 \value{
 A data frame of scores by period.

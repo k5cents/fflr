@@ -18,7 +18,9 @@ to obtain all past data.}
 be called? If \code{TRUE}, a list of results is returned, with one element for
 each historical year of the league.}
 
-\item{...}{Arguments passed to \code{\link[jsonlite:fromJSON]{jsonlite::fromJSON()}} for parsing.}
+\item{...}{Additional queries passed to \code{\link[httr:GET]{httr::GET()}}
+(e.g., \code{scoringPeriodId}). Arguments are converted to a named list to be
+passed alongside \code{view}.}
 }
 \value{
 A dataframe (or list) with league teams.
