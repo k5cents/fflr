@@ -1,5 +1,9 @@
 ffl_date <- function(date) {
-  as.POSIXct(date/1000, origin = "1970-01-01")
+  if (is.null(date)) {
+    as.POSIXct(NA_real_)
+  } else {
+    as.POSIXct(date/1000, origin = "1970-01-01")
+  }
 }
 
 as_tibble <- function(x) {
