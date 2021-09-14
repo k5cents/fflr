@@ -1,6 +1,6 @@
 Package: fflr
 Title: Collect ESPN Fantasy Football Data
-Version: 0.4.0
+Version: 0.5.0
 Authors@R: 
     person(given = "Kiernan",
            family = "Nicholls",
@@ -10,16 +10,17 @@ Description: Format the raw data from the ESPN fantasy football API
     <https://fantasy.espn.com/apis/v3/games/ffl/> into tidy tables.
     Scrape data on public leagues, rosters, athletes, and matches.
 License: MIT + file LICENSE
+Depends: 
+    R (>= 2.10)
 Imports: 
     httr (>= 1.4.2),
     jsonlite (>= 1.7.2),
     tibble (>= 3.1.3)
 Suggests: 
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    xml2 (>= 1.3.2)
 Config/testthat/edition: 3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-Depends: 
-    R (>= 2.10)

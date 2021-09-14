@@ -4,7 +4,7 @@ test_that("All current team rosters as list", {
   expect_length(r, 4)
   expect_s3_class(r[[1]], "data.frame")
   expect_length(r[[1]], 15)
-  expect_s3_class(r[[1]]$slot, "factor")
+  expect_s3_class(r[[1]]$lineupSlotId, "factor")
 })
 
 test_that("All final period team rosters as list of list", {
