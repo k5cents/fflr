@@ -44,7 +44,11 @@ ffl_api <- function(leagueId = ffl_id(), view = NULL, leagueHistory = FALSE,
 try_json <- function(url, path = "", query = NULL, ...) {
   resp <- httr::RETRY(
     verb = "GET",
-    url = paste(url, paste(path, collapse = "/"), sep = "/"),
+    url = ifelse(
+      test = is.null(path) | !nzchar(path),
+      yes = url,
+      paste(url, paste(path, collapse = "/"), sep = "/")
+    ),
     query = query,
     httr::accept_json(),
     httr::user_agent("https://github.com/kiernann/fflr/"),
