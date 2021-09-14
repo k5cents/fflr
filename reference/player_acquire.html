@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.15</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0</span>
       </span>
     </div>
 
@@ -95,29 +95,12 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/fantasy-football.html">fantasy-football</a>
-    </li>
-  </ul>
-</li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="https://github.com/kiernann/fflr/">
-    <span class="fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
+        
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -132,7 +115,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Roster acquisition history</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/player-acquire.R'><code>R/player-acquire.R</code></a></small>
+    
     <div class="hidden name"><code>player_acquire.Rd</code></div>
     </div>
 
@@ -140,211 +123,126 @@
     <p>The date and method of each player's acquisition onto a fantasy roster.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>player_acquire</span><span class='op'>(</span>lid <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"lid"</span><span class='op'>)</span>, old <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>player_acquire</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='ffl_id.html'>ffl_id</a></span><span class='op'>(</span><span class='op'>)</span>, leagueHistory <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>lid</th>
-      <td><p>ESPN League ID, defaults to <code><a href='https://rdrr.io/r/base/options.html'>getOption("lid")</a></code>. Use
-<code>options(lid = &lt;League ID&gt;)</code> to set your league ID; put that line in your
-<code>.Rprofile</code> file to set the option at start up.</p></td>
+      <th>leagueId</th>
+      <td><p>Numeric league ID or ESPN fantasy page URL. Defaults to
+<code><a href='https://rdrr.io/r/base/options.html'>getOption("fflr.leagueId")</a></code>. Function fails if no ID is found.</p></td>
     </tr>
     <tr>
-      <th>old</th>
-      <td><p>If <code>FALSE</code> (default), return only the current season's data. If
-<code>TRUE</code>, return a list with all prior seasons.</p></td>
+      <th>leagueHistory</th>
+      <td><p>logical; Should the <code>leagueHistory</code> version of the API
+be called? If <code>TRUE</code>, a list of results is returned, with one element for
+each historical year of the league.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Additional API query arguments. Use "week" and "year" as a
-shorthand for "ScoringPeriodId" and "seasonId" respectively.</p></td>
+      <td><p>Arguments passed to <code><a href='https://rdrr.io/pkg/jsonlite/man/fromJSON.html'>jsonlite::fromJSON()</a></code> for parsing.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble (or list) of players on a roster.</p>
+    <p>A data frame of roster players with acquisition method and date.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>player_acquire</span><span class='op'>(</span>lid <span class='op'>=</span> <span class='fl'>252353</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $AGUS
-#&gt; <span style='color: #555555;'># A tibble: 16 x 11</span><span>
-#&gt;     year  week team  slot       id first last  pro   pos   method
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> 
-#&gt; </span><span style='color: #555555;'> 1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 AGUS  QB    3</span><span style='text-decoration: underline;'>139</span><span>477 Patr… Maho… KC    QB    DRAFT 
-#&gt; </span><span style='color: #555555;'> 2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 AGUS  RB    4</span><span style='text-decoration: underline;'>045</span><span>163 Miles Sand… Phi   RB    DRAFT 
-#&gt; </span><span style='color: #555555;'> 3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 AGUS  RB    3</span><span style='text-decoration: underline;'>042</span><span>519 Aaron Jones GB    RB    DRAFT 
-#&gt; </span><span style='color: #555555;'> 4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 AGUS  WR    3</span><span style='text-decoration: underline;'>925</span><span>357 Calv… Ridl… Atl   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'> 5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 AGUS  WR    4</span><span style='text-decoration: underline;'>046</span><span>692 Chase Clay… Pit   WR    ADD   
-#&gt; </span><span style='color: #555555;'> 6</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 AGUS  TE    4</span><span style='text-decoration: underline;'>036</span><span>133 T.J.  Hock… Det   TE    ADD   
-#&gt; </span><span style='color: #555555;'> 7</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 AGUS  FX    2</span><span style='text-decoration: underline;'>576</span><span>434 Melv… Gord… Den   RB    DRAFT 
-#&gt; </span><span style='color: #555555;'> 8</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 AGUS  DS     -</span><span style='color: #BB0000;text-decoration: underline;'>16</span><span style='color: #BB0000;'>028</span><span> Wash… D/ST  Wsh   DS    ADD   
-#&gt; </span><span style='color: #555555;'> 9</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 AGUS  PK    3</span><span style='text-decoration: underline;'>915</span><span>165 Rodr… Blan… Ind   PK    ADD   
-#&gt; </span><span style='color: #555555;'>10</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 AGUS  BE       </span><span style='text-decoration: underline;'>2</span><span>330 Tom   Brady TB    QB    DRAFT 
-#&gt; </span><span style='color: #555555;'>11</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 AGUS  BE    3</span><span style='text-decoration: underline;'>045</span><span>147 James Conn… Pit   RB    DRAFT 
-#&gt; </span><span style='color: #555555;'>12</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 AGUS  BE    2</span><span style='text-decoration: underline;'>976</span><span>316 Mich… Thom… NO    WR    DRAFT 
-#&gt; </span><span style='color: #555555;'>13</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 AGUS  BE    2</span><span style='text-decoration: underline;'>577</span><span>327 Tyler Lock… Sea   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'>14</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 AGUS  BE    3</span><span style='text-decoration: underline;'>054</span><span>212 Jonnu Smith Ten   TE    ADD   
-#&gt; </span><span style='color: #555555;'>15</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 AGUS  BE    3</span><span style='text-decoration: underline;'>916</span><span>945 Dari… Slay… NYG   WR    ADD   
-#&gt; </span><span style='color: #555555;'>16</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 AGUS  BE      </span><span style='text-decoration: underline;'>15</span><span>920 Lata… Murr… NO    RB    ADD   
-#&gt; </span><span style='color: #555555;'># … with 1 more variable: date </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>
+    <pre class="examples"><div class='input'><span class='fu'>player_acquire</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; $AUS
+#&gt; <span style='color: #949494;'># A tibble: 16 × 11</span>
+#&gt;    seasonId scoringPeriodId onTeamId lineupSlotId      id firstName  lastName   
+#&gt;       <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>          <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      
+#&gt; <span style='color: #BCBCBC;'> 1</span>     <span style='text-decoration: underline;'>2</span>021               1 AUS      QB           3<span style='text-decoration: underline;'>139</span>477 Patrick    Mahomes    
+#&gt; <span style='color: #BCBCBC;'> 2</span>     <span style='text-decoration: underline;'>2</span>021               1 AUS      RB           3<span style='text-decoration: underline;'>117</span>251 Christian  McCaffrey  
+#&gt; <span style='color: #BCBCBC;'> 3</span>     <span style='text-decoration: underline;'>2</span>021               1 AUS      RB           4<span style='text-decoration: underline;'>242</span>335 Jonathan   Taylor     
+#&gt; <span style='color: #BCBCBC;'> 4</span>     <span style='text-decoration: underline;'>2</span>021               1 AUS      WR             <span style='text-decoration: underline;'>16</span>800 Davante    Adams      
+#&gt; <span style='color: #BCBCBC;'> 5</span>     <span style='text-decoration: underline;'>2</span>021               1 AUS      WR           3<span style='text-decoration: underline;'>925</span>357 Calvin     Ridley     
+#&gt; <span style='color: #BCBCBC;'> 6</span>     <span style='text-decoration: underline;'>2</span>021               1 AUS      TE           3<span style='text-decoration: underline;'>116</span>365 Mark       Andrews    
+#&gt; <span style='color: #BCBCBC;'> 7</span>     <span style='text-decoration: underline;'>2</span>021               1 AUS      FX           4<span style='text-decoration: underline;'>360</span>294 Antonio    Gibson     
+#&gt; <span style='color: #BCBCBC;'> 8</span>     <span style='text-decoration: underline;'>2</span>021               1 AUS      DS            -<span style='color: #BB0000; text-decoration: underline;'>16</span><span style='color: #BB0000;'>027</span> Buccaneers D/ST       
+#&gt; <span style='color: #BCBCBC;'> 9</span>     <span style='text-decoration: underline;'>2</span>021               1 AUS      PK           2<span style='text-decoration: underline;'>473</span>037 Jason      Myers      
+#&gt; <span style='color: #BCBCBC;'>10</span>     <span style='text-decoration: underline;'>2</span>021               1 AUS      BE           4<span style='text-decoration: underline;'>259</span>545 D'Andre    Swift      
+#&gt; <span style='color: #BCBCBC;'>11</span>     <span style='text-decoration: underline;'>2</span>021               1 AUS      BE           4<span style='text-decoration: underline;'>045</span>163 Miles      Sanders    
+#&gt; <span style='color: #BCBCBC;'>12</span>     <span style='text-decoration: underline;'>2</span>021               1 AUS      BE           3<span style='text-decoration: underline;'>919</span>596 Chris      Carson     
+#&gt; <span style='color: #BCBCBC;'>13</span>     <span style='text-decoration: underline;'>2</span>021               1 AUS      BE             <span style='text-decoration: underline;'>16</span>799 Allen      Robinson II
+#&gt; <span style='color: #BCBCBC;'>14</span>     <span style='text-decoration: underline;'>2</span>021               1 AUS      BE             <span style='text-decoration: underline;'>16</span>460 Adam       Thielen    
+#&gt; <span style='color: #BCBCBC;'>15</span>     <span style='text-decoration: underline;'>2</span>021               1 AUS      BE           3<span style='text-decoration: underline;'>932</span>905 Diontae    Johnson    
+#&gt; <span style='color: #BCBCBC;'>16</span>     <span style='text-decoration: underline;'>2</span>021               1 AUS      BE           3<span style='text-decoration: underline;'>128</span>429 Courtland  Sutton     
+#&gt; <span style='color: #949494;'># … with 4 more variables: proTeamId &lt;fct&gt;, defaultPositionId &lt;fct&gt;,</span>
+#&gt; <span style='color: #949494;'>#   acquisitionType &lt;chr&gt;, acquisitionDate &lt;dttm&gt;</span>
 #&gt; 
-#&gt; $PEPE
-#&gt; </span><span style='color: #555555;'># A tibble: 16 x 11</span><span>
-#&gt;     year  week team  slot       id first last  pro   pos   method
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> 
-#&gt; </span><span style='color: #555555;'> 1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 PEPE  QB    3</span><span style='text-decoration: underline;'>917</span><span>315 Kyler Murr… Ari   QB    DRAFT 
-#&gt; </span><span style='color: #555555;'> 2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 PEPE  RB    3</span><span style='text-decoration: underline;'>068</span><span>267 Aust… Ekel… LAC   RB    DRAFT 
-#&gt; </span><span style='color: #555555;'> 3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 PEPE  RB    3</span><span style='text-decoration: underline;'>919</span><span>596 Chris Cars… Sea   RB    DRAFT 
-#&gt; </span><span style='color: #555555;'> 4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 PEPE  WR    2</span><span style='text-decoration: underline;'>976</span><span>212 Stef… Diggs Buf   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'> 5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 PEPE  WR    4</span><span style='text-decoration: underline;'>262</span><span>921 Just… Jeff… Min   WR    ADD   
-#&gt; </span><span style='color: #555555;'> 6</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 PEPE  TE    3</span><span style='text-decoration: underline;'>121</span><span>023 Dall… Goed… Phi   TE    ADD   
-#&gt; </span><span style='color: #555555;'> 7</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 PEPE  FX    4</span><span style='text-decoration: underline;'>259</span><span>545 D'An… Swift Det   RB    ADD   
-#&gt; </span><span style='color: #555555;'> 8</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 PEPE  DS     -</span><span style='color: #BB0000;text-decoration: underline;'>16</span><span style='color: #BB0000;'>022</span><span> Card… D/ST  Ari   DS    ADD   
-#&gt; </span><span style='color: #555555;'> 9</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 PEPE  PK    3</span><span style='text-decoration: underline;'>124</span><span>679 Jason Sand… Mia   PK    ADD   
-#&gt; </span><span style='color: #555555;'>10</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 PEPE  BE    3</span><span style='text-decoration: underline;'>120</span><span>348 JuJu  Smit… Pit   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'>11</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 PEPE  BE      </span><span style='text-decoration: underline;'>15</span><span>880 Robe… Woods LAR   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'>12</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 PEPE  BE    4</span><span style='text-decoration: underline;'>242</span><span>214 Clyde Edwa… KC    RB    DRAFT 
-#&gt; </span><span style='color: #555555;'>13</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 PEPE  BE    3</span><span style='text-decoration: underline;'>116</span><span>165 Chris Godw… TB    WR    DRAFT 
-#&gt; </span><span style='color: #555555;'>14</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 PEPE  BE    3</span><span style='text-decoration: underline;'>045</span><span>144 Tyler Boyd  Cin   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'>15</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 PEPE  BE    2</span><span style='text-decoration: underline;'>468</span><span>609 Tays… Hill  NO    QB    ADD   
-#&gt; </span><span style='color: #555555;'>16</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 PEPE  BE     -</span><span style='color: #BB0000;text-decoration: underline;'>16</span><span style='color: #BB0000;'>014</span><span> Rams  D/ST  LAR   DS    ADD   
-#&gt; </span><span style='color: #555555;'># … with 1 more variable: date </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>
+#&gt; $BOS
+#&gt; <span style='color: #949494;'># A tibble: 16 × 11</span>
+#&gt;    seasonId scoringPeriodId onTeamId lineupSlotId      id firstName lastName    
+#&gt;       <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>          <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       
+#&gt; <span style='color: #BCBCBC;'> 1</span>     <span style='text-decoration: underline;'>2</span>021               1 BOS      QB           2<span style='text-decoration: underline;'>577</span>417 Dak       Prescott    
+#&gt; <span style='color: #BCBCBC;'> 2</span>     <span style='text-decoration: underline;'>2</span>021               1 BOS      RB           3<span style='text-decoration: underline;'>116</span>593 Dalvin    Cook        
+#&gt; <span style='color: #BCBCBC;'> 3</span>     <span style='text-decoration: underline;'>2</span>021               1 BOS      RB           3<span style='text-decoration: underline;'>051</span>392 Ezekiel   Elliott     
+#&gt; <span style='color: #BCBCBC;'> 4</span>     <span style='text-decoration: underline;'>2</span>021               1 BOS      WR           3<span style='text-decoration: underline;'>116</span>406 Tyreek    Hill        
+#&gt; <span style='color: #BCBCBC;'> 5</span>     <span style='text-decoration: underline;'>2</span>021               1 BOS      WR           4<span style='text-decoration: underline;'>047</span>650 DK        Metcalf     
+#&gt; <span style='color: #BCBCBC;'> 6</span>     <span style='text-decoration: underline;'>2</span>021               1 BOS      TE           3<span style='text-decoration: underline;'>040</span>151 George    Kittle      
+#&gt; <span style='color: #BCBCBC;'> 7</span>     <span style='text-decoration: underline;'>2</span>021               1 BOS      FX           3<span style='text-decoration: underline;'>128</span>720 Nick      Chubb       
+#&gt; <span style='color: #BCBCBC;'> 8</span>     <span style='text-decoration: underline;'>2</span>021               1 BOS      DS            -<span style='color: #BB0000; text-decoration: underline;'>16</span><span style='color: #BB0000;'>023</span> Steelers  D/ST        
+#&gt; <span style='color: #BCBCBC;'> 9</span>     <span style='text-decoration: underline;'>2</span>021               1 BOS      PK             <span style='text-decoration: underline;'>16</span>339 Brandon   McManus     
+#&gt; <span style='color: #BCBCBC;'>10</span>     <span style='text-decoration: underline;'>2</span>021               1 BOS      BE           4<span style='text-decoration: underline;'>242</span>214 Clyde     Edwards-Hel…
+#&gt; <span style='color: #BCBCBC;'>11</span>     <span style='text-decoration: underline;'>2</span>021               1 BOS      BE           3<span style='text-decoration: underline;'>121</span>422 Terry     McLaurin    
+#&gt; <span style='color: #BCBCBC;'>12</span>     <span style='text-decoration: underline;'>2</span>021               1 BOS      BE           2<span style='text-decoration: underline;'>976</span>499 Amari     Cooper      
+#&gt; <span style='color: #BCBCBC;'>13</span>     <span style='text-decoration: underline;'>2</span>021               1 BOS      BE           4<span style='text-decoration: underline;'>039</span>359 Darrell   Henderson J…
+#&gt; <span style='color: #BCBCBC;'>14</span>     <span style='text-decoration: underline;'>2</span>021               1 BOS      BE             <span style='text-decoration: underline;'>13</span>982 Julio     Jones       
+#&gt; <span style='color: #BCBCBC;'>15</span>     <span style='text-decoration: underline;'>2</span>021               1 BOS      BE           2<span style='text-decoration: underline;'>977</span>187 Cooper    Kupp        
+#&gt; <span style='color: #BCBCBC;'>16</span>     <span style='text-decoration: underline;'>2</span>021               1 BOS      BE           2<span style='text-decoration: underline;'>974</span>858 Kenny     Golladay    
+#&gt; <span style='color: #949494;'># … with 4 more variables: proTeamId &lt;fct&gt;, defaultPositionId &lt;fct&gt;,</span>
+#&gt; <span style='color: #949494;'>#   acquisitionType &lt;chr&gt;, acquisitionDate &lt;dttm&gt;</span>
 #&gt; 
-#&gt; $BILL
-#&gt; </span><span style='color: #555555;'># A tibble: 16 x 11</span><span>
-#&gt;     year  week team  slot       id first last  pro   pos   method
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> 
-#&gt; </span><span style='color: #555555;'> 1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 BILL  QB      </span><span style='text-decoration: underline;'>14</span><span>881 Russ… Wils… Sea   QB    DRAFT 
-#&gt; </span><span style='color: #555555;'> 2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 BILL  RB    3</span><span style='text-decoration: underline;'>116</span><span>593 Dalv… Cook  Min   RB    DRAFT 
-#&gt; </span><span style='color: #555555;'> 3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 BILL  RB    4</span><span style='text-decoration: underline;'>360</span><span>294 Anto… Gibs… Wsh   RB    DRAFT 
-#&gt; </span><span style='color: #555555;'> 4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 BILL  WR      </span><span style='text-decoration: underline;'>16</span><span>799 Allen Robi… Chi   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'> 5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 BILL  WR    4</span><span style='text-decoration: underline;'>047</span><span>650 DK    Metc… Sea   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'> 6</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 BILL  TE      </span><span style='text-decoration: underline;'>13</span><span>229 Rob   Gron… TB    TE    ADD   
-#&gt; </span><span style='color: #555555;'> 7</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 BILL  FX    3</span><span style='text-decoration: underline;'>915</span><span>416 DJ    Moore Car   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'> 8</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 BILL  DS     -</span><span style='color: #BB0000;text-decoration: underline;'>16</span><span style='color: #BB0000;'>015</span><span> Dolp… D/ST  Mia   DS    ADD   
-#&gt; </span><span style='color: #555555;'> 9</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 BILL  PK    3</span><span style='text-decoration: underline;'>049</span><span>899 Youn… Koo   Atl   PK    ADD   
-#&gt; </span><span style='color: #555555;'>10</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 BILL  BE    2</span><span style='text-decoration: underline;'>576</span><span>414 Rahe… Most… SF    RB    DRAFT 
-#&gt; </span><span style='color: #555555;'>11</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 BILL  BE    3</span><span style='text-decoration: underline;'>121</span><span>422 Terry McLa… Wsh   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'>12</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 BILL  BE    4</span><span style='text-decoration: underline;'>036</span><span>131 Noah  Fant  Den   TE    DRAFT 
-#&gt; </span><span style='color: #555555;'>13</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 BILL  BE    4</span><span style='text-decoration: underline;'>052</span><span>042 James Robi… Jax   RB    ADD   
-#&gt; </span><span style='color: #555555;'>14</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 BILL  BE    3</span><span style='text-decoration: underline;'>932</span><span>905 Dion… John… Pit   WR    ADD   
-#&gt; </span><span style='color: #555555;'>15</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 BILL  BE     -</span><span style='color: #BB0000;text-decoration: underline;'>16</span><span style='color: #BB0000;'>005</span><span> Brow… D/ST  Cle   DS    ADD   
-#&gt; </span><span style='color: #555555;'>16</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 BILL  BE     -</span><span style='color: #BB0000;text-decoration: underline;'>16</span><span style='color: #BB0000;'>018</span><span> Sain… D/ST  NO    DS    ADD   
-#&gt; </span><span style='color: #555555;'># … with 1 more variable: date </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>
+#&gt; $CHI
+#&gt; <span style='color: #949494;'># A tibble: 16 × 11</span>
+#&gt;    seasonId scoringPeriodId onTeamId lineupSlotId      id firstName lastName 
+#&gt;       <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>          <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    
+#&gt; <span style='color: #BCBCBC;'> 1</span>     <span style='text-decoration: underline;'>2</span>021               1 CHI      QB           3<span style='text-decoration: underline;'>918</span>298 Josh      Allen    
+#&gt; <span style='color: #BCBCBC;'> 2</span>     <span style='text-decoration: underline;'>2</span>021               1 CHI      RB           3<span style='text-decoration: underline;'>929</span>630 Saquon    Barkley  
+#&gt; <span style='color: #BCBCBC;'> 3</span>     <span style='text-decoration: underline;'>2</span>021               1 CHI      RB           3<span style='text-decoration: underline;'>043</span>078 Derrick   Henry    
+#&gt; <span style='color: #BCBCBC;'> 4</span>     <span style='text-decoration: underline;'>2</span>021               1 CHI      WR             <span style='text-decoration: underline;'>15</span>795 DeAndre   Hopkins  
+#&gt; <span style='color: #BCBCBC;'> 5</span>     <span style='text-decoration: underline;'>2</span>021               1 CHI      WR           4<span style='text-decoration: underline;'>262</span>921 Justin    Jefferson
+#&gt; <span style='color: #BCBCBC;'> 6</span>     <span style='text-decoration: underline;'>2</span>021               1 CHI      TE           2<span style='text-decoration: underline;'>576</span>925 Darren    Waller   
+#&gt; <span style='color: #BCBCBC;'> 7</span>     <span style='text-decoration: underline;'>2</span>021               1 CHI      FX           3<span style='text-decoration: underline;'>068</span>267 Austin    Ekeler   
+#&gt; <span style='color: #BCBCBC;'> 8</span>     <span style='text-decoration: underline;'>2</span>021               1 CHI      DS            -<span style='color: #BB0000; text-decoration: underline;'>16</span><span style='color: #BB0000;'>033</span> Ravens    D/ST     
+#&gt; <span style='color: #BCBCBC;'> 9</span>     <span style='text-decoration: underline;'>2</span>021               1 CHI      PK             <span style='text-decoration: underline;'>15</span>683 Justin    Tucker   
+#&gt; <span style='color: #BCBCBC;'>10</span>     <span style='text-decoration: underline;'>2</span>021               1 CHI      BE           3<span style='text-decoration: underline;'>116</span>385 Joe       Mixon    
+#&gt; <span style='color: #BCBCBC;'>11</span>     <span style='text-decoration: underline;'>2</span>021               1 CHI      BE             <span style='text-decoration: underline;'>15</span>818 Keenan    Allen    
+#&gt; <span style='color: #BCBCBC;'>12</span>     <span style='text-decoration: underline;'>2</span>021               1 CHI      BE             <span style='text-decoration: underline;'>16</span>737 Mike      Evans    
+#&gt; <span style='color: #BCBCBC;'>13</span>     <span style='text-decoration: underline;'>2</span>021               1 CHI      BE           4<span style='text-decoration: underline;'>047</span>365 Josh      Jacobs   
+#&gt; <span style='color: #BCBCBC;'>14</span>     <span style='text-decoration: underline;'>2</span>021               1 CHI      BE           3<span style='text-decoration: underline;'>886</span>818 Myles     Gaskin   
+#&gt; <span style='color: #BCBCBC;'>15</span>     <span style='text-decoration: underline;'>2</span>021               1 CHI      BE           4<span style='text-decoration: underline;'>362</span>628 Ja'Marr   Chase    
+#&gt; <span style='color: #BCBCBC;'>16</span>     <span style='text-decoration: underline;'>2</span>021               1 CHI      BE           4<span style='text-decoration: underline;'>360</span>438 Brandon   Aiyuk    
+#&gt; <span style='color: #949494;'># … with 4 more variables: proTeamId &lt;fct&gt;, defaultPositionId &lt;fct&gt;,</span>
+#&gt; <span style='color: #949494;'>#   acquisitionType &lt;chr&gt;, acquisitionDate &lt;dttm&gt;</span>
 #&gt; 
-#&gt; $CART
-#&gt; </span><span style='color: #555555;'># A tibble: 16 x 11</span><span>
-#&gt;     year  week team  slot       id first last  pro   pos   method
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> 
-#&gt; </span><span style='color: #555555;'> 1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CART  QB    4</span><span style='text-decoration: underline;'>038</span><span>941 Just… Herb… LAC   QB    ADD   
-#&gt; </span><span style='color: #555555;'> 2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CART  RB    4</span><span style='text-decoration: underline;'>047</span><span>365 Josh  Jaco… LV    RB    DRAFT 
-#&gt; </span><span style='color: #555555;'> 3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CART  RB    2</span><span style='text-decoration: underline;'>979</span><span>843 Keny… Drake Ari   RB    DRAFT 
-#&gt; </span><span style='color: #555555;'> 4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CART  WR      </span><span style='text-decoration: underline;'>16</span><span>800 Dava… Adams GB    WR    DRAFT 
-#&gt; </span><span style='color: #555555;'> 5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CART  WR      </span><span style='text-decoration: underline;'>16</span><span>460 Adam  Thie… Min   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'> 6</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CART  TE      </span><span style='text-decoration: underline;'>16</span><span>813 Logan Thom… Wsh   TE    ADD   
-#&gt; </span><span style='color: #555555;'> 7</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CART  FX    3</span><span style='text-decoration: underline;'>122</span><span>976 Jeff  Wils… SF    RB    ADD   
-#&gt; </span><span style='color: #555555;'> 8</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CART  DS     -</span><span style='color: #BB0000;text-decoration: underline;'>16</span><span style='color: #BB0000;'>033</span><span> Rave… D/ST  Bal   DS    DRAFT 
-#&gt; </span><span style='color: #555555;'> 9</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CART  PK    3</span><span style='text-decoration: underline;'>055</span><span>899 Harr… Butk… KC    PK    ADD   
-#&gt; </span><span style='color: #555555;'>10</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CART  BE    2</span><span style='text-decoration: underline;'>974</span><span>858 Kenny Goll… Det   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'>11</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CART  BE    3</span><span style='text-decoration: underline;'>116</span><span>385 Joe   Mixon Cin   RB    DRAFT 
-#&gt; </span><span style='color: #555555;'>12</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CART  BE    2</span><span style='text-decoration: underline;'>574</span><span>808 Robby Ande… Car   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'>13</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CART  BE      </span><span style='text-decoration: underline;'>16</span><span>731 Bran… Cooks Hou   WR    ADD   
-#&gt; </span><span style='color: #555555;'>14</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CART  BE     -</span><span style='color: #BB0000;text-decoration: underline;'>16</span><span style='color: #BB0000;'>026</span><span> Seah… D/ST  Sea   DS    ADD   
-#&gt; </span><span style='color: #555555;'>15</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CART  BE    3</span><span style='text-decoration: underline;'>122</span><span>866 Devo… Book… LV    RB    ADD   
-#&gt; </span><span style='color: #555555;'>16</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CART  BE      </span><span style='text-decoration: underline;'>13</span><span>934 Anto… Brown TB    WR    ADD   
-#&gt; </span><span style='color: #555555;'># … with 1 more variable: date </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>
-#&gt; 
-#&gt; $KIER
-#&gt; </span><span style='color: #555555;'># A tibble: 16 x 11</span><span>
-#&gt;     year  week team  slot       id first last  pro   pos   method
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> 
-#&gt; </span><span style='color: #555555;'> 1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KIER  QB      </span><span style='text-decoration: underline;'>14</span><span>876 Ryan  Tann… Ten   QB    ADD   
-#&gt; </span><span style='color: #555555;'> 2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KIER  RB    3</span><span style='text-decoration: underline;'>054</span><span>850 Alvin Kama… NO    RB    DRAFT 
-#&gt; </span><span style='color: #555555;'> 3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KIER  RB    4</span><span style='text-decoration: underline;'>242</span><span>335 Jona… Tayl… Ind   RB    DRAFT 
-#&gt; </span><span style='color: #555555;'> 4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KIER  WR      </span><span style='text-decoration: underline;'>15</span><span>795 DeAn… Hopk… Ari   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'> 5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KIER  WR    2</span><span style='text-decoration: underline;'>977</span><span>187 Coop… Kupp  LAR   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'> 6</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KIER  TE      </span><span style='text-decoration: underline;'>15</span><span>847 Trav… Kelce KC    TE    DRAFT 
-#&gt; </span><span style='color: #555555;'> 7</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KIER  FX    4</span><span style='text-decoration: underline;'>035</span><span>538 David Mont… Chi   RB    DRAFT 
-#&gt; </span><span style='color: #555555;'> 8</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KIER  DS     -</span><span style='color: #BB0000;text-decoration: underline;'>16</span><span style='color: #BB0000;'>002</span><span> Bills D/ST  Buf   DS    ADD   
-#&gt; </span><span style='color: #555555;'> 9</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KIER  PK      </span><span style='text-decoration: underline;'>15</span><span>683 Just… Tuck… Bal   PK    ADD   
-#&gt; </span><span style='color: #555555;'>10</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KIER  BE    2</span><span style='text-decoration: underline;'>508</span><span>176 David John… Hou   RB    DRAFT 
-#&gt; </span><span style='color: #555555;'>11</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KIER  BE    3</span><span style='text-decoration: underline;'>912</span><span>550 Rona… Jone… TB    RB    DRAFT 
-#&gt; </span><span style='color: #555555;'>12</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KIER  BE    3</span><span style='text-decoration: underline;'>025</span><span>433 Mike  Davis Car   RB    ADD   
-#&gt; </span><span style='color: #555555;'>13</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KIER  BE    3</span><span style='text-decoration: underline;'>886</span><span>818 Myles Gask… Mia   RB    ADD   
-#&gt; </span><span style='color: #555555;'>14</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KIER  BE    3</span><span style='text-decoration: underline;'>139</span><span>522 Trav… Fulg… Phi   WR    ADD   
-#&gt; </span><span style='color: #555555;'>15</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KIER  BE    3</span><span style='text-decoration: underline;'>128</span><span>774 Kalen Ball… LAC   RB    ADD   
-#&gt; </span><span style='color: #555555;'>16</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KIER  BE      </span><span style='text-decoration: underline;'>11</span><span>237 Matt  Ryan  Atl   QB    ADD   
-#&gt; </span><span style='color: #555555;'># … with 1 more variable: date </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>
-#&gt; 
-#&gt; $CORE
-#&gt; </span><span style='color: #555555;'># A tibble: 16 x 11</span><span>
-#&gt;     year  week team  slot       id first last  pro   pos   method
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> 
-#&gt; </span><span style='color: #555555;'> 1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CORE  QB    3</span><span style='text-decoration: underline;'>916</span><span>387 Lamar Jack… Bal   QB    DRAFT 
-#&gt; </span><span style='color: #555555;'> 2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CORE  RB    3</span><span style='text-decoration: underline;'>051</span><span>926 Gus   Edwa… Bal   RB    ADD   
-#&gt; </span><span style='color: #555555;'> 3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CORE  RB    3</span><span style='text-decoration: underline;'>119</span><span>195 Chase Edmo… Ari   RB    ADD   
-#&gt; </span><span style='color: #555555;'> 4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CORE  WR    4</span><span style='text-decoration: underline;'>241</span><span>372 Marq… Brown Bal   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'> 5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CORE  WR      </span><span style='text-decoration: underline;'>15</span><span>818 Keen… Allen LAC   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'> 6</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CORE  TE    3</span><span style='text-decoration: underline;'>116</span><span>365 Mark  Andr… Bal   TE    DRAFT 
-#&gt; </span><span style='color: #555555;'> 7</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CORE  FX      </span><span style='text-decoration: underline;'>15</span><span>072 Marv… Jone… Det   WR    ADD   
-#&gt; </span><span style='color: #555555;'> 8</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CORE  DS     -</span><span style='color: #BB0000;text-decoration: underline;'>16</span><span style='color: #BB0000;'>003</span><span> Bears D/ST  Chi   DS    ADD   
-#&gt; </span><span style='color: #555555;'> 9</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CORE  PK    2</span><span style='text-decoration: underline;'>971</span><span>573 Ka'i… Fair… Hou   PK    ADD   
-#&gt; </span><span style='color: #555555;'>10</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CORE  BE    3</span><span style='text-decoration: underline;'>117</span><span>251 Chri… McCa… Car   RB    DRAFT 
-#&gt; </span><span style='color: #555555;'>11</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CORE  BE    2</span><span style='text-decoration: underline;'>576</span><span>623 DeVa… Park… Mia   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'>12</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CORE  BE    3</span><span style='text-decoration: underline;'>051</span><span>876 Evan  Engr… NYG   TE    DRAFT 
-#&gt; </span><span style='color: #555555;'>13</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CORE  BE    3</span><span style='text-decoration: underline;'>052</span><span>876 Will  Full… Hou   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'>14</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CORE  BE      </span><span style='text-decoration: underline;'>16</span><span>790 Jarv… Land… Cle   WR    ADD   
-#&gt; </span><span style='color: #555555;'>15</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CORE  BE     -</span><span style='color: #BB0000;text-decoration: underline;'>16</span><span style='color: #BB0000;'>024</span><span> Char… D/ST  LAC   DS    ADD   
-#&gt; </span><span style='color: #555555;'>16</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 CORE  BE      </span><span style='text-decoration: underline;'>16</span><span>757 Derek Carr  LV    QB    ADD   
-#&gt; </span><span style='color: #555555;'># … with 1 more variable: date </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>
-#&gt; 
-#&gt; $NICK
-#&gt; </span><span style='color: #555555;'># A tibble: 17 x 11</span><span>
-#&gt;     year  week team  slot       id first last  pro   pos   method
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> 
-#&gt; </span><span style='color: #555555;'> 1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 NICK  QB    3</span><span style='text-decoration: underline;'>122</span><span>840 Desh… Wats… Hou   QB    DRAFT 
-#&gt; </span><span style='color: #555555;'> 2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 NICK  RB    3</span><span style='text-decoration: underline;'>043</span><span>078 Derr… Henry Ten   RB    DRAFT 
-#&gt; </span><span style='color: #555555;'> 3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 NICK  RB    3</span><span style='text-decoration: underline;'>045</span><span>127 Wayne Gall… NYG   RB    ADD   
-#&gt; </span><span style='color: #555555;'> 4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 NICK  WR    4</span><span style='text-decoration: underline;'>360</span><span>438 Bran… Aiyuk SF    WR    ADD   
-#&gt; </span><span style='color: #555555;'> 5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 NICK  WR    3</span><span style='text-decoration: underline;'>042</span><span>778 Corey Davis Ten   WR    ADD   
-#&gt; </span><span style='color: #555555;'> 6</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 NICK  TE    3</span><span style='text-decoration: underline;'>043</span><span>275 Aust… Hoop… Cle   TE    ADD   
-#&gt; </span><span style='color: #555555;'> 7</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 NICK  FX    4</span><span style='text-decoration: underline;'>241</span><span>389 CeeD… Lamb  Dal   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'> 8</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 NICK  DS     -</span><span style='color: #BB0000;text-decoration: underline;'>16</span><span style='color: #BB0000;'>023</span><span> Stee… D/ST  Pit   DS    ADD   
-#&gt; </span><span style='color: #555555;'> 9</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 NICK  PK    2</span><span style='text-decoration: underline;'>985</span><span>659 Wil   Lutz  NO    PK    ADD   
-#&gt; </span><span style='color: #555555;'>10</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 NICK  BE    2</span><span style='text-decoration: underline;'>976</span><span>499 Amari Coop… Dal   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'>11</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 NICK  BE      </span><span style='text-decoration: underline;'>13</span><span>982 Julio Jones Atl   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'>12</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 NICK  BE    2</span><span style='text-decoration: underline;'>977</span><span>644 Todd  Gurl… Atl   RB    DRAFT 
-#&gt; </span><span style='color: #555555;'>13</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 NICK  BE    3</span><span style='text-decoration: underline;'>059</span><span>915 Kare… Hunt  Cle   RB    DRAFT 
-#&gt; </span><span style='color: #555555;'>14</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 NICK  BE      </span><span style='text-decoration: underline;'>15</span><span>091 Randy Bull… Cin   PK    ADD   
-#&gt; </span><span style='color: #555555;'>15</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 NICK  BE      </span><span style='text-decoration: underline;'>16</span><span>732 Eric  Ebron Pit   TE    ADD   
-#&gt; </span><span style='color: #555555;'>16</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 NICK  BE    3</span><span style='text-decoration: underline;'>916</span><span>430 Nyhe… Hines Ind   RB    ADD   
-#&gt; </span><span style='color: #555555;'>17</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 NICK  IR    3</span><span style='text-decoration: underline;'>040</span><span>151 Geor… Kitt… SF    TE    DRAFT 
-#&gt; </span><span style='color: #555555;'># … with 1 more variable: date </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>
-#&gt; 
-#&gt; $KYLE
-#&gt; </span><span style='color: #555555;'># A tibble: 15 x 11</span><span>
-#&gt;     year  week team  slot       id first last  pro   pos   method
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> 
-#&gt; </span><span style='color: #555555;'> 1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KYLE  QB       </span><span style='text-decoration: underline;'>8</span><span>439 Aaron Rodg… GB    QB    DRAFT 
-#&gt; </span><span style='color: #555555;'> 2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KYLE  RB    3</span><span style='text-decoration: underline;'>128</span><span>720 Nick  Chubb Cle   RB    DRAFT 
-#&gt; </span><span style='color: #555555;'> 3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KYLE  RB    3</span><span style='text-decoration: underline;'>115</span><span>364 Leon… Four… TB    RB    ADD   
-#&gt; </span><span style='color: #555555;'> 4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KYLE  WR      </span><span style='text-decoration: underline;'>16</span><span>737 Mike  Evans TB    WR    DRAFT 
-#&gt; </span><span style='color: #555555;'> 5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KYLE  WR    4</span><span style='text-decoration: underline;'>047</span><span>646 A.J.  Brown Ten   WR    DRAFT 
-#&gt; </span><span style='color: #555555;'> 6</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KYLE  TE    2</span><span style='text-decoration: underline;'>576</span><span>925 Darr… Wall… LV    TE    DRAFT 
-#&gt; </span><span style='color: #555555;'> 7</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KYLE  FX    3</span><span style='text-decoration: underline;'>116</span><span>406 Tyre… Hill  KC    WR    DRAFT 
-#&gt; </span><span style='color: #555555;'> 8</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KYLE  DS     -</span><span style='color: #BB0000;text-decoration: underline;'>16</span><span style='color: #BB0000;'>027</span><span> Bucc… D/ST  TB    DS    ADD   
-#&gt; </span><span style='color: #555555;'> 9</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KYLE  PK    3</span><span style='text-decoration: underline;'>051</span><span>909 Dani… Carl… LV    PK    ADD   
-#&gt; </span><span style='color: #555555;'>10</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KYLE  BE    3</span><span style='text-decoration: underline;'>051</span><span>392 Ezek… Elli… Dal   RB    DRAFT 
-#&gt; </span><span style='color: #555555;'>11</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KYLE  BE    3</span><span style='text-decoration: underline;'>918</span><span>298 Josh  Allen Buf   QB    DRAFT 
-#&gt; </span><span style='color: #555555;'>12</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KYLE  BE    3</span><span style='text-decoration: underline;'>924</span><span>365 Hayd… Hurst Atl   TE    DRAFT 
-#&gt; </span><span style='color: #555555;'>13</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KYLE  BE     -</span><span style='color: #BB0000;text-decoration: underline;'>16</span><span style='color: #BB0000;'>019</span><span> Gian… D/ST  NYG   DS    ADD   
-#&gt; </span><span style='color: #555555;'>14</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KYLE  BE    3</span><span style='text-decoration: underline;'>126</span><span>486 Deebo Samu… SF    WR    ADD   
-#&gt; </span><span style='color: #555555;'>15</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020    18 KYLE  BE    4</span><span style='text-decoration: underline;'>240</span><span>021 Cam   Akers LAR   RB    ADD   
-#&gt; </span><span style='color: #555555;'># … with 1 more variable: date </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>
-#&gt; </div></span></pre>
+#&gt; $DEN
+#&gt; <span style='color: #949494;'># A tibble: 16 × 11</span>
+#&gt;    seasonId scoringPeriodId onTeamId lineupSlotId      id firstName lastName  
+#&gt;       <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>          <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     
+#&gt; <span style='color: #BCBCBC;'> 1</span>     <span style='text-decoration: underline;'>2</span>021               1 DEN      QB           3<span style='text-decoration: underline;'>917</span>315 Kyler     Murray    
+#&gt; <span style='color: #BCBCBC;'> 2</span>     <span style='text-decoration: underline;'>2</span>021               1 DEN      RB           3<span style='text-decoration: underline;'>054</span>850 Alvin     Kamara    
+#&gt; <span style='color: #BCBCBC;'> 3</span>     <span style='text-decoration: underline;'>2</span>021               1 DEN      RB           3<span style='text-decoration: underline;'>042</span>519 Aaron     Jones     
+#&gt; <span style='color: #BCBCBC;'> 4</span>     <span style='text-decoration: underline;'>2</span>021               1 DEN      WR           2<span style='text-decoration: underline;'>976</span>212 Stefon    Diggs     
+#&gt; <span style='color: #BCBCBC;'> 5</span>     <span style='text-decoration: underline;'>2</span>021               1 DEN      WR           4<span style='text-decoration: underline;'>047</span>646 A.J.      Brown     
+#&gt; <span style='color: #BCBCBC;'> 6</span>     <span style='text-decoration: underline;'>2</span>021               1 DEN      TE             <span style='text-decoration: underline;'>15</span>847 Travis    Kelce     
+#&gt; <span style='color: #BCBCBC;'> 7</span>     <span style='text-decoration: underline;'>2</span>021               1 DEN      FX           4<span style='text-decoration: underline;'>241</span>457 Najee     Harris    
+#&gt; <span style='color: #BCBCBC;'> 8</span>     <span style='text-decoration: underline;'>2</span>021               1 DEN      DS            -<span style='color: #BB0000; text-decoration: underline;'>16</span><span style='color: #BB0000;'>025</span> 49ers     D/ST      
+#&gt; <span style='color: #BCBCBC;'> 9</span>     <span style='text-decoration: underline;'>2</span>021               1 DEN      PK           3<span style='text-decoration: underline;'>055</span>899 Harrison  Butker    
+#&gt; <span style='color: #BCBCBC;'>10</span>     <span style='text-decoration: underline;'>2</span>021               1 DEN      BE           4<span style='text-decoration: underline;'>035</span>538 David     Montgomery
+#&gt; <span style='color: #BCBCBC;'>11</span>     <span style='text-decoration: underline;'>2</span>021               1 DEN      BE           4<span style='text-decoration: underline;'>241</span>985 J.K.      Dobbins   
+#&gt; <span style='color: #BCBCBC;'>12</span>     <span style='text-decoration: underline;'>2</span>021               1 DEN      BE             <span style='text-decoration: underline;'>15</span>880 Robert    Woods     
+#&gt; <span style='color: #BCBCBC;'>13</span>     <span style='text-decoration: underline;'>2</span>021               1 DEN      BE           4<span style='text-decoration: underline;'>241</span>389 CeeDee    Lamb      
+#&gt; <span style='color: #BCBCBC;'>14</span>     <span style='text-decoration: underline;'>2</span>021               1 DEN      BE           3<span style='text-decoration: underline;'>915</span>416 DJ        Moore     
+#&gt; <span style='color: #BCBCBC;'>15</span>     <span style='text-decoration: underline;'>2</span>021               1 DEN      BE           3<span style='text-decoration: underline;'>116</span>165 Chris     Godwin    
+#&gt; <span style='color: #BCBCBC;'>16</span>     <span style='text-decoration: underline;'>2</span>021               1 DEN      BE           2<span style='text-decoration: underline;'>577</span>327 Tyler     Lockett   
+#&gt; <span style='color: #949494;'># … with 4 more variables: proTeamId &lt;fct&gt;, defaultPositionId &lt;fct&gt;,</span>
+#&gt; <span style='color: #949494;'>#   acquisitionType &lt;chr&gt;, acquisitionDate &lt;dttm&gt;</span>
+#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

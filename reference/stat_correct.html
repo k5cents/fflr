@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.15</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0</span>
       </span>
     </div>
 
@@ -95,29 +95,12 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/fantasy-football.html">fantasy-football</a>
-    </li>
-  </ul>
-</li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="https://github.com/kiernann/fflr/">
-    <span class="fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
+        
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -132,7 +115,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Stat corrections</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/stat-correct.R'><code>R/stat-correct.R</code></a></small>
+    
     <div class="hidden name"><code>stat_correct.Rd</code></div>
     </div>
 
@@ -140,7 +123,7 @@
     <p>Weekly retroactive stat corrections by player.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>stat_correct</span><span class='op'>(</span>date <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>stat_correct</span><span class='op'>(</span>date <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span><span class='op'>(</span><span class='op'>)</span>, limit <span class='op'>=</span> <span class='fl'>100</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -149,28 +132,23 @@
       <th>date</th>
       <td><p>A date in the scoring week to return. Defaults to system date.</p></td>
     </tr>
+    <tr>
+      <th>limit</th>
+      <td><p>The limit of corrections to return. Use <code>""</code> or <code>NULL</code> to return
+all. Defaults to 100, which is the default limit used by ESPN. Removing the
+limit can make the request take a long time.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble of player corrections.</p>
+    <p>A data frame of stat corrections.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>stat_correct</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 215 x 6</span><span>
-#&gt;    date          id type  stat  name            change
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span> 2021-01-09 </span><span style='text-decoration: underline;'>13</span><span>226 PUNT  YDS   puntReturnYards     -</span><span style='color: #BB0000;'>1</span><span>
-#&gt; </span><span style='color: #555555;'> 2</span><span> 2021-01-09 </span><span style='text-decoration: underline;'>13</span><span>226 PUNT  YDS   puntReturnYards     -</span><span style='color: #BB0000;'>1</span><span>
-#&gt; </span><span style='color: #555555;'> 3</span><span> 2021-01-09 </span><span style='text-decoration: underline;'>13</span><span>979 DEF   SOLO  soloTackles          1
-#&gt; </span><span style='color: #555555;'> 4</span><span> 2021-01-09 </span><span style='text-decoration: underline;'>13</span><span>979 DEF   SOLO  soloTackles          1
-#&gt; </span><span style='color: #555555;'> 5</span><span> 2021-01-09 </span><span style='text-decoration: underline;'>14</span><span>139 DEF   AST   assistTackles        1
-#&gt; </span><span style='color: #555555;'> 6</span><span> 2021-01-09 </span><span style='text-decoration: underline;'>14</span><span>139 DEF   SOLO  soloTackles         -</span><span style='color: #BB0000;'>1</span><span>
-#&gt; </span><span style='color: #555555;'> 7</span><span> 2021-01-09 </span><span style='text-decoration: underline;'>14</span><span>139 DEF   AST   assistTackles        1
-#&gt; </span><span style='color: #555555;'> 8</span><span> 2021-01-09 </span><span style='text-decoration: underline;'>14</span><span>139 DEF   SOLO  soloTackles         -</span><span style='color: #BB0000;'>1</span><span>
-#&gt; </span><span style='color: #555555;'> 9</span><span> 2021-01-09 </span><span style='text-decoration: underline;'>14</span><span>202 DEF   AST   assistTackles        1
-#&gt; </span><span style='color: #555555;'>10</span><span> 2021-01-09 </span><span style='text-decoration: underline;'>14</span><span>202 DEF   AST   assistTackles        1
-#&gt; </span><span style='color: #555555;'># … with 205 more rows</span><span></div></span></pre>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: No stat corrections for this week (yet)</span></div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 0 × 6</span>
+#&gt; <span style='color: #949494;'># … with 6 variables: date &lt;date&gt;, id &lt;int&gt;, type &lt;chr&gt;, stat &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   name &lt;chr&gt;, change &lt;dbl&gt;</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

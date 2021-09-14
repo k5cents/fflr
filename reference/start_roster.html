@@ -81,7 +81,7 @@ function may be adapted to take roster slots from roster_settings()." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.15</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0</span>
       </span>
     </div>
 
@@ -96,29 +96,12 @@ function may be adapted to take roster slots from roster_settings()." />
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/fantasy-football.html">fantasy-football</a>
-    </li>
-  </ul>
-</li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="https://github.com/kiernann/fflr/">
-    <span class="fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
+        
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -133,7 +116,7 @@ function may be adapted to take roster slots from roster_settings()." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Starting roster</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/best-roster.R'><code>R/best-roster.R</code></a></small>
+    
     <div class="hidden name"><code>start_roster.Rd</code></div>
     </div>
 
@@ -149,29 +132,31 @@ function may be adapted to take roster slots from <code><a href='roster_settings
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>roster</th>
-      <td><p>A roster tibble from <code><a href='team_roster.html'>team_roster()</a></code>.</p></td>
+      <td><p>A roster data frame from <code><a href='team_roster.html'>team_roster()</a></code>.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble of starters on a roster.</p>
+    <p>A data frame of starters on a roster.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>start_roster</span><span class='op'>(</span><span class='fu'><a href='team_roster.html'>team_roster</a></span><span class='op'>(</span>lid <span class='op'>=</span> <span class='fl'>252353</span>, week <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span><span class='op'>[[</span><span class='fl'>7</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 9 x 15</span><span>
-#&gt;    year  week team  slot       id first last  pro   pos   status  proj score
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  QB    3</span><span style='text-decoration: underline;'>122</span><span>840 Desh… Wats… Hou   QB    A      21.9   20.8
-#&gt; </span><span style='color: #555555;'>2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  RB    3</span><span style='text-decoration: underline;'>043</span><span>078 Derr… Henry Ten   RB    A      15.5   13.1
-#&gt; </span><span style='color: #555555;'>3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  RB    2</span><span style='text-decoration: underline;'>977</span><span>644 Todd  Gurl… Atl   RB    A      12.5   11.7
-#&gt; </span><span style='color: #555555;'>4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  WR    2</span><span style='text-decoration: underline;'>976</span><span>499 Amari Coop… Dal   WR    Q       8.90   8.1
-#&gt; </span><span style='color: #555555;'>5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  WR      </span><span style='text-decoration: underline;'>13</span><span>982 Julio Jones Atl   WR    Q      10.6   15.7
-#&gt; </span><span style='color: #555555;'>6</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  TE    3</span><span style='text-decoration: underline;'>040</span><span>151 Geor… Kitt… SF    TE    A      10.4    5.3
-#&gt; </span><span style='color: #555555;'>7</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  FX      </span><span style='text-decoration: underline;'>14</span><span>924 T.Y.  Hilt… Ind   WR    A       9.90   5.3
-#&gt; </span><span style='color: #555555;'>8</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  DS     -</span><span style='color: #BB0000;text-decoration: underline;'>16</span><span style='color: #BB0000;'>011</span><span> Colts D/ST  Ind   DS    A       5.41   2  
-#&gt; </span><span style='color: #555555;'>9</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  PK    3</span><span style='text-decoration: underline;'>050</span><span>478 Jake  Elli… Phi   PK    A       7.64   4  
-#&gt; </span><span style='color: #555555;'># … with 3 more variables: start </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, rost </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, change </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span></div></span></pre>
+    <pre class="examples"><div class='input'><span class='fu'>start_roster</span><span class='op'>(</span><span class='fu'><a href='team_roster.html'>team_roster</a></span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 9 × 15</span>
+#&gt;   seasonId scoringPeriodId  team lineupSlotId      id firstName lastName proTeam
+#&gt;      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>          <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>  
+#&gt; <span style='color: #BCBCBC;'>1</span>     <span style='text-decoration: underline;'>2</span>021               1     1 QB           3<span style='text-decoration: underline;'>139</span>477 Patrick   Mahomes  KC     
+#&gt; <span style='color: #BCBCBC;'>2</span>     <span style='text-decoration: underline;'>2</span>021               1     1 RB           3<span style='text-decoration: underline;'>117</span>251 Christian McCaffr… Car    
+#&gt; <span style='color: #BCBCBC;'>3</span>     <span style='text-decoration: underline;'>2</span>021               1     1 RB           4<span style='text-decoration: underline;'>242</span>335 Jonathan  Taylor   Ind    
+#&gt; <span style='color: #BCBCBC;'>4</span>     <span style='text-decoration: underline;'>2</span>021               1     1 WR             <span style='text-decoration: underline;'>16</span>800 Davante   Adams    GB     
+#&gt; <span style='color: #BCBCBC;'>5</span>     <span style='text-decoration: underline;'>2</span>021               1     1 WR           3<span style='text-decoration: underline;'>925</span>357 Calvin    Ridley   Atl    
+#&gt; <span style='color: #BCBCBC;'>6</span>     <span style='text-decoration: underline;'>2</span>021               1     1 TE           3<span style='text-decoration: underline;'>116</span>365 Mark      Andrews  Bal    
+#&gt; <span style='color: #BCBCBC;'>7</span>     <span style='text-decoration: underline;'>2</span>021               1     1 FX           4<span style='text-decoration: underline;'>360</span>294 Antonio   Gibson   Wsh    
+#&gt; <span style='color: #BCBCBC;'>8</span>     <span style='text-decoration: underline;'>2</span>021               1     1 DS            -<span style='color: #BB0000; text-decoration: underline;'>16</span><span style='color: #BB0000;'>027</span> Buccanee… D/ST     TB     
+#&gt; <span style='color: #BCBCBC;'>9</span>     <span style='text-decoration: underline;'>2</span>021               1     1 PK           2<span style='text-decoration: underline;'>473</span>037 Jason     Myers    Sea    
+#&gt; <span style='color: #949494;'># … with 7 more variables: PositionId &lt;fct&gt;, injuryStatus &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   projectedScore &lt;dbl&gt;, actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -48,12 +48,12 @@
 
 <meta property="og:title" content="fflr: A package for collecting ESPN fantasy football data — fflr" />
 <meta property="og:description" content="The fflr package parses the JSON data returned by the ESPN v3 API into tidy
-dataframes for easy analysis. The package also includes data objects for the
-NFL with players, teams, and the 2020 schedule. The league first be made
+data frames for easy analysis. The package also includes data objects for the
+NFL with players, teams, and the 2021 schedule. The league must first be made
 viewable to the public by the league manager, which can be done on the basic
 settings page on the ESPN website. Functions can then take the numeric league
-ID found in the URL to return data from the API. This league ID can be set
-as a global option named &quot;lid&quot; with options()." />
+ID found in the URL to return data from the API. This league ID can be set as
+a global option named &quot;fflr.leagueId&quot; with options()." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -86,7 +86,7 @@ as a global option named &quot;lid&quot; with options()." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.15</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0</span>
       </span>
     </div>
 
@@ -101,29 +101,12 @@ as a global option named &quot;lid&quot; with options()." />
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/fantasy-football.html">fantasy-football</a>
-    </li>
-  </ul>
-</li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="https://github.com/kiernann/fflr/">
-    <span class="fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
+        
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -138,18 +121,18 @@ as a global option named &quot;lid&quot; with options()." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>fflr: A package for collecting ESPN fantasy football data</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/fflr-package.R'><code>R/fflr-package.R</code></a></small>
+    
     <div class="hidden name"><code>fflr.Rd</code></div>
     </div>
 
     <div class="ref-description">
     <p>The fflr package parses the JSON data returned by the ESPN v3 API into tidy
-dataframes for easy analysis. The package also includes data objects for the
-NFL with players, teams, and the 2020 schedule. The league first be made
+data frames for easy analysis. The package also includes data objects for the
+NFL with players, teams, and the 2021 schedule. The league must first be made
 viewable to the public by the league manager, which can be done on the basic
 settings page on the ESPN website. Functions can then take the numeric league
-ID found in the URL to return data from the API. This league ID can be set
-as a global option named "lid" with <code><a href='https://rdrr.io/r/base/options.html'>options()</a></code>.</p>
+ID found in the URL to return data from the API. This league ID can be set as
+a global option named "fflr.leagueId" with <code><a href='https://rdrr.io/r/base/options.html'>options()</a></code>.</p>
     </div>
 
 

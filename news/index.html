@@ -79,7 +79,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0</span>
       </span>
     </div>
 
@@ -140,7 +140,7 @@
 </h1>
 <ul>
 <li>
-<code>player_outlook()</code> and <code><a href="../reference/all_players.html">all_players()</a></code>, which both call the <code>kona_player_info</code> endpoint, now have arguments to pass a <em>limit</em> to the “X-Fantasy-Filter” JSON list in the request. Without a limit, the requests can take a long time. Use an empty string (<code>""</code>) or <code>NULL</code> to omit the limit (default to 50, the same default limit used by ESPN).</li>
+<code><a href="../reference/player_outlook.html">player_outlook()</a></code> and <code><a href="../reference/all_players.html">all_players()</a></code>, which both call the <code>kona_player_info</code> endpoint, now have arguments to pass a <em>limit</em> to the “X-Fantasy-Filter” JSON list in the request. Without a limit, the requests can take a long time. Use an empty string (<code>""</code>) or <code>NULL</code> to omit the limit (default to 50, the same default limit used by ESPN).</li>
 </ul>
 </div>
     <div id="fflr-0312" class="section level1">
@@ -205,7 +205,7 @@
 <ul>
 <li>Add <code><a href="../reference/player_info.html">player_info()</a></code> and add to <code>nfl_players</code>.</li>
 <li>Update <code>nfl_schedule</code> for COVID-19 delays.</li>
-<li>Allow <code>live_scoring()</code> to show players yet to play.</li>
+<li>Allow <code><a href="../reference/live_scoring.html">live_scoring()</a></code> to show players yet to play.</li>
 </ul>
 </div>
     <div id="fflr-035" class="section level1">
@@ -222,7 +222,7 @@
 <a href="#fflr-034" class="anchor"></a>fflr 0.3.4<small> Unreleased </small>
 </h1>
 <ul>
-<li>Add <code>player_news()</code>.</li>
+<li>Add <code><a href="../reference/player_news.html">player_news()</a></code>.</li>
 <li>Improve acquisition data for teams.</li>
 </ul>
 </div>
@@ -234,7 +234,7 @@
 <li>Invert opponent ranks.</li>
 <li>Pivot fantasy schedule long-wise.</li>
 <li>Skip players without stats in <code><a href="../reference/all_players.html">all_players()</a></code>.</li>
-<li>Remove IR slots from <code>best_roster()</code> and <code>roster_score()</code>.</li>
+<li>Remove IR slots from <code>best_roster()</code> and <code><a href="../reference/roster_score.html">roster_score()</a></code>.</li>
 </ul>
 </div>
     <div id="fflr-032" class="section level1">
