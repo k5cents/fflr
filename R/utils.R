@@ -6,6 +6,10 @@ ffl_date <- function(date) {
   }
 }
 
+ffl_timestamp <- function(x) {
+  as.POSIXlt(x, tz = "UTC", format = "%Y-%m-%dT%H:%M:%S")
+}
+
 as_tibble <- function(x) {
   if (is_installed("tibble")) {
     tibble::as_tibble(x)
