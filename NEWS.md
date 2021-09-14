@@ -1,6 +1,14 @@
-# fflr 0.4.0
+# fflr 1.9.0
 
-* Completely reset the package and start from scratch.
+* The package has largely been re-written from the groud-up (#24).
+* All functions use the new `try_json()` back-end, which uses `httr::RETRY()`
+instead of `jsonlite::fromJSON()`. This allows all functions to fail more
+elegantly.
+* Use the same argument and column names as the API (i.e., `leagueId` instead of
+`lid`).
+* Return single-row data frames instead of lists for a single season.
+* Add `tidy_*` prefix to function names that manipulate data structure (#26).
+* Pass the `...` arguments to `GET()` instead of `fromJSON()` (#25).
 
 # fflr 0.3.14
 
