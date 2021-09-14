@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.15</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.0</span>
       </span>
     </div>
 
@@ -95,29 +95,12 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/fantasy-football.html">fantasy-football</a>
-    </li>
-  </ul>
-</li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="https://github.com/kiernann/fflr/">
-    <span class="fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
+        
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -132,7 +115,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>NFL team performance against positions</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/opponent-ranks.R'><code>R/opponent-ranks.R</code></a></small>
+    
     <div class="hidden name"><code>opponent_ranks.Rd</code></div>
     </div>
 
@@ -140,37 +123,38 @@
     <p>The average opposition team point differential by position.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>opponent_ranks</span><span class='op'>(</span>lid <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"lid"</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>opponent_ranks</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='ffl_id.html'>ffl_id</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>lid</th>
-      <td><p>ESPN League ID, defaulted because all return the same data.</p></td>
+      <th>leagueId</th>
+      <td><p>Numeric league ID or ESPN fantasy page URL. Defaults to
+<code><a href='https://rdrr.io/r/base/options.html'>getOption("fflr.leagueId")</a></code>. Function fails if no ID is found.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble of performance stats.</p>
+    <p>A data frame of team performance against position.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>opponent_ranks</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 192 x 4</span><span>
-#&gt;    pro   pos    rank    avg
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span> Atl   DS       21  2.25 
-#&gt; </span><span style='color: #555555;'> 2</span><span> Atl   QB        2 23.3  
-#&gt; </span><span style='color: #555555;'> 3</span><span> Atl   RB       28 15.2  
-#&gt; </span><span style='color: #555555;'> 4</span><span> Atl   WR        1 29.9  
-#&gt; </span><span style='color: #555555;'> 5</span><span> Atl   TE        5  9.71 
-#&gt; </span><span style='color: #555555;'> 6</span><span> Atl   KI       15  7.81 
-#&gt; </span><span style='color: #555555;'> 7</span><span> Buf   DS       29 -</span><span style='color: #BB0000;'>0.219</span><span>
-#&gt; </span><span style='color: #555555;'> 8</span><span> Buf   QB       17 18.3  
-#&gt; </span><span style='color: #555555;'> 9</span><span> Buf   RB       12 19.2  
-#&gt; </span><span style='color: #555555;'>10</span><span> Buf   WR       28 20.1  
-#&gt; </span><span style='color: #555555;'># … with 182 more rows</span><span></div></span></pre>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 192 × 4</span>
+#&gt;    position opponentProTeam  rank average
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 1</span> DS       Atl                24     4.5
+#&gt; <span style='color: #BCBCBC;'> 2</span> QB       Atl                28    28.8
+#&gt; <span style='color: #BCBCBC;'> 3</span> RB       Atl                25    23.6
+#&gt; <span style='color: #BCBCBC;'> 4</span> WR       Atl                17    26.3
+#&gt; <span style='color: #BCBCBC;'> 5</span> TE       Atl                27    13.6
+#&gt; <span style='color: #BCBCBC;'> 6</span> KI       Atl                13     7  
+#&gt; <span style='color: #BCBCBC;'> 7</span> DS       Buf                31    16  
+#&gt; <span style='color: #BCBCBC;'> 8</span> QB       Buf                 4    12.0
+#&gt; <span style='color: #BCBCBC;'> 9</span> RB       Buf                 2     4.9
+#&gt; <span style='color: #BCBCBC;'>10</span> WR       Buf                11    22.8
+#&gt; <span style='color: #949494;'># … with 182 more rows</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

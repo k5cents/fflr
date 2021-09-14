@@ -79,7 +79,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.0</span>
       </span>
     </div>
 
@@ -117,12 +117,17 @@
       
     </div>
 
-    <div id="fflr-040" class="section level1">
-<h1 class="page-header" data-toc-text="0.4.0">
-<a href="#fflr-040" class="anchor"></a>fflr 0.4.0<small> Unreleased </small>
+    <div id="fflr-190" class="section level1">
+<h1 class="page-header" data-toc-text="1.9.0">
+<a href="#fflr-190" class="anchor"></a>fflr 1.9.0<small> Unreleased </small>
 </h1>
 <ul>
-<li>Completely reset the package and start from scratch.</li>
+<li>The package has largely been re-written from the groud-up (#24).</li>
+<li>All functions use the new <code>try_json()</code> back-end, which uses <code><a href="https://httr.r-lib.org/reference/RETRY.html">httr::RETRY()</a></code> instead of <code><a href="https://rdrr.io/pkg/jsonlite/man/fromJSON.html">jsonlite::fromJSON()</a></code>. This allows all functions to fail more elegantly.</li>
+<li>Use the same argument and column names as the API (i.e., <code>leagueId</code> instead of <code>lid</code>).</li>
+<li>Return single-row data frames instead of lists for a single season.</li>
+<li>Add <code>tidy_*</code> prefix to function names that manipulate data structure (#26).</li>
+<li>Pass the <code>...</code> arguments to <code>GET()</code> instead of <code>fromJSON()</code> (#25).</li>
 </ul>
 </div>
     <div id="fflr-0314" class="section level1">

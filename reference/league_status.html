@@ -81,7 +81,7 @@ starting week, final week, past seasons, teams joined, and waiver status." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.0</span>
       </span>
     </div>
 
@@ -143,7 +143,9 @@ each historical year of the league.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Arguments passed to <code><a href='https://rdrr.io/pkg/jsonlite/man/fromJSON.html'>jsonlite::fromJSON()</a></code> for parsing.</p></td>
+      <td><p>Additional queries passed to <code><a href='https://httr.r-lib.org/reference/GET.html'>httr::GET()</a></code>
+(e.g., <code>scoringPeriodId</code>). Arguments are converted to a named list to be
+passed alongside <code>view</code>.</p></td>
     </tr>
     </table>
 
