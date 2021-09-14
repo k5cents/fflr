@@ -59,7 +59,7 @@ out_roster <- function(entry, t = NULL) {
     seasonId  = year_int,
     scoringPeriodId  = week_int,
     team = entry$playerPoolEntry$onTeamId,
-    slot = slot_abbrev(entry$lineupSlotId),
+    lineupSlotId = slot_abbrev(entry$lineupSlotId),
     id = player$id,
     firstName = player$firstName,
     lastName = player$lastName,
@@ -72,5 +72,32 @@ out_roster <- function(entry, t = NULL) {
     percentOwned = player$ownership$percentOwned,
     percentChange = round(player$ownership$percentChange, digits = 3)
   )
-  as_tibble(x[order(x$slot), ])
+  as_tibble(x[order(x$lineupSlotId), ])
+}
+
+#' Starting roster
+#'
+#' The starting 9 man roster using standard roster slots. In the future this
+#' function may be adapted to take roster slots from [roster_settings()].
+#'
+#' @param roster A roster data frame from [team_roster()].
+#' @return A data frame of starters on a roster.
+#' @examples
+#' start_roster(team_roster(leagueId = "42654852")[[1]])
+#' @export
+start_roster <- function(roster) {
+  roster[roster$lineupSlotId != "BE" & roster$lineupSlotId != "IR", ]
+}
+
+#' Sum of starting scores in a roster
+#'
+#' For a given roster tibble, sum the starting scores.
+#'
+#' @param roster A roster data frame from [team_roster()].
+#' @return A starting score as double.
+#' @examples
+#' roster_score(team_roster(leagueId = "42654852")[[1]])
+#' @export
+roster_score <- function(roster) {
+  sum(start_roster(roster)$actualScore)
 }
