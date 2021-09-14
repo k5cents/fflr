@@ -7,7 +7,7 @@
 #' teams and the lowest score would have zero wins.
 #'
 #' @inheritParams ffl_api
-#' @return A tibble (or list) of draft picks.
+#' @return A tidy data frame of scores by team and matchup period.
 #' @examples
 #' tidy_scores(leagueId = "42654852")
 #' tidy_scores(leagueId = "252353", leagueHistory = TRUE)

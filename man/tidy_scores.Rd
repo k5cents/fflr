@@ -17,7 +17,7 @@ each historical year of the league.}
 \item{...}{Arguments passed to \code{\link[jsonlite:fromJSON]{jsonlite::fromJSON()}} for parsing.}
 }
 \value{
-A tibble (or list) of draft picks.
+A tidy data frame of scores by team and matchup period.
 }
 \description{
 The score of each team in a matchup period and the match outcome.
