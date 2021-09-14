@@ -13,13 +13,14 @@
 #' all_players()
 #' }
 #' @importFrom jsonlite toJSON fromJSON
-#' @importFrom httr GET add_headers accept_json content
+#' @importFrom httr RETRY add_headers accept_json content
 #' @export
 all_players <- function(leagueId = ffl_id(), scoringPeriodId = ffl_week(),
                         limit = 50) {
   if (is.null(leagueId)) leagueId <- "42654852"
   if (is.null(limit)) limit <- ""
-  all_get <- httr::GET(
+  all_get <- httr::RETRY(
+    verb = "GET",
     url = paste0(
       "https://fantasy.espn.com/apis/v3/games/ffl/seasons/2021/segments/0/leagues/",
       leagueId
@@ -125,41 +126,6 @@ all_players <- function(leagueId = ffl_id(), scoringPeriodId = ffl_week(),
   out <- cbind(seasonId = y, scoringPeriodId, out)
   as_tibble(out)
 }
-
-list(
-  players = list(
-    filterSlotIds = list(
-      value = c(0:19L, 23L, 24L)
-    ),
-    filterRanksForScoringPeriodIds = list(
-      value = 1L
-    ),
-    filterStatus = list(
-      value = c("FREEAGENT", "WAIVERS")
-    ),
-    limit = 50L,
-    offset = 0L,
-    sortPercOwned = list(
-      sortAsc = FALSE,
-      sortPriority = 1L
-    ),
-    sortDraftRanks = list(
-      sortPriority = 100L,
-      sortAsc = TRUE,
-      value = "STANDARD"
-    ),
-    filterRanksForRankTypes = list(
-      value = "STANDARD"
-    ),
-    filterRanksForSlotIds = list(
-      value = c(0L, 2L, 4L, 6L, 17L, 16L)
-    ),
-    filterStatsForTopScoringPeriodIds = list(
-      value = 2L,
-      additionalValue = c("002021", "102021", "002020", "1120211", "022021")
-    )
-  )
-)
 
 #' Individual player information
 #'
