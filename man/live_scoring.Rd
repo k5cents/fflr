@@ -22,5 +22,5 @@ A data frame of scores by period.
 The current and projected score for each ongoing match.
 }
 \examples{
-live_scoring(leagueId = "42654852", yetToPlay = TRUE)
+live_scoring(leagueId = "42654852", yetToPlay = FALSE)
 }
