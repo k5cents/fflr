@@ -39,20 +39,14 @@ stat_correct <- function(date = Sys.Date(), limit = 100) {
       )
     )
   }
-  # TODO: Make sure this works after week 1 (or later)
   player_id <- as.integer(sub(".*/(\\d+)\\?.*", "\\1", dat$items$athlete[[1]]))
   out <- rep(list(NA), length(x))
   for (i in seq_along(x)) {
     for (k in seq_along(x[[i]]$stats)) {
-      x[[i]]$stats[[k]]$type <- x[[i]]$abbreviation[k]
-      x[[i]]$stats[[k]]$id <- player_id[i]
+      x[[i]]$stats[[k]] <- cbind(playerId = player_id, x[[i]]$stats[[k]])
     }
     out[[i]] <- x[[i]]$stats
   }
-  out <- tibble::as_tibble(do.call("rbind", do.call("rbind", out)))
-  out$type <- toupper(out$type)
-  out$date <- as.Date(date)
-  out <- out[order(out$id), c(10, 9, 8, 5, 1, 6)]
-  names(out)[4:6] <- c("stat", "name", "change")
-  return(out)
+  out <- cbind(date, do.call("rbind", do.call("rbind", out)))
+  as_tibble(out[order(out$playerId), c(1:2, 7, 3, 8)])
 }
