@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
   dpi = 300
 )
 if (!interactive()) {
-  options(width = 110)
+  options(width = 108)
 }
 ```
 
@@ -55,9 +55,8 @@ remotes::install_github("kiernann/fflr")
 library(fflr)
 ```
 
-League information is only available for public leagues. See the ESPN
-[help documentation][help] on how to make a private league viewable to the
-public.
+Data is only available for public leagues. See [this ESPN help page][help] on
+how to make a private league viewable to the public.
 
 Functions require a unique `leagueId`, which can be found on any ESPN page URL.
 

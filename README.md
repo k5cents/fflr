@@ -40,9 +40,8 @@ remotes::install_github("kiernann/fflr")
 library(fflr)
 ```
 
-League information is only available for public leagues. See the ESPN
-[help
-documentation](https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public)
+Data is only available for public leagues. See [this ESPN help
+page](https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public)
 on how to make a private league viewable to the public.
 
 Functions require a unique `leagueId`, which can be found on any ESPN
@@ -81,22 +80,22 @@ team_roster()[[1]][, -c(1:3, 5, 13:15)]
 #> # A tibble: 16 × 8
 #>    lineupSlotId firstName  lastName    proTeam PositionId injuryStatus projectedScore actualScore
 #>    <fct>        <chr>      <chr>       <fct>   <fct>      <chr>                 <dbl>       <dbl>
-#>  1 QB           Patrick    Mahomes     KC      QB         A                     22.2         33.3
-#>  2 RB           Christian  McCaffrey   Car     RB         A                     21.3         27.7
-#>  3 RB           Jonathan   Taylor      Ind     RB         A                     15.6         17.6
-#>  4 WR           Davante    Adams       GB      WR         A                     19.9         10.6
-#>  5 WR           Calvin     Ridley      Atl     WR         A                     16.0         10.1
-#>  6 TE           Mark       Andrews     Bal     TE         A                     12.2          5  
-#>  7 FX           Antonio    Gibson      Wsh     RB         Q                     16.0         11.8
-#>  8 DS           Buccaneers D/ST        TB      DS         A                      4.51        -3  
-#>  9 PK           Jason      Myers       Sea     PK         A                      8.04         4  
-#> 10 BE           D'Andre    Swift       Det     RB         A                     13.5         24.4
-#> 11 BE           Miles      Sanders     Phi     RB         A                     14.3         17.3
-#> 12 BE           Chris      Carson      Sea     RB         A                     12.8         12.7
-#> 13 BE           Allen      Robinson II Chi     WR         A                     14.6          9.5
-#> 14 BE           Adam       Thielen     Min     WR         A                     14.4         30.2
-#> 15 BE           Diontae    Johnson     Pit     WR         A                     13.4         14.6
-#> 16 BE           Courtland  Sutton      Den     WR         A                     11.9          2.4
+#>  1 QB           Patrick    Mahomes     KC      QB         A                     23.8           NA
+#>  2 RB           Christian  McCaffrey   Car     RB         A                     21.3           NA
+#>  3 RB           Jonathan   Taylor      Ind     RB         A                     17.1           NA
+#>  4 WR           Davante    Adams       GB      WR         A                     17.9           NA
+#>  5 WR           Calvin     Ridley      Atl     WR         A                     18.0           NA
+#>  6 TE           Mark       Andrews     Bal     TE         A                     12.0           NA
+#>  7 FX           Antonio    Gibson      Wsh     RB         A                     17.4           NA
+#>  8 DS           Buccaneers D/ST        TB      DS         A                      7.06          NA
+#>  9 PK           Jason      Myers       Sea     PK         A                      8.26          NA
+#> 10 BE           D'Andre    Swift       Det     RB         A                     14.7           NA
+#> 11 BE           Miles      Sanders     Phi     RB         A                     14.6           NA
+#> 12 BE           Chris      Carson      Sea     RB         A                     17.3           NA
+#> 13 BE           Allen      Robinson II Chi     WR         A                     15.5           NA
+#> 14 BE           Adam       Thielen     Min     WR         A                     14.8           NA
+#> 15 BE           Diontae    Johnson     Pit     WR         A                     14.1           NA
+#> 16 BE           Courtland  Sutton      Den     WR         A                     13.4           NA
 ```
 
 There are included objects for NFL teams and players.
