@@ -7,14 +7,14 @@
 #' team_roster(leagueId = "42654852")
 #' @return A dataframe (or list) with league teams.
 #' @export
-team_roster <- function(leagueId = ffl_id(), seasonId = 2021,
-                        leagueHistory = FALSE, ...) {
+team_roster <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   dat <- ffl_api(
     leagueId = leagueId,
-    view = "mRoster",
     leagueHistory = leagueHistory,
+    view = "mRoster",
     ...
   )
+  stop_predraft(dat)
   if (leagueHistory) {
     lapply(dat$teams, function(x) lapply(x$roster$entries, out_roster))
   } else {

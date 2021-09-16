@@ -4,15 +4,11 @@
 \alias{team_roster}
 \title{Fantasy team rosters}
 \usage{
-team_roster(leagueId = ffl_id(), seasonId = 2021, leagueHistory = FALSE, ...)
+team_roster(leagueId = ffl_id(), leagueHistory = FALSE, ...)
 }
 \arguments{
 \item{leagueId}{Numeric league ID or ESPN fantasy page URL. Defaults to
 \code{getOption("fflr.leagueId")}. Function fails if no ID is found.}
-
-\item{seasonId}{Integer year of NFL season. By default, the season is
-currently set to 2021. Use a recent year or set \code{leagueHistory} to \code{TRUE}
-to obtain all past data.}
 
 \item{leagueHistory}{logical; Should the \code{leagueHistory} version of the API
 be called? If \code{TRUE}, a list of results is returned, with one element for
