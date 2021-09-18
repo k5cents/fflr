@@ -25,5 +25,5 @@ A dataframe (or list) with league teams.
 The roster of all teams in a league.
 }
 \examples{
-team_roster(leagueId = "42654852")
+team_roster(leagueId = "42654852", scoringPeriodId = 1)
 }

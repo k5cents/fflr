@@ -4,7 +4,7 @@
 #'
 #' @inheritParams ffl_api
 #' @examples
-#' team_roster(leagueId = "42654852")
+#' team_roster(leagueId = "42654852", scoringPeriodId = 1)
 #' @return A dataframe (or list) with league teams.
 #' @export
 team_roster <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
@@ -58,13 +58,13 @@ out_roster <- function(entry, t = NULL) {
   x <- data.frame(
     seasonId  = year_int,
     scoringPeriodId  = week_int,
-    team = entry$playerPoolEntry$onTeamId,
-    lineupSlotId = slot_abbrev(entry$lineupSlotId),
+    teamId = entry$playerPoolEntry$onTeamId,
+    lineupSlot = slot_abbrev(entry$lineupSlotId),
     id = player$id,
     firstName = player$firstName,
     lastName = player$lastName,
     proTeam  = nfl_abb$abbrev[match(player$proTeamId, nfl_abb$id)],
-    PositionId = pos_abbrev(player$defaultPositionId),
+    position = pos_abbrev(player$defaultPositionId),
     injuryStatus = injury_status,
     projectedScore  = proj_dbl,
     actualScore = score_dbl,
@@ -72,7 +72,7 @@ out_roster <- function(entry, t = NULL) {
     percentOwned = player$ownership$percentOwned,
     percentChange = round(player$ownership$percentChange, digits = 3)
   )
-  as_tibble(x[order(x$lineupSlotId), ])
+  as_tibble(x[order(x$lineupSlot), ])
 }
 
 #' Starting roster
