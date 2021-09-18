@@ -1,0 +1,209 @@
+---
+title: "Fantasy Football Data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ESPN Website Equivalent Functionality}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(fflr)
+packageVersion("fflr")
+ffl_id(leagueId = "42654852")
+```
+
+This vignette will demonstrate the fflr functions used to reach equivalency
+with the ESPN fantasy football website. The website has eight section headers
+with various subsections:
+
+1. My Team
+    * Overview
+    * Stats (TBD)
+    * Schedule (TBD)
+    * News
+    * Projections (TBD)
+    * Ranks (TBD)
+2. League
+    * League Home
+    * Settings
+    * Members
+    * Rosters
+    * Schedule
+    * Message Board
+    * Transaction Counter
+    * History
+    * Draft Recap
+    * Email League
+    * Recent Activity
+3. Players
+    * Add Players
+    * Watch List
+    * Scoring Leaders
+    * Live Draft Trends
+    * Points Against
+    * Added / Dropped
+    * Player News
+    * Projections
+    * Budget Summary
+    * Offers Report
+    * Stat Corrections
+4. FantasyCast
+5. Scoreboard
+6. Standings
+7. Opposing Teams
+8. LM Tools
+    * League Membership Tools
+    * Draft Tools
+    * League and Scoring Settings Tools
+    * Roster Tools
+    * Schedule and Standings Tools
+    * Miscellaneous Tools
+
+## My Team
+
+The _My Team_ page presents an overview of, well, your fantasy team. From this
+page, a team manager can set their lineup and see statistics and news on the
+players on their roster.
+
+There are six subsections on the _My Team_ page.
+
+### Overview
+
+The `team_roster()` function returns _all_ rosters in a league. The output of
+this function is organized to replicate the layout of the table found on the
+website. Players are listed in order of their "slot" with name and team 
+information followed by projected and actual scores and ownership statistics.
+
+```{r team-roster}
+my_team <- team_roster(scoringPeriodId = 1)[[1]] # select first roster
+my_team[, -(1:3)]
+```
+
+### News
+
+The `player_outlook()` and `player_news()` functions return news on your roster.
+The first returns _all_ outlooks by player and week and cannot be refined beyond
+setting a `limit` of players to return (in order of rank).
+
+```{r player-outlook}
+player_outlook(limit = 1)
+```
+
+The second fiction takes a single `playerId` value and returns all the recent
+news on that player, including premium stories in HTML format.
+
+```{r player-news}
+player_news(playerId = "3139477", parseHTML = FALSE)
+```
+
+## League
+
+ESPN fantasy leagues have their own unique settings and structure. This package
+has been tested for a very narrow subset of those possible settings.
+
+```{r league-info}
+league_info(leagueId = "42654852")
+league_name()
+league_size()
+str(league_status())
+```
+
+### Settings
+
+#### Draft
+
+```{r draft-settings}
+draft_settings()
+```
+
+#### Rosters
+
+```{r roster-settings}
+roster_settings()
+```
+
+#### Scoring
+
+```{r score-settings}
+scoring_settings()
+```
+
+#### Transactions and Keepers
+
+```{r waiver-settings}
+acquisition_settings()
+```
+
+#### Schedule
+
+```{r schedule-settings}
+schedule_settings()
+```
+
+### Members
+
+```{r league-members}
+league_members()
+```
+
+### Rosters
+
+```{r team-roster-all}
+team_roster(scoringPeriodId = 1)
+```
+
+### Schedule
+
+```{r tidy-matchups}
+tidy_matchups(scoringPeriodId = 1)
+```
+
+### Message Board
+
+```{r league-messages}
+league_messages(scoringPeriodId = 1)
+```
+
+### Transaction Counter
+
+```{r transaction-counter}
+transaction_counter()
+```
+
+### Draft Recap
+
+```{r draft-recap}
+draft_recap()
+```
+
+### Recent Activity
+
+```{r roster-moves}
+recent_activity(scoringPeriodId = 1)
+```
+
+## Players
+
+```{r all-players}
+all_players(limit = 10)
+```
+
+## Scoreboard
+
+```{r live-scoring}
+live_scoring()
+```
+
+## Standings
+
+```{r league-standings}
+league_standings()
+```
