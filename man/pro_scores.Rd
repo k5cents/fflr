@@ -4,7 +4,7 @@
 \alias{pro_scores}
 \title{Professional scores}
 \usage{
-pro_scores(variables)
+pro_scores()
 }
 \value{
 A data frame of NFL scores.

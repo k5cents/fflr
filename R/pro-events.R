@@ -35,7 +35,7 @@ pro_events <- function() {
 #' @examples
 #' pro_scores()
 #' @export
-pro_scores <- function(variables) {
+pro_scores <- function() {
   dat <- try_json("https://site.api.espn.com/apis/fantasy/v2/games/ffl/games")
   out <- do.call("rbind", dat$events$competitors)
   out$score[out$score == ""] <- NA
