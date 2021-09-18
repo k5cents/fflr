@@ -20,12 +20,12 @@ player_news <- function(playerId, parseHTML = FALSE) {
   }
   x <- dat$feed$story
   x[is.na(x)] <- dat$feed$description[is.na(x)]
-  if (isTRUE(parse)) {
-    if (!is_installed("xml2")) {
-      stop("Package \"xml2\" needed to parse HTML stories")
-    } else {
+  if (isTRUE(parseHTML)) {
+    if (is_installed("xml2")) {
       is_html <- grep("^<.*>", dat$feed$story)
       x[is_html] <- lapply(as.list(x)[is_html], xml2::read_html)
+    } else {
+      stop("Package \"xml2\" needed to parse HTML stories")
     }
   } else {
     x <- gsub("\"", "'", x)
