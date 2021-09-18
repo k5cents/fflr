@@ -6,10 +6,10 @@
 #' @inheritParams ffl_api
 #' @return A data frame(s) of draft picks.
 #' @examples
-#' draft_picks(leagueId = "42654852")
-#' draft_picks(leagueId = "252353", leagueHistory = TRUE)
+#' draft_recap(leagueId = "42654852")
+#' draft_recap(leagueId = "252353", leagueHistory = TRUE)
 #' @export
-draft_picks <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
+draft_recap <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   dat <- ffl_api(
     leagueId = leagueId,
     view = c("mDraftDetail", "mTeam"),

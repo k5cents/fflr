@@ -2,7 +2,7 @@
 
 export(acquisition_settings)
 export(all_players)
-export(draft_picks)
+export(draft_recap)
 export(draft_settings)
 export(espn_games)
 export(ffl_api)
