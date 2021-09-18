@@ -59,7 +59,7 @@ out_roster <- function(entry, t = NULL) {
     seasonId  = year_int,
     scoringPeriodId  = week_int,
     teamId = entry$playerPoolEntry$onTeamId,
-    lineupSlot = slot_abbrev(entry$lineupSlotId),
+    lineupSlot = slot_abbrev(entry$lineupSlot),
     id = player$id,
     firstName = player$firstName,
     lastName = player$lastName,
@@ -86,7 +86,7 @@ out_roster <- function(entry, t = NULL) {
 #' start_roster(team_roster(leagueId = "42654852")[[1]])
 #' @export
 start_roster <- function(roster) {
-  roster[roster$lineupSlotId != "BE" & roster$lineupSlotId != "IR", ]
+  roster[roster$lineupSlot != "BE" & roster$lineupSlot != "IR", ]
 }
 
 #' Sum of starting scores in a roster
