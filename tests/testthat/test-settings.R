@@ -39,8 +39,8 @@ test_that("league name returns as a data frame", {
 # waiver setting ----------------------------------------------------------
 Sys.sleep(runif(1, 1, 2))
 
-test_that("waiver settings for a single season", {
-  w <- waiver_settings("42654852", leagueHistory = FALSE)
+test_that("acquisition settings for a single season", {
+  w <- acquisition_settings("42654852", leagueHistory = FALSE)
   expect_s3_class(w, "data.frame")
   expect_length(w, 10)
   expect_type(w$acquisitionBudget, "integer")
@@ -52,7 +52,7 @@ test_that("waiver settings for a single season", {
 # fee settings ------------------------------------------------------------
 
 test_that("fee settings for a single season", {
-  f <- fee_settings("42654852", leagueHistory = FALSE)
+  f <- finance_settings("42654852", leagueHistory = FALSE)
   expect_s3_class(f, "data.frame")
   expect_length(f, 9)
   expect_type(f$entryFee, "double")
@@ -81,7 +81,7 @@ test_that("schedule settings for a single season", {
 # scoring settings --------------------------------------------------------
 
 test_that("scoring settings for a single season", {
-  s <- score_settings("42654852", leagueHistory = FALSE)
+  s <- scoring_settings("42654852", leagueHistory = FALSE)
   expect_s3_class(s, "data.frame")
   expect_length(s, 7)
 })
