@@ -123,7 +123,7 @@
     <p>The roster of all teams in a league.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>team_roster</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='ffl_id.html'>ffl_id</a></span><span class='op'>(</span><span class='op'>)</span>, seasonId <span class='op'>=</span> <span class='fl'>2021</span>, leagueHistory <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>team_roster</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='ffl_id.html'>ffl_id</a></span><span class='op'>(</span><span class='op'>)</span>, leagueHistory <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -132,12 +132,6 @@
       <th>leagueId</th>
       <td><p>Numeric league ID or ESPN fantasy page URL. Defaults to
 <code><a href='https://rdrr.io/r/base/options.html'>getOption("fflr.leagueId")</a></code>. Function fails if no ID is found.</p></td>
-    </tr>
-    <tr>
-      <th>seasonId</th>
-      <td><p>Integer year of NFL season. By default, the season is
-currently set to 2021. Use a recent year or set <code>leagueHistory</code> to <code>TRUE</code>
-to obtain all past data.</p></td>
     </tr>
     <tr>
       <th>leagueHistory</th>
