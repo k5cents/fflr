@@ -39,7 +39,7 @@ remotes::install_github("kiernann/fflr")
 ``` r
 library(fflr)
 packageVersion("fflr")
-#> [1] '1.9.0'
+#> [1] '1.9.1'
 ```
 
 Data is only available for public leagues. See [this help
@@ -51,8 +51,9 @@ page URL.
 
 <pre>https://fantasy.espn.com/football/league?leagueId=<b>42654852</b></pre>
 
-Use `ffl_id()` to set and retrieve a default `fflr.leagueId` option.
-Edit your `.Rprofile` file to set this option on startup.
+Use `ffl_id()` to set a default `fflr.leagueId` option. Your `.Rprofile`
+file can [set this option on
+startup](https://support.rstudio.com/hc/en-us/articles/360047157094-Managing-R-with-Rprofile-Renviron-Rprofile-site-Renviron-site-rsession-conf-and-repos-conf).
 
 ``` r
 ffl_id(leagueId = "42654852")
@@ -68,7 +69,7 @@ league_info()
 #> # A tibble: 1 × 6
 #>         id seasonId name             isPublic  size finalScoringPeriod
 #>      <int>    <int> <chr>            <lgl>    <int>              <int>
-#> 1 42654852     2021 FFLR Test League TRUE         4                 14
+#> 1 42654852     2021 FFLR Test League TRUE         4                 17
 league_teams()
 #> # A tibble: 4 × 5
 #>   abbrev    id location nickname   owners   
@@ -79,27 +80,29 @@ league_teams()
 #> 4 DEN        4 Denver   Devils     <chr [1]>
 ```
 
+The `scoringPeriodId` argument can be used to get data from past weeks.
+
 ``` r
-team_roster(scoringPeriodId = 1)[[1]][, -c(1:3, 5, 13:15)]
+team_roster(scoringPeriodId = 1)[[3]][, -c(1:3, 5, 13:15)]
 #> # A tibble: 16 × 8
-#>    lineupSlotId firstName  lastName    proTeam PositionId injuryStatus projectedScore actualScore
-#>    <fct>        <chr>      <chr>       <fct>   <fct>      <chr>                 <dbl>       <dbl>
-#>  1 QB           Patrick    Mahomes     KC      QB         A                     22.2         33.3
-#>  2 RB           Christian  McCaffrey   Car     RB         A                     21.3         27.7
-#>  3 RB           Jonathan   Taylor      Ind     RB         A                     15.6         17.6
-#>  4 WR           Davante    Adams       GB      WR         A                     19.9         10.6
-#>  5 WR           Calvin     Ridley      Atl     WR         A                     16.0         10.1
-#>  6 TE           Mark       Andrews     Bal     TE         A                     12.2          5  
-#>  7 FX           Antonio    Gibson      Wsh     RB         A                     16.0         11.8
-#>  8 DS           Buccaneers D/ST        TB      DS         A                      4.51        -3  
-#>  9 PK           Jason      Myers       Sea     PK         A                      8.04         4  
-#> 10 BE           D'Andre    Swift       Det     RB         Q                     13.5         24.4
-#> 11 BE           Miles      Sanders     Phi     RB         A                     14.3         17.3
-#> 12 BE           Chris      Carson      Sea     RB         A                     12.8         12.7
-#> 13 BE           Allen      Robinson II Chi     WR         A                     14.6          9.5
-#> 14 BE           Adam       Thielen     Min     WR         A                     14.4         30.2
-#> 15 BE           Diontae    Johnson     Pit     WR         A                     13.4         14.6
-#> 16 BE           Courtland  Sutton      Den     WR         A                     11.9          2.4
+#>    lineupSlot firstName lastName  proTeam position injuryStatus projectedScore actualScore
+#>    <fct>      <chr>     <chr>     <fct>   <fct>    <chr>                 <dbl>       <dbl>
+#>  1 QB         Josh      Allen     Buf     QB       A                     21.6         17.2
+#>  2 RB         Saquon    Barkley   NYG     RB       A                     13.8          3.7
+#>  3 RB         Derrick   Henry     Ten     RB       A                     17.3         10.7
+#>  4 WR         DeAndre   Hopkins   Ari     WR       A                     17.8         26.3
+#>  5 WR         Justin    Jefferson Min     WR       A                     15.4         12.5
+#>  6 TE         Darren    Waller    LV      TE       A                     14.2         26.5
+#>  7 FX         Austin    Ekeler    LAC     RB       A                     15.0         11.7
+#>  8 DS         Ravens    D/ST      Bal     DS       A                      5.86        -1  
+#>  9 PK         Justin    Tucker    Bal     PK       A                      8.14        11  
+#> 10 BE         Joe       Mixon     Cin     RB       A                     14.6         25  
+#> 11 BE         Keenan    Allen     LAC     WR       A                     14.8         19  
+#> 12 BE         Mike      Evans     TB      WR       A                     15.0          5.4
+#> 13 BE         Josh      Jacobs    LV      RB       O                     13.1         17  
+#> 14 BE         Myles     Gaskin    Mia     RB       A                     10.9         12.6
+#> 15 BE         Ja'Marr   Chase     Cin     WR       A                     10.4         20.9
+#> 16 BE         Brandon   Aiyuk     SF      WR       A                     13.9          0
 ```
 
 There are included objects for NFL teams and players.
