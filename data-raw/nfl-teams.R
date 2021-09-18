@@ -22,5 +22,6 @@ nfl_teams$conference[nfl_teams$conference == 0] <- NA
 nfl_teams$conference[nfl_teams$conference == 1] <- "AFC"
 nfl_teams$conference[nfl_teams$conference == 2] <- "NFC"
 nfl_teams <- as_tibble(nfl_teams[order(nfl_teams$id), ])
+names(nfl_teams)[1] <- "proTeamId"
 
 usethis::use_data(nfl_teams, overwrite = TRUE)

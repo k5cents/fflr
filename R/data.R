@@ -4,7 +4,7 @@
 #'
 #' @format A data frame with 1,063 rows and 11 variables:
 #' \describe{
-#'   \item{id}{Unique ESPN player ID}
+#'   \item{playerId}{Unique ESPN player ID}
 #'   \item{firstName}{First name}
 #'   \item{lastName}{Last name}
 #'   \item{proTeam}{Professional NFL team}
@@ -26,7 +26,7 @@
 #'
 #' @format A data frame with 33 rows and 6 columns:
 #' \describe{
-#'   \item{id}{Unique team ID}
+#'   \item{proTeamId}{Unique team ID}
 #'   \item{abbrev}{Team abbreviation}
 #'   \item{location}{Team geographic location}
 #'   \item{name}{Team full nickname}

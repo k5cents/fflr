@@ -7,7 +7,7 @@
 \format{
 A data frame with 1,063 rows and 11 variables:
 \describe{
-\item{id}{Unique ESPN player ID}
+\item{playerId}{Unique ESPN player ID}
 \item{firstName}{First name}
 \item{lastName}{Last name}
 \item{proTeam}{Professional NFL team}

@@ -33,4 +33,5 @@ zzz <- relocate(zzz, proTeam, defaultPositionId, .after = lastName)
 
 nfl_players <- bind_rows(zzz, def_players)
 nfl_players <- select(nfl_players, -birthPlace, -draftSelection)
+names(nfl_players)[1] <- "playerId"
 usethis::use_data(nfl_players, overwrite = TRUE)
