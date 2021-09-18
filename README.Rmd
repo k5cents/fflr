@@ -42,7 +42,7 @@ If a function doesn't work as intended, please file an [issue on GitHub][iss].
 
 ## Installation
 
-You can install the development version of fflr from [GitHub][fflr]::
+You can install the development version of fflr from [GitHub][fflr]:
 
 ```{r install-github, eval=FALSE}
 # install.packages("remotes")
@@ -53,15 +53,18 @@ remotes::install_github("kiernann/fflr")
 
 ```{r library-fflr}
 library(fflr)
+packageVersion("fflr")
 ```
 
 Data is only available for public leagues. See [this help page][help] on how to
-make a private league viewable.
+make a private league public
 
-Functions require a unique `leagueId`, which can be found on any ESPN page URL.
+Functions require a unique `leagueId`, which can be found in any ESPN page URL.
 
-A default league ID can be set and retrieved with the `fflr.leagueId` option 
-using `ffl_id()`.
+<pre>https://fantasy.espn.com/football/league?leagueId=<b>42654852</b></pre>
+
+Use `ffl_id()` to set and retrieve a default `fflr.leagueId` option. Edit your
+`.Rprofile` file to set this option on startup.
 
 ```{r rm-opt, echo=FALSE}
 options(fflr.leagueId = NULL)
@@ -85,7 +88,7 @@ team_roster(scoringPeriodId = 1)[[1]][, -c(1:3, 5, 13:15)]
 There are included objects for NFL teams and players.
 
 ```{r nfl-players}
-nfl_players[, -1]
+nfl_teams
 ```
 
 ***

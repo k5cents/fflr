@@ -27,7 +27,7 @@ on GitHub](https://github.com/kiernann/fflr/issues).
 ## Installation
 
 You can install the development version of fflr from
-[GitHub](https://github.com/kiernann/fflr)::
+[GitHub](https://github.com/kiernann/fflr):
 
 ``` r
 # install.packages("remotes")
@@ -38,17 +38,21 @@ remotes::install_github("kiernann/fflr")
 
 ``` r
 library(fflr)
+packageVersion("fflr")
+#> [1] '1.9.0'
 ```
 
 Data is only available for public leagues. See [this help
 page](https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public)
-on how to make a private league viewable.
+on how to make a private league public
 
-Functions require a unique `leagueId`, which can be found on any ESPN
+Functions require a unique `leagueId`, which can be found in any ESPN
 page URL.
 
-A default league ID can be set and retrieved with the `fflr.leagueId`
-option using `ffl_id()`.
+<pre>https://fantasy.espn.com/football/league?leagueId=<b>42654852</b></pre>
+
+Use `ffl_id()` to set and retrieve a default `fflr.leagueId` option.
+Edit your `.Rprofile` file to set this option on startup.
 
 ``` r
 ffl_id(leagueId = "42654852")
@@ -89,7 +93,7 @@ team_roster(scoringPeriodId = 1)[[1]][, -c(1:3, 5, 13:15)]
 #>  7 FX           Antonio    Gibson      Wsh     RB         A                     16.0         11.8
 #>  8 DS           Buccaneers D/ST        TB      DS         A                      4.51        -3  
 #>  9 PK           Jason      Myers       Sea     PK         A                      8.04         4  
-#> 10 BE           D'Andre    Swift       Det     RB         A                     13.5         24.4
+#> 10 BE           D'Andre    Swift       Det     RB         Q                     13.5         24.4
 #> 11 BE           Miles      Sanders     Phi     RB         A                     14.3         17.3
 #> 12 BE           Chris      Carson      Sea     RB         A                     12.8         12.7
 #> 13 BE           Allen      Robinson II Chi     WR         A                     14.6          9.5
@@ -101,21 +105,21 @@ team_roster(scoringPeriodId = 1)[[1]][, -c(1:3, 5, 13:15)]
 There are included objects for NFL teams and players.
 
 ``` r
-nfl_players[, -1]
-#> # A tibble: 1,063 × 10
-#>    firstName lastName  proTeam defaultPositionId jersey weight height   age dateOfBirth debutYear
-#>    <chr>     <chr>     <fct>   <fct>             <chr>   <dbl>  <dbl> <int> <date>          <int>
-#>  1 Christian McCaffrey Car     RB                22        205     71    25 1996-06-07       2017
-#>  2 Dalvin    Cook      Min     RB                33        210     70    26 1995-08-10       2017
-#>  3 Davante   Adams     GB      WR                17        215     73    28 1992-12-24       2014
-#>  4 Derrick   Henry     Ten     RB                22        247     75    27 1994-01-04       2016
-#>  5 Travis    Kelce     KC      TE                87        260     77    31 1989-10-05       2013
-#>  6 Alvin     Kamara    NO      RB                41        215     70    26 1995-07-25       2017
-#>  7 Tyreek    Hill      KC      WR                10        185     70    27 1994-03-01       2016
-#>  8 Stefon    Diggs     Buf     WR                14        191     72    27 1993-11-29       2015
-#>  9 Patrick   Mahomes   KC      QB                15        230     75    25 1995-09-17       2017
-#> 10 DK        Metcalf   Sea     WR                14        235     76    23 1997-12-14       2019
-#> # … with 1,053 more rows
+nfl_teams
+#> # A tibble: 33 × 6
+#>       id abbrev location   name    byeWeek conference
+#>    <int> <fct>  <chr>      <chr>     <int> <chr>     
+#>  1     0 FA     <NA>       FA            0 <NA>      
+#>  2     1 Atl    Atlanta    Falcons       6 NFC       
+#>  3     2 Buf    Buffalo    Bills         7 AFC       
+#>  4     3 Chi    Chicago    Bears        10 NFC       
+#>  5     4 Cin    Cincinnati Bengals      10 AFC       
+#>  6     5 Cle    Cleveland  Browns       13 AFC       
+#>  7     6 Dal    Dallas     Cowboys       7 NFC       
+#>  8     7 Den    Denver     Broncos      11 AFC       
+#>  9     8 Det    Detroit    Lions         9 NFC       
+#> 10     9 GB     Green Bay  Packers      13 NFC       
+#> # … with 23 more rows
 ```
 
 ------------------------------------------------------------------------
