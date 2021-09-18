@@ -39,7 +39,7 @@ pos_abbrev <- function(pos) {
 }
 
 pro_abbrev <- function(proTeamId) {
-  fflr::nfl_teams$abbrev[match(proTeamId, fflr::nfl_teams$team)]
+  fflr::nfl_teams$abbrev[match(proTeamId, fflr::nfl_teams$id)]
 }
 
 list_ifnot <- function(x) {
