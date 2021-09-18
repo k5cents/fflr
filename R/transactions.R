@@ -5,10 +5,10 @@
 #' @inheritParams ffl_api
 #' @return A data frame of transaction counts by team.
 #' @examples
-#' moves_summary(leagueId = "42654852")
+#' transaction_counter(leagueId = "42654852")
 #' @importFrom tibble as_tibble
 #' @export
-moves_summary <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
+transaction_counter <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   dat <- ffl_api(leagueId, leagueHistory, view = "mTeam", ...)
   if (leagueHistory) {
     out <- rep(list(NA), length(dat$teams))
