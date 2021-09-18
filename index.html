@@ -105,11 +105,11 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">fflr</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html">packageVersion</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span>
-<span class="co">#&gt; [1] '1.9.0'</span></code></pre></div>
+<span class="co">#&gt; [1] '1.9.1'</span></code></pre></div>
 <p>Data is only available for public leagues. See <a href="https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public">this help page</a> on how to make a private league public</p>
 <p>Functions require a unique <code>leagueId</code>, which can be found in any ESPN page URL.</p>
 <pre>https://fantasy.espn.com/football/league?leagueId=<b>42654852</b></pre>
-<p>Use <code><a href="reference/ffl_id.html">ffl_id()</a></code> to set and retrieve a default <code>fflr.leagueId</code> option. Edit your <code>.Rprofile</code> file to set this option on startup.</p>
+<p>Use <code><a href="reference/ffl_id.html">ffl_id()</a></code> to set a default <code>fflr.leagueId</code> option. Your <code>.Rprofile</code> file can <a href="https://support.rstudio.com/hc/en-us/articles/360047157094-Managing-R-with-Rprofile-Renviron-Rprofile-site-Renviron-site-rsession-conf-and-repos-conf">set this option on startup</a>.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/ffl_id.html">ffl_id</a></span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span><span class="op">)</span>
 <span class="co">#&gt; Temporarily set `fflr.leagueId` option to 42654852</span>
@@ -120,7 +120,7 @@
 <span class="co">#&gt; # A tibble: 1 × 6</span>
 <span class="co">#&gt;         id seasonId name             isPublic  size finalScoringPeriod</span>
 <span class="co">#&gt;      &lt;int&gt;    &lt;int&gt; &lt;chr&gt;            &lt;lgl&gt;    &lt;int&gt;              &lt;int&gt;</span>
-<span class="co">#&gt; 1 42654852     2021 FFLR Test League TRUE         4                 14</span>
+<span class="co">#&gt; 1 42654852     2021 FFLR Test League TRUE         4                 17</span>
 <span class="fu"><a href="reference/league_teams.html">league_teams</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 4 × 5</span>
 <span class="co">#&gt;   abbrev    id location nickname   owners   </span>
@@ -129,27 +129,28 @@
 <span class="co">#&gt; 2 BOS        2 Boston   Birds      &lt;chr [1]&gt;</span>
 <span class="co">#&gt; 3 CHI        3 Chicago  Crowns     &lt;chr [1]&gt;</span>
 <span class="co">#&gt; 4 DEN        4 Denver   Devils     &lt;chr [1]&gt;</span></code></pre></div>
+<p>The <code>scoringPeriodId</code> argument can be used to get data from past weeks.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/team_roster.html">team_roster</a></span><span class="op">(</span>scoringPeriodId <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span>, <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, <span class="fl">5</span>, <span class="fl">13</span><span class="op">:</span><span class="fl">15</span><span class="op">)</span><span class="op">]</span>
+<code class="sourceCode R"><span class="fu"><a href="reference/team_roster.html">team_roster</a></span><span class="op">(</span>scoringPeriodId <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">[[</span><span class="fl">3</span><span class="op">]</span><span class="op">]</span><span class="op">[</span>, <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, <span class="fl">5</span>, <span class="fl">13</span><span class="op">:</span><span class="fl">15</span><span class="op">)</span><span class="op">]</span>
 <span class="co">#&gt; # A tibble: 16 × 8</span>
-<span class="co">#&gt;    lineupSlotId firstName  lastName    proTeam PositionId injuryStatus projectedScore actualScore</span>
-<span class="co">#&gt;    &lt;fct&gt;        &lt;chr&gt;      &lt;chr&gt;       &lt;fct&gt;   &lt;fct&gt;      &lt;chr&gt;                 &lt;dbl&gt;       &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 QB           Patrick    Mahomes     KC      QB         A                     22.2         33.3</span>
-<span class="co">#&gt;  2 RB           Christian  McCaffrey   Car     RB         A                     21.3         27.7</span>
-<span class="co">#&gt;  3 RB           Jonathan   Taylor      Ind     RB         A                     15.6         17.6</span>
-<span class="co">#&gt;  4 WR           Davante    Adams       GB      WR         A                     19.9         10.6</span>
-<span class="co">#&gt;  5 WR           Calvin     Ridley      Atl     WR         A                     16.0         10.1</span>
-<span class="co">#&gt;  6 TE           Mark       Andrews     Bal     TE         A                     12.2          5  </span>
-<span class="co">#&gt;  7 FX           Antonio    Gibson      Wsh     RB         A                     16.0         11.8</span>
-<span class="co">#&gt;  8 DS           Buccaneers D/ST        TB      DS         A                      4.51        -3  </span>
-<span class="co">#&gt;  9 PK           Jason      Myers       Sea     PK         A                      8.04         4  </span>
-<span class="co">#&gt; 10 BE           D'Andre    Swift       Det     RB         Q                     13.5         24.4</span>
-<span class="co">#&gt; 11 BE           Miles      Sanders     Phi     RB         A                     14.3         17.3</span>
-<span class="co">#&gt; 12 BE           Chris      Carson      Sea     RB         A                     12.8         12.7</span>
-<span class="co">#&gt; 13 BE           Allen      Robinson II Chi     WR         A                     14.6          9.5</span>
-<span class="co">#&gt; 14 BE           Adam       Thielen     Min     WR         A                     14.4         30.2</span>
-<span class="co">#&gt; 15 BE           Diontae    Johnson     Pit     WR         A                     13.4         14.6</span>
-<span class="co">#&gt; 16 BE           Courtland  Sutton      Den     WR         A                     11.9          2.4</span></code></pre></div>
+<span class="co">#&gt;    lineupSlot firstName lastName  proTeam position injuryStatus projectedScore actualScore</span>
+<span class="co">#&gt;    &lt;fct&gt;      &lt;chr&gt;     &lt;chr&gt;     &lt;fct&gt;   &lt;fct&gt;    &lt;chr&gt;                 &lt;dbl&gt;       &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 QB         Josh      Allen     Buf     QB       A                     21.6         17.2</span>
+<span class="co">#&gt;  2 RB         Saquon    Barkley   NYG     RB       A                     13.8          3.7</span>
+<span class="co">#&gt;  3 RB         Derrick   Henry     Ten     RB       A                     17.3         10.7</span>
+<span class="co">#&gt;  4 WR         DeAndre   Hopkins   Ari     WR       A                     17.8         26.3</span>
+<span class="co">#&gt;  5 WR         Justin    Jefferson Min     WR       A                     15.4         12.5</span>
+<span class="co">#&gt;  6 TE         Darren    Waller    LV      TE       A                     14.2         26.5</span>
+<span class="co">#&gt;  7 FX         Austin    Ekeler    LAC     RB       A                     15.0         11.7</span>
+<span class="co">#&gt;  8 DS         Ravens    D/ST      Bal     DS       A                      5.86        -1  </span>
+<span class="co">#&gt;  9 PK         Justin    Tucker    Bal     PK       A                      8.14        11  </span>
+<span class="co">#&gt; 10 BE         Joe       Mixon     Cin     RB       A                     14.6         25  </span>
+<span class="co">#&gt; 11 BE         Keenan    Allen     LAC     WR       A                     14.8         19  </span>
+<span class="co">#&gt; 12 BE         Mike      Evans     TB      WR       A                     15.0          5.4</span>
+<span class="co">#&gt; 13 BE         Josh      Jacobs    LV      RB       O                     13.1         17  </span>
+<span class="co">#&gt; 14 BE         Myles     Gaskin    Mia     RB       A                     10.9         12.6</span>
+<span class="co">#&gt; 15 BE         Ja'Marr   Chase     Cin     WR       A                     10.4         20.9</span>
+<span class="co">#&gt; 16 BE         Brandon   Aiyuk     SF      WR       A                     13.9          0</span></code></pre></div>
 <p>There are included objects for NFL teams and players.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">nfl_teams</span>
