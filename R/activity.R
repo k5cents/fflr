@@ -5,9 +5,9 @@
 #' @inheritParams ffl_api
 #' @return A data frame of transactions and roster moves.
 #' @examples
-#' roster_moves(leagueId = "42654852", scoringPeriodId = 1)
+#' recent_activity(leagueId = "42654852", scoringPeriodId = 1)
 #' @export
-roster_moves <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
+recent_activity <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   dat <- ffl_api(
     leagueId = leagueId,
     leagueHistory = leagueHistory,
@@ -34,11 +34,11 @@ roster_moves <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
     i$toLineupSlotId[i$toLineupSlotId == -1L] <- NA_integer_
     i$toLineupSlotId[i$toLineupSlotId == 0] <- NA_integer_
 
-    t$seaonId <- dat$seasonId
     t$bidAmount[t$bidAmount == 0] <- NA_integer_
     t$proposedDate = ffl_date(t$proposedDate)
-    t <- t[, c(16, 10, 1, 11, 8, 12, 3)]
-
+    t$seaonId <- dat$seasonId
+    t <- t[, c("seaonId", "rating", "bidAmount", "scoringPeriodId", "memberId",
+               "status", "id")]
     t <- merge(t, i, by = "id")
     t$id <- substr(t$id, start = 1, stop = 8)
     as_tibble(t)
