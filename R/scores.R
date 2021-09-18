@@ -54,11 +54,11 @@ parse_matchup <- function(s, y = NULL, t = NULL) {
     isWinner = (rep(s$winner, 2) == "HOME") == is_home
   )
   x <- x[order(x$id), ]
-  x$totalPoints[x$totalPoints == 0] <- NA
-  x$powerWins = NA_integer_
+  x <- x[!is.na(x$matchupPeriodId), ]
+  x$powerWins <- NA_integer_
   for (w in unique(x$matchupPeriodId)) {
     y <- x$totalPoints[x$matchupPeriodId == w]
     x$powerWins[x$matchupPeriodId == w] <- match(y, sort(y)) - 1
   }
-  as_tibble(x[!is.na(x$totalPoints), ])
+  as_tibble(x)
 }
