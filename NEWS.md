@@ -1,10 +1,20 @@
+# fflr 1.9.1
+
+* Rename some functions to match the website section headers (e.g., 
+`roster_moves()` to `recent_activity()`).
+* Add `pro_events()` and `pro_scores()` for live NFL data.
+* Add vignette listing the package functions as they relate to the sections of
+the ESPN website.
+* Add spell checking.
+* Rename some columns to match conversion (#31).
+
 # fflr 1.9.0
 
-* The package has largely been re-written from the groud-up (#24).
+* The package has largely been re-written from the ground-up (#24).
 * All functions use the new `try_json()` back-end, which uses `httr::RETRY()`
 instead of `jsonlite::fromJSON()`. This allows all functions to fail more
 elegantly.
-* Use the same argument and column names as the API (i.e., `leagueId` instead of
+* Use the same argument and column names as the API (e.g., `leagueId` instead of
 `lid`).
 * Return single-row data frames instead of lists for a single season.
 * Add `tidy_*` prefix to function names that manipulate data structure (#26).
