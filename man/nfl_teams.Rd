@@ -7,17 +7,17 @@
 \format{
 A data frame with 33 rows and 6 columns:
 \describe{
-\item{team}{Unique team ID}
+\item{id}{Unique team ID}
 \item{abbrev}{Team abbreviation}
 \item{location}{Team geographic location}
 \item{name}{Team full nickname}
-\item{bye}{Bye week, no game played}
-\item{conf}{NFL conference}
+\item{byeWeek}{Bye week, no game played}
+\item{conference}{NFL conference}
 ...
 }
 }
 \source{
-\url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2020?view=proTeamSchedules_wl}
+\url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2021?view=proTeamSchedules_wl}
 }
 \usage{
 nfl_teams

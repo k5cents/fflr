@@ -26,15 +26,15 @@
 #'
 #' @format A data frame with 33 rows and 6 columns:
 #' \describe{
-#'   \item{team}{Unique team ID}
+#'   \item{id}{Unique team ID}
 #'   \item{abbrev}{Team abbreviation}
 #'   \item{location}{Team geographic location}
 #'   \item{name}{Team full nickname}
-#'   \item{bye}{Bye week, no game played}
-#'   \item{conf}{NFL conference}
+#'   \item{byeWeek}{Bye week, no game played}
+#'   \item{conference}{NFL conference}
 #'   ...
 #' }
-#' @source \url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2020?view=proTeamSchedules_wl}
+#' @source \url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2021?view=proTeamSchedules_wl}
 "nfl_teams"
 
 #' 2021 NFL Schedule
@@ -51,19 +51,5 @@
 #'   \item{date}{Match date and time}
 #'   ...
 #' }
-#' @source \url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2020?view=proTeamSchedules_wl}
+#' @source \url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2021?view=proTeamSchedules_wl}
 "nfl_schedule"
-
-#' 2015-2021 GAA Teams
-#'
-#' The GAA is the fantasy league of this package's author.
-#'
-#' @format A data frame with 13 rows and 3 variables:
-#' \describe{
-#'   \item{team}{Unique yearly team ID}
-#'   \item{abbrev}{Team abbreviation}
-#'   \item{years}{Nested vector of active years}
-#'   ...
-#' }
-#' @source \url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2021/segments/0/leagues/252353}
-"gaa_teams"
