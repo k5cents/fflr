@@ -19,7 +19,7 @@ be called? If \code{TRUE}, a list of results is returned, with one element for
 each historical year of the league.}
 }
 \value{
-A dataframe (or list) with league teams.
+A dataframe (or list) with league members.
 }
 \description{
 The teams in a league and their owners.

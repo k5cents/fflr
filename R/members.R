@@ -5,7 +5,7 @@
 #' @inheritParams ffl_api
 #' @examples
 #' league_members(leagueId = "42654852")
-#' @return A dataframe (or list) with league teams.
+#' @return A dataframe (or list) with league members.
 #' @family League information
 #' @export
 league_members <- function(leagueId = ffl_id(), seasonId = 2021,
@@ -17,13 +17,8 @@ league_members <- function(leagueId = ffl_id(), seasonId = 2021,
   )
   if (leagueHistory && is.list(dat$teams)) {
     names(dat$teams) <- dat$seasonId
-    lapply(dat$teams, out_member)
+    lapply(dat$members, as_tibble)
   } else {
-    out_team(dat$teams)
+    as_tibble(dat$members)
   }
-}
-
-out_member <- function(z) {
-  z$abbrev <- factor(z$id, labels = z$abbrev)
-  as_tibble(z)
 }
