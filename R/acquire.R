@@ -2,7 +2,7 @@
 #'
 #' The date and method of each player's acquisition onto a fantasy roster.
 #'
-#' @inheritParams draft_picks
+#' @inheritParams ffl_api
 #' @return A data frame of roster players with acquisition method and date.
 #' @examples
 #' player_acquire(leagueId = "42654852")

@@ -3,7 +3,7 @@
 #' Current information about a league: the date activated, current week,
 #' starting week, final week, past seasons, teams joined, and waiver status.
 #'
-#' @inheritParams draft_picks
+#' @inheritParams ffl_api
 #' @return A data frame of league status by season.
 #' @examples
 #' league_status(leagueId = "42654852")

@@ -2,7 +2,7 @@
 #'
 #' The emails, chats, notes, and messages sent by league members.
 #'
-#' @inheritParams draft_picks
+#' @inheritParams ffl_api
 #' @return A tibble of messages.
 #' @examples
 #' league_messages(leagueId = "42654852")
