@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.1</span>
       </span>
     </div>
 
@@ -94,6 +94,18 @@
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/fantasy-football.html">Fantasy Football Data</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
@@ -149,7 +161,7 @@ each historical year of the league.</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A dataframe (or list) with league teams.</p>
+    <p>A dataframe (or list) with league members.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other League information: 
@@ -157,13 +169,10 @@ each historical year of the league.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>league_members</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 4 × 5</span>
-#&gt;   abbrev    id location nickname   owners   
-#&gt;   <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;list&gt;</span>   
-#&gt; <span style='color: #BCBCBC;'>1</span> AUS        1 Austin   Astronauts <span style='color: #949494;'>&lt;chr [1]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'>2</span> BOS        2 Boston   Birds      <span style='color: #949494;'>&lt;chr [1]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'>3</span> CHI        3 Chicago  Crowns     <span style='color: #949494;'>&lt;chr [1]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'>4</span> DEN        4 Denver   Devils     <span style='color: #949494;'>&lt;chr [1]&gt;</span></div></pre>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 1 × 3</span>
+#&gt;   displayName id                                     isLeagueManager
+#&gt;   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                                  <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>          
+#&gt; <span style='color: #BCBCBC;'>1</span> K5cents     {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2} FALSE          </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

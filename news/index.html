@@ -79,7 +79,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.1</span>
       </span>
     </div>
 
@@ -93,6 +93,18 @@
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/fantasy-football.html">Fantasy Football Data</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
@@ -117,14 +129,26 @@
       
     </div>
 
+    <div id="fflr-191" class="section level1">
+<h1 class="page-header" data-toc-text="1.9.1">
+<a href="#fflr-191" class="anchor"></a>fflr 1.9.1<small> Unreleased </small>
+</h1>
+<ul>
+<li>Rename some functions to match the website section headers (e.g., <code>roster_moves()</code> to <code><a href="../reference/recent_activity.html">recent_activity()</a></code>).</li>
+<li>Add <code><a href="../reference/pro_events.html">pro_events()</a></code> and <code><a href="../reference/pro_scores.html">pro_scores()</a></code> for live NFL data.</li>
+<li>Add vignette listing the package functions as they relate to the sections of the ESPN website.</li>
+<li>Add spell checking.</li>
+<li>Rename some columns to match conversion (#31).</li>
+</ul>
+</div>
     <div id="fflr-190" class="section level1">
 <h1 class="page-header" data-toc-text="1.9.0">
 <a href="#fflr-190" class="anchor"></a>fflr 1.9.0<small> Unreleased </small>
 </h1>
 <ul>
-<li>The package has largely been re-written from the groud-up (#24).</li>
+<li>The package has largely been re-written from the ground-up (#24).</li>
 <li>All functions use the new <code>try_json()</code> back-end, which uses <code><a href="https://httr.r-lib.org/reference/RETRY.html">httr::RETRY()</a></code> instead of <code><a href="https://rdrr.io/pkg/jsonlite/man/fromJSON.html">jsonlite::fromJSON()</a></code>. This allows all functions to fail more elegantly.</li>
-<li>Use the same argument and column names as the API (i.e., <code>leagueId</code> instead of <code>lid</code>).</li>
+<li>Use the same argument and column names as the API (e.g., <code>leagueId</code> instead of <code>lid</code>).</li>
 <li>Return single-row data frames instead of lists for a single season.</li>
 <li>Add <code>tidy_*</code> prefix to function names that manipulate data structure (#26).</li>
 <li>Pass the <code>...</code> arguments to <code>GET()</code> instead of <code>fromJSON()</code> (#25).</li>
@@ -136,7 +160,7 @@
 </h1>
 <ul>
 <li>
-<code><a href="../reference/roster_moves.html">roster_moves()</a></code> calls a specific week in the vignette and example. Without a specific week, the <em>current</em> week is used (which no longer returns data).</li>
+<code>roster_moves()</code> calls a specific week in the vignette and example. Without a specific week, the <em>current</em> week is used (which no longer returns data).</li>
 </ul>
 </div>
     <div id="fflr-0313" class="section level1">

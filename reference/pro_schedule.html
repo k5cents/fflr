@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.1</span>
       </span>
     </div>
 
@@ -94,6 +94,18 @@
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/fantasy-football.html">Fantasy Football Data</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
@@ -140,19 +152,19 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>pro_schedule</span><span class='op'>(</span>seasonId <span class='op'>=</span> <span class='fu'><a href='ffl_year.html'>ffl_year</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Unknown or uninitialised column: `team`.</span></div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 514 × 6</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 514 × 6</span>
 #&gt;    seasonId scoringPeriodId proTeam opponent isHome date               
 #&gt;       <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;dttm&gt;</span>             
-#&gt; <span style='color: #BCBCBC;'> 1</span>     <span style='text-decoration: underline;'>2</span>019               1 <span style='color: #BB0000;'>NA</span>      <span style='color: #BB0000;'>NA</span>       TRUE   2019-09-08 <span style='color: #949494;'>20:05:00</span>
-#&gt; <span style='color: #BCBCBC;'> 2</span>     <span style='text-decoration: underline;'>2</span>019               1 <span style='color: #BB0000;'>NA</span>      <span style='color: #BB0000;'>NA</span>       TRUE   2019-09-08 <span style='color: #949494;'>17:00:00</span>
-#&gt; <span style='color: #BCBCBC;'> 3</span>     <span style='text-decoration: underline;'>2</span>019               1 <span style='color: #BB0000;'>NA</span>      <span style='color: #BB0000;'>NA</span>       TRUE   2019-09-10 <span style='color: #949494;'>02:20:00</span>
-#&gt; <span style='color: #BCBCBC;'> 4</span>     <span style='text-decoration: underline;'>2</span>019               1 <span style='color: #BB0000;'>NA</span>      <span style='color: #BB0000;'>NA</span>       TRUE   2019-09-08 <span style='color: #949494;'>17:00:00</span>
-#&gt; <span style='color: #BCBCBC;'> 5</span>     <span style='text-decoration: underline;'>2</span>019               1 <span style='color: #BB0000;'>NA</span>      <span style='color: #BB0000;'>NA</span>       TRUE   2019-09-08 <span style='color: #949494;'>17:00:00</span>
-#&gt; <span style='color: #BCBCBC;'> 6</span>     <span style='text-decoration: underline;'>2</span>019               1 <span style='color: #BB0000;'>NA</span>      <span style='color: #BB0000;'>NA</span>       TRUE   2019-09-08 <span style='color: #949494;'>17:00:00</span>
-#&gt; <span style='color: #BCBCBC;'> 7</span>     <span style='text-decoration: underline;'>2</span>019               1 <span style='color: #BB0000;'>NA</span>      <span style='color: #BB0000;'>NA</span>       TRUE   2019-09-09 <span style='color: #949494;'>00:20:00</span>
-#&gt; <span style='color: #BCBCBC;'> 8</span>     <span style='text-decoration: underline;'>2</span>019               1 <span style='color: #BB0000;'>NA</span>      <span style='color: #BB0000;'>NA</span>       TRUE   2019-09-09 <span style='color: #949494;'>23:10:00</span>
-#&gt; <span style='color: #BCBCBC;'> 9</span>     <span style='text-decoration: underline;'>2</span>019               1 <span style='color: #BB0000;'>NA</span>      <span style='color: #BB0000;'>NA</span>       TRUE   2019-09-08 <span style='color: #949494;'>20:25:00</span>
-#&gt; <span style='color: #BCBCBC;'>10</span>     <span style='text-decoration: underline;'>2</span>019               1 <span style='color: #BB0000;'>NA</span>      <span style='color: #BB0000;'>NA</span>       TRUE   2019-09-08 <span style='color: #949494;'>17:00:00</span>
+#&gt; <span style='color: #BCBCBC;'> 1</span>     <span style='text-decoration: underline;'>2</span>019               1 Atl     Min      FALSE  2019-09-08 <span style='color: #949494;'>17:00:00</span>
+#&gt; <span style='color: #BCBCBC;'> 2</span>     <span style='text-decoration: underline;'>2</span>019               1 Buf     NYJ      FALSE  2019-09-08 <span style='color: #949494;'>17:00:00</span>
+#&gt; <span style='color: #BCBCBC;'> 3</span>     <span style='text-decoration: underline;'>2</span>019               1 Chi     GB       TRUE   2019-09-06 <span style='color: #949494;'>00:20:00</span>
+#&gt; <span style='color: #BCBCBC;'> 4</span>     <span style='text-decoration: underline;'>2</span>019               1 Cin     Sea      FALSE  2019-09-08 <span style='color: #949494;'>20:05:00</span>
+#&gt; <span style='color: #BCBCBC;'> 5</span>     <span style='text-decoration: underline;'>2</span>019               1 Cle     Ten      TRUE   2019-09-08 <span style='color: #949494;'>17:00:00</span>
+#&gt; <span style='color: #BCBCBC;'> 6</span>     <span style='text-decoration: underline;'>2</span>019               1 Dal     NYG      TRUE   2019-09-08 <span style='color: #949494;'>20:25:00</span>
+#&gt; <span style='color: #BCBCBC;'> 7</span>     <span style='text-decoration: underline;'>2</span>019               1 Den     LV       FALSE  2019-09-10 <span style='color: #949494;'>02:20:00</span>
+#&gt; <span style='color: #BCBCBC;'> 8</span>     <span style='text-decoration: underline;'>2</span>019               1 Det     Ari      FALSE  2019-09-08 <span style='color: #949494;'>20:25:00</span>
+#&gt; <span style='color: #BCBCBC;'> 9</span>     <span style='text-decoration: underline;'>2</span>019               1 GB      Chi      FALSE  2019-09-06 <span style='color: #949494;'>00:20:00</span>
+#&gt; <span style='color: #BCBCBC;'>10</span>     <span style='text-decoration: underline;'>2</span>019               1 Ten     Cle      FALSE  2019-09-08 <span style='color: #949494;'>17:00:00</span>
 #&gt; <span style='color: #949494;'># … with 504 more rows</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

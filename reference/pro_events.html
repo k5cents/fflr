@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>League standing simulation — league_simulation • fflr</title>
+<title>Professional games — pro_events • fflr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,10 +46,9 @@
 
 
 
-<meta property="og:title" content="League standing simulation — league_simulation" />
-<meta property="og:description" content="The ESPN algorithm simulates the entire season according to the projection
-and matchup schedule to calculate the probability of a team winning their
-division and making the playoffs." />
+<meta property="og:title" content="Professional games — pro_events" />
+<meta property="og:description" content="Data on the status of NFL games, including scores and odds, kickoff time,
+and broadcast information." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -128,55 +127,46 @@ division and making the playoffs." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>League standing simulation</h1>
+    <h1>Professional games</h1>
     
-    <div class="hidden name"><code>league_simulation.Rd</code></div>
+    <div class="hidden name"><code>pro_events.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>The ESPN algorithm simulates the entire season according to the projection
-and matchup schedule to calculate the probability of a team winning their
-division and making the playoffs.</p>
+    <p>Data on the status of NFL games, including scores and odds, kickoff time,
+and broadcast information.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>league_simulation</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='ffl_id.html'>ffl_id</a></span><span class='op'>(</span><span class='op'>)</span>, leagueHistory <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>pro_events</span><span class='op'>(</span><span class='op'>)</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>leagueId</th>
-      <td><p>Numeric league ID or ESPN fantasy page URL. Defaults to
-<code><a href='https://rdrr.io/r/base/options.html'>getOption("fflr.leagueId")</a></code>. Function fails if no ID is found.</p></td>
-    </tr>
-    <tr>
-      <th>leagueHistory</th>
-      <td><p>logical; Should the <code>leagueHistory</code> version of the API
-be called? If <code>TRUE</code>, a list of results is returned, with one element for
-each historical year of the league.</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>Additional queries passed to <code><a href='https://httr.r-lib.org/reference/GET.html'>httr::GET()</a></code>
-(e.g., <code>scoringPeriodId</code>). Arguments are converted to a named list to be
-passed alongside <code>view</code>.</p></td>
-    </tr>
-    </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A data frame of simulated team standings.</p>
+    <p>A data frame of NFL events.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>league_simulation</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 4 × 10</span>
-#&gt;   seasonId teamId abbrev draftDayProjected… currentProjected… losses  ties  wins
-#&gt;      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>               <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>             <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
-#&gt; <span style='color: #BCBCBC;'>1</span>     <span style='text-decoration: underline;'>2</span>021      1 AUS                     2                 1      9     0     8
-#&gt; <span style='color: #BCBCBC;'>2</span>     <span style='text-decoration: underline;'>2</span>021      2 BOS                     4                 4      9     0     8
-#&gt; <span style='color: #BCBCBC;'>3</span>     <span style='text-decoration: underline;'>2</span>021      3 CHI                     3                 3      8     0     9
-#&gt; <span style='color: #BCBCBC;'>4</span>     <span style='text-decoration: underline;'>2</span>021      4 DEN                     1                 2     10     0     7
-#&gt; <span style='color: #949494;'># … with 2 more variables: playoffPct &lt;dbl&gt;, divisionWinPct &lt;dbl&gt;</span></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>pro_events</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 16 × 13</span>
+#&gt;    id        date                timeValid period clock status summary          
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;dttm&gt;</span>              <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>            
+#&gt; <span style='color: #BCBCBC;'> 1</span> 401326127 2021-09-17 <span style='color: #949494;'>00:20:00</span> TRUE           4 0:00  post   Final            
+#&gt; <span style='color: #BCBCBC;'> 2</span> 401326129 2021-09-19 <span style='color: #949494;'>17:00:00</span> TRUE           0 0:00  pre    9/19 - 1:00 PM E…
+#&gt; <span style='color: #BCBCBC;'> 3</span> 401326130 2021-09-19 <span style='color: #949494;'>17:00:00</span> TRUE           0 0:00  pre    9/19 - 1:00 PM E…
+#&gt; <span style='color: #BCBCBC;'> 4</span> 401326131 2021-09-19 <span style='color: #949494;'>17:00:00</span> TRUE           0 0:00  pre    9/19 - 1:00 PM E…
+#&gt; <span style='color: #BCBCBC;'> 5</span> 401326353 2021-09-19 <span style='color: #949494;'>17:00:00</span> TRUE           0 0:00  pre    9/19 - 1:00 PM E…
+#&gt; <span style='color: #BCBCBC;'> 6</span> 401326354 2021-09-19 <span style='color: #949494;'>17:00:00</span> TRUE           0 0:00  pre    9/19 - 1:00 PM E…
+#&gt; <span style='color: #BCBCBC;'> 7</span> 401326355 2021-09-19 <span style='color: #949494;'>17:00:00</span> TRUE           0 0:00  pre    9/19 - 1:00 PM E…
+#&gt; <span style='color: #BCBCBC;'> 8</span> 401326356 2021-09-19 <span style='color: #949494;'>17:00:00</span> TRUE           0 0:00  pre    9/19 - 1:00 PM E…
+#&gt; <span style='color: #BCBCBC;'> 9</span> 401326128 2021-09-19 <span style='color: #949494;'>17:00:00</span> TRUE           0 0:00  pre    9/19 - 1:00 PM E…
+#&gt; <span style='color: #BCBCBC;'>10</span> 401326132 2021-09-19 <span style='color: #949494;'>17:00:00</span> TRUE           0 0:00  pre    9/19 - 1:00 PM E…
+#&gt; <span style='color: #BCBCBC;'>11</span> 401326357 2021-09-19 <span style='color: #949494;'>20:05:00</span> TRUE           0 0:00  pre    9/19 - 4:05 PM E…
+#&gt; <span style='color: #BCBCBC;'>12</span> 401326358 2021-09-19 <span style='color: #949494;'>20:05:00</span> TRUE           0 0:00  pre    9/19 - 4:05 PM E…
+#&gt; <span style='color: #BCBCBC;'>13</span> 401326359 2021-09-19 <span style='color: #949494;'>20:25:00</span> TRUE           0 0:00  pre    9/19 - 4:25 PM E…
+#&gt; <span style='color: #BCBCBC;'>14</span> 401326360 2021-09-19 <span style='color: #949494;'>20:25:00</span> TRUE           0 0:00  pre    9/19 - 4:25 PM E…
+#&gt; <span style='color: #BCBCBC;'>15</span> 401326361 2021-09-20 <span style='color: #949494;'>00:20:00</span> TRUE           0 0:00  pre    9/19 - 8:20 PM E…
+#&gt; <span style='color: #BCBCBC;'>16</span> 401326362 2021-09-21 <span style='color: #949494;'>00:15:00</span> TRUE           0 0:00  pre    9/20 - 8:15 PM E…
+#&gt; <span style='color: #949494;'># … with 6 more variables: percentComplete &lt;int&gt;, odds &lt;chr&gt;, broadcast &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   competitors &lt;list&gt;, homeTeam &lt;fct&gt;, awayTeam &lt;fct&gt;</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

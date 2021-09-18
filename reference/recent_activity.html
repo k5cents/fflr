@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>League standing simulation — league_simulation • fflr</title>
+<title>Roster moves — recent_activity • fflr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,10 +46,8 @@
 
 
 
-<meta property="og:title" content="League standing simulation — league_simulation" />
-<meta property="og:description" content="The ESPN algorithm simulates the entire season according to the projection
-and matchup schedule to calculate the probability of a team winning their
-division and making the playoffs." />
+<meta property="og:title" content="Roster moves — recent_activity" />
+<meta property="og:description" content="The individual proposed and executed transactions, trades, and waiver moves." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -128,18 +126,16 @@ division and making the playoffs." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>League standing simulation</h1>
+    <h1>Roster moves</h1>
     
-    <div class="hidden name"><code>league_simulation.Rd</code></div>
+    <div class="hidden name"><code>recent_activity.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>The ESPN algorithm simulates the entire season according to the projection
-and matchup schedule to calculate the probability of a team winning their
-division and making the playoffs.</p>
+    <p>The individual proposed and executed transactions, trades, and waiver moves.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>league_simulation</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='ffl_id.html'>ffl_id</a></span><span class='op'>(</span><span class='op'>)</span>, leagueHistory <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>recent_activity</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='ffl_id.html'>ffl_id</a></span><span class='op'>(</span><span class='op'>)</span>, leagueHistory <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -165,18 +161,26 @@ passed alongside <code>view</code>.</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A data frame of simulated team standings.</p>
+    <p>A data frame of transactions and roster moves.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>league_simulation</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 4 × 10</span>
-#&gt;   seasonId teamId abbrev draftDayProjected… currentProjected… losses  ties  wins
-#&gt;      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>               <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>             <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
-#&gt; <span style='color: #BCBCBC;'>1</span>     <span style='text-decoration: underline;'>2</span>021      1 AUS                     2                 1      9     0     8
-#&gt; <span style='color: #BCBCBC;'>2</span>     <span style='text-decoration: underline;'>2</span>021      2 BOS                     4                 4      9     0     8
-#&gt; <span style='color: #BCBCBC;'>3</span>     <span style='text-decoration: underline;'>2</span>021      3 CHI                     3                 3      8     0     9
-#&gt; <span style='color: #BCBCBC;'>4</span>     <span style='text-decoration: underline;'>2</span>021      4 DEN                     1                 2     10     0     7
-#&gt; <span style='color: #949494;'># … with 2 more variables: playoffPct &lt;dbl&gt;, divisionWinPct &lt;dbl&gt;</span></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>recent_activity</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span>, scoringPeriodId <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 66 × 13</span>
+#&gt;    id       seaonId rating bidAmount scoringPeriodId memberId status  
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   
+#&gt; <span style='color: #BCBCBC;'> 1</span> 062292e8    <span style='text-decoration: underline;'>2</span>021      0        <span style='color: #BB0000;'>NA</span>               1 <span style='color: #BB0000;'>NA</span>       EXECUTED
+#&gt; <span style='color: #BCBCBC;'> 2</span> 079a96a2    <span style='text-decoration: underline;'>2</span>021      0        <span style='color: #BB0000;'>NA</span>               1 <span style='color: #BB0000;'>NA</span>       EXECUTED
+#&gt; <span style='color: #BCBCBC;'> 3</span> 08e8044a    <span style='text-decoration: underline;'>2</span>021      0        <span style='color: #BB0000;'>NA</span>               1 <span style='color: #BB0000;'>NA</span>       EXECUTED
+#&gt; <span style='color: #BCBCBC;'> 4</span> 13b7c29a    <span style='text-decoration: underline;'>2</span>021      0        <span style='color: #BB0000;'>NA</span>               1 <span style='color: #BB0000;'>NA</span>       EXECUTED
+#&gt; <span style='color: #BCBCBC;'> 5</span> 172b6b5f    <span style='text-decoration: underline;'>2</span>021      0        <span style='color: #BB0000;'>NA</span>               1 <span style='color: #BB0000;'>NA</span>       EXECUTED
+#&gt; <span style='color: #BCBCBC;'> 6</span> 1b53d425    <span style='text-decoration: underline;'>2</span>021      0        <span style='color: #BB0000;'>NA</span>               1 <span style='color: #BB0000;'>NA</span>       EXECUTED
+#&gt; <span style='color: #BCBCBC;'> 7</span> 20d2e4a1    <span style='text-decoration: underline;'>2</span>021      0        <span style='color: #BB0000;'>NA</span>               1 <span style='color: #BB0000;'>NA</span>       EXECUTED
+#&gt; <span style='color: #BCBCBC;'> 8</span> 241ffb13    <span style='text-decoration: underline;'>2</span>021      0        <span style='color: #BB0000;'>NA</span>               1 <span style='color: #BB0000;'>NA</span>       EXECUTED
+#&gt; <span style='color: #BCBCBC;'> 9</span> 2460ef90    <span style='text-decoration: underline;'>2</span>021      0        <span style='color: #BB0000;'>NA</span>               1 <span style='color: #BB0000;'>NA</span>       EXECUTED
+#&gt; <span style='color: #BCBCBC;'>10</span> 252e3cc0    <span style='text-decoration: underline;'>2</span>021      0        <span style='color: #BB0000;'>NA</span>               1 <span style='color: #BB0000;'>NA</span>       EXECUTED
+#&gt; <span style='color: #949494;'># … with 56 more rows, and 6 more variables: fromLineupSlotId &lt;fct&gt;,</span>
+#&gt; <span style='color: #949494;'>#   fromTeamId &lt;int&gt;, playerId &lt;int&gt;, toLineupSlotId &lt;fct&gt;, toTeamId &lt;int&gt;,</span>
+#&gt; <span style='color: #949494;'>#   type &lt;chr&gt;</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>League standing simulation — league_simulation • fflr</title>
+<title>League transactions — transaction_counter • fflr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,10 +46,8 @@
 
 
 
-<meta property="og:title" content="League standing simulation — league_simulation" />
-<meta property="og:description" content="The ESPN algorithm simulates the entire season according to the projection
-and matchup schedule to calculate the probability of a team winning their
-division and making the playoffs." />
+<meta property="og:title" content="League transactions — transaction_counter" />
+<meta property="og:description" content="Summary of transactions and roster changes made during a season by team." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -128,18 +126,16 @@ division and making the playoffs." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>League standing simulation</h1>
+    <h1>League transactions</h1>
     
-    <div class="hidden name"><code>league_simulation.Rd</code></div>
+    <div class="hidden name"><code>transaction_counter.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>The ESPN algorithm simulates the entire season according to the projection
-and matchup schedule to calculate the probability of a team winning their
-division and making the playoffs.</p>
+    <p>Summary of transactions and roster changes made during a season by team.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>league_simulation</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='ffl_id.html'>ffl_id</a></span><span class='op'>(</span><span class='op'>)</span>, leagueHistory <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>transaction_counter</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='ffl_id.html'>ffl_id</a></span><span class='op'>(</span><span class='op'>)</span>, leagueHistory <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -165,18 +161,20 @@ passed alongside <code>view</code>.</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A data frame of simulated team standings.</p>
+    <p>A data frame of transaction counts by team.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>league_simulation</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 4 × 10</span>
-#&gt;   seasonId teamId abbrev draftDayProjected… currentProjected… losses  ties  wins
-#&gt;      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>               <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>             <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
-#&gt; <span style='color: #BCBCBC;'>1</span>     <span style='text-decoration: underline;'>2</span>021      1 AUS                     2                 1      9     0     8
-#&gt; <span style='color: #BCBCBC;'>2</span>     <span style='text-decoration: underline;'>2</span>021      2 BOS                     4                 4      9     0     8
-#&gt; <span style='color: #BCBCBC;'>3</span>     <span style='text-decoration: underline;'>2</span>021      3 CHI                     3                 3      8     0     9
-#&gt; <span style='color: #BCBCBC;'>4</span>     <span style='text-decoration: underline;'>2</span>021      4 DEN                     1                 2     10     0     7
-#&gt; <span style='color: #949494;'># … with 2 more variables: playoffPct &lt;dbl&gt;, divisionWinPct &lt;dbl&gt;</span></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>transaction_counter</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 4 × 14</span>
+#&gt;   seasonId scoringPeriodId teamId abbrev waiverRank acquisitionBudgetSpent
+#&gt;      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>       <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>                  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
+#&gt; <span style='color: #BCBCBC;'>1</span>     <span style='text-decoration: underline;'>2</span>021               2      1 AUS             1                      0
+#&gt; <span style='color: #BCBCBC;'>2</span>     <span style='text-decoration: underline;'>2</span>021               2      2 BOS             4                      0
+#&gt; <span style='color: #BCBCBC;'>3</span>     <span style='text-decoration: underline;'>2</span>021               2      3 CHI             3                      0
+#&gt; <span style='color: #BCBCBC;'>4</span>     <span style='text-decoration: underline;'>2</span>021               2      4 DEN             2                      0
+#&gt; <span style='color: #949494;'># … with 8 more variables: acquisitions &lt;int&gt;, drops &lt;int&gt;, misc &lt;int&gt;,</span>
+#&gt; <span style='color: #949494;'>#   moveToActive &lt;int&gt;, moveToIR &lt;int&gt;, paid &lt;dbl&gt;, teamCharges &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   trades &lt;int&gt;</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
