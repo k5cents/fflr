@@ -68,6 +68,35 @@ league_name <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   unique(dat$settings$name)
 }
 
+#' League waiver settings
+#'
+#' The type, days, and details of a league waiver process.
+#'
+#' @inheritParams ffl_api
+#' @return A data frame of waiver settings by season.
+#' @examples
+#' acquisition_settings(leagueId = "42654852")
+#' acquisition_settings(leagueId = "252353", leagueHistory = TRUE)
+#' @family League settings
+#' @export
+acquisition_settings <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
+  dat <- ffl_api(
+    leagueId = leagueId,
+    view = "mSettings",
+    leagueHistory = leagueHistory,
+    simplifyDataFrame = TRUE,
+    simplifyVector = FALSE,
+    ...
+  )
+  out <- dat$settings$acquisitionSettings[c(-5, -6)]
+  if (isFALSE(leagueHistory)) {
+    out$waiverProcessDays <- list(unlist(out$waiverProcessDays))
+  }
+  out$year <- dat$seasonId
+  out <- out[c(length(out), seq(out) - 1)]
+  as_tibble(out)
+}
+
 #' League draft settings
 #'
 #' The type, date, and pick order of a league draft.
@@ -105,35 +134,6 @@ draft_settings <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   as_tibble(out)
 }
 
-#' League waiver settings
-#'
-#' The type, days, and details of a league waiver process.
-#'
-#' @inheritParams ffl_api
-#' @return A data frame of waiver settings by season.
-#' @examples
-#' waiver_settings(leagueId = "42654852")
-#' waiver_settings(leagueId = "252353", leagueHistory = TRUE)
-#' @family League settings
-#' @export
-waiver_settings <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
-  dat <- ffl_api(
-    leagueId = leagueId,
-    view = "mSettings",
-    leagueHistory = leagueHistory,
-    simplifyDataFrame = TRUE,
-    simplifyVector = FALSE,
-    ...
-  )
-  out <- dat$settings$acquisitionSettings[c(-5, -6)]
-  if (isFALSE(leagueHistory)) {
-    out$waiverProcessDays <- list(unlist(out$waiverProcessDays))
-  }
-  out$year <- dat$seasonId
-  out <- out[c(length(out), seq(out) - 1)]
-  as_tibble(out)
-}
-
 #' League finance settings
 #'
 #' The off-site fees assigned to various roster movies and transactions.
@@ -141,11 +141,11 @@ waiver_settings <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
 #' @inheritParams ffl_api
 #' @return A data frame of finance settings by season.
 #' @examples
-#' fee_settings(leagueId = "42654852")
-#' fee_settings(leagueId = "252353", leagueHistory = TRUE)
+#' finance_settings(leagueId = "42654852")
+#' finance_settings(leagueId = "252353", leagueHistory = TRUE)
 #' @family League settings
 #' @export
-fee_settings <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
+finance_settings <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   dat <- ffl_api(
     leagueId = leagueId,
     view = "mSettings",
@@ -285,11 +285,11 @@ schedule_settings <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
 #' @inheritParams ffl_api
 #' @return A data frame of league scoring settings by season.
 #' @examples
-#' score_settings(leagueId = "42654852")
-#' score_settings(leagueId = "252353", leagueHistory = TRUE)
+#' scoring_settings(leagueId = "42654852")
+#' scoring_settings(leagueId = "252353", leagueHistory = TRUE)
 #' @family League settings
 #' @export
-score_settings <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
+scoring_settings <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   dat <- ffl_api(
     leagueId = leagueId,
     view = "mSettings",

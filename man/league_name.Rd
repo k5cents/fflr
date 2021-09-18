@@ -29,14 +29,14 @@ league_name(leagueId = "42654852")
 }
 \seealso{
 Other League settings: 
+\code{\link{acquisition_settings}()},
 \code{\link{draft_settings}()},
-\code{\link{fee_settings}()},
+\code{\link{finance_settings}()},
 \code{\link{league_info}()},
 \code{\link{league_size}()},
 \code{\link{roster_settings}()},
 \code{\link{schedule_settings}()},
-\code{\link{score_settings}()},
-\code{\link{trade_settings}()},
-\code{\link{waiver_settings}()}
+\code{\link{scoring_settings}()},
+\code{\link{trade_settings}()}
 }
 \concept{League settings}
