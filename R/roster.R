@@ -14,10 +14,10 @@ team_roster <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
     view = "mRoster",
     ...
   )
-  stop_predraft(dat)
   if (leagueHistory) {
     lapply(dat$teams, function(x) lapply(x$roster$entries, out_roster))
   } else {
+    stop_predraft(dat)
     lapply(dat$teams$roster$entries, out_roster)
   }
 }
