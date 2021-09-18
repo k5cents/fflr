@@ -82,7 +82,7 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the development version of fflr from <a href="https://github.com/kiernann/fflr">GitHub</a>::</p>
+<p>You can install the development version of fflr from <a href="https://github.com/kiernann/fflr">GitHub</a>:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
 <span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"kiernann/fflr"</span><span class="op">)</span></code></pre></div>
@@ -91,10 +91,13 @@
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">fflr</span><span class="op">)</span></code></pre></div>
-<p>Data is only available for public leagues. See <a href="https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public">this help page</a> on how to make a private league viewable.</p>
-<p>Functions require a unique <code>leagueId</code>, which can be found on any ESPN page URL.</p>
-<p>A default league ID can be set and retrieved with the <code>fflr.leagueId</code> option using <code><a href="reference/ffl_id.html">ffl_id()</a></code>.</p>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">fflr</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html">packageVersion</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span>
+<span class="co">#&gt; [1] '1.9.0'</span></code></pre></div>
+<p>Data is only available for public leagues. See <a href="https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public">this help page</a> on how to make a private league public</p>
+<p>Functions require a unique <code>leagueId</code>, which can be found in any ESPN page URL.</p>
+<pre>https://fantasy.espn.com/football/league?leagueId=<b>42654852</b></pre>
+<p>Use <code><a href="reference/ffl_id.html">ffl_id()</a></code> to set and retrieve a default <code>fflr.leagueId</code> option. Edit your <code>.Rprofile</code> file to set this option on startup.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/ffl_id.html">ffl_id</a></span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span><span class="op">)</span>
 <span class="co">#&gt; Temporarily set `fflr.leagueId` option to 42654852</span>
@@ -128,7 +131,7 @@
 <span class="co">#&gt;  7 FX           Antonio    Gibson      Wsh     RB         A                     16.0         11.8</span>
 <span class="co">#&gt;  8 DS           Buccaneers D/ST        TB      DS         A                      4.51        -3  </span>
 <span class="co">#&gt;  9 PK           Jason      Myers       Sea     PK         A                      8.04         4  </span>
-<span class="co">#&gt; 10 BE           D'Andre    Swift       Det     RB         A                     13.5         24.4</span>
+<span class="co">#&gt; 10 BE           D'Andre    Swift       Det     RB         Q                     13.5         24.4</span>
 <span class="co">#&gt; 11 BE           Miles      Sanders     Phi     RB         A                     14.3         17.3</span>
 <span class="co">#&gt; 12 BE           Chris      Carson      Sea     RB         A                     12.8         12.7</span>
 <span class="co">#&gt; 13 BE           Allen      Robinson II Chi     WR         A                     14.6          9.5</span>
@@ -137,21 +140,21 @@
 <span class="co">#&gt; 16 BE           Courtland  Sutton      Den     WR         A                     11.9          2.4</span></code></pre></div>
 <p>There are included objects for NFL teams and players.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">nfl_players</span><span class="op">[</span>, <span class="op">-</span><span class="fl">1</span><span class="op">]</span>
-<span class="co">#&gt; # A tibble: 1,063 × 10</span>
-<span class="co">#&gt;    firstName lastName  proTeam defaultPositionId jersey weight height   age dateOfBirth debutYear</span>
-<span class="co">#&gt;    &lt;chr&gt;     &lt;chr&gt;     &lt;fct&gt;   &lt;fct&gt;             &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;int&gt; &lt;date&gt;          &lt;int&gt;</span>
-<span class="co">#&gt;  1 Christian McCaffrey Car     RB                22        205     71    25 1996-06-07       2017</span>
-<span class="co">#&gt;  2 Dalvin    Cook      Min     RB                33        210     70    26 1995-08-10       2017</span>
-<span class="co">#&gt;  3 Davante   Adams     GB      WR                17        215     73    28 1992-12-24       2014</span>
-<span class="co">#&gt;  4 Derrick   Henry     Ten     RB                22        247     75    27 1994-01-04       2016</span>
-<span class="co">#&gt;  5 Travis    Kelce     KC      TE                87        260     77    31 1989-10-05       2013</span>
-<span class="co">#&gt;  6 Alvin     Kamara    NO      RB                41        215     70    26 1995-07-25       2017</span>
-<span class="co">#&gt;  7 Tyreek    Hill      KC      WR                10        185     70    27 1994-03-01       2016</span>
-<span class="co">#&gt;  8 Stefon    Diggs     Buf     WR                14        191     72    27 1993-11-29       2015</span>
-<span class="co">#&gt;  9 Patrick   Mahomes   KC      QB                15        230     75    25 1995-09-17       2017</span>
-<span class="co">#&gt; 10 DK        Metcalf   Sea     WR                14        235     76    23 1997-12-14       2019</span>
-<span class="co">#&gt; # … with 1,053 more rows</span></code></pre></div>
+<code class="sourceCode R"><span class="va">nfl_teams</span>
+<span class="co">#&gt; # A tibble: 33 × 6</span>
+<span class="co">#&gt;       id abbrev location   name    byeWeek conference</span>
+<span class="co">#&gt;    &lt;int&gt; &lt;fct&gt;  &lt;chr&gt;      &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;     </span>
+<span class="co">#&gt;  1     0 FA     &lt;NA&gt;       FA            0 &lt;NA&gt;      </span>
+<span class="co">#&gt;  2     1 Atl    Atlanta    Falcons       6 NFC       </span>
+<span class="co">#&gt;  3     2 Buf    Buffalo    Bills         7 AFC       </span>
+<span class="co">#&gt;  4     3 Chi    Chicago    Bears        10 NFC       </span>
+<span class="co">#&gt;  5     4 Cin    Cincinnati Bengals      10 AFC       </span>
+<span class="co">#&gt;  6     5 Cle    Cleveland  Browns       13 AFC       </span>
+<span class="co">#&gt;  7     6 Dal    Dallas     Cowboys       7 NFC       </span>
+<span class="co">#&gt;  8     7 Den    Denver     Broncos      11 AFC       </span>
+<span class="co">#&gt;  9     8 Det    Detroit    Lions         9 NFC       </span>
+<span class="co">#&gt; 10     9 GB     Green Bay  Packers      13 NFC       </span>
+<span class="co">#&gt; # … with 23 more rows</span></code></pre></div>
 <hr>
 <p>The fflr project is released with a <a href="https://kiernann.com/fflr/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing, you agree to abide by its terms.</p>
 <!-- refs: start -->
