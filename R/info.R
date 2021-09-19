@@ -52,6 +52,8 @@ ffl_seasons <- function() {
   s <- try_json("https://fantasy.espn.com/apis/v3/games/ffl/seasons")
   s$startDate <- ffl_date(s$startDate)
   s$endDate <- ffl_date(s$endDate)
+  s$currentScoringPeriod <- s$currentScoringPeriod$id
+  names(s)[3] <- "currentScoringPeriodId"
   as_tibble(s)
 }
 
