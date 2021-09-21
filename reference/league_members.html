@@ -135,7 +135,7 @@
     <p>The teams in a league and their owners.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>league_members</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='ffl_id.html'>ffl_id</a></span><span class='op'>(</span><span class='op'>)</span>, seasonId <span class='op'>=</span> <span class='fl'>2021</span>, leagueHistory <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>league_members</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='ffl_id.html'>ffl_id</a></span><span class='op'>(</span><span class='op'>)</span>, leagueHistory <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -146,16 +146,16 @@
 <code><a href='https://rdrr.io/r/base/options.html'>getOption("fflr.leagueId")</a></code>. Function fails if no ID is found.</p></td>
     </tr>
     <tr>
-      <th>seasonId</th>
-      <td><p>Integer year of NFL season. By default, the season is
-currently set to 2021. Use a recent year or set <code>leagueHistory</code> to <code>TRUE</code>
-to obtain all past data.</p></td>
-    </tr>
-    <tr>
       <th>leagueHistory</th>
       <td><p>logical; Should the <code>leagueHistory</code> version of the API
 be called? If <code>TRUE</code>, a list of results is returned, with one element for
 each historical year of the league.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Additional queries passed to <code><a href='https://httr.r-lib.org/reference/GET.html'>httr::GET()</a></code>
+(e.g., <code>scoringPeriodId</code>). Arguments are converted to a named list to be
+passed alongside <code>view</code>.</p></td>
     </tr>
     </table>
 
