@@ -8,12 +8,11 @@
 #' @return A dataframe (or list) with league members.
 #' @family League information
 #' @export
-league_members <- function(leagueId = ffl_id(), seasonId = 2021,
-                           leagueHistory = FALSE) {
+league_members <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   dat <- ffl_api(
     leagueId = leagueId,
-    seasonId = seasonId,
-    leagueHistory = leagueHistory
+    leagueHistory = leagueHistory,
+    ...
   )
   if (leagueHistory && is.list(dat$teams)) {
     names(dat$teams) <- dat$seasonId
