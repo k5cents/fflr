@@ -97,9 +97,10 @@ parse_sim <- function(teams, y = NULL, w = NULL) {
     abbrev = factor(teams$abbrev, levels = teams$abbrev),
     draftDayProjectedRank = teams$draftDayProjectedRank,
     currentProjectedRank = teams$currentProjectedRank,
-    losses = teams$currentSimulationResults$modeRecord$losses,
-    ties = teams$currentSimulationResults$modeRecord$ties,
-    wins = teams$currentSimulationResults$modeRecord$wins,
+    simulatedRank = teams$currentSimulationResults$rank,
+    simulatedWins = teams$currentSimulationResults$modeRecord$wins,
+    simulatedLosses = teams$currentSimulationResults$modeRecord$losses,
+    simulatedTies = teams$currentSimulationResults$modeRecord$ties,
     playoffPct = teams$currentSimulationResults$playoffPct,
     divisionWinPct = teams$currentSimulationResults$divisionWinPct
   )
