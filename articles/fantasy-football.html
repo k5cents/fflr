@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2</span>
       </span>
     </div>
 
@@ -95,7 +95,7 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">fflr</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html">packageVersion</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span>
-<span class="co">#&gt; [1] '1.9.1'</span>
+<span class="co">#&gt; [1] '1.9.2'</span>
 <span class="fu"><a href="../reference/ffl_id.html">ffl_id</a></span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span><span class="op">)</span>
 <span class="co">#&gt; Temporarily set `fflr.leagueId` option to 42654852</span>
 <span class="co">#&gt; [1] "42654852"</span></code></pre></div>
@@ -196,12 +196,13 @@
 <p>The <code><a href="../reference/player_outlook.html">player_outlook()</a></code> and <code><a href="../reference/player_news.html">player_news()</a></code> functions return news on your roster. The first returns <em>all</em> outlooks by player and week and cannot be refined beyond setting a <code>limit</code> of players to return (in order of rank).</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/player_outlook.html">player_outlook</a></span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 3 × 6</span>
+<span class="co">#&gt; # A tibble: 4 × 6</span>
 <span class="co">#&gt;   seasonId scoringPeriodId      id firstName lastName  outlook                            </span>
 <span class="co">#&gt;      &lt;int&gt;           &lt;int&gt;   &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;                              </span>
 <span class="co">#&gt; 1     2021               0 3117251 Christian McCaffrey McCaffrey was limited to three gam…</span>
 <span class="co">#&gt; 2     2021               1 3117251 Christian McCaffrey McCaffrey produced at a prodigious…</span>
-<span class="co">#&gt; 3     2021               2 3117251 Christian McCaffrey McCaffrey rushed for 98 yards and …</span></code></pre></div>
+<span class="co">#&gt; 3     2021               2 3117251 Christian McCaffrey McCaffrey rushed for 98 yards and …</span>
+<span class="co">#&gt; 4     2021               3 3117251 Christian McCaffrey Coming off another high-end perfor…</span></code></pre></div>
 <p>The second fiction takes a single <code>playerId</code> value and returns all the recent news on that player, including premium stories in HTML format.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/player_news.html">player_news</a></span><span class="op">(</span>playerId <span class="op">=</span> <span class="st">"3139477"</span>, parseHTML <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
@@ -250,9 +251,9 @@
 <span class="co">#&gt;  $ finalScoringPeriod     : int 17</span>
 <span class="co">#&gt;  $ previousSeasons        :List of 1</span>
 <span class="co">#&gt;   ..$ : list()</span>
-<span class="co">#&gt;  $ standingsUpdateDate    : POSIXct[1:1], format: "2021-09-21 09:27:18"</span>
+<span class="co">#&gt;  $ standingsUpdateDate    : POSIXct[1:1], format: "2021-09-22 07:27:33"</span>
 <span class="co">#&gt;  $ teamsJoined            : int 4</span>
-<span class="co">#&gt;  $ waiverLastExecutionDate: POSIXct[1:1], format: "2021-09-21 09:27:18"</span>
+<span class="co">#&gt;  $ waiverLastExecutionDate: POSIXct[1:1], format: "2021-09-22 07:27:33"</span>
 <span class="co">#&gt;  $ waiverNextExecutionDate: POSIXct[1:1], format: NA</span>
 <span class="co">#&gt;  $ waiverProcessStatus    :List of 1</span>
 <span class="co">#&gt;   ..$ :'data.frame': 0 obs. of  1 variable:</span>
@@ -531,10 +532,10 @@
 <span class="co">#&gt;  2     2021               3 3116593 Dalvin    Cook      Min     RB               </span>
 <span class="co">#&gt;  3     2021               3 3043078 Derrick   Henry     Ten     RB               </span>
 <span class="co">#&gt;  4     2021               3   15847 Travis    Kelce     KC      TE               </span>
-<span class="co">#&gt;  5     2021               3   15795 DeAndre   Hopkins   Ari     WR               </span>
+<span class="co">#&gt;  5     2021               3 3054850 Alvin     Kamara    NO      RB               </span>
 <span class="co">#&gt;  6     2021               3   16800 Davante   Adams     GB      WR               </span>
-<span class="co">#&gt;  7     2021               3 3054850 Alvin     Kamara    NO      RB               </span>
-<span class="co">#&gt;  8     2021               3 3116406 Tyreek    Hill      KC      WR               </span>
+<span class="co">#&gt;  7     2021               3 3116406 Tyreek    Hill      KC      WR               </span>
+<span class="co">#&gt;  8     2021               3   15795 DeAndre   Hopkins   Ari     WR               </span>
 <span class="co">#&gt;  9     2021               3 2976212 Stefon    Diggs     Buf     WR               </span>
 <span class="co">#&gt; 10     2021               3 3139477 Patrick   Mahomes   KC      QB               </span>
 <span class="co">#&gt; # … with 12 more variables: injuryStatus &lt;chr&gt;, percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;,</span>
@@ -550,9 +551,9 @@
 <span class="co">#&gt; # A tibble: 4 × 5</span>
 <span class="co">#&gt;   currentMatchupPeriod    id teamId totalPointsLive totalProjectedPointsLive</span>
 <span class="co">#&gt;                  &lt;int&gt; &lt;int&gt; &lt;fct&gt;            &lt;dbl&gt;                    &lt;dbl&gt;</span>
-<span class="co">#&gt; 1                    3     5 DEN                  1                     144.</span>
-<span class="co">#&gt; 2                    3     5 AUS                  0                     139.</span>
-<span class="co">#&gt; 3                    3     6 BOS                  1                     141.</span>
+<span class="co">#&gt; 1                    3     5 DEN                  1                     147.</span>
+<span class="co">#&gt; 2                    3     5 AUS                  0                     143.</span>
+<span class="co">#&gt; 3                    3     6 BOS                  1                     142.</span>
 <span class="co">#&gt; 4                    3     6 CHI                  0                     138.</span></code></pre></div>
 </div>
 <div id="standings" class="section level2">
