@@ -1,5 +1,13 @@
 # fflr 1.9.2
 
+* Fix `tidy_scores()` for settings that award home team points.
+* Remove bad variables argument from `pro_scores()`.
+* Add vignette and update the README and logo.
+* Unnest the `currentScoringPeriod` in `ffl_seasons()`.
+* Remove `seasonId` argument in sub-functions.
+* Use `proTeamId` and `playerId` column names in data.
+* Clarify which columns are simulated in `league_simulation()`.
+
 # fflr 1.9.1
 
 * Rename some functions to match the website section headers (e.g., 
