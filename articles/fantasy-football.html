@@ -172,7 +172,7 @@
 <span class="co">#&gt;    lineupSlot      id firstName  lastName    proTeam position injuryStatus projectedScore</span>
 <span class="co">#&gt;    &lt;fct&gt;        &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;       &lt;fct&gt;   &lt;fct&gt;    &lt;chr&gt;                 &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 QB         3139477 Patrick    Mahomes     KC      QB       A                     22.2 </span>
-<span class="co">#&gt;  2 RB         3117251 Christian  McCaffrey   Car     RB       A                     21.3 </span>
+<span class="co">#&gt;  2 RB         3117251 Christian  McCaffrey   Car     RB       O                     21.3 </span>
 <span class="co">#&gt;  3 RB         4242335 Jonathan   Taylor      Ind     RB       A                     15.6 </span>
 <span class="co">#&gt;  4 WR           16800 Davante    Adams       GB      WR       A                     19.9 </span>
 <span class="co">#&gt;  5 WR         3925357 Calvin     Ridley      Atl     WR       A                     16.0 </span>
@@ -180,12 +180,12 @@
 <span class="co">#&gt;  7 FX         4360294 Antonio    Gibson      Wsh     RB       A                     16.0 </span>
 <span class="co">#&gt;  8 DS          -16027 Buccaneers D/ST        TB      DS       A                      4.51</span>
 <span class="co">#&gt;  9 PK         2473037 Jason      Myers       Sea     PK       A                      8.04</span>
-<span class="co">#&gt; 10 BE         4259545 D'Andre    Swift       Det     RB       A                     13.5 </span>
+<span class="co">#&gt; 10 BE         4259545 D'Andre    Swift       Det     RB       Q                     13.5 </span>
 <span class="co">#&gt; 11 BE         4045163 Miles      Sanders     Phi     RB       A                     14.3 </span>
 <span class="co">#&gt; 12 BE         3919596 Chris      Carson      Sea     RB       A                     12.8 </span>
 <span class="co">#&gt; 13 BE           16799 Allen      Robinson II Chi     WR       A                     14.6 </span>
 <span class="co">#&gt; 14 BE           16460 Adam       Thielen     Min     WR       A                     14.4 </span>
-<span class="co">#&gt; 15 BE         3932905 Diontae    Johnson     Pit     WR       Q                     13.4 </span>
+<span class="co">#&gt; 15 BE         3932905 Diontae    Johnson     Pit     WR       O                     13.4 </span>
 <span class="co">#&gt; 16 BE         3128429 Courtland  Sutton      Den     WR       A                     11.9 </span>
 <span class="co">#&gt; # … with 4 more variables: actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   percentChange &lt;dbl&gt;</span></code></pre></div>
@@ -209,7 +209,7 @@
 <span class="co">#&gt; # A tibble: 13 × 6</span>
 <span class="co">#&gt;         id published           type     premium headline               body               </span>
 <span class="co">#&gt;      &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;    &lt;lgl&gt;   &lt;chr&gt;                  &lt;chr&gt;              </span>
-<span class="co">#&gt;  1 3139477 2021-09-21 17:19:50 Media    FALSE   Who is the top fantas… "Matthew Berry and…</span>
+<span class="co">#&gt;  1 3139477 2021-09-23 13:38:38 Media    FALSE   Who is the top fantas… "Matthew Berry and…</span>
 <span class="co">#&gt;  2 3139477 2021-09-20 04:47:05 Rotowire FALSE   Mahomes completed 24 … "Mahomes carved up…</span>
 <span class="co">#&gt;  3 3139477 2021-09-17 23:13:41 Story    FALSE   NFL Week 2 game picks… "&lt;p&gt;&lt;video1&gt;&lt;/vide…</span>
 <span class="co">#&gt;  4 3139477 2021-09-13 03:01:33 Rotowire FALSE   Mahomes completed 27 … "The 25-year-old s…</span>
@@ -251,9 +251,9 @@
 <span class="co">#&gt;  $ finalScoringPeriod     : int 17</span>
 <span class="co">#&gt;  $ previousSeasons        :List of 1</span>
 <span class="co">#&gt;   ..$ : list()</span>
-<span class="co">#&gt;  $ standingsUpdateDate    : POSIXct[1:1], format: "2021-09-22 07:27:33"</span>
+<span class="co">#&gt;  $ standingsUpdateDate    : POSIXct[1:1], format: "2021-09-25 07:21:30"</span>
 <span class="co">#&gt;  $ teamsJoined            : int 4</span>
-<span class="co">#&gt;  $ waiverLastExecutionDate: POSIXct[1:1], format: "2021-09-22 07:27:33"</span>
+<span class="co">#&gt;  $ waiverLastExecutionDate: POSIXct[1:1], format: "2021-09-25 07:21:30"</span>
 <span class="co">#&gt;  $ waiverNextExecutionDate: POSIXct[1:1], format: NA</span>
 <span class="co">#&gt;  $ waiverProcessStatus    :List of 1</span>
 <span class="co">#&gt;   ..$ :'data.frame': 0 obs. of  1 variable:</span>
@@ -532,12 +532,12 @@
 <span class="co">#&gt;  2     2021               3 3116593 Dalvin    Cook      Min     RB               </span>
 <span class="co">#&gt;  3     2021               3 3043078 Derrick   Henry     Ten     RB               </span>
 <span class="co">#&gt;  4     2021               3   15847 Travis    Kelce     KC      TE               </span>
-<span class="co">#&gt;  5     2021               3 3054850 Alvin     Kamara    NO      RB               </span>
-<span class="co">#&gt;  6     2021               3   16800 Davante   Adams     GB      WR               </span>
+<span class="co">#&gt;  5     2021               3   16800 Davante   Adams     GB      WR               </span>
+<span class="co">#&gt;  6     2021               3 3054850 Alvin     Kamara    NO      RB               </span>
 <span class="co">#&gt;  7     2021               3 3116406 Tyreek    Hill      KC      WR               </span>
-<span class="co">#&gt;  8     2021               3   15795 DeAndre   Hopkins   Ari     WR               </span>
-<span class="co">#&gt;  9     2021               3 2976212 Stefon    Diggs     Buf     WR               </span>
-<span class="co">#&gt; 10     2021               3 3139477 Patrick   Mahomes   KC      QB               </span>
+<span class="co">#&gt;  8     2021               3 2976212 Stefon    Diggs     Buf     WR               </span>
+<span class="co">#&gt;  9     2021               3 3139477 Patrick   Mahomes   KC      QB               </span>
+<span class="co">#&gt; 10     2021               3   15795 DeAndre   Hopkins   Ari     WR               </span>
 <span class="co">#&gt; # … with 12 more variables: injuryStatus &lt;chr&gt;, percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   percentChange &lt;dbl&gt;, positionalRanking &lt;int&gt;, totalRating &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   auctionValueAverage &lt;dbl&gt;, averageDraftPosition &lt;dbl&gt;, next_wk &lt;dbl&gt;, last_wk &lt;dbl&gt;,</span>
@@ -552,7 +552,7 @@
 <span class="co">#&gt;   currentMatchupPeriod    id teamId totalPointsLive totalProjectedPointsLive</span>
 <span class="co">#&gt;                  &lt;int&gt; &lt;int&gt; &lt;fct&gt;            &lt;dbl&gt;                    &lt;dbl&gt;</span>
 <span class="co">#&gt; 1                    3     5 DEN                  1                     147.</span>
-<span class="co">#&gt; 2                    3     5 AUS                  0                     143.</span>
+<span class="co">#&gt; 2                    3     5 AUS                  6                     122.</span>
 <span class="co">#&gt; 3                    3     6 BOS                  1                     142.</span>
 <span class="co">#&gt; 4                    3     6 CHI                  0                     138.</span></code></pre></div>
 </div>
@@ -564,9 +564,9 @@
 <span class="co">#&gt; # A tibble: 4 × 19</span>
 <span class="co">#&gt;   seasonId scoringPeriodId teamId abbrev draftDayProjectedR… currentProjected… playoffSeed</span>
 <span class="co">#&gt;      &lt;int&gt;           &lt;int&gt;  &lt;int&gt; &lt;fct&gt;                &lt;int&gt;             &lt;int&gt;       &lt;int&gt;</span>
-<span class="co">#&gt; 1     2021               3      1 AUS                      2                 2           3</span>
+<span class="co">#&gt; 1     2021               3      1 AUS                      2                 3           3</span>
 <span class="co">#&gt; 2     2021               3      2 BOS                      4                 4           4</span>
-<span class="co">#&gt; 3     2021               3      3 CHI                      3                 3           2</span>
+<span class="co">#&gt; 3     2021               3      3 CHI                      3                 2           2</span>
 <span class="co">#&gt; 4     2021               3      4 DEN                      1                 1           1</span>
 <span class="co">#&gt; # … with 12 more variables: rankCalculatedFinal &lt;int&gt;, gamesBack &lt;dbl&gt;, losses &lt;int&gt;,</span>
 <span class="co">#&gt; #   percentage &lt;dbl&gt;, pointsAgainst &lt;dbl&gt;, pointsFor &lt;dbl&gt;, streakLength &lt;int&gt;,</span>
