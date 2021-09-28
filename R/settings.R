@@ -178,6 +178,10 @@ roster_settings <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
     leagueHistory = leagueHistory,
     ...
   )
+  out_roster_set(dat, leagueHistory = leagueHistory)
+}
+
+out_roster_set <- function(dat, leagueHistory = FALSE) {
   slot_limit <- out_slot(dat, leagueHistory = leagueHistory)
   pos_limit <- out_pos(dat, leagueHistory = leagueHistory)
   out <- list(
