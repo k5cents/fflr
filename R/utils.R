@@ -30,12 +30,24 @@ slot_abbrev <- function(slot) {
   )
 }
 
+slot_unabbrev <- function(abbrev) {
+  slot_int <- c(0, 2, 4, 6, 23, 16, 17, 20, 21)
+  slot_abb <- c("QB", "RB", "WR", "TE", "FX", "DS", "PK", "BE", "IR")
+  slot_int[match(abbrev, slot_abb)]
+}
+
 pos_abbrev <- function(pos) {
   factor(
     x = pos,
     levels = c("1",  "2",  "3",  "4",  "5",  "9",  "16"),
     labels = c("QB", "RB", "WR", "TE", "PK", "DT", "DS")
   )
+}
+
+pos_unabbrev <- function(abbrev) {
+  pos_int <- c(1, 2, 3, 4, 5, 9, 16)
+  pos_abb <- c("QB", "RB", "WR", "TE", "PK", "DT", "DS")
+  pos_int[match(abbrev, pos_abb)]
 }
 
 pro_abbrev <- function(proTeamId) {
@@ -71,5 +83,11 @@ skip_predraft <- function(dat) {
     if (!dat$draftDetail$drafted) {
       testthat::skip(message = "This league has not drafted")
     }
+  }
+}
+
+order_df <- function(dat, col, decreasing = TRUE) {
+  if (is.data.frame(dat) & is.vector(col)) {
+    dat[order(col, decreasing = decreasing), ]
   }
 }
