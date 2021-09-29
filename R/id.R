@@ -13,18 +13,24 @@
 #'
 #' @param leagueId Numeric league ID or ESPN fantasy page URL. Defaults to
 #'   `getOption("fflr.leagueId")`. Function fails if no ID is found.
+#' @param overwrite logical; If an `fflr.leagueId` option exists, should it be
+#'   temporarily changed for your current session.
 #' @examples
-#' ffl_id(leagueId = "252353")
-#' ffl_id(leagueId = getOption("fflr.leagueId"))
-#' ffl_id("https://fantasy.espn.com/football/team?leagueId=252353&teamId=6")
+#' options(fflr.leagueId = "42654852")
+#' ffl_id()
+#' ffl_id(
+#'   leagueId = "https://fantasy.espn.com/football/team?leagueId=252353",
+#'   overwrite = TRUE
+#' )
 #' @export
-ffl_id <- function(leagueId = getOption("fflr.leagueId")) {
+ffl_id <- function(leagueId = getOption("fflr.leagueId"), overwrite = FALSE) {
   if (is.null(leagueId)) {
     stop("No `fflr.leagueId` option found, set with `options()` or `ffl_id()`")
   } else if (grepl("^http", leagueId)) {
     pattern <- regexpr(pattern = "leagueId\\=\\d{2,}", text = leagueId)
     leagueId <- gsub("\\D", "", regmatches(leagueId, m = pattern))
-  } else if (!grepl("\\D", leagueId) & is.null(getOption("fflr.leagueId"))) {
+  }
+  if (overwrite || is.null(getOption("fflr.leagueId"))) {
     message(sprintf("Temporarily set `fflr.leagueId` option to %s", leagueId))
     options(fflr.leagueId = leagueId)
   }

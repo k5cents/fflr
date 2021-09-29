@@ -4,11 +4,14 @@
 \alias{ffl_id}
 \title{Get ESPN fantasy league ID}
 \usage{
-ffl_id(leagueId = getOption("fflr.leagueId"))
+ffl_id(leagueId = getOption("fflr.leagueId"), overwrite = FALSE)
 }
 \arguments{
 \item{leagueId}{Numeric league ID or ESPN fantasy page URL. Defaults to
 \code{getOption("fflr.leagueId")}. Function fails if no ID is found.}
+
+\item{overwrite}{logical; If an \code{fflr.leagueId} option exists, should it be
+temporarily changed for your current session.}
 }
 \description{
 Retrieve league ID from global options, as an input, or from a URL.
@@ -24,7 +27,10 @@ will be temporarily defined for your current session. If a URL starting with
 temporary option, and returned as a character string.
 }
 \examples{
-ffl_id(leagueId = "252353")
-ffl_id(leagueId = getOption("fflr.leagueId"))
-ffl_id("https://fantasy.espn.com/football/team?leagueId=252353&teamId=6")
+options(fflr.leagueId = "42654852")
+ffl_id()
+ffl_id(
+  leagueId = "https://fantasy.espn.com/football/team?leagueId=252353",
+  overwrite = TRUE
+)
 }
