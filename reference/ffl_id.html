@@ -135,7 +135,7 @@
     <p>Retrieve league ID from global options, as an input, or from a URL.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>ffl_id</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"fflr.leagueId"</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>ffl_id</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"fflr.leagueId"</span><span class='op'>)</span>, overwrite <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -144,6 +144,11 @@
       <th>leagueId</th>
       <td><p>Numeric league ID or ESPN fantasy page URL. Defaults to
 <code><a href='https://rdrr.io/r/base/options.html'>getOption("fflr.leagueId")</a></code>. Function fails if no ID is found.</p></td>
+    </tr>
+    <tr>
+      <th>overwrite</th>
+      <td><p>logical; If an <code>fflr.leagueId</code> option exists, should it be
+temporarily changed for your current session.</p></td>
     </tr>
     </table>
 
@@ -159,10 +164,13 @@ will be temporarily defined for your current session. If a URL starting with
 temporary option, and returned as a character string.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>ffl_id</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"252353"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'>Temporarily set `fflr.leagueId` option to 252353</span></div><div class='output co'>#&gt; [1] "252353"</div><div class='input'><span class='fu'>ffl_id</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"fflr.leagueId"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] "252353"</div><div class='input'><span class='fu'>ffl_id</span><span class='op'>(</span><span class='st'>"https://fantasy.espn.com/football/team?leagueId=252353&amp;teamId=6"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] "252353"</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/options.html'>options</a></span><span class='op'>(</span>fflr.leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span>
+<span class='fu'>ffl_id</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "42654852"</div><div class='input'><span class='fu'>ffl_id</span><span class='op'>(</span>
+  leagueId <span class='op'>=</span> <span class='st'>"https://fantasy.espn.com/football/team?leagueId=252353"</span>,
+  overwrite <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>Temporarily set `fflr.leagueId` option to 252353</span></div><div class='output co'>#&gt; [1] "252353"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

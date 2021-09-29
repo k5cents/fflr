@@ -180,12 +180,12 @@
 <span class="co">#&gt;  7 FX         4360294 Antonio    Gibson      Wsh     RB       A                     16.0 </span>
 <span class="co">#&gt;  8 DS          -16027 Buccaneers D/ST        TB      DS       A                      4.51</span>
 <span class="co">#&gt;  9 PK         2473037 Jason      Myers       Sea     PK       A                      8.04</span>
-<span class="co">#&gt; 10 BE         4259545 D'Andre    Swift       Det     RB       Q                     13.5 </span>
+<span class="co">#&gt; 10 BE         4259545 D'Andre    Swift       Det     RB       A                     13.5 </span>
 <span class="co">#&gt; 11 BE         4045163 Miles      Sanders     Phi     RB       A                     14.3 </span>
 <span class="co">#&gt; 12 BE         3919596 Chris      Carson      Sea     RB       A                     12.8 </span>
 <span class="co">#&gt; 13 BE           16799 Allen      Robinson II Chi     WR       A                     14.6 </span>
 <span class="co">#&gt; 14 BE           16460 Adam       Thielen     Min     WR       A                     14.4 </span>
-<span class="co">#&gt; 15 BE         3932905 Diontae    Johnson     Pit     WR       O                     13.4 </span>
+<span class="co">#&gt; 15 BE         3932905 Diontae    Johnson     Pit     WR       Q                     13.4 </span>
 <span class="co">#&gt; 16 BE         3128429 Courtland  Sutton      Den     WR       A                     11.9 </span>
 <span class="co">#&gt; # … with 4 more variables: actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   percentChange &lt;dbl&gt;</span></code></pre></div>
@@ -196,20 +196,21 @@
 <p>The <code><a href="../reference/player_outlook.html">player_outlook()</a></code> and <code><a href="../reference/player_news.html">player_news()</a></code> functions return news on your roster. The first returns <em>all</em> outlooks by player and week and cannot be refined beyond setting a <code>limit</code> of players to return (in order of rank).</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/player_outlook.html">player_outlook</a></span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 4 × 6</span>
-<span class="co">#&gt;   seasonId scoringPeriodId      id firstName lastName  outlook                            </span>
-<span class="co">#&gt;      &lt;int&gt;           &lt;int&gt;   &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;                              </span>
-<span class="co">#&gt; 1     2021               0 3117251 Christian McCaffrey McCaffrey was limited to three gam…</span>
-<span class="co">#&gt; 2     2021               1 3117251 Christian McCaffrey McCaffrey produced at a prodigious…</span>
-<span class="co">#&gt; 3     2021               2 3117251 Christian McCaffrey McCaffrey rushed for 98 yards and …</span>
-<span class="co">#&gt; 4     2021               3 3117251 Christian McCaffrey Coming off another high-end perfor…</span></code></pre></div>
+<span class="co">#&gt; # A tibble: 5 × 6</span>
+<span class="co">#&gt;   seasonId scoringPeriodId      id firstName lastName outlook                             </span>
+<span class="co">#&gt;      &lt;int&gt;           &lt;int&gt;   &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;                               </span>
+<span class="co">#&gt; 1     2021               0 3043078 Derrick   Henry    As if Henry's 303-1540-16 rushing l…</span>
+<span class="co">#&gt; 2     2021               1 3043078 Derrick   Henry    Just 140 rushing yards shy of joini…</span>
+<span class="co">#&gt; 3     2021               2 3043078 Derrick   Henry    A forgettable first game included H…</span>
+<span class="co">#&gt; 4     2021               3 3043078 Derrick   Henry    The Henry we drafted showed up agai…</span>
+<span class="co">#&gt; 5     2021               4 3043078 Derrick   Henry    In Week 3, Henry rushed for 113 yar…</span></code></pre></div>
 <p>The second fiction takes a single <code>playerId</code> value and returns all the recent news on that player, including premium stories in HTML format.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/player_news.html">player_news</a></span><span class="op">(</span>playerId <span class="op">=</span> <span class="st">"3139477"</span>, parseHTML <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 13 × 6</span>
 <span class="co">#&gt;         id published           type     premium headline               body               </span>
 <span class="co">#&gt;      &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;    &lt;lgl&gt;   &lt;chr&gt;                  &lt;chr&gt;              </span>
-<span class="co">#&gt;  1 3139477 2021-09-23 13:38:38 Media    FALSE   Who is the top fantas… "Matthew Berry and…</span>
+<span class="co">#&gt;  1 3139477 2021-09-26 20:22:02 Rotowire FALSE   Mahomes completed 27 … "Kansas City has s…</span>
 <span class="co">#&gt;  2 3139477 2021-09-20 04:47:05 Rotowire FALSE   Mahomes completed 24 … "Mahomes carved up…</span>
 <span class="co">#&gt;  3 3139477 2021-09-17 23:13:41 Story    FALSE   NFL Week 2 game picks… "&lt;p&gt;&lt;video1&gt;&lt;/vide…</span>
 <span class="co">#&gt;  4 3139477 2021-09-13 03:01:33 Rotowire FALSE   Mahomes completed 27 … "The 25-year-old s…</span>
@@ -246,19 +247,19 @@
 <span class="co">#&gt;  $ year                   : int 2021</span>
 <span class="co">#&gt;  $ isActive               : logi TRUE</span>
 <span class="co">#&gt;  $ activatedDate          : POSIXct[1:1], format: "2021-08-03 14:40:01"</span>
-<span class="co">#&gt;  $ scoringPeriodId        : int 3</span>
+<span class="co">#&gt;  $ scoringPeriodId        : int 4</span>
 <span class="co">#&gt;  $ firstScoringPeriod     : int 1</span>
 <span class="co">#&gt;  $ finalScoringPeriod     : int 17</span>
 <span class="co">#&gt;  $ previousSeasons        :List of 1</span>
 <span class="co">#&gt;   ..$ : list()</span>
-<span class="co">#&gt;  $ standingsUpdateDate    : POSIXct[1:1], format: "2021-09-25 07:21:30"</span>
+<span class="co">#&gt;  $ standingsUpdateDate    : POSIXct[1:1], format: "2021-09-29 07:12:59"</span>
 <span class="co">#&gt;  $ teamsJoined            : int 4</span>
-<span class="co">#&gt;  $ waiverLastExecutionDate: POSIXct[1:1], format: "2021-09-25 07:21:30"</span>
+<span class="co">#&gt;  $ waiverLastExecutionDate: POSIXct[1:1], format: "2021-09-29 07:12:59"</span>
 <span class="co">#&gt;  $ waiverNextExecutionDate: POSIXct[1:1], format: NA</span>
 <span class="co">#&gt;  $ waiverProcessStatus    :List of 1</span>
-<span class="co">#&gt;   ..$ :'data.frame': 0 obs. of  1 variable:</span>
-<span class="co">#&gt;   .. ..$ date: 'POSIXct' num(0) </span>
-<span class="co">#&gt;  - attr(*, "tzone")= chr ""</span></code></pre></div>
+<span class="co">#&gt;   ..$ :'data.frame': 1 obs. of  2 variables:</span>
+<span class="co">#&gt;   .. ..$ date  : POSIXct[1:1], format: "2021-09-29"</span>
+<span class="co">#&gt;   .. ..$ status: int 2</span></code></pre></div>
 <div id="settings" class="section level3">
 <h3 class="hasAnchor">
 <a href="#settings" class="anchor"></a>Settings</h3>
@@ -417,7 +418,7 @@
 <span class="co">#&gt;  5     2021               1      4 WR         4047646 A.J.      Brown      Ten     WR      </span>
 <span class="co">#&gt;  6     2021               1      4 TE           15847 Travis    Kelce      KC      TE      </span>
 <span class="co">#&gt;  7     2021               1      4 FX         4241457 Najee     Harris     Pit     RB      </span>
-<span class="co">#&gt;  8     2021               1      4 DS          -16025 49ers     D/ST       SF      DS      </span>
+<span class="co">#&gt;  8     2021               1      0 DS          -16025 49ers     D/ST       SF      DS      </span>
 <span class="co">#&gt;  9     2021               1      4 PK         3055899 Harrison  Butker     KC      PK      </span>
 <span class="co">#&gt; 10     2021               1      4 BE         4035538 David     Montgomery Chi     RB      </span>
 <span class="co">#&gt; 11     2021               1      4 BE         4241985 J.K.      Dobbins    Bal     RB      </span>
@@ -469,10 +470,10 @@
 <span class="co">#&gt; # A tibble: 4 × 14</span>
 <span class="co">#&gt;   seasonId scoringPeriodId teamId abbrev waiverRank acquisitionBudgetS… acquisitions drops</span>
 <span class="co">#&gt;      &lt;int&gt;           &lt;int&gt;  &lt;int&gt; &lt;fct&gt;       &lt;int&gt;               &lt;int&gt;        &lt;int&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1     2021               3      1 AUS             2                   0            0     0</span>
-<span class="co">#&gt; 2     2021               3      2 BOS             1                   0            0     0</span>
-<span class="co">#&gt; 3     2021               3      3 CHI             3                   0            1     1</span>
-<span class="co">#&gt; 4     2021               3      4 DEN             4                   0            1     0</span>
+<span class="co">#&gt; 1     2021               4      1 AUS             1                   0            0     0</span>
+<span class="co">#&gt; 2     2021               4      2 BOS             2                   0            0     0</span>
+<span class="co">#&gt; 3     2021               4      3 CHI             4                   0            2     2</span>
+<span class="co">#&gt; 4     2021               4      4 DEN             3                   0            2     1</span>
 <span class="co">#&gt; # … with 6 more variables: misc &lt;int&gt;, moveToActive &lt;int&gt;, moveToIR &lt;int&gt;, paid &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   teamCharges &lt;dbl&gt;, trades &lt;int&gt;</span></code></pre></div>
 </div>
@@ -528,16 +529,16 @@
 <span class="co">#&gt; # A tibble: 10 × 19</span>
 <span class="co">#&gt;    seasonId scoringPeriodId      id firstName lastName  proTeam defaultPositionId</span>
 <span class="co">#&gt;       &lt;int&gt;           &lt;dbl&gt;   &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;fct&gt;   &lt;fct&gt;            </span>
-<span class="co">#&gt;  1     2021               3 3117251 Christian McCaffrey Car     RB               </span>
-<span class="co">#&gt;  2     2021               3 3116593 Dalvin    Cook      Min     RB               </span>
-<span class="co">#&gt;  3     2021               3 3043078 Derrick   Henry     Ten     RB               </span>
-<span class="co">#&gt;  4     2021               3   15847 Travis    Kelce     KC      TE               </span>
-<span class="co">#&gt;  5     2021               3   16800 Davante   Adams     GB      WR               </span>
-<span class="co">#&gt;  6     2021               3 3054850 Alvin     Kamara    NO      RB               </span>
-<span class="co">#&gt;  7     2021               3 3116406 Tyreek    Hill      KC      WR               </span>
-<span class="co">#&gt;  8     2021               3 2976212 Stefon    Diggs     Buf     WR               </span>
-<span class="co">#&gt;  9     2021               3 3139477 Patrick   Mahomes   KC      QB               </span>
-<span class="co">#&gt; 10     2021               3   15795 DeAndre   Hopkins   Ari     WR               </span>
+<span class="co">#&gt;  1     2021               4 3043078 Derrick   Henry     Ten     RB               </span>
+<span class="co">#&gt;  2     2021               4   16800 Davante   Adams     GB      WR               </span>
+<span class="co">#&gt;  3     2021               4 3054850 Alvin     Kamara    NO      RB               </span>
+<span class="co">#&gt;  4     2021               4   15847 Travis    Kelce     KC      TE               </span>
+<span class="co">#&gt;  5     2021               4 3116406 Tyreek    Hill      KC      WR               </span>
+<span class="co">#&gt;  6     2021               4 3116593 Dalvin    Cook      Min     RB               </span>
+<span class="co">#&gt;  7     2021               4 2976212 Stefon    Diggs     Buf     WR               </span>
+<span class="co">#&gt;  8     2021               4 3139477 Patrick   Mahomes   KC      QB               </span>
+<span class="co">#&gt;  9     2021               4 3117251 Christian McCaffrey Car     RB               </span>
+<span class="co">#&gt; 10     2021               4 4047650 DK        Metcalf   Sea     WR               </span>
 <span class="co">#&gt; # … with 12 more variables: injuryStatus &lt;chr&gt;, percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   percentChange &lt;dbl&gt;, positionalRanking &lt;int&gt;, totalRating &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   auctionValueAverage &lt;dbl&gt;, averageDraftPosition &lt;dbl&gt;, next_wk &lt;dbl&gt;, last_wk &lt;dbl&gt;,</span>
@@ -551,10 +552,10 @@
 <span class="co">#&gt; # A tibble: 4 × 5</span>
 <span class="co">#&gt;   currentMatchupPeriod    id teamId totalPointsLive totalProjectedPointsLive</span>
 <span class="co">#&gt;                  &lt;int&gt; &lt;int&gt; &lt;fct&gt;            &lt;dbl&gt;                    &lt;dbl&gt;</span>
-<span class="co">#&gt; 1                    3     5 DEN                  1                     147.</span>
-<span class="co">#&gt; 2                    3     5 AUS                  6                     122.</span>
-<span class="co">#&gt; 3                    3     6 BOS                  1                     142.</span>
-<span class="co">#&gt; 4                    3     6 CHI                  0                     138.</span></code></pre></div>
+<span class="co">#&gt; 1                    4     7 CHI                  1                     144.</span>
+<span class="co">#&gt; 2                    4     7 AUS                  0                     134.</span>
+<span class="co">#&gt; 3                    4     8 DEN                  1                     139.</span>
+<span class="co">#&gt; 4                    4     8 BOS                  0                     139.</span></code></pre></div>
 </div>
 <div id="standings" class="section level2">
 <h2 class="hasAnchor">
@@ -564,10 +565,10 @@
 <span class="co">#&gt; # A tibble: 4 × 19</span>
 <span class="co">#&gt;   seasonId scoringPeriodId teamId abbrev draftDayProjectedR… currentProjected… playoffSeed</span>
 <span class="co">#&gt;      &lt;int&gt;           &lt;int&gt;  &lt;int&gt; &lt;fct&gt;                &lt;int&gt;             &lt;int&gt;       &lt;int&gt;</span>
-<span class="co">#&gt; 1     2021               3      1 AUS                      2                 3           3</span>
-<span class="co">#&gt; 2     2021               3      2 BOS                      4                 4           4</span>
-<span class="co">#&gt; 3     2021               3      3 CHI                      3                 2           2</span>
-<span class="co">#&gt; 4     2021               3      4 DEN                      1                 1           1</span>
+<span class="co">#&gt; 1     2021               4      1 AUS                      2                 4           4</span>
+<span class="co">#&gt; 2     2021               4      2 BOS                      4                 3           3</span>
+<span class="co">#&gt; 3     2021               4      3 CHI                      3                 1           1</span>
+<span class="co">#&gt; 4     2021               4      4 DEN                      1                 2           2</span>
 <span class="co">#&gt; # … with 12 more variables: rankCalculatedFinal &lt;int&gt;, gamesBack &lt;dbl&gt;, losses &lt;int&gt;,</span>
 <span class="co">#&gt; #   percentage &lt;dbl&gt;, pointsAgainst &lt;dbl&gt;, pointsFor &lt;dbl&gt;, streakLength &lt;int&gt;,</span>
 <span class="co">#&gt; #   streakType &lt;chr&gt;, ties &lt;int&gt;, wins &lt;int&gt;, playoffPct &lt;dbl&gt;, divisionWinPct &lt;dbl&gt;</span></code></pre></div>
