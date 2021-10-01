@@ -8,10 +8,9 @@
 #'   limit can make the request take a long time.
 #' @return A data frame of stat corrections.
 #' @examples
-#' stat_correct()
-#' @importFrom tibble as_tibble tibble
+#' stat_corrections(date = "2021-09-13")
 #' @export
-stat_correct <- function(date = Sys.Date(), limit = 100) {
+stat_corrections <- function(date = Sys.Date(), limit = 100) {
   if (!inherits(date, "Date")) {
     date <- tryCatch(expr = as.Date(date), error = function(e) date)
     if (!inherits(date, "Date")) {
@@ -25,17 +24,19 @@ stat_correct <- function(date = Sys.Date(), limit = 100) {
       date = format(as.Date(date), "%Y%m%d")
     )
   )
+  if (dat$count > dat$pageSize) {
+    stop("Number of results exceeds limit")
+  }
   x <- dat$items$splitStats$categories
   if (is.null(x)) {
     warning("No stat corrections for this week (yet)")
     return(
-      tibble::tibble(
-        date = as.Date(date),
-        id = integer(),
-        type = character(),
-        stat = character(),
+      data.frame(
+        date = as.Date(character()),
+        playerId = integer(),
         name = character(),
-        change = double()
+        abbreviation = character(),
+        value = double()
       )
     )
   }
@@ -43,10 +44,12 @@ stat_correct <- function(date = Sys.Date(), limit = 100) {
   out <- rep(list(NA), length(x))
   for (i in seq_along(x)) {
     for (k in seq_along(x[[i]]$stats)) {
-      x[[i]]$stats[[k]] <- cbind(playerId = player_id, x[[i]]$stats[[k]])
+      x[[i]]$stats[[k]] <- cbind(playerId = player_id[i], x[[i]]$stats[[k]])
     }
     out[[i]] <- x[[i]]$stats
   }
-  out <- cbind(date, do.call("rbind", do.call("rbind", out)))
-  as_tibble(out[order(out$playerId), c(1:2, 7, 3, 8)])
+  out <- lapply(out, FUN = function(x) do.call("rbind", x))
+  out <- do.call("rbind", out)[, c("playerId", "name", "abbreviation", "value")]
+  out <- cbind(date = date, out)
+  as_tibble(out[order(out$playerId), ])
 }
