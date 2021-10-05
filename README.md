@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+experimental](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/fflr)](https://CRAN.R-project.org/package=fflr)
 ![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/fflr)
@@ -39,7 +39,7 @@ remotes::install_github("kiernann/fflr")
 ``` r
 library(fflr)
 packageVersion("fflr")
-#> [1] '1.9.1'
+#> [1] '1.9.2'
 ```
 
 Data is only available for public leagues. See [this help
@@ -75,7 +75,7 @@ league_teams()
 #>   abbrev    id location nickname   owners   
 #>   <fct>  <int> <chr>    <chr>      <list>   
 #> 1 AUS        1 Austin   Astronauts <chr [1]>
-#> 2 BOS        2 Boston   Birds      <chr [1]>
+#> 2 BOS        2 Boston   Buzzards   <chr [1]>
 #> 3 CHI        3 Chicago  Crowns     <chr [1]>
 #> 4 DEN        4 Denver   Devils     <chr [1]>
 ```
@@ -96,10 +96,10 @@ team_roster(scoringPeriodId = 1)[[3]][, -c(1:3, 5, 13:15)]
 #>  7 FX         Austin    Ekeler    LAC     RB       A                     15.0         11.7
 #>  8 DS         Ravens    D/ST      Bal     DS       A                      5.86        -1  
 #>  9 PK         Justin    Tucker    Bal     PK       A                      8.14        11  
-#> 10 BE         Joe       Mixon     Cin     RB       A                     14.6         25  
+#> 10 BE         Joe       Mixon     Cin     RB       Q                     14.6         25  
 #> 11 BE         Keenan    Allen     LAC     WR       A                     14.8         19  
 #> 12 BE         Mike      Evans     TB      WR       A                     15.0          5.4
-#> 13 BE         Josh      Jacobs    LV      RB       O                     13.1         17  
+#> 13 BE         Josh      Jacobs    LV      RB       A                     13.1         17  
 #> 14 BE         Myles     Gaskin    Mia     RB       A                     10.9         12.6
 #> 15 BE         Ja'Marr   Chase     Cin     WR       A                     10.4         20.9
 #> 16 BE         Brandon   Aiyuk     SF      WR       A                     13.9          0
@@ -110,18 +110,18 @@ There are included objects for NFL teams and players.
 ``` r
 nfl_teams
 #> # A tibble: 33 × 6
-#>       id abbrev location   name    byeWeek conference
-#>    <int> <fct>  <chr>      <chr>     <int> <chr>     
-#>  1     0 FA     <NA>       FA            0 <NA>      
-#>  2     1 Atl    Atlanta    Falcons       6 NFC       
-#>  3     2 Buf    Buffalo    Bills         7 AFC       
-#>  4     3 Chi    Chicago    Bears        10 NFC       
-#>  5     4 Cin    Cincinnati Bengals      10 AFC       
-#>  6     5 Cle    Cleveland  Browns       13 AFC       
-#>  7     6 Dal    Dallas     Cowboys       7 NFC       
-#>  8     7 Den    Denver     Broncos      11 AFC       
-#>  9     8 Det    Detroit    Lions         9 NFC       
-#> 10     9 GB     Green Bay  Packers      13 NFC       
+#>    proTeamId abbrev location   name    byeWeek conference
+#>        <int> <fct>  <chr>      <chr>     <int> <chr>     
+#>  1         0 FA     <NA>       FA            0 <NA>      
+#>  2         1 Atl    Atlanta    Falcons       6 NFC       
+#>  3         2 Buf    Buffalo    Bills         7 AFC       
+#>  4         3 Chi    Chicago    Bears        10 NFC       
+#>  5         4 Cin    Cincinnati Bengals      10 AFC       
+#>  6         5 Cle    Cleveland  Browns       13 AFC       
+#>  7         6 Dal    Dallas     Cowboys       7 NFC       
+#>  8         7 Den    Denver     Broncos      11 AFC       
+#>  9         8 Det    Detroit    Lions         9 NFC       
+#> 10         9 GB     Green Bay  Packers      13 NFC       
 #> # … with 23 more rows
 ```
 

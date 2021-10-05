@@ -100,7 +100,7 @@ contributing, you agree to abide by its terms.
 
 <!-- refs: start -->
 [life_badge]: https://img.shields.io/badge/lifecycle-maturing-blue.svg
-[life_link]: https://www.tidyverse.org/lifecycle/#maturing
+[life_link]: https://lifecycle.r-lib.org/articles/stages.html
 [cran_badge]: https://www.r-pkg.org/badges/version/fflr
 [cran_link]: https://CRAN.R-project.org/package=fflr
 [ga_badge]: https://github.com/kiernann/fflr/workflows/R-CMD-check/badge.svg
