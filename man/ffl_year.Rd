@@ -9,6 +9,9 @@ ffl_year(offset = 0)
 \arguments{
 \item{offset}{Add negative or positive values.}
 }
+\value{
+The current or offset \code{seasonId} integer.
+}
 \description{
 Current fantasy season
 }

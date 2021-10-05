@@ -22,6 +22,7 @@
 #'   leagueId = "https://fantasy.espn.com/football/team?leagueId=252353",
 #'   overwrite = TRUE
 #' )
+#' @return A numeric `leagueId` as a character vector with length one.
 #' @export
 ffl_id <- function(leagueId = getOption("fflr.leagueId"), overwrite = FALSE) {
   if (is.null(leagueId)) {

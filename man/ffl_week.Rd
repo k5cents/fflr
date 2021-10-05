@@ -9,6 +9,9 @@ ffl_week(offset = 0)
 \arguments{
 \item{offset}{Add negative or positive values.}
 }
+\value{
+The current or offset \code{scoringPeriodId} integer.
+}
 \description{
 Current fantasy scoring period
 }

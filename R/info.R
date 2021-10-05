@@ -24,6 +24,7 @@ ffl_info <- function() {
 #' @examples
 #' Sys.time()
 #' ffl_year()
+#' @return The current or offset `seasonId` integer.
 #' @export
 ffl_year <- function(offset = 0) {
   x <- ffl_info()
@@ -36,6 +37,7 @@ ffl_year <- function(offset = 0) {
 #' @examples
 #' Sys.time()
 #' ffl_week(-1)
+#' @return The current or offset `scoringPeriodId` integer.
 #' @export
 ffl_week <- function(offset = 0) {
   x <- ffl_info()

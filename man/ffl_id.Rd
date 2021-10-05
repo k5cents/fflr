@@ -13,6 +13,9 @@ ffl_id(leagueId = getOption("fflr.leagueId"), overwrite = FALSE)
 \item{overwrite}{logical; If an \code{fflr.leagueId} option exists, should it be
 temporarily changed for your current session.}
 }
+\value{
+A numeric \code{leagueId} as a character vector with length one.
+}
 \description{
 Retrieve league ID from global options, as an input, or from a URL.
 }
