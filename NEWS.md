@@ -7,6 +7,8 @@
 * Remove `seasonId` argument in sub-functions.
 * Use `proTeamId` and `playerId` column names in data.
 * Clarify which columns are simulated in `league_simulation()`.
+* Add `overwrite` argument to `ffl_id()` to set `options()` regardless.
+* Rename `state_correct()` to `stat_corrections()` and update for new back-end.
 
 # fflr 1.9.1
 
