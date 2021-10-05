@@ -91,3 +91,18 @@ order_df <- function(dat, col, decreasing = TRUE) {
     dat[order(col, decreasing = decreasing), ]
   }
 }
+
+bind_df <- function(l, .id = NULL) {
+  if (!is.null(.id) & !is.null(names(l))) {
+    l <- lapply(
+      X = seq_along(l),
+      FUN = function(i) {
+        sid <- list(names(l)[i])
+        names(sid) <- .id
+        cbind(sid, l[[i]])
+      }
+    )
+  }
+  out <- do.call(what = "rbind", args = l)
+  as_tibble(out)
+}
