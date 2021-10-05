@@ -1,14 +1,14 @@
 Package: fflr
-Title: Collect ESPN Fantasy Football Data
+Title: Retrieve ESPN Fantasy Football Data
 Version: 1.9.2
 Authors@R: 
     person(given = "Kiernan",
            family = "Nicholls",
-           role = c("aut", "cre"),
+           role = c("aut", "cre", "cph"),
            email = "kiernann@protonmail.com")
 Description: Format the raw data from the ESPN fantasy football API
-    <https://fantasy.espn.com/apis/v3/games/ffl/> into tidy tables.
-    Scrape data on public leagues, rosters, athletes, and matches.
+    <https://fantasy.espn.com/apis/v3/games/ffl/> as data frames.
+    Retrieve data on public leagues, rosters, athletes, and matches.
 License: MIT + file LICENSE
 Depends: 
     R (>= 2.10)

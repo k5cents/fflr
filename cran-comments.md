@@ -13,9 +13,18 @@
 
 0 errors | 0 warnings | 1 note
 
-* This is a new release. (see below)
+* This is a new release.
 
 ## Resubmission
+
+> New submission
+>   
+> Package was archived on CRAN
+> 
+> CRAN repository db overrides:
+>   X-CRAN-Comment: Archived on 2021-03-27 for policy violation.
+> 
+>   On Internet access.
 
 This package was previously hosted on CRAN as version 0.3.15 as of January 2021.
 Due to the nature of the web API being used, data becomes unavailable for a few
