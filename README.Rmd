@@ -42,9 +42,15 @@ If a function doesn't work as intended, please file an [issue on GitHub][iss].
 
 ## Installation
 
-You can install the development version of fflr from [GitHub][fflr]:
+You can install the release version of fflr from [CRAN][cran]:
 
-```{r install-github, eval=FALSE}
+```{r cran, eval=FALSE}
+install.packages("fflr")
+```
+
+The most recent development version can be installed from [GitHub][gh]:
+
+```{r remote, eval=FALSE}
 # install.packages("remotes")
 remotes::install_github("kiernann/fflr")
 ```
@@ -110,7 +116,8 @@ contributing, you agree to abide by its terms.
 [dl_badge]: https://cranlogs.r-pkg.org/badges/grand-total/fflr
 [api]: https://fantasy.espn.com/apis/v3/games/ffl/
 [iss]: https://github.com/kiernann/fflr/issues
-[fflr]: https://github.com/kiernann/fflr
+[cran]: https://cran.r-project.org/package=fflr
+[gh]: https://github.com/kiernann/fflr
 [coc]: https://kiernann.com/fflr/CODE_OF_CONDUCT.html
 [help]: https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public
 [rprof]: https://support.rstudio.com/hc/en-us/articles/360047157094-Managing-R-with-Rprofile-Renviron-Rprofile-site-Renviron-site-rsession-conf-and-repos-conf

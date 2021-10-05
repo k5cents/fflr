@@ -26,7 +26,14 @@ on GitHub](https://github.com/kiernann/fflr/issues).
 
 ## Installation
 
-You can install the development version of fflr from
+You can install the release version of fflr from
+[CRAN](https://cran.r-project.org/package=fflr):
+
+``` r
+install.packages("fflr")
+```
+
+The most recent development version can be installed from
 [GitHub](https://github.com/kiernann/fflr):
 
 ``` r
@@ -39,7 +46,7 @@ remotes::install_github("kiernann/fflr")
 ``` r
 library(fflr)
 packageVersion("fflr")
-#> [1] '1.9.2'
+#> [1] '1.9.2.9000'
 ```
 
 Data is only available for public leagues. See [this help
