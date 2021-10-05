@@ -1,3 +1,5 @@
+# fflr (development version)
+
 # fflr 1.9.2
 
 * Fix `tidy_scores()` for settings that award home team points.
