@@ -173,14 +173,14 @@
 <span class="co">#&gt;    &lt;fct&gt;        &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;       &lt;fct&gt;   &lt;fct&gt;    &lt;chr&gt;                 &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 QB         3139477 Patrick    Mahomes     KC      QB       A                     22.2 </span>
 <span class="co">#&gt;  2 RB         3117251 Christian  McCaffrey   Car     RB       O                     21.3 </span>
-<span class="co">#&gt;  3 RB         4242335 Jonathan   Taylor      Ind     RB       Q                     15.6 </span>
+<span class="co">#&gt;  3 RB         4242335 Jonathan   Taylor      Ind     RB       A                     15.6 </span>
 <span class="co">#&gt;  4 WR           16800 Davante    Adams       GB      WR       A                     19.9 </span>
 <span class="co">#&gt;  5 WR         3925357 Calvin     Ridley      Atl     WR       A                     16.0 </span>
 <span class="co">#&gt;  6 TE         3116365 Mark       Andrews     Bal     TE       A                     12.2 </span>
-<span class="co">#&gt;  7 FX         4360294 Antonio    Gibson      Wsh     RB       Q                     16.0 </span>
+<span class="co">#&gt;  7 FX         4360294 Antonio    Gibson      Wsh     RB       A                     16.0 </span>
 <span class="co">#&gt;  8 DS          -16027 Buccaneers D/ST        TB      DS       A                      4.51</span>
 <span class="co">#&gt;  9 PK         2473037 Jason      Myers       Sea     PK       A                      8.04</span>
-<span class="co">#&gt; 10 BE         4259545 D'Andre    Swift       Det     RB       Q                     13.5 </span>
+<span class="co">#&gt; 10 BE         4259545 D'Andre    Swift       Det     RB       A                     13.5 </span>
 <span class="co">#&gt; 11 BE         4045163 Miles      Sanders     Phi     RB       A                     14.3 </span>
 <span class="co">#&gt; 12 BE         3919596 Chris      Carson      Sea     RB       A                     12.8 </span>
 <span class="co">#&gt; 13 BE           16799 Allen      Robinson II Chi     WR       A                     14.6 </span>
@@ -207,22 +207,23 @@
 <p>The second fiction takes a single <code>playerId</code> value and returns all the recent news on that player, including premium stories in HTML format.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/player_news.html">player_news</a></span><span class="op">(</span>playerId <span class="op">=</span> <span class="st">"3139477"</span>, parseHTML <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 13 × 6</span>
+<span class="co">#&gt; # A tibble: 14 × 6</span>
 <span class="co">#&gt;         id published           type     premium headline               body               </span>
 <span class="co">#&gt;      &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;    &lt;lgl&gt;   &lt;chr&gt;                  &lt;chr&gt;              </span>
-<span class="co">#&gt;  1 3139477 2021-09-26 20:22:02 Rotowire FALSE   Mahomes completed 27 … "Kansas City has s…</span>
-<span class="co">#&gt;  2 3139477 2021-09-20 04:47:05 Rotowire FALSE   Mahomes completed 24 … "Mahomes carved up…</span>
-<span class="co">#&gt;  3 3139477 2021-09-17 23:13:41 Story    FALSE   NFL Week 2 game picks… "&lt;p&gt;&lt;video1&gt;&lt;/vide…</span>
-<span class="co">#&gt;  4 3139477 2021-09-13 03:01:33 Rotowire FALSE   Mahomes completed 27 … "The 25-year-old s…</span>
-<span class="co">#&gt;  5 3139477 2021-09-10 14:36:05 Story    TRUE    NFL Week 1 prediction… "&lt;p&gt;&lt;video1&gt;&lt;/vide…</span>
-<span class="co">#&gt;  6 3139477 2021-09-08 04:56:27 Story    FALSE   'So, you're Patrick M… "&lt;p&gt;&lt;video1&gt;&lt;br&gt;\n…</span>
-<span class="co">#&gt;  7 3139477 2021-08-31 14:15:41 Story    TRUE    Predicting NFL teams … "&lt;p&gt;&lt;video1&gt;&lt;/vide…</span>
-<span class="co">#&gt;  8 3139477 2021-08-28 03:31:05 Rotowire FALSE   Mahomes completed eig… "Mahomes was his s…</span>
-<span class="co">#&gt;  9 3139477 2021-08-21 03:07:20 Rotowire FALSE   Mahomes completed 10 … "There had been ta…</span>
-<span class="co">#&gt; 10 3139477 2021-08-18 16:33:13 Rotowire FALSE   Coach Andy Reid said … "Mahomes played on…</span>
-<span class="co">#&gt; 11 3139477 2021-08-15 04:19:01 Rotowire FALSE   Mahomes completed one… "Mahomes connected…</span>
-<span class="co">#&gt; 12 3139477 2021-08-12 18:54:27 Rotowire FALSE   Coach Andy Reid sugge… "Reid didn't actua…</span>
-<span class="co">#&gt; 13 3139477 2021-07-23 18:55:35 Rotowire FALSE   Mahomes doesn't antic… "This was expected…</span></code></pre></div>
+<span class="co">#&gt;  1 3139477 2021-10-03 20:37:42 Rotowire FALSE   Mahomes completed 24 … "Mahomes capped Ka…</span>
+<span class="co">#&gt;  2 3139477 2021-09-26 20:22:02 Rotowire FALSE   Mahomes completed 27 … "Kansas City has s…</span>
+<span class="co">#&gt;  3 3139477 2021-09-20 04:47:05 Rotowire FALSE   Mahomes completed 24 … "Mahomes carved up…</span>
+<span class="co">#&gt;  4 3139477 2021-09-17 23:13:41 Story    FALSE   NFL Week 2 game picks… "&lt;p&gt;&lt;video1&gt;&lt;/vide…</span>
+<span class="co">#&gt;  5 3139477 2021-09-13 03:01:33 Rotowire FALSE   Mahomes completed 27 … "The 25-year-old s…</span>
+<span class="co">#&gt;  6 3139477 2021-09-10 14:36:05 Story    TRUE    NFL Week 1 prediction… "&lt;p&gt;&lt;video1&gt;&lt;/vide…</span>
+<span class="co">#&gt;  7 3139477 2021-09-08 04:56:27 Story    FALSE   'So, you're Patrick M… "&lt;p&gt;&lt;video1&gt;&lt;br&gt;\n…</span>
+<span class="co">#&gt;  8 3139477 2021-08-31 14:15:41 Story    TRUE    Predicting NFL teams … "&lt;p&gt;&lt;video1&gt;&lt;/vide…</span>
+<span class="co">#&gt;  9 3139477 2021-08-28 03:31:05 Rotowire FALSE   Mahomes completed eig… "Mahomes was his s…</span>
+<span class="co">#&gt; 10 3139477 2021-08-21 03:07:20 Rotowire FALSE   Mahomes completed 10 … "There had been ta…</span>
+<span class="co">#&gt; 11 3139477 2021-08-18 16:33:13 Rotowire FALSE   Coach Andy Reid said … "Mahomes played on…</span>
+<span class="co">#&gt; 12 3139477 2021-08-15 04:19:01 Rotowire FALSE   Mahomes completed one… "Mahomes connected…</span>
+<span class="co">#&gt; 13 3139477 2021-08-12 18:54:27 Rotowire FALSE   Coach Andy Reid sugge… "Reid didn't actua…</span>
+<span class="co">#&gt; 14 3139477 2021-07-23 18:55:35 Rotowire FALSE   Mahomes doesn't antic… "This was expected…</span></code></pre></div>
 </div>
 </div>
 <div id="league" class="section level2">
@@ -252,9 +253,9 @@
 <span class="co">#&gt;  $ finalScoringPeriod     : int 17</span>
 <span class="co">#&gt;  $ previousSeasons        :List of 1</span>
 <span class="co">#&gt;   ..$ : list()</span>
-<span class="co">#&gt;  $ standingsUpdateDate    : POSIXct[1:1], format: "2021-10-01 07:21:01"</span>
+<span class="co">#&gt;  $ standingsUpdateDate    : POSIXct[1:1], format: "2021-10-04 07:49:31"</span>
 <span class="co">#&gt;  $ teamsJoined            : int 4</span>
-<span class="co">#&gt;  $ waiverLastExecutionDate: POSIXct[1:1], format: "2021-10-01 07:21:01"</span>
+<span class="co">#&gt;  $ waiverLastExecutionDate: POSIXct[1:1], format: "2021-10-04 07:49:31"</span>
 <span class="co">#&gt;  $ waiverNextExecutionDate: POSIXct[1:1], format: NA</span>
 <span class="co">#&gt;  $ waiverProcessStatus    :List of 1</span>
 <span class="co">#&gt;   ..$ :'data.frame': 1 obs. of  2 variables:</span>
@@ -527,18 +528,18 @@
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/all_players.html">all_players</a></span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 10 × 19</span>
-<span class="co">#&gt;    seasonId scoringPeriodId      id firstName lastName  proTeam defaultPositionId</span>
-<span class="co">#&gt;       &lt;int&gt;           &lt;dbl&gt;   &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;fct&gt;   &lt;fct&gt;            </span>
-<span class="co">#&gt;  1     2021               4   16800 Davante   Adams     GB      WR               </span>
-<span class="co">#&gt;  2     2021               4 3043078 Derrick   Henry     Ten     RB               </span>
-<span class="co">#&gt;  3     2021               4   15847 Travis    Kelce     KC      TE               </span>
-<span class="co">#&gt;  4     2021               4 3116593 Dalvin    Cook      Min     RB               </span>
-<span class="co">#&gt;  5     2021               4 3054850 Alvin     Kamara    NO      RB               </span>
-<span class="co">#&gt;  6     2021               4 3116406 Tyreek    Hill      KC      WR               </span>
-<span class="co">#&gt;  7     2021               4 2976212 Stefon    Diggs     Buf     WR               </span>
-<span class="co">#&gt;  8     2021               4 3139477 Patrick   Mahomes   KC      QB               </span>
-<span class="co">#&gt;  9     2021               4 3117251 Christian McCaffrey Car     RB               </span>
-<span class="co">#&gt; 10     2021               4   15795 DeAndre   Hopkins   Ari     WR               </span>
+<span class="co">#&gt;    seasonId scoringPeriodId      id firstName lastName proTeam defaultPositionId</span>
+<span class="co">#&gt;       &lt;int&gt;           &lt;dbl&gt;   &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;    &lt;fct&gt;   &lt;fct&gt;            </span>
+<span class="co">#&gt;  1     2021               4   16800 Davante   Adams    GB      WR               </span>
+<span class="co">#&gt;  2     2021               4 3116593 Dalvin    Cook     Min     RB               </span>
+<span class="co">#&gt;  3     2021               4   15847 Travis    Kelce    KC      TE               </span>
+<span class="co">#&gt;  4     2021               4 3043078 Derrick   Henry    Ten     RB               </span>
+<span class="co">#&gt;  5     2021               4 3054850 Alvin     Kamara   NO      RB               </span>
+<span class="co">#&gt;  6     2021               4 3116406 Tyreek    Hill     KC      WR               </span>
+<span class="co">#&gt;  7     2021               4 2976212 Stefon    Diggs    Buf     WR               </span>
+<span class="co">#&gt;  8     2021               4 3139477 Patrick   Mahomes  KC      QB               </span>
+<span class="co">#&gt;  9     2021               4   15795 DeAndre   Hopkins  Ari     WR               </span>
+<span class="co">#&gt; 10     2021               4 4047650 DK        Metcalf  Sea     WR               </span>
 <span class="co">#&gt; # … with 12 more variables: injuryStatus &lt;chr&gt;, percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   percentChange &lt;dbl&gt;, positionalRanking &lt;int&gt;, totalRating &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   auctionValueAverage &lt;dbl&gt;, averageDraftPosition &lt;dbl&gt;, next_wk &lt;dbl&gt;, last_wk &lt;dbl&gt;,</span>
@@ -552,10 +553,10 @@
 <span class="co">#&gt; # A tibble: 4 × 5</span>
 <span class="co">#&gt;   currentMatchupPeriod    id teamId totalPointsLive totalProjectedPointsLive</span>
 <span class="co">#&gt;                  &lt;int&gt; &lt;int&gt; &lt;fct&gt;            &lt;dbl&gt;                    &lt;dbl&gt;</span>
-<span class="co">#&gt; 1                    4     7 CHI               14.7                     138.</span>
-<span class="co">#&gt; 2                    4     7 AUS                0                       134.</span>
-<span class="co">#&gt; 3                    4     8 DEN                1                       139.</span>
-<span class="co">#&gt; 4                    4     8 BOS                0                       139.</span></code></pre></div>
+<span class="co">#&gt; 1                    4     7 CHI               137.                     149.</span>
+<span class="co">#&gt; 2                    4     7 AUS               139.                     139.</span>
+<span class="co">#&gt; 3                    4     8 DEN               105.                     105.</span>
+<span class="co">#&gt; 4                    4     8 BOS               133.                     133.</span></code></pre></div>
 </div>
 <div id="standings" class="section level2">
 <h2 class="hasAnchor">
@@ -566,9 +567,9 @@
 <span class="co">#&gt;   seasonId scoringPeriodId teamId abbrev draftDayProjectedR… currentProjected… playoffSeed</span>
 <span class="co">#&gt;      &lt;int&gt;           &lt;int&gt;  &lt;int&gt; &lt;fct&gt;                &lt;int&gt;             &lt;int&gt;       &lt;int&gt;</span>
 <span class="co">#&gt; 1     2021               4      1 AUS                      2                 4           4</span>
-<span class="co">#&gt; 2     2021               4      2 BOS                      4                 3           3</span>
-<span class="co">#&gt; 3     2021               4      3 CHI                      3                 1           1</span>
-<span class="co">#&gt; 4     2021               4      4 DEN                      1                 2           2</span>
+<span class="co">#&gt; 2     2021               4      2 BOS                      4                 2           3</span>
+<span class="co">#&gt; 3     2021               4      3 CHI                      3                 3           1</span>
+<span class="co">#&gt; 4     2021               4      4 DEN                      1                 1           2</span>
 <span class="co">#&gt; # … with 12 more variables: rankCalculatedFinal &lt;int&gt;, gamesBack &lt;dbl&gt;, losses &lt;int&gt;,</span>
 <span class="co">#&gt; #   percentage &lt;dbl&gt;, pointsAgainst &lt;dbl&gt;, pointsFor &lt;dbl&gt;, streakLength &lt;int&gt;,</span>
 <span class="co">#&gt; #   streakType &lt;chr&gt;, ties &lt;int&gt;, wins &lt;int&gt;, playoffPct &lt;dbl&gt;, divisionWinPct &lt;dbl&gt;</span></code></pre></div>
