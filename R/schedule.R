@@ -62,5 +62,3 @@ out_sched <- function(s, y = NULL, team = NULL) {
   )
   as_tibble(out[order(out$id), ])
 }
-
-

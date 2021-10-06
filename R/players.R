@@ -22,7 +22,8 @@ all_players <- function(leagueId = ffl_id(), scoringPeriodId = ffl_week(),
   all_get <- httr::RETRY(
     verb = "GET",
     url = paste0(
-      "https://fantasy.espn.com/apis/v3/games/ffl/seasons/2021/segments/0/leagues/",
+      "https://fantasy.espn.com",
+      "/apis/v3/games/ffl/seasons/2021/segments/0/leagues/",
       leagueId
     ),
     query = list(view = "kona_player_info"),
@@ -66,7 +67,7 @@ all_players <- function(leagueId = ffl_id(), scoringPeriodId = ffl_week(),
   for (i in seq_along(pl$player$stats)) {
     s <- pl$player$stats[[i]][-2]
     if (is.null(s)) {
-      next("player states are null can skip")
+      next # player states are null can skip
     }
     if (length(unique(s$scoringPeriodId)) < 3) {
       next # player doesn't have stats from last week
@@ -75,7 +76,9 @@ all_players <- function(leagueId = ffl_id(), scoringPeriodId = ffl_week(),
     #   next # player just joined, mostly last season
     # }
     w <- max(s$scoringPeriodId[s$seasonId == y])
-    w_last <- which(s$statSourceId == 0 & s$statSplitTypeId == 1 & s$scoringPeriodId == w - 1)
+    w_last <- which(s$statSourceId == 0 &
+                      s$statSplitTypeId == 1 &
+                        s$scoringPeriodId == w - 1)
     if (length(w_last) == 1) {
       z$last_wk[i] <- s$appliedTotal[w_last]
     } else {
@@ -113,8 +116,8 @@ all_players <- function(leagueId = ffl_id(), scoringPeriodId = ffl_week(),
     proTeam = pro_abbrev(pl$player$proTeamId),
     defaultPositionId = pos_abbrev(pl$player$defaultPositionId),
     injuryStatus = substr(pl$player$injuryStatus, 1, 1),
-    percentStarted = pl$player$ownership$percentStarted/100,
-    percentOwned = pl$player$ownership$percentOwned/100,
+    percentStarted = pl$player$ownership$percentStarted / 100,
+    percentOwned = pl$player$ownership$percentOwned / 100,
     percentChange = pl$player$ownership$percentChange,
     positionalRanking = pl$ratings$`0`$positionalRanking,
     totalRating = pl$ratings$`0`$totalRating,

@@ -79,7 +79,8 @@ league_name <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
 #' acquisition_settings(leagueId = "252353", leagueHistory = TRUE)
 #' @family League settings
 #' @export
-acquisition_settings <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
+acquisition_settings <- function(leagueId = ffl_id(), leagueHistory = FALSE,
+                                 ...) {
   dat <- ffl_api(
     leagueId = leagueId,
     view = "mSettings",

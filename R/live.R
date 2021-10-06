@@ -59,5 +59,3 @@ live_scoring <- function(leagueId = ffl_id(), yetToPlay = FALSE, ...) {
   }
   return(s)
 }
-
-

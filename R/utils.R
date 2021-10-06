@@ -2,7 +2,7 @@ ffl_date <- function(date) {
   if (is.null(date)) {
     as.POSIXct(NA_real_)
   } else {
-    as.POSIXct(date/1000, origin = "1970-01-01")
+    as.POSIXct(date / 1000, origin = "1970-01-01")
   }
 }
 

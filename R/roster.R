@@ -27,7 +27,6 @@ out_roster <- function(entry, t = NULL) {
     return(entry)
   }
   player <- entry$playerPoolEntry$player
-  stats <- player$stats
   proj_dbl <- score_dbl <- rep(NA, length(player$stats))
   for (i in seq_along(player$stats)) {
     s <- player$stats[[i]]

@@ -35,7 +35,7 @@ recent_activity <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
     i$toLineupSlotId[i$toLineupSlotId == 0] <- NA_integer_
 
     t$bidAmount[t$bidAmount == 0] <- NA_integer_
-    t$proposedDate = ffl_date(t$proposedDate)
+    t$proposedDate <- ffl_date(t$proposedDate)
     t$seaonId <- dat$seasonId
     t <- t[, c("seaonId", "rating", "bidAmount", "scoringPeriodId", "memberId",
                "status", "id")]
