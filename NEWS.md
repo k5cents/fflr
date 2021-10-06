@@ -1,5 +1,6 @@
 # fflr (development version)
 
+* Improve abbreviation techniques, add all roster slot and position IDs (#29).
 * Fix error checking in `ffl_api()`. Returns proper error message when there is
 a failure (e.g., non-public league) (#36).
 
