@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9001</span>
       </span>
     </div>
 
@@ -95,7 +95,7 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">fflr</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html">packageVersion</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span>
-<span class="co">#&gt; [1] '1.9.2.9000'</span>
+<span class="co">#&gt; [1] '1.9.2.9001'</span>
 <span class="fu"><a href="../reference/ffl_id.html">ffl_id</a></span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span><span class="op">)</span>
 <span class="co">#&gt; Temporarily set `fflr.leagueId` option to 42654852</span>
 <span class="co">#&gt; [1] "42654852"</span></code></pre></div>
@@ -182,7 +182,7 @@
 <span class="co">#&gt;  9 PK         2473037 Jason      Myers       Sea     PK       A                      8.04</span>
 <span class="co">#&gt; 10 BE         4259545 D'Andre    Swift       Det     RB       A                     13.5 </span>
 <span class="co">#&gt; 11 BE         4045163 Miles      Sanders     Phi     RB       A                     14.3 </span>
-<span class="co">#&gt; 12 BE         3919596 Chris      Carson      Sea     RB       A                     12.8 </span>
+<span class="co">#&gt; 12 BE         3919596 Chris      Carson      Sea     RB       Q                     12.8 </span>
 <span class="co">#&gt; 13 BE           16799 Allen      Robinson II Chi     WR       A                     14.6 </span>
 <span class="co">#&gt; 14 BE           16460 Adam       Thielen     Min     WR       A                     14.4 </span>
 <span class="co">#&gt; 15 BE         3932905 Diontae    Johnson     Pit     WR       A                     13.4 </span>
@@ -196,21 +196,22 @@
 <p>The <code><a href="../reference/player_outlook.html">player_outlook()</a></code> and <code><a href="../reference/player_news.html">player_news()</a></code> functions return news on your roster. The first returns <em>all</em> outlooks by player and week and cannot be refined beyond setting a <code>limit</code> of players to return (in order of rank).</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/player_outlook.html">player_outlook</a></span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 5 × 6</span>
+<span class="co">#&gt; # A tibble: 6 × 6</span>
 <span class="co">#&gt;   seasonId scoringPeriodId      id firstName lastName outlook                             </span>
 <span class="co">#&gt;      &lt;int&gt;           &lt;int&gt;   &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;                               </span>
 <span class="co">#&gt; 1     2021               0 3116406 Tyreek    Hill     Hill's game is that of a big-play m…</span>
 <span class="co">#&gt; 2     2021               1 3116406 Tyreek    Hill     Locked in with our second-highest p…</span>
 <span class="co">#&gt; 3     2021               2 3116406 Tyreek    Hill     A team-high 15 targets combined wit…</span>
 <span class="co">#&gt; 4     2021               3 3116406 Tyreek    Hill     Facing regular double coverage, Hil…</span>
-<span class="co">#&gt; 5     2021               4 3116406 Tyreek    Hill     Two quiet weeks after a sensational…</span></code></pre></div>
+<span class="co">#&gt; 5     2021               4 3116406 Tyreek    Hill     Two quiet weeks after a sensational…</span>
+<span class="co">#&gt; 6     2021               5 3116406 Tyreek    Hill     A week-winning performance from Hil…</span></code></pre></div>
 <p>The second fiction takes a single <code>playerId</code> value and returns all the recent news on that player, including premium stories in HTML format.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/player_news.html">player_news</a></span><span class="op">(</span>playerId <span class="op">=</span> <span class="st">"3139477"</span>, parseHTML <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 15 × 6</span>
 <span class="co">#&gt;         id published           type     premium headline               body               </span>
 <span class="co">#&gt;      &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;    &lt;lgl&gt;   &lt;chr&gt;                  &lt;chr&gt;              </span>
-<span class="co">#&gt;  1 3139477 2021-10-05 12:02:11 Story    TRUE    Ranking NFL MVP candi… "&lt;p&gt;&lt;video1&gt;&lt;/vide…</span>
+<span class="co">#&gt;  1 3139477 2021-10-05 23:04:34 Story    TRUE    Ranking NFL MVP candi… "&lt;p&gt;&lt;video1&gt;&lt;/vide…</span>
 <span class="co">#&gt;  2 3139477 2021-10-03 20:37:42 Rotowire FALSE   Mahomes completed 24 … "Mahomes capped Ka…</span>
 <span class="co">#&gt;  3 3139477 2021-09-26 20:22:02 Rotowire FALSE   Mahomes completed 27 … "Kansas City has s…</span>
 <span class="co">#&gt;  4 3139477 2021-09-20 04:47:05 Rotowire FALSE   Mahomes completed 24 … "Mahomes carved up…</span>
