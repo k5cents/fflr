@@ -17,7 +17,9 @@ team_roster <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   if (leagueHistory) {
     lapply(dat$teams, function(x) lapply(x$roster$entries, out_roster))
   } else {
-    stop_predraft(dat)
+    if (is_predraft(dat)) {
+      return(data.frame())
+    }
     lapply(dat$teams$roster$entries, out_roster)
   }
 }

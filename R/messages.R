@@ -70,15 +70,3 @@ parse_coms <- function(t) {
   )
   as_tibble(rbind(email, chat, board1, board2, note))
 }
-
-out_msg_type <- function(l) {
-  tibble::tibble(
-    id = substr(l$id, 1, 8),
-    type = l$type,
-    author = l$author,
-    date = ffl_date(l$date),
-    content = l$content,
-    messages = list_ifnot(l$messages),
-    view_by = list_ifnot(l$viewableBy)
-  )
-}

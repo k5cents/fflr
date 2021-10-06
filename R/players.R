@@ -17,7 +17,6 @@
 #' @export
 all_players <- function(leagueId = ffl_id(), scoringPeriodId = ffl_week(),
                         limit = 50) {
-  if (is.null(leagueId)) leagueId <- "42654852"
   if (is.null(limit)) limit <- ""
   all_get <- httr::RETRY(
     verb = "GET",
@@ -58,10 +57,10 @@ all_players <- function(leagueId = ffl_id(), scoringPeriodId = ffl_week(),
   pl <- pl$players
   z <- data.frame(
     id = pl$player$id,
-    next_wk = NA_real_,
-    last_wk = NA_real_,
-    last_szn = NA_real_,
-    this_szn = NA_real_
+    projectedScore = NA_real_,
+    lastScore = NA_real_,
+    lastSeason = NA_real_,
+    currentSeason = NA_real_
   )
   y <- max(pl$player$stats[[1]]$seasonId)
   for (i in seq_along(pl$player$stats)) {
@@ -72,27 +71,29 @@ all_players <- function(leagueId = ffl_id(), scoringPeriodId = ffl_week(),
     if (length(unique(s$scoringPeriodId)) < 3) {
       next # player doesn't have stats from last week
     }
-    # if (sum(s$seasonId == y - 1) > 1) {
-    #   next # player just joined, mostly last season
-    # }
+    if (sum(s$seasonId == y - 1) > 1) {
+      next # player has more than one from previous season
+    }
     w <- max(s$scoringPeriodId[s$seasonId == y])
     w_last <- which(s$statSourceId == 0 &
                       s$statSplitTypeId == 1 &
                         s$scoringPeriodId == w - 1)
     if (length(w_last) == 1) {
-      z$last_wk[i] <- s$appliedTotal[w_last]
+      z$lastScore[i] <- s$appliedTotal[w_last]
     } else {
-      z$last_wk[i] <- NA
+      z$lastScore[i] <- NA
     }
-    w_next <- which(s$statSourceId == 1 & s$statSplitTypeId == 1 & s$w == w)
+    w_next <- which(s$statSourceId == 1 &
+                      s$statSplitTypeId == 1 &
+                        s$scoringPeriodId == w)
     if (length(w_next) == 1) {
-      z$next_wk[i] <- s$appliedTotal[w_next]
+      z$projectedScore[i] <- s$appliedTotal[w_next]
     } else {
-      z$next_wk[i] <- NA
+      z$projectedScore[i] <- NA
     }
-    z$this_szn[i] <- s$appliedTotal[s$id == paste0("00", y)]
+    z$currentSeason[i] <- s$appliedTotal[s$id == paste0("00", y)]
     if (length(unique(s$seasonId)) > 1) {
-      z$last_szn[i] <- s$appliedTotal[s$id == paste0("00", y - 1)]
+      z$lastSeason[i] <- s$appliedTotal[s$id == paste0("00", y - 1)]
     }
   }
   out <- as_tibble(pl$player)

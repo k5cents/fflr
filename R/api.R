@@ -36,18 +36,18 @@ ffl_api <- function(leagueId = ffl_id(), view = NULL, leagueHistory = FALSE,
   )
   view <- as.list(view)
   names(view) <- rep("view", length(view))
+  if (!is.null(names(dots))) {
+    view <- c(view, dots)
+  }
   try_json(
     url = "https://fantasy.espn.com",
     path = paste("apis/v3/games/ffl", age_path, leagueId, sep = "/"),
-    query = if (!is.null(names(dots))) {
-      c(view, dots)
-    } else {
-      view
-    }
+    query = view,
+    leagueHistory = leagueHistory
   )
 }
 
-try_json <- function(url, path = "", query = NULL) {
+try_json <- function(url, path = "", query = NULL, leagueHistory = NULL) {
   resp <- httr::RETRY(
     verb = "GET",
     url = ifelse(
@@ -66,6 +66,9 @@ try_json <- function(url, path = "", query = NULL) {
   raw <- httr::content(resp, as = "text", encoding = "UTF-8")
   parsed <- jsonlite::fromJSON(raw)
   if (httr::http_error(resp) && any(grepl("message", names(parsed)))) {
+    if (!is.null(leagueHistory) && isTRUE(leagueHistory)) {
+      parsed$message <- paste(parsed$message, "(No League History?)")
+    }
     stop(
       sprintf(
         "ESPN Fantasy API request failed [%s]\n%s",

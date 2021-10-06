@@ -28,7 +28,7 @@ tidy_matchups <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
           id = dat$teams[[i]]$id,
           abbrev = factor(
             x = dat$teams[[i]]$abbrev,
-            levels = dat$teams[[i]]$abbrev
+            levels = make.unique(dat$teams[[i]]$abbrev)
           )
         )
       )
@@ -43,7 +43,7 @@ tidy_matchups <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
         id = dat$teams$id,
         abbrev = factor(
           x = dat$teams$abbrev,
-          levels = dat$teams$abbrev
+          levels = make.unique(dat$teams$abbrev)
         )
       )
     )

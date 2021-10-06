@@ -13,6 +13,9 @@ player_acquire <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   if (leagueHistory | length(list(...) > 0)) {
     stop("Acqusition data is only available for current season and period")
   }
+  if (is_predraft(dat)) {
+    return(data.frame())
+  }
   tm <- out_team(dat$teams)
   e <- dat$teams$roster$entries
   out <- rep(list(NA), length(e))

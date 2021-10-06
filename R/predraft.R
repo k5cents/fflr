@@ -1,16 +1,17 @@
-stop_predraft <- function(dat) {
+is_predraft <- function(dat) {
   if ("draftDetail" %in% names(dat)) {
     if (!dat$draftDetail$drafted) {
-      message("This league has not drafted and the information is unavailable")
-      return(data.frame())
+      message("League has not yet drafted this season")
+      return(TRUE)
     }
   }
+  return(FALSE)
 }
 
 skip_predraft <- function(dat) {
   if (is_installed("testthat") & "draftDetail" %in% names(dat)) {
     if (!dat$draftDetail$drafted) {
-      testthat::skip(message = "This league has not drafted")
+      testthat::skip(message = "League has not drafted")
     }
   }
 }

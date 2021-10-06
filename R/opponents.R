@@ -8,7 +8,6 @@
 #' opponent_ranks()
 #' @export
 opponent_ranks <- function(leagueId = ffl_id()) {
-  if (is.null(leagueId)) leagueId <- "42654852"
   dat <- ffl_api(leagueId, view = "kona_player_info")
   p <- dat$positionAgainstOpponent$positionalRatings
   oprk <- rep(

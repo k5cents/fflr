@@ -16,6 +16,9 @@ live_scoring <- function(leagueId = ffl_id(), yetToPlay = FALSE, ...) {
     view = c("mScoreboard", "mRoster"),
     ...
   )
+  if (is_predraft(dat)) {
+    return(data.frame())
+  }
   s <- tibble::tibble(
     currentMatchupPeriod = dat$status$currentMatchupPeriod,
     id = c(
