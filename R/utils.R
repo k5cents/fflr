@@ -57,3 +57,9 @@ bind_df <- function(l, .id = NULL) {
   out <- do.call(what = "rbind", args = l)
   as_tibble(out)
 }
+
+change_names <- function(dat, ...) {
+  dots <- unlist(list(...))
+  names(dat)[match(unname(dots), names(dat))] <- names(dots)
+  return(dat)
+}

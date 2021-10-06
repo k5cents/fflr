@@ -9,21 +9,22 @@
 #' @family League information
 #' @export
 league_teams <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
-  x <- ffl_api(
+  dat <- ffl_api(
     leagueId = leagueId,
     leagueHistory = leagueHistory,
     ...
   )
-  if (leagueHistory && is.list(x$teams)) {
-    names(x$teams) <- x$seasonId
-    lapply(x$teams, out_team)
+  if (leagueHistory && is.list(dat$teams)) {
+    names(dat$teams) <- dat$seasonId
+    lapply(dat$teams, out_team)
   } else {
-    out_team(x$teams)
+    out_team(dat$teams)
   }
 }
 
 out_team <- function(z) {
-  z$abbrev <- factor(z$id, labels = z$abbrev)
+  z <- change_names(z, "teamId" = "id")
+  z$abbrev <- factor(z$teamId, labels = z$abbrev)
   as_tibble(z)
 }
 
