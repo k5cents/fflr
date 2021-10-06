@@ -22,14 +22,14 @@ tidy_scores <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   if (leagueHistory) {
     out <- rep(list(NA), length(dat$schedule))
     for (i in seq_along(out)) {
-      out[[i]] <- parse_matchup(
+      out[[i]] <- parse_scores(
         s = dat$schedule[[i]],
         y = dat$seasonId[i],
         t = out_team(dat$teams[[i]])
       )
     }
   } else {
-    out <- parse_matchup(
+    out <- parse_scores(
       s = dat$schedule,
       y = dat$seasonId,
       t = out_team(dat$teams)
@@ -38,22 +38,22 @@ tidy_scores <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   return(out)
 }
 
-parse_matchup <- function(s, y = NULL, t = NULL) {
+parse_scores <- function(s, y = NULL, t = NULL) {
   n <- length(s$winner)
   is_home <- c(rep(TRUE, n), rep(FALSE, n))
   winners <- rep(s$winner, 2)
   winners[winners == "UNDECIDED"] <- NA
   x <- data.frame(
     seasonId = y,
-    id = rep(s$id, 2),
-    matchupPeriodId = factor(rep(s$matchupPeriodId, 2), levels = 1:16),
+    matchupPeriodId = rep(s$matchupPeriodId, 2),
+    matchId = rep(s$id, 2),
     teamId = c(s$home$teamId, s$away$teamId),
     abbrev = team_abbrev(c(s$home$teamId, s$away$teamId), teams = t),
     isHome = is_home,
     totalPoints = c(s$home$totalPoints, s$away$totalPoints),
     isWinner = (rep(s$winner, 2) == "HOME") == is_home
   )
-  x <- x[order(x$id), ]
+  x <- x[order(x$matchId), ]
   x <- x[!is.na(x$matchupPeriodId), ]
   x$powerWins <- NA_integer_
   for (w in unique(x$matchupPeriodId)) {
