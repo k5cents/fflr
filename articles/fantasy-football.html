@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9003</span>
       </span>
     </div>
 
@@ -95,7 +95,7 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">fflr</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html">packageVersion</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span>
-<span class="co">#&gt; [1] '1.9.2.9002'</span>
+<span class="co">#&gt; [1] '1.9.2.9003'</span>
 <span class="fu"><a href="../reference/ffl_id.html">ffl_id</a></span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span><span class="op">)</span>
 <span class="co">#&gt; Temporarily set `fflr.leagueId` option to 42654852</span>
 <span class="co">#&gt; [1] "42654852"</span></code></pre></div>
@@ -180,7 +180,7 @@
 <span class="co">#&gt;  7 FLEX       4360294 Antonio    Gibson      Wsh     RB       Q                     16.0 </span>
 <span class="co">#&gt;  8 D/ST        -16027 Buccaneers D/ST        TB      D/ST     A                      4.51</span>
 <span class="co">#&gt;  9 K          2473037 Jason      Myers       Sea     K        A                      8.04</span>
-<span class="co">#&gt; 10 BE         4259545 D'Andre    Swift       Det     RB       A                     13.5 </span>
+<span class="co">#&gt; 10 BE         4259545 D'Andre    Swift       Det     RB       Q                     13.5 </span>
 <span class="co">#&gt; 11 BE         4045163 Miles      Sanders     Phi     RB       A                     14.3 </span>
 <span class="co">#&gt; 12 BE         3919596 Chris      Carson      Sea     RB       Q                     12.8 </span>
 <span class="co">#&gt; 13 BE           16799 Allen      Robinson II Chi     WR       A                     14.6 </span>
@@ -208,7 +208,7 @@
 <p>The second fiction takes a single <code>playerId</code> value and returns all the recent news on that player, including premium stories in HTML format.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/player_news.html">player_news</a></span><span class="op">(</span>playerId <span class="op">=</span> <span class="st">"3139477"</span>, parseHTML <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 15 × 6</span>
+<span class="co">#&gt; # A tibble: 14 × 6</span>
 <span class="co">#&gt;         id published           type     premium headline               body               </span>
 <span class="co">#&gt;      &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;    &lt;lgl&gt;   &lt;chr&gt;                  &lt;chr&gt;              </span>
 <span class="co">#&gt;  1 3139477 2021-10-05 23:04:34 Story    TRUE    Ranking NFL MVP candi… "&lt;p&gt;&lt;video1&gt;&lt;/vide…</span>
@@ -224,8 +224,7 @@
 <span class="co">#&gt; 11 3139477 2021-08-21 03:07:20 Rotowire FALSE   Mahomes completed 10 … "There had been ta…</span>
 <span class="co">#&gt; 12 3139477 2021-08-18 16:33:13 Rotowire FALSE   Coach Andy Reid said … "Mahomes played on…</span>
 <span class="co">#&gt; 13 3139477 2021-08-15 04:19:01 Rotowire FALSE   Mahomes completed one… "Mahomes connected…</span>
-<span class="co">#&gt; 14 3139477 2021-08-12 18:54:27 Rotowire FALSE   Coach Andy Reid sugge… "Reid didn't actua…</span>
-<span class="co">#&gt; 15 3139477 2021-07-23 18:55:35 Rotowire FALSE   Mahomes doesn't antic… "This was expected…</span></code></pre></div>
+<span class="co">#&gt; 14 3139477 2021-08-12 18:54:27 Rotowire FALSE   Coach Andy Reid sugge… "Reid didn't actua…</span></code></pre></div>
 </div>
 </div>
 <div id="league" class="section level2">
@@ -544,8 +543,8 @@
 <span class="co">#&gt; 10     2021               5 4047650 DK        Metcalf  Sea     WR               </span>
 <span class="co">#&gt; # … with 12 more variables: injuryStatus &lt;chr&gt;, percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   percentChange &lt;dbl&gt;, positionalRanking &lt;int&gt;, totalRating &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   auctionValueAverage &lt;dbl&gt;, averageDraftPosition &lt;dbl&gt;, next_wk &lt;dbl&gt;, last_wk &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   last_szn &lt;dbl&gt;, this_szn &lt;dbl&gt;</span></code></pre></div>
+<span class="co">#&gt; #   auctionValueAverage &lt;dbl&gt;, averageDraftPosition &lt;dbl&gt;, projectedScore &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   lastScore &lt;dbl&gt;, lastSeason &lt;dbl&gt;, currentSeason &lt;dbl&gt;</span></code></pre></div>
 </div>
 <div id="scoreboard" class="section level2">
 <h2 class="hasAnchor">
