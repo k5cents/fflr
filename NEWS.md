@@ -1,5 +1,8 @@
 # fflr (development version)
 
+* Fix error checking in `ffl_api()`. Returns proper error message when there is
+a failure (e.g., non-public league) (#36).
+
 # fflr 1.9.2
 
 * Fix `tidy_scores()` for settings that award home team points.

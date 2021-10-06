@@ -65,7 +65,7 @@ try_json <- function(url, path = "", query = NULL) {
   }
   raw <- httr::content(resp, as = "text", encoding = "UTF-8")
   parsed <- jsonlite::fromJSON(raw)
-  if (httr::http_error(resp) && "message" %in% names(parsed)) {
+  if (httr::http_error(resp) && any(grepl("message", names(parsed)))) {
     stop(
       sprintf(
         "ESPN Fantasy API request failed [%s]\n%s",
