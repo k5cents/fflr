@@ -47,3 +47,19 @@ pos_unabbrev <- function(abbrev) {
 pro_abbrev <- function(proTeamId) {
   fflr::nfl_teams$abbrev[match(proTeamId, fflr::nfl_teams$proTeamId)]
 }
+
+#' Convert team ID to abbreviation
+#'
+#' @param id A integer vector of team numbers to convert.
+#' @param teams A table of teams from [league_teams()].
+#' @return A factor vector of team abbreviations.
+#' @examples
+#' team_abbrev(id = 2, teams = league_teams(leagueId = "42654852"))
+#' @export
+team_abbrev <- function(teamId, teams = league_teams(leagueId = ffl_id())) {
+  if (!(all(c("abbrev", "teamId") %in% names(team)))) {
+    stop("team data lacks `abbrev` and `teamId` columns")
+  }
+  stopifnot(is.data.frame(teams))
+  teams$abbrev[match(teamId, teams$teamId)]
+}

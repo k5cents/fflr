@@ -27,16 +27,3 @@ out_team <- function(z) {
   z$abbrev <- factor(z$teamId, labels = z$abbrev)
   as_tibble(z)
 }
-
-#' Convert team ID to abbreviation
-#'
-#' @param id A integer vector of team numbers to convert.
-#' @param teams A table of teams from [league_teams()].
-#' @return A factor vector of team abbreviations.
-#' @examples
-#' team_abbrev(id = 2, teams = league_teams(leagueId = "42654852"))
-#' @export
-team_abbrev <- function(id, teams = league_teams(leagueId = ffl_id())) {
-  stopifnot(is.data.frame(teams))
-  teams$abbrev[match(id, teams$id)]
-}
