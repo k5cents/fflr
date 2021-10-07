@@ -19,42 +19,28 @@ draft_recap <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   if (leagueHistory) {
     out <- rep(list(NA), length(dat$seasonId))
     for (i in seq_along(out)) {
-      tm <- data.frame(
-        stringsAsFactors = FALSE,
-        id = dat$teams[[i]]$id,
-        abbrev = factor(
-          x = dat$teams[[i]]$abbrev,
-          levels = dat$teams[[i]]$abbrev
-        )
+      tm <- out_team(dat$teams[[i]], trim = TRUE)
+      out[[i]] <- out_draft(
+        picks = dat$draftDetail$picks[[i]],
+        tm = out_team(dat$teams[[i]]),
+        y = dat$seasonId[i]
       )
-      x <- dat$draftDetail$picks[[i]]
-      x$autoDraftTypeId <- as.logical(x$autoDraftTypeId)
-      x$nominatingTeamId <- team_abbrev(x$nominatingTeamId, teams = tm)
-      x$teamId <- team_abbrev(x$teamId, teams = tm)
-      x$seasonId <- dat$seasonId[i]
-      x <- x[c(length(x), seq(x) - 1)]
-      x$bidAmount[x$bidAmount == 0] <- NA_integer_
-      out[[i]] <- as_tibble(x)
     }
     return(out)
   } else {
-    x <- dat$draftDetail$picks
-    x$autoDraftTypeId <- as.logical(x$autoDraftTypeId)
-    tm <- data.frame(
-      stringsAsFactors = FALSE,
-      id = dat$teams$id,
-      abbrev = factor(
-        x = dat$teams$abbrev,
-        levels = dat$teams$abbrev
-      )
-    )
-    x <- dat$draftDetail$picks
-    x$autoDraftTypeId <- as.logical(x$autoDraftTypeId)
-    x$nominatingTeamId <- team_abbrev(x$nominatingTeamId, teams = tm)
-    x$teamId <- team_abbrev(x$teamId, teams = tm)
-    x$seasonId <- dat$seasonId
-    x <- x[c(length(x), seq(x) - 1)]
-    x$bidAmount[x$bidAmount == 0] <- NA_integer_
-    as_tibble(x)
+    tm <- out_team(dat$teams, trim = TRUE)
+    out_draft(dat$draftDetail$picks, tm, dat$seasonId)
   }
 }
+
+out_draft <- function(picks, tm, y) {
+  x <- as_tibble(cbind(seasonId = y, picks))
+  x$bidAmount[x$bidAmount == 0] <- NA_integer_
+  x <- col_abbrev(x, "lineupSlotId", slot_abbrev(x$lineupSlotId))
+  x <- change_names(x, "id", "pickId")
+  x$nominatingTeamId <- team_abbrev(x$nominatingTeamId, teams = tm)
+  x$abbrev <- team_abbrev(x$teamId, teams = tm)
+  x <- move_col(x, "abbrev", match("teamId", names(x)) + 1)
+  as_tibble(x)
+}
+

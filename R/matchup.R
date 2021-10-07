@@ -48,11 +48,11 @@ out_sched <- function(s, y = NULL, team = NULL) {
   out <- data.frame(
     seasonId = as.integer(y),
     matchupPeriodId = rep(s$matchupPeriodId, 2),
-    matchId = rep(s$id, 2),
+    matchupId = rep(s$id, 2),
     teamId = c(s$home$teamId, s$away$teamId),
     abbrev = team_abbrev(c(s$home$teamId, s$away$teamId), team),
     opponent = team_abbrev(c(s$away$teamId, s$home$teamId), team),
     home = c(rep(TRUE, nrow(s)), rep(FALSE, nrow(s)))
   )
-  as_tibble(out[order(out$matchId), ])
+  as_tibble(out[order(out$matchupId), ])
 }

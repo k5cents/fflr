@@ -58,8 +58,36 @@ bind_df <- function(l, .id = NULL) {
   as_tibble(out)
 }
 
-change_names <- function(dat, ...) {
-  dots <- unlist(list(...))
-  names(dat)[match(unname(dots), names(dat))] <- names(dots)
+change_names <- function(dat, old_name, new_name) {
+  names(dat)[match(old_name, names(dat))] <- new_name
   return(dat)
+}
+
+replace_col <- function(z, old_name, ...) {
+  dots <- list(...)
+  stopifnot(length(dots) == 1, old_name %in% names(z))
+  z[[old_name]] <- dots[[1]]
+  z <- change_names(z, old_name, names(dots)[[1]])
+  return(z)
+}
+
+col_abbrev <- function(z, col, new) {
+  new_name <- gsub("Id$", "", col)
+  z[[col]] <- new
+  z <- change_names(z, col, new_name)
+  return(z)
+}
+
+move_col <- function(df, col, n) {
+  if (is.numeric(col)) {
+    col <- names(df)[col]
+  }
+  subset(
+    x = df,
+    select = c(
+      head(names(df), n = n - 1),
+      col,
+      names(df)[!(names(df) %in% c(head(names(df), n = n - 1), col))]
+    )
+  )
 }

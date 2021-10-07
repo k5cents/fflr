@@ -46,14 +46,14 @@ parse_scores <- function(s, y = NULL, t = NULL) {
   x <- data.frame(
     seasonId = y,
     matchupPeriodId = rep(s$matchupPeriodId, 2),
-    matchId = rep(s$id, 2),
+    matchupId = rep(s$id, 2),
     teamId = c(s$home$teamId, s$away$teamId),
     abbrev = team_abbrev(c(s$home$teamId, s$away$teamId), teams = t),
     isHome = is_home,
     totalPoints = c(s$home$totalPoints, s$away$totalPoints),
     isWinner = (rep(s$winner, 2) == "HOME") == is_home
   )
-  x <- x[order(x$matchId), ]
+  x <- x[order(x$matchupId), ]
   x <- x[!is.na(x$matchupPeriodId), ]
   x$powerWins <- NA_integer_
   for (w in unique(x$matchupPeriodId)) {

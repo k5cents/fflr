@@ -22,8 +22,11 @@ league_teams <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   }
 }
 
-out_team <- function(z) {
-  z <- change_names(z, "teamId" = "id")
+out_team <- function(z, trim = FALSE) {
+  z <- change_names(z, "id", "teamId")
   z$abbrev <- factor(z$teamId, labels = z$abbrev)
+  if (trim) {
+    z <- z[, c("teamId", "abbrev")]
+  }
   as_tibble(z)
 }
