@@ -27,6 +27,7 @@ pro_schedule <- function(seasonId = ffl_year()) {
     x <- data.frame(
       seasonId = as.integer(seasonId),
       scoringPeriodId = unique(x$scoringPeriodId),
+      matchupId = x$id,
       proTeam = pro_abbrev(c(x$homeProTeamId, x$awayProTeamId)),
       opponent = pro_abbrev(c(x$awayProTeamId, x$homeProTeamId)),
       isHome = c(rep(TRUE, nrow(x)), rep(FALSE, nrow(x))),
@@ -35,5 +36,5 @@ pro_schedule <- function(seasonId = ffl_year()) {
     sched[[i]] <- x[order(x$proTeam), ]
   }
   sched <- do.call("rbind", sched)
-  as_tibble(sched[order(sched$date), ])
+  as_tibble(sched[order(sched$date, sched$matchupId), ])
 }

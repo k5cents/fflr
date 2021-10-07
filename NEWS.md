@@ -1,5 +1,6 @@
 # fflr (development version)
 
+* `pro_schedule()` (and `nfl_schedule`) are sorted by `date` and `matchupId`.
 * Deprecate `all_players()` in favor of more advance `list_players()` (#21).
 * Manually override `teamId` in each `team_roster()` data frame.
 * Clarify the name of many `*Id` columns (e.g., `teamId`, `matchupId`) (#31).
