@@ -91,7 +91,5 @@ and/or injury status. Sort and limit the responses in the same way as is
 done in the ESPN Fantasy Football website.
 }
 \examples{
-\dontrun{
-list_players()
-}
+list_players("42654852", proTeam = "Mia", sort = "START", limit = 3)
 }

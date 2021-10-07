@@ -55,11 +55,10 @@
 #'   limit can make the request take a long time.
 #' @return A data frame of players.
 #' @examples
-#' \dontrun{
-#' list_players()
-#' }
-#' @importFrom jsonlite toJSON fromJSON
-#' @importFrom httr RETRY add_headers accept_json content
+#' list_players("42654852", proTeam = "Mia", sort = "START", limit = 3)
+#' @importFrom jsonlite toJSON fromJSON unbox
+#' @importFrom httr RETRY add_headers accept_json content http_type http_error
+#'   status_code
 #' @export
 list_players <- function(leagueId = ffl_id(),
                          scoringPeriodId = ffl_week(),
