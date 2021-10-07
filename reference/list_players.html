@@ -82,7 +82,7 @@ done in the ESPN Fantasy Football website." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9006</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9007</span>
       </span>
     </div>
 
@@ -141,7 +141,6 @@ done in the ESPN Fantasy Football website.</p>
 
     <pre class="usage"><span class='fu'>list_players</span><span class='op'>(</span>
   leagueId <span class='op'>=</span> <span class='fu'><a href='ffl_id.html'>ffl_id</a></span><span class='op'>(</span><span class='op'>)</span>,
-  scoringPeriodId <span class='op'>=</span> <span class='fu'><a href='ffl_week.html'>ffl_week</a></span><span class='op'>(</span><span class='op'>)</span>,
   sort <span class='op'>=</span> <span class='st'>"ROST"</span>,
   position <span class='op'>=</span> <span class='cn'>NULL</span>,
   status <span class='op'>=</span> <span class='st'>"AVAILABLE"</span>,
@@ -158,10 +157,6 @@ done in the ESPN Fantasy Football website.</p>
       <th>leagueId</th>
       <td><p>Numeric league ID or ESPN fantasy page URL. Defaults to
 <code><a href='https://rdrr.io/r/base/options.html'>getOption("fflr.leagueId")</a></code>. Function fails if no ID is found.</p></td>
-    </tr>
-    <tr>
-      <th>scoringPeriodId</th>
-      <td><p>A scoring period to return, defaults to <code><a href='ffl_week.html'>ffl_week()</a></code>.</p></td>
     </tr>
     <tr>
       <th>sort</th>
