@@ -173,6 +173,30 @@ list_players <- function(leagueId = ffl_id(),
 
 # -------------------------------------------------------------------------
 
+#' All fantasy players
+#'
+#' List all available players.
+#'
+#' @inheritParams ffl_id
+#' @param scoringPeriodId A scoring period to return, defaults to [ffl_week()].
+#' @param limit The limit of players to return. Use `""` or `NULL` to return
+#'   all. Defaults to 50, which is the default limit used by ESPN. Removing the
+#'   limit can make the request take a long time.
+#' @return A data frame of players.
+#' @examples
+#' \dontrun{
+#' all_players()
+#' }
+#' @importFrom jsonlite toJSON fromJSON
+#' @importFrom httr RETRY add_headers accept_json content
+#' @export
+all_players <- function(...) {
+  .Deprecated("list_players")
+  list_players(...)
+}
+
+# -------------------------------------------------------------------------
+
 U <- function(x) {
   jsonlite::unbox(x)
 }
