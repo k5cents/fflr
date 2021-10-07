@@ -35,5 +35,5 @@ pro_schedule <- function(seasonId = ffl_year()) {
     sched[[i]] <- x[order(x$proTeam), ]
   }
   sched <- do.call("rbind", sched)
-  as_tibble(sched)
+  as_tibble(sched[order(sched$date), ])
 }
