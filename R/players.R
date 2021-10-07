@@ -5,7 +5,6 @@
 #' done in the ESPN Fantasy Football website.
 #'
 #' @inheritParams ffl_id
-#' @param scoringPeriodId A scoring period to return, defaults to [ffl_week()].
 #' @param sort The column from which to sort the data. Options match those on
 #'   the ESPN website:
 #'   * "PLAYER" = Alphabetical by player name
@@ -61,7 +60,6 @@
 #'   status_code
 #' @export
 list_players <- function(leagueId = ffl_id(),
-                         scoringPeriodId = ffl_week(),
                          sort = "ROST",
                          position = NULL,
                          status = "AVAILABLE",
@@ -69,6 +67,7 @@ list_players <- function(leagueId = ffl_id(),
                          proTeam = NULL,
                          scoreType = c("STANDARD", "PPR"),
                          limit = 50) {
+  scoringPeriodId <- ffl_week()
   if (is.null(limit)) limit <- ""
   resp <- httr::RETRY(
     verb = "GET",

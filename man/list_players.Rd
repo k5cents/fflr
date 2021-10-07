@@ -6,7 +6,6 @@
 \usage{
 list_players(
   leagueId = ffl_id(),
-  scoringPeriodId = ffl_week(),
   sort = "ROST",
   position = NULL,
   status = "AVAILABLE",
@@ -19,8 +18,6 @@ list_players(
 \arguments{
 \item{leagueId}{Numeric league ID or ESPN fantasy page URL. Defaults to
 \code{getOption("fflr.leagueId")}. Function fails if no ID is found.}
-
-\item{scoringPeriodId}{A scoring period to return, defaults to \code{\link[=ffl_week]{ffl_week()}}.}
 
 \item{sort}{The column from which to sort the data. Options match those on
 the ESPN website:
