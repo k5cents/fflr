@@ -70,7 +70,7 @@ list_players <- function(leagueId = ffl_id(),
                          scoreType = c("STANDARD", "PPR"),
                          limit = 50) {
   if (is.null(limit)) limit <- ""
-  all_get <- httr::RETRY(
+  resp <- httr::RETRY(
     verb = "GET",
     url = paste0(
       "https://fantasy.espn.com",
@@ -92,8 +92,27 @@ list_players <- function(leagueId = ffl_id(),
       )
     )
   )
-  pl <- jsonlite::fromJSON(httr::content(all_get, as = "text"))
-  pl <- pl$players
+  if (httr::http_type(resp) != "application/json") {
+    stop("API did not return JSON", call. = FALSE)
+  }
+  raw <- httr::content(resp, as = "text", encoding = "UTF-8")
+  parsed <- jsonlite::fromJSON(raw)
+  if (httr::http_error(resp) && any(grepl("message", names(parsed)))) {
+    if (!is.null(leagueHistory) && isTRUE(leagueHistory)) {
+      parsed$message <- paste(parsed$message, "(No League History?)")
+    }
+    stop(
+      sprintf(
+        "ESPN Fantasy API request failed [%s]\n%s",
+        httr::status_code(resp), parsed$message
+      ),
+      call. = FALSE
+    )
+  }
+  pl <- parsed$players
+  if (length(pl) == 0) {
+    stop("No players meet the filter criteria")
+  }
   z <- data.frame(
     id = pl$player$id,
     projectedScore = NA_real_,
@@ -267,7 +286,7 @@ fantasy_filter <- function(sort, position, status, injured, scoringPeriodId,
       value = U(injured)
     )
   }
-  if (status == "ALL") {
+  if (length(status) == 1 && status == "ALL") {
     out$players$filterStatus <- NULL
   } else {
     out$players$filterStatus <- list(
