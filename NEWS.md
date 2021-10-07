@@ -1,5 +1,7 @@
 # fflr (development version)
 
+* Clarify the name of many `*Id` columns (e.g., `teamId`, `matchupId`) (#31).
+* Add `combine_history()` utility for `leagueHistory` functions.
 * Improve handling of pre-draft and no-history edge cases (#35).
 * Improve abbreviation techniques, add all roster slot and position IDs (#29).
 * Fix error checking in `ffl_api()`. Returns proper error message when there is

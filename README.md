@@ -46,7 +46,7 @@ remotes::install_github("kiernann/fflr")
 ``` r
 library(fflr)
 packageVersion("fflr")
-#> [1] '1.9.2.9000'
+#> [1] '1.9.2.9004'
 ```
 
 Data is only available for public leagues. See [this help
@@ -79,12 +79,12 @@ league_info()
 #> 1 42654852     2021 FFLR Test League TRUE         4                 17
 league_teams()
 #> # A tibble: 4 × 5
-#>   abbrev    id location nickname   owners   
-#>   <fct>  <int> <chr>    <chr>      <list>   
-#> 1 AUS        1 Austin   Astronauts <chr [1]>
-#> 2 BOS        2 Boston   Buzzards   <chr [1]>
-#> 3 CHI        3 Chicago  Crowns     <chr [1]>
-#> 4 DEN        4 Denver   Devils     <chr [1]>
+#>   abbrev teamId location nickname   owners   
+#>   <fct>   <int> <chr>    <chr>      <list>   
+#> 1 AUS         1 Austin   Astronauts <chr [1]>
+#> 2 BOS         2 Boston   Buzzards   <chr [1]>
+#> 3 CHI         3 Chicago  Crowns     <chr [1]>
+#> 4 DEN         4 Denver   Devils     <chr [1]>
 ```
 
 The `scoringPeriodId` argument can be used to get data from past weeks.
@@ -95,18 +95,18 @@ team_roster(scoringPeriodId = 1)[[3]][, -c(1:3, 5, 13:15)]
 #>    lineupSlot firstName lastName  proTeam position injuryStatus projectedScore actualScore
 #>    <fct>      <chr>     <chr>     <fct>   <fct>    <chr>                 <dbl>       <dbl>
 #>  1 QB         Josh      Allen     Buf     QB       A                     21.6         17.2
-#>  2 RB         Saquon    Barkley   NYG     RB       A                     13.8          3.7
+#>  2 RB         Saquon    Barkley   NYG     RB       Q                     13.8          3.7
 #>  3 RB         Derrick   Henry     Ten     RB       A                     17.3         10.7
 #>  4 WR         DeAndre   Hopkins   Ari     WR       A                     17.8         26.3
 #>  5 WR         Justin    Jefferson Min     WR       A                     15.4         12.5
 #>  6 TE         Darren    Waller    LV      TE       A                     14.2         26.5
-#>  7 FX         Austin    Ekeler    LAC     RB       A                     15.0         11.7
-#>  8 DS         Ravens    D/ST      Bal     DS       A                      5.86        -1  
-#>  9 PK         Justin    Tucker    Bal     PK       A                      8.14        11  
+#>  7 FLEX       Austin    Ekeler    LAC     RB       A                     15.0         11.7
+#>  8 D/ST       Ravens    D/ST      Bal     D/ST     A                      5.86        -1  
+#>  9 K          Justin    Tucker    Bal     K        A                      8.14        11  
 #> 10 BE         Joe       Mixon     Cin     RB       Q                     14.6         25  
 #> 11 BE         Keenan    Allen     LAC     WR       A                     14.8         19  
 #> 12 BE         Mike      Evans     TB      WR       A                     15.0          5.4
-#> 13 BE         Josh      Jacobs    LV      RB       A                     13.1         17  
+#> 13 BE         Josh      Jacobs    LV      RB       Q                     13.1         17  
 #> 14 BE         Myles     Gaskin    Mia     RB       A                     10.9         12.6
 #> 15 BE         Ja'Marr   Chase     Cin     WR       A                     10.4         20.9
 #> 16 BE         Brandon   Aiyuk     SF      WR       A                     13.9          0
