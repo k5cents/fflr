@@ -50,11 +50,11 @@ pro_abbrev <- function(proTeamId) {
 
 #' Convert team ID to abbreviation
 #'
-#' @param id A integer vector of team numbers to convert.
-#' @param teams A table of teams from [league_teams()].
+#' @param teamId A integer vector of team numbers to convert.
+#' @param teams A table of teams, like that from [league_teams()].
 #' @return A factor vector of team abbreviations.
 #' @examples
-#' team_abbrev(id = 2, teams = league_teams(leagueId = "42654852"))
+#' team_abbrev(teamId = 2, teams = league_teams(leagueId = "42654852"))
 #' @export
 team_abbrev <- function(teamId, teams = league_teams(leagueId = ffl_id())) {
   if (!(all(c("abbrev", "teamId") %in% names(teams)))) {

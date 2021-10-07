@@ -7,9 +7,9 @@
 team_abbrev(teamId, teams = league_teams(leagueId = ffl_id()))
 }
 \arguments{
-\item{teams}{A table of teams from \code{\link[=league_teams]{league_teams()}}.}
+\item{teamId}{A integer vector of team numbers to convert.}
 
-\item{id}{A integer vector of team numbers to convert.}
+\item{teams}{A table of teams, like that from \code{\link[=league_teams]{league_teams()}}.}
 }
 \value{
 A factor vector of team abbreviations.
@@ -18,5 +18,5 @@ A factor vector of team abbreviations.
 Convert team ID to abbreviation
 }
 \examples{
-team_abbrev(id = 2, teams = league_teams(leagueId = "42654852"))
+team_abbrev(teamId = 2, teams = league_teams(leagueId = "42654852"))
 }
