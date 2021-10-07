@@ -57,7 +57,7 @@ pro_abbrev <- function(proTeamId) {
 #' team_abbrev(id = 2, teams = league_teams(leagueId = "42654852"))
 #' @export
 team_abbrev <- function(teamId, teams = league_teams(leagueId = ffl_id())) {
-  if (!(all(c("abbrev", "teamId") %in% names(team)))) {
+  if (!(all(c("abbrev", "teamId") %in% names(teams)))) {
     stop("team data lacks `abbrev` and `teamId` columns")
   }
   stopifnot(is.data.frame(teams))

@@ -23,14 +23,7 @@ tidy_matchups <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
       out[[i]] <- out_sched(
         s = dat$schedule[[i]],
         y = dat$seasonId[i],
-        team = data.frame(
-          stringsAsFactors = FALSE,
-          id = dat$teams[[i]]$id,
-          abbrev = factor(
-            x = dat$teams[[i]]$abbrev,
-            levels = make.unique(dat$teams[[i]]$abbrev)
-          )
-        )
+        team = out_team(dat$teams[[i]], trim = TRUE)
       )
     }
     return(out)
@@ -38,7 +31,7 @@ tidy_matchups <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
     out <- out_sched(
       s = dat$schedule,
       y = dat$seasonId,
-      team = out_team(dat$teams)
+      team = out_team(dat$teams, trim = TRUE)
     )
     as_tibble(out)
   }
