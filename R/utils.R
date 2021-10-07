@@ -85,9 +85,9 @@ move_col <- function(df, col, n) {
   subset(
     x = df,
     select = c(
-      head(names(df), n = n - 1),
+      names(df)[seq(n - 1)],
       col,
-      names(df)[!(names(df) %in% c(head(names(df), n = n - 1), col))]
+      names(df)[!(names(df) %in% c(names(df)[seq(n - 1)], col))]
     )
   )
 }
