@@ -93,5 +93,5 @@ move_col <- function(df, col, n) {
 }
 
 could_be_numeric <- function(x) {
-  !is.na(suppressWarnings(as.numeric(x)))
+  !is.na(suppressWarnings(as.numeric(x[!is.na(x)])))
 }

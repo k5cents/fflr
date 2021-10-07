@@ -25,5 +25,5 @@ A data frame of transactions and roster moves.
 The individual proposed and executed transactions, trades, and waiver moves.
 }
 \examples{
-recent_activity(leagueId = "42654852", scoringPeriodId = 1)
+recent_activity(leagueId = "42654852", scoringPeriodId = 2)
 }

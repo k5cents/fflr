@@ -5,7 +5,7 @@
 #' @inheritParams ffl_api
 #' @return A data frame of transactions and roster moves.
 #' @examples
-#' recent_activity(leagueId = "42654852", scoringPeriodId = 1)
+#' recent_activity(leagueId = "42654852", scoringPeriodId = 2)
 #' @export
 recent_activity <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   dat <- ffl_api(
