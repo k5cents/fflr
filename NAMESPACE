@@ -2,6 +2,7 @@
 
 export(acquisition_settings)
 export(all_players)
+export(combine_history)
 export(draft_recap)
 export(draft_settings)
 export(espn_games)
