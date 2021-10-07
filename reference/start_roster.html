@@ -81,7 +81,7 @@ function may be adapted to take roster slots from roster_settings()." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9004</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9005</span>
       </span>
     </div>
 
@@ -154,19 +154,19 @@ function may be adapted to take roster slots from <code><a href='roster_settings
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>start_roster</span><span class='op'>(</span><span class='fu'><a href='team_roster.html'>team_roster</a></span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 9 × 15</span>
-#&gt;   seasonId scoringPeriodId teamId lineupSlot      id firstName  lastName proTeam
-#&gt;      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>        <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>  
-#&gt; <span style='color: #BCBCBC;'>1</span>     <span style='text-decoration: underline;'>2</span>021               5      1 QB         3<span style='text-decoration: underline;'>139</span>477 Patrick    Mahomes  KC     
-#&gt; <span style='color: #BCBCBC;'>2</span>     <span style='text-decoration: underline;'>2</span>021               5      1 RB         4<span style='text-decoration: underline;'>242</span>335 Jonathan   Taylor   Ind    
-#&gt; <span style='color: #BCBCBC;'>3</span>     <span style='text-decoration: underline;'>2</span>021               5      1 RB         4<span style='text-decoration: underline;'>259</span>545 D'Andre    Swift    Det    
-#&gt; <span style='color: #BCBCBC;'>4</span>     <span style='text-decoration: underline;'>2</span>021               5      1 WR           <span style='text-decoration: underline;'>16</span>800 Davante    Adams    GB     
-#&gt; <span style='color: #BCBCBC;'>5</span>     <span style='text-decoration: underline;'>2</span>021               5      1 WR         3<span style='text-decoration: underline;'>925</span>357 Calvin     Ridley   Atl    
-#&gt; <span style='color: #BCBCBC;'>6</span>     <span style='text-decoration: underline;'>2</span>021               5      1 TE         3<span style='text-decoration: underline;'>116</span>365 Mark       Andrews  Bal    
-#&gt; <span style='color: #BCBCBC;'>7</span>     <span style='text-decoration: underline;'>2</span>021               5      1 FLEX       3<span style='text-decoration: underline;'>932</span>905 Diontae    Johnson  Pit    
-#&gt; <span style='color: #BCBCBC;'>8</span>     <span style='text-decoration: underline;'>2</span>021               5      1 D/ST        -<span style='color: #BB0000; text-decoration: underline;'>16</span><span style='color: #BB0000;'>027</span> Buccaneers D/ST     TB     
-#&gt; <span style='color: #BCBCBC;'>9</span>     <span style='text-decoration: underline;'>2</span>021               5      1 K          2<span style='text-decoration: underline;'>473</span>037 Jason      Myers    Sea    
-#&gt; <span style='color: #949494;'># … with 7 more variables: position &lt;fct&gt;, injuryStatus &lt;chr&gt;,</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 9 × 16</span>
+#&gt;   seasonId scoringPeriodId teamId abbrev lineupSlot playerId firstName  lastName
+#&gt;      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>         <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   
+#&gt; <span style='color: #BCBCBC;'>1</span>     <span style='text-decoration: underline;'>2</span>021               5      1 AUS    QB          3<span style='text-decoration: underline;'>139</span>477 Patrick    Mahomes 
+#&gt; <span style='color: #BCBCBC;'>2</span>     <span style='text-decoration: underline;'>2</span>021               5      1 AUS    RB          4<span style='text-decoration: underline;'>242</span>335 Jonathan   Taylor  
+#&gt; <span style='color: #BCBCBC;'>3</span>     <span style='text-decoration: underline;'>2</span>021               5      1 AUS    RB          4<span style='text-decoration: underline;'>259</span>545 D'Andre    Swift   
+#&gt; <span style='color: #BCBCBC;'>4</span>     <span style='text-decoration: underline;'>2</span>021               5      1 AUS    WR            <span style='text-decoration: underline;'>16</span>800 Davante    Adams   
+#&gt; <span style='color: #BCBCBC;'>5</span>     <span style='text-decoration: underline;'>2</span>021               5      1 AUS    WR          3<span style='text-decoration: underline;'>925</span>357 Calvin     Ridley  
+#&gt; <span style='color: #BCBCBC;'>6</span>     <span style='text-decoration: underline;'>2</span>021               5      1 AUS    TE          3<span style='text-decoration: underline;'>116</span>365 Mark       Andrews 
+#&gt; <span style='color: #BCBCBC;'>7</span>     <span style='text-decoration: underline;'>2</span>021               5      1 AUS    FLEX        3<span style='text-decoration: underline;'>932</span>905 Diontae    Johnson 
+#&gt; <span style='color: #BCBCBC;'>8</span>     <span style='text-decoration: underline;'>2</span>021               5      1 AUS    D/ST         -<span style='color: #BB0000; text-decoration: underline;'>16</span><span style='color: #BB0000;'>027</span> Buccaneers D/ST    
+#&gt; <span style='color: #BCBCBC;'>9</span>     <span style='text-decoration: underline;'>2</span>021               5      1 AUS    K           2<span style='text-decoration: underline;'>473</span>037 Jason      Myers   
+#&gt; <span style='color: #949494;'># … with 8 more variables: proTeam &lt;fct&gt;, position &lt;fct&gt;, injuryStatus &lt;chr&gt;,</span>
 #&gt; <span style='color: #949494;'>#   projectedScore &lt;dbl&gt;, actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;,</span>
 #&gt; <span style='color: #949494;'>#   percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;</span></div></pre>
   </div>

@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9004</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9005</span>
       </span>
     </div>
 
@@ -95,7 +95,7 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">fflr</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html">packageVersion</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span>
-<span class="co">#&gt; [1] '1.9.2.9004'</span>
+<span class="co">#&gt; [1] '1.9.2.9005'</span>
 <span class="fu"><a href="../reference/ffl_id.html">ffl_id</a></span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span><span class="op">)</span>
 <span class="co">#&gt; Temporarily set `fflr.leagueId` option to 42654852</span>
 <span class="co">#&gt; [1] "42654852"</span></code></pre></div>
@@ -168,27 +168,27 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">my_team</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/team_roster.html">team_roster</a></span><span class="op">(</span>scoringPeriodId <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span> <span class="co"># select first roster</span>
 <span class="va">my_team</span><span class="op">[</span>, <span class="op">-</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span><span class="op">]</span>
-<span class="co">#&gt; # A tibble: 16 × 12</span>
-<span class="co">#&gt;    lineupSlot      id firstName  lastName    proTeam position injuryStatus projectedScore</span>
-<span class="co">#&gt;    &lt;fct&gt;        &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;       &lt;fct&gt;   &lt;fct&gt;    &lt;chr&gt;                 &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 QB         3139477 Patrick    Mahomes     KC      QB       A                     22.2 </span>
-<span class="co">#&gt;  2 RB         3117251 Christian  McCaffrey   Car     RB       Q                     21.3 </span>
-<span class="co">#&gt;  3 RB         4242335 Jonathan   Taylor      Ind     RB       A                     15.6 </span>
-<span class="co">#&gt;  4 WR           16800 Davante    Adams       GB      WR       A                     19.9 </span>
-<span class="co">#&gt;  5 WR         3925357 Calvin     Ridley      Atl     WR       A                     16.0 </span>
-<span class="co">#&gt;  6 TE         3116365 Mark       Andrews     Bal     TE       A                     12.2 </span>
-<span class="co">#&gt;  7 FLEX       4360294 Antonio    Gibson      Wsh     RB       Q                     16.0 </span>
-<span class="co">#&gt;  8 D/ST        -16027 Buccaneers D/ST        TB      D/ST     A                      4.51</span>
-<span class="co">#&gt;  9 K          2473037 Jason      Myers       Sea     K        A                      8.04</span>
-<span class="co">#&gt; 10 BE         4259545 D'Andre    Swift       Det     RB       Q                     13.5 </span>
-<span class="co">#&gt; 11 BE         4045163 Miles      Sanders     Phi     RB       A                     14.3 </span>
-<span class="co">#&gt; 12 BE         3919596 Chris      Carson      Sea     RB       Q                     12.8 </span>
-<span class="co">#&gt; 13 BE           16799 Allen      Robinson II Chi     WR       A                     14.6 </span>
-<span class="co">#&gt; 14 BE           16460 Adam       Thielen     Min     WR       A                     14.4 </span>
-<span class="co">#&gt; 15 BE         3932905 Diontae    Johnson     Pit     WR       A                     13.4 </span>
-<span class="co">#&gt; 16 BE         3128429 Courtland  Sutton      Den     WR       A                     11.9 </span>
-<span class="co">#&gt; # … with 4 more variables: actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   percentChange &lt;dbl&gt;</span></code></pre></div>
+<span class="co">#&gt; # A tibble: 16 × 13</span>
+<span class="co">#&gt;    abbrev lineupSlot playerId firstName  lastName    proTeam position injuryStatus</span>
+<span class="co">#&gt;    &lt;fct&gt;  &lt;fct&gt;         &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;       &lt;fct&gt;   &lt;fct&gt;    &lt;chr&gt;       </span>
+<span class="co">#&gt;  1 AUS    QB          3139477 Patrick    Mahomes     KC      QB       A           </span>
+<span class="co">#&gt;  2 AUS    RB          3117251 Christian  McCaffrey   Car     RB       Q           </span>
+<span class="co">#&gt;  3 AUS    RB          4242335 Jonathan   Taylor      Ind     RB       A           </span>
+<span class="co">#&gt;  4 AUS    WR            16800 Davante    Adams       GB      WR       A           </span>
+<span class="co">#&gt;  5 AUS    WR          3925357 Calvin     Ridley      Atl     WR       A           </span>
+<span class="co">#&gt;  6 AUS    TE          3116365 Mark       Andrews     Bal     TE       A           </span>
+<span class="co">#&gt;  7 AUS    FLEX        4360294 Antonio    Gibson      Wsh     RB       Q           </span>
+<span class="co">#&gt;  8 AUS    D/ST         -16027 Buccaneers D/ST        TB      D/ST     A           </span>
+<span class="co">#&gt;  9 AUS    K           2473037 Jason      Myers       Sea     K        A           </span>
+<span class="co">#&gt; 10 AUS    BE          4259545 D'Andre    Swift       Det     RB       Q           </span>
+<span class="co">#&gt; 11 AUS    BE          4045163 Miles      Sanders     Phi     RB       A           </span>
+<span class="co">#&gt; 12 AUS    BE          3919596 Chris      Carson      Sea     RB       Q           </span>
+<span class="co">#&gt; 13 AUS    BE            16799 Allen      Robinson II Chi     WR       A           </span>
+<span class="co">#&gt; 14 AUS    BE            16460 Adam       Thielen     Min     WR       A           </span>
+<span class="co">#&gt; 15 AUS    BE          3932905 Diontae    Johnson     Pit     WR       A           </span>
+<span class="co">#&gt; 16 AUS    BE          3128429 Courtland  Sutton      Den     WR       A           </span>
+<span class="co">#&gt; # … with 5 more variables: projectedScore &lt;dbl&gt;, actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;</span></code></pre></div>
 </div>
 <div id="news" class="section level3">
 <h3 class="hasAnchor">
@@ -340,97 +340,97 @@
 <a href="#rosters-1" class="anchor"></a>Rosters</h3>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/team_roster.html">team_roster</a></span><span class="op">(</span>scoringPeriodId <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
-<span class="co">#&gt; [[1]]</span>
-<span class="co">#&gt; # A tibble: 16 × 15</span>
-<span class="co">#&gt;    seasonId scoringPeriodId teamId lineupSlot      id firstName  lastName proTeam position</span>
-<span class="co">#&gt;       &lt;int&gt;           &lt;int&gt;  &lt;int&gt; &lt;fct&gt;        &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;    &lt;fct&gt;   &lt;fct&gt;   </span>
-<span class="co">#&gt;  1     2021               1      1 QB         3139477 Patrick    Mahomes  KC      QB      </span>
-<span class="co">#&gt;  2     2021               1      1 RB         3117251 Christian  McCaffr… Car     RB      </span>
-<span class="co">#&gt;  3     2021               1      1 RB         4242335 Jonathan   Taylor   Ind     RB      </span>
-<span class="co">#&gt;  4     2021               1      1 WR           16800 Davante    Adams    GB      WR      </span>
-<span class="co">#&gt;  5     2021               1      1 WR         3925357 Calvin     Ridley   Atl     WR      </span>
-<span class="co">#&gt;  6     2021               1      1 TE         3116365 Mark       Andrews  Bal     TE      </span>
-<span class="co">#&gt;  7     2021               1      1 FLEX       4360294 Antonio    Gibson   Wsh     RB      </span>
-<span class="co">#&gt;  8     2021               1      1 D/ST        -16027 Buccaneers D/ST     TB      D/ST    </span>
-<span class="co">#&gt;  9     2021               1      1 K          2473037 Jason      Myers    Sea     K       </span>
-<span class="co">#&gt; 10     2021               1      1 BE         4259545 D'Andre    Swift    Det     RB      </span>
-<span class="co">#&gt; 11     2021               1      1 BE         4045163 Miles      Sanders  Phi     RB      </span>
-<span class="co">#&gt; 12     2021               1      1 BE         3919596 Chris      Carson   Sea     RB      </span>
-<span class="co">#&gt; 13     2021               1      1 BE           16799 Allen      Robinso… Chi     WR      </span>
-<span class="co">#&gt; 14     2021               1      1 BE           16460 Adam       Thielen  Min     WR      </span>
-<span class="co">#&gt; 15     2021               1      1 BE         3932905 Diontae    Johnson  Pit     WR      </span>
-<span class="co">#&gt; 16     2021               1      1 BE         3128429 Courtland  Sutton   Den     WR      </span>
-<span class="co">#&gt; # … with 6 more variables: injuryStatus &lt;chr&gt;, projectedScore &lt;dbl&gt;, actualScore &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;</span>
+<span class="co">#&gt; $AUS</span>
+<span class="co">#&gt; # A tibble: 16 × 16</span>
+<span class="co">#&gt;    seasonId scoringPeriodId teamId abbrev lineupSlot playerId firstName  lastName  proTeam</span>
+<span class="co">#&gt;       &lt;int&gt;           &lt;int&gt;  &lt;int&gt; &lt;fct&gt;  &lt;fct&gt;         &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;     &lt;fct&gt;  </span>
+<span class="co">#&gt;  1     2021               1      1 AUS    QB          3139477 Patrick    Mahomes   KC     </span>
+<span class="co">#&gt;  2     2021               1      1 AUS    RB          3117251 Christian  McCaffrey Car    </span>
+<span class="co">#&gt;  3     2021               1      1 AUS    RB          4242335 Jonathan   Taylor    Ind    </span>
+<span class="co">#&gt;  4     2021               1      1 AUS    WR            16800 Davante    Adams     GB     </span>
+<span class="co">#&gt;  5     2021               1      1 AUS    WR          3925357 Calvin     Ridley    Atl    </span>
+<span class="co">#&gt;  6     2021               1      1 AUS    TE          3116365 Mark       Andrews   Bal    </span>
+<span class="co">#&gt;  7     2021               1      1 AUS    FLEX        4360294 Antonio    Gibson    Wsh    </span>
+<span class="co">#&gt;  8     2021               1      1 AUS    D/ST         -16027 Buccaneers D/ST      TB     </span>
+<span class="co">#&gt;  9     2021               1      1 AUS    K           2473037 Jason      Myers     Sea    </span>
+<span class="co">#&gt; 10     2021               1      1 AUS    BE          4259545 D'Andre    Swift     Det    </span>
+<span class="co">#&gt; 11     2021               1      1 AUS    BE          4045163 Miles      Sanders   Phi    </span>
+<span class="co">#&gt; 12     2021               1      1 AUS    BE          3919596 Chris      Carson    Sea    </span>
+<span class="co">#&gt; 13     2021               1      1 AUS    BE            16799 Allen      Robinson… Chi    </span>
+<span class="co">#&gt; 14     2021               1      1 AUS    BE            16460 Adam       Thielen   Min    </span>
+<span class="co">#&gt; 15     2021               1      1 AUS    BE          3932905 Diontae    Johnson   Pit    </span>
+<span class="co">#&gt; 16     2021               1      1 AUS    BE          3128429 Courtland  Sutton    Den    </span>
+<span class="co">#&gt; # … with 7 more variables: position &lt;fct&gt;, injuryStatus &lt;chr&gt;, projectedScore &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; [[2]]</span>
-<span class="co">#&gt; # A tibble: 16 × 15</span>
-<span class="co">#&gt;    seasonId scoringPeriodId teamId lineupSlot      id firstName lastName  proTeam position</span>
-<span class="co">#&gt;       &lt;int&gt;           &lt;int&gt;  &lt;int&gt; &lt;fct&gt;        &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;fct&gt;   &lt;fct&gt;   </span>
-<span class="co">#&gt;  1     2021               1      2 QB         2577417 Dak       Prescott  Dal     QB      </span>
-<span class="co">#&gt;  2     2021               1      2 RB         3116593 Dalvin    Cook      Min     RB      </span>
-<span class="co">#&gt;  3     2021               1      2 RB         3051392 Ezekiel   Elliott   Dal     RB      </span>
-<span class="co">#&gt;  4     2021               1      2 WR         3116406 Tyreek    Hill      KC      WR      </span>
-<span class="co">#&gt;  5     2021               1      2 WR         4047650 DK        Metcalf   Sea     WR      </span>
-<span class="co">#&gt;  6     2021               1      2 TE         3040151 George    Kittle    SF      TE      </span>
-<span class="co">#&gt;  7     2021               1      2 FLEX       3128720 Nick      Chubb     Cle     RB      </span>
-<span class="co">#&gt;  8     2021               1      2 D/ST        -16023 Steelers  D/ST      Pit     D/ST    </span>
-<span class="co">#&gt;  9     2021               1      2 K            16339 Brandon   McManus   Den     K       </span>
-<span class="co">#&gt; 10     2021               1      2 BE         4242214 Clyde     Edwards-… KC      RB      </span>
-<span class="co">#&gt; 11     2021               1      2 BE         3121422 Terry     McLaurin  Wsh     WR      </span>
-<span class="co">#&gt; 12     2021               1      2 BE         2976499 Amari     Cooper    Dal     WR      </span>
-<span class="co">#&gt; 13     2021               1      2 BE         4039359 Darrell   Henderso… LAR     RB      </span>
-<span class="co">#&gt; 14     2021               1      2 BE           13982 Julio     Jones     Ten     WR      </span>
-<span class="co">#&gt; 15     2021               1      2 BE         2977187 Cooper    Kupp      LAR     WR      </span>
-<span class="co">#&gt; 16     2021               1      2 BE         2974858 Kenny     Golladay  NYG     WR      </span>
-<span class="co">#&gt; # … with 6 more variables: injuryStatus &lt;chr&gt;, projectedScore &lt;dbl&gt;, actualScore &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;</span>
+<span class="co">#&gt; $BOS</span>
+<span class="co">#&gt; # A tibble: 16 × 16</span>
+<span class="co">#&gt;    seasonId scoringPeriodId teamId abbrev lineupSlot playerId firstName lastName   proTeam</span>
+<span class="co">#&gt;       &lt;int&gt;           &lt;int&gt;  &lt;int&gt; &lt;fct&gt;  &lt;fct&gt;         &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;      &lt;fct&gt;  </span>
+<span class="co">#&gt;  1     2021               1      2 BOS    QB          2577417 Dak       Prescott   Dal    </span>
+<span class="co">#&gt;  2     2021               1      2 BOS    RB          3116593 Dalvin    Cook       Min    </span>
+<span class="co">#&gt;  3     2021               1      2 BOS    RB          3051392 Ezekiel   Elliott    Dal    </span>
+<span class="co">#&gt;  4     2021               1      2 BOS    WR          3116406 Tyreek    Hill       KC     </span>
+<span class="co">#&gt;  5     2021               1      2 BOS    WR          4047650 DK        Metcalf    Sea    </span>
+<span class="co">#&gt;  6     2021               1      2 BOS    TE          3040151 George    Kittle     SF     </span>
+<span class="co">#&gt;  7     2021               1      2 BOS    FLEX        3128720 Nick      Chubb      Cle    </span>
+<span class="co">#&gt;  8     2021               1      2 BOS    D/ST         -16023 Steelers  D/ST       Pit    </span>
+<span class="co">#&gt;  9     2021               1      2 BOS    K             16339 Brandon   McManus    Den    </span>
+<span class="co">#&gt; 10     2021               1      2 BOS    BE          4242214 Clyde     Edwards-H… KC     </span>
+<span class="co">#&gt; 11     2021               1      2 BOS    BE          3121422 Terry     McLaurin   Wsh    </span>
+<span class="co">#&gt; 12     2021               1      2 BOS    BE          2976499 Amari     Cooper     Dal    </span>
+<span class="co">#&gt; 13     2021               1      2 BOS    BE          4039359 Darrell   Henderson… LAR    </span>
+<span class="co">#&gt; 14     2021               1      2 BOS    BE            13982 Julio     Jones      Ten    </span>
+<span class="co">#&gt; 15     2021               1      2 BOS    BE          2977187 Cooper    Kupp       LAR    </span>
+<span class="co">#&gt; 16     2021               1      2 BOS    BE          2974858 Kenny     Golladay   NYG    </span>
+<span class="co">#&gt; # … with 7 more variables: position &lt;fct&gt;, injuryStatus &lt;chr&gt;, projectedScore &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; [[3]]</span>
-<span class="co">#&gt; # A tibble: 16 × 15</span>
-<span class="co">#&gt;    seasonId scoringPeriodId teamId lineupSlot      id firstName lastName  proTeam position</span>
-<span class="co">#&gt;       &lt;int&gt;           &lt;int&gt;  &lt;int&gt; &lt;fct&gt;        &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;fct&gt;   &lt;fct&gt;   </span>
-<span class="co">#&gt;  1     2021               1      3 QB         3918298 Josh      Allen     Buf     QB      </span>
-<span class="co">#&gt;  2     2021               1      3 RB         3929630 Saquon    Barkley   NYG     RB      </span>
-<span class="co">#&gt;  3     2021               1      3 RB         3043078 Derrick   Henry     Ten     RB      </span>
-<span class="co">#&gt;  4     2021               1      3 WR           15795 DeAndre   Hopkins   Ari     WR      </span>
-<span class="co">#&gt;  5     2021               1      3 WR         4262921 Justin    Jefferson Min     WR      </span>
-<span class="co">#&gt;  6     2021               1      3 TE         2576925 Darren    Waller    LV      TE      </span>
-<span class="co">#&gt;  7     2021               1      3 FLEX       3068267 Austin    Ekeler    LAC     RB      </span>
-<span class="co">#&gt;  8     2021               1      0 D/ST        -16033 Ravens    D/ST      Bal     D/ST    </span>
-<span class="co">#&gt;  9     2021               1      3 K            15683 Justin    Tucker    Bal     K       </span>
-<span class="co">#&gt; 10     2021               1      3 BE         3116385 Joe       Mixon     Cin     RB      </span>
-<span class="co">#&gt; 11     2021               1      3 BE           15818 Keenan    Allen     LAC     WR      </span>
-<span class="co">#&gt; 12     2021               1      3 BE           16737 Mike      Evans     TB      WR      </span>
-<span class="co">#&gt; 13     2021               1      3 BE         4047365 Josh      Jacobs    LV      RB      </span>
-<span class="co">#&gt; 14     2021               1      3 BE         3886818 Myles     Gaskin    Mia     RB      </span>
-<span class="co">#&gt; 15     2021               1      3 BE         4362628 Ja'Marr   Chase     Cin     WR      </span>
-<span class="co">#&gt; 16     2021               1      3 BE         4360438 Brandon   Aiyuk     SF      WR      </span>
-<span class="co">#&gt; # … with 6 more variables: injuryStatus &lt;chr&gt;, projectedScore &lt;dbl&gt;, actualScore &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;</span>
+<span class="co">#&gt; $CHI</span>
+<span class="co">#&gt; # A tibble: 16 × 16</span>
+<span class="co">#&gt;    seasonId scoringPeriodId teamId abbrev lineupSlot playerId firstName lastName  proTeam</span>
+<span class="co">#&gt;       &lt;int&gt;           &lt;int&gt;  &lt;int&gt; &lt;fct&gt;  &lt;fct&gt;         &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;fct&gt;  </span>
+<span class="co">#&gt;  1     2021               1      3 CHI    QB          3918298 Josh      Allen     Buf    </span>
+<span class="co">#&gt;  2     2021               1      3 CHI    RB          3929630 Saquon    Barkley   NYG    </span>
+<span class="co">#&gt;  3     2021               1      3 CHI    RB          3043078 Derrick   Henry     Ten    </span>
+<span class="co">#&gt;  4     2021               1      3 CHI    WR            15795 DeAndre   Hopkins   Ari    </span>
+<span class="co">#&gt;  5     2021               1      3 CHI    WR          4262921 Justin    Jefferson Min    </span>
+<span class="co">#&gt;  6     2021               1      3 CHI    TE          2576925 Darren    Waller    LV     </span>
+<span class="co">#&gt;  7     2021               1      3 CHI    FLEX        3068267 Austin    Ekeler    LAC    </span>
+<span class="co">#&gt;  8     2021               1      3 CHI    D/ST         -16033 Ravens    D/ST      Bal    </span>
+<span class="co">#&gt;  9     2021               1      3 CHI    K             15683 Justin    Tucker    Bal    </span>
+<span class="co">#&gt; 10     2021               1      3 CHI    BE          3116385 Joe       Mixon     Cin    </span>
+<span class="co">#&gt; 11     2021               1      3 CHI    BE            15818 Keenan    Allen     LAC    </span>
+<span class="co">#&gt; 12     2021               1      3 CHI    BE            16737 Mike      Evans     TB     </span>
+<span class="co">#&gt; 13     2021               1      3 CHI    BE          4047365 Josh      Jacobs    LV     </span>
+<span class="co">#&gt; 14     2021               1      3 CHI    BE          3886818 Myles     Gaskin    Mia    </span>
+<span class="co">#&gt; 15     2021               1      3 CHI    BE          4362628 Ja'Marr   Chase     Cin    </span>
+<span class="co">#&gt; 16     2021               1      3 CHI    BE          4360438 Brandon   Aiyuk     SF     </span>
+<span class="co">#&gt; # … with 7 more variables: position &lt;fct&gt;, injuryStatus &lt;chr&gt;, projectedScore &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; [[4]]</span>
-<span class="co">#&gt; # A tibble: 16 × 15</span>
-<span class="co">#&gt;    seasonId scoringPeriodId teamId lineupSlot      id firstName lastName   proTeam position</span>
-<span class="co">#&gt;       &lt;int&gt;           &lt;int&gt;  &lt;int&gt; &lt;fct&gt;        &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;      &lt;fct&gt;   &lt;fct&gt;   </span>
-<span class="co">#&gt;  1     2021               1      4 QB         3917315 Kyler     Murray     Ari     QB      </span>
-<span class="co">#&gt;  2     2021               1      4 RB         3054850 Alvin     Kamara     NO      RB      </span>
-<span class="co">#&gt;  3     2021               1      4 RB         3042519 Aaron     Jones      GB      RB      </span>
-<span class="co">#&gt;  4     2021               1      4 WR         2976212 Stefon    Diggs      Buf     WR      </span>
-<span class="co">#&gt;  5     2021               1      4 WR         4047646 A.J.      Brown      Ten     WR      </span>
-<span class="co">#&gt;  6     2021               1      4 TE           15847 Travis    Kelce      KC      TE      </span>
-<span class="co">#&gt;  7     2021               1      4 FLEX       4241457 Najee     Harris     Pit     RB      </span>
-<span class="co">#&gt;  8     2021               1      0 D/ST        -16025 49ers     D/ST       SF      D/ST    </span>
-<span class="co">#&gt;  9     2021               1      4 K          3055899 Harrison  Butker     KC      K       </span>
-<span class="co">#&gt; 10     2021               1      4 BE         4035538 David     Montgomery Chi     RB      </span>
-<span class="co">#&gt; 11     2021               1      4 BE         4241985 J.K.      Dobbins    Bal     RB      </span>
-<span class="co">#&gt; 12     2021               1      4 BE           15880 Robert    Woods      LAR     WR      </span>
-<span class="co">#&gt; 13     2021               1      4 BE         4241389 CeeDee    Lamb       Dal     WR      </span>
-<span class="co">#&gt; 14     2021               1      4 BE         3915416 DJ        Moore      Car     WR      </span>
-<span class="co">#&gt; 15     2021               1      4 BE         3116165 Chris     Godwin     TB      WR      </span>
-<span class="co">#&gt; 16     2021               1      4 BE         2577327 Tyler     Lockett    Sea     WR      </span>
-<span class="co">#&gt; # … with 6 more variables: injuryStatus &lt;chr&gt;, projectedScore &lt;dbl&gt;, actualScore &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;</span></code></pre></div>
+<span class="co">#&gt; $DEN</span>
+<span class="co">#&gt; # A tibble: 16 × 16</span>
+<span class="co">#&gt;    seasonId scoringPeriodId teamId abbrev lineupSlot playerId firstName lastName   proTeam</span>
+<span class="co">#&gt;       &lt;int&gt;           &lt;int&gt;  &lt;int&gt; &lt;fct&gt;  &lt;fct&gt;         &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;      &lt;fct&gt;  </span>
+<span class="co">#&gt;  1     2021               1      4 DEN    QB          3917315 Kyler     Murray     Ari    </span>
+<span class="co">#&gt;  2     2021               1      4 DEN    RB          3054850 Alvin     Kamara     NO     </span>
+<span class="co">#&gt;  3     2021               1      4 DEN    RB          3042519 Aaron     Jones      GB     </span>
+<span class="co">#&gt;  4     2021               1      4 DEN    WR          2976212 Stefon    Diggs      Buf    </span>
+<span class="co">#&gt;  5     2021               1      4 DEN    WR          4047646 A.J.      Brown      Ten    </span>
+<span class="co">#&gt;  6     2021               1      4 DEN    TE            15847 Travis    Kelce      KC     </span>
+<span class="co">#&gt;  7     2021               1      4 DEN    FLEX        4241457 Najee     Harris     Pit    </span>
+<span class="co">#&gt;  8     2021               1      4 DEN    D/ST         -16025 49ers     D/ST       SF     </span>
+<span class="co">#&gt;  9     2021               1      4 DEN    K           3055899 Harrison  Butker     KC     </span>
+<span class="co">#&gt; 10     2021               1      4 DEN    BE          4035538 David     Montgomery Chi    </span>
+<span class="co">#&gt; 11     2021               1      4 DEN    BE          4241985 J.K.      Dobbins    Bal    </span>
+<span class="co">#&gt; 12     2021               1      4 DEN    BE            15880 Robert    Woods      LAR    </span>
+<span class="co">#&gt; 13     2021               1      4 DEN    BE          4241389 CeeDee    Lamb       Dal    </span>
+<span class="co">#&gt; 14     2021               1      4 DEN    BE          3915416 DJ        Moore      Car    </span>
+<span class="co">#&gt; 15     2021               1      4 DEN    BE          3116165 Chris     Godwin     TB     </span>
+<span class="co">#&gt; 16     2021               1      4 DEN    BE          2577327 Tyler     Lockett    Sea    </span>
+<span class="co">#&gt; # … with 7 more variables: position &lt;fct&gt;, injuryStatus &lt;chr&gt;, projectedScore &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;</span></code></pre></div>
 </div>
 <div id="schedule-1" class="section level3">
 <h3 class="hasAnchor">
