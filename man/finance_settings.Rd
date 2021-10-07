@@ -26,7 +26,6 @@ The off-site fees assigned to various roster movies and transactions.
 }
 \examples{
 finance_settings(leagueId = "42654852")
-finance_settings(leagueId = "252353", leagueHistory = TRUE)
 }
 \seealso{
 Other League settings: 

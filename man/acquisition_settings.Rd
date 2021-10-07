@@ -26,7 +26,6 @@ The type, days, and details of a league waiver process.
 }
 \examples{
 acquisition_settings(leagueId = "42654852")
-acquisition_settings(leagueId = "252353", leagueHistory = TRUE)
 }
 \seealso{
 Other League settings: 

@@ -26,7 +26,6 @@ The scoring system used and points awarded for various actions.
 }
 \examples{
 scoring_settings(leagueId = "42654852")
-scoring_settings(leagueId = "252353", leagueHistory = TRUE)
 }
 \seealso{
 Other League settings: 

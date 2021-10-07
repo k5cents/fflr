@@ -10,7 +10,6 @@
 #' @return A tidy data frame of scores by team and matchup period.
 #' @examples
 #' tidy_scores(leagueId = "42654852")
-#' tidy_scores(leagueId = "252353", leagueHistory = TRUE)
 #' @export
 tidy_scores <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   dat <- ffl_api(

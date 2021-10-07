@@ -26,7 +26,6 @@ The time each trade can stand, votes needed to veto, and season deadline.
 }
 \examples{
 trade_settings(leagueId = "42654852")
-trade_settings(leagueId = "252353", leagueHistory = TRUE)
 }
 \seealso{
 Other League settings: 

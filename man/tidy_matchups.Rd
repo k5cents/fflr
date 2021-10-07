@@ -28,5 +28,4 @@ of home-away status. There are two rows per matchup, one for each team.
 }
 \examples{
 tidy_matchups(leagueId = "42654852")
-tidy_matchups(leagueId = "252353", leagueHistory = TRUE)
 }

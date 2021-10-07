@@ -26,7 +26,6 @@ The number of players and positions on a fantasy football roster.
 }
 \examples{
 roster_settings(leagueId = "42654852")
-roster_settings(leagueId = "252353", leagueHistory = TRUE)
 }
 \seealso{
 Other League settings: 

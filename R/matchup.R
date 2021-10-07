@@ -8,7 +8,6 @@
 #' @return A data frame(s) of match opponents.
 #' @examples
 #' tidy_matchups(leagueId = "42654852")
-#' tidy_matchups(leagueId = "252353", leagueHistory = TRUE)
 #' @export
 tidy_matchups <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   dat <- ffl_api(

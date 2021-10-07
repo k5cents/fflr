@@ -26,7 +26,6 @@ League size
 }
 \examples{
 league_size(leagueId = "42654852")
-league_size(leagueId = "252353", leagueHistory = TRUE)
 }
 \seealso{
 Other League settings: 

@@ -26,7 +26,6 @@ The type, date, and pick order of a league draft.
 }
 \examples{
 draft_settings(leagueId = "42654852")
-draft_settings(leagueId = "252353", leagueHistory = TRUE)
 }
 \seealso{
 Other League settings: 

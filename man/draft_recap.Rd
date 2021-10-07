@@ -27,5 +27,4 @@ salary cap format.
 }
 \examples{
 draft_recap(leagueId = "42654852")
-draft_recap(leagueId = "252353", leagueHistory = TRUE)
 }

@@ -19,7 +19,7 @@
 #' options(fflr.leagueId = "42654852")
 #' ffl_id()
 #' ffl_id(
-#'   leagueId = "https://fantasy.espn.com/football/team?leagueId=252353",
+#'   leagueId = "https://fantasy.espn.com/football/team?leagueId=42654852",
 #'   overwrite = TRUE
 #' )
 #' @return A numeric `leagueId` as a character vector with length one.

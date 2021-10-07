@@ -26,7 +26,6 @@ The length of a fantasy season and the match periods for each week.
 }
 \examples{
 schedule_settings(leagueId = "42654852")
-schedule_settings(leagueId = "252353", leagueHistory = TRUE)
 }
 \seealso{
 Other League settings: 

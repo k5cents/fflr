@@ -7,7 +7,6 @@
 #' @return A data frame(s) of draft picks.
 #' @examples
 #' draft_recap(leagueId = "42654852")
-#' draft_recap(leagueId = "252353", leagueHistory = TRUE)
 #' @export
 draft_recap <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   dat <- ffl_api(
