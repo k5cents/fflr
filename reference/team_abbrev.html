@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9003</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9004</span>
       </span>
     </div>
 
@@ -135,18 +135,18 @@
     <p>Convert team ID to abbreviation</p>
     </div>
 
-    <pre class="usage"><span class='fu'>team_abbrev</span><span class='op'>(</span><span class='va'>id</span>, teams <span class='op'>=</span> <span class='fu'><a href='league_teams.html'>league_teams</a></span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='ffl_id.html'>ffl_id</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>team_abbrev</span><span class='op'>(</span><span class='va'>teamId</span>, teams <span class='op'>=</span> <span class='fu'><a href='league_teams.html'>league_teams</a></span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='fu'><a href='ffl_id.html'>ffl_id</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>id</th>
+      <th>teamId</th>
       <td><p>A integer vector of team numbers to convert.</p></td>
     </tr>
     <tr>
       <th>teams</th>
-      <td><p>A table of teams from <code><a href='league_teams.html'>league_teams()</a></code>.</p></td>
+      <td><p>A table of teams, like that from <code><a href='league_teams.html'>league_teams()</a></code>.</p></td>
     </tr>
     </table>
 
@@ -155,7 +155,7 @@
     <p>A factor vector of team abbreviations.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>team_abbrev</span><span class='op'>(</span>id <span class='op'>=</span> <span class='fl'>2</span>, teams <span class='op'>=</span> <span class='fu'><a href='league_teams.html'>league_teams</a></span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span><span class='op'>)</span>
+    <pre class="examples"><div class='input'><span class='fu'>team_abbrev</span><span class='op'>(</span>teamId <span class='op'>=</span> <span class='fl'>2</span>, teams <span class='op'>=</span> <span class='fu'><a href='league_teams.html'>league_teams</a></span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; [1] BOS
 #&gt; Levels: AUS BOS CHI DEN</div></pre>
   </div>

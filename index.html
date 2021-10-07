@@ -40,7 +40,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9003</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9004</span>
       </span>
     </div>
 
@@ -108,7 +108,7 @@
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">fflr</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html">packageVersion</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span>
-<span class="co">#&gt; [1] '1.9.2.9000'</span></code></pre></div>
+<span class="co">#&gt; [1] '1.9.2.9004'</span></code></pre></div>
 <p>Data is only available for public leagues. See <a href="https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public">this help page</a> on how to make a private league public</p>
 <p>Functions require a unique <code>leagueId</code>, which can be found in any ESPN page URL.</p>
 <pre>https://fantasy.espn.com/football/league?leagueId=<b>42654852</b></pre>
@@ -126,12 +126,12 @@
 <span class="co">#&gt; 1 42654852     2021 FFLR Test League TRUE         4                 17</span>
 <span class="fu"><a href="reference/league_teams.html">league_teams</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 4 × 5</span>
-<span class="co">#&gt;   abbrev    id location nickname   owners   </span>
-<span class="co">#&gt;   &lt;fct&gt;  &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;      &lt;list&gt;   </span>
-<span class="co">#&gt; 1 AUS        1 Austin   Astronauts &lt;chr [1]&gt;</span>
-<span class="co">#&gt; 2 BOS        2 Boston   Buzzards   &lt;chr [1]&gt;</span>
-<span class="co">#&gt; 3 CHI        3 Chicago  Crowns     &lt;chr [1]&gt;</span>
-<span class="co">#&gt; 4 DEN        4 Denver   Devils     &lt;chr [1]&gt;</span></code></pre></div>
+<span class="co">#&gt;   abbrev teamId location nickname   owners   </span>
+<span class="co">#&gt;   &lt;fct&gt;   &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;      &lt;list&gt;   </span>
+<span class="co">#&gt; 1 AUS         1 Austin   Astronauts &lt;chr [1]&gt;</span>
+<span class="co">#&gt; 2 BOS         2 Boston   Buzzards   &lt;chr [1]&gt;</span>
+<span class="co">#&gt; 3 CHI         3 Chicago  Crowns     &lt;chr [1]&gt;</span>
+<span class="co">#&gt; 4 DEN         4 Denver   Devils     &lt;chr [1]&gt;</span></code></pre></div>
 <p>The <code>scoringPeriodId</code> argument can be used to get data from past weeks.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/team_roster.html">team_roster</a></span><span class="op">(</span>scoringPeriodId <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">[[</span><span class="fl">3</span><span class="op">]</span><span class="op">]</span><span class="op">[</span>, <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, <span class="fl">5</span>, <span class="fl">13</span><span class="op">:</span><span class="fl">15</span><span class="op">)</span><span class="op">]</span>
@@ -139,18 +139,18 @@
 <span class="co">#&gt;    lineupSlot firstName lastName  proTeam position injuryStatus projectedScore actualScore</span>
 <span class="co">#&gt;    &lt;fct&gt;      &lt;chr&gt;     &lt;chr&gt;     &lt;fct&gt;   &lt;fct&gt;    &lt;chr&gt;                 &lt;dbl&gt;       &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 QB         Josh      Allen     Buf     QB       A                     21.6         17.2</span>
-<span class="co">#&gt;  2 RB         Saquon    Barkley   NYG     RB       A                     13.8          3.7</span>
+<span class="co">#&gt;  2 RB         Saquon    Barkley   NYG     RB       Q                     13.8          3.7</span>
 <span class="co">#&gt;  3 RB         Derrick   Henry     Ten     RB       A                     17.3         10.7</span>
 <span class="co">#&gt;  4 WR         DeAndre   Hopkins   Ari     WR       A                     17.8         26.3</span>
 <span class="co">#&gt;  5 WR         Justin    Jefferson Min     WR       A                     15.4         12.5</span>
 <span class="co">#&gt;  6 TE         Darren    Waller    LV      TE       A                     14.2         26.5</span>
-<span class="co">#&gt;  7 FX         Austin    Ekeler    LAC     RB       A                     15.0         11.7</span>
-<span class="co">#&gt;  8 DS         Ravens    D/ST      Bal     DS       A                      5.86        -1  </span>
-<span class="co">#&gt;  9 PK         Justin    Tucker    Bal     PK       A                      8.14        11  </span>
+<span class="co">#&gt;  7 FLEX       Austin    Ekeler    LAC     RB       A                     15.0         11.7</span>
+<span class="co">#&gt;  8 D/ST       Ravens    D/ST      Bal     D/ST     A                      5.86        -1  </span>
+<span class="co">#&gt;  9 K          Justin    Tucker    Bal     K        A                      8.14        11  </span>
 <span class="co">#&gt; 10 BE         Joe       Mixon     Cin     RB       Q                     14.6         25  </span>
 <span class="co">#&gt; 11 BE         Keenan    Allen     LAC     WR       A                     14.8         19  </span>
 <span class="co">#&gt; 12 BE         Mike      Evans     TB      WR       A                     15.0          5.4</span>
-<span class="co">#&gt; 13 BE         Josh      Jacobs    LV      RB       A                     13.1         17  </span>
+<span class="co">#&gt; 13 BE         Josh      Jacobs    LV      RB       Q                     13.1         17  </span>
 <span class="co">#&gt; 14 BE         Myles     Gaskin    Mia     RB       A                     10.9         12.6</span>
 <span class="co">#&gt; 15 BE         Ja'Marr   Chase     Cin     WR       A                     10.4         20.9</span>
 <span class="co">#&gt; 16 BE         Brandon   Aiyuk     SF      WR       A                     13.9          0</span></code></pre></div>
