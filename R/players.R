@@ -26,7 +26,7 @@
 #'   * "PRK" = Position Rank shows how a player stacks up against other players
 #'   at his position. No. 1 is best.
 #'   * "FPTS" = Total fantasy points scored thus far in the season.
-#'   * "AVG" = Avarage fantasy points scored in each game started.
+#'   * "AVG" = Average fantasy points scored in each game started.
 #'   * "LAST" = Last shows the player’s fantasy score in his team’s last game.
 #' @param position Abbreviation of player positions to filter, `NULL` for all:
 #'   * "QB" = Quarterback
@@ -46,7 +46,7 @@
 #' @param injured Whether to return only injured or healthy players. Use `NULL`
 #'   (default) for all players, `TRUE` for injured players, and `FALSE` for
 #'   healthy players.
-#' @param proTeam The abbreviation or ID of the professional team frrom which
+#' @param proTeam The abbreviation or ID of the professional team from which
 #'   players should be returned. See `pro_teams()` for a list of all possible
 #'   team abbreviations.
 #' @param scoreType The type of scoring used: "STANDARD" or "PPR."
@@ -98,9 +98,6 @@ list_players <- function(leagueId = ffl_id(),
   raw <- httr::content(resp, as = "text", encoding = "UTF-8")
   parsed <- jsonlite::fromJSON(raw)
   if (httr::http_error(resp) && any(grepl("message", names(parsed)))) {
-    if (!is.null(leagueHistory) && isTRUE(leagueHistory)) {
-      parsed$message <- paste(parsed$message, "(No League History?)")
-    }
     stop(
       sprintf(
         "ESPN Fantasy API request failed [%s]\n%s",
@@ -191,22 +188,15 @@ list_players <- function(leagueId = ffl_id(),
 
 # -------------------------------------------------------------------------
 
-#' All fantasy players
+#' All fantasy players (deprecated)
 #'
-#' List all available players.
+#' See [list_players()].
 #'
-#' @inheritParams ffl_id
-#' @param scoringPeriodId A scoring period to return, defaults to [ffl_week()].
-#' @param limit The limit of players to return. Use `""` or `NULL` to return
-#'   all. Defaults to 50, which is the default limit used by ESPN. Removing the
-#'   limit can make the request take a long time.
-#' @return A data frame of players.
+#' @param ... Arguments passed to the new [list_players()] function.
 #' @examples
 #' \dontrun{
 #' all_players()
 #' }
-#' @importFrom jsonlite toJSON fromJSON
-#' @importFrom httr RETRY add_headers accept_json content
 #' @export
 all_players <- function(...) {
   .Deprecated("list_players")

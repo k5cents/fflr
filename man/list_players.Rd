@@ -43,7 +43,7 @@ will help show which players are hot and cold at a given moment.
 \item "PRK" = Position Rank shows how a player stacks up against other players
 at his position. No. 1 is best.
 \item "FPTS" = Total fantasy points scored thus far in the season.
-\item "AVG" = Avarage fantasy points scored in each game started.
+\item "AVG" = Average fantasy points scored in each game started.
 \item "LAST" = Last shows the player’s fantasy score in his team’s last game.
 }}
 
@@ -72,7 +72,7 @@ position
 (default) for all players, \code{TRUE} for injured players, and \code{FALSE} for
 healthy players.}
 
-\item{proTeam}{The abbreviation or ID of the professional team frrom which
+\item{proTeam}{The abbreviation or ID of the professional team from which
 players should be returned. See \code{pro_teams()} for a list of all possible
 team abbreviations.}
 
