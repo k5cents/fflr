@@ -1,5 +1,6 @@
 # fflr (development version)
 
+* Deprecate `all_players()` in favor of more advance `list_players()` (#21).
 * Manually override `teamId` in each `team_roster()` data frame.
 * Clarify the name of many `*Id` columns (e.g., `teamId`, `matchupId`) (#31).
 * Add `combine_history()` utility for `leagueHistory` functions.
