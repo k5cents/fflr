@@ -1,5 +1,6 @@
 # fflr (development version)
 
+* Manually override `teamId` in each `team_roster()` data frame.
 * Clarify the name of many `*Id` columns (e.g., `teamId`, `matchupId`) (#31).
 * Add `combine_history()` utility for `leagueHistory` functions.
 * Improve handling of pre-draft and no-history edge cases (#35).

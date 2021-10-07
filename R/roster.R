@@ -11,20 +11,49 @@ team_roster <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   dat <- ffl_api(
     leagueId = leagueId,
     leagueHistory = leagueHistory,
-    view = "mRoster",
+    view = c("mRoster", "mTeam"),
     ...
   )
   if (leagueHistory) {
-    lapply(dat$teams, function(x) lapply(x$roster$entries, out_roster))
+    out <- lapply(
+      X = dat$teams,
+      FUN = function(x) {
+        out <- lapply(
+          X = seq_along(x$roster$entries),
+          FUN = function(i) {
+            out_roster(
+              entry = x$roster$entries[[i]],
+              tid = x$id[i],
+              tm = out_team(x, trim = TRUE)
+            )
+          }
+        )
+        names(out) <- x$abbrev
+        return(out)
+      }
+    )
+    names(out) <- dat$seasonId
+    return(out)
   } else {
     if (is_predraft(dat)) {
       return(data.frame())
     }
-    lapply(dat$teams$roster$entries, out_roster)
+    out <- lapply(
+      X = seq_along(dat$teams$roster$entries),
+      FUN = function(i) {
+        out_roster(
+          entry = dat$teams$roster$entries[[i]],
+          tid = dat$teams$id[i],
+          tm = out_team(dat$teams, trim = TRUE)
+        )
+      }
+    )
+    names(out) <- dat$teams$abbrev
+    return(out)
   }
 }
 
-out_roster <- function(entry, t = NULL) {
+out_roster <- function(entry, tid, tm) {
   if (is.null(entry)) {
     return(entry)
   }
@@ -59,9 +88,10 @@ out_roster <- function(entry, t = NULL) {
   x <- data.frame(
     seasonId  = year_int,
     scoringPeriodId  = week_int,
-    teamId = entry$playerPoolEntry$onTeamId,
+    teamId = tid,
+    abbrev = team_abbrev(tid, teams = tm),
     lineupSlot = slot_abbrev(entry$lineupSlot),
-    id = player$id,
+    playerId = player$id,
     firstName = player$firstName,
     lastName = player$lastName,
     proTeam  = pro_abbrev(player$proTeamId),
