@@ -19,7 +19,8 @@ best_roster <- function(leagueId = ffl_id(), scoringPeriodId = ffl_week(),
   dat <- ffl_api(
     leagueId = leagueId,
     view = c("mRoster", "mSettings", "mTeam"),
-    scoringPeriodId = scoringPeriodId
+    scoringPeriodId = scoringPeriodId,
+    ...
   )
   set <- out_roster_set(dat)
   slot_count <- set$lineupSlotCounts[[1]]
@@ -43,30 +44,38 @@ best_roster <- function(leagueId = ffl_id(), scoringPeriodId = ffl_week(),
 }
 
 out_best <- function(r,
-                     do_slot = c(0, 2, 4, 6, 23, 16, 17, 20),
-                     slot_count = roster_settings()$lineupSlotCounts[[1]],
+                     do_slot,
+                     slot_count,
                      score_col = "projectedScore") {
+  most_elig <- names(sort(table(unlist(r$eligibleSlots))))
+  most_elig <- most_elig[most_elig %in% do_slot]
+  most_elig <- most_elig[most_elig != "21" & most_elig != "25"]
   best <- data.frame()
-  for (s in do_slot[do_slot != 21]) {
-    n_slot <- slot_count$limit[slot_count$position == s]
-    is_eligable <- sapply(r$eligibleSlots, has_slot, s)
-    n_eligable <- sum(is_eligable)
-    if (n_eligable < n_slot) {
-      warning(paste("Insufficient number of eligable players for slot", s))
-      n_slot <- n_eligable
+  for (s in most_elig) {
+    n_max <- slot_count$limit[slot_count$position == s]
+    is_elig <- sapply(r$eligibleSlots, has_slot, s)
+    n_elig <- sum(is_elig)
+    if (n_elig < n_max) {
+      warning(
+        sprintf("Slot %s has %i maximum but %i eligible", s, n_max, n_elig)
+      )
+      if (n_elig == 0) {
+        next
+      }
+      n_max <- n_elig
     }
-    can_slot <- r[is_eligable, ]
-    if (n_eligable > 1) {
-      can_slot <- can_slot[order(can_slot[[score_col]], decreasing = TRUE), ]
+    can_max <- r[is_elig, ]
+    if (n_elig > 1) {
+      can_max <- can_max[order(can_max[[score_col]], decreasing = TRUE), ]
     }
-    can_slot <- can_slot[seq(n_slot), ]
-    can_slot$actualSlot <- can_slot$lineupSlot
-    can_slot$lineupSlot <- slot_abbrev(s)
-    best <- rbind(best, can_slot)
+    can_max <- can_max[seq(n_max), ]
+    can_max$actualSlot <- can_max$lineupSlot
+    can_max$lineupSlot <- slot_abbrev(s)
+    best <- rbind(best, can_max)
     r <- r[!(r$playerId %in% best$playerId), ]
   }
   if (nrow(r) > 0) {
-    n_ir <- slot_count$limit[slot_count$position == 23]
+    n_ir <- slot_count$limit[slot_count$position == 21]
     if (nrow(r) == n_ir & all(r$lineupSlot == "IR")) {
       r$actualSlot <- r$lineupSlot
       best <- rbind(best, r)
@@ -74,7 +83,7 @@ out_best <- function(r,
   }
   best <- move_col(best, "actualSlot", 6)
   best$eligibleSlots <- NULL
-  return(best)
+  best[order(best$lineupSlot), ]
 }
 
 has_slot <- function(eligibleSlots, slot) {
