@@ -18,13 +18,14 @@ team_roster <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
     out <- lapply(
       X = dat$teams,
       FUN = function(x) {
+        tm <- out_team(x, trim = TRUE)
         out <- lapply(
           X = seq_along(x$roster$entries),
           FUN = function(i) {
             out_roster(
               entry = x$roster$entries[[i]],
               tid = x$id[i],
-              tm = out_team(x, trim = TRUE)
+              tm = tm
             )
           }
         )
@@ -38,13 +39,14 @@ team_roster <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
     if (is_predraft(dat)) {
       return(data.frame())
     }
+    tm <- out_team(dat$teams, trim = TRUE)
     out <- lapply(
       X = seq_along(dat$teams$roster$entries),
       FUN = function(i) {
         out_roster(
           entry = dat$teams$roster$entries[[i]],
           tid = dat$teams$id[i],
-          tm = out_team(dat$teams, trim = TRUE)
+          tm = tm
         )
       }
     )
@@ -53,7 +55,7 @@ team_roster <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   }
 }
 
-out_roster <- function(entry, tid, tm) {
+out_roster <- function(entry, tid, tm, es = FALSE) {
   if (is.null(entry)) {
     return(entry)
   }
@@ -103,6 +105,9 @@ out_roster <- function(entry, tid, tm) {
     percentOwned = player$ownership$percentOwned,
     percentChange = round(player$ownership$percentChange, digits = 3)
   )
+  if (isTRUE(es)) {
+    x$eligibleSlots <- player$eligibleSlots
+  }
   as_tibble(x[order(x$lineupSlot), ])
 }
 
