@@ -27,9 +27,9 @@
 #' @format A data frame with 33 rows and 6 columns:
 #' \describe{
 #'   \item{proTeamId}{Unique team ID}
-#'   \item{abbrev}{Team abbreviation}
-#'   \item{location}{Team geographic location}
-#'   \item{name}{Team full nickname}
+#'   \item{abbrev}{Professional team abbreviation}
+#'   \item{location}{Professional team geographic location}
+#'   \item{name}{Professional team full nickname}
 #'   \item{byeWeek}{Bye week, no game played}
 #'   \item{conference}{NFL conference}
 #'   ...
@@ -44,11 +44,12 @@
 #' @format A data frame with 544 rows and 6 variables:
 #' \describe{
 #'   \item{seasonId}{Season year}
-#'   \item{scoringPeriodId}{Matchup period}
-#'   \item{proTeam}{Team abbreviation}
-#'   \item{opponent}{Team opponent}
-#'   \item{isHome}{Team the home?}
-#'   \item{date}{Match date and time}
+#'   \item{scoringPeriodId}{Scoring period}
+#'   \item{matchupId}{Unique ID for professional matchup}
+#'   \item{proTeam}{Professional team abbreviation}
+#'   \item{opponent}{Professional team opponent}
+#'   \item{isHome}{Whether this is the home team}
+#'   \item{date}{Matchup start date and time}
 #'   ...
 #' }
 #' @source \url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2021?view=proTeamSchedules_wl}

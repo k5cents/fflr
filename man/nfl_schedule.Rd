@@ -8,11 +8,12 @@
 A data frame with 544 rows and 6 variables:
 \describe{
 \item{seasonId}{Season year}
-\item{scoringPeriodId}{Matchup period}
-\item{proTeam}{Team abbreviation}
-\item{opponent}{Team opponent}
-\item{isHome}{Team the home?}
-\item{date}{Match date and time}
+\item{scoringPeriodId}{Scoring period}
+\item{matchupId}{Unique ID for professional matchup}
+\item{proTeam}{Professional team abbreviation}
+\item{opponent}{Professional team opponent}
+\item{isHome}{Whether this is the home team}
+\item{date}{Matchup start date and time}
 ...
 }
 }

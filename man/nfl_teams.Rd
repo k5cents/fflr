@@ -8,9 +8,9 @@
 A data frame with 33 rows and 6 columns:
 \describe{
 \item{proTeamId}{Unique team ID}
-\item{abbrev}{Team abbreviation}
-\item{location}{Team geographic location}
-\item{name}{Team full nickname}
+\item{abbrev}{Professional team abbreviation}
+\item{location}{Professional team geographic location}
+\item{name}{Professional team full nickname}
 \item{byeWeek}{Bye week, no game played}
 \item{conference}{NFL conference}
 ...
