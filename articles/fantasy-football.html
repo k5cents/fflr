@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9007</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9008</span>
       </span>
     </div>
 
@@ -95,7 +95,7 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">fflr</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html">packageVersion</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span>
-<span class="co">#&gt; [1] '1.9.2.9007'</span>
+<span class="co">#&gt; [1] '1.9.2.9008'</span>
 <span class="fu"><a href="../reference/ffl_id.html">ffl_id</a></span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span><span class="op">)</span>
 <span class="co">#&gt; Temporarily set `fflr.leagueId` option to 42654852</span>
 <span class="co">#&gt; [1] "42654852"</span></code></pre></div>
@@ -172,7 +172,7 @@
 <span class="co">#&gt;    abbrev lineupSlot playerId firstName  lastName    proTeam position injuryStatus</span>
 <span class="co">#&gt;    &lt;fct&gt;  &lt;fct&gt;         &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;       &lt;fct&gt;   &lt;fct&gt;    &lt;chr&gt;       </span>
 <span class="co">#&gt;  1 AUS    QB          3139477 Patrick    Mahomes     KC      QB       A           </span>
-<span class="co">#&gt;  2 AUS    RB          3117251 Christian  McCaffrey   Car     RB       Q           </span>
+<span class="co">#&gt;  2 AUS    RB          3117251 Christian  McCaffrey   Car     RB       D           </span>
 <span class="co">#&gt;  3 AUS    RB          4242335 Jonathan   Taylor      Ind     RB       A           </span>
 <span class="co">#&gt;  4 AUS    WR            16800 Davante    Adams       GB      WR       A           </span>
 <span class="co">#&gt;  5 AUS    WR          3925357 Calvin     Ridley      Atl     WR       O           </span>
@@ -182,11 +182,11 @@
 <span class="co">#&gt;  9 AUS    K           2473037 Jason      Myers       Sea     K        A           </span>
 <span class="co">#&gt; 10 AUS    BE          4259545 D'Andre    Swift       Det     RB       Q           </span>
 <span class="co">#&gt; 11 AUS    BE          4045163 Miles      Sanders     Phi     RB       A           </span>
-<span class="co">#&gt; 12 AUS    BE          3919596 Chris      Carson      Sea     RB       Q           </span>
+<span class="co">#&gt; 12 AUS    BE          3919596 Chris      Carson      Sea     RB       O           </span>
 <span class="co">#&gt; 13 AUS    BE            16799 Allen      Robinson II Chi     WR       A           </span>
 <span class="co">#&gt; 14 AUS    BE            16460 Adam       Thielen     Min     WR       A           </span>
 <span class="co">#&gt; 15 AUS    BE          3932905 Diontae    Johnson     Pit     WR       A           </span>
-<span class="co">#&gt; 16 AUS    BE          3128429 Courtland  Sutton      Den     WR       A           </span>
+<span class="co">#&gt; 16 AUS    BE          3128429 Courtland  Sutton      Den     WR       Q           </span>
 <span class="co">#&gt; # … with 5 more variables: projectedScore &lt;dbl&gt;, actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;</span></code></pre></div>
 </div>
@@ -197,14 +197,14 @@
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/player_outlook.html">player_outlook</a></span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 6 × 6</span>
-<span class="co">#&gt;   seasonId scoringPeriodId    id firstName lastName outlook                               </span>
-<span class="co">#&gt;      &lt;int&gt;           &lt;int&gt; &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;                                 </span>
-<span class="co">#&gt; 1     2021               0 16800 Davante   Adams    Adams was the top-scoring fantasy WR …</span>
-<span class="co">#&gt; 2     2021               1 16800 Davante   Adams    Last season, Adams was on pace for on…</span>
-<span class="co">#&gt; 3     2021               2 16800 Davante   Adams    The Packers' offense simply couldn't …</span>
-<span class="co">#&gt; 4     2021               3 16800 Davante   Adams    A rare blend of efficiency and volume…</span>
-<span class="co">#&gt; 5     2021               4 16800 Davante   Adams    Another elite prime-time performance …</span>
-<span class="co">#&gt; 6     2021               5 16800 Davante   Adams    Adams caught 6-of-11 targets for 64 y…</span></code></pre></div>
+<span class="co">#&gt;   seasonId scoringPeriodId      id firstName lastName outlook                             </span>
+<span class="co">#&gt;      &lt;int&gt;           &lt;int&gt;   &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;                               </span>
+<span class="co">#&gt; 1     2021               0 3116593 Dalvin    Cook     Cook returns as the feature back in…</span>
+<span class="co">#&gt; 2     2021               1 3116593 Dalvin    Cook     It helps that the Bengals allowed t…</span>
+<span class="co">#&gt; 3     2021               2 3116593 Dalvin    Cook     A costly fumble overshadowed an oth…</span>
+<span class="co">#&gt; 4     2021               3 3116593 Dalvin    Cook     An ankle injury couldn't keep Cook …</span>
+<span class="co">#&gt; 5     2021               4 3116593 Dalvin    Cook     A lingering ankle injury sidelined …</span>
+<span class="co">#&gt; 6     2021               5 3116593 Dalvin    Cook     Cook carried the ball nine times fo…</span></code></pre></div>
 <p>The second fiction takes a single <code>playerId</code> value and returns all the recent news on that player, including premium stories in HTML format.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/player_news.html">player_news</a></span><span class="op">(</span>playerId <span class="op">=</span> <span class="st">"3139477"</span>, parseHTML <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
@@ -254,9 +254,9 @@
 <span class="co">#&gt;  $ finalScoringPeriod     : int 17</span>
 <span class="co">#&gt;  $ previousSeasons        :List of 1</span>
 <span class="co">#&gt;   ..$ : list()</span>
-<span class="co">#&gt;  $ standingsUpdateDate    : POSIXct[1:1], format: "2021-10-07 08:18:17"</span>
+<span class="co">#&gt;  $ standingsUpdateDate    : POSIXct[1:1], format: "2021-10-08 07:48:42"</span>
 <span class="co">#&gt;  $ teamsJoined            : int 4</span>
-<span class="co">#&gt;  $ waiverLastExecutionDate: POSIXct[1:1], format: "2021-10-07 08:18:17"</span>
+<span class="co">#&gt;  $ waiverLastExecutionDate: POSIXct[1:1], format: "2021-10-08 07:48:41"</span>
 <span class="co">#&gt;  $ waiverNextExecutionDate: POSIXct[1:1], format: NA</span>
 <span class="co">#&gt;  $ waiverProcessStatus    :List of 1</span>
 <span class="co">#&gt;   ..$ :'data.frame': 1 obs. of  2 variables:</span>
@@ -554,10 +554,10 @@
 <span class="co">#&gt; # A tibble: 4 × 5</span>
 <span class="co">#&gt;   currentMatchupPeriod    id teamId totalPointsLive totalProjectedPointsLive</span>
 <span class="co">#&gt;                  &lt;int&gt; &lt;int&gt; &lt;fct&gt;            &lt;dbl&gt;                    &lt;dbl&gt;</span>
-<span class="co">#&gt; 1                    5     9 DEN                  1                     142.</span>
-<span class="co">#&gt; 2                    5     9 CHI                  0                     124.</span>
-<span class="co">#&gt; 3                    5    10 BOS                  1                     150.</span>
-<span class="co">#&gt; 4                    5    10 AUS                  0                     117.</span></code></pre></div>
+<span class="co">#&gt; 1                    5     9 DEN               11.7                     136.</span>
+<span class="co">#&gt; 2                    5     9 CHI                0                       124.</span>
+<span class="co">#&gt; 3                    5    10 BOS               44                       137.</span>
+<span class="co">#&gt; 4                    5    10 AUS                4                       114.</span></code></pre></div>
 </div>
 <div id="standings" class="section level2">
 <h2 class="hasAnchor">
@@ -568,9 +568,9 @@
 <span class="co">#&gt;   seasonId scoringPeriodId teamId abbrev draftDayProjectedR… currentProjected… playoffSeed</span>
 <span class="co">#&gt;      &lt;int&gt;           &lt;int&gt;  &lt;int&gt; &lt;fct&gt;                &lt;int&gt;             &lt;int&gt;       &lt;int&gt;</span>
 <span class="co">#&gt; 1     2021               5      1 AUS                      2                 4           4</span>
-<span class="co">#&gt; 2     2021               5      2 BOS                      4                 1           2</span>
+<span class="co">#&gt; 2     2021               5      2 BOS                      4                 2           2</span>
 <span class="co">#&gt; 3     2021               5      3 CHI                      3                 3           1</span>
-<span class="co">#&gt; 4     2021               5      4 DEN                      1                 2           3</span>
+<span class="co">#&gt; 4     2021               5      4 DEN                      1                 1           3</span>
 <span class="co">#&gt; # … with 12 more variables: rankCalculatedFinal &lt;int&gt;, gamesBack &lt;dbl&gt;, losses &lt;int&gt;,</span>
 <span class="co">#&gt; #   percentage &lt;dbl&gt;, pointsAgainst &lt;dbl&gt;, pointsFor &lt;dbl&gt;, streakLength &lt;int&gt;,</span>
 <span class="co">#&gt; #   streakType &lt;chr&gt;, ties &lt;int&gt;, wins &lt;int&gt;, playoffPct &lt;dbl&gt;, divisionWinPct &lt;dbl&gt;</span></code></pre></div>

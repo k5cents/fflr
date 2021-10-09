@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Optimal fantasy roster — best_roster • fflr</title>
+<title>Sort the optimal fantasy roster — best_roster • fflr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,9 +46,9 @@
 
 
 
-<meta property="og:title" content="Optimal fantasy roster — best_roster" />
-<meta property="og:description" content="The highest scoring 9 man roster using standard roster slots. In the future
-this function may be adapted to take roster slots from roster_settings()." />
+<meta property="og:title" content="Sort the optimal fantasy roster — best_roster" />
+<meta property="og:description" content="Uses the roster settings for each league to find the best possible
+combinations of players to score the most fantasy points." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -81,7 +81,7 @@ this function may be adapted to take roster slots from roster_settings()." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.15</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9008</span>
       </span>
     </div>
 
@@ -104,7 +104,7 @@ this function may be adapted to take roster slots from roster_settings()." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/fantasy-football.html">fantasy-football</a>
+      <a href="../articles/fantasy-football.html">Fantasy Football Data</a>
     </li>
   </ul>
 </li>
@@ -113,12 +113,7 @@ this function may be adapted to take roster slots from roster_settings()." />
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="https://github.com/kiernann/fflr/">
-    <span class="fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
+        
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -132,46 +127,157 @@ this function may be adapted to take roster slots from roster_settings()." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Optimal fantasy roster</h1>
-    <small class="dont-index">Source: <a href='https://github.com/kiernann/fflr/blob/master/R/best-roster.R'><code>R/best-roster.R</code></a></small>
+    <h1>Sort the optimal fantasy roster</h1>
+    
     <div class="hidden name"><code>best_roster.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>The highest scoring 9 man roster using standard roster slots. In the future
-this function may be adapted to take roster slots from <code><a href='roster_settings.html'>roster_settings()</a></code>.</p>
+    <p>Uses the roster settings for each league to find the best possible
+combinations of players to score the most fantasy points.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>best_roster</span><span class='op'>(</span><span class='va'>roster</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>best_roster</span><span class='op'>(</span>
+  leagueId <span class='op'>=</span> <span class='fu'><a href='ffl_id.html'>ffl_id</a></span><span class='op'>(</span><span class='op'>)</span>,
+  scoringPeriodId <span class='op'>=</span> <span class='fu'><a href='ffl_week.html'>ffl_week</a></span><span class='op'>(</span><span class='op'>)</span>,
+  projectedScore <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>roster</th>
-      <td><p>A roster tibble from <code><a href='team_roster.html'>team_roster()</a></code>.</p></td>
+      <th>leagueId</th>
+      <td><p>Numeric league ID or ESPN fantasy page URL. Defaults to
+<code><a href='https://rdrr.io/r/base/options.html'>getOption("fflr.leagueId")</a></code>. Function fails if no ID is found.</p></td>
+    </tr>
+    <tr>
+      <th>scoringPeriodId</th>
+      <td><p>The scoring period for which rosters will be
+optimized. If <code>scoringPeriodId</code> is the current week (the default), then
+actual scoring might be incomplete (see <code>projectedScore</code> below).</p></td>
+    </tr>
+    <tr>
+      <th>projectedScore</th>
+      <td><p>logical; Should rosters be sorted using the ESPN
+<code>projectedScore</code>? If any players are missing an <code>actualScore</code> value, then
+<code>projectedScore</code> will be used regardless of this argument.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Additional queries passed to <code><a href='https://httr.r-lib.org/reference/GET.html'>httr::GET()</a></code>
+(e.g., <code>scoringPeriodId</code>). Arguments are converted to a named list to be
+passed alongside <code>view</code>.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble of players on a roster.</p>
+    <p>A dataframe (or list) with optimal rosters.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>best_roster</span><span class='op'>(</span><span class='fu'><a href='team_roster.html'>team_roster</a></span><span class='op'>(</span>lid <span class='op'>=</span> <span class='fl'>252353</span>, week <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span><span class='op'>[[</span><span class='fl'>7</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 9 x 15</span><span>
-#&gt;    year  week team  slot       id first last  pro   pos   status  proj score
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  QB      </span><span style='text-decoration: underline;'>13</span><span>994 Cam   Newt… NE    QB    A      18.1   25.7
-#&gt; </span><span style='color: #555555;'>2</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  RB    3</span><span style='text-decoration: underline;'>043</span><span>078 Derr… Henry Ten   RB    A      15.5   13.1
-#&gt; </span><span style='color: #555555;'>3</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  RB    2</span><span style='text-decoration: underline;'>977</span><span>644 Todd  Gurl… Atl   RB    A      12.5   11.7
-#&gt; </span><span style='color: #555555;'>4</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  WR      </span><span style='text-decoration: underline;'>13</span><span>982 Julio Jones Atl   WR    Q      10.6   15.7
-#&gt; </span><span style='color: #555555;'>5</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  WR    2</span><span style='text-decoration: underline;'>976</span><span>499 Amari Coop… Dal   WR    Q       8.90   8.1
-#&gt; </span><span style='color: #555555;'>6</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  TE    3</span><span style='text-decoration: underline;'>040</span><span>151 Geor… Kitt… SF    TE    A      10.4    5.3
-#&gt; </span><span style='color: #555555;'>7</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  FX    4</span><span style='text-decoration: underline;'>241</span><span>389 CeeD… Lamb  Dal   WR    A       6.56   5.9
-#&gt; </span><span style='color: #555555;'>8</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  DS     -</span><span style='color: #BB0000;text-decoration: underline;'>16</span><span style='color: #BB0000;'>011</span><span> Colts D/ST  Ind   DS    A       5.41   2  
-#&gt; </span><span style='color: #555555;'>9</span><span>  </span><span style='text-decoration: underline;'>2</span><span>020     1 NICK  PK    3</span><span style='text-decoration: underline;'>050</span><span>478 Jake  Elli… Phi   PK    A       7.64   4  
-#&gt; </span><span style='color: #555555;'># … with 3 more variables: start </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, rost </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, change </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span></div></span></pre>
+    <pre class="examples"><div class='input'><span class='fu'>best_roster</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span>, scoringPeriodId <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; $AUS
+#&gt; <span style='color: #949494;'># A tibble: 16 × 17</span>
+#&gt;    seasonId scoringPeriodId teamId abbrev lineupSlot actualSlot playerId
+#&gt;       <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>         <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 1</span>     <span style='text-decoration: underline;'>2</span>021               1      1 AUS    QB         QB          3<span style='text-decoration: underline;'>139</span>477
+#&gt; <span style='color: #BCBCBC;'> 2</span>     <span style='text-decoration: underline;'>2</span>021               1      1 AUS    RB         RB          3<span style='text-decoration: underline;'>117</span>251
+#&gt; <span style='color: #BCBCBC;'> 3</span>     <span style='text-decoration: underline;'>2</span>021               1      1 AUS    RB         BE          4<span style='text-decoration: underline;'>259</span>545
+#&gt; <span style='color: #BCBCBC;'> 4</span>     <span style='text-decoration: underline;'>2</span>021               1      1 AUS    WR         BE            <span style='text-decoration: underline;'>16</span>460
+#&gt; <span style='color: #BCBCBC;'> 5</span>     <span style='text-decoration: underline;'>2</span>021               1      1 AUS    WR         BE          3<span style='text-decoration: underline;'>932</span>905
+#&gt; <span style='color: #BCBCBC;'> 6</span>     <span style='text-decoration: underline;'>2</span>021               1      1 AUS    TE         TE          3<span style='text-decoration: underline;'>116</span>365
+#&gt; <span style='color: #BCBCBC;'> 7</span>     <span style='text-decoration: underline;'>2</span>021               1      1 AUS    FLEX       RB          4<span style='text-decoration: underline;'>242</span>335
+#&gt; <span style='color: #BCBCBC;'> 8</span>     <span style='text-decoration: underline;'>2</span>021               1      1 AUS    D/ST       D/ST         -<span style='color: #BB0000; text-decoration: underline;'>16</span><span style='color: #BB0000;'>027</span>
+#&gt; <span style='color: #BCBCBC;'> 9</span>     <span style='text-decoration: underline;'>2</span>021               1      1 AUS    K          K           2<span style='text-decoration: underline;'>473</span>037
+#&gt; <span style='color: #BCBCBC;'>10</span>     <span style='text-decoration: underline;'>2</span>021               1      1 AUS    BE         BE          4<span style='text-decoration: underline;'>045</span>163
+#&gt; <span style='color: #BCBCBC;'>11</span>     <span style='text-decoration: underline;'>2</span>021               1      1 AUS    BE         BE          3<span style='text-decoration: underline;'>919</span>596
+#&gt; <span style='color: #BCBCBC;'>12</span>     <span style='text-decoration: underline;'>2</span>021               1      1 AUS    BE         FLEX        4<span style='text-decoration: underline;'>360</span>294
+#&gt; <span style='color: #BCBCBC;'>13</span>     <span style='text-decoration: underline;'>2</span>021               1      1 AUS    BE         WR            <span style='text-decoration: underline;'>16</span>800
+#&gt; <span style='color: #BCBCBC;'>14</span>     <span style='text-decoration: underline;'>2</span>021               1      1 AUS    BE         WR          3<span style='text-decoration: underline;'>925</span>357
+#&gt; <span style='color: #BCBCBC;'>15</span>     <span style='text-decoration: underline;'>2</span>021               1      1 AUS    BE         BE            <span style='text-decoration: underline;'>16</span>799
+#&gt; <span style='color: #BCBCBC;'>16</span>     <span style='text-decoration: underline;'>2</span>021               1      1 AUS    BE         BE          3<span style='text-decoration: underline;'>128</span>429
+#&gt; <span style='color: #949494;'># … with 10 more variables: firstName &lt;chr&gt;, lastName &lt;chr&gt;, proTeam &lt;fct&gt;,</span>
+#&gt; <span style='color: #949494;'>#   position &lt;fct&gt;, injuryStatus &lt;chr&gt;, projectedScore &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   percentChange &lt;dbl&gt;</span>
+#&gt; 
+#&gt; $BOS
+#&gt; <span style='color: #949494;'># A tibble: 16 × 17</span>
+#&gt;    seasonId scoringPeriodId teamId abbrev lineupSlot actualSlot playerId
+#&gt;       <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>         <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 1</span>     <span style='text-decoration: underline;'>2</span>021               1      2 BOS    QB         QB          2<span style='text-decoration: underline;'>577</span>417
+#&gt; <span style='color: #BCBCBC;'> 2</span>     <span style='text-decoration: underline;'>2</span>021               1      2 BOS    RB         FLEX        3<span style='text-decoration: underline;'>128</span>720
+#&gt; <span style='color: #BCBCBC;'> 3</span>     <span style='text-decoration: underline;'>2</span>021               1      2 BOS    RB         RB          3<span style='text-decoration: underline;'>116</span>593
+#&gt; <span style='color: #BCBCBC;'> 4</span>     <span style='text-decoration: underline;'>2</span>021               1      2 BOS    WR         BE          2<span style='text-decoration: underline;'>976</span>499
+#&gt; <span style='color: #BCBCBC;'> 5</span>     <span style='text-decoration: underline;'>2</span>021               1      2 BOS    WR         WR          3<span style='text-decoration: underline;'>116</span>406
+#&gt; <span style='color: #BCBCBC;'> 6</span>     <span style='text-decoration: underline;'>2</span>021               1      2 BOS    TE         TE          3<span style='text-decoration: underline;'>040</span>151
+#&gt; <span style='color: #BCBCBC;'> 7</span>     <span style='text-decoration: underline;'>2</span>021               1      2 BOS    FLEX       BE          2<span style='text-decoration: underline;'>977</span>187
+#&gt; <span style='color: #BCBCBC;'> 8</span>     <span style='text-decoration: underline;'>2</span>021               1      2 BOS    D/ST       D/ST         -<span style='color: #BB0000; text-decoration: underline;'>16</span><span style='color: #BB0000;'>023</span>
+#&gt; <span style='color: #BCBCBC;'> 9</span>     <span style='text-decoration: underline;'>2</span>021               1      2 BOS    K          K             <span style='text-decoration: underline;'>16</span>339
+#&gt; <span style='color: #BCBCBC;'>10</span>     <span style='text-decoration: underline;'>2</span>021               1      2 BOS    BE         WR          4<span style='text-decoration: underline;'>047</span>650
+#&gt; <span style='color: #BCBCBC;'>11</span>     <span style='text-decoration: underline;'>2</span>021               1      2 BOS    BE         BE          4<span style='text-decoration: underline;'>039</span>359
+#&gt; <span style='color: #BCBCBC;'>12</span>     <span style='text-decoration: underline;'>2</span>021               1      2 BOS    BE         BE          2<span style='text-decoration: underline;'>974</span>858
+#&gt; <span style='color: #BCBCBC;'>13</span>     <span style='text-decoration: underline;'>2</span>021               1      2 BOS    BE         BE          4<span style='text-decoration: underline;'>242</span>214
+#&gt; <span style='color: #BCBCBC;'>14</span>     <span style='text-decoration: underline;'>2</span>021               1      2 BOS    BE         BE          3<span style='text-decoration: underline;'>121</span>422
+#&gt; <span style='color: #BCBCBC;'>15</span>     <span style='text-decoration: underline;'>2</span>021               1      2 BOS    BE         RB          3<span style='text-decoration: underline;'>051</span>392
+#&gt; <span style='color: #BCBCBC;'>16</span>     <span style='text-decoration: underline;'>2</span>021               1      2 BOS    BE         BE            <span style='text-decoration: underline;'>13</span>982
+#&gt; <span style='color: #949494;'># … with 10 more variables: firstName &lt;chr&gt;, lastName &lt;chr&gt;, proTeam &lt;fct&gt;,</span>
+#&gt; <span style='color: #949494;'>#   position &lt;fct&gt;, injuryStatus &lt;chr&gt;, projectedScore &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   percentChange &lt;dbl&gt;</span>
+#&gt; 
+#&gt; $CHI
+#&gt; <span style='color: #949494;'># A tibble: 16 × 17</span>
+#&gt;    seasonId scoringPeriodId teamId abbrev lineupSlot actualSlot playerId
+#&gt;       <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>         <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 1</span>     <span style='text-decoration: underline;'>2</span>021               1      3 CHI    QB         QB          3<span style='text-decoration: underline;'>918</span>298
+#&gt; <span style='color: #BCBCBC;'> 2</span>     <span style='text-decoration: underline;'>2</span>021               1      3 CHI    RB         BE          3<span style='text-decoration: underline;'>116</span>385
+#&gt; <span style='color: #BCBCBC;'> 3</span>     <span style='text-decoration: underline;'>2</span>021               1      3 CHI    RB         BE          4<span style='text-decoration: underline;'>047</span>365
+#&gt; <span style='color: #BCBCBC;'> 4</span>     <span style='text-decoration: underline;'>2</span>021               1      3 CHI    WR         WR            <span style='text-decoration: underline;'>15</span>795
+#&gt; <span style='color: #BCBCBC;'> 5</span>     <span style='text-decoration: underline;'>2</span>021               1      3 CHI    WR         BE          4<span style='text-decoration: underline;'>362</span>628
+#&gt; <span style='color: #BCBCBC;'> 6</span>     <span style='text-decoration: underline;'>2</span>021               1      3 CHI    TE         TE          2<span style='text-decoration: underline;'>576</span>925
+#&gt; <span style='color: #BCBCBC;'> 7</span>     <span style='text-decoration: underline;'>2</span>021               1      3 CHI    FLEX       BE            <span style='text-decoration: underline;'>15</span>818
+#&gt; <span style='color: #BCBCBC;'> 8</span>     <span style='text-decoration: underline;'>2</span>021               1      3 CHI    D/ST       D/ST         -<span style='color: #BB0000; text-decoration: underline;'>16</span><span style='color: #BB0000;'>033</span>
+#&gt; <span style='color: #BCBCBC;'> 9</span>     <span style='text-decoration: underline;'>2</span>021               1      3 CHI    K          K             <span style='text-decoration: underline;'>15</span>683
+#&gt; <span style='color: #BCBCBC;'>10</span>     <span style='text-decoration: underline;'>2</span>021               1      3 CHI    BE         BE          3<span style='text-decoration: underline;'>886</span>818
+#&gt; <span style='color: #BCBCBC;'>11</span>     <span style='text-decoration: underline;'>2</span>021               1      3 CHI    BE         WR          4<span style='text-decoration: underline;'>262</span>921
+#&gt; <span style='color: #BCBCBC;'>12</span>     <span style='text-decoration: underline;'>2</span>021               1      3 CHI    BE         FLEX        3<span style='text-decoration: underline;'>068</span>267
+#&gt; <span style='color: #BCBCBC;'>13</span>     <span style='text-decoration: underline;'>2</span>021               1      3 CHI    BE         RB          3<span style='text-decoration: underline;'>043</span>078
+#&gt; <span style='color: #BCBCBC;'>14</span>     <span style='text-decoration: underline;'>2</span>021               1      3 CHI    BE         BE            <span style='text-decoration: underline;'>16</span>737
+#&gt; <span style='color: #BCBCBC;'>15</span>     <span style='text-decoration: underline;'>2</span>021               1      3 CHI    BE         RB          3<span style='text-decoration: underline;'>929</span>630
+#&gt; <span style='color: #BCBCBC;'>16</span>     <span style='text-decoration: underline;'>2</span>021               1      3 CHI    BE         BE          4<span style='text-decoration: underline;'>360</span>438
+#&gt; <span style='color: #949494;'># … with 10 more variables: firstName &lt;chr&gt;, lastName &lt;chr&gt;, proTeam &lt;fct&gt;,</span>
+#&gt; <span style='color: #949494;'>#   position &lt;fct&gt;, injuryStatus &lt;chr&gt;, projectedScore &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   percentChange &lt;dbl&gt;</span>
+#&gt; 
+#&gt; $DEN
+#&gt; <span style='color: #949494;'># A tibble: 16 × 17</span>
+#&gt;    seasonId scoringPeriodId teamId abbrev lineupSlot actualSlot playerId
+#&gt;       <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>         <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 1</span>     <span style='text-decoration: underline;'>2</span>021               1      4 DEN    QB         QB          3<span style='text-decoration: underline;'>917</span>315
+#&gt; <span style='color: #BCBCBC;'> 2</span>     <span style='text-decoration: underline;'>2</span>021               1      4 DEN    RB         BE          4<span style='text-decoration: underline;'>035</span>538
+#&gt; <span style='color: #BCBCBC;'> 3</span>     <span style='text-decoration: underline;'>2</span>021               1      4 DEN    RB         RB          3<span style='text-decoration: underline;'>054</span>850
+#&gt; <span style='color: #BCBCBC;'> 4</span>     <span style='text-decoration: underline;'>2</span>021               1      4 DEN    WR         BE          2<span style='text-decoration: underline;'>577</span>327
+#&gt; <span style='color: #BCBCBC;'> 5</span>     <span style='text-decoration: underline;'>2</span>021               1      4 DEN    WR         BE          3<span style='text-decoration: underline;'>116</span>165
+#&gt; <span style='color: #BCBCBC;'> 6</span>     <span style='text-decoration: underline;'>2</span>021               1      4 DEN    TE         TE            <span style='text-decoration: underline;'>15</span>847
+#&gt; <span style='color: #BCBCBC;'> 7</span>     <span style='text-decoration: underline;'>2</span>021               1      4 DEN    FLEX       BE          4<span style='text-decoration: underline;'>241</span>389
+#&gt; <span style='color: #BCBCBC;'> 8</span>     <span style='text-decoration: underline;'>2</span>021               1      4 DEN    D/ST       D/ST         -<span style='color: #BB0000; text-decoration: underline;'>16</span><span style='color: #BB0000;'>025</span>
+#&gt; <span style='color: #BCBCBC;'> 9</span>     <span style='text-decoration: underline;'>2</span>021               1      4 DEN    K          K           3<span style='text-decoration: underline;'>055</span>899
+#&gt; <span style='color: #BCBCBC;'>10</span>     <span style='text-decoration: underline;'>2</span>021               1      4 DEN    BE         WR          2<span style='text-decoration: underline;'>976</span>212
+#&gt; <span style='color: #BCBCBC;'>11</span>     <span style='text-decoration: underline;'>2</span>021               1      4 DEN    BE         BE          3<span style='text-decoration: underline;'>915</span>416
+#&gt; <span style='color: #BCBCBC;'>12</span>     <span style='text-decoration: underline;'>2</span>021               1      4 DEN    BE         WR          4<span style='text-decoration: underline;'>047</span>646
+#&gt; <span style='color: #BCBCBC;'>13</span>     <span style='text-decoration: underline;'>2</span>021               1      4 DEN    BE         BE            <span style='text-decoration: underline;'>15</span>880
+#&gt; <span style='color: #BCBCBC;'>14</span>     <span style='text-decoration: underline;'>2</span>021               1      4 DEN    BE         FLEX        4<span style='text-decoration: underline;'>241</span>457
+#&gt; <span style='color: #BCBCBC;'>15</span>     <span style='text-decoration: underline;'>2</span>021               1      4 DEN    BE         RB          3<span style='text-decoration: underline;'>042</span>519
+#&gt; <span style='color: #BCBCBC;'>16</span>     <span style='text-decoration: underline;'>2</span>021               1      4 DEN    BE         BE          4<span style='text-decoration: underline;'>241</span>985
+#&gt; <span style='color: #949494;'># … with 10 more variables: firstName &lt;chr&gt;, lastName &lt;chr&gt;, proTeam &lt;fct&gt;,</span>
+#&gt; <span style='color: #949494;'>#   position &lt;fct&gt;, injuryStatus &lt;chr&gt;, projectedScore &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   percentChange &lt;dbl&gt;</span>
+#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
