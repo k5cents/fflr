@@ -140,7 +140,7 @@ combinations of players to score the most fantasy points.</p>
     <pre class="usage"><span class='fu'>best_roster</span><span class='op'>(</span>
   leagueId <span class='op'>=</span> <span class='fu'><a href='ffl_id.html'>ffl_id</a></span><span class='op'>(</span><span class='op'>)</span>,
   scoringPeriodId <span class='op'>=</span> <span class='fu'><a href='ffl_week.html'>ffl_week</a></span><span class='op'>(</span><span class='op'>)</span>,
-  projectedScore <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  useScore <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"actualScore"</span>, <span class='st'>"projectedScore"</span><span class='op'>)</span>,
   <span class='va'>...</span>
 <span class='op'>)</span></pre>
 
@@ -159,10 +159,8 @@ optimized. If <code>scoringPeriodId</code> is the current week (the default), th
 actual scoring might be incomplete (see <code>projectedScore</code> below).</p></td>
     </tr>
     <tr>
-      <th>projectedScore</th>
-      <td><p>logical; Should rosters be sorted using the ESPN
-<code>projectedScore</code>? If any players are missing an <code>actualScore</code> value, then
-<code>projectedScore</code> will be used regardless of this argument.</p></td>
+      <th>useScore</th>
+      <td><p>One of "projectedScore" or "actualScore" (default).</p></td>
     </tr>
     <tr>
       <th>...</th>
