@@ -7,15 +7,14 @@
 #' @param scoringPeriodId The scoring period for which rosters will be
 #'   optimized. If `scoringPeriodId` is the current week (the default), then
 #'   actual scoring might be incomplete (see `projectedScore` below).
-#' @param projectedScore logical; Should rosters be sorted using the ESPN
-#'   `projectedScore`? If any players are missing an `actualScore` value, then
-#'   `projectedScore` will be used regardless of this argument.
+#' @param useScore One of "projectedScore" or "actualScore" (default).
 #' @examples
 #' best_roster(leagueId = "42654852", scoringPeriodId = 1)
 #' @return A dataframe (or list) with optimal rosters.
 #' @export
 best_roster <- function(leagueId = ffl_id(), scoringPeriodId = ffl_week(),
-                        projectedScore = FALSE, ...) {
+                        useScore = c("actualScore", "projectedScore"), ...) {
+  useScore <- match.arg(useScore, c("actualScore", "projectedScore"))
   dat <- ffl_api(
     leagueId = leagueId,
     view = c("mRoster", "mSettings", "mTeam"),
@@ -38,15 +37,14 @@ best_roster <- function(leagueId = ffl_id(), scoringPeriodId = ffl_week(),
     }
   )
   names(rosters) <- dat$teams$abbrev
-  proj <- any(is.na(unlist(sapply(rosters, `[[`, "actualScore"))))
-  score_col <- ifelse(projectedScore || proj, "projectedScore", "actualScore")
-  lapply(rosters, out_best, do_slot, slot_count, score_col)
+  # proj <- any(is.na(unlist(sapply(rosters, `[[`, "actualScore"))))
+  lapply(rosters, out_best, do_slot, slot_count, score_col = useScore)
 }
 
 out_best <- function(r,
                      do_slot,
                      slot_count,
-                     score_col = "projectedScore") {
+                     score_col) {
   most_elig <- names(sort(table(unlist(r$eligibleSlots))))
   most_elig <- most_elig[most_elig %in% do_slot]
   most_elig <- most_elig[most_elig != "21" & most_elig != "25"]
@@ -56,9 +54,12 @@ out_best <- function(r,
     is_elig <- sapply(r$eligibleSlots, has_slot, s)
     n_elig <- sum(is_elig)
     if (n_elig < n_max) {
-      warning(
-        sprintf("Slot %s has %i maximum but %i eligible", s, n_max, n_elig)
-      )
+      if (s != "20") {
+        warning(
+          sprintf("Slot %s has %i maximum but %i eligible", s, n_max, n_elig),
+          call. = FALSE
+        )
+      }
       if (n_elig == 0) {
         next
       }
