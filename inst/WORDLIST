@@ -17,6 +17,7 @@ Rostered
 TBD
 Unnest
 WR
+actualScore
 httr
 leagueId
 mRoster
@@ -24,6 +25,7 @@ mSettings
 matchup
 matchups
 pre
+projectedScore
 th
 tibble
 writeups

@@ -7,7 +7,7 @@
 best_roster(
   leagueId = ffl_id(),
   scoringPeriodId = ffl_week(),
-  projectedScore = FALSE,
+  useScore = c("actualScore", "projectedScore"),
   ...
 )
 }
@@ -19,9 +19,7 @@ best_roster(
 optimized. If \code{scoringPeriodId} is the current week (the default), then
 actual scoring might be incomplete (see \code{projectedScore} below).}
 
-\item{projectedScore}{logical; Should rosters be sorted using the ESPN
-\code{projectedScore}? If any players are missing an \code{actualScore} value, then
-\code{projectedScore} will be used regardless of this argument.}
+\item{useScore}{One of "projectedScore" or "actualScore" (default).}
 
 \item{...}{Additional queries passed to \code{\link[httr:GET]{httr::GET()}}
 (e.g., \code{scoringPeriodId}). Arguments are converted to a named list to be
