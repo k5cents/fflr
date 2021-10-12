@@ -1,0 +1,143 @@
+category,statId,statAbbrev,statDesc,defaultPoints
+Passing,3,PY,Every 1 passing yards,0.04
+Passing,0,PA,Each Pass Attempted,0
+Passing,1,PC,Every 1 completions,0
+Passing,2,INC,Every 1 incomplete passes,0
+Passing,4,PTD,TD Pass,4
+Passing,15,PTD40,40+ yard TD pass bonus,0
+Passing,16,PTD50,50+ yard TD pass bonus,0
+Passing,20,INT,Interceptions Thrown,-2
+Passing,19,2PC,2pt Passing Conversion,2
+Passing,17,P300,300-399 yard passing game,0
+Passing,18,P400,400+ yard passing game,0
+Passing,64,SK,Sacked,0
+Rushing,24,RY,Every 1 rushing yards,0.1
+Rushing,23,RA,Every 1 rushing attempts,0
+Rushing,25,RTD,TD Rush,6
+Rushing,35,RTD40,40+ yard TD rush bonus,0
+Rushing,36,RTD50,50+ yard TD rush bonus,0
+Rushing,26,2PR,2pt Rushing Conversion,2
+Rushing,37,RY100,100-199 yard rushing game,0
+Rushing,38,RY200,200+ yard rushing game,0
+Receiving,42,REY,Every 1 receiving yards,0.1
+Receiving,53,REC,Every 1 receptions,1
+Receiving,43,RETD,TD Reception,6
+Receiving,45,RETD40,40+ yard TD rec bonus,0
+Receiving,46,RETD50,50+ yard TD rec bonus,0
+Receiving,44,2PRE,2pt Receiving Conversion,2
+Receiving,56,REY100,100-199 yard receiving game,0
+Receiving,57,REY200,200+ yard receiving game,0
+Receiving,58,RET,Receiving Target,0
+Kicking,86,PAT,Each PAT Made,1
+Kicking,87,PATA,Each PAT Attempted,0
+Kicking,88,PATM,Each PAT Missed,0
+Kicking,83,FG,Total FG Made,0
+Kicking,84,FGA,Total FG Attempted,0
+Kicking,85,FGM,Total FG Missed,-1
+Kicking,80,FG0,FG Made (0-39 yards),3
+Kicking,77,FG40,FG Made (40-49 yards),4
+Kicking,198,FG50,FG Made (50-59 yards),5
+Kicking,201,FG60,FG Made (60+ yards),6
+Kicking,81,FGA0,FG Attempted (0-39 yards),0
+Kicking,78,FGA40,FG Attempted (40-49 yards),0
+Kicking,199,FGA50,FG Attempted (50-59 yards),0
+Kicking,202,FGA60,FG Attempted (60+ yards),0
+Kicking,82,FGM0,FG Missed (0-39 yards),0
+Kicking,79,FGM40,FG Missed (40-49 yards),0
+Kicking,200,FGM50,FG Missed (50-59 yards),0
+Kicking,203,FGM60,FG Missed (60+ yards),0
+Team Defense / Special Teams,114,KR,Every 1 kickoff return yards,0
+Team Defense / Special Teams,115,PR,Every 1 punt return yards,0
+Team Defense / Special Teams,99,SK,Every 1 sacks,1
+Team Defense / Special Teams,109,TK,Every 1 total tackles,0
+Team Defense / Special Teams,103,INTTD,Interception Return TD,6
+Team Defense / Special Teams,104,FRTD,Fumble Return TD,6
+Team Defense / Special Teams,101,KRTD,Kickoff Return TD,6
+Team Defense / Special Teams,102,PRTD,Punt Return TD,6
+Team Defense / Special Teams,93,BLKKRTD,Blocked Punt or FG return for TD,6
+Team Defense / Special Teams,97,BLKK,"Blocked Punt, PAT or FG",2
+Team Defense / Special Teams,95,INT,Each Interception,2
+Team Defense / Special Teams,96,FR,Each Fumble Recovered,2
+Team Defense / Special Teams,106,FF,Each Fumble Forced,0
+Team Defense / Special Teams,98,SF,Each Safety,2
+Team Defense / Special Teams,112,ST,Stuffs,0
+Team Defense / Special Teams,113,PD,Passes Defensed,0
+Team Defense / Special Teams,120,PA,Points Allowed,0
+Team Defense / Special Teams,89,PA0,0 points allowed,5
+Team Defense / Special Teams,90,PA1,1-6 points allowed,4
+Team Defense / Special Teams,91,PA7,7-13 points allowed,3
+Team Defense / Special Teams,92,PA14,14-17 points allowed,1
+Team Defense / Special Teams,121,PA18,18-21 points allowed,0
+Team Defense / Special Teams,122,PA22,22-27 points allowed,0
+Team Defense / Special Teams,123,PA28,28-34 points allowed,-1
+Team Defense / Special Teams,124,PA35,35-45 points allowed,-3
+Team Defense / Special Teams,125,PA46,46+ points allowed,-5
+Team Defense / Special Teams,127,YA,Yards Allowed,0
+Team Defense / Special Teams,128,YA100,Less than 100 total yards allowed,5
+Team Defense / Special Teams,129,YA199,100-199 total yards allowed,3
+Team Defense / Special Teams,130,YA299,200-299 total yards allowed,2
+Team Defense / Special Teams,131,YA349,300-349 total yards allowed,0
+Team Defense / Special Teams,132,YA399,350-399 total yards allowed,-1
+Team Defense / Special Teams,133,YA449,400-449 total yards allowed,-3
+Team Defense / Special Teams,134,YA499,450-499 total yards allowed,-5
+Team Defense / Special Teams,135,YA549,500-549 total yards allowed,-6
+Team Defense / Special Teams,136,YA550,550+ total yards allowed,-7
+Team Defense / Special Teams,206,2PTRET,2pt Return,2
+Team Defense / Special Teams,209,1PSF,1pt Safety,1
+Miscellaneous,114,KR,Every 1 kickoff return yards,0
+Miscellaneous,115,PR,Every 1 punt return yards,0
+Miscellaneous,101,KRTD,Kickoff Return TD,6
+Miscellaneous,102,PRTD,Punt Return TD,6
+Miscellaneous,63,FTD,Fumble Recovered for TD,6
+Miscellaneous,68,FUM,Total Fumbles,0
+Miscellaneous,72,FUML,Total Fumbles Lost,-2
+Miscellaneous,155,TW,Team Win,0
+Miscellaneous,156,TL,Team Loss,0
+Miscellaneous,103,INTTD,Interception Return TD,6
+Miscellaneous,104,FRTD,Fumble Return TD,6
+Miscellaneous,93,BLKKRTD,Blocked Punt or FG return for TD,6
+Miscellaneous,206,2PTRET,2pt Return,2
+Miscellaneous,209,1PSF,1pt Safety,1
+Defensive Players,99,SK,Every 1 sacks,1
+Defensive Players,109,TK,Every 1 total tackles,0
+Defensive Players,97,BLKK,"Blocked Punt, PAT or FG",2
+Defensive Players,95,INT,Each Interception,2
+Defensive Players,96,FR,Each Fumble Recovered,2
+Defensive Players,106,FF,Each Fumble Forced,0
+Defensive Players,98,SF,Each Safety,2
+Defensive Players,107,TKA,Assisted Tackles,0
+Defensive Players,108,TKS,Solo Tackles,0
+Defensive Players,112,ST,Stuffs,0
+Defensive Players,113,PD,Passes Defensed,0
+Head Coach,155,TW,Team Win,0
+Head Coach,156,TL,Team Loss,0
+Head Coach,157,TIE,Team Tie,0
+Head Coach,158,PTS,Points Scored,0
+Head Coach,161,WM25,25+ point Win Margin,10
+Head Coach,162,WM20,20-24 point Win Margin,8
+Head Coach,163,WM15,15-19 point Win Margin,6
+Head Coach,164,WM10,10-14 point Win Margin,4
+Head Coach,165,WM5,5-9 point Win Margin,2
+Head Coach,166,WM1,1-4 point Win Margin,1
+Head Coach,167,LM1,1-4 point Loss Margin,0
+Head Coach,168,LM5,5-9 point Loss Margin,0
+Head Coach,169,LM10,10-14 point Loss Margin,0
+Head Coach,170,LM15,15-19 point Loss Margin,0
+Head Coach,171,LM20,20-24 point Loss Margin,0
+Head Coach,172,LM25,25+ point Loss Margin,0
+Punting,138,PT,Net Punts,0
+Punting,139,PTY,Punt Yards,0
+Punting,140,PT10,Punts Inside the 10,0
+Punting,141,PT20,Punts Inside the 20,1
+Punting,142,PTB,Blocked Punts,0
+Punting,143,PTR,Punts Returned,0
+Punting,144,PTRY,Punt Return Yards,0
+Punting,145,PTTB,Touchbacks,0
+Punting,146,PTFC,Fair Catches,0
+Punting,148,PTA44,Punt Average 44.0+,3
+Punting,149,PTA42,Punt Average 42.0-43.9,2
+Punting,150,PTA40,Punt Average 40.0-41.9,1
+Punting,151,PTA38,Punt Average 38.0-39.9,0
+Punting,152,PTA36,Punt Average 36.0-37.9,0
+Punting,153,PTA34,Punt Average 34.0-35.9,0
+Punting,154,PTA33,Punt Average 33.9 or less,0
