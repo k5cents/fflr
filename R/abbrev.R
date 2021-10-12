@@ -14,6 +14,17 @@ team_abbrev <- function(teamId, teams = league_teams(leagueId = ffl_id())) {
   teams$abbrev[match(teamId, teams$teamId)]
 }
 
+team_unabbrev <- function(abbrev, teams = league_teams(leagueId = ffl_id())) {
+  if (all(could_be_numeric(abbrev))) {
+    return(as.integer(abbrev))
+  } else if (is.character(abbrev) && abbrev %in% teams$abbrev) {
+    teams$teamId[match(abbrev, teams$abbrev)]
+  } else {
+    stop("Abbreviation not found for this team ID")
+  }
+}
+
+
 # -------------------------------------------------------------------------
 
 slot_abbrev <- function(slot) {
