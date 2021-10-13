@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9009</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9010</span>
       </span>
     </div>
 
@@ -144,20 +144,20 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>pro_scores</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 32 × 9</span>
-#&gt;    id    type  homeAway abbreviation score winner record name     lineup    
-#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>        <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;list&gt;</span>    
-#&gt; <span style='color: #BCBCBC;'> 1</span> 26    team  home     SEA             17 FALSE  2-3    Seahawks <span style='color: #949494;'>&lt;list [0]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 2</span> 14    team  away     LAR             26 TRUE   4-1    Rams     <span style='color: #949494;'>&lt;list [0]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 3</span> 1     team  home     ATL             27 TRUE   2-3    Falcons  <span style='color: #949494;'>&lt;list [0]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 4</span> 20    team  away     NYJ             20 FALSE  1-4    Jets     <span style='color: #949494;'>&lt;list [0]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 5</span> 4     team  home     CIN             22 FALSE  3-2    Bengals  <span style='color: #949494;'>&lt;list [0]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 6</span> 9     team  away     GB              25 TRUE   4-1    Packers  <span style='color: #949494;'>&lt;list [0]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 7</span> 16    team  home     MIN             19 TRUE   2-3    Vikings  <span style='color: #949494;'>&lt;list [0]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 8</span> 8     team  away     DET             17 FALSE  0-5    Lions    <span style='color: #949494;'>&lt;list [0]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 9</span> 23    team  home     PIT             27 TRUE   2-3    Steelers <span style='color: #949494;'>&lt;list [0]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'>10</span> 7     team  away     DEN             19 FALSE  3-2    Broncos  <span style='color: #949494;'>&lt;list [0]&gt;</span>
-#&gt; <span style='color: #949494;'># … with 22 more rows</span></div></pre>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 28 × 9</span>
+#&gt;    id    type  homeAway abbreviation score winner record name       lineup    
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>        <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;list&gt;</span>    
+#&gt; <span style='color: #BCBCBC;'> 1</span> 21    team  home     PHI             <span style='color: #BB0000;'>NA</span> FALSE  2-3    Eagles     <span style='color: #949494;'>&lt;list [0]&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 2</span> 27    team  away     TB              <span style='color: #BB0000;'>NA</span> FALSE  4-1    Buccaneers <span style='color: #949494;'>&lt;list [0]&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 3</span> 30    team  home     JAX             <span style='color: #BB0000;'>NA</span> FALSE  0-5    Jaguars    <span style='color: #949494;'>&lt;list [0]&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 4</span> 15    team  away     MIA             <span style='color: #BB0000;'>NA</span> FALSE  1-4    Dolphins   <span style='color: #949494;'>&lt;list [0]&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 5</span> 3     team  home     CHI             <span style='color: #BB0000;'>NA</span> FALSE  3-2    Bears      <span style='color: #949494;'>&lt;list [0]&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 6</span> 9     team  away     GB              <span style='color: #BB0000;'>NA</span> FALSE  4-1    Packers    <span style='color: #949494;'>&lt;list [0]&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 7</span> 8     team  home     DET             <span style='color: #BB0000;'>NA</span> FALSE  0-5    Lions      <span style='color: #949494;'>&lt;list [0]&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 8</span> 4     team  away     CIN             <span style='color: #BB0000;'>NA</span> FALSE  3-2    Bengals    <span style='color: #949494;'>&lt;list [0]&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 9</span> 11    team  home     IND             <span style='color: #BB0000;'>NA</span> FALSE  1-4    Colts      <span style='color: #949494;'>&lt;list [0]&gt;</span>
+#&gt; <span style='color: #BCBCBC;'>10</span> 34    team  away     HOU             <span style='color: #BB0000;'>NA</span> FALSE  1-4    Texans     <span style='color: #949494;'>&lt;list [0]&gt;</span>
+#&gt; <span style='color: #949494;'># … with 18 more rows</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
