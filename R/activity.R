@@ -11,9 +11,10 @@ recent_activity <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   dat <- ffl_api(
     leagueId = leagueId,
     leagueHistory = leagueHistory,
-    view = "mTransactions2",
+    view = c("mTransactions2", "mTeam"),
     ...
   )
+  tm <- out_team(dat$teams, trim = TRUE)
   if (leagueHistory) {
     stop("not currently supported for past seasons")
   } else if (is.null(dat$transactions)) {
@@ -33,14 +34,19 @@ recent_activity <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
     i$fromTeamId[i$fromTeamId == 0] <- NA_integer_
     i$toLineupSlotId[i$toLineupSlotId == -1L] <- NA_integer_
     i$toLineupSlotId[i$toLineupSlotId == 0] <- NA_integer_
-
     t$bidAmount[t$bidAmount == 0] <- NA_integer_
     t$proposedDate <- ffl_date(t$proposedDate)
+    t$processDate <- ffl_date(t$processDate)
     t$seaonId <- dat$seasonId
-    t <- t[, c("seaonId", "rating", "bidAmount", "scoringPeriodId", "memberId",
-               "status", "id")]
+    t <- t[, c("seaonId", "scoringPeriodId", "proposedDate", "processDate",
+               "bidAmount", "status", "id")]
     t <- merge(t, i, by = "id")
     t$id <- substr(t$id, start = 1, stop = 8)
-    as_tibble(t)
+    t$bidAmount[t$type == "DROP"] <- NA
+    t$toTeamId[t$toTeamId == 0] <- NA
+    t$fromTeamId[t$fromTeamId == 0] <- NA
+    t$abbrev <- team_abbrev(t$toTeamId, teams = tm)
+    t <- move_col(t, "abbrev", 13)
+    as_tibble(t[order(t$proposedDate), ])
   }
 }
