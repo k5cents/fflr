@@ -18,5 +18,22 @@ combine_history <- function(fun, ...) {
   old <- fun(..., leagueHistory = TRUE)
   old <- bind_df(old, .id = NULL)
   new <- fun(..., leagueHistory = FALSE)
+
+  n_old <- ncol(old)
+  n_new <- ncol(new)
+  if (n_new > n_old) {
+    old <- balance_col(old, new)
+  } else if (n_old > n_new) {
+    new <- balance_col(new, old)
+  }
+
   bind_df(list(old, new))
+}
+
+balance_col <- function(small, big) {
+  nm_diff <- setdiff(names(big), names(small))
+  n_diff <- length(nm_diff)
+  small <- cbind(small, matrix(ncol = n_diff))
+  names(small)[seq(n_old + 1, length(small))] <- nm_diff
+  return(small)
 }
