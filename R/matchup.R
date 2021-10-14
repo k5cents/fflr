@@ -44,7 +44,7 @@ out_sched <- function(s, y = NULL, team = NULL) {
     teamId = c(s$home$teamId, s$away$teamId),
     abbrev = team_abbrev(c(s$home$teamId, s$away$teamId), team),
     opponent = team_abbrev(c(s$away$teamId, s$home$teamId), team),
-    home = c(rep(TRUE, nrow(s)), rep(FALSE, nrow(s)))
+    isHome = c(rep(TRUE, nrow(s)), rep(FALSE, nrow(s)))
   )
   as_tibble(out[order(out$matchupId), ])
 }
