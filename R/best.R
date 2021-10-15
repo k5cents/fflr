@@ -3,17 +3,18 @@
 #' Uses the roster settings for each league to find the best possible
 #' combinations of players to score the most fantasy points.
 #'
+#' If `scoringPeriodId` is the current week (the default), then actual scoring
+#' might be incomplete (see `projectedScore` argument).
+#'
 #' @inheritParams ffl_api
-#' @param scoringPeriodId The scoring period for which rosters will be
-#'   optimized. If `scoringPeriodId` is the current week (the default), then
-#'   actual scoring might be incomplete (see `projectedScore` below).
 #' @param useScore One of "projectedScore" or "actualScore" (default).
 #' @examples
 #' best_roster(leagueId = "42654852", scoringPeriodId = 1)
 #' @return A dataframe (or list) with optimal rosters.
 #' @export
-best_roster <- function(leagueId = ffl_id(), scoringPeriodId = ffl_week(),
-                        useScore = c("actualScore", "projectedScore"), ...) {
+best_roster <- function(leagueId = ffl_id(),
+                        useScore = c("actualScore", "projectedScore"),
+                        scoringPeriodId = NULL, ...) {
   useScore <- match.arg(useScore, c("actualScore", "projectedScore"))
   dat <- ffl_api(
     leagueId = leagueId,

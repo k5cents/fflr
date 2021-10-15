@@ -7,11 +7,13 @@
 #' team_roster(leagueId = "42654852", scoringPeriodId = 1)
 #' @return A dataframe (or list) with league teams.
 #' @export
-team_roster <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
+team_roster <- function(leagueId = ffl_id(), leagueHistory = FALSE,
+                        scoringPeriodId = NULL, ...) {
   dat <- ffl_api(
     leagueId = leagueId,
     leagueHistory = leagueHistory,
     view = c("mRoster", "mTeam"),
+    scoringPeriodId = scoringPeriodId,
     ...
   )
   if (leagueHistory) {

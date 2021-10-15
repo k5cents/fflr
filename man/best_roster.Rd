@@ -6,8 +6,8 @@
 \usage{
 best_roster(
   leagueId = ffl_id(),
-  scoringPeriodId = ffl_week(),
   useScore = c("actualScore", "projectedScore"),
+  scoringPeriodId = NULL,
   ...
 )
 }
@@ -15,11 +15,11 @@ best_roster(
 \item{leagueId}{Numeric league ID or ESPN fantasy page URL. Defaults to
 \code{getOption("fflr.leagueId")}. Function fails if no ID is found.}
 
-\item{scoringPeriodId}{The scoring period for which rosters will be
-optimized. If \code{scoringPeriodId} is the current week (the default), then
-actual scoring might be incomplete (see \code{projectedScore} below).}
-
 \item{useScore}{One of "projectedScore" or "actualScore" (default).}
+
+\item{scoringPeriodId}{Integer week of NFL season. By default, \code{NULL} will
+use the current week (see \code{\link[=ffl_week]{ffl_week()}}). Scoring periods are always one
+week in length, whereas matchups might be longer.}
 
 \item{...}{Additional queries passed to \code{\link[httr:GET]{httr::GET()}}. Arguments are
 converted to a named list and passed to \code{query} alongside \code{view}.}
@@ -30,6 +30,10 @@ A dataframe (or list) with optimal rosters.
 \description{
 Uses the roster settings for each league to find the best possible
 combinations of players to score the most fantasy points.
+}
+\details{
+If \code{scoringPeriodId} is the current week (the default), then actual scoring
+might be incomplete (see \code{projectedScore} argument).
 }
 \examples{
 best_roster(leagueId = "42654852", scoringPeriodId = 1)

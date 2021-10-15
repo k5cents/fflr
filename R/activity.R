@@ -7,11 +7,13 @@
 #' @examples
 #' recent_activity(leagueId = "42654852", scoringPeriodId = 2)
 #' @export
-recent_activity <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
+recent_activity <- function(leagueId = ffl_id(), leagueHistory = FALSE,
+                            scoringPeriodId = NULL, ...) {
   dat <- ffl_api(
     leagueId = leagueId,
     leagueHistory = leagueHistory,
     view = c("mTransactions2", "mTeam"),
+    scoringPeriodId = scoringPeriodId,
     ...
   )
   tm <- out_team(dat$teams, trim = TRUE)
