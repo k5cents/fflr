@@ -15,10 +15,8 @@ combine_history <- function(fun, ...) {
   if (!("leagueHistory" %in% names(formals(fun)))) {
     stop("leagueHistory is not an argument of this function")
   }
-  old <- fun(..., leagueHistory = TRUE)
-  old <- bind_df(old, .id = NULL)
+  old <- bind_df(fun(..., leagueHistory = TRUE), .id = NULL)
   new <- fun(..., leagueHistory = FALSE)
-
   n_old <- ncol(old)
   n_new <- ncol(new)
   if (n_new > n_old) {
@@ -26,14 +24,14 @@ combine_history <- function(fun, ...) {
   } else if (n_old > n_new) {
     new <- balance_col(new, old)
   }
-
   bind_df(list(old, new))
 }
 
 balance_col <- function(small, big) {
+  n_small <- length(small)
   nm_diff <- setdiff(names(big), names(small))
   n_diff <- length(nm_diff)
   small <- cbind(small, matrix(ncol = n_diff))
-  names(small)[seq(n_old + 1, length(small))] <- nm_diff
+  names(small)[seq(n_small + 1, ncol(small))] <- nm_diff
   return(small)
 }
