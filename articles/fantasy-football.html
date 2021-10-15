@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9010</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9011</span>
       </span>
     </div>
 
@@ -95,7 +95,7 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">fflr</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html">packageVersion</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span>
-<span class="co">#&gt; [1] '1.9.2.9010'</span>
+<span class="co">#&gt; [1] '1.9.2.9011'</span>
 <span class="fu"><a href="../reference/ffl_id.html">ffl_id</a></span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span><span class="op">)</span>
 <span class="co">#&gt; Temporarily set `fflr.leagueId` option to 42654852</span>
 <span class="co">#&gt; [1] "42654852"</span></code></pre></div>
@@ -256,9 +256,9 @@
 <span class="co">#&gt;  $ finalScoringPeriod     : int 17</span>
 <span class="co">#&gt;  $ previousSeasons        :List of 1</span>
 <span class="co">#&gt;   ..$ : list()</span>
-<span class="co">#&gt;  $ standingsUpdateDate    : POSIXct[1:1], format: "2021-10-13 07:59:34"</span>
+<span class="co">#&gt;  $ standingsUpdateDate    : POSIXct[1:1], format: "2021-10-15 07:41:59"</span>
 <span class="co">#&gt;  $ teamsJoined            : int 4</span>
-<span class="co">#&gt;  $ waiverLastExecutionDate: POSIXct[1:1], format: "2021-10-13 07:59:34"</span>
+<span class="co">#&gt;  $ waiverLastExecutionDate: POSIXct[1:1], format: "2021-10-15 07:41:59"</span>
 <span class="co">#&gt;  $ waiverNextExecutionDate: POSIXct[1:1], format: NA</span>
 <span class="co">#&gt;  $ waiverProcessStatus    :List of 1</span>
 <span class="co">#&gt;   ..$ :'data.frame': 1 obs. of  2 variables:</span>
@@ -440,18 +440,18 @@
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/tidy_matchups.html">tidy_matchups</a></span><span class="op">(</span>scoringPeriodId <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 68 × 7</span>
-<span class="co">#&gt;    seasonId matchupPeriodId matchupId teamId abbrev opponent home </span>
-<span class="co">#&gt;       &lt;int&gt;           &lt;int&gt;     &lt;int&gt;  &lt;int&gt; &lt;fct&gt;  &lt;fct&gt;    &lt;lgl&gt;</span>
-<span class="co">#&gt;  1     2021               1         1      1 AUS    CHI      TRUE </span>
-<span class="co">#&gt;  2     2021               1         1      3 CHI    AUS      FALSE</span>
-<span class="co">#&gt;  3     2021               1         2      2 BOS    DEN      TRUE </span>
-<span class="co">#&gt;  4     2021               1         2      4 DEN    BOS      FALSE</span>
-<span class="co">#&gt;  5     2021               2         3      3 CHI    DEN      TRUE </span>
-<span class="co">#&gt;  6     2021               2         3      4 DEN    CHI      FALSE</span>
-<span class="co">#&gt;  7     2021               2         4      1 AUS    BOS      TRUE </span>
-<span class="co">#&gt;  8     2021               2         4      2 BOS    AUS      FALSE</span>
-<span class="co">#&gt;  9     2021               3         5      4 DEN    AUS      TRUE </span>
-<span class="co">#&gt; 10     2021               3         5      1 AUS    DEN      FALSE</span>
+<span class="co">#&gt;    seasonId matchupPeriodId matchupId teamId abbrev opponent isHome</span>
+<span class="co">#&gt;       &lt;int&gt;           &lt;int&gt;     &lt;int&gt;  &lt;int&gt; &lt;fct&gt;  &lt;fct&gt;    &lt;lgl&gt; </span>
+<span class="co">#&gt;  1     2021               1         1      1 AUS    CHI      TRUE  </span>
+<span class="co">#&gt;  2     2021               1         1      3 CHI    AUS      FALSE </span>
+<span class="co">#&gt;  3     2021               1         2      2 BOS    DEN      TRUE  </span>
+<span class="co">#&gt;  4     2021               1         2      4 DEN    BOS      FALSE </span>
+<span class="co">#&gt;  5     2021               2         3      3 CHI    DEN      TRUE  </span>
+<span class="co">#&gt;  6     2021               2         3      4 DEN    CHI      FALSE </span>
+<span class="co">#&gt;  7     2021               2         4      1 AUS    BOS      TRUE  </span>
+<span class="co">#&gt;  8     2021               2         4      2 BOS    AUS      FALSE </span>
+<span class="co">#&gt;  9     2021               3         5      4 DEN    AUS      TRUE  </span>
+<span class="co">#&gt; 10     2021               3         5      1 AUS    DEN      FALSE </span>
 <span class="co">#&gt; # … with 58 more rows</span></code></pre></div>
 </div>
 <div id="message-board" class="section level3">
@@ -534,13 +534,13 @@
 <span class="co">#&gt;    seasonId scoringPeriodId      id firstName lastName  proTeam defaultPositionId</span>
 <span class="co">#&gt;       &lt;int&gt;           &lt;dbl&gt;   &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;fct&gt;   &lt;fct&gt;            </span>
 <span class="co">#&gt;  1     2021               6 3916387 Lamar     Jackson   Bal     QB               </span>
-<span class="co">#&gt;  2     2021               6    2330 Tom       Brady     TB      QB               </span>
-<span class="co">#&gt;  3     2021               6 4052042 James     Robinson  Jax     RB               </span>
+<span class="co">#&gt;  2     2021               6 4052042 James     Robinson  Jax     RB               </span>
+<span class="co">#&gt;  3     2021               6    2330 Tom       Brady     TB      QB               </span>
 <span class="co">#&gt;  4     2021               6 4036133 T.J.      Hockenson Det     TE               </span>
 <span class="co">#&gt;  5     2021               6    8439 Aaron     Rodgers   GB      QB               </span>
-<span class="co">#&gt;  6     2021               6 3126486 Deebo     Samuel    SF      WR               </span>
-<span class="co">#&gt;  7     2021               6 4038941 Justin    Herbert   LAC     QB               </span>
-<span class="co">#&gt;  8     2021               6 3045138 Mike      Williams  LAC     WR               </span>
+<span class="co">#&gt;  6     2021               6 4038941 Justin    Herbert   LAC     QB               </span>
+<span class="co">#&gt;  7     2021               6 3045138 Mike      Williams  LAC     WR               </span>
+<span class="co">#&gt;  8     2021               6 3126486 Deebo     Samuel    SF      WR               </span>
 <span class="co">#&gt;  9     2021               6 4360248 Kyle      Pitts     Atl     TE               </span>
 <span class="co">#&gt; 10     2021               6 3059915 Kareem    Hunt      Cle     RB               </span>
 <span class="co">#&gt; # … with 12 more variables: injuryStatus &lt;chr&gt;, percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;,</span>
@@ -556,7 +556,7 @@
 <span class="co">#&gt; # A tibble: 4 × 5</span>
 <span class="co">#&gt;   currentMatchupPeriod    id teamId totalPointsLive totalProjectedPointsLive</span>
 <span class="co">#&gt;                  &lt;int&gt; &lt;int&gt; &lt;fct&gt;            &lt;dbl&gt;                    &lt;dbl&gt;</span>
-<span class="co">#&gt; 1                    6    11 AUS                  1                     125.</span>
+<span class="co">#&gt; 1                    6    11 AUS                  7                     125.</span>
 <span class="co">#&gt; 2                    6    11 DEN                  0                     122.</span>
 <span class="co">#&gt; 3                    6    12 CHI                  1                     140.</span>
 <span class="co">#&gt; 4                    6    12 BOS                  0                     130.</span></code></pre></div>
