@@ -21,9 +21,8 @@ actual scoring might be incomplete (see \code{projectedScore} below).}
 
 \item{useScore}{One of "projectedScore" or "actualScore" (default).}
 
-\item{...}{Additional queries passed to \code{\link[httr:GET]{httr::GET()}}
-(e.g., \code{scoringPeriodId}). Arguments are converted to a named list to be
-passed alongside \code{view}.}
+\item{...}{Additional queries passed to \code{\link[httr:GET]{httr::GET()}}. Arguments are
+converted to a named list and passed to \code{query} alongside \code{view}.}
 }
 \value{
 A dataframe (or list) with optimal rosters.

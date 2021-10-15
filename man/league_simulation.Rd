@@ -14,9 +14,8 @@ league_simulation(leagueId = ffl_id(), leagueHistory = FALSE, ...)
 be called? If \code{TRUE}, a list of results is returned, with one element for
 each historical year of the league.}
 
-\item{...}{Additional queries passed to \code{\link[httr:GET]{httr::GET()}}
-(e.g., \code{scoringPeriodId}). Arguments are converted to a named list to be
-passed alongside \code{view}.}
+\item{...}{Additional queries passed to \code{\link[httr:GET]{httr::GET()}}. Arguments are
+converted to a named list and passed to \code{query} alongside \code{view}.}
 }
 \value{
 A data frame of simulated team standings.

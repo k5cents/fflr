@@ -19,9 +19,8 @@ each historical year of the league.}
 to a single week of the NFL season, while fantasy matchups might span
 several scoring periods, especially in the playoffs.}
 
-\item{...}{Additional queries passed to \code{\link[httr:GET]{httr::GET()}}
-(e.g., \code{scoringPeriodId}). Arguments are converted to a named list to be
-passed alongside \code{view}.}
+\item{...}{Additional queries passed to \code{\link[httr:GET]{httr::GET()}}. Arguments are
+converted to a named list and passed to \code{query} alongside \code{view}.}
 }
 \value{
 A tidy data frame of scores by team and matchup/scoring period.

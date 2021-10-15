@@ -13,9 +13,11 @@
 #' @param seasonId Integer year of NFL season. By default, the season is
 #'   currently set to 2021. Use a recent year or set `leagueHistory` to `TRUE`
 #'   to obtain all past data.
-#' @param ... Additional queries passed to [httr::GET()]
-#'   (e.g., `scoringPeriodId`). Arguments are converted to a named list to be
-#'   passed alongside `view`.
+#' @param scoringPeriodId Integer week of NFL season. By default, `NULL` will
+#'   use the current week (see [ffl_week()]). Scoring periods are always one
+#'   week in length, whereas matchups might be longer.
+#' @param ... Additional queries passed to [httr::GET()]. Arguments are
+#'   converted to a named list and passed to `query` alongside `view`.
 #' @examples
 #' \dontrun{
 #' ffl_api()
@@ -27,8 +29,8 @@
 #' @keywords internal
 #' @export
 ffl_api <- function(leagueId = ffl_id(), view = NULL, leagueHistory = FALSE,
-                    seasonId = 2021, ...) {
-  dots <- list(...)
+                    seasonId = 2021, scoringPeriodId = NULL, ...) {
+  dots <- list(..., scoringPeriodId = scoringPeriodId)
   age_path <- ifelse(
     test = isTRUE(leagueHistory),
     yes = "leagueHistory",

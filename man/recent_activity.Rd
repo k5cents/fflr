@@ -4,7 +4,12 @@
 \alias{recent_activity}
 \title{Roster moves}
 \usage{
-recent_activity(leagueId = ffl_id(), leagueHistory = FALSE, ...)
+recent_activity(
+  leagueId = ffl_id(),
+  leagueHistory = FALSE,
+  scoringPeriodId = NULL,
+  ...
+)
 }
 \arguments{
 \item{leagueId}{Numeric league ID or ESPN fantasy page URL. Defaults to
@@ -14,9 +19,12 @@ recent_activity(leagueId = ffl_id(), leagueHistory = FALSE, ...)
 be called? If \code{TRUE}, a list of results is returned, with one element for
 each historical year of the league.}
 
-\item{...}{Additional queries passed to \code{\link[httr:GET]{httr::GET()}}
-(e.g., \code{scoringPeriodId}). Arguments are converted to a named list to be
-passed alongside \code{view}.}
+\item{scoringPeriodId}{Integer week of NFL season. By default, \code{NULL} will
+use the current week (see \code{\link[=ffl_week]{ffl_week()}}). Scoring periods are always one
+week in length, whereas matchups might be longer.}
+
+\item{...}{Additional queries passed to \code{\link[httr:GET]{httr::GET()}}. Arguments are
+converted to a named list and passed to \code{query} alongside \code{view}.}
 }
 \value{
 A data frame of transactions and roster moves.

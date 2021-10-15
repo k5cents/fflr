@@ -9,6 +9,7 @@ ffl_api(
   view = NULL,
   leagueHistory = FALSE,
   seasonId = 2021,
+  scoringPeriodId = NULL,
   ...
 )
 }
@@ -27,9 +28,12 @@ each historical year of the league.}
 currently set to 2021. Use a recent year or set \code{leagueHistory} to \code{TRUE}
 to obtain all past data.}
 
-\item{...}{Additional queries passed to \code{\link[httr:GET]{httr::GET()}}
-(e.g., \code{scoringPeriodId}). Arguments are converted to a named list to be
-passed alongside \code{view}.}
+\item{scoringPeriodId}{Integer week of NFL season. By default, \code{NULL} will
+use the current week (see \code{\link[=ffl_week]{ffl_week()}}). Scoring periods are always one
+week in length, whereas matchups might be longer.}
+
+\item{...}{Additional queries passed to \code{\link[httr:GET]{httr::GET()}}. Arguments are
+converted to a named list and passed to \code{query} alongside \code{view}.}
 }
 \value{
 A single JSON string.
