@@ -1,10 +1,17 @@
 #' Get fantasy football information
 #'
-#' Information on the current fantasy football season.
+#' Information on the current fantasy football season, with functions to quickly
+#' access and modify certain information (like the current `seasonId` or
+#' `scoringPeriodId`).
 #'
 #' @return A list of season information.
+#' @param offset Add negative or positive values.
 #' @examples
 #' str(ffl_info())
+#' Sys.time()
+#' ffl_year()
+#' ffl_week(-1)
+#' @family Game information
 #' @export
 ffl_info <- function() {
   x <- try_json("https://fantasy.espn.com/apis/v3/games/ffl")
@@ -18,26 +25,14 @@ ffl_info <- function() {
   )
 }
 
-#' Current fantasy season
-#'
-#' @param offset Add negative or positive values.
-#' @examples
-#' Sys.time()
-#' ffl_year()
-#' @return The current or offset `seasonId` integer.
+#' @rdname ffl_info
 #' @export
 ffl_year <- function(offset = 0) {
   x <- ffl_info()
   x$currentSeason + offset
 }
 
-#' Current fantasy scoring period
-#'
-#' @inheritParams ffl_year
-#' @examples
-#' Sys.time()
-#' ffl_week(-1)
-#' @return The current or offset `scoringPeriodId` integer.
+#' @rdname ffl_info
 #' @export
 ffl_week <- function(offset = 0) {
   x <- ffl_info()
@@ -49,6 +44,7 @@ ffl_week <- function(offset = 0) {
 #' @return A tibble of fantasy football seasons.
 #' @examples
 #' ffl_seasons()
+#' @family Game information
 #' @export
 ffl_seasons <- function() {
   s <- try_json("https://fantasy.espn.com/apis/v3/games/ffl/seasons")
@@ -64,6 +60,7 @@ ffl_seasons <- function() {
 #' @return A tibble of fantasy games.
 #' @examples
 #' espn_games()
+#' @family Game information
 #' @export
 espn_games <- function() {
   g <- try_json("https://fantasy.espn.com/apis/v3/games")
