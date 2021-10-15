@@ -19,3 +19,10 @@ function may be adapted to take roster slots from \code{\link[=roster_settings]{
 \examples{
 start_roster(team_roster(leagueId = "42654852")[[1]])
 }
+\seealso{
+Other roster functions: 
+\code{\link{best_roster}()},
+\code{\link{roster_score}()},
+\code{\link{team_roster}()}
+}
+\concept{roster functions}

@@ -8,6 +8,7 @@
 #' @examples
 #' league_standings(leagueId = "42654852")
 #' @importFrom tibble tibble
+#' @family league functions
 #' @export
 league_standings <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   dat <- ffl_api(

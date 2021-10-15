@@ -6,6 +6,7 @@
 #' @return A data frame of NFL events.
 #' @examples
 #' pro_events()
+#' @family professional football functions
 #' @export
 pro_events <- function() {
   dat <- try_json("https://site.api.espn.com/apis/fantasy/v2/games/ffl/games")

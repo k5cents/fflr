@@ -6,6 +6,7 @@
 #' @examples
 #' team_roster(leagueId = "42654852", scoringPeriodId = 1)
 #' @return A dataframe (or list) with league teams.
+#' @family roster functions
 #' @export
 team_roster <- function(leagueId = ffl_id(), leagueHistory = FALSE,
                         scoringPeriodId = NULL, ...) {
@@ -122,6 +123,7 @@ out_roster <- function(entry, tid, tm, es = FALSE) {
 #' @return A data frame of starters on a roster.
 #' @examples
 #' start_roster(team_roster(leagueId = "42654852")[[1]])
+#' @family roster functions
 #' @export
 start_roster <- function(roster) {
   roster[roster$lineupSlot != "BE" & roster$lineupSlot != "IR", ]
@@ -135,6 +137,7 @@ start_roster <- function(roster) {
 #' @return A starting score as double.
 #' @examples
 #' roster_score(team_roster(leagueId = "42654852")[[1]])
+#' @family roster functions
 #' @export
 roster_score <- function(roster) {
   sum(start_roster(roster)$actualScore)

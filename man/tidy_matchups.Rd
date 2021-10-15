@@ -28,3 +28,14 @@ of home-away status. There are two rows per matchup, one for each team.
 \examples{
 tidy_matchups(leagueId = "42654852")
 }
+\seealso{
+Other league functions: 
+\code{\link{draft_recap}()},
+\code{\link{league_members}()},
+\code{\link{league_messages}()},
+\code{\link{league_standings}()},
+\code{\link{league_status}()},
+\code{\link{league_teams}()},
+\code{\link{transaction_counter}()}
+}
+\concept{league functions}

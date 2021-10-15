@@ -58,6 +58,7 @@
 #' @importFrom jsonlite toJSON fromJSON unbox
 #' @importFrom httr RETRY add_headers accept_json content http_type http_error
 #'   status_code
+#' @family player functions
 #' @export
 list_players <- function(leagueId = ffl_id(),
                          sort = "ROST",
@@ -196,6 +197,7 @@ list_players <- function(leagueId = ffl_id(),
 #' \dontrun{
 #' all_players()
 #' }
+#' @family player functions
 #' @export
 all_players <- function(...) {
   .Deprecated("list_players")
@@ -382,6 +384,7 @@ filter_sort <- function(sort = "ROST", scoringPeriodId) {
 #' @examples
 #' player_info(playerId = 15847)
 #' @importFrom tibble as_tibble
+#' @family player functions
 #' @export
 player_info <- function(playerId) {
   if (as.numeric(playerId) < 0) {

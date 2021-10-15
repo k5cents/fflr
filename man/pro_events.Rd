@@ -16,3 +16,8 @@ and broadcast information.
 \examples{
 pro_events()
 }
+\seealso{
+Other professional football functions: 
+\code{\link{pro_schedule}()}
+}
+\concept{professional football functions}

@@ -35,3 +35,13 @@ The individual proposed and executed transactions, trades, and waiver moves.
 \examples{
 recent_activity(leagueId = "42654852", scoringPeriodId = 2)
 }
+\seealso{
+Other player functions: 
+\code{\link{all_players}()},
+\code{\link{list_players}()},
+\code{\link{player_info}()},
+\code{\link{player_news}()},
+\code{\link{player_outlook}()},
+\code{\link{transaction_counter}()}
+}
+\concept{player functions}

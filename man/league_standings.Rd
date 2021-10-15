@@ -27,3 +27,14 @@ and points scored for and against each team.
 \examples{
 league_standings(leagueId = "42654852")
 }
+\seealso{
+Other league functions: 
+\code{\link{draft_recap}()},
+\code{\link{league_members}()},
+\code{\link{league_messages}()},
+\code{\link{league_status}()},
+\code{\link{league_teams}()},
+\code{\link{tidy_matchups}()},
+\code{\link{transaction_counter}()}
+}
+\concept{league functions}

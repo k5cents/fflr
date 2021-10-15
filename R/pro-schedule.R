@@ -7,6 +7,7 @@
 #' @examples
 #' pro_schedule(seasonId = ffl_year(-2))
 #' @importFrom tibble tibble
+#' @family professional football functions
 #' @export
 pro_schedule <- function(seasonId = ffl_year()) {
   dat <- try_json(

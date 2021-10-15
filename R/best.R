@@ -8,9 +8,10 @@
 #'
 #' @inheritParams ffl_api
 #' @param useScore One of "projectedScore" or "actualScore" (default).
+#' @return A dataframe (or list) with optimal rosters.
 #' @examples
 #' best_roster(leagueId = "42654852", scoringPeriodId = 1)
-#' @return A dataframe (or list) with optimal rosters.
+#' @family roster functions
 #' @export
 best_roster <- function(leagueId = ffl_id(),
                         useScore = c("actualScore", "projectedScore"),

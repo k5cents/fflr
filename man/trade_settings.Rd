@@ -27,7 +27,7 @@ The time each trade can stand, votes needed to veto, and season deadline.
 trade_settings(leagueId = "42654852")
 }
 \seealso{
-Other League settings: 
+Other league settings functions: 
 \code{\link{acquisition_settings}()},
 \code{\link{draft_settings}()},
 \code{\link{finance_settings}()},
@@ -38,4 +38,4 @@ Other League settings:
 \code{\link{schedule_settings}()},
 \code{\link{scoring_settings}()}
 }
-\concept{League settings}
+\concept{league settings functions}

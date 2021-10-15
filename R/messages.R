@@ -7,6 +7,7 @@
 #' @examples
 #' league_messages(leagueId = "42654852")
 #' @importFrom tibble tibble
+#' @family league functions
 #' @export
 league_messages <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   dat <- ffl_api(

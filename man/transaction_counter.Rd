@@ -30,6 +30,15 @@ Summary of transactions and roster changes made during a season by team.
 transaction_counter(leagueId = "42654852")
 }
 \seealso{
+Other league functions: 
+\code{\link{draft_recap}()},
+\code{\link{league_members}()},
+\code{\link{league_messages}()},
+\code{\link{league_standings}()},
+\code{\link{league_status}()},
+\code{\link{league_teams}()},
+\code{\link{tidy_matchups}()}
+
 Other player functions: 
 \code{\link{all_players}()},
 \code{\link{list_players}()},
@@ -38,4 +47,5 @@ Other player functions:
 \code{\link{player_outlook}()},
 \code{\link{recent_activity}()}
 }
+\concept{league functions}
 \concept{player functions}

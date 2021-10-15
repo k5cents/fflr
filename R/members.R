@@ -6,7 +6,7 @@
 #' @examples
 #' league_members(leagueId = "42654852")
 #' @return A dataframe (or list) with league members.
-#' @family League information
+#' @family league functions
 #' @export
 league_members <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   dat <- ffl_api(

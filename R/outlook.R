@@ -12,6 +12,7 @@
 #' @importFrom tibble tibble
 #' @importFrom jsonlite toJSON fromJSON
 #' @importFrom httr RETRY add_headers accept_json content
+#' @family player functions
 #' @export
 player_outlook <- function(leagueId = ffl_id(), limit = 50) {
   if (is.null(leagueId)) leagueId <- "42654852"

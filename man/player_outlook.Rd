@@ -23,3 +23,13 @@ All available weekly ESPN outlook writeups for NFL players.
 \examples{
 player_outlook()
 }
+\seealso{
+Other player functions: 
+\code{\link{all_players}()},
+\code{\link{list_players}()},
+\code{\link{player_info}()},
+\code{\link{player_news}()},
+\code{\link{recent_activity}()},
+\code{\link{transaction_counter}()}
+}
+\concept{player functions}

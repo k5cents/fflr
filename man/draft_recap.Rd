@@ -27,3 +27,14 @@ salary cap format.
 \examples{
 draft_recap(leagueId = "42654852")
 }
+\seealso{
+Other league functions: 
+\code{\link{league_members}()},
+\code{\link{league_messages}()},
+\code{\link{league_standings}()},
+\code{\link{league_status}()},
+\code{\link{league_teams}()},
+\code{\link{tidy_matchups}()},
+\code{\link{transaction_counter}()}
+}
+\concept{league functions}

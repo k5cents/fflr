@@ -9,6 +9,7 @@
 #' @examples
 #' player_news(playerId = "15847")
 #' @importFrom tibble tibble
+#' @family player functions
 #' @export
 player_news <- function(playerId, parseHTML = FALSE) {
   dat <- try_json(

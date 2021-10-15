@@ -14,6 +14,7 @@
 #' @return A tidy data frame of scores by team and matchup/scoring period.
 #' @examples
 #' tidy_scores(leagueId = "42654852", useMatchup = FALSE)
+#' @family scoring functions
 #' @export
 tidy_scores <- function(leagueId = ffl_id(), leagueHistory = FALSE,
                         useMatchup = TRUE, ...) {

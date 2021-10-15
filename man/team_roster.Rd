@@ -35,3 +35,10 @@ The roster of all teams in a league.
 \examples{
 team_roster(leagueId = "42654852", scoringPeriodId = 1)
 }
+\seealso{
+Other roster functions: 
+\code{\link{best_roster}()},
+\code{\link{roster_score}()},
+\code{\link{start_roster}()}
+}
+\concept{roster functions}

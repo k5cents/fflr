@@ -25,3 +25,8 @@ The current and projected score for each ongoing match.
 \examples{
 live_scoring(leagueId = "42654852", yetToPlay = FALSE)
 }
+\seealso{
+Other scoring functions: 
+\code{\link{tidy_scores}()}
+}
+\concept{scoring functions}

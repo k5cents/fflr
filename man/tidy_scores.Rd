@@ -36,3 +36,8 @@ teams and the lowest score would have zero wins.
 \examples{
 tidy_scores(leagueId = "42654852", useMatchup = FALSE)
 }
+\seealso{
+Other scoring functions: 
+\code{\link{live_scoring}()}
+}
+\concept{scoring functions}

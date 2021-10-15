@@ -90,3 +90,13 @@ done in the ESPN Fantasy Football website.
 \examples{
 list_players("42654852", proTeam = "Mia", sort = "START", limit = 3)
 }
+\seealso{
+Other player functions: 
+\code{\link{all_players}()},
+\code{\link{player_info}()},
+\code{\link{player_news}()},
+\code{\link{player_outlook}()},
+\code{\link{recent_activity}()},
+\code{\link{transaction_counter}()}
+}
+\concept{player functions}

@@ -6,6 +6,7 @@
 #' @return A data frame of transactions and roster moves.
 #' @examples
 #' recent_activity(leagueId = "42654852", scoringPeriodId = 2)
+#' @family player functions
 #' @export
 recent_activity <- function(leagueId = ffl_id(), leagueHistory = FALSE,
                             scoringPeriodId = NULL, ...) {

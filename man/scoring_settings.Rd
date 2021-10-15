@@ -27,7 +27,7 @@ The scoring system used and points awarded for various actions.
 scoring_settings(leagueId = "42654852")
 }
 \seealso{
-Other League settings: 
+Other league settings functions: 
 \code{\link{acquisition_settings}()},
 \code{\link{draft_settings}()},
 \code{\link{finance_settings}()},
@@ -38,4 +38,4 @@ Other League settings:
 \code{\link{schedule_settings}()},
 \code{\link{trade_settings}()}
 }
-\concept{League settings}
+\concept{league settings functions}

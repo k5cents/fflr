@@ -27,7 +27,13 @@ The teams in a league and their owners.
 league_teams(leagueId = "42654852")
 }
 \seealso{
-Other League information: 
-\code{\link{league_members}()}
+Other league functions: 
+\code{\link{draft_recap}()},
+\code{\link{league_members}()},
+\code{\link{league_messages}()},
+\code{\link{league_standings}()},
+\code{\link{league_status}()},
+\code{\link{tidy_matchups}()},
+\code{\link{transaction_counter}()}
 }
-\concept{League information}
+\concept{league functions}
