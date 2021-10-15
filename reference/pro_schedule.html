@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9011</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9012</span>
       </span>
     </div>
 
@@ -135,23 +135,27 @@
     <p>The opponents each team faces every week in a regular season.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>pro_schedule</span><span class='op'>(</span>seasonId <span class='op'>=</span> <span class='fu'><a href='ffl_year.html'>ffl_year</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>pro_schedule</span><span class='op'>(</span>seasonId <span class='op'>=</span> <span class='fu'><a href='ffl_info.html'>ffl_year</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>seasonId</th>
-      <td><p>Season schedule (2004-present), defaults to <code><a href='ffl_year.html'>ffl_year()</a></code>.</p></td>
+      <td><p>Season schedule (2004-present), defaults to <code><a href='ffl_info.html'>ffl_year()</a></code>.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Data frame of team opponents by week.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>Other professional football functions: 
+<code><a href='pro_events.html'>pro_events</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>pro_schedule</span><span class='op'>(</span>seasonId <span class='op'>=</span> <span class='fu'><a href='ffl_year.html'>ffl_year</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span>
+    <pre class="examples"><div class='input'><span class='fu'>pro_schedule</span><span class='op'>(</span>seasonId <span class='op'>=</span> <span class='fu'><a href='ffl_info.html'>ffl_year</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 514 × 7</span>
 #&gt;    seasonId scoringPeriodId matchupId proTeam opponent isHome
 #&gt;       <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span> 

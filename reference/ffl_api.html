@@ -82,7 +82,7 @@ repeat up to three times if there is a failure." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9011</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9012</span>
       </span>
     </div>
 
@@ -144,6 +144,7 @@ repeat up to three times if there is a failure.</p>
   view <span class='op'>=</span> <span class='cn'>NULL</span>,
   leagueHistory <span class='op'>=</span> <span class='cn'>FALSE</span>,
   seasonId <span class='op'>=</span> <span class='fl'>2021</span>,
+  scoringPeriodId <span class='op'>=</span> <span class='cn'>NULL</span>,
   <span class='va'>...</span>
 <span class='op'>)</span></pre>
 
@@ -173,10 +174,15 @@ currently set to 2021. Use a recent year or set <code>leagueHistory</code> to <c
 to obtain all past data.</p></td>
     </tr>
     <tr>
+      <th>scoringPeriodId</th>
+      <td><p>Integer week of NFL season. By default, <code>NULL</code> will
+use the current week (see <code><a href='ffl_info.html'>ffl_week()</a></code>). Scoring periods are always one
+week in length, whereas matchups might be longer.</p></td>
+    </tr>
+    <tr>
       <th>...</th>
-      <td><p>Additional queries passed to <code><a href='https://httr.r-lib.org/reference/GET.html'>httr::GET()</a></code>
-(e.g., <code>scoringPeriodId</code>). Arguments are converted to a named list to be
-passed alongside <code>view</code>.</p></td>
+      <td><p>Additional queries passed to <code><a href='https://httr.r-lib.org/reference/GET.html'>httr::GET()</a></code>. Arguments are
+converted to a named list and passed to <code>query</code> alongside <code>view</code>.</p></td>
     </tr>
     </table>
 
