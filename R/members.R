@@ -16,8 +16,13 @@ league_members <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   )
   if (leagueHistory && is.list(dat$teams)) {
     names(dat$teams) <- dat$seasonId
-    lapply(dat$members, as_tibble)
+    lapply(dat$members, out_member)
   } else {
-    as_tibble(dat$members)
+    out_member(dat$members)
   }
+}
+
+out_member <- function(x) {
+  x <- change_names(x, "id", "memberId")
+  as_tibble(x)
 }

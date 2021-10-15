@@ -23,6 +23,10 @@ A dataframe (or list) with league teams.
 \description{
 The teams in a league and their owners.
 }
+\details{
+If any team has multiple owners, the \code{memberId} column will be a list of
+unique owner member ID strings per team (see \code{\link[=league_members]{league_members()}}).
+}
 \examples{
 league_teams(leagueId = "42654852")
 }
