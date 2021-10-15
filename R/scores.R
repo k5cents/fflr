@@ -7,37 +7,43 @@
 #' teams and the lowest score would have zero wins.
 #'
 #' @inheritParams ffl_api
-#' @return A tidy data frame of scores by team and matchup period.
+#' @param useMatchup logical; Whether scoring should be summarized by
+#'   `matchupPeriodId` (default) or `scoringPeriodId`. The later always relates
+#'   to a single week of the NFL season, while fantasy matchups might span
+#'   several scoring periods, especially in the playoffs.
+#' @return A tidy data frame of scores by team and matchup/scoring period.
 #' @examples
-#' tidy_scores(leagueId = "42654852")
+#' tidy_scores(leagueId = "42654852", useMatchup = FALSE)
 #' @export
-tidy_scores <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
+tidy_scores <- function(leagueId = ffl_id(), leagueHistory = FALSE,
+                        useMatchup = TRUE, ...) {
   dat <- ffl_api(
     leagueId = leagueId,
     view = c("mMatchup", "mTeam"),
     leagueHistory = leagueHistory,
     ...
   )
+  parse_fun <- ifelse(useMatchup, parse_match, parse_scores)
   if (leagueHistory) {
     out <- rep(list(NA), length(dat$schedule))
     for (i in seq_along(out)) {
-      out[[i]] <- parse_scores(
+      out[[i]] <- parse_fun(
         s = dat$schedule[[i]],
         y = dat$seasonId[i],
-        t = out_team(dat$teams[[i]])
+        t = out_team(dat$teams[[i]], trim = TRUE)
       )
     }
   } else {
-    out <- parse_scores(
+    out <- parse_fun(
       s = dat$schedule,
       y = dat$seasonId,
-      t = out_team(dat$teams)
+      t = out_team(dat$teams, trim = TRUE)
     )
   }
   return(out)
 }
 
-parse_scores <- function(s, y = NULL, t = NULL) {
+parse_match <- function(s, y = NULL, t = NULL) {
   n <- length(s$winner)
   is_home <- c(rep(TRUE, n), rep(FALSE, n))
   winners <- rep(s$winner, 2)
@@ -58,6 +64,41 @@ parse_scores <- function(s, y = NULL, t = NULL) {
   for (w in unique(x$matchupPeriodId)) {
     y <- x$totalPoints[x$matchupPeriodId == w]
     x$powerWins[x$matchupPeriodId == w] <- match(y, sort(y)) - 1
+  }
+  as_tibble(x)
+}
+
+parse_scores <- function(s, y = NULL, t = NULL) {
+  top <- rep(list(NA), 2)
+  for (k in 2:1) {
+    x <- s[[k]]$pointsByScoringPeriod
+    out <- rep(list(NA), length(x))
+    wks <- names(x)
+    names(out) <- wks
+    x$team <- s[[k]]$teamId
+    for (i in seq_along(out)) {
+      z <- which(!is.na(x[[wks[i]]]))
+      n <- length(z)
+      is_home <- rep(as.logical(k - 1), n)
+      out[[i]] <- data.frame(
+        seasonId = rep(y, n),
+        scoringPeriodId = rep(as.numeric(wks[i]), n),
+        matchupId = seq(nrow(x))[z],
+        teamId = x$team[z],
+        abbrev = team_abbrev(x$team[z], teams = t),
+        isHome = is_home,
+        points = x[[wks[i]]][z]
+      )
+    }
+    top[[k]] <- bind_df(out)
+  }
+
+  x <- bind_df(top)
+  x <- x[order(x$matchupId, !x$isHome), ]
+  x$powerWins <- NA_integer_
+  for (w in unique(x$scoringPeriodId)) {
+    y <- x$points[x$scoringPeriodId == w]
+    x$powerWins[x$scoringPeriodId == w] <- match(y, sort(y)) - 1
   }
   as_tibble(x)
 }

@@ -4,7 +4,7 @@
 \alias{tidy_scores}
 \title{Fantasy matchup scores}
 \usage{
-tidy_scores(leagueId = ffl_id(), leagueHistory = FALSE, ...)
+tidy_scores(leagueId = ffl_id(), leagueHistory = FALSE, useMatchup = TRUE, ...)
 }
 \arguments{
 \item{leagueId}{Numeric league ID or ESPN fantasy page URL. Defaults to
@@ -14,12 +14,17 @@ tidy_scores(leagueId = ffl_id(), leagueHistory = FALSE, ...)
 be called? If \code{TRUE}, a list of results is returned, with one element for
 each historical year of the league.}
 
+\item{useMatchup}{logical; Whether scoring should be summarized by
+\code{matchupPeriodId} (default) or \code{scoringPeriodId}. The later always relates
+to a single week of the NFL season, while fantasy matchups might span
+several scoring periods, especially in the playoffs.}
+
 \item{...}{Additional queries passed to \code{\link[httr:GET]{httr::GET()}}
 (e.g., \code{scoringPeriodId}). Arguments are converted to a named list to be
 passed alongside \code{view}.}
 }
 \value{
-A tidy data frame of scores by team and matchup period.
+A tidy data frame of scores by team and matchup/scoring period.
 }
 \description{
 The score of each team in a matchup period and the match outcome.
@@ -30,5 +35,5 @@ during that matchup period; the highest score would have won against all
 teams and the lowest score would have zero wins.
 }
 \examples{
-tidy_scores(leagueId = "42654852")
+tidy_scores(leagueId = "42654852", useMatchup = FALSE)
 }

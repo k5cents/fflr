@@ -1,5 +1,6 @@
 # fflr (development version)
 
+* Add `useMatchup` argument to `tidy_scores()` to allow for `scoringPeriodId`.
 * Add transaction dates (and more) to `recent_activity()` output.
 * Add `best_roster()`, using `team_roster()` and sorting with slot settings.
 * `pro_schedule()` (and `nfl_schedule`) are sorted by `date` and `matchupId`.
