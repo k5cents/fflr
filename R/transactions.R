@@ -7,6 +7,7 @@
 #' @examples
 #' transaction_counter(leagueId = "42654852")
 #' @importFrom tibble as_tibble
+#' @family player functions
 #' @export
 transaction_counter <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   dat <- ffl_api(leagueId, leagueHistory, view = "mTeam", ...)
@@ -40,4 +41,13 @@ out_trans <- function(teams, y = NULL, w = NULL) {
     teams$transactionCounter
   )
   as_tibble(x)
+}
+
+#' @rdname transaction_counter
+#' @export
+budget_summary <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
+  out <- transaction_counter(leagueId = leagueId,
+                             leagueHistory = leagueHistory,
+                             ...)
+  out[order(out$waiverRank), c(1:6)]
 }

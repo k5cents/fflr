@@ -2,9 +2,12 @@
 % Please edit documentation in R/transactions.R
 \name{transaction_counter}
 \alias{transaction_counter}
+\alias{budget_summary}
 \title{League transactions}
 \usage{
 transaction_counter(leagueId = ffl_id(), leagueHistory = FALSE, ...)
+
+budget_summary(leagueId = ffl_id(), leagueHistory = FALSE, ...)
 }
 \arguments{
 \item{leagueId}{Numeric league ID or ESPN fantasy page URL. Defaults to
@@ -26,3 +29,13 @@ Summary of transactions and roster changes made during a season by team.
 \examples{
 transaction_counter(leagueId = "42654852")
 }
+\seealso{
+Other player functions: 
+\code{\link{all_players}()},
+\code{\link{list_players}()},
+\code{\link{player_info}()},
+\code{\link{player_news}()},
+\code{\link{player_outlook}()},
+\code{\link{recent_activity}()}
+}
+\concept{player functions}
