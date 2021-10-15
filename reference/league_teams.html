@@ -161,6 +161,10 @@ converted to a named list and passed to <code>query</code> alongside <code>view<
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A dataframe (or list) with league teams.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>If any team has multiple owners, the <code>memberId</code> column will be a list of
+unique owner member ID strings per team (see <code><a href='league_members.html'>league_members()</a></code>).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other league functions: 
@@ -175,12 +179,12 @@ converted to a named list and passed to <code>query</code> alongside <code>view<
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>league_teams</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 4 × 5</span>
-#&gt;   abbrev teamId location nickname   owners   
-#&gt;   <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;list&gt;</span>   
-#&gt; <span style='color: #BCBCBC;'>1</span> AUS         1 Austin   Astronauts <span style='color: #949494;'>&lt;chr [1]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'>2</span> BOS         2 Boston   Buzzards   <span style='color: #949494;'>&lt;chr [1]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'>3</span> CHI         3 Chicago  Crowns     <span style='color: #949494;'>&lt;chr [1]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'>4</span> DEN         4 Denver   Devils     <span style='color: #949494;'>&lt;chr [1]&gt;</span></div></pre>
+#&gt;   abbrev teamId location nickname   memberId                              
+#&gt;   <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                                 
+#&gt; <span style='color: #BCBCBC;'>1</span> AUS         1 Austin   Astronauts {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}
+#&gt; <span style='color: #BCBCBC;'>2</span> BOS         2 Boston   Buzzards   {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}
+#&gt; <span style='color: #BCBCBC;'>3</span> CHI         3 Chicago  Crowns     {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}
+#&gt; <span style='color: #BCBCBC;'>4</span> DEN         4 Denver   Devils     {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
