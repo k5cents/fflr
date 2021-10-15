@@ -1,5 +1,7 @@
 # fflr (development version)
 
+* Add `scoringPeriodId` argument to functions like `recent_activity()` (#32).
+* Add `budget_summary()` version of `transaction_counter()`.
 * Add `useMatchup` argument to `tidy_scores()` to allow for `scoringPeriodId`.
 * Add transaction dates (and more) to `recent_activity()` output.
 * Add `best_roster()`, using `team_roster()` and sorting with slot settings.
