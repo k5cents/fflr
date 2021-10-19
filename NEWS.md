@@ -1,5 +1,6 @@
 # fflr (development version)
 
+* Change `powerWins` to a normalized `expectedWins` in `tidy_scores()`.
 * Add `scoringPeriodId` argument to functions like `recent_activity()` (#32).
 * Add `budget_summary()` version of `transaction_counter()`.
 * Add `useMatchup` argument to `tidy_scores()` to allow for `scoringPeriodId`.
