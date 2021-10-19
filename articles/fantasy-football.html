@@ -196,7 +196,7 @@
 <p>The <code><a href="../reference/player_outlook.html">player_outlook()</a></code> and <code><a href="../reference/player_news.html">player_news()</a></code> functions return news on your roster. The first returns <em>all</em> outlooks by player and week and cannot be refined beyond setting a <code>limit</code> of players to return (in order of rank).</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/player_outlook.html">player_outlook</a></span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 7 × 6</span>
+<span class="co">#&gt; # A tibble: 8 × 6</span>
 <span class="co">#&gt;   seasonId scoringPeriodId      id firstName lastName outlook                             </span>
 <span class="co">#&gt;      &lt;int&gt;           &lt;int&gt;   &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;                               </span>
 <span class="co">#&gt; 1     2021               0 3116406 Tyreek    Hill     Hill's game is that of a big-play m…</span>
@@ -205,11 +205,12 @@
 <span class="co">#&gt; 4     2021               3 3116406 Tyreek    Hill     Facing regular double coverage, Hil…</span>
 <span class="co">#&gt; 5     2021               4 3116406 Tyreek    Hill     Two quiet weeks after a sensational…</span>
 <span class="co">#&gt; 6     2021               5 3116406 Tyreek    Hill     A week-winning performance from Hil…</span>
-<span class="co">#&gt; 7     2021               6 3116406 Tyreek    Hill     Hill caught 7-of-13 targets for 63 …</span></code></pre></div>
+<span class="co">#&gt; 7     2021               6 3116406 Tyreek    Hill     Hill caught 7-of-13 targets for 63 …</span>
+<span class="co">#&gt; 8     2021               7 3116406 Tyreek    Hill     Hill reeled in nine of 12 looks for…</span></code></pre></div>
 <p>The second fiction takes a single <code>playerId</code> value and returns all the recent news on that player, including premium stories in HTML format.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/player_news.html">player_news</a></span><span class="op">(</span>playerId <span class="op">=</span> <span class="st">"3139477"</span>, parseHTML <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 13 × 6</span>
+<span class="co">#&gt; # A tibble: 15 × 6</span>
 <span class="co">#&gt;         id published           type     premium headline               body               </span>
 <span class="co">#&gt;      &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;    &lt;lgl&gt;   &lt;chr&gt;                  &lt;chr&gt;              </span>
 <span class="co">#&gt;  1 3139477 2021-10-17 22:04:48 Rotowire FALSE   Mahomes completed 32 … "Mahomes led the C…</span>
@@ -224,7 +225,9 @@
 <span class="co">#&gt; 10 3139477 2021-09-08 04:56:27 Story    FALSE   'So, you're Patrick M… "&lt;p&gt;&lt;video1&gt;&lt;br&gt;\n…</span>
 <span class="co">#&gt; 11 3139477 2021-08-31 14:15:41 Story    TRUE    Predicting NFL teams … "&lt;p&gt;&lt;video1&gt;&lt;/vide…</span>
 <span class="co">#&gt; 12 3139477 2021-08-28 03:31:05 Rotowire FALSE   Mahomes completed eig… "Mahomes was his s…</span>
-<span class="co">#&gt; 13 3139477 2021-08-21 03:07:20 Rotowire FALSE   Mahomes completed 10 … "There had been ta…</span></code></pre></div>
+<span class="co">#&gt; 13 3139477 2021-08-21 03:07:20 Rotowire FALSE   Mahomes completed 10 … "There had been ta…</span>
+<span class="co">#&gt; 14 3139477 2021-08-18 16:33:13 Rotowire FALSE   Coach Andy Reid said … "Mahomes played on…</span>
+<span class="co">#&gt; 15 3139477 2021-08-15 04:19:01 Rotowire FALSE   Mahomes completed one… "Mahomes connected…</span></code></pre></div>
 </div>
 </div>
 <div id="league" class="section level2">
@@ -529,19 +532,19 @@
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/list_players.html">list_players</a></span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 10 × 19</span>
-<span class="co">#&gt;    seasonId scoringPeriodId      id firstName lastName  proTeam defaultPositionId</span>
-<span class="co">#&gt;       &lt;int&gt;           &lt;dbl&gt;   &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;fct&gt;   &lt;fct&gt;            </span>
-<span class="co">#&gt;  1     2021               7 3916387 Lamar     Jackson   Bal     QB               </span>
-<span class="co">#&gt;  2     2021               7 4052042 James     Robinson  Jax     RB               </span>
-<span class="co">#&gt;  3     2021               7    2330 Tom       Brady     TB      QB               </span>
-<span class="co">#&gt;  4     2021               7 4038941 Justin    Herbert   LAC     QB               </span>
-<span class="co">#&gt;  5     2021               7 3045138 Mike      Williams  LAC     WR               </span>
-<span class="co">#&gt;  6     2021               7 3126486 Deebo     Samuel    SF      WR               </span>
-<span class="co">#&gt;  7     2021               7 3059915 Kareem    Hunt      Cle     RB               </span>
-<span class="co">#&gt;  8     2021               7    8439 Aaron     Rodgers   GB      QB               </span>
-<span class="co">#&gt;  9     2021               7 4036133 T.J.      Hockenson Det     TE               </span>
-<span class="co">#&gt; 10     2021               7 4360248 Kyle      Pitts     Atl     TE               </span>
-<span class="co">#&gt; # … with 12 more variables: injuryStatus &lt;chr&gt;, percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;,</span>
+<span class="co">#&gt;    seasonId scoringPeriodId     id firstName lastName proTeam defaultPosition injuryStatus</span>
+<span class="co">#&gt;       &lt;int&gt;           &lt;dbl&gt;  &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;    &lt;fct&gt;   &lt;fct&gt;           &lt;chr&gt;       </span>
+<span class="co">#&gt;  1     2021               7 3.92e6 Lamar     Jackson  Bal     QB              A           </span>
+<span class="co">#&gt;  2     2021               7 4.05e6 James     Robinson Jax     RB              A           </span>
+<span class="co">#&gt;  3     2021               7 2.33e3 Tom       Brady    TB      QB              A           </span>
+<span class="co">#&gt;  4     2021               7 4.04e6 Justin    Herbert  LAC     QB              A           </span>
+<span class="co">#&gt;  5     2021               7 3.05e6 Mike      Williams LAC     WR              A           </span>
+<span class="co">#&gt;  6     2021               7 3.13e6 Deebo     Samuel   SF      WR              A           </span>
+<span class="co">#&gt;  7     2021               7 3.06e6 Kareem    Hunt     Cle     RB              I           </span>
+<span class="co">#&gt;  8     2021               7 8.44e3 Aaron     Rodgers  GB      QB              A           </span>
+<span class="co">#&gt;  9     2021               7 4.04e6 T.J.      Hockens… Det     TE              A           </span>
+<span class="co">#&gt; 10     2021               7 4.36e6 Kyle      Pitts    Atl     TE              A           </span>
+<span class="co">#&gt; # … with 11 more variables: percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   percentChange &lt;dbl&gt;, positionalRanking &lt;int&gt;, totalRating &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   auctionValueAverage &lt;dbl&gt;, averageDraftPosition &lt;dbl&gt;, projectedScore &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   lastScore &lt;dbl&gt;, lastSeason &lt;dbl&gt;, currentSeason &lt;dbl&gt;</span></code></pre></div>
@@ -555,9 +558,9 @@
 <span class="co">#&gt;   currentMatchupPeriod matchupId teamId abbrev totalPointsLive totalProjectedPointsLive</span>
 <span class="co">#&gt;                  &lt;int&gt;     &lt;int&gt;  &lt;int&gt; &lt;fct&gt;            &lt;dbl&gt;                    &lt;dbl&gt;</span>
 <span class="co">#&gt; 1                    7        13      1 AUS                  1                     87.1</span>
-<span class="co">#&gt; 2                    7        13      3 CHI                  0                     63.8</span>
-<span class="co">#&gt; 3                    7        14      2 BOS                  1                     69.5</span>
-<span class="co">#&gt; 4                    7        14      4 DEN                  0                     93.7</span></code></pre></div>
+<span class="co">#&gt; 2                    7        13      3 CHI                  0                     65.7</span>
+<span class="co">#&gt; 3                    7        14      2 BOS                  1                     69.9</span>
+<span class="co">#&gt; 4                    7        14      4 DEN                  0                     94.3</span></code></pre></div>
 </div>
 <div id="standings" class="section level2">
 <h2 class="hasAnchor">
@@ -568,8 +571,8 @@
 <span class="co">#&gt;   seasonId scoringPeriodId teamId abbrev draftDayProjectedR… currentProjected… playoffSeed</span>
 <span class="co">#&gt;      &lt;int&gt;           &lt;int&gt;  &lt;int&gt; &lt;fct&gt;                &lt;int&gt;             &lt;int&gt;       &lt;int&gt;</span>
 <span class="co">#&gt; 1     2021               7      1 AUS                      2                 4           3</span>
-<span class="co">#&gt; 2     2021               7      2 BOS                      4                 1           4</span>
-<span class="co">#&gt; 3     2021               7      3 CHI                      3                 3           1</span>
+<span class="co">#&gt; 2     2021               7      2 BOS                      4                 3           4</span>
+<span class="co">#&gt; 3     2021               7      3 CHI                      3                 1           1</span>
 <span class="co">#&gt; 4     2021               7      4 DEN                      1                 2           2</span>
 <span class="co">#&gt; # … with 12 more variables: rankCalculatedFinal &lt;int&gt;, gamesBack &lt;dbl&gt;, losses &lt;int&gt;,</span>
 <span class="co">#&gt; #   percentage &lt;dbl&gt;, pointsAgainst &lt;dbl&gt;, pointsFor &lt;dbl&gt;, streakLength &lt;int&gt;,</span>
