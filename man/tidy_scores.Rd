@@ -26,12 +26,13 @@ converted to a named list and passed to \code{query} alongside \code{view}.}
 A tidy data frame of scores by team and matchup/scoring period.
 }
 \description{
-The score of each team in a matchup period and the match outcome.
+The score of each team in a matchup or scoring period and the match outcome.
 }
 \details{
-\code{powerWins} are added by comparing a team score versus every other team
-during that matchup period; the highest score would have won against all
-teams and the lowest score would have zero wins.
+\code{expectedWins} are calculated by comparing a team score against all \emph{other}
+scores for a given matchup period. This statistic expresses how a team would
+fair if the schedule was random The highest scoring team is thus expected to
+earn 1 win and the lowest scoring team would expect to win 0 matchups.
 }
 \examples{
 tidy_scores(leagueId = "42654852", useMatchup = FALSE)

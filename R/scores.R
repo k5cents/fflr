@@ -1,10 +1,11 @@
 #' Fantasy matchup scores
 #'
-#' The score of each team in a matchup period and the match outcome.
+#' The score of each team in a matchup or scoring period and the match outcome.
 #'
-#' `powerWins` are added by comparing a team score versus every other team
-#' during that matchup period; the highest score would have won against all
-#' teams and the lowest score would have zero wins.
+#' `expectedWins` are calculated by comparing a team score against all _other_
+#' scores for a given matchup period. This statistic expresses how a team would
+#' fair if the schedule was random The highest scoring team is thus expected to
+#' earn 1 win and the lowest scoring team would expect to win 0 matchups.
 #'
 #' @inheritParams ffl_api
 #' @param useMatchup logical; Whether scoring should be summarized by
@@ -46,6 +47,7 @@ tidy_scores <- function(leagueId = ffl_id(), leagueHistory = FALSE,
 
 parse_match <- function(s, y = NULL, t = NULL) {
   n <- length(s$winner)
+  n_opp <- nrow(t) - 1
   is_home <- c(rep(TRUE, n), rep(FALSE, n))
   winners <- rep(s$winner, 2)
   winners[winners == "UNDECIDED"] <- NA
@@ -61,10 +63,10 @@ parse_match <- function(s, y = NULL, t = NULL) {
   )
   x <- x[order(x$matchupId), ]
   x <- x[!is.na(x$matchupPeriodId), ]
-  x$powerWins <- NA_integer_
+  x$expectedWins <- NA_integer_
   for (w in unique(x$matchupPeriodId)) {
     y <- x$totalPoints[x$matchupPeriodId == w]
-    x$powerWins[x$matchupPeriodId == w] <- match(y, sort(y)) - 1
+    x$expectedWins[x$matchupPeriodId == w] <- (match(y, sort(y)) - 1) / n_opp
   }
   as_tibble(x)
 }
@@ -96,10 +98,10 @@ parse_scores <- function(s, y = NULL, t = NULL) {
 
   x <- bind_df(top)
   x <- x[order(x$matchupId, !x$isHome), ]
-  x$powerWins <- NA_integer_
+  x$expectedWins <- NA_integer_
   for (w in unique(x$scoringPeriodId)) {
     y <- x$points[x$scoringPeriodId == w]
-    x$powerWins[x$scoringPeriodId == w] <- match(y, sort(y)) - 1
+    x$expectedWins[x$scoringPeriodId == w] <- (match(y, sort(y)) - 1) / n_opp
   }
   as_tibble(x)
 }
