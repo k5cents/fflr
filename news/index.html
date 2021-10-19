@@ -79,7 +79,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9012</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9013</span>
       </span>
     </div>
 
@@ -134,6 +134,7 @@
 <a href="#fflr-development-version" class="anchor"></a>fflr (development version)<small> Unreleased </small>
 </h1>
 <ul>
+<li>Change <code>powerWins</code> to a normalized <code>expectedWins</code> in <code><a href="../reference/tidy_scores.html">tidy_scores()</a></code>.</li>
 <li>Add <code>scoringPeriodId</code> argument to functions like <code><a href="../reference/recent_activity.html">recent_activity()</a></code> (#32).</li>
 <li>Add <code><a href="../reference/transaction_counter.html">budget_summary()</a></code> version of <code><a href="../reference/transaction_counter.html">transaction_counter()</a></code>.</li>
 <li>Add <code>useMatchup</code> argument to <code><a href="../reference/tidy_scores.html">tidy_scores()</a></code> to allow for <code>scoringPeriodId</code>.</li>
@@ -183,183 +184,12 @@
 <a href="#fflr-190" class="anchor"></a>fflr 1.9.0<small> Unreleased </small>
 </h1>
 <ul>
-<li>The package has largely been re-written from the ground-up (#24).</li>
-<li>All functions use the new <code>try_json()</code> back-end, which uses <code><a href="https://httr.r-lib.org/reference/RETRY.html">httr::RETRY()</a></code> instead of <code><a href="https://rdrr.io/pkg/jsonlite/man/fromJSON.html">jsonlite::fromJSON()</a></code>. This allows all functions to fail more elegantly.</li>
+<li>The package has entirely been re-written from the ground-up (#24).</li>
+<li>All functions use the new <code>try_json()</code> back-end, which uses <code>RETRY()</code> instead of <code>fromJSON()</code>.</li>
 <li>Use the same argument and column names as the API (e.g., <code>leagueId</code> instead of <code>lid</code>).</li>
 <li>Return single-row data frames instead of lists for a single season.</li>
 <li>Add <code>tidy_*</code> prefix to function names that manipulate data structure (#26).</li>
 <li>Pass the <code>...</code> arguments to <code>GET()</code> instead of <code>fromJSON()</code> (#25).</li>
-</ul>
-</div>
-    <div id="fflr-0314" class="section level1">
-<h1 class="page-header" data-toc-text="0.3.14">
-<a href="#fflr-0314" class="anchor"></a>fflr 0.3.14<small> Unreleased </small>
-</h1>
-<ul>
-<li>
-<code>roster_moves()</code> calls a specific week in the vignette and example. Without a specific week, the <em>current</em> week is used (which no longer returns data).</li>
-</ul>
-</div>
-    <div id="fflr-0313" class="section level1">
-<h1 class="page-header" data-toc-text="0.3.13">
-<a href="#fflr-0313" class="anchor"></a>fflr 0.3.13<small> 2020-11-25 </small>
-</h1>
-<ul>
-<li>
-<code><a href="../reference/player_outlook.html">player_outlook()</a></code> and <code><a href="../reference/all_players.html">all_players()</a></code>, which both call the <code>kona_player_info</code> endpoint, now have arguments to pass a <em>limit</em> to the “X-Fantasy-Filter” JSON list in the request. Without a limit, the requests can take a long time. Use an empty string (<code>""</code>) or <code>NULL</code> to omit the limit (default to 50, the same default limit used by ESPN).</li>
-</ul>
-</div>
-    <div id="fflr-0312" class="section level1">
-<h1 class="page-header" data-toc-text="0.3.12">
-<a href="#fflr-0312" class="anchor"></a>fflr 0.3.12<small> 2020-11-06 </small>
-</h1>
-<ul>
-<li>Use known weekly rosters in all tests, examples, and vignettes.</li>
-<li>Improve the way <code><a href="../reference/all_players.html">all_players()</a></code> safely handles bye week stats.</li>
-<li>Skip <code><a href="../reference/all_players.html">all_players()</a></code> tests and examples on CRAN for time reasons.</li>
-<li>Remove changes to <code><a href="https://rdrr.io/r/base/options.html">options()</a></code> in <code>try_api()</code>, keep <code><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep()</a></code>.</li>
-</ul>
-</div>
-    <div id="fflr-0311" class="section level1">
-<h1 class="page-header" data-toc-text="0.3.11">
-<a href="#fflr-0311" class="anchor"></a>fflr 0.3.11<small> Unreleased </small>
-</h1>
-<ul>
-<li>Use <code>try_api()</code> for all other JSON calls (.e.g., <code><a href="../reference/ffl_seasons.html">ffl_seasons()</a></code>).</li>
-</ul>
-</div>
-    <div id="fflr-0310" class="section level1">
-<h1 class="page-header" data-toc-text="0.3.10">
-<a href="#fflr-0310" class="anchor"></a>fflr 0.3.10<small> 2020-10-30 </small>
-</h1>
-<ul>
-<li>
-<code><a href="../reference/ffl_api.html">ffl_api()</a></code> now uses <code><a href="https://rdrr.io/r/base/conditions.html">tryCatch()</a></code> with <code><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep()</a></code> on failures.</li>
-</ul>
-</div>
-    <div id="fflr-039" class="section level1">
-<h1 class="page-header" data-toc-text="0.3.9">
-<a href="#fflr-039" class="anchor"></a>fflr 0.3.9<small> 2020-10-28 </small>
-</h1>
-<ul>
-<li>Improve package tests and failures.</li>
-</ul>
-</div>
-    <div id="fflr-038" class="section level1">
-<h1 class="page-header" data-toc-text="0.3.8">
-<a href="#fflr-038" class="anchor"></a>fflr 0.3.8<small> 2020-10-27 </small>
-</h1>
-<ul>
-<li>Remove <code>set_lid()</code>.</li>
-<li>Fix system sleeping between settings tests.</li>
-</ul>
-</div>
-    <div id="fflr-037" class="section level1">
-<h1 class="page-header" data-toc-text="0.3.7">
-<a href="#fflr-037" class="anchor"></a>fflr 0.3.7<small> Unreleased </small>
-</h1>
-<ul>
-<li>Add <code>ffl_merge()</code> shortcut.</li>
-<li>Separate <code>player_aquire()</code> from <code><a href="../reference/team_roster.html">team_roster()</a></code>.</li>
-<li>Add overview vignette on all features.</li>
-</ul>
-</div>
-    <div id="fflr-036" class="section level1">
-<h1 class="page-header" data-toc-text="0.3.6">
-<a href="#fflr-036" class="anchor"></a>fflr 0.3.6<small> Unreleased </small>
-</h1>
-<ul>
-<li>Add <code><a href="../reference/player_info.html">player_info()</a></code> and add to <code>nfl_players</code>.</li>
-<li>Update <code>nfl_schedule</code> for COVID-19 delays.</li>
-<li>Allow <code><a href="../reference/live_scoring.html">live_scoring()</a></code> to show players yet to play.</li>
-</ul>
-</div>
-    <div id="fflr-035" class="section level1">
-<h1 class="page-header" data-toc-text="0.3.5">
-<a href="#fflr-035" class="anchor"></a>fflr 0.3.5<small> Unreleased </small>
-</h1>
-<ul>
-<li>Update function documentation.</li>
-<li>Let <code><a href="../reference/best_roster.html">best_roster()</a></code> use projections.</li>
-</ul>
-</div>
-    <div id="fflr-034" class="section level1">
-<h1 class="page-header" data-toc-text="0.3.4">
-<a href="#fflr-034" class="anchor"></a>fflr 0.3.4<small> Unreleased </small>
-</h1>
-<ul>
-<li>Add <code><a href="../reference/player_news.html">player_news()</a></code>.</li>
-<li>Improve acquisition data for teams.</li>
-</ul>
-</div>
-    <div id="fflr-033" class="section level1">
-<h1 class="page-header" data-toc-text="0.3.3">
-<a href="#fflr-033" class="anchor"></a>fflr 0.3.3<small> Unreleased </small>
-</h1>
-<ul>
-<li>Invert opponent ranks.</li>
-<li>Pivot fantasy schedule long-wise.</li>
-<li>Skip players without stats in <code><a href="../reference/all_players.html">all_players()</a></code>.</li>
-<li>Remove IR slots from <code><a href="../reference/best_roster.html">best_roster()</a></code> and <code><a href="../reference/roster_score.html">roster_score()</a></code>.</li>
-</ul>
-</div>
-    <div id="fflr-032" class="section level1">
-<h1 class="page-header" data-toc-text="0.3.2">
-<a href="#fflr-032" class="anchor"></a>fflr 0.3.2<small> Unreleased </small>
-</h1>
-<ul>
-<li>Scrape and improve NFL teams.</li>
-<li>All <code><a href="../reference/pro_schedule.html">pro_schedule()</a></code> and save object.</li>
-<li>Update NFL players data.</li>
-</ul>
-</div>
-    <div id="fflr-031" class="section level1">
-<h1 class="page-header" data-toc-text="0.3.1">
-<a href="#fflr-031" class="anchor"></a>fflr 0.3.1<small> Unreleased </small>
-</h1>
-<ul>
-<li>Add power wins calculation to matchups.</li>
-<li>Make team abbreviations factors ordered by ID.</li>
-<li>
-<code><a href="../reference/ffl_api.html">ffl_api()</a></code> can now take multiple views as list.</li>
-<li>Scrape live scoring with updated projections.</li>
-</ul>
-</div>
-    <div id="fflr-030" class="section level1">
-<h1 class="page-header" data-toc-text="0.3.0">
-<a href="#fflr-030" class="anchor"></a>fflr 0.3.0<small> Unreleased </small>
-</h1>
-<ul>
-<li>Rewrite functions to use <code>getOptions("lid")</code>.</li>
-<li>Cover all players, transactions, settings, ESPN information.</li>
-<li>Imports httr for the headers needed in <code><a href="../reference/all_players.html">all_players()</a></code>.</li>
-<li>Save <code>players</code> tibble as of 2020-09-25 01:00.</li>
-</ul>
-</div>
-    <div id="fflr-020" class="section level1">
-<h1 class="page-header" data-toc-text="0.2.0">
-<a href="#fflr-020" class="anchor"></a>fflr 0.2.0<small> Unreleased </small>
-</h1>
-<ul>
-<li>Cover team rosters, best rosters, weekly matchups.</li>
-</ul>
-</div>
-    <div id="fflr-011" class="section level1">
-<h1 class="page-header" data-toc-text="0.1.1">
-<a href="#fflr-011" class="anchor"></a>fflr 0.1.1<small> Unreleased </small>
-</h1>
-<ul>
-<li>Erase all functions and start over with simplified philosophy.</li>
-<li>Cover draft history, league members, and league teams.</li>
-</ul>
-</div>
-    <div id="fflr-002" class="section level1">
-<h1 class="page-header" data-toc-text="0.0.2">
-<a href="#fflr-002" class="anchor"></a>fflr 0.0.2<small> Unreleased </small>
-</h1>
-<ul>
-<li>Added a <code>NEWS.md</code> file to track changes to the package.</li>
-<li>Set the factor levels in matchup weeks to <code>1:16</code>.</li>
 </ul>
 </div>
   </div>

@@ -81,7 +81,7 @@ and broadcast information." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9012</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9013</span>
       </span>
     </div>
 
@@ -151,22 +151,22 @@ and broadcast information.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>pro_events</span><span class='op'>(</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 14 × 13</span>
-#&gt;    id        date                timeValid period clock status summary          
-#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;dttm&gt;</span>              <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>            
-#&gt; <span style='color: #BCBCBC;'> 1</span> 401326410 2021-10-15 <span style='color: #949494;'>00:20:00</span> TRUE           4 0:00  post   Final            
-#&gt; <span style='color: #BCBCBC;'> 2</span> 401326325 2021-10-17 <span style='color: #949494;'>13:30:00</span> TRUE           0 0:00  pre    10/17 - 9:30 AM …
-#&gt; <span style='color: #BCBCBC;'> 3</span> 401326413 2021-10-17 <span style='color: #949494;'>17:00:00</span> TRUE           0 0:00  pre    10/17 - 1:00 PM …
-#&gt; <span style='color: #BCBCBC;'> 4</span> 401326414 2021-10-17 <span style='color: #949494;'>17:00:00</span> TRUE           0 0:00  pre    10/17 - 1:00 PM …
-#&gt; <span style='color: #BCBCBC;'> 5</span> 401326415 2021-10-17 <span style='color: #949494;'>17:00:00</span> TRUE           0 0:00  pre    10/17 - 1:00 PM …
-#&gt; <span style='color: #BCBCBC;'> 6</span> 401326416 2021-10-17 <span style='color: #949494;'>17:00:00</span> TRUE           0 0:00  pre    10/17 - 1:00 PM …
-#&gt; <span style='color: #BCBCBC;'> 7</span> 401326417 2021-10-17 <span style='color: #949494;'>17:00:00</span> TRUE           0 0:00  pre    10/17 - 1:00 PM …
-#&gt; <span style='color: #BCBCBC;'> 8</span> 401326412 2021-10-17 <span style='color: #949494;'>17:00:00</span> TRUE           0 0:00  pre    10/17 - 1:00 PM …
-#&gt; <span style='color: #BCBCBC;'> 9</span> 401326411 2021-10-17 <span style='color: #949494;'>17:00:00</span> TRUE           0 0:00  pre    10/17 - 1:00 PM …
-#&gt; <span style='color: #BCBCBC;'>10</span> 401326418 2021-10-17 <span style='color: #949494;'>20:05:00</span> TRUE           0 0:00  pre    10/17 - 4:05 PM …
-#&gt; <span style='color: #BCBCBC;'>11</span> 401326419 2021-10-17 <span style='color: #949494;'>20:25:00</span> TRUE           0 0:00  pre    10/17 - 4:25 PM …
-#&gt; <span style='color: #BCBCBC;'>12</span> 401326420 2021-10-17 <span style='color: #949494;'>20:25:00</span> TRUE           0 0:00  pre    10/17 - 4:25 PM …
-#&gt; <span style='color: #BCBCBC;'>13</span> 401326421 2021-10-18 <span style='color: #949494;'>00:20:00</span> TRUE           0 0:00  pre    10/17 - 8:20 PM …
-#&gt; <span style='color: #BCBCBC;'>14</span> 401326422 2021-10-19 <span style='color: #949494;'>00:15:00</span> TRUE           0 0:00  pre    10/18 - 8:15 PM …
+#&gt;    id        date                timeValid period clock status summary 
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;dttm&gt;</span>              <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   
+#&gt; <span style='color: #BCBCBC;'> 1</span> 401326410 2021-10-15 <span style='color: #949494;'>00:20:00</span> TRUE           4 0:00  post   Final   
+#&gt; <span style='color: #BCBCBC;'> 2</span> 401326325 2021-10-17 <span style='color: #949494;'>13:30:00</span> TRUE           4 0:00  post   Final   
+#&gt; <span style='color: #BCBCBC;'> 3</span> 401326413 2021-10-17 <span style='color: #949494;'>17:00:00</span> TRUE           4 0:00  post   Final   
+#&gt; <span style='color: #BCBCBC;'> 4</span> 401326414 2021-10-17 <span style='color: #949494;'>17:00:00</span> TRUE           4 0:00  post   Final   
+#&gt; <span style='color: #BCBCBC;'> 5</span> 401326415 2021-10-17 <span style='color: #949494;'>17:00:00</span> TRUE           4 0:00  post   Final   
+#&gt; <span style='color: #BCBCBC;'> 6</span> 401326416 2021-10-17 <span style='color: #949494;'>17:00:00</span> TRUE           4 0:00  post   Final   
+#&gt; <span style='color: #BCBCBC;'> 7</span> 401326417 2021-10-17 <span style='color: #949494;'>17:00:00</span> TRUE           4 0:00  post   Final   
+#&gt; <span style='color: #BCBCBC;'> 8</span> 401326412 2021-10-17 <span style='color: #949494;'>17:00:00</span> TRUE           5 0:00  post   Final/OT
+#&gt; <span style='color: #BCBCBC;'> 9</span> 401326411 2021-10-17 <span style='color: #949494;'>17:00:00</span> TRUE           4 0:00  post   Final   
+#&gt; <span style='color: #BCBCBC;'>10</span> 401326418 2021-10-17 <span style='color: #949494;'>20:05:00</span> TRUE           4 0:00  post   Final   
+#&gt; <span style='color: #BCBCBC;'>11</span> 401326419 2021-10-17 <span style='color: #949494;'>20:25:00</span> TRUE           4 0:00  post   Final   
+#&gt; <span style='color: #BCBCBC;'>12</span> 401326420 2021-10-17 <span style='color: #949494;'>20:25:00</span> TRUE           5 0:00  post   Final/OT
+#&gt; <span style='color: #BCBCBC;'>13</span> 401326421 2021-10-18 <span style='color: #949494;'>00:20:00</span> TRUE           5 0:00  post   Final/OT
+#&gt; <span style='color: #BCBCBC;'>14</span> 401326422 2021-10-19 <span style='color: #949494;'>00:15:00</span> TRUE           4 0:00  post   Final   
 #&gt; <span style='color: #949494;'># … with 6 more variables: percentComplete &lt;int&gt;, odds &lt;chr&gt;, broadcast &lt;chr&gt;,</span>
 #&gt; <span style='color: #949494;'>#   competitors &lt;list&gt;, homeTeam &lt;fct&gt;, awayTeam &lt;fct&gt;</span></div></pre>
   </div>
