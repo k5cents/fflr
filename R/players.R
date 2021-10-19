@@ -155,7 +155,7 @@ list_players <- function(leagueId = ffl_id(),
   out$draftRanksByRankType <- NULL
   out$rankings <- NULL
   out$proTeamId <- pro_abbrev(out$proTeamId)
-  out$defaultPositionId <- pos_abbrev(out$defaultPositionId)
+  out$defaultPosition <- pos_abbrev(out$defaultPositionId)
   out$injuryStatus <- substr(out$injuryStatus, 1, 1)
   out$percentOwned <- out$ownership$percentOwned
   out$percentChange <- out$ownership$percentChange
@@ -170,7 +170,7 @@ list_players <- function(leagueId = ffl_id(),
     firstName = pl$player$firstName,
     lastName = pl$player$lastName,
     proTeam = pro_abbrev(pl$player$proTeamId),
-    defaultPositionId = pos_abbrev(pl$player$defaultPositionId),
+    defaultPosition = pos_abbrev(pl$player$defaultPositionId),
     injuryStatus = substr(pl$player$injuryStatus, 1, 1),
     percentStarted = pl$player$ownership$percentStarted / 100,
     percentOwned = pl$player$ownership$percentOwned / 100,
