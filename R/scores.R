@@ -72,6 +72,7 @@ parse_match <- function(s, y = NULL, t = NULL) {
 }
 
 parse_scores <- function(s, y = NULL, t = NULL) {
+  n_opp <- nrow(t) - 1
   top <- rep(list(NA), 2)
   for (k in 2:1) {
     x <- s[[k]]$pointsByScoringPeriod
