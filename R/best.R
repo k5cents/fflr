@@ -33,6 +33,8 @@ best_roster <- function(leagueId = ffl_id(),
       out_roster(
         entry = dat$teams$roster$entries[[i]],
         tid = dat$teams$id[i],
+        wk = dat$scoringPeriodId,
+        yr = dat$seasonId,
         tm = out_team(dat$teams, trim = TRUE),
         es = TRUE
       )
