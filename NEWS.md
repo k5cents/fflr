@@ -1,5 +1,6 @@
 # fflr (development version)
 
+* Fix bye week scoring for D/ST players in `team_roster()` (#40).
 * Change `powerWins` to a normalized `expectedWins` in `tidy_scores()`.
 * Add `scoringPeriodId` argument to functions like `recent_activity()` (#32).
 * Add `budget_summary()` version of `transaction_counter()`.

@@ -49,6 +49,8 @@ team_roster <- function(leagueId = ffl_id(), leagueHistory = FALSE,
         out_roster(
           entry = dat$teams$roster$entries[[i]],
           tid = dat$teams$id[i],
+          wk = dat$scoringPeriodId,
+          yr = dat$seasonId,
           tm = tm
         )
       }
@@ -58,7 +60,7 @@ team_roster <- function(leagueId = ffl_id(), leagueHistory = FALSE,
   }
 }
 
-out_roster <- function(entry, tid, tm, es = FALSE) {
+out_roster <- function(entry, tid, tm, wk, yr, es = FALSE) {
   if (is.null(entry)) {
     return(entry)
   }
@@ -66,11 +68,22 @@ out_roster <- function(entry, tid, tm, es = FALSE) {
   proj_dbl <- score_dbl <- rep(NA, length(player$stats))
   for (i in seq_along(player$stats)) {
     s <- player$stats[[i]]
-    week_int <- max(s$scoringPeriodId)
-    year_int <- max(s$seasonId)
+    week_int <- wk
+    # week_int <- max(s$scoringPeriodId)
+    year_int <- yr
+    # year_int <- max(s$seasonId)
     if (year_int >= 2018) {
       is_split <- s$statSplitTypeId == 1
       is_week <- s$scoringPeriodId == week_int
+      if (!any(is_week)) {
+        if (player$defaultPositionId[i] == 16) {
+          proj_dbl[i] <- 0
+          score_dbl[i] <- 0
+          next
+        } else {
+          next
+        }
+      }
       which_score <- which(s$statSourceId == 0 & is_split & is_week)
       if (length(which_score) == 0) {
         score_dbl[i] <- NA_real_
