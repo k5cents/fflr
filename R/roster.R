@@ -34,7 +34,7 @@ team_roster <- function(leagueId = ffl_id(), leagueHistory = FALSE,
             )
           }
         )
-        names(out) <- x$abbrev
+        names(out) <- dat$teams[[i]]$abbrev
         return(out)
       }
     )
