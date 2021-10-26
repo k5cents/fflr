@@ -19,15 +19,17 @@ team_roster <- function(leagueId = ffl_id(), leagueHistory = FALSE,
   )
   if (leagueHistory) {
     out <- lapply(
-      X = dat$teams,
-      FUN = function(x) {
-        tm <- out_team(x, trim = TRUE)
+      X = seq_along(dat$teams),
+      FUN = function(i) {
+        tm <- out_team(dat$teams[[i]], trim = TRUE)
         out <- lapply(
-          X = seq_along(x$roster$entries),
-          FUN = function(i) {
+          X = seq_along(dat$teams[[i]]$roster$entries),
+          FUN = function(j) {
             out_roster(
-              entry = x$roster$entries[[i]],
-              tid = x$id[i],
+              entry = dat$teams[[i]]$roster$entries[[j]],
+              tid = dat$teams[[i]]$id[j],
+              wk = dat$scoringPeriodId[i],
+              yr = dat$seasonId[i],
               tm = tm
             )
           }
