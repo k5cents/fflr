@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9014</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.9.2.9015</span>
       </span>
     </div>
 
@@ -95,7 +95,7 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">fflr</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html">packageVersion</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span>
-<span class="co">#&gt; [1] '1.9.2.9014'</span>
+<span class="co">#&gt; [1] '1.9.2.9015'</span>
 <span class="fu"><a href="../reference/ffl_id.html">ffl_id</a></span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span><span class="op">)</span>
 <span class="co">#&gt; Temporarily set `fflr.leagueId` option to 42654852</span>
 <span class="co">#&gt; [1] "42654852"</span></code></pre></div>
@@ -177,13 +177,13 @@
 <span class="co">#&gt;  4 AUS    WR            16800 Davante    Adams       GB      WR       O           </span>
 <span class="co">#&gt;  5 AUS    WR          3925357 Calvin     Ridley      Atl     WR       A           </span>
 <span class="co">#&gt;  6 AUS    TE          3116365 Mark       Andrews     Bal     TE       A           </span>
-<span class="co">#&gt;  7 AUS    FLEX        4360294 Antonio    Gibson      Wsh     RB       A           </span>
+<span class="co">#&gt;  7 AUS    FLEX        4360294 Antonio    Gibson      Wsh     RB       Q           </span>
 <span class="co">#&gt;  8 AUS    D/ST         -16027 Buccaneers D/ST        TB      D/ST     A           </span>
 <span class="co">#&gt;  9 AUS    K           2473037 Jason      Myers       Sea     K        A           </span>
 <span class="co">#&gt; 10 AUS    BE          4259545 D'Andre    Swift       Det     RB       A           </span>
 <span class="co">#&gt; 11 AUS    BE          4045163 Miles      Sanders     Phi     RB       Q           </span>
 <span class="co">#&gt; 12 AUS    BE          3919596 Chris      Carson      Sea     RB       I           </span>
-<span class="co">#&gt; 13 AUS    BE            16799 Allen      Robinson II Chi     WR       A           </span>
+<span class="co">#&gt; 13 AUS    BE            16799 Allen      Robinson II Chi     WR       Q           </span>
 <span class="co">#&gt; 14 AUS    BE            16460 Adam       Thielen     Min     WR       A           </span>
 <span class="co">#&gt; 15 AUS    BE          3932905 Diontae    Johnson     Pit     WR       A           </span>
 <span class="co">#&gt; 16 AUS    BE          3128429 Courtland  Sutton      Den     WR       A           </span>
@@ -196,21 +196,22 @@
 <p>The <code><a href="../reference/player_outlook.html">player_outlook()</a></code> and <code><a href="../reference/player_news.html">player_news()</a></code> functions return news on your roster. The first returns <em>all</em> outlooks by player and week and cannot be refined beyond setting a <code>limit</code> of players to return (in order of rank).</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/player_outlook.html">player_outlook</a></span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 8 × 6</span>
-<span class="co">#&gt;   seasonId scoringPeriodId    id firstName lastName outlook                               </span>
-<span class="co">#&gt;      &lt;int&gt;           &lt;int&gt; &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;                                 </span>
-<span class="co">#&gt; 1     2021               0 16800 Davante   Adams    Adams was the top-scoring fantasy WR …</span>
-<span class="co">#&gt; 2     2021               1 16800 Davante   Adams    Last season, Adams was on pace for on…</span>
-<span class="co">#&gt; 3     2021               2 16800 Davante   Adams    The Packers' offense simply couldn't …</span>
-<span class="co">#&gt; 4     2021               3 16800 Davante   Adams    A rare blend of efficiency and volume…</span>
-<span class="co">#&gt; 5     2021               4 16800 Davante   Adams    Another elite prime-time performance …</span>
-<span class="co">#&gt; 6     2021               5 16800 Davante   Adams    Adams caught 6-of-11 targets for 64 y…</span>
-<span class="co">#&gt; 7     2021               6 16800 Davante   Adams    Adams set a new personal best with 20…</span>
-<span class="co">#&gt; 8     2021               7 16800 Davante   Adams    Adams caught 4 of 5 targets for 89 ya…</span></code></pre></div>
+<span class="co">#&gt; # A tibble: 9 × 6</span>
+<span class="co">#&gt;   seasonId scoringPeriodId      id firstName lastName outlook                             </span>
+<span class="co">#&gt;      &lt;int&gt;           &lt;int&gt;   &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;                               </span>
+<span class="co">#&gt; 1     2021               0 3043078 Derrick   Henry    As if Henry's 303-1540-16 rushing l…</span>
+<span class="co">#&gt; 2     2021               1 3043078 Derrick   Henry    Just 140 rushing yards shy of joini…</span>
+<span class="co">#&gt; 3     2021               2 3043078 Derrick   Henry    A forgettable first game included H…</span>
+<span class="co">#&gt; 4     2021               3 3043078 Derrick   Henry    The Henry we drafted showed up agai…</span>
+<span class="co">#&gt; 5     2021               4 3043078 Derrick   Henry    In Week 3, Henry rushed for 113 yar…</span>
+<span class="co">#&gt; 6     2021               5 3043078 Derrick   Henry    After a lackluster opening week, He…</span>
+<span class="co">#&gt; 7     2021               6 3043078 Derrick   Henry    In Week 5, Henry posted his fourth …</span>
+<span class="co">#&gt; 8     2021               7 3043078 Derrick   Henry    Roget’s Thesaurus had run out of su…</span>
+<span class="co">#&gt; 9     2021               8 3043078 Derrick   Henry    Henry carried the ball 29 times for…</span></code></pre></div>
 <p>The second fiction takes a single <code>playerId</code> value and returns all the recent news on that player, including premium stories in HTML format.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/player_news.html">player_news</a></span><span class="op">(</span>playerId <span class="op">=</span> <span class="st">"3139477"</span>, parseHTML <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 15 × 6</span>
+<span class="co">#&gt; # A tibble: 16 × 6</span>
 <span class="co">#&gt;         id published           type     premium headline               body               </span>
 <span class="co">#&gt;      &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;    &lt;lgl&gt;   &lt;chr&gt;                  &lt;chr&gt;              </span>
 <span class="co">#&gt;  1 3139477 2021-10-26 12:50:13 Media    FALSE   Will Mahomes play in … "Stephania Bell re…</span>
@@ -227,7 +228,8 @@
 <span class="co">#&gt; 12 3139477 2021-09-17 23:13:41 Story    FALSE   NFL Week 2 game picks… "&lt;p&gt;&lt;video1&gt;&lt;/vide…</span>
 <span class="co">#&gt; 13 3139477 2021-09-13 03:01:33 Rotowire FALSE   Mahomes completed 27 … "The 25-year-old s…</span>
 <span class="co">#&gt; 14 3139477 2021-09-10 14:36:05 Story    TRUE    NFL Week 1 prediction… "&lt;p&gt;&lt;video1&gt;&lt;/vide…</span>
-<span class="co">#&gt; 15 3139477 2021-09-08 04:56:27 Story    FALSE   'So, you're Patrick M… "&lt;p&gt;&lt;video1&gt;&lt;br&gt;\n…</span></code></pre></div>
+<span class="co">#&gt; 15 3139477 2021-09-08 04:56:27 Story    FALSE   'So, you're Patrick M… "&lt;p&gt;&lt;video1&gt;&lt;br&gt;\n…</span>
+<span class="co">#&gt; 16 3139477 2021-08-31 14:15:41 Story    TRUE    Predicting NFL teams … "&lt;p&gt;&lt;video1&gt;&lt;/vide…</span></code></pre></div>
 </div>
 </div>
 <div id="league" class="section level2">
@@ -257,9 +259,9 @@
 <span class="co">#&gt;  $ finalScoringPeriod     : int 17</span>
 <span class="co">#&gt;  $ previousSeasons        :List of 1</span>
 <span class="co">#&gt;   ..$ : list()</span>
-<span class="co">#&gt;  $ standingsUpdateDate    : POSIXct[1:1], format: "2021-10-26 08:15:41"</span>
+<span class="co">#&gt;  $ standingsUpdateDate    : POSIXct[1:1], format: "2021-10-27 07:48:51"</span>
 <span class="co">#&gt;  $ teamsJoined            : int 4</span>
-<span class="co">#&gt;  $ waiverLastExecutionDate: POSIXct[1:1], format: "2021-10-26 08:15:41"</span>
+<span class="co">#&gt;  $ waiverLastExecutionDate: POSIXct[1:1], format: "2021-10-27 07:48:51"</span>
 <span class="co">#&gt;  $ waiverNextExecutionDate: POSIXct[1:1], format: NA</span>
 <span class="co">#&gt;  $ waiverProcessStatus    :List of 1</span>
 <span class="co">#&gt;   ..$ :'data.frame': 1 obs. of  2 variables:</span>
@@ -509,21 +511,22 @@
 <a href="#recent-activity" class="anchor"></a>Recent Activity</h3>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/recent_activity.html">recent_activity</a></span><span class="op">(</span>scoringPeriodId <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 66 × 14</span>
-<span class="co">#&gt;    id       seaonId scoringPeriodId proposedDate        processDate bidAmount status  </span>
-<span class="co">#&gt;    &lt;chr&gt;      &lt;int&gt;           &lt;int&gt; &lt;dttm&gt;              &lt;dttm&gt;          &lt;int&gt; &lt;chr&gt;   </span>
-<span class="co">#&gt;  1 20d2e4a1    2021               1 2021-08-03 15:16:36 NA                 NA EXECUTED</span>
-<span class="co">#&gt;  2 3bb84e49    2021               1 2021-08-03 15:16:36 NA                 NA EXECUTED</span>
-<span class="co">#&gt;  3 5a2a7859    2021               1 2021-08-03 15:16:36 NA                 NA EXECUTED</span>
-<span class="co">#&gt;  4 7c9b5840    2021               1 2021-08-03 15:16:36 NA                 NA EXECUTED</span>
-<span class="co">#&gt;  5 8202c611    2021               1 2021-08-03 15:16:36 NA                 NA EXECUTED</span>
-<span class="co">#&gt;  6 ac6c7eec    2021               1 2021-08-03 15:16:36 NA                 NA EXECUTED</span>
-<span class="co">#&gt;  7 b0b3b0ea    2021               1 2021-08-03 15:16:36 NA                 NA EXECUTED</span>
-<span class="co">#&gt;  8 bc509110    2021               1 2021-08-03 15:16:36 NA                 NA EXECUTED</span>
-<span class="co">#&gt;  9 bfdc2c78    2021               1 2021-08-03 15:16:36 NA                 NA EXECUTED</span>
-<span class="co">#&gt; 10 c2ff1a27    2021               1 2021-08-03 15:16:36 NA                 NA EXECUTED</span>
-<span class="co">#&gt; # … with 56 more rows, and 7 more variables: fromLineupSlotId &lt;fct&gt;, fromTeamId &lt;int&gt;,</span>
-<span class="co">#&gt; #   playerId &lt;int&gt;, toLineupSlotId &lt;fct&gt;, toTeamId &lt;int&gt;, abbrev &lt;fct&gt;, type &lt;chr&gt;</span></code></pre></div>
+<span class="co">#&gt; # A tibble: 68 × 16</span>
+<span class="co">#&gt;    bidAmount executionType id           isActingAsTeamOw… isLeagueManager isPending items </span>
+<span class="co">#&gt;        &lt;int&gt; &lt;chr&gt;         &lt;chr&gt;        &lt;lgl&gt;             &lt;lgl&gt;           &lt;lgl&gt;     &lt;list&gt;</span>
+<span class="co">#&gt;  1         0 EXECUTE       93626cf5-09… FALSE             FALSE           FALSE     &lt;df […</span>
+<span class="co">#&gt;  2         0 EXECUTE       241ffb13-b0… FALSE             FALSE           FALSE     &lt;df […</span>
+<span class="co">#&gt;  3         0 EXECUTE       8f85d38b-81… FALSE             FALSE           FALSE     &lt;df […</span>
+<span class="co">#&gt;  4         0 EXECUTE       4f4b2063-d7… FALSE             FALSE           FALSE     &lt;NULL&gt;</span>
+<span class="co">#&gt;  5         0 EXECUTE       252e3cc0-03… FALSE             FALSE           FALSE     &lt;df […</span>
+<span class="co">#&gt;  6         0 EXECUTE       612c9fd8-4a… FALSE             FALSE           FALSE     &lt;df […</span>
+<span class="co">#&gt;  7         0 EXECUTE       6c658f84-70… FALSE             FALSE           FALSE     &lt;df […</span>
+<span class="co">#&gt;  8         0 EXECUTE       a6480853-49… FALSE             FALSE           FALSE     &lt;df […</span>
+<span class="co">#&gt;  9         0 EXECUTE       9ab9e6f4-a5… FALSE             FALSE           FALSE     &lt;df […</span>
+<span class="co">#&gt; 10         0 EXECUTE       aecfefda-9e… FALSE             FALSE           FALSE     &lt;NULL&gt;</span>
+<span class="co">#&gt; # … with 58 more rows, and 9 more variables: proposedDate &lt;dttm&gt;, scoringPeriodId &lt;int&gt;,</span>
+<span class="co">#&gt; #   skipTransactionCounters &lt;lgl&gt;, status &lt;chr&gt;, teamId &lt;int&gt;, type &lt;chr&gt;,</span>
+<span class="co">#&gt; #   memberId &lt;chr&gt;, relatedTransactionId &lt;chr&gt;, processDate &lt;dttm&gt;</span></code></pre></div>
 </div>
 </div>
 <div id="players" class="section level2">
@@ -536,9 +539,9 @@
 <span class="co">#&gt;       &lt;int&gt;           &lt;dbl&gt;  &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;    &lt;fct&gt;   &lt;fct&gt;           &lt;chr&gt;       </span>
 <span class="co">#&gt;  1     2021               8 3.92e6 Lamar     Jackson  Bal     QB              A           </span>
 <span class="co">#&gt;  2     2021               8 2.33e3 Tom       Brady    TB      QB              A           </span>
-<span class="co">#&gt;  3     2021               8 4.05e6 James     Robinson Jax     RB              A           </span>
-<span class="co">#&gt;  4     2021               8 4.36e6 Kyle      Pitts    Atl     TE              A           </span>
-<span class="co">#&gt;  5     2021               8 3.13e6 Deebo     Samuel   SF      WR              A           </span>
+<span class="co">#&gt;  3     2021               8 4.36e6 Kyle      Pitts    Atl     TE              A           </span>
+<span class="co">#&gt;  4     2021               8 4.05e6 James     Robinson Jax     RB              A           </span>
+<span class="co">#&gt;  5     2021               8 3.13e6 Deebo     Samuel   SF      WR              Q           </span>
 <span class="co">#&gt;  6     2021               8 8.44e3 Aaron     Rodgers  GB      QB              A           </span>
 <span class="co">#&gt;  7     2021               8 4.04e6 T.J.      Hockens… Det     TE              A           </span>
 <span class="co">#&gt;  8     2021               8 3.12e6 Leonard   Fournet… TB      RB              A           </span>
@@ -560,7 +563,7 @@
 <span class="co">#&gt; 1                    8        15      3 CHI                  1                    125. </span>
 <span class="co">#&gt; 2                    8        15      4 DEN                  0                    120. </span>
 <span class="co">#&gt; 3                    8        16      1 AUS                  1                     84.9</span>
-<span class="co">#&gt; 4                    8        16      2 BOS                  0                     93.2</span></code></pre></div>
+<span class="co">#&gt; 4                    8        16      2 BOS                  0                     92.7</span></code></pre></div>
 </div>
 <div id="standings" class="section level2">
 <h2 class="hasAnchor">
