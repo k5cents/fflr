@@ -2,6 +2,13 @@
 #'
 #' The individual proposed and executed transactions, trades, and waiver moves.
 #'
+#' As of November 2021, activity data related to trades coming from the API is
+#' flawed. The `items` list column containing the players involved in a trade
+#' will only contain data for _rejected_ trades (with an `executionType` of
+#' "CANCEL"). For accepted and upheld trades, that `items` element is `NULL` or
+#' an empty list. This flaw comes from the API itself, not processing done by
+#' this package.
+#'
 #' @inheritParams ffl_api
 #' @return A data frame of transactions and roster moves.
 #' @examples

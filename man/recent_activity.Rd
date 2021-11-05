@@ -32,6 +32,14 @@ A data frame of transactions and roster moves.
 \description{
 The individual proposed and executed transactions, trades, and waiver moves.
 }
+\details{
+As of November 2021, activity data related to trades coming from the API is
+flawed. The \code{items} list column containing the players involved in a trade
+will only contain data for \emph{rejected} trades (with an \code{executionType} of
+"CANCEL"). For accepted and upheld trades, that \code{items} element is \code{NULL} or
+an empty list. This flaw comes from the API itself, not processing done by
+this package.
+}
 \examples{
 recent_activity(leagueId = "42654852", scoringPeriodId = 2)
 }
