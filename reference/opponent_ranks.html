@@ -143,7 +143,7 @@
     <tr>
       <th>leagueId</th>
       <td><p>Numeric league ID or ESPN fantasy page URL. Defaults to
-<code><a href='https://rdrr.io/r/base/options.html'>getOption("fflr.leagueId")</a></code>. Function fails if no ID is found.</p></td>
+<code>getOption("fflr.leagueId")</code>. Function fails if no ID is found.</p></td>
     </tr>
     </table>
 
@@ -152,21 +152,22 @@
     <p>A data frame of team performance against position.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>opponent_ranks</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 192 × 4</span>
-#&gt;    position opponentProTeam  rank average
-#&gt;    <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 1</span> DS       Atl                27   7.17 
-#&gt; <span style='color: #BCBCBC;'> 2</span> QB       Atl                30  22.8  
-#&gt; <span style='color: #BCBCBC;'> 3</span> RB       Atl                26  26.8  
-#&gt; <span style='color: #BCBCBC;'> 4</span> WR       Atl                26  39.3  
-#&gt; <span style='color: #BCBCBC;'> 5</span> TE       Atl                19  14.7  
-#&gt; <span style='color: #BCBCBC;'> 6</span> KI       Atl                 4   5.5  
-#&gt; <span style='color: #BCBCBC;'> 7</span> DS       Buf                 3  -<span style='color: #BB0000;'>0.167</span>
-#&gt; <span style='color: #BCBCBC;'> 8</span> QB       Buf                 1  11.2  
-#&gt; <span style='color: #BCBCBC;'> 9</span> RB       Buf                 2  17.0  
-#&gt; <span style='color: #BCBCBC;'>10</span> WR       Buf                 2  26.9  
-#&gt; <span style='color: #949494;'># … with 182 more rows</span></div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>opponent_ranks</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 192 × 4</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    position opponentProTeam  rank average</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span> DS       Atl                26   7.86 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span> QB       Atl                28  21.2  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 3</span> RB       Atl                26  26.7  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 4</span> WR       Atl                13  35.2  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span> TE       Atl                17  13.6  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span> KI       Atl                17   7.14 </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span> DS       Buf                 2  -<span style='color: #BB0000;'>0.286</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span> QB       Buf                 1  11.8  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span> RB       Buf                 1  16.6  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span> WR       Buf                 2  26.4  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 182 more rows</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

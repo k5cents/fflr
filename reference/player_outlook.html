@@ -143,7 +143,7 @@
     <tr>
       <th>leagueId</th>
       <td><p>Numeric league ID or ESPN fantasy page URL. Defaults to
-<code><a href='https://rdrr.io/r/base/options.html'>getOption("fflr.leagueId")</a></code>. Function fails if no ID is found.</p></td>
+<code>getOption("fflr.leagueId")</code>. Function fails if no ID is found.</p></td>
     </tr>
     <tr>
       <th>limit</th>
@@ -167,21 +167,22 @@ limit can make the request take a long time.</p></td>
 <code><a href='transaction_counter.html'>transaction_counter</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>player_outlook</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 428 × 6</span>
-#&gt;    seasonId scoringPeriodId      id firstName lastName outlook                  
-#&gt;       <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                    
-#&gt; <span style='color: #BCBCBC;'> 1</span>     <span style='text-decoration: underline;'>2</span>021               0 3<span style='text-decoration: underline;'>043</span>078 Derrick   Henry    As if Henry's 303-1540-1…
-#&gt; <span style='color: #BCBCBC;'> 2</span>     <span style='text-decoration: underline;'>2</span>021               1 3<span style='text-decoration: underline;'>043</span>078 Derrick   Henry    Just 140 rushing yards s…
-#&gt; <span style='color: #BCBCBC;'> 3</span>     <span style='text-decoration: underline;'>2</span>021               2 3<span style='text-decoration: underline;'>043</span>078 Derrick   Henry    A forgettable first game…
-#&gt; <span style='color: #BCBCBC;'> 4</span>     <span style='text-decoration: underline;'>2</span>021               3 3<span style='text-decoration: underline;'>043</span>078 Derrick   Henry    The Henry we drafted sho…
-#&gt; <span style='color: #BCBCBC;'> 5</span>     <span style='text-decoration: underline;'>2</span>021               4 3<span style='text-decoration: underline;'>043</span>078 Derrick   Henry    In Week 3, Henry rushed …
-#&gt; <span style='color: #BCBCBC;'> 6</span>     <span style='text-decoration: underline;'>2</span>021               5 3<span style='text-decoration: underline;'>043</span>078 Derrick   Henry    After a lackluster openi…
-#&gt; <span style='color: #BCBCBC;'> 7</span>     <span style='text-decoration: underline;'>2</span>021               6 3<span style='text-decoration: underline;'>043</span>078 Derrick   Henry    In Week 5, Henry posted …
-#&gt; <span style='color: #BCBCBC;'> 8</span>     <span style='text-decoration: underline;'>2</span>021               7 3<span style='text-decoration: underline;'>043</span>078 Derrick   Henry    Roget’s Thesaurus had ru…
-#&gt; <span style='color: #BCBCBC;'> 9</span>     <span style='text-decoration: underline;'>2</span>021               8 3<span style='text-decoration: underline;'>043</span>078 Derrick   Henry    Henry carried the ball 2…
-#&gt; <span style='color: #BCBCBC;'>10</span>     <span style='text-decoration: underline;'>2</span>021               0   <span style='text-decoration: underline;'>15</span>847 Travis    Kelce    The last time Kelce did …
-#&gt; <span style='color: #949494;'># … with 418 more rows</span></div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>player_outlook</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 468 × 6</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    seasonId scoringPeriodId      id firstName lastName outlook                  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>       <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span>     <span style='text-decoration: underline;'>2</span>021               0 3<span style='text-decoration: underline;'>116</span>593 Dalvin    Cook     Cook returns as the feat…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span>     <span style='text-decoration: underline;'>2</span>021               1 3<span style='text-decoration: underline;'>116</span>593 Dalvin    Cook     It helps that the Bengal…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 3</span>     <span style='text-decoration: underline;'>2</span>021               2 3<span style='text-decoration: underline;'>116</span>593 Dalvin    Cook     A costly fumble overshad…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 4</span>     <span style='text-decoration: underline;'>2</span>021               3 3<span style='text-decoration: underline;'>116</span>593 Dalvin    Cook     An ankle injury couldn't…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span>     <span style='text-decoration: underline;'>2</span>021               4 3<span style='text-decoration: underline;'>116</span>593 Dalvin    Cook     A lingering ankle injury…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span>     <span style='text-decoration: underline;'>2</span>021               5 3<span style='text-decoration: underline;'>116</span>593 Dalvin    Cook     Cook carried the ball ni…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span>     <span style='text-decoration: underline;'>2</span>021               6 3<span style='text-decoration: underline;'>116</span>593 Dalvin    Cook     Cook was a late scratch …</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span>     <span style='text-decoration: underline;'>2</span>021               7 3<span style='text-decoration: underline;'>116</span>593 Dalvin    Cook     Rolling on the Panthers …</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span>     <span style='text-decoration: underline;'>2</span>021               8 3<span style='text-decoration: underline;'>116</span>593 Dalvin    Cook     Cook carried the ball 18…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span>     <span style='text-decoration: underline;'>2</span>021               0   <span style='text-decoration: underline;'>15</span>847 Travis    Kelce    The last time Kelce did …</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 458 more rows</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

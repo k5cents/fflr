@@ -143,21 +143,22 @@
     <p>A data frame of NFL scores.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>pro_scores</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 30 × 9</span>
-#&gt;    id    type  homeAway abbreviation score winner record name      lineup    
-#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>        <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;list&gt;</span>    
-#&gt; <span style='color: #BCBCBC;'> 1</span> 22    team  home     ARI             <span style='color: #BB0000;'>NA</span> FALSE  7-0    Cardinals <span style='color: #949494;'>&lt;list [0]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 2</span> 9     team  away     GB              <span style='color: #BB0000;'>NA</span> FALSE  6-1    Packers   <span style='color: #949494;'>&lt;list [0]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 3</span> 1     team  home     ATL             <span style='color: #BB0000;'>NA</span> FALSE  3-3    Falcons   <span style='color: #949494;'>&lt;list [0]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 4</span> 29    team  away     CAR             <span style='color: #BB0000;'>NA</span> FALSE  3-4    Panthers  <span style='color: #949494;'>&lt;list [0]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 5</span> 2     team  home     BUF             <span style='color: #BB0000;'>NA</span> FALSE  4-2    Bills     <span style='color: #949494;'>&lt;list [0]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 6</span> 15    team  away     MIA             <span style='color: #BB0000;'>NA</span> FALSE  1-6    Dolphins  <span style='color: #949494;'>&lt;list [0]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 7</span> 3     team  home     CHI             <span style='color: #BB0000;'>NA</span> FALSE  3-4    Bears     <span style='color: #949494;'>&lt;list [0]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 8</span> 25    team  away     SF              <span style='color: #BB0000;'>NA</span> FALSE  2-4    49ers     <span style='color: #949494;'>&lt;list [0]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'> 9</span> 5     team  home     CLE             <span style='color: #BB0000;'>NA</span> FALSE  4-3    Browns    <span style='color: #949494;'>&lt;list [0]&gt;</span>
-#&gt; <span style='color: #BCBCBC;'>10</span> 23    team  away     PIT             <span style='color: #BB0000;'>NA</span> FALSE  3-3    Steelers  <span style='color: #949494;'>&lt;list [0]&gt;</span>
-#&gt; <span style='color: #949494;'># … with 20 more rows</span></div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>pro_scores</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 28 × 9</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    id    type  homeAway abbreviation score winner record name     lineup    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>        <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;list&gt;</span>    </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span> 11    team  home     IND             45 TRUE   4-5    Colts    <span style='color: #949494;'>&lt;list [0]&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span> 20    team  away     NYJ             30 FALSE  2-6    Jets     <span style='color: #949494;'>&lt;list [0]&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 3</span> 4     team  home     CIN             <span style='color: #BB0000;'>NA</span> FALSE  5-3    Bengals  <span style='color: #949494;'>&lt;list [0]&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 4</span> 5     team  away     CLE             <span style='color: #BB0000;'>NA</span> FALSE  4-4    Browns   <span style='color: #949494;'>&lt;list [0]&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span> 6     team  home     DAL             <span style='color: #BB0000;'>NA</span> FALSE  6-1    Cowboys  <span style='color: #949494;'>&lt;list [0]&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span> 7     team  away     DEN             <span style='color: #BB0000;'>NA</span> FALSE  4-4    Broncos  <span style='color: #949494;'>&lt;list [0]&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span> 15    team  home     MIA             <span style='color: #BB0000;'>NA</span> FALSE  1-7    Dolphins <span style='color: #949494;'>&lt;list [0]&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span> 34    team  away     HOU             <span style='color: #BB0000;'>NA</span> FALSE  1-7    Texans   <span style='color: #949494;'>&lt;list [0]&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span> 18    team  home     NO              <span style='color: #BB0000;'>NA</span> FALSE  5-2    Saints   <span style='color: #949494;'>&lt;list [0]&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span> 1     team  away     ATL             <span style='color: #BB0000;'>NA</span> FALSE  3-4    Falcons  <span style='color: #949494;'>&lt;list [0]&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 18 more rows</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

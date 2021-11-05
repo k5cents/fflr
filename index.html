@@ -108,11 +108,11 @@
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">fflr</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html">packageVersion</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span>
-<span class="co">#&gt; [1] '1.9.2.9004'</span></code></pre></div>
-<p>Data is only available for public leagues. See <a href="https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public">this help page</a> on how to make a private league public</p>
+<span class="co">#&gt; [1] '1.9.2.9015'</span></code></pre></div>
+<p>Data is only available for public leagues. See <a href="https://web.archive.org/web/20211105212446/https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public">this help page</a> on how to make a private league public</p>
 <p>Functions require a unique <code>leagueId</code>, which can be found in any ESPN page URL.</p>
 <pre>https://fantasy.espn.com/football/league?leagueId=<b>42654852</b></pre>
-<p>Use <code><a href="reference/ffl_id.html">ffl_id()</a></code> to set a default <code>fflr.leagueId</code> option. Your <code>.Rprofile</code> file can <a href="https://support.rstudio.com/hc/en-us/articles/360047157094-Managing-R-with-Rprofile-Renviron-Rprofile-site-Renviron-site-rsession-conf-and-repos-conf">set this option on startup</a>.</p>
+<p>Use <code><a href="reference/ffl_id.html">ffl_id()</a></code> to set a default <code>fflr.leagueId</code> option. Your <code>.Rprofile</code> file can <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html">set this option on startup</a>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/ffl_id.html">ffl_id</a></span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span><span class="op">)</span>
 <span class="co">#&gt; Temporarily set `fflr.leagueId` option to 42654852</span>
@@ -126,34 +126,35 @@
 <span class="co">#&gt; 1 42654852     2021 FFLR Test League TRUE         4                 17</span>
 <span class="fu"><a href="reference/league_teams.html">league_teams</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 4 × 5</span>
-<span class="co">#&gt;   abbrev teamId location nickname   owners   </span>
-<span class="co">#&gt;   &lt;fct&gt;   &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;      &lt;list&gt;   </span>
-<span class="co">#&gt; 1 AUS         1 Austin   Astronauts &lt;chr [1]&gt;</span>
-<span class="co">#&gt; 2 BOS         2 Boston   Buzzards   &lt;chr [1]&gt;</span>
-<span class="co">#&gt; 3 CHI         3 Chicago  Crowns     &lt;chr [1]&gt;</span>
-<span class="co">#&gt; 4 DEN         4 Denver   Devils     &lt;chr [1]&gt;</span></code></pre></div>
+<span class="co">#&gt;   abbrev teamId location nickname   memberId                              </span>
+<span class="co">#&gt;   &lt;fct&gt;   &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;                                 </span>
+<span class="co">#&gt; 1 AUS         1 Austin   Astronauts {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}</span>
+<span class="co">#&gt; 2 BOS         2 Boston   Buzzards   {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}</span>
+<span class="co">#&gt; 3 CHI         3 Chicago  Crowns     {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}</span>
+<span class="co">#&gt; 4 DEN         4 Denver   Devils     {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}</span></code></pre></div>
 <p>The <code>scoringPeriodId</code> argument can be used to get data from past weeks.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/team_roster.html">team_roster</a></span><span class="op">(</span>scoringPeriodId <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">[[</span><span class="fl">3</span><span class="op">]</span><span class="op">]</span><span class="op">[</span>, <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, <span class="fl">5</span>, <span class="fl">13</span><span class="op">:</span><span class="fl">15</span><span class="op">)</span><span class="op">]</span>
+<code class="sourceCode R"><span class="va">all_rost</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/team_roster.html">team_roster</a></span><span class="op">(</span>scoringPeriodId <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
+<span class="va">all_rost</span><span class="op">$</span><span class="va">CHI</span><span class="op">[</span>, <span class="fl">5</span><span class="op">:</span><span class="fl">13</span><span class="op">]</span><span class="op">[</span><span class="op">-</span><span class="fl">7</span><span class="op">]</span>
 <span class="co">#&gt; # A tibble: 16 × 8</span>
-<span class="co">#&gt;    lineupSlot firstName lastName  proTeam position injuryStatus projectedScore actualScore</span>
-<span class="co">#&gt;    &lt;fct&gt;      &lt;chr&gt;     &lt;chr&gt;     &lt;fct&gt;   &lt;fct&gt;    &lt;chr&gt;                 &lt;dbl&gt;       &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 QB         Josh      Allen     Buf     QB       A                     21.6         17.2</span>
-<span class="co">#&gt;  2 RB         Saquon    Barkley   NYG     RB       Q                     13.8          3.7</span>
-<span class="co">#&gt;  3 RB         Derrick   Henry     Ten     RB       A                     17.3         10.7</span>
-<span class="co">#&gt;  4 WR         DeAndre   Hopkins   Ari     WR       A                     17.8         26.3</span>
-<span class="co">#&gt;  5 WR         Justin    Jefferson Min     WR       A                     15.4         12.5</span>
-<span class="co">#&gt;  6 TE         Darren    Waller    LV      TE       A                     14.2         26.5</span>
-<span class="co">#&gt;  7 FLEX       Austin    Ekeler    LAC     RB       A                     15.0         11.7</span>
-<span class="co">#&gt;  8 D/ST       Ravens    D/ST      Bal     D/ST     A                      5.86        -1  </span>
-<span class="co">#&gt;  9 K          Justin    Tucker    Bal     K        A                      8.14        11  </span>
-<span class="co">#&gt; 10 BE         Joe       Mixon     Cin     RB       Q                     14.6         25  </span>
-<span class="co">#&gt; 11 BE         Keenan    Allen     LAC     WR       A                     14.8         19  </span>
-<span class="co">#&gt; 12 BE         Mike      Evans     TB      WR       A                     15.0          5.4</span>
-<span class="co">#&gt; 13 BE         Josh      Jacobs    LV      RB       Q                     13.1         17  </span>
-<span class="co">#&gt; 14 BE         Myles     Gaskin    Mia     RB       A                     10.9         12.6</span>
-<span class="co">#&gt; 15 BE         Ja'Marr   Chase     Cin     WR       A                     10.4         20.9</span>
-<span class="co">#&gt; 16 BE         Brandon   Aiyuk     SF      WR       A                     13.9          0</span></code></pre></div>
+<span class="co">#&gt;    lineupSlot playerId firstName lastName  proTeam position projectedScore actualScore</span>
+<span class="co">#&gt;    &lt;fct&gt;         &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;fct&gt;   &lt;fct&gt;             &lt;dbl&gt;       &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 QB          3918298 Josh      Allen     Buf     QB                21.6         17.2</span>
+<span class="co">#&gt;  2 RB          3929630 Saquon    Barkley   NYG     RB                13.8          3.7</span>
+<span class="co">#&gt;  3 RB          3043078 Derrick   Henry     Ten     RB                17.3         10.7</span>
+<span class="co">#&gt;  4 WR            15795 DeAndre   Hopkins   Ari     WR                17.8         26.3</span>
+<span class="co">#&gt;  5 WR          4262921 Justin    Jefferson Min     WR                15.4         12.5</span>
+<span class="co">#&gt;  6 TE          2576925 Darren    Waller    LV      TE                14.2         26.5</span>
+<span class="co">#&gt;  7 FLEX        3068267 Austin    Ekeler    LAC     RB                15.0         11.7</span>
+<span class="co">#&gt;  8 D/ST         -16033 Ravens    D/ST      Bal     D/ST               5.86        -1  </span>
+<span class="co">#&gt;  9 K             15683 Justin    Tucker    Bal     K                  8.14        11  </span>
+<span class="co">#&gt; 10 BE          3116385 Joe       Mixon     Cin     RB                14.6         25  </span>
+<span class="co">#&gt; 11 BE            15818 Keenan    Allen     LAC     WR                14.8         19  </span>
+<span class="co">#&gt; 12 BE            16737 Mike      Evans     TB      WR                15.0          5.4</span>
+<span class="co">#&gt; 13 BE          4047365 Josh      Jacobs    LV      RB                13.1         17  </span>
+<span class="co">#&gt; 14 BE          3886818 Myles     Gaskin    Mia     RB                10.9         12.6</span>
+<span class="co">#&gt; 15 BE          4362628 Ja'Marr   Chase     Cin     WR                10.4         20.9</span>
+<span class="co">#&gt; 16 BE          4360438 Brandon   Aiyuk     SF      WR                13.9          0</span></code></pre></div>
 <p>There are included objects for NFL teams and players.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">nfl_teams</span>
@@ -213,7 +214,7 @@
 <ul class="list-unstyled">
 <li><a href="https://lifecycle.r-lib.org/articles/stages.html"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="Lifecycle: experimental"></a></li>
 <li><a href="https://CRAN.R-project.org/package=fflr"><img src="https://www.r-pkg.org/badges/version/fflr" alt="CRAN status"></a></li>
-<li><a href="https://codecov.io/gh/kiernann/fflr?branch=master"><img src="https://codecov.io/gh/kiernann/fflr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://app.codecov.io/gh/kiernann/fflr?branch=master"><img src="https://codecov.io/gh/kiernann/fflr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://github.com/kiernann/fflr/actions"><img src="https://github.com/kiernann/fflr/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 </ul>
 </div>

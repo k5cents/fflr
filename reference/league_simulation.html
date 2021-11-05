@@ -147,7 +147,7 @@ division and making the playoffs.</p>
     <tr>
       <th>leagueId</th>
       <td><p>Numeric league ID or ESPN fantasy page URL. Defaults to
-<code><a href='https://rdrr.io/r/base/options.html'>getOption("fflr.leagueId")</a></code>. Function fails if no ID is found.</p></td>
+<code>getOption("fflr.leagueId")</code>. Function fails if no ID is found.</p></td>
     </tr>
     <tr>
       <th>leagueHistory</th>
@@ -167,16 +167,17 @@ converted to a named list and passed to <code>query</code> alongside <code>view<
     <p>A data frame of simulated team standings.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>league_simulation</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 4 × 11</span>
-#&gt;   seasonId teamId abbrev draftDayProjectedRank currentProjectedRa… simulatedRank
-#&gt;      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>                  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>               <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>         <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
-#&gt; <span style='color: #BCBCBC;'>1</span>     <span style='text-decoration: underline;'>2</span>021      1 AUS                        2                   4             4
-#&gt; <span style='color: #BCBCBC;'>2</span>     <span style='text-decoration: underline;'>2</span>021      2 BOS                        4                   2             3
-#&gt; <span style='color: #BCBCBC;'>3</span>     <span style='text-decoration: underline;'>2</span>021      3 CHI                        3                   1             1
-#&gt; <span style='color: #BCBCBC;'>4</span>     <span style='text-decoration: underline;'>2</span>021      4 DEN                        1                   3             2
-#&gt; <span style='color: #949494;'># … with 5 more variables: simulatedWins &lt;int&gt;, simulatedLosses &lt;int&gt;,</span>
-#&gt; <span style='color: #949494;'>#   simulatedTies &lt;int&gt;, playoffPct &lt;dbl&gt;, divisionWinPct &lt;dbl&gt;</span></div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>league_simulation</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 4 × 11</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   seasonId teamId abbrev draftDayProjectedRank currentProjectedRa… simulatedRank</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>                  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>               <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>         <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>1</span>     <span style='text-decoration: underline;'>2</span>021      1 AUS                        2                   3             4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>2</span>     <span style='text-decoration: underline;'>2</span>021      2 BOS                        4                   2             2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>3</span>     <span style='text-decoration: underline;'>2</span>021      3 CHI                        3                   1             1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>4</span>     <span style='text-decoration: underline;'>2</span>021      4 DEN                        1                   4             3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 5 more variables: simulatedWins &lt;int&gt;, simulatedLosses &lt;int&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   simulatedTies &lt;int&gt;, playoffPct &lt;dbl&gt;, divisionWinPct &lt;dbl&gt;</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

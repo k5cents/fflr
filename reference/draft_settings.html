@@ -143,7 +143,7 @@
     <tr>
       <th>leagueId</th>
       <td><p>Numeric league ID or ESPN fantasy page URL. Defaults to
-<code><a href='https://rdrr.io/r/base/options.html'>getOption("fflr.leagueId")</a></code>. Function fails if no ID is found.</p></td>
+<code>getOption("fflr.leagueId")</code>. Function fails if no ID is found.</p></td>
     </tr>
     <tr>
       <th>leagueHistory</th>
@@ -175,14 +175,15 @@ converted to a named list and passed to <code>query</code> alongside <code>view<
 <code><a href='trade_settings.html'>trade_settings</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>draft_settings</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 1 × 13</span>
-#&gt;   seasonId auctionBudget availableDate       date               
-#&gt;      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>         <span style='color: #949494; font-style: italic;'>&lt;dttm&gt;</span>              <span style='color: #949494; font-style: italic;'>&lt;dttm&gt;</span>             
-#&gt; <span style='color: #BCBCBC;'>1</span>     <span style='text-decoration: underline;'>2</span>021 <span style='color: #BB0000;'>NA</span>            2021-08-03 <span style='color: #949494;'>14:15:00</span> 2021-08-03 <span style='color: #949494;'>15:15:00</span>
-#&gt; <span style='color: #949494;'># … with 9 more variables: isTradingEnabled &lt;lgl&gt;, keeperCount &lt;int&gt;,</span>
-#&gt; <span style='color: #949494;'>#   keeperCountFuture &lt;int&gt;, keeperOrderType &lt;chr&gt;, leagueSubType &lt;chr&gt;,</span>
-#&gt; <span style='color: #949494;'>#   orderType &lt;chr&gt;, pickOrder &lt;list&gt;, timePerSelection &lt;int&gt;, type &lt;chr&gt;</span></div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>draft_settings</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 1 × 13</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   seasonId auctionBudget availableDate       date               </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>         <span style='color: #949494; font-style: italic;'>&lt;dttm&gt;</span>              <span style='color: #949494; font-style: italic;'>&lt;dttm&gt;</span>             </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>1</span>     <span style='text-decoration: underline;'>2</span>021 <span style='color: #BB0000;'>NA</span>            2021-08-03 <span style='color: #949494;'>14:15:00</span> 2021-08-03 <span style='color: #949494;'>15:15:00</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 9 more variables: isTradingEnabled &lt;lgl&gt;, keeperCount &lt;int&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   keeperCountFuture &lt;int&gt;, keeperOrderType &lt;chr&gt;, leagueSubType &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   orderType &lt;chr&gt;, pickOrder &lt;list&gt;, timePerSelection &lt;int&gt;, type &lt;chr&gt;</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

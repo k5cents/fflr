@@ -145,7 +145,7 @@ and points scored for and against each team.</p>
     <tr>
       <th>leagueId</th>
       <td><p>Numeric league ID or ESPN fantasy page URL. Defaults to
-<code><a href='https://rdrr.io/r/base/options.html'>getOption("fflr.leagueId")</a></code>. Function fails if no ID is found.</p></td>
+<code>getOption("fflr.leagueId")</code>. Function fails if no ID is found.</p></td>
     </tr>
     <tr>
       <th>leagueHistory</th>
@@ -171,22 +171,23 @@ converted to a named list and passed to <code>query</code> alongside <code>view<
 <code><a href='league_messages.html'>league_messages</a>()</code>,
 <code><a href='league_status.html'>league_status</a>()</code>,
 <code><a href='league_teams.html'>league_teams</a>()</code>,
-<code><a href='tidy_matchups.html'>tidy_matchups</a>()</code>,
+<code><a href='tidy_schedule.html'>tidy_schedule</a>()</code>,
 <code><a href='transaction_counter.html'>transaction_counter</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>league_standings</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 4 × 19</span>
-#&gt;   seasonId scoringPeriodId teamId abbrev draftDayProjectedRank currentProjected…
-#&gt;      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>                  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>             <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
-#&gt; <span style='color: #BCBCBC;'>1</span>     <span style='text-decoration: underline;'>2</span>021               8      1 AUS                        2                 4
-#&gt; <span style='color: #BCBCBC;'>2</span>     <span style='text-decoration: underline;'>2</span>021               8      2 BOS                        4                 2
-#&gt; <span style='color: #BCBCBC;'>3</span>     <span style='text-decoration: underline;'>2</span>021               8      3 CHI                        3                 1
-#&gt; <span style='color: #BCBCBC;'>4</span>     <span style='text-decoration: underline;'>2</span>021               8      4 DEN                        1                 3
-#&gt; <span style='color: #949494;'># … with 13 more variables: playoffSeed &lt;int&gt;, rankCalculatedFinal &lt;int&gt;,</span>
-#&gt; <span style='color: #949494;'>#   gamesBack &lt;dbl&gt;, losses &lt;int&gt;, percentage &lt;dbl&gt;, pointsAgainst &lt;dbl&gt;,</span>
-#&gt; <span style='color: #949494;'>#   pointsFor &lt;dbl&gt;, streakLength &lt;int&gt;, streakType &lt;chr&gt;, ties &lt;int&gt;,</span>
-#&gt; <span style='color: #949494;'>#   wins &lt;int&gt;, playoffPct &lt;dbl&gt;, divisionWinPct &lt;dbl&gt;</span></div></pre>
+    <pre class="examples"><span class='r-in'><span class='fu'>league_standings</span><span class='op'>(</span>leagueId <span class='op'>=</span> <span class='st'>"42654852"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 4 × 19</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   seasonId scoringPeriodId teamId abbrev draftDayProjectedRank currentProjected…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;fct&gt;</span>                  <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>             <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>1</span>     <span style='text-decoration: underline;'>2</span>021               9      1 AUS                        2                 3</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>2</span>     <span style='text-decoration: underline;'>2</span>021               9      2 BOS                        4                 2</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>3</span>     <span style='text-decoration: underline;'>2</span>021               9      3 CHI                        3                 1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>4</span>     <span style='text-decoration: underline;'>2</span>021               9      4 DEN                        1                 4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 13 more variables: playoffSeed &lt;int&gt;, rankCalculatedFinal &lt;int&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   gamesBack &lt;dbl&gt;, losses &lt;int&gt;, percentage &lt;dbl&gt;, pointsAgainst &lt;dbl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   pointsFor &lt;dbl&gt;, streakLength &lt;int&gt;, streakType &lt;chr&gt;, ties &lt;int&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   wins &lt;int&gt;, playoffPct &lt;dbl&gt;, divisionWinPct &lt;dbl&gt;</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
