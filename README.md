@@ -50,7 +50,7 @@ packageVersion("fflr")
 ```
 
 Data is only available for public leagues. See [this help
-page](https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public)
+page](https://web.archive.org/web/20211105212446/https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public)
 on how to make a private league public
 
 Functions require a unique `leagueId`, which can be found in any ESPN
@@ -60,7 +60,7 @@ page URL.
 
 Use `ffl_id()` to set a default `fflr.leagueId` option. Your `.Rprofile`
 file can [set this option on
-startup](https://support.rstudio.com/hc/en-us/articles/360047157094-Managing-R-with-Rprofile-Renviron-Rprofile-site-Renviron-site-rsession-conf-and-repos-conf).
+startup](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html).
 
 ``` r
 ffl_id(leagueId = "42654852")
