@@ -37,7 +37,7 @@ Other league functions:
 \code{\link{league_messages}()},
 \code{\link{league_standings}()},
 \code{\link{league_status}()},
-\code{\link{tidy_matchups}()},
+\code{\link{tidy_schedule}()},
 \code{\link{transaction_counter}()}
 }
 \concept{league functions}

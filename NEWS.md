@@ -1,5 +1,6 @@
 # fflr (development version)
 
+* Deprecate `tidy_matchups()` and replace with `tidy_schedule()`.
 * Leave `items` nested in `recent_activity()`.
 * Fix bye week scoring for D/ST players in `team_roster()` (#40).
 * Change `powerWins` to a normalized `expectedWins` in `tidy_scores()`.

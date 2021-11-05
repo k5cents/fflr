@@ -37,7 +37,7 @@ Other league functions:
 \code{\link{league_standings}()},
 \code{\link{league_status}()},
 \code{\link{league_teams}()},
-\code{\link{tidy_matchups}()}
+\code{\link{tidy_schedule}()}
 
 Other player functions: 
 \code{\link{all_players}()},

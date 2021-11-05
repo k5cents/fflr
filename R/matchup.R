@@ -7,10 +7,10 @@
 #' @inheritParams ffl_api
 #' @return A data frame(s) of match opponents.
 #' @examples
-#' tidy_matchups(leagueId = "42654852")
+#' tidy_schedule(leagueId = "42654852")
 #' @family league functions
 #' @export
-tidy_matchups <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
+tidy_schedule <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   dat <- ffl_api(
     leagueId = leagueId,
     view = c("mMatchup", "mTeam"),
@@ -48,4 +48,11 @@ out_sched <- function(s, y = NULL, team = NULL) {
     isHome = c(rep(TRUE, nrow(s)), rep(FALSE, nrow(s)))
   )
   as_tibble(out[order(out$matchupId), ])
+}
+
+#' @rdname tidy_schedule
+#' @export
+tidy_matchups <- function(...) {
+  .Deprecated("tidy_schedule")
+  tidy_schedule(...)
 }
