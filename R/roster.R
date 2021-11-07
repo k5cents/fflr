@@ -149,11 +149,14 @@ start_roster <- function(roster) {
 #' For a given roster tibble, sum the starting scores.
 #'
 #' @param roster A roster data frame from [team_roster()].
+#' @param useScore One of "projectedScore" or "actualScore" (default).
 #' @return A starting score as double.
 #' @examples
 #' roster_score(team_roster(leagueId = "42654852")[[1]])
 #' @family roster functions
 #' @export
-roster_score <- function(roster) {
-  sum(start_roster(roster)$actualScore)
+roster_score <- function(roster,
+                         useScore = c("actualScore", "projectedScore")) {
+  useScore <- match.arg(useScore, c("actualScore", "projectedScore"))
+  sum(start_roster(roster)[[useScore]])
 }
