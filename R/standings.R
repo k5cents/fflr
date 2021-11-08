@@ -46,9 +46,7 @@ parse_ranks <- function(teams, y = NULL, w = NULL) {
     currentProjectedRank = teams$currentProjectedRank,
     playoffSeed = teams$playoffSeed,
     rankCalculatedFinal = teams$rankCalculatedFinal,
-    teams$record$overall,
-    playoffPct = teams$currentSimulationResults$playoffPct,
-    divisionWinPct = teams$currentSimulationResults$divisionWinPct
+    teams$record$overall
   )
 }
 
