@@ -196,25 +196,26 @@
 <p>The <code><a href="../reference/player_outlook.html">player_outlook()</a></code> and <code><a href="../reference/player_news.html">player_news()</a></code> functions return news on your roster. The first returns <em>all</em> outlooks by player and week and cannot be refined beyond setting a <code>limit</code> of players to return (in order of rank).</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/player_outlook.html">player_outlook</a></span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 9 × 6</span>
-<span class="co">#&gt;   seasonId scoringPeriodId      id firstName lastName outlook                             </span>
-<span class="co">#&gt;      &lt;int&gt;           &lt;int&gt;   &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;                               </span>
-<span class="co">#&gt; 1     2021               0 3116593 Dalvin    Cook     Cook returns as the feature back in…</span>
-<span class="co">#&gt; 2     2021               1 3116593 Dalvin    Cook     It helps that the Bengals allowed t…</span>
-<span class="co">#&gt; 3     2021               2 3116593 Dalvin    Cook     A costly fumble overshadowed an oth…</span>
-<span class="co">#&gt; 4     2021               3 3116593 Dalvin    Cook     An ankle injury couldn't keep Cook …</span>
-<span class="co">#&gt; 5     2021               4 3116593 Dalvin    Cook     A lingering ankle injury sidelined …</span>
-<span class="co">#&gt; 6     2021               5 3116593 Dalvin    Cook     Cook carried the ball nine times fo…</span>
-<span class="co">#&gt; 7     2021               6 3116593 Dalvin    Cook     Cook was a late scratch in Week 5 a…</span>
-<span class="co">#&gt; 8     2021               7 3116593 Dalvin    Cook     Rolling on the Panthers for a seaso…</span>
-<span class="co">#&gt; 9     2021               8 3116593 Dalvin    Cook     Cook carried the ball 18 times for …</span></code></pre></div>
+<span class="co">#&gt; # A tibble: 10 × 6</span>
+<span class="co">#&gt;    seasonId scoringPeriodId    id firstName lastName outlook                              </span>
+<span class="co">#&gt;       &lt;int&gt;           &lt;int&gt; &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;                                </span>
+<span class="co">#&gt;  1     2021               0 15847 Travis    Kelce    The last time Kelce did not finish a…</span>
+<span class="co">#&gt;  2     2021               1 15847 Travis    Kelce    As a primary piece of the Kansas Cit…</span>
+<span class="co">#&gt;  3     2021               2 15847 Travis    Kelce    The incomparably productive tight en…</span>
+<span class="co">#&gt;  4     2021               3 15847 Travis    Kelce    Kelce continues to demonstrate what …</span>
+<span class="co">#&gt;  5     2021               4 15847 Travis    Kelce    As steady as they come, Kelce has at…</span>
+<span class="co">#&gt;  6     2021               5 15847 Travis    Kelce    The Chiefs' chain-moving star was th…</span>
+<span class="co">#&gt;  7     2021               6 15847 Travis    Kelce    Kelce caught 6-of-10 targets for 57 …</span>
+<span class="co">#&gt;  8     2021               7 15847 Travis    Kelce    Kelce fell one yard short of reachin…</span>
+<span class="co">#&gt;  9     2021               8 15847 Travis    Kelce    Unable to do a ton of damage despite…</span>
+<span class="co">#&gt; 10     2021               9 15847 Travis    Kelce    A sluggish outing as the focus of th…</span></code></pre></div>
 <p>The second fiction takes a single <code>playerId</code> value and returns all the recent news on that player, including premium stories in HTML format.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/player_news.html">player_news</a></span><span class="op">(</span>playerId <span class="op">=</span> <span class="st">"3139477"</span>, parseHTML <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 16 × 6</span>
+<span class="co">#&gt; # A tibble: 13 × 6</span>
 <span class="co">#&gt;         id published           type     premium headline               body               </span>
 <span class="co">#&gt;      &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;    &lt;lgl&gt;   &lt;chr&gt;                  &lt;chr&gt;              </span>
-<span class="co">#&gt;  1 3139477 2021-11-04 13:18:40 Media    FALSE   Should fantasy manage… "Matthew Berry thi…</span>
+<span class="co">#&gt;  1 3139477 2021-11-08 01:04:08 Rotowire FALSE   Mahomes completed 20 … "For the third wee…</span>
 <span class="co">#&gt;  2 3139477 2021-11-02 03:35:31 Rotowire FALSE   Mahomes completed 29 … "Mahomes connected…</span>
 <span class="co">#&gt;  3 3139477 2021-10-28 21:41:34 Rotowire FALSE   Mahomes is not listed… "Mahomes was shook…</span>
 <span class="co">#&gt;  4 3139477 2021-10-25 17:11:50 Story    TRUE    Time to panic about P… "&lt;p&gt;&lt;video1&gt;&lt;/vide…</span>
@@ -226,10 +227,7 @@
 <span class="co">#&gt; 10 3139477 2021-10-05 23:04:34 Story    TRUE    Ranking NFL MVP candi… "&lt;p&gt;&lt;video1&gt;&lt;/vide…</span>
 <span class="co">#&gt; 11 3139477 2021-10-03 20:37:42 Rotowire FALSE   Mahomes completed 24 … "Mahomes capped Ka…</span>
 <span class="co">#&gt; 12 3139477 2021-09-26 20:22:02 Rotowire FALSE   Mahomes completed 27 … "Kansas City has s…</span>
-<span class="co">#&gt; 13 3139477 2021-09-20 04:47:05 Rotowire FALSE   Mahomes completed 24 … "Mahomes carved up…</span>
-<span class="co">#&gt; 14 3139477 2021-09-17 23:13:41 Story    FALSE   NFL Week 2 game picks… "&lt;p&gt;&lt;video1&gt;&lt;/vide…</span>
-<span class="co">#&gt; 15 3139477 2021-09-13 03:01:33 Rotowire FALSE   Mahomes completed 27 … "The 25-year-old s…</span>
-<span class="co">#&gt; 16 3139477 2021-09-10 14:36:05 Story    TRUE    NFL Week 1 prediction… "&lt;p&gt;&lt;video1&gt;&lt;/vide…</span></code></pre></div>
+<span class="co">#&gt; 13 3139477 2021-09-20 04:47:05 Rotowire FALSE   Mahomes completed 24 … "Mahomes carved up…</span></code></pre></div>
 </div>
 </div>
 <div id="league" class="section level2">
@@ -259,9 +257,9 @@
 <span class="co">#&gt;  $ finalScoringPeriod     : int 17</span>
 <span class="co">#&gt;  $ previousSeasons        :List of 1</span>
 <span class="co">#&gt;   ..$ : list()</span>
-<span class="co">#&gt;  $ standingsUpdateDate    : POSIXct[1:1], format: "2021-11-06 08:08:50"</span>
+<span class="co">#&gt;  $ standingsUpdateDate    : POSIXct[1:1], format: "2021-11-08 08:49:25"</span>
 <span class="co">#&gt;  $ teamsJoined            : int 4</span>
-<span class="co">#&gt;  $ waiverLastExecutionDate: POSIXct[1:1], format: "2021-11-06 08:08:50"</span>
+<span class="co">#&gt;  $ waiverLastExecutionDate: POSIXct[1:1], format: "2021-11-08 08:49:24"</span>
 <span class="co">#&gt;  $ waiverNextExecutionDate: POSIXct[1:1], format: NA</span>
 <span class="co">#&gt;  $ waiverProcessStatus    :List of 1</span>
 <span class="co">#&gt;   ..$ :'data.frame': 1 obs. of  2 variables:</span>
@@ -543,13 +541,13 @@
 <span class="co">#&gt;  1     2021               9 3.92e6 Lamar     Jackson  Bal     QB              A           </span>
 <span class="co">#&gt;  2     2021               9 4.36e6 Kyle      Pitts    Atl     TE              A           </span>
 <span class="co">#&gt;  3     2021               9 2.33e3 Tom       Brady    TB      QB              A           </span>
-<span class="co">#&gt;  4     2021               9 3.13e6 Deebo     Samuel   SF      WR              Q           </span>
-<span class="co">#&gt;  5     2021               9 4.05e6 James     Robinson Jax     RB              Q           </span>
+<span class="co">#&gt;  4     2021               9 3.13e6 Deebo     Samuel   SF      WR              A           </span>
+<span class="co">#&gt;  5     2021               9 4.05e6 James     Robinson Jax     RB              O           </span>
 <span class="co">#&gt;  6     2021               9 1.25e4 Matthew   Stafford LAR     QB              A           </span>
-<span class="co">#&gt;  7     2021               9 8.44e3 Aaron     Rodgers  GB      QB              O           </span>
-<span class="co">#&gt;  8     2021               9 4.04e6 T.J.      Hockens… Det     TE              A           </span>
-<span class="co">#&gt;  9     2021               9 4.04e6 Justin    Herbert  LAC     QB              A           </span>
-<span class="co">#&gt; 10     2021               9 3.05e6 Mike      Williams LAC     WR              A           </span>
+<span class="co">#&gt;  7     2021               9 4.04e6 Justin    Herbert  LAC     QB              A           </span>
+<span class="co">#&gt;  8     2021               9 3.05e6 Mike      Williams LAC     WR              A           </span>
+<span class="co">#&gt;  9     2021               9 1.58e4 Cordarre… Patters… Atl     RB              A           </span>
+<span class="co">#&gt; 10     2021               9 8.44e3 Aaron     Rodgers  GB      QB              O           </span>
 <span class="co">#&gt; # … with 11 more variables: percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   percentChange &lt;dbl&gt;, positionalRanking &lt;int&gt;, totalRating &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   auctionValueAverage &lt;dbl&gt;, averageDraftPosition &lt;dbl&gt;, projectedScore &lt;dbl&gt;,</span>
@@ -563,26 +561,26 @@
 <span class="co">#&gt; # A tibble: 4 × 6</span>
 <span class="co">#&gt;   currentMatchupPeriod matchupId teamId abbrev totalPointsLive totalProjectedPointsLive</span>
 <span class="co">#&gt;                  &lt;int&gt;     &lt;int&gt;  &lt;int&gt; &lt;fct&gt;            &lt;dbl&gt;                    &lt;dbl&gt;</span>
-<span class="co">#&gt; 1                    9        17      4 DEN                  1                     90.0</span>
-<span class="co">#&gt; 2                    9        17      1 AUS                 34                     99.0</span>
-<span class="co">#&gt; 3                    9        18      2 BOS                  1                     77.8</span>
-<span class="co">#&gt; 4                    9        18      3 CHI                  0                    124.</span></code></pre></div>
+<span class="co">#&gt; 1                    9        17      4 DEN               70.6                     92.6</span>
+<span class="co">#&gt; 2                    9        17      1 AUS               62.2                     78.7</span>
+<span class="co">#&gt; 3                    9        18      2 BOS               56                       63.6</span>
+<span class="co">#&gt; 4                    9        18      3 CHI              123.                     123.</span></code></pre></div>
 </div>
 <div id="standings" class="section level2">
 <h2 class="hasAnchor">
 <a href="#standings" class="anchor"></a>Standings</h2>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/league_standings.html">league_standings</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 4 × 19</span>
+<span class="co">#&gt; # A tibble: 4 × 17</span>
 <span class="co">#&gt;   seasonId scoringPeriodId teamId abbrev draftDayProjectedR… currentProjected… playoffSeed</span>
 <span class="co">#&gt;      &lt;int&gt;           &lt;int&gt;  &lt;int&gt; &lt;fct&gt;                &lt;int&gt;             &lt;int&gt;       &lt;int&gt;</span>
 <span class="co">#&gt; 1     2021               9      1 AUS                      2                 3           4</span>
 <span class="co">#&gt; 2     2021               9      2 BOS                      4                 2           3</span>
 <span class="co">#&gt; 3     2021               9      3 CHI                      3                 1           1</span>
 <span class="co">#&gt; 4     2021               9      4 DEN                      1                 4           2</span>
-<span class="co">#&gt; # … with 12 more variables: rankCalculatedFinal &lt;int&gt;, gamesBack &lt;dbl&gt;, losses &lt;int&gt;,</span>
+<span class="co">#&gt; # … with 10 more variables: rankCalculatedFinal &lt;int&gt;, gamesBack &lt;dbl&gt;, losses &lt;int&gt;,</span>
 <span class="co">#&gt; #   percentage &lt;dbl&gt;, pointsAgainst &lt;dbl&gt;, pointsFor &lt;dbl&gt;, streakLength &lt;int&gt;,</span>
-<span class="co">#&gt; #   streakType &lt;chr&gt;, ties &lt;int&gt;, wins &lt;int&gt;, playoffPct &lt;dbl&gt;, divisionWinPct &lt;dbl&gt;</span></code></pre></div>
+<span class="co">#&gt; #   streakType &lt;chr&gt;, ties &lt;int&gt;, wins &lt;int&gt;</span></code></pre></div>
 </div>
   </div>
 
