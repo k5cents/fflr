@@ -79,7 +79,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.1</span>
       </span>
     </div>
 
@@ -129,28 +129,38 @@
       
     </div>
 
-    <div id="fflr-200" class="section level1">
-<h1 class="page-header" data-toc-text="2.0.0">
-<a href="#fflr-200" class="anchor"></a>fflr 2.0.0<small> Unreleased </small>
+    <div id="fflr-201" class="section level1">
+<h1 class="page-header" data-toc-text="2.0.1">
+<a href="#fflr-201" class="anchor"></a>fflr 2.0.1<small> Unreleased </small>
 </h1>
 <ul>
-<li><p>Deprecate <code><a href="../reference/tidy_schedule.html">tidy_matchups()</a></code> and replace with <code><a href="../reference/tidy_schedule.html">tidy_schedule()</a></code>.</p></li>
-<li><p>Leave <code>items</code> nested in <code><a href="../reference/recent_activity.html">recent_activity()</a></code>.</p></li>
-<li><p>Fix bye week scoring for D/ST players in <code><a href="../reference/team_roster.html">team_roster()</a></code> (#40).</p></li>
-<li><p>Change <code>powerWins</code> to a normalized <code>expectedWins</code> in <code><a href="../reference/tidy_scores.html">tidy_scores()</a></code>.</p></li>
-<li><p>Add <code>scoringPeriodId</code> argument to functions like <code><a href="../reference/recent_activity.html">recent_activity()</a></code> (#32).</p></li>
-<li><p>Add <code><a href="../reference/transaction_counter.html">budget_summary()</a></code> version of <code><a href="../reference/transaction_counter.html">transaction_counter()</a></code>.</p></li>
-<li><p>Add <code>useMatchup</code> argument to <code><a href="../reference/tidy_scores.html">tidy_scores()</a></code> to allow for <code>scoringPeriodId</code>.</p></li>
-<li><p>Add transaction dates (and more) to <code><a href="../reference/recent_activity.html">recent_activity()</a></code> output.</p></li>
-<li><p>Add <code><a href="../reference/best_roster.html">best_roster()</a></code>, using <code><a href="../reference/team_roster.html">team_roster()</a></code> and sorting with slot settings.</p></li>
-<li><p><code><a href="../reference/pro_schedule.html">pro_schedule()</a></code> (and <code>nfl_schedule</code>) are sorted by <code>date</code> and <code>matchupId</code>.</p></li>
-<li><p>Deprecate <code><a href="../reference/all_players.html">all_players()</a></code> in favor of more advance <code><a href="../reference/list_players.html">list_players()</a></code> (#21).</p></li>
-<li><p>Manually override <code>teamId</code> in each <code><a href="../reference/team_roster.html">team_roster()</a></code> data frame.</p></li>
-<li><p>Clarify the name of many <code>*Id</code> columns (e.g., <code>teamId</code>, <code>matchupId</code>) (#31).</p></li>
-<li><p>Add <code><a href="../reference/combine_history.html">combine_history()</a></code> utility for <code>leagueHistory</code> functions.</p></li>
-<li><p>Improve handling of pre-draft and no-history edge cases (#35).</p></li>
-<li><p>Improve abbreviation techniques, add all roster slot and position IDs (#29).</p></li>
-<li><p>Fix error checking in <code><a href="../reference/ffl_api.html">ffl_api()</a></code>. Returns proper error message when there is a failure (e.g., non-public league) (#36).</p></li>
+<li>Adjust <code><a href="../reference/player_acquire.html">player_acquire()</a></code> names to match <code><a href="../reference/team_roster.html">team_roster()</a></code>.</li>
+<li>Fix <code><a href="../reference/list_players.html">list_players()</a></code> test error on CRAN.</li>
+</ul>
+</div>
+    <div id="fflr-200" class="section level1">
+<h1 class="page-header" data-toc-text="2.0.0">
+<a href="#fflr-200" class="anchor"></a>fflr 2.0.0<small> 2021-11-08 </small>
+</h1>
+<ul>
+<li>Deprecate <code><a href="../reference/tidy_schedule.html">tidy_matchups()</a></code> and replace with <code><a href="../reference/tidy_schedule.html">tidy_schedule()</a></code>.</li>
+<li>Leave <code>items</code> nested in <code><a href="../reference/recent_activity.html">recent_activity()</a></code>.</li>
+<li>Fix bye week scoring for D/ST players in <code><a href="../reference/team_roster.html">team_roster()</a></code> (#40).</li>
+<li>Change <code>powerWins</code> to a normalized <code>expectedWins</code> in <code><a href="../reference/tidy_scores.html">tidy_scores()</a></code>.</li>
+<li>Add <code>scoringPeriodId</code> argument to functions like <code><a href="../reference/recent_activity.html">recent_activity()</a></code> (#32).</li>
+<li>Add <code><a href="../reference/transaction_counter.html">budget_summary()</a></code> version of <code><a href="../reference/transaction_counter.html">transaction_counter()</a></code>.</li>
+<li>Add <code>useMatchup</code> argument to <code><a href="../reference/tidy_scores.html">tidy_scores()</a></code> to allow for <code>scoringPeriodId</code>.</li>
+<li>Add transaction dates (and more) to <code><a href="../reference/recent_activity.html">recent_activity()</a></code> output.</li>
+<li>Add <code><a href="../reference/best_roster.html">best_roster()</a></code>, using <code><a href="../reference/team_roster.html">team_roster()</a></code> and sorting with slot settings.</li>
+<li>
+<code><a href="../reference/pro_schedule.html">pro_schedule()</a></code> (and <code>nfl_schedule</code>) are sorted by <code>date</code> and <code>matchupId</code>.</li>
+<li>Deprecate <code><a href="../reference/all_players.html">all_players()</a></code> in favor of more advance <code><a href="../reference/list_players.html">list_players()</a></code> (#21).</li>
+<li>Manually override <code>teamId</code> in each <code><a href="../reference/team_roster.html">team_roster()</a></code> data frame.</li>
+<li>Clarify the name of many <code>*Id</code> columns (e.g., <code>teamId</code>, <code>matchupId</code>) (#31).</li>
+<li>Add <code><a href="../reference/combine_history.html">combine_history()</a></code> utility for <code>leagueHistory</code> functions.</li>
+<li>Improve handling of pre-draft and no-history edge cases (#35).</li>
+<li>Improve abbreviation techniques, add all roster slot and position IDs (#29).</li>
+<li>Fix error checking in <code><a href="../reference/ffl_api.html">ffl_api()</a></code>. Returns proper error message when there is a failure (e.g., non-public league) (#36).</li>
 </ul>
 </div>
     <div id="fflr-192" class="section level1">
@@ -158,15 +168,15 @@
 <a href="#fflr-192" class="anchor"></a>fflr 1.9.2<small> 2021-10-05 </small>
 </h1>
 <ul>
-<li><p>Fix <code><a href="../reference/tidy_scores.html">tidy_scores()</a></code> for settings that award home team points.</p></li>
-<li><p>Remove bad variables argument from <code><a href="../reference/pro_scores.html">pro_scores()</a></code>.</p></li>
-<li><p>Add vignette and update the README and logo.</p></li>
-<li><p>Unnest the <code>currentScoringPeriod</code> in <code><a href="../reference/ffl_seasons.html">ffl_seasons()</a></code>.</p></li>
-<li><p>Remove <code>seasonId</code> argument in sub-functions.</p></li>
-<li><p>Use <code>proTeamId</code> and <code>playerId</code> column names in data.</p></li>
-<li><p>Clarify which columns are simulated in <code><a href="../reference/league_simulation.html">league_simulation()</a></code>.</p></li>
-<li><p>Add <code>overwrite</code> argument to <code><a href="../reference/ffl_id.html">ffl_id()</a></code> to set <code><a href="https://rdrr.io/r/base/options.html">options()</a></code> regardless.</p></li>
-<li><p>Rename <code>state_correct()</code> to <code><a href="../reference/stat_corrections.html">stat_corrections()</a></code> and update for new back-end.</p></li>
+<li>Fix <code><a href="../reference/tidy_scores.html">tidy_scores()</a></code> for settings that award home team points.</li>
+<li>Remove bad variables argument from <code><a href="../reference/pro_scores.html">pro_scores()</a></code>.</li>
+<li>Add vignette and update the README and logo.</li>
+<li>Unnest the <code>currentScoringPeriod</code> in <code><a href="../reference/ffl_seasons.html">ffl_seasons()</a></code>.</li>
+<li>Remove <code>seasonId</code> argument in sub-functions.</li>
+<li>Use <code>proTeamId</code> and <code>playerId</code> column names in data.</li>
+<li>Clarify which columns are simulated in <code><a href="../reference/league_simulation.html">league_simulation()</a></code>.</li>
+<li>Add <code>overwrite</code> argument to <code><a href="../reference/ffl_id.html">ffl_id()</a></code> to set <code><a href="https://rdrr.io/r/base/options.html">options()</a></code> regardless.</li>
+<li>Rename <code>state_correct()</code> to <code><a href="../reference/stat_corrections.html">stat_corrections()</a></code> and update for new back-end.</li>
 </ul>
 </div>
     <div id="fflr-191" class="section level1">
@@ -174,11 +184,11 @@
 <a href="#fflr-191" class="anchor"></a>fflr 1.9.1<small> Unreleased </small>
 </h1>
 <ul>
-<li><p>Rename some functions to match the website section headers (e.g., <code>roster_moves()</code> to <code><a href="../reference/recent_activity.html">recent_activity()</a></code>).</p></li>
-<li><p>Add <code><a href="../reference/pro_events.html">pro_events()</a></code> and <code><a href="../reference/pro_scores.html">pro_scores()</a></code> for live NFL data.</p></li>
-<li><p>Add vignette listing the package functions as they relate to the sections of the ESPN website.</p></li>
-<li><p>Add spell checking.</p></li>
-<li><p>Rename some columns to match conversion (#31).</p></li>
+<li>Rename some functions to match the website section headers (e.g., <code>roster_moves()</code> to <code><a href="../reference/recent_activity.html">recent_activity()</a></code>).</li>
+<li>Add <code><a href="../reference/pro_events.html">pro_events()</a></code> and <code><a href="../reference/pro_scores.html">pro_scores()</a></code> for live NFL data.</li>
+<li>Add vignette listing the package functions as they relate to the sections of the ESPN website.</li>
+<li>Add spell checking.</li>
+<li>Rename some columns to match conversion (#31).</li>
 </ul>
 </div>
     <div id="fflr-190" class="section level1">
@@ -186,12 +196,12 @@
 <a href="#fflr-190" class="anchor"></a>fflr 1.9.0<small> Unreleased </small>
 </h1>
 <ul>
-<li><p>The package has entirely been re-written from the ground-up (#24).</p></li>
-<li><p>All functions use the new <code>try_json()</code> back-end, which uses <code>RETRY()</code> instead of <code>fromJSON()</code>.</p></li>
-<li><p>Use the same argument/column names as the API (<code>leagueId</code> instead of <code>lid</code>).</p></li>
-<li><p>Return single-row data frames instead of lists for a single season.</p></li>
-<li><p>Add <code>tidy_*</code> prefix to function names that manipulate data structure (#26).</p></li>
-<li><p>Pass the <code>...</code> arguments to <code>GET()</code> instead of <code>fromJSON()</code> (#25).</p></li>
+<li>The package has entirely been re-written from the ground-up (#24).</li>
+<li>All functions use the new <code>try_json()</code> back-end, which uses <code>RETRY()</code> instead of <code>fromJSON()</code>.</li>
+<li>Use the same argument/column names as the API (<code>leagueId</code> instead of <code>lid</code>).</li>
+<li>Return single-row data frames instead of lists for a single season.</li>
+<li>Add <code>tidy_*</code> prefix to function names that manipulate data structure (#26).</li>
+<li>Pass the <code>...</code> arguments to <code>GET()</code> instead of <code>fromJSON()</code> (#25).</li>
 </ul>
 </div>
   </div>
