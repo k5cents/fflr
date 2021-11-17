@@ -11,5 +11,8 @@ test_that("player list by value with custom sort", {
   )
   expect_true(all(p$proTeam == "LAR"))
   expect_true(all(p$defaultPosition == "WR"))
-  expect_true(all(diff(p$percentChange) < 0))
+  if (!any(is.na(p$percentChange))) {
+    x <- diff(p$percentChange[!is.na(p$percentChange)])
+    expect_true(all(x <= 0))
+  }
 })
