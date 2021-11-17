@@ -37,15 +37,15 @@ parse_acquire <- function(entry, t, y, w) {
   x <- tibble::tibble(
     seasonId  = y,
     scoringPeriodId  = w,
-    onTeamId = entry$playerPoolEntry$onTeamId,
-    lineupSlotId = slot_abbrev(entry$lineupSlotId),
-    id = player$id,
+    teamId = entry$playerPoolEntry$onTeamId,
+    lineupSlot = slot_abbrev(entry$lineupSlotId),
+    playerId = player$id,
     firstName = player$firstName,
     lastName = player$lastName,
-    proTeamId  = pro_abbrev(player$proTeamId),
-    defaultPositionId = pos_abbrev(player$defaultPositionId),
+    proTeam  = pro_abbrev(player$proTeamId),
+    position = pos_abbrev(player$defaultPositionId),
     acquisitionType = entry$acquisitionType,
     acquisitionDate = ffl_date(entry$acquisitionDate)
   )
-  x[order(x$lineupSlotId), ]
+  x[order(x$lineupSlot), ]
 }
