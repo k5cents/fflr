@@ -1,3 +1,7 @@
+# fflr 2.0.2
+
+* Return empty `pro_*()` data with relevant message post-season. 
+
 # fflr 2.0.1
 
 * Adjust `player_acquire()` names to match `team_roster()`.

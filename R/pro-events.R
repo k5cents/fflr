@@ -10,6 +10,20 @@
 #' @export
 pro_events <- function() {
   dat <- try_json("https://site.api.espn.com/apis/fantasy/v2/games/ffl/games")
+  if (length(dat$events) == 0) {
+    message("No scheduled professional football events")
+    return(
+      tibble(
+        id = character(),
+        date = ffl_timestamp(integer()),
+        timeValid = logical(),
+        period = integer(),
+        clock = character(),
+        status = character(),
+        summary = character()
+      )
+    )
+  }
   out <- dat$events
   out$competitionId <- NULL
   out$uid <- NULL
@@ -38,6 +52,22 @@ pro_events <- function() {
 #' @export
 pro_scores <- function() {
   dat <- try_json("https://site.api.espn.com/apis/fantasy/v2/games/ffl/games")
+  if (length(dat$events) == 0) {
+    message("No scheduled professional football events")
+    return(
+      tibble(
+        id = character(),
+        type = character(),
+        homeAway = character(),
+        abbreviation = character(),
+        score = integer(),
+        winner = logical(),
+        record = character(),
+        name = character(),
+        lineup = list()
+      )
+    )
+  }
   out <- do.call("rbind", dat$events$competitors)
   out$score[out$score == ""] <- NA
   out$score <- as.integer(out$score)

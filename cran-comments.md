@@ -13,3 +13,9 @@
 ## R CMD check results
 
 0 errors | 0 warnings | 0 note
+
+## Notes
+
+More functions are likely to fail over the next few months as the NFL season 
+comes to an end in the United States. Action will be taken to update these
+functions to fail gracefully.
