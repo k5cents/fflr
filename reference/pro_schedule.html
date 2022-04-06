@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.3</span>
       </span>
     </div>
 
@@ -26,7 +26,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -78,20 +78,20 @@
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">pro_schedule</span><span class="op">(</span>seasonId <span class="op">=</span> <span class="fu"><a href="ffl_info.html">ffl_year</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 514 × 7</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 512 × 7</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    seasonId scoringPeriodId matchupId proTeam opponent isHome</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     <span style="text-decoration: underline;">2</span>019               1 401<span style="text-decoration: underline;">127</span>913 Chi     GB       TRUE  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>     <span style="text-decoration: underline;">2</span>019               1 401<span style="text-decoration: underline;">127</span>913 GB      Chi      FALSE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     <span style="text-decoration: underline;">2</span>019               1 401<span style="text-decoration: underline;">127</span>923 LAR     Car      FALSE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     <span style="text-decoration: underline;">2</span>019               1 401<span style="text-decoration: underline;">127</span>923 Car     LAR      TRUE  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     <span style="text-decoration: underline;">2</span>019               1 401<span style="text-decoration: underline;">127</span>928 Cle     Ten      TRUE  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     <span style="text-decoration: underline;">2</span>019               1 401<span style="text-decoration: underline;">127</span>928 Ten     Cle      FALSE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>     <span style="text-decoration: underline;">2</span>019               1 401<span style="text-decoration: underline;">127</span>931 KC      Jax      FALSE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     <span style="text-decoration: underline;">2</span>019               1 401<span style="text-decoration: underline;">127</span>931 Jax     KC       TRUE  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     <span style="text-decoration: underline;">2</span>019               1 401<span style="text-decoration: underline;">127</span>954 Mia     Bal      TRUE  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>     <span style="text-decoration: underline;">2</span>019               1 401<span style="text-decoration: underline;">127</span>954 Bal     Mia      FALSE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 504 more rows, and 1 more variable: date &lt;dttm&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>225 KC      Hou      TRUE  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>225 Hou     KC       FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>116 Buf     NYJ      TRUE  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>116 NYJ     Buf      FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>131 Mia     NE       FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>131 NE      Mia      TRUE  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>147 Cle     Bal      FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>147 Bal     Cle      TRUE  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>195 Ind     Jax      FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>195 Jax     Ind      TRUE  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 502 more rows, and 1 more variable: date &lt;dttm&gt;</span></span>
 </code></pre></div>
     </div>
   </div>
