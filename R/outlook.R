@@ -45,17 +45,27 @@ player_outlook <- function(leagueId = ffl_id(), limit = 50) {
 
   y <- max(pl$player$stats[[1]]$seasonId)
   w <- length(pl$player$outlooks$outlooksByWeek)
-  x <- pl$player$outlooks$outlooksByWeek
-  x$`0` <- pl$player$seasonOutlook
-  x <- x[c(length(x), seq(length(x) - 1))]
-  outlooks <- as.vector(t(as.data.frame(x)))
-  out <- tibble::tibble(
-    seasonId = y,
-    scoringPeriodId = rep(seq(0, w), length(outlooks) / (w + 1)),
-    id = rep(pl$player$id, each = w + 1),
-    firstName = rep(pl$player$firstName, each = w + 1),
-    lastName = rep(pl$player$lastName, each = w + 1),
-    outlook = outlooks
-  )
-  out[!is.na(out$outlook), ]
+  if (!is.null(pl$player$outlook)) {
+    x <- pl$player$outlooks$outlooksByWeek
+    x$`0` <- pl$player$seasonOutlook
+    x <- x[c(length(x), seq(length(x) - 1))]
+    outlooks <- as.vector(t(as.data.frame(x)))
+    out <- tibble::tibble(
+      seasonId = y,
+      scoringPeriodId = rep(seq(0, w), length(outlooks) / (w + 1)),
+      id = rep(pl$player$id, each = w + 1),
+      firstName = rep(pl$player$firstName, each = w + 1),
+      lastName = rep(pl$player$lastName, each = w + 1),
+      outlook = outlooks
+    )
+    out[!is.na(out$outlook), ]
+  } else {
+    tibble::tibble(
+      seasonId = y,
+      id = rep(pl$player$id, each = w + 1),
+      firstName = rep(pl$player$firstName, each = w + 1),
+      lastName = rep(pl$player$lastName, each = w + 1),
+      outlook = NA_character_
+    )
+  }
 }
