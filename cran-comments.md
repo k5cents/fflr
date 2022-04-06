@@ -19,3 +19,8 @@
 More functions are likely to fail over the next few months as the NFL season 
 comes to an end in the United States. Action will be taken to update these
 functions to fail gracefully.
+
+### 2022-04-06
+
+The `player_outlook()` function returns an column of `NA` values when no data
+is available during the offseason.
