@@ -11,7 +11,7 @@
 #'   be called? If `TRUE`, a list of results is returned, with one element for
 #'   each historical year of the league.
 #' @param seasonId Integer year of NFL season. By default, the season is
-#'   currently set to 2021. Use a recent year or set `leagueHistory` to `TRUE`
+#'   currently set to 2022. Use a recent year or set `leagueHistory` to `TRUE`
 #'   to obtain all past data.
 #' @param scoringPeriodId Integer week of NFL season. By default, `NULL` will
 #'   use the current week (see [ffl_week()]). Scoring periods are always one
@@ -29,7 +29,7 @@
 #' @keywords internal
 #' @export
 ffl_api <- function(leagueId = ffl_id(), view = NULL, leagueHistory = FALSE,
-                    seasonId = 2021, scoringPeriodId = NULL, ...) {
+                    seasonId = 2022, scoringPeriodId = NULL, ...) {
   dots <- list(..., scoringPeriodId = scoringPeriodId)
   age_path <- ifelse(
     test = isTRUE(leagueHistory),
