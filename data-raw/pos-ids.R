@@ -55,3 +55,4 @@ pos_ids$slot <- as.integer(pos_ids$slot)
 pos_ids$position <- as.integer(pos_ids$position)
 
 usethis::use_data(pos_ids, internal = TRUE, overwrite = TRUE)
+readr::write_csv(pos_ids, "data-raw/pos_ids.csv", na = "")

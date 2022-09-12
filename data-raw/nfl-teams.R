@@ -25,3 +25,4 @@ nfl_teams <- as_tibble(nfl_teams[order(nfl_teams$id), ])
 names(nfl_teams)[1] <- "proTeamId"
 
 usethis::use_data(nfl_teams, overwrite = TRUE)
+readr::write_csv(nfl_teams, "data-raw/nfl_teams.csv", na = "")
