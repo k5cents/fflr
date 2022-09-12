@@ -53,6 +53,8 @@ live_scoring <- function(leagueId = ffl_id(), yetToPlay = FALSE, ...) {
           out_roster(
             entry = dat$teams$roster$entries[[i]],
             tid = dat$teams$id[i],
+            wk = dat$scoringPeriodId,
+            yr = dat$seasonId,
             tm = tm
           )
         }
