@@ -74,6 +74,10 @@ parse_match <- function(s, y = NULL, t = NULL) {
 parse_scores <- function(s, y = NULL, t = NULL) {
   n_opp <- nrow(t) - 1
   top <- rep(list(NA), 2)
+  if (is.null(s[[2]]$pointsByScoringPeriod)) {
+    message("No scores yet for this season")
+    return(data.frame())
+  }
   for (k in 2:1) {
     x <- s[[k]]$pointsByScoringPeriod
     out <- rep(list(NA), length(x))
