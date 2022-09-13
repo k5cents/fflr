@@ -18,7 +18,7 @@ and broadcast information."><meta property="og:image" content="/logo.png"><!-- m
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.0</span>
       </span>
     </div>
 
@@ -59,12 +59,14 @@ and broadcast information.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">pro_events</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">pro_events</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="value">
     <h2>Value</h2>
-    <p>A data frame of NFL events.</p>
+    
+
+<p>A data frame of NFL events.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -74,11 +76,28 @@ and broadcast information.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">pro_events</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> No scheduled professional football events</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 7</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 7 variables: id &lt;chr&gt;, date &lt;dttm&gt;, timeValid &lt;lgl&gt;, period &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   clock &lt;chr&gt;, status &lt;chr&gt;, summary &lt;chr&gt;</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">pro_events</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 16 × 13</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    id      date                timeV…¹ period clock status summary perce…² odds </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 401437… 2022-09-13 <span style="color: #949494;">00:15:00</span> TRUE         1 12:52 in     12:52 …    3.55 DEN …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 401437… 2022-09-09 <span style="color: #949494;">00:20:00</span> TRUE         4 0:00  post   Final    100    BUF …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 401437… 2022-09-11 <span style="color: #949494;">17:00:00</span> TRUE         4 0:00  post   Final    100    NO -…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 401437… 2022-09-11 <span style="color: #949494;">17:00:00</span> TRUE         4 0:00  post   Final    100    SF -…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 401437… 2022-09-11 <span style="color: #949494;">17:00:00</span> TRUE         5 0:00  post   Final/…  100    CIN …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 401437… 2022-09-11 <span style="color: #949494;">17:00:00</span> TRUE         4 0:00  post   Final    100    PHI …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 401437… 2022-09-11 <span style="color: #949494;">17:00:00</span> TRUE         4 0:00  post   Final    100    MIA …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 401437… 2022-09-11 <span style="color: #949494;">17:00:00</span> TRUE         4 0:00  post   Final    100    BAL …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 401437… 2022-09-11 <span style="color: #949494;">17:00:00</span> TRUE         4 0:00  post   Final    100    WSH …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 401437… 2022-09-11 <span style="color: #949494;">17:00:00</span> TRUE         4 0:00  post   Final    100    CAR …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> 401437… 2022-09-11 <span style="color: #949494;">17:00:00</span> TRUE         5 0:00  post   Final/…  100    IND …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> 401437… 2022-09-11 <span style="color: #949494;">20:25:00</span> TRUE         4 0:00  post   Final    100    TEN …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> 401437… 2022-09-11 <span style="color: #949494;">20:25:00</span> TRUE         4 0:00  post   Final    100    MIN …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> 401437… 2022-09-11 <span style="color: #949494;">20:25:00</span> TRUE         4 0:00  post   Final    100    KC -…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> 401437… 2022-09-11 <span style="color: #949494;">20:25:00</span> TRUE         4 0:00  post   Final    100    LAC …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span> 401437… 2022-09-12 <span style="color: #949494;">00:20:00</span> TRUE         4 0:00  post   Final    100    TB -…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 4 more variables: broadcast &lt;chr&gt;, competitors &lt;list&gt;, homeTeam &lt;fct&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   awayTeam &lt;fct&gt;, and abbreviated variable names ¹​timeValid, ²​percentComplete</span></span>
 </code></pre></div>
     </div>
   </div>
@@ -93,7 +112,7 @@ and broadcast information.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

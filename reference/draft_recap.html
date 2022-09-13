@@ -18,7 +18,7 @@ salary cap format."><meta property="og:image" content="/logo.png"><!-- mathjax -
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.0</span>
       </span>
     </div>
 
@@ -59,7 +59,7 @@ salary cap format.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">draft_recap</span><span class="op">(</span>leagueId <span class="op">=</span> <span class="fu"><a href="ffl_id.html">ffl_id</a></span><span class="op">(</span><span class="op">)</span>, leagueHistory <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">draft_recap</span><span class="op">(</span>leagueId <span class="op">=</span> <span class="fu"><a href="ffl_id.html">ffl_id</a></span><span class="op">(</span><span class="op">)</span>, leagueHistory <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -67,17 +67,24 @@ salary cap format.</p>
     <dl><dt>leagueId</dt>
 <dd><p>Numeric league ID or ESPN fantasy page URL. Defaults to
 <code>getOption("fflr.leagueId")</code>. Function fails if no ID is found.</p></dd>
+
+
 <dt>leagueHistory</dt>
 <dd><p>logical; Should the <code>leagueHistory</code> version of the API
 be called? If <code>TRUE</code>, a list of results is returned, with one element for
 each historical year of the league.</p></dd>
+
+
 <dt>...</dt>
 <dd><p>Additional queries passed to <code><a href="https://httr.r-lib.org/reference/GET.html" class="external-link">httr::GET()</a></code>. Arguments are
 converted to a named list and passed to <code>query</code> alongside <code>view</code>.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A data frame(s) of draft picks.</p>
+    
+
+<p>A data frame(s) of draft picks.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -93,23 +100,24 @@ converted to a named list and passed to <code>query</code> alongside <code>view<
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">draft_recap</span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">draft_recap</span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 64 × 15</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    seasonId autoDraftTypeId bidAmount pickId keeper lineupSlot nominatingTeamId</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     <span style="text-decoration: underline;">2</span>021               1        <span style="color: #BB0000;">NA</span>      1 FALSE  RB         <span style="color: #BB0000;">NA</span>              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>     <span style="text-decoration: underline;">2</span>021               1        <span style="color: #BB0000;">NA</span>      2 FALSE  RB         <span style="color: #BB0000;">NA</span>              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     <span style="text-decoration: underline;">2</span>021               1        <span style="color: #BB0000;">NA</span>      3 FALSE  RB         <span style="color: #BB0000;">NA</span>              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     <span style="text-decoration: underline;">2</span>021               1        <span style="color: #BB0000;">NA</span>      4 FALSE  TE         <span style="color: #BB0000;">NA</span>              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     <span style="text-decoration: underline;">2</span>021               1        <span style="color: #BB0000;">NA</span>      5 FALSE  RB         <span style="color: #BB0000;">NA</span>              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     <span style="text-decoration: underline;">2</span>021               1        <span style="color: #BB0000;">NA</span>      6 FALSE  RB         <span style="color: #BB0000;">NA</span>              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>     <span style="text-decoration: underline;">2</span>021               1        <span style="color: #BB0000;">NA</span>      7 FALSE  RB         <span style="color: #BB0000;">NA</span>              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     <span style="text-decoration: underline;">2</span>021               1        <span style="color: #BB0000;">NA</span>      8 FALSE  RB         <span style="color: #BB0000;">NA</span>              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     <span style="text-decoration: underline;">2</span>021               1        <span style="color: #BB0000;">NA</span>      9 FALSE  WR         <span style="color: #BB0000;">NA</span>              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>     <span style="text-decoration: underline;">2</span>021               1        <span style="color: #BB0000;">NA</span>     10 FALSE  WR         <span style="color: #BB0000;">NA</span>              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 54 more rows, and 8 more variables: overallPickNumber &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   playerId &lt;int&gt;, reservedForKeeper &lt;lgl&gt;, roundId &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   roundPickNumber &lt;int&gt;, teamId &lt;int&gt;, abbrev &lt;fct&gt;, tradeLocked &lt;lgl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    seaso…¹ autoD…² bidAm…³ pickId keeper lineu…⁴ nomin…⁵ overa…⁶ playe…⁷ reser…⁸</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>    <span style="text-decoration: underline;">2</span>022       7      <span style="color: #BB0000;">NA</span>      1 FALSE  RB      <span style="color: #BB0000;">NA</span>            1 4<span style="text-decoration: underline;">242</span>335 TRUE   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>    <span style="text-decoration: underline;">2</span>022       7      <span style="color: #BB0000;">NA</span>      2 FALSE  RB      <span style="color: #BB0000;">NA</span>            2 3<span style="text-decoration: underline;">117</span>251 TRUE   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>    <span style="text-decoration: underline;">2</span>022       7      <span style="color: #BB0000;">NA</span>      3 FALSE  WR      <span style="color: #BB0000;">NA</span>            3 2<span style="text-decoration: underline;">977</span>187 TRUE   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>    <span style="text-decoration: underline;">2</span>022       7      <span style="color: #BB0000;">NA</span>      4 FALSE  RB      <span style="color: #BB0000;">NA</span>            4 3<span style="text-decoration: underline;">068</span>267 TRUE   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>    <span style="text-decoration: underline;">2</span>022       7      <span style="color: #BB0000;">NA</span>      5 FALSE  WR      <span style="color: #BB0000;">NA</span>            5 4<span style="text-decoration: underline;">262</span>921 TRUE   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>    <span style="text-decoration: underline;">2</span>022       7      <span style="color: #BB0000;">NA</span>      6 FALSE  WR      <span style="color: #BB0000;">NA</span>            6 4<span style="text-decoration: underline;">362</span>628 TRUE   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>    <span style="text-decoration: underline;">2</span>022       7      <span style="color: #BB0000;">NA</span>      7 FALSE  RB      <span style="color: #BB0000;">NA</span>            7 3<span style="text-decoration: underline;">043</span>078 TRUE   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>    <span style="text-decoration: underline;">2</span>022       7      <span style="color: #BB0000;">NA</span>      8 FALSE  RB      <span style="color: #BB0000;">NA</span>            8 4<span style="text-decoration: underline;">241</span>457 TRUE   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>    <span style="text-decoration: underline;">2</span>022       7      <span style="color: #BB0000;">NA</span>      9 FALSE  RB      <span style="color: #BB0000;">NA</span>            9 3<span style="text-decoration: underline;">116</span>593 FALSE  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>    <span style="text-decoration: underline;">2</span>022       7      <span style="color: #BB0000;">NA</span>     10 FALSE  RB      <span style="color: #BB0000;">NA</span>           10 3<span style="text-decoration: underline;">054</span>850 FALSE  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 54 more rows, 5 more variables: roundId &lt;int&gt;, roundPickNumber &lt;int&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   teamId &lt;int&gt;, abbrev &lt;fct&gt;, tradeLocked &lt;lgl&gt;, and abbreviated variable</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   names ¹​seasonId, ²​autoDraftTypeId, ³​bidAmount, ⁴​lineupSlot,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ⁵​nominatingTeamId, ⁶​overallPickNumber, ⁷​playerId, ⁸​reservedForKeeper</span></span>
 </code></pre></div>
     </div>
   </div>
@@ -124,7 +132,7 @@ converted to a named list and passed to <code>query</code> alongside <code>view<
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

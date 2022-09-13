@@ -18,7 +18,7 @@ can be returned at a time."><meta property="og:image" content="/logo.png"><!-- m
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.0</span>
       </span>
     </div>
 
@@ -59,19 +59,24 @@ can be returned at a time.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">player_news</span><span class="op">(</span><span class="va">playerId</span>, parseHTML <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">player_news</span><span class="op">(</span><span class="va">playerId</span>, parseHTML <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>playerId</dt>
 <dd><p>A single player ID number.</p></dd>
+
+
 <dt>parseHTML</dt>
 <dd><p>Should HTML stories be parsed with <code><a href="http://xml2.r-lib.org/reference/read_xml.html" class="external-link">xml2::read_html()</a></code>?</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A data frame of news stories.</p>
+    
+
+<p>A data frame of news stories.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -86,21 +91,21 @@ can be returned at a time.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">player_news</span><span class="op">(</span>playerId <span class="op">=</span> <span class="st">"15847"</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 27 × 6</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">player_news</span><span class="op">(</span>playerId <span class="op">=</span> <span class="st">"15847"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 21 × 6</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       id published           type     premium headline                     body </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> <span style="text-decoration: underline;">15</span>847 2022-01-31 <span style="color: #949494;">00:33:00</span> Rotowire FALSE   Kelce caught 10 of 11 targe… <span style="color: #949494;">"</span>Kel…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> <span style="text-decoration: underline;">15</span>847 2022-01-24 <span style="color: #949494;">07:07:35</span> Rotowire FALSE   Kelce caught eight of nine … <span style="color: #949494;">"</span>Kel…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> <span style="text-decoration: underline;">15</span>847 2022-01-17 <span style="color: #949494;">06:26:54</span> Rotowire FALSE   Kelce corralled five of sev… <span style="color: #949494;">"</span>Pat…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> <span style="text-decoration: underline;">15</span>847 2022-01-09 <span style="color: #949494;">01:55:12</span> Rotowire FALSE   Kelce recorded four recepti… <span style="color: #949494;">"</span>Kel…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> <span style="text-decoration: underline;">15</span>847 2022-01-02 <span style="color: #949494;">21:43:35</span> Rotowire FALSE   Kelce caught five of seven … <span style="color: #949494;">"</span>Kel…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> <span style="text-decoration: underline;">15</span>847 2021-12-30 <span style="color: #949494;">17:17:59</span> Story    TRUE    NFL All-Pro Team 2021: Bill… <span style="color: #949494;">"</span>&lt;p&gt;…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> <span style="text-decoration: underline;">15</span>847 2021-12-29 <span style="color: #949494;">22:08:48</span> Rotowire FALSE   Kelce (illness) isn't liste… <span style="color: #949494;">"</span>A f…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> <span style="text-decoration: underline;">15</span>847 2021-12-29 <span style="color: #949494;">18:40:27</span> Rotowire FALSE   Kelce (undisclosed) is on t… <span style="color: #949494;">"</span>It …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> <span style="text-decoration: underline;">15</span>847 2021-12-26 <span style="color: #949494;">15:07:09</span> Rotowire FALSE   The Chiefs downgraded Kelce… <span style="color: #949494;">"</span>Tho…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> <span style="text-decoration: underline;">15</span>847 2021-12-26 <span style="color: #949494;">14:18:48</span> Rotowire FALSE   Kelce (illness), who remain… <span style="color: #949494;">"</span>Tho…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 17 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> <span style="text-decoration: underline;">15</span>847 2022-09-12 <span style="color: #949494;">13:33:41</span> Media    FALSE   What Travis Kelce's big Wee… <span style="color: #949494;">"</span>Tri…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> <span style="text-decoration: underline;">15</span>847 2022-09-12 <span style="color: #949494;">00:20:37</span> Rotowire FALSE   Kelce caught eight of nine … <span style="color: #949494;">"</span>Wit…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> <span style="text-decoration: underline;">15</span>847 2022-07-27 <span style="color: #949494;">13:47:47</span> Rotowire FALSE   Kelce and the Chiefs agreed… <span style="color: #949494;">"</span>Kel…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> <span style="text-decoration: underline;">15</span>847 2022-07-11 <span style="color: #949494;">03:04:01</span> Rotowire FALSE   Kelce said 'you can't pay m… <span style="color: #949494;">"</span>It'…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> <span style="text-decoration: underline;">15</span>847 2022-01-31 <span style="color: #949494;">00:33:00</span> Rotowire FALSE   Kelce caught 10 of 11 targe… <span style="color: #949494;">"</span>Kel…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> <span style="text-decoration: underline;">15</span>847 2022-01-24 <span style="color: #949494;">07:07:35</span> Rotowire FALSE   Kelce caught eight of nine … <span style="color: #949494;">"</span>Kel…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> <span style="text-decoration: underline;">15</span>847 2022-01-17 <span style="color: #949494;">06:26:54</span> Rotowire FALSE   Kelce corralled five of sev… <span style="color: #949494;">"</span>Pat…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> <span style="text-decoration: underline;">15</span>847 2022-01-09 <span style="color: #949494;">01:55:12</span> Rotowire FALSE   Kelce recorded four recepti… <span style="color: #949494;">"</span>Kel…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> <span style="text-decoration: underline;">15</span>847 2022-01-02 <span style="color: #949494;">21:43:35</span> Rotowire FALSE   Kelce caught five of seven … <span style="color: #949494;">"</span>Kel…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> <span style="text-decoration: underline;">15</span>847 2021-12-30 <span style="color: #949494;">17:17:59</span> Story    TRUE    NFL All-Pro Team 2021: Bill… <span style="color: #949494;">"</span>&lt;p&gt;…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 11 more rows</span></span>
 </code></pre></div>
     </div>
   </div>
@@ -115,7 +120,7 @@ can be returned at a time.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

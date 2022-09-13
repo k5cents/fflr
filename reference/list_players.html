@@ -19,7 +19,7 @@ done in the ESPN Fantasy Football website."><meta property="og:image" content="/
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.0</span>
       </span>
     </div>
 
@@ -61,16 +61,16 @@ done in the ESPN Fantasy Football website.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">list_players</span><span class="op">(</span>
-  leagueId <span class="op">=</span> <span class="fu"><a href="ffl_id.html">ffl_id</a></span><span class="op">(</span><span class="op">)</span>,
-  sort <span class="op">=</span> <span class="st">"ROST"</span>,
-  position <span class="op">=</span> <span class="cn">NULL</span>,
-  status <span class="op">=</span> <span class="st">"AVAILABLE"</span>,
-  injured <span class="op">=</span> <span class="cn">NULL</span>,
-  proTeam <span class="op">=</span> <span class="cn">NULL</span>,
-  scoreType <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"STANDARD"</span>, <span class="st">"PPR"</span><span class="op">)</span>,
-  limit <span class="op">=</span> <span class="fl">50</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">list_players</span><span class="op">(</span></span>
+<span>  leagueId <span class="op">=</span> <span class="fu"><a href="ffl_id.html">ffl_id</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  sort <span class="op">=</span> <span class="st">"ROST"</span>,</span>
+<span>  position <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  status <span class="op">=</span> <span class="st">"AVAILABLE"</span>,</span>
+<span>  injured <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  proTeam <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  scoreType <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"STANDARD"</span>, <span class="st">"PPR"</span><span class="op">)</span>,</span>
+<span>  limit <span class="op">=</span> <span class="fl">50</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -78,6 +78,8 @@ done in the ESPN Fantasy Football website.</p>
     <dl><dt>leagueId</dt>
 <dd><p>Numeric league ID or ESPN fantasy page URL. Defaults to
 <code>getOption("fflr.leagueId")</code>. Function fails if no ID is found.</p></dd>
+
+
 <dt>sort</dt>
 <dd><p>The column from which to sort the data. Options match those on
 the ESPN website:</p><ul><li><p>"PLAYER" = Alphabetical by player name</p></li>
@@ -101,6 +103,8 @@ at his position. No. 1 is best.</p></li>
 <li><p>"AVG" = Average fantasy points scored in each game started.</p></li>
 <li><p>"LAST" = Last shows the player’s fantasy score in his team’s last game.</p></li>
 </ul></dd>
+
+
 <dt>position</dt>
 <dd><p>Abbreviation of player positions to filter, <code>NULL</code> for all:</p><ul><li><p>"QB" = Quarterback</p></li>
 <li><p>"RB" = Running Back</p></li>
@@ -111,6 +115,8 @@ position</p></li>
 <li><p>"D/ST" = Defense and Special Teams</p></li>
 <li><p>"K" = Kicker</p></li>
 </ul></dd>
+
+
 <dt>status</dt>
 <dd><p>Availability status of player, one or more from:</p><ul><li><p>"ALL"</p></li>
 <li><p>"AVAILABLE" (default)</p></li>
@@ -118,24 +124,35 @@ position</p></li>
 <li><p>"WAIVERS"</p></li>
 <li><p>"ONTEAM"</p></li>
 </ul></dd>
+
+
 <dt>injured</dt>
 <dd><p>Whether to return only injured or healthy players. Use <code>NULL</code>
 (default) for all players, <code>TRUE</code> for injured players, and <code>FALSE</code> for
 healthy players.</p></dd>
+
+
 <dt>proTeam</dt>
 <dd><p>The abbreviation or ID of the professional team from which
 players should be returned. See <code>pro_teams()</code> for a list of all possible
 team abbreviations.</p></dd>
+
+
 <dt>scoreType</dt>
 <dd><p>The type of scoring used: "STANDARD" or "PPR."</p></dd>
+
+
 <dt>limit</dt>
 <dd><p>The limit of players to return. Use <code>""</code> or <code>NULL</code> to return
 all. Defaults to 50, which is the default limit used by ESPN. Removing the
 limit can make the request take a long time.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A data frame of players.</p>
+    
+
+<p>A data frame of players.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -150,18 +167,19 @@ limit can make the request take a long time.</p></dd>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">list_players</span><span class="op">(</span><span class="st">"42654852"</span>, proTeam <span class="op">=</span> <span class="st">"Mia"</span>, sort <span class="op">=</span> <span class="st">"START"</span>, limit <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">list_players</span><span class="op">(</span><span class="st">"42654852"</span>, proTeam <span class="op">=</span> <span class="st">"Mia"</span>, sort <span class="op">=</span> <span class="st">"START"</span>, limit <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 19</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   seasonId scoringPeriodId      id firstName lastName proTeam defaultPosition</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>     <span style="text-decoration: underline;">2</span>021               1 4<span style="text-decoration: underline;">372</span>016 Jaylen    Waddle   Mia     WR             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>     <span style="text-decoration: underline;">2</span>021               1 3<span style="text-decoration: underline;">116</span>164 Mike      Gesicki  Mia     TE             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>     <span style="text-decoration: underline;">2</span>021               1  -<span style="color: #BB0000; text-decoration: underline;">16</span><span style="color: #BB0000;">015</span> Dolphins  D/ST     Mia     D/ST           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 12 more variables: injuryStatus &lt;chr&gt;, percentStarted &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;, positionalRanking &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   totalRating &lt;dbl&gt;, auctionValueAverage &lt;dbl&gt;, averageDraftPosition &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   projectedScore &lt;dbl&gt;, lastScore &lt;dbl&gt;, lastSeason &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   currentSeason &lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   seasonId scoringPeri…¹      id first…² lastN…³ proTeam defau…⁴ injur…⁵ perce…⁶</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>     <span style="text-decoration: underline;">2</span>022             1  -<span style="color: #BB0000; text-decoration: underline;">16</span><span style="color: #BB0000;">015</span> Dolphi… D/ST    Mia     D/ST    <span style="color: #BB0000;">NA</span>        0.339</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>     <span style="text-decoration: underline;">2</span>022             1 3<span style="text-decoration: underline;">116</span>164 Mike    Gesicki Mia     TE      A         0.260</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>     <span style="text-decoration: underline;">2</span>022             1 3<span style="text-decoration: underline;">119</span>195 Chase   Edmonds Mia     RB      A         0.126</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 10 more variables: percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   positionalRanking &lt;int&gt;, totalRating &lt;dbl&gt;, auctionValueAverage &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   averageDraftPosition &lt;dbl&gt;, projectedScore &lt;dbl&gt;, lastScore &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   lastSeason &lt;dbl&gt;, currentSeason &lt;dbl&gt;, and abbreviated variable names</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ¹​scoringPeriodId, ²​firstName, ³​lastName, ⁴​defaultPosition, ⁵​injuryStatus,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ⁶​percentStarted</span></span>
 </code></pre></div>
     </div>
   </div>
@@ -176,7 +194,7 @@ limit can make the request take a long time.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

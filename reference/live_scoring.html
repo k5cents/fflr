@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.0</span>
       </span>
     </div>
 
@@ -57,7 +57,7 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">live_scoring</span><span class="op">(</span>leagueId <span class="op">=</span> <span class="fu"><a href="ffl_id.html">ffl_id</a></span><span class="op">(</span><span class="op">)</span>, yetToPlay <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">live_scoring</span><span class="op">(</span>leagueId <span class="op">=</span> <span class="fu"><a href="ffl_id.html">ffl_id</a></span><span class="op">(</span><span class="op">)</span>, yetToPlay <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -65,16 +65,23 @@
     <dl><dt>leagueId</dt>
 <dd><p>Numeric league ID or ESPN fantasy page URL. Defaults to
 <code>getOption("fflr.leagueId")</code>. Function fails if no ID is found.</p></dd>
+
+
 <dt>yetToPlay</dt>
 <dd><p>If <code>TRUE</code>, <code><a href="pro_schedule.html">pro_schedule()</a></code> and the "mRoster" view are
 called to determine how many starting players have <em>yet</em> started playing.</p></dd>
+
+
 <dt>...</dt>
 <dd><p>Additional queries passed to <code><a href="https://httr.r-lib.org/reference/GET.html" class="external-link">httr::GET()</a></code>. Arguments are
 converted to a named list and passed to <code>query</code> alongside <code>view</code>.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A data frame of scores by period.</p>
+    
+
+<p>A data frame of scores by period.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -84,14 +91,15 @@ converted to a named list and passed to <code>query</code> alongside <code>view<
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">live_scoring</span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span>, yetToPlay <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">live_scoring</span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span>, yetToPlay <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 4 × 6</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   currentMatchupPeriod matchupId teamId abbrev totalPointsLive totalProjectedPo…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   currentMatchupPeriod matchupId teamId abbrev totalPointsLive totalProjectedP…¹</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>                   17        33      1 AUS              108.              107. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>                   17        33      2 BOS               92.9              92.9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>                   17        34      3 CHI              109.              108. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>                   17        34      4 DEN              110.              110. </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>                    1         1      1 AUS               127.              127.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>                    1         1      3 CHI               158.              158.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>                    1         2      2 BOS               137.              152.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>                    1         2      4 DEN               164.              164.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with abbreviated variable name ¹​totalProjectedPointsLive</span></span>
 </code></pre></div>
     </div>
   </div>
@@ -106,7 +114,7 @@ converted to a named list and passed to <code>query</code> alongside <code>view<
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.0</span>
       </span>
     </div>
 
@@ -57,12 +57,14 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">ffl_seasons</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">ffl_seasons</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="value">
     <h2>Value</h2>
-    <p>A tibble of fantasy football seasons.</p>
+    
+
+<p>A tibble of fantasy football seasons.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -73,30 +75,31 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">ffl_seasons</span><span class="op">(</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">ffl_seasons</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 19 × 10</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    abbrev   active currentScoringPerio… display displayOrder endDate            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> FFL 2022 TRUE                      1 TRUE               0 2024-03-28 <span style="color: #949494;">07:00:00</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> FFL 2021 TRUE                     19 TRUE               0 2022-03-28 <span style="color: #949494;">07:00:00</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> FFL 2020 TRUE                     18 TRUE               0 2021-03-12 <span style="color: #949494;">08:00:00</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> FFL 2019 TRUE                     18 TRUE               0 2020-03-09 <span style="color: #949494;">07:00:00</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> FFL 2018 FALSE                    18 TRUE               0 2019-02-06 <span style="color: #949494;">08:00:00</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> FFL 2017 TRUE                     18 TRUE               0 2019-01-01 <span style="color: #949494;">08:00:00</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> FFL 2016 TRUE                     18 TRUE               1 2018-01-01 <span style="color: #949494;">05:00:00</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> FFL 2015 TRUE                     18 TRUE               2 2016-01-01 <span style="color: #949494;">04:59:59</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> FFL 2014 TRUE                     18 TRUE               3 2015-01-01 <span style="color: #949494;">04:59:59</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> FFL 2013 TRUE                     18 TRUE               4 2014-01-01 <span style="color: #949494;">04:59:59</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> FFL 2012 TRUE                     18 TRUE               5 2013-01-01 <span style="color: #949494;">04:59:59</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> FFL 2011 TRUE                     18 TRUE               6 2012-01-03 <span style="color: #949494;">05:00:00</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> FFL 2010 TRUE                     18 TRUE               7 2011-01-01 <span style="color: #949494;">05:00:00</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> FFL 2009 TRUE                     18 TRUE               8 2010-01-04 <span style="color: #949494;">05:00:00</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> FFL 2008 TRUE                     18 TRUE               9 2009-01-01 <span style="color: #949494;">05:00:00</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span> FFL 2007 TRUE                     18 TRUE              10 2008-06-06 <span style="color: #949494;">04:00:00</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span> FFL 2006 TRUE                     18 TRUE              11 2007-01-01 <span style="color: #949494;">05:00:00</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span> FFL 2005 TRUE                     18 TRUE              12 2006-01-01 <span style="color: #949494;">05:00:00</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">19</span> FFL 2004 TRUE                     18 TRUE              13 2005-01-01 <span style="color: #949494;">05:00:00</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 4 more variables: gameId &lt;int&gt;, id &lt;int&gt;, name &lt;chr&gt;, startDate &lt;dttm&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    abbrev  active curre…¹ display displ…² endDate             gameId    id name </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> FFL 20… TRUE         1 TRUE          0 2024-03-28 <span style="color: #949494;">07:00:00</span>      1  <span style="text-decoration: underline;">2</span>022 Fant…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> FFL 20… TRUE        19 TRUE          0 2022-03-28 <span style="color: #949494;">07:00:00</span>      1  <span style="text-decoration: underline;">2</span>021 Fant…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> FFL 20… TRUE        18 TRUE          0 2021-03-12 <span style="color: #949494;">08:00:00</span>      1  <span style="text-decoration: underline;">2</span>020 Fant…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> FFL 20… TRUE        18 TRUE          0 2020-03-09 <span style="color: #949494;">07:00:00</span>      1  <span style="text-decoration: underline;">2</span>019 Fant…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> FFL 20… FALSE       18 TRUE          0 2019-02-06 <span style="color: #949494;">08:00:00</span>      1  <span style="text-decoration: underline;">2</span>018 Fant…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> FFL 20… TRUE        18 TRUE          0 2019-01-01 <span style="color: #949494;">08:00:00</span>      1  <span style="text-decoration: underline;">2</span>017 Fant…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> FFL 20… TRUE        18 TRUE          1 2018-01-01 <span style="color: #949494;">05:00:00</span>      1  <span style="text-decoration: underline;">2</span>016 Fant…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> FFL 20… TRUE        18 TRUE          2 2016-01-01 <span style="color: #949494;">04:59:59</span>      1  <span style="text-decoration: underline;">2</span>015 Fant…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> FFL 20… TRUE        18 TRUE          3 2015-01-01 <span style="color: #949494;">04:59:59</span>      1  <span style="text-decoration: underline;">2</span>014 Fant…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> FFL 20… TRUE        18 TRUE          4 2014-01-01 <span style="color: #949494;">04:59:59</span>      1  <span style="text-decoration: underline;">2</span>013 Fant…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> FFL 20… TRUE        18 TRUE          5 2013-01-01 <span style="color: #949494;">04:59:59</span>      1  <span style="text-decoration: underline;">2</span>012 Fant…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> FFL 20… TRUE        18 TRUE          6 2012-01-03 <span style="color: #949494;">05:00:00</span>      1  <span style="text-decoration: underline;">2</span>011 Fant…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> FFL 20… TRUE        18 TRUE          7 2011-01-01 <span style="color: #949494;">05:00:00</span>      1  <span style="text-decoration: underline;">2</span>010 Fant…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> FFL 20… TRUE        18 TRUE          8 2010-01-04 <span style="color: #949494;">05:00:00</span>      1  <span style="text-decoration: underline;">2</span>009 Fant…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> FFL 20… TRUE        18 TRUE          9 2009-01-01 <span style="color: #949494;">05:00:00</span>      1  <span style="text-decoration: underline;">2</span>008 Fant…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span> FFL 20… TRUE        18 TRUE         10 2008-06-06 <span style="color: #949494;">04:00:00</span>      1  <span style="text-decoration: underline;">2</span>007 Fant…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span> FFL 20… TRUE        18 TRUE         11 2007-01-01 <span style="color: #949494;">05:00:00</span>      1  <span style="text-decoration: underline;">2</span>006 Fant…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span> FFL 20… TRUE        18 TRUE         12 2006-01-01 <span style="color: #949494;">05:00:00</span>      1  <span style="text-decoration: underline;">2</span>005 Fant…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">19</span> FFL 20… TRUE        18 TRUE         13 2005-01-01 <span style="color: #949494;">05:00:00</span>      1  <span style="text-decoration: underline;">2</span>004 Fant…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 1 more variable: startDate &lt;dttm&gt;, and abbreviated variable names</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ¹​currentScoringPeriodId, ²​displayOrder</span></span>
 </code></pre></div>
     </div>
   </div>
@@ -111,7 +114,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

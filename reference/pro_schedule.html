@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.0</span>
       </span>
     </div>
 
@@ -57,17 +57,20 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">pro_schedule</span><span class="op">(</span>seasonId <span class="op">=</span> <span class="fu"><a href="ffl_info.html">ffl_year</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">pro_schedule</span><span class="op">(</span>seasonId <span class="op">=</span> <span class="fu"><a href="ffl_info.html">ffl_year</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>seasonId</dt>
 <dd><p>Season schedule (2004-present), defaults to <code><a href="ffl_info.html">ffl_year()</a></code>.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Data frame of team opponents by week.</p>
+    
+
+<p>Data frame of team opponents by week.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -77,21 +80,21 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">pro_schedule</span><span class="op">(</span>seasonId <span class="op">=</span> <span class="fu"><a href="ffl_info.html">ffl_year</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">pro_schedule</span><span class="op">(</span>seasonId <span class="op">=</span> <span class="fu"><a href="ffl_info.html">ffl_year</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 512 × 7</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    seasonId scoringPeriodId matchupId proTeam opponent isHome</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>225 KC      Hou      TRUE  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>225 Hou     KC       FALSE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>116 Buf     NYJ      TRUE  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>116 NYJ     Buf      FALSE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>131 Mia     NE       FALSE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>131 NE      Mia      TRUE  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>147 Cle     Bal      FALSE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>147 Bal     Cle      TRUE  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>195 Ind     Jax      FALSE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>195 Jax     Ind      TRUE  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 502 more rows, and 1 more variable: date &lt;dttm&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    seasonId scoringPeriodId matchupId proTeam oppon…¹ isHome date               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>225 KC      Hou     TRUE   2020-09-11 <span style="color: #949494;">00:20:00</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>225 Hou     KC      FALSE  2020-09-11 <span style="color: #949494;">00:20:00</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>116 Buf     NYJ     TRUE   2020-09-13 <span style="color: #949494;">17:00:00</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>116 NYJ     Buf     FALSE  2020-09-13 <span style="color: #949494;">17:00:00</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>131 Mia     NE      FALSE  2020-09-13 <span style="color: #949494;">17:00:00</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>131 NE      Mia     TRUE   2020-09-13 <span style="color: #949494;">17:00:00</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>147 Cle     Bal     FALSE  2020-09-13 <span style="color: #949494;">17:00:00</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>147 Bal     Cle     TRUE   2020-09-13 <span style="color: #949494;">17:00:00</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>195 Ind     Jax     FALSE  2020-09-13 <span style="color: #949494;">17:00:00</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>     <span style="text-decoration: underline;">2</span>020               1 401<span style="text-decoration: underline;">220</span>195 Jax     Ind     TRUE   2020-09-13 <span style="color: #949494;">17:00:00</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 502 more rows, and abbreviated variable name ¹​opponent</span></span>
 </code></pre></div>
     </div>
   </div>
@@ -106,7 +109,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

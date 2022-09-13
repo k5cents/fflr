@@ -18,7 +18,7 @@ function may be adapted to take roster slots from roster_settings()."><meta prop
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.0</span>
       </span>
     </div>
 
@@ -59,17 +59,20 @@ function may be adapted to take roster slots from <code><a href="roster_settings
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">start_roster</span><span class="op">(</span><span class="va">roster</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">start_roster</span><span class="op">(</span><span class="va">roster</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>roster</dt>
 <dd><p>A roster data frame from <code><a href="team_roster.html">team_roster()</a></code>.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A data frame of starters on a roster.</p>
+    
+
+<p>A data frame of starters on a roster.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -81,21 +84,23 @@ function may be adapted to take roster slots from <code><a href="roster_settings
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">start_roster</span><span class="op">(</span><span class="fu"><a href="team_roster.html">team_roster</a></span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 8 × 16</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   seasonId scoringPeriodId teamId abbrev lineupSlot playerId firstName  lastName</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>     <span style="text-decoration: underline;">2</span>021              19      1 AUS    RB          4<span style="text-decoration: underline;">242</span>335 Jonathan   Taylor  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>     <span style="text-decoration: underline;">2</span>021              19      1 AUS    RB          4<span style="text-decoration: underline;">259</span>545 D'Andre    Swift   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>     <span style="text-decoration: underline;">2</span>021              19      1 AUS    WR            <span style="text-decoration: underline;">16</span>800 Davante    Adams   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>     <span style="text-decoration: underline;">2</span>021              19      1 AUS    WR            <span style="text-decoration: underline;">16</span>460 Adam       Thielen </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>     <span style="text-decoration: underline;">2</span>021              19      1 AUS    TE          3<span style="text-decoration: underline;">116</span>365 Mark       Andrews </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span>     <span style="text-decoration: underline;">2</span>021              19      1 AUS    FLEX        3<span style="text-decoration: underline;">932</span>905 Diontae    Johnson </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span>     <span style="text-decoration: underline;">2</span>021              19      1 AUS    D/ST         -<span style="color: #BB0000; text-decoration: underline;">16</span><span style="color: #BB0000;">027</span> Buccaneers D/ST    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">8</span>     <span style="text-decoration: underline;">2</span>021              19      1 AUS    K           2<span style="text-decoration: underline;">473</span>037 Jason      Myers   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 8 more variables: proTeam &lt;fct&gt;, position &lt;fct&gt;, injuryStatus &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   projectedScore &lt;dbl&gt;, actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">start_roster</span><span class="op">(</span><span class="fu"><a href="team_roster.html">team_roster</a></span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 9 × 16</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   seasonId scori…¹ teamId abbrev lineu…² playe…³ first…⁴ lastN…⁵ proTeam posit…⁶</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>     <span style="text-decoration: underline;">2</span>022       1      1 AUS    QB      3<span style="text-decoration: underline;">916</span>387 Lamar   Jackson Bal     QB     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>     <span style="text-decoration: underline;">2</span>022       1      1 AUS    RB      3<span style="text-decoration: underline;">117</span>251 Christ… McCaff… Car     RB     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>     <span style="text-decoration: underline;">2</span>022       1      1 AUS    RB      3<span style="text-decoration: underline;">054</span>850 Alvin   Kamara  NO      RB     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>     <span style="text-decoration: underline;">2</span>022       1      1 AUS    WR      4<span style="text-decoration: underline;">362</span>628 Ja'Marr Chase   Cin     WR     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>     <span style="text-decoration: underline;">2</span>022       1      1 AUS    WR        <span style="text-decoration: underline;">15</span>818 Keenan  Allen   LAC     WR     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span>     <span style="text-decoration: underline;">2</span>022       1      1 AUS    TE      3<span style="text-decoration: underline;">116</span>365 Mark    Andrews Bal     TE     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span>     <span style="text-decoration: underline;">2</span>022       1      1 AUS    FLEX    4<span style="text-decoration: underline;">259</span>545 D'Andre Swift   Det     RB     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">8</span>     <span style="text-decoration: underline;">2</span>022       1      1 AUS    D/ST     -<span style="color: #BB0000; text-decoration: underline;">16</span><span style="color: #BB0000;">009</span> Packers D/ST    GB      D/ST   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">9</span>     <span style="text-decoration: underline;">2</span>022       1      1 AUS    K       4<span style="text-decoration: underline;">249</span>087 Matt    Gay     LAR     K      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 6 more variables: injuryStatus &lt;chr&gt;, projectedScore &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   percentChange &lt;dbl&gt;, and abbreviated variable names ¹​scoringPeriodId,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ²​lineupSlot, ³​playerId, ⁴​firstName, ⁵​lastName, ⁶​position</span></span>
 </code></pre></div>
     </div>
   </div>
@@ -110,7 +115,7 @@ function may be adapted to take roster slots from <code><a href="roster_settings
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>
