@@ -3,8 +3,10 @@ title: "Fantasy Football Data"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{ESPN Website Equivalent Functionality}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r, include = FALSE}
@@ -166,7 +168,7 @@ team_roster(scoringPeriodId = 1)
 ### Schedule
 
 ```{r tidy-matchups}
-tidy_matchups(scoringPeriodId = 1)
+tidy_schedule(scoringPeriodId = 1)
 ```
 
 ### Message Board
@@ -196,7 +198,7 @@ recent_activity(scoringPeriodId = 1)
 ## Players
 
 ```{r all-players}
-list_players(limit = 10)
+list_players(limit = 10, proTeam = "Mia", status = "ALL")
 ```
 
 ## Scoreboard
