@@ -11,7 +11,7 @@ A data frame with 1,063 rows and 11 variables:
 \item{firstName}{First name}
 \item{lastName}{Last name}
 \item{proTeam}{Professional NFL team}
-\item{defaultPositionId}{Position: QB, RB, WR, TE, D/ST}
+\item{defaultPosition}{Position: QB, RB, WR, TE, D/ST}
 \item{jersey}{Jersey number}
 \item{weight}{Weight in integer pounds}
 \item{height}{Height in integer inches}
