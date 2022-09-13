@@ -1,6 +1,7 @@
 # fflr 2.1.0
 
-# fflr 2.0.3
+* **Package has been updated for the 2022 season!**
+  * Functions now use `seasonId = 2022` by default in `ffl_api()`.
 
 # fflr 2.0.2
 
