@@ -1,6 +1,6 @@
-#' 2021 NFL Players
+#' 2022 NFL Players
 #'
-#' All available ESPN fantasy football players as of the 2021 season, week 1.
+#' All available ESPN fantasy football players as of the 2022 season, week 1.
 #'
 #' @format A data frame with 1,063 rows and 11 variables:
 #' \describe{
@@ -17,12 +17,12 @@
 #'   \item{debutYear}{Season debuted in league}
 #'   ...
 #' }
-#' @source \url{http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2021/athletes/}
+#' @source \url{http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2022/athletes/}
 "nfl_players"
 
-#' 2021 NFL Teams
+#' 2022 NFL Teams
 #'
-#' The 32 professional NFL teams as of the 2021 season.
+#' The 32 professional NFL teams as of the 2022 season.
 #'
 #' @format A data frame with 33 rows and 6 columns:
 #' \describe{
@@ -34,12 +34,12 @@
 #'   \item{conference}{NFL conference}
 #'   ...
 #' }
-#' @source \url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2021?view=proTeamSchedules_wl}
+#' @source \url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2022?view=proTeamSchedules_wl}
 "nfl_teams"
 
-#' 2021 NFL Schedule
+#' 2022 NFL Schedule
 #'
-#' The 2021 NFL season schedule by team, as of September 10th.
+#' The 2022 NFL season schedule by team, as of September 10th.
 #'
 #' @format A data frame with 544 rows and 6 variables:
 #' \describe{
@@ -52,5 +52,5 @@
 #'   \item{date}{Matchup start date and time}
 #'   ...
 #' }
-#' @source \url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2021?view=proTeamSchedules_wl}
+#' @source \url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2022?view=proTeamSchedules_wl}
 "nfl_schedule"
