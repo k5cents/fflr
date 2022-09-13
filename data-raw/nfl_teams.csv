@@ -1,34 +1,34 @@
 proTeamId,abbrev,location,name,byeWeek,conference
 0,FA,,FA,0,
-1,Atl,Atlanta,Falcons,6,NFC
+1,Atl,Atlanta,Falcons,14,NFC
 2,Buf,Buffalo,Bills,7,AFC
-3,Chi,Chicago,Bears,10,NFC
+3,Chi,Chicago,Bears,14,NFC
 4,Cin,Cincinnati,Bengals,10,AFC
-5,Cle,Cleveland,Browns,13,AFC
-6,Dal,Dallas,Cowboys,7,NFC
-7,Den,Denver,Broncos,11,AFC
-8,Det,Detroit,Lions,9,NFC
-9,GB,Green Bay,Packers,13,NFC
-10,Ten,Tennessee,Titans,13,AFC
+5,Cle,Cleveland,Browns,9,AFC
+6,Dal,Dallas,Cowboys,9,NFC
+7,Den,Denver,Broncos,9,AFC
+8,Det,Detroit,Lions,6,NFC
+9,GB,Green Bay,Packers,14,NFC
+10,Ten,Tennessee,Titans,6,AFC
 11,Ind,Indianapolis,Colts,14,AFC
-12,KC,Kansas City,Chiefs,12,AFC
-13,LV,Las Vegas,Raiders,8,AFC
-14,LAR,Los Angeles,Rams,11,NFC
-15,Mia,Miami,Dolphins,14,AFC
+12,KC,Kansas City,Chiefs,8,AFC
+13,LV,Las Vegas,Raiders,6,AFC
+14,LAR,Los Angeles,Rams,7,NFC
+15,Mia,Miami,Dolphins,11,AFC
 16,Min,Minnesota,Vikings,7,NFC
-17,NE,New England,Patriots,14,AFC
-18,NO,New Orleans,Saints,6,NFC
-19,NYG,New York,Giants,10,NFC
-20,NYJ,New York,Jets,6,AFC
-21,Phi,Philadelphia,Eagles,14,NFC
-22,Ari,Arizona,Cardinals,12,NFC
-23,Pit,Pittsburgh,Steelers,7,AFC
-24,LAC,Los Angeles,Chargers,7,AFC
-25,SF,San Francisco,49ers,6,NFC
-26,Sea,Seattle,Seahawks,9,NFC
-27,TB,Tampa Bay,Buccaneers,9,NFC
-28,Wsh,Washington,Commanders,9,NFC
+17,NE,New England,Patriots,10,AFC
+18,NO,New Orleans,Saints,14,NFC
+19,NYG,New York,Giants,9,NFC
+20,NYJ,New York,Jets,10,AFC
+21,Phi,Philadelphia,Eagles,7,NFC
+22,Ari,Arizona,Cardinals,13,NFC
+23,Pit,Pittsburgh,Steelers,9,AFC
+24,LAC,Los Angeles,Chargers,8,AFC
+25,SF,San Francisco,49ers,9,NFC
+26,Sea,Seattle,Seahawks,11,NFC
+27,TB,Tampa Bay,Buccaneers,11,NFC
+28,Wsh,Washington,Commanders,14,NFC
 29,Car,Carolina,Panthers,13,NFC
-30,Jax,Jacksonville,Jaguars,7,AFC
-33,Bal,Baltimore,Ravens,8,AFC
-34,Hou,Houston,Texans,10,AFC
+30,Jax,Jacksonville,Jaguars,11,AFC
+33,Bal,Baltimore,Ravens,10,AFC
+34,Hou,Houston,Texans,6,AFC
