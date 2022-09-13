@@ -46,7 +46,7 @@ remotes::install_github("kiernann/fflr")
 ``` r
 library(fflr)
 packageVersion("fflr")
-#> [1] '1.9.2.9015'
+#> [1] '2.1.0'
 ```
 
 Data is only available for public leagues. See [this help
@@ -76,7 +76,7 @@ league_info()
 #> # A tibble: 1 × 6
 #>         id seasonId name             isPublic  size finalScoringPeriod
 #>      <int>    <int> <chr>            <lgl>    <int>              <int>
-#> 1 42654852     2021 FFLR Test League TRUE         4                 17
+#> 1 42654852     2022 FFLR Test League TRUE         4                 17
 league_teams()
 #> # A tibble: 4 × 5
 #>   abbrev teamId location nickname   memberId                              
@@ -93,24 +93,24 @@ The `scoringPeriodId` argument can be used to get data from past weeks.
 all_rost <- team_roster(scoringPeriodId = 1)
 all_rost$CHI[, 5:13][-7]
 #> # A tibble: 16 × 8
-#>    lineupSlot playerId firstName lastName  proTeam position projectedScore actualScore
-#>    <fct>         <int> <chr>     <chr>     <fct>   <fct>             <dbl>       <dbl>
-#>  1 QB          3918298 Josh      Allen     Buf     QB                21.6         17.2
-#>  2 RB          3929630 Saquon    Barkley   NYG     RB                13.8          3.7
-#>  3 RB          3043078 Derrick   Henry     Ten     RB                17.3         10.7
-#>  4 WR            15795 DeAndre   Hopkins   Ari     WR                17.8         26.3
-#>  5 WR          4262921 Justin    Jefferson Min     WR                15.4         12.5
-#>  6 TE          2576925 Darren    Waller    LV      TE                14.2         26.5
-#>  7 FLEX        3068267 Austin    Ekeler    LAC     RB                15.0         11.7
-#>  8 D/ST         -16033 Ravens    D/ST      Bal     D/ST               5.86        -1  
-#>  9 K             15683 Justin    Tucker    Bal     K                  8.14        11  
-#> 10 BE          3116385 Joe       Mixon     Cin     RB                14.6         25  
-#> 11 BE            15818 Keenan    Allen     LAC     WR                14.8         19  
-#> 12 BE            16737 Mike      Evans     TB      WR                15.0          5.4
-#> 13 BE          4047365 Josh      Jacobs    LV      RB                13.1         17  
-#> 14 BE          3886818 Myles     Gaskin    Mia     RB                10.9         12.6
-#> 15 BE          4362628 Ja'Marr   Chase     Cin     WR                10.4         20.9
-#> 16 BE          4360438 Brandon   Aiyuk     SF      WR                13.9          0
+#>    lineupSlot playerId firstName lastName   proTeam position projectedScore actualScore
+#>    <fct>         <int> <chr>     <chr>      <fct>   <fct>             <dbl>       <dbl>
+#>  1 QB          4038941 Justin    Herbert    LAC     QB                20.8         23.3
+#>  2 RB          4242335 Jonathan  Taylor     Ind     RB                21.8         27.5
+#>  3 RB          3116593 Dalvin    Cook       Min     RB                16.8         13.8
+#>  4 WR          4262921 Justin    Jefferson  Min     WR                17.9         39.4
+#>  5 WR          4241389 CeeDee    Lamb       Dal     WR                17.0          4.9
+#>  6 TE          4360248 Kyle      Pitts      Atl     TE                11.9          3.9
+#>  7 FLEX        3116406 Tyreek    Hill       Mia     WR                15.9         18  
+#>  8 D/ST         -16002 Bills     D/ST       Buf     D/ST               5.10        18  
+#>  9 K           3055899 Harrison  Butker     KC      K                  8.28         9  
+#> 10 BE          3042519 Aaron     Jones      GB      RB                15.7         10.6
+#> 11 BE          4239993 Tee       Higgins    Cin     WR                14.6          4.7
+#> 12 BE          3121422 Terry     McLaurin   Wsh     WR                14.2         13.8
+#> 13 BE          4035538 David     Montgomery Chi     RB                14.5          8  
+#> 14 BE          3051392 Ezekiel   Elliott    Dal     RB                13.3          5.9
+#> 15 BE          3128429 Courtland Sutton     Den     WR                12.8          0  
+#> 16 BE          4243537 Gabe      Davis      Buf     WR                12.3         18.8
 ```
 
 There are included objects for NFL teams and players.
@@ -121,15 +121,15 @@ nfl_teams
 #>    proTeamId abbrev location   name    byeWeek conference
 #>        <int> <fct>  <chr>      <chr>     <int> <chr>     
 #>  1         0 FA     <NA>       FA            0 <NA>      
-#>  2         1 Atl    Atlanta    Falcons       6 NFC       
+#>  2         1 Atl    Atlanta    Falcons      14 NFC       
 #>  3         2 Buf    Buffalo    Bills         7 AFC       
-#>  4         3 Chi    Chicago    Bears        10 NFC       
+#>  4         3 Chi    Chicago    Bears        14 NFC       
 #>  5         4 Cin    Cincinnati Bengals      10 AFC       
-#>  6         5 Cle    Cleveland  Browns       13 AFC       
-#>  7         6 Dal    Dallas     Cowboys       7 NFC       
-#>  8         7 Den    Denver     Broncos      11 AFC       
-#>  9         8 Det    Detroit    Lions         9 NFC       
-#> 10         9 GB     Green Bay  Packers      13 NFC       
+#>  6         5 Cle    Cleveland  Browns        9 AFC       
+#>  7         6 Dal    Dallas     Cowboys       9 NFC       
+#>  8         7 Den    Denver     Broncos       9 AFC       
+#>  9         8 Det    Detroit    Lions         6 NFC       
+#> 10         9 GB     Green Bay  Packers      14 NFC       
 #> # … with 23 more rows
 ```
 
