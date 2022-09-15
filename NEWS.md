@@ -1,5 +1,9 @@
 # fflr (development version)
 
+* Fix `nfl_players` to include actually all of the players.
+* Adjust the free agent information in `nfl_teams`.
+* Add more function tests.
+
 # fflr 2.1.0
 
 * **Package has been updated for the 2022 season!**

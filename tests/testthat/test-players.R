@@ -16,3 +16,14 @@ test_that("player list by value with custom sort", {
     expect_true(all(x <= 0))
   }
 })
+
+test_that("individual player bio info", {
+  i <- player_info(playerId = 2977187)
+  expect_s3_class(i, "data.frame")
+  expect_length(i, 12)
+  expect_s3_class(i$dateOfBirth, "Date")
+})
+
+test_that("player list API error", {
+  expect_error(list_players(leagueId = "1", times = 1))
+})
