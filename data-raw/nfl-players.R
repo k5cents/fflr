@@ -3,7 +3,14 @@ library(tidyverse)
 library(lubridate)
 library(fflr)
 
-nfl_players <- list_players(limit = NULL)[, 3:7]
+nfl_players <- list_players(
+  sort = "ROST",
+  status = "ALL",
+  limit = NULL
+)
+
+nfl_players <- nfl_players[, 3:7]
+
 out_players <- filter(nfl_players, defaultPosition != "D/ST")
 out <- rep(list(NULL), nrow(out_players))
 pb <- txtProgressBar(max = nrow(out_players), style = 3)

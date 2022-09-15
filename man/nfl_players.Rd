@@ -5,7 +5,7 @@
 \alias{nfl_players}
 \title{2022 NFL Players}
 \format{
-A data frame with 1,063 rows and 11 variables:
+A data frame with 1,102 rows and 11 variables:
 \describe{
 \item{playerId}{Unique ESPN player ID}
 \item{firstName}{First name}

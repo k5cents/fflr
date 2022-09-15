@@ -2,7 +2,7 @@
 #'
 #' All available ESPN fantasy football players as of the 2022 season, week 1.
 #'
-#' @format A data frame with 1,063 rows and 11 variables:
+#' @format A data frame with 1,102 rows and 11 variables:
 #' \describe{
 #'   \item{playerId}{Unique ESPN player ID}
 #'   \item{firstName}{First name}
