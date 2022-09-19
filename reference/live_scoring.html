@@ -57,7 +57,7 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">live_scoring</span><span class="op">(</span>leagueId <span class="op">=</span> <span class="fu"><a href="ffl_id.html">ffl_id</a></span><span class="op">(</span><span class="op">)</span>, yetToPlay <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">live_scoring</span><span class="op">(</span>leagueId <span class="op">=</span> <span class="fu"><a href="ffl_id.html">ffl_id</a></span><span class="op">(</span><span class="op">)</span>, yetToPlay <span class="op">=</span> <span class="cn">FALSE</span>, bonusWin <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -69,12 +69,19 @@
 
 <dt>yetToPlay</dt>
 <dd><p>If <code>TRUE</code>, <code><a href="pro_schedule.html">pro_schedule()</a></code> and the "mRoster" view are
-called to determine how many starting players have <em>yet</em> started playing.</p></dd>
+called to determine how many starting players have <em>yet</em> to start playing.</p></dd>
 
 
 <dt>...</dt>
 <dd><p>Additional queries passed to <code><a href="https://httr.r-lib.org/reference/GET.html" class="external-link">httr::GET()</a></code>. Arguments are
 converted to a named list and passed to <code>query</code> alongside <code>view</code>.</p></dd>
+
+
+<dt>If</dt>
+<dd><p><code>TRUE</code>, a logical column <code>bonusWin</code> will be added containing <code>TRUE</code>
+values for teams who are projected to score in the top half of points this
+week. This is a way to project the "bonus win" optional setting added in
+2022.</p></dd>
 
 </dl></div>
     <div id="value">
@@ -95,10 +102,10 @@ converted to a named list and passed to <code>query</code> alongside <code>view<
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 4 × 6</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   currentMatchupPeriod matchupId teamId abbrev totalPointsLive totalProjectedP…¹</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>                    2         3      3 CHI                  1              130.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>                    2         3      4 DEN                  0              135.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>                    2         4      1 AUS                  1              127.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>                    2         4      2 BOS                  0              141.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>                    2         3      3 CHI               92.8              137.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>                    2         3      4 DEN              115                132.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>                    2         4      1 AUS              121.               129.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>                    2         4      2 BOS              102.               143.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with abbreviated variable name ¹​totalProjectedPointsLive</span></span>
 </code></pre></div>
     </div>
