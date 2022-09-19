@@ -4,14 +4,19 @@
 #'
 #' @inheritParams ffl_api
 #' @param yetToPlay If `TRUE`, [pro_schedule()] and the "mRoster" view are
-#'   called to determine how many starting players have _yet_ started playing.
+#'   called to determine how many starting players have _yet_ to start playing.
+#' @param If `TRUE`, a logical column `bonusWin` will be added containing `TRUE`
+#'   values for teams who are projected to score in the top half of points this
+#'   week. This is a way to project the "bonus win" optional setting added in
+#'   2022.
 #' @return A data frame of scores by period.
 #' @examples
 #' live_scoring(leagueId = "42654852", yetToPlay = FALSE)
 #' @importFrom tibble tibble
 #' @family scoring functions
 #' @export
-live_scoring <- function(leagueId = ffl_id(), yetToPlay = FALSE, ...) {
+live_scoring <- function(leagueId = ffl_id(), yetToPlay = FALSE,
+                         bonusWin = FALSE, ...) {
   dat <- ffl_api(
     leagueId = leagueId,
     view = c("mScoreboard", "mRoster"),
@@ -44,6 +49,10 @@ live_scoring <- function(leagueId = ffl_id(), yetToPlay = FALSE, ...) {
   tm <- out_team(dat$teams, trim = TRUE)
   s$abbrev <- team_abbrev(s$teamId, teams = tm)
   s <- move_col(s, "abbrev", 4)
+  if (bonusWin) {
+    middle_point <- median(s$totalProjectedPointsLive)
+    s$bonusWin <- s$totalProjectedPointsLive > middle_point
+  }
   if (yetToPlay) {
     r <- do.call(
       "rbind",

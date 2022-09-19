@@ -3,6 +3,7 @@
 * Fix `nfl_players` to include actually all of the players.
 * Adjust the free agent information in `nfl_teams`.
 * Add more function tests.
+* Add `bonusWin` column to `live_scoring()`.
 
 # fflr 2.1.0
 
