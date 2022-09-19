@@ -15,7 +15,7 @@ league_members <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
     ...
   )
   if (leagueHistory && is.list(dat$teams)) {
-    names(dat$teams) <- dat$seasonId
+    names(dat$members) <- dat$seasonId
     lapply(dat$members, out_member)
   } else {
     out_member(dat$members)

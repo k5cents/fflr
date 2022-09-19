@@ -67,6 +67,13 @@ test_that("roster settings for a single season", {
   expect_s3_class(r$lineupSlotCounts[[1]], "data.frame")
 })
 
+test_that("roster settings for a past seasons", {
+  r <- roster_settings("42654852", leagueHistory = TRUE)
+  expect_s3_class(r, "data.frame")
+  expect_length(r, 8)
+  expect_s3_class(r$lineupSlotCounts[[1]], "data.frame")
+})
+
 # schedule settings -------------------------------------------------------
 Sys.sleep(runif(1, 1, 2))
 

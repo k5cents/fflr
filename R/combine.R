@@ -15,12 +15,19 @@ combine_history <- function(fun, ...) {
   if (!("leagueHistory" %in% names(formals(fun)))) {
     stop("leagueHistory is not an argument of this function")
   }
-  old <- bind_df(fun(..., leagueHistory = TRUE), .id = NULL)
+  old <- fun(..., leagueHistory = TRUE)
+  if (inherits(old, "data.frame")) {
+    message("Historical data is already a data.frame")
+    return(old)
+  } else {
+    old <- bind_df(old, .id = NULL)
+  }
   new <- fun(..., leagueHistory = FALSE)
   n_old <- ncol(old)
   n_new <- ncol(new)
   if (n_new > n_old) {
     old <- balance_col(old, new)
+    new <- balance_col(new, old)
   } else if (n_old > n_new) {
     new <- balance_col(new, old)
   }

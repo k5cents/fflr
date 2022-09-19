@@ -63,13 +63,13 @@ change_names <- function(dat, old_name, new_name) {
   return(dat)
 }
 
-replace_col <- function(z, old_name, ...) {
-  dots <- list(...)
-  stopifnot(length(dots) == 1, old_name %in% names(z))
-  z[[old_name]] <- dots[[1]]
-  z <- change_names(z, old_name, names(dots)[[1]])
-  return(z)
-}
+# replace_col <- function(z, old_name, ...) {
+#   dots <- list(...)
+#   stopifnot(length(dots) == 1, old_name %in% names(z))
+#   z[[old_name]] <- dots[[1]]
+#   z <- change_names(z, old_name, names(dots)[[1]])
+#   return(z)
+# }
 
 col_abbrev <- function(z, col, new) {
   new_name <- gsub("Id$", "", col)
