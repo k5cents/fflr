@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.0.9100</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.0.9101</span>
       </span>
     </div>
 
@@ -72,16 +72,16 @@
 called to determine how many starting players have <em>yet</em> to start playing.</p></dd>
 
 
+<dt>bonusWin</dt>
+<dd><p>If <code>TRUE</code>, a logical column <code>bonusWin</code> will be added
+containing <code>TRUE</code> values for teams who are projected to score in the top
+half of points this week. This is a way to project the "bonus win" optional
+setting added in 2022.</p></dd>
+
+
 <dt>...</dt>
 <dd><p>Additional queries passed to <code><a href="https://httr.r-lib.org/reference/GET.html" class="external-link">httr::GET()</a></code>. Arguments are
 converted to a named list and passed to <code>query</code> alongside <code>view</code>.</p></dd>
-
-
-<dt>If</dt>
-<dd><p><code>TRUE</code>, a logical column <code>bonusWin</code> will be added containing <code>TRUE</code>
-values for teams who are projected to score in the top half of points this
-week. This is a way to project the "bonus win" optional setting added in
-2022.</p></dd>
 
 </dl></div>
     <div id="value">
@@ -104,7 +104,7 @@ week. This is a way to project the "bonus win" optional setting added in
 <span class="r-out co"><span class="r-pr">#&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>                    2         3      3 CHI               92.8              137.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>                    2         3      4 DEN              115                132.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>                    2         4      1 AUS              121.               129.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>                    2         4      1 AUS              129.               136.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>                    2         4      2 BOS              102.               143.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with abbreviated variable name ¹​totalProjectedPointsLive</span></span>
 </code></pre></div>
