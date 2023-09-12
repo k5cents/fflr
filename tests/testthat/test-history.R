@@ -4,7 +4,7 @@ test_that("historical data can be returned", {
     leagueHistory = TRUE
   )
   expect_type(h, "list")
-  expect_length(h, 1)
+  expect_length(h, ffl_year() - 2021)
   expect_s3_class(h[[1]], "data.frame")
 })
 
