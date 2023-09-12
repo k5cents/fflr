@@ -14,7 +14,9 @@
 #'   \item{height}{Height in integer inches}
 #'   \item{age}{Current age in integer year}
 #'   \item{dateOfBirth}{Date of birth}
+#'   \item{birthPlace}{Place of birth}
 #'   \item{debutYear}{Season debuted in league}
+#'   \item{draftSelection}{Overall pick number in the NFL draft}
 #'   ...
 #' }
 #' @source \url{http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/}

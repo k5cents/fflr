@@ -17,7 +17,9 @@ A data frame with 1,102 rows and 11 variables:
 \item{height}{Height in integer inches}
 \item{age}{Current age in integer year}
 \item{dateOfBirth}{Date of birth}
+\item{birthPlace}{Place of birth}
 \item{debutYear}{Season debuted in league}
+\item{draftSelection}{Overall pick number in the NFL draft}
 ...
 }
 }
