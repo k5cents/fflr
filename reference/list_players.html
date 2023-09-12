@@ -19,7 +19,7 @@ done in the ESPN Fantasy Football website."><meta property="og:image" content="/
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.0.9101</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.0</span>
       </span>
     </div>
 
@@ -169,17 +169,16 @@ limit can make the request take a long time.</p></dd>
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">list_players</span><span class="op">(</span><span class="st">"42654852"</span>, proTeam <span class="op">=</span> <span class="st">"Mia"</span>, sort <span class="op">=</span> <span class="st">"START"</span>, limit <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 19</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   seasonId scoringPeri…¹      id first…² lastN…³ proTeam defau…⁴ injur…⁵ perce…⁶</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>     <span style="text-decoration: underline;">2</span>022             2  -<span style="color: #BB0000; text-decoration: underline;">16</span><span style="color: #BB0000;">015</span> Dolphi… D/ST    Mia     D/ST    <span style="color: #BB0000;">NA</span>        0.270</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>     <span style="text-decoration: underline;">2</span>022             2 3<span style="text-decoration: underline;">119</span>195 Chase   Edmonds Mia     RB      A         0.255</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>     <span style="text-decoration: underline;">2</span>022             2 3<span style="text-decoration: underline;">116</span>164 Mike    Gesicki Mia     TE      A         0.136</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 10 more variables: percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   positionalRanking &lt;int&gt;, totalRating &lt;dbl&gt;, auctionValueAverage &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   averageDraftPosition &lt;dbl&gt;, projectedScore &lt;dbl&gt;, lastScore &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   lastSeason &lt;dbl&gt;, currentSeason &lt;dbl&gt;, and abbreviated variable names</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ¹​scoringPeriodId, ²​firstName, ³​lastName, ⁴​defaultPosition, ⁵​injuryStatus,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ⁶​percentStarted</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   seasonId scoringPeriodId      id firstName lastName   proTeam defaultPosition</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>     <span style="text-decoration: underline;">2</span>023               2  -<span style="color: #BB0000; text-decoration: underline;">16</span><span style="color: #BB0000;">015</span> Dolphins  D/ST       Mia     D/ST           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>     <span style="text-decoration: underline;">2</span>023               2 4<span style="text-decoration: underline;">241</span>479 Tua       Tagovailoa Mia     QB             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>     <span style="text-decoration: underline;">2</span>023               2 2<span style="text-decoration: underline;">576</span>414 Raheem    Mostert    Mia     RB             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 12 more variables: injuryStatus &lt;chr&gt;, percentStarted &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;, positionalRanking &lt;int&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   totalRating &lt;dbl&gt;, auctionValueAverage &lt;dbl&gt;, averageDraftPosition &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   projectedScore &lt;dbl&gt;, lastScore &lt;dbl&gt;, lastSeason &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   currentSeason &lt;dbl&gt;</span></span>
 </code></pre></div>
     </div>
   </div>
@@ -194,7 +193,7 @@ limit can make the request take a long time.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>
