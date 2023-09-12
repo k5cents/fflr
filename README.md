@@ -46,7 +46,7 @@ remotes::install_github("kiernann/fflr")
 ``` r
 library(fflr)
 packageVersion("fflr")
-#> [1] '2.1.0'
+#> [1] '2.2.0'
 ```
 
 Data is only available for public leagues. See [this help
@@ -76,7 +76,7 @@ league_info()
 #> # A tibble: 1 × 6
 #>         id seasonId name             isPublic  size finalScoringPeriod
 #>      <int>    <int> <chr>            <lgl>    <int>              <int>
-#> 1 42654852     2022 FFLR Test League TRUE         4                 17
+#> 1 42654852     2023 FFLR Test League TRUE         4                 17
 league_teams()
 #> # A tibble: 4 × 5
 #>   abbrev teamId location nickname   memberId                              
@@ -93,24 +93,24 @@ The `scoringPeriodId` argument can be used to get data from past weeks.
 all_rost <- team_roster(scoringPeriodId = 1)
 all_rost$CHI[, 5:13][-7]
 #> # A tibble: 16 × 8
-#>    lineupSlot playerId firstName lastName   proTeam position projectedScore actualScore
-#>    <fct>         <int> <chr>     <chr>      <fct>   <fct>             <dbl>       <dbl>
-#>  1 QB          4038941 Justin    Herbert    LAC     QB                20.8         23.3
-#>  2 RB          4242335 Jonathan  Taylor     Ind     RB                21.8         27.5
-#>  3 RB          3116593 Dalvin    Cook       Min     RB                16.8         13.8
-#>  4 WR          4262921 Justin    Jefferson  Min     WR                17.9         39.4
-#>  5 WR          4241389 CeeDee    Lamb       Dal     WR                17.0          4.9
-#>  6 TE          4360248 Kyle      Pitts      Atl     TE                11.9          3.9
-#>  7 FLEX        3116406 Tyreek    Hill       Mia     WR                15.9         18  
-#>  8 D/ST         -16002 Bills     D/ST       Buf     D/ST               5.10        18  
-#>  9 K           3055899 Harrison  Butker     KC      K                  8.28         9  
-#> 10 BE          3042519 Aaron     Jones      GB      RB                15.7         10.6
-#> 11 BE          4239993 Tee       Higgins    Cin     WR                14.6          4.7
-#> 12 BE          3121422 Terry     McLaurin   Wsh     WR                14.2         13.8
-#> 13 BE          4035538 David     Montgomery Chi     RB                14.5          8  
-#> 14 BE          3051392 Ezekiel   Elliott    Dal     RB                13.3          5.9
-#> 15 BE          3128429 Courtland Sutton     Den     WR                12.8          0  
-#> 16 BE          4243537 Gabe      Davis      Buf     WR                12.3         18.8
+#>    lineupSlot playerId firstName lastName    proTeam position projectedScore actualScore
+#>    <fct>         <int> <chr>     <chr>       <fct>   <fct>             <dbl>       <dbl>
+#>  1 QB          4040715 Jalen     Hurts       Phi     QB                21.3        12.5 
+#>  2 RB          3929630 Saquon    Barkley     NYG     RB                16.9         9.3 
+#>  3 RB          4239996 Travis    Etienne Jr. Jax     RB                15.1        21.4 
+#>  4 WR          4262921 Justin    Jefferson   Min     WR                20.1        24   
+#>  5 WR          4569618 Garrett   Wilson      NYJ     WR                16.4        14.4 
+#>  6 TE            15847 Travis    Kelce       KC      TE                 0           0   
+#>  7 FLEX        4374302 Amon-Ra   St. Brown   Det     WR                16.7        19.1 
+#>  8 D/ST         -16025 49ers     D/ST        SF      D/ST               7.78       14   
+#>  9 K           3055899 Harrison  Butker      KC      K                  8.41        8   
+#> 10 BE          4429795 Jahmyr    Gibbs       Det     RB                14.0         8   
+#> 11 BE          3042519 Aaron     Jones       GB      RB                15.5        26.7 
+#> 12 BE          3915511 Joe       Burrow      Cin     QB                19.8         3.18
+#> 13 BE          2976499 Amari     Cooper      Cle     WR                13.6         6.7 
+#> 14 BE          4697815 Rachaad   White       TB      RB                13.9         6.9 
+#> 15 BE          3054850 Alvin     Kamara      NO      RB                 0           0   
+#> 16 BE          4038941 Justin    Herbert     LAC     QB                16.9        20.9
 ```
 
 There are included objects for NFL teams and players.
@@ -118,19 +118,19 @@ There are included objects for NFL teams and players.
 ``` r
 nfl_teams
 #> # A tibble: 33 × 6
-#>    proTeamId abbrev location   name    byeWeek conference
-#>        <int> <fct>  <chr>      <chr>     <int> <chr>     
-#>  1         0 FA     <NA>       FA            0 <NA>      
-#>  2         1 Atl    Atlanta    Falcons      14 NFC       
-#>  3         2 Buf    Buffalo    Bills         7 AFC       
-#>  4         3 Chi    Chicago    Bears        14 NFC       
-#>  5         4 Cin    Cincinnati Bengals      10 AFC       
-#>  6         5 Cle    Cleveland  Browns        9 AFC       
-#>  7         6 Dal    Dallas     Cowboys       9 NFC       
-#>  8         7 Den    Denver     Broncos       9 AFC       
-#>  9         8 Det    Detroit    Lions         6 NFC       
-#> 10         9 GB     Green Bay  Packers      14 NFC       
-#> # … with 23 more rows
+#>    proTeamId abbrev location   name       byeWeek conference
+#>        <int> <fct>  <chr>      <chr>        <int> <chr>     
+#>  1         0 FA     <NA>       Free Agent      NA <NA>      
+#>  2         1 Atl    Atlanta    Falcons         14 NFC       
+#>  3         2 Buf    Buffalo    Bills            7 AFC       
+#>  4         3 Chi    Chicago    Bears           14 NFC       
+#>  5         4 Cin    Cincinnati Bengals         10 AFC       
+#>  6         5 Cle    Cleveland  Browns           9 AFC       
+#>  7         6 Dal    Dallas     Cowboys          9 NFC       
+#>  8         7 Den    Denver     Broncos          9 AFC       
+#>  9         8 Det    Detroit    Lions            6 NFC       
+#> 10         9 GB     Green Bay  Packers         14 NFC       
+#> # ℹ 23 more rows
 ```
 
 ------------------------------------------------------------------------
