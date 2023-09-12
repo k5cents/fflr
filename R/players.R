@@ -74,7 +74,7 @@ list_players <- function(leagueId = ffl_id(),
     verb = "GET",
     url = paste0(
       "https://fantasy.espn.com",
-      "/apis/v3/games/ffl/seasons/2022/segments/0/leagues/",
+      "/apis/v3/games/ffl/seasons/2023/segments/0/leagues/",
       leagueId
     ),
     query = list(view = "kona_player_info"),
@@ -260,11 +260,11 @@ fantasy_filter <- function(sort, position, status, injured, scoringPeriodId,
       filterStatsForTopScoringPeriodIds = list(
         value = U(2),
         additionalValue = c(
-          "002022",
-          "102022",
+          "002023",
+          "102023",
           "002020",
-          paste0("112022", scoringPeriodId),
-          "022022"
+          paste0("112023", scoringPeriodId),
+          "022023"
         )
       )
     )
@@ -314,7 +314,7 @@ filter_sort <- function(sort = "ROST", scoringPeriodId) {
     sortAppliedStatTotal = list( # PROJ
       sortAsc = FALSE,
       sortPriority = 1,
-      value = paste0("112022", scoringPeriodId)
+      value = paste0("112023", scoringPeriodId)
     ),
     sortAppliedStatTotalForScoringPeriodId = list( # SCORE
       sortAsc = FALSE,
@@ -346,12 +346,12 @@ filter_sort <- function(sort = "ROST", scoringPeriodId) {
     sortAppliedStatTotal = list( # FPTS
       sortAsc = FALSE,
       sortPriority = 1,
-      value = "002022"
+      value = "002023"
     ),
     sortAppliedStatAverage = list( # AVG
       sortAsc = FALSE,
       sortPriority = 1,
-      value = "002022"
+      value = "002023"
     ),
     sortAppliedStatTotalForScoringPeriodId = list( # LAST
       sortAsc = FALSE,
@@ -400,7 +400,7 @@ player_info <- function(playerId) {
   dat <- try_json(
     url = paste0(
       "http://sports.core.api.espn.com/",
-      "v2/sports/football/leagues/nfl/seasons/2022/athletes/", playerId
+      "v2/sports/football/leagues/nfl/seasons/2023/athletes/", playerId
     )
   )
   out <- list(
