@@ -8,7 +8,9 @@
 #' ID found in the URL to return data from the API. This league ID can be set as
 #' a global option named "fflr.leagueId" with `options()`.
 #'
-#' @docType package
-#' @name fflr
+#' @keywords internal
+"_PACKAGE"
+
+## usethis namespace: start
+## usethis namespace: end
 NULL
-#> NULL
