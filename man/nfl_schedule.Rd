@@ -3,7 +3,7 @@
 \docType{data}
 \name{nfl_schedule}
 \alias{nfl_schedule}
-\title{2022 NFL Schedule}
+\title{2023 NFL Schedule}
 \format{
 A data frame with 544 rows and 6 variables:
 \describe{
@@ -18,12 +18,12 @@ A data frame with 544 rows and 6 variables:
 }
 }
 \source{
-\url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2022?view=proTeamSchedules_wl}
+\url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2023?view=proTeamSchedules_wl}
 }
 \usage{
 nfl_schedule
 }
 \description{
-The 2022 NFL season schedule by team, as of September 10th.
+The 2023 NFL season schedule by team, as of September 10th.
 }
 \keyword{datasets}

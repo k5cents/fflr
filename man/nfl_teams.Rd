@@ -3,7 +3,7 @@
 \docType{data}
 \name{nfl_teams}
 \alias{nfl_teams}
-\title{2022 NFL Teams}
+\title{2023 NFL Teams}
 \format{
 A data frame with 33 rows and 6 columns:
 \describe{
@@ -17,12 +17,12 @@ A data frame with 33 rows and 6 columns:
 }
 }
 \source{
-\url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2022?view=proTeamSchedules_wl}
+\url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2023?view=proTeamSchedules_wl}
 }
 \usage{
 nfl_teams
 }
 \description{
-The 32 professional NFL teams as of the 2022 season.
+The 32 professional NFL teams as of the 2023 season.
 }
 \keyword{datasets}
