@@ -13,6 +13,7 @@
 #' @examples
 #' live_scoring(leagueId = "42654852", yetToPlay = FALSE)
 #' @importFrom tibble tibble
+#' @importFrom stats median
 #' @family scoring functions
 #' @export
 live_scoring <- function(leagueId = ffl_id(), yetToPlay = FALSE,

@@ -39,7 +39,7 @@ zzz <- inner_join(nfl_players, out_players, by = "id")
 zzz <- relocate(zzz, proTeam, defaultPosition, .after = lastName)
 
 nfl_players <- bind_rows(zzz, def_players)
-nfl_players <- select(nfl_players, -birthPlace, -draftSelection)
+# nfl_players <- select(nfl_players, -birthPlace, -draftSelection)
 names(nfl_players)[1] <- "playerId"
 usethis::use_data(nfl_players, overwrite = TRUE)
 readr::write_csv(nfl_players, "data-raw/nfl_players.csv", na = "")

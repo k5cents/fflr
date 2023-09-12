@@ -22,7 +22,7 @@ nfl_teams$conference[nfl_teams$conference == 0] <- NA
 nfl_teams$conference[nfl_teams$conference == 1] <- "AFC"
 nfl_teams$conference[nfl_teams$conference == 2] <- "NFC"
 nfl_teams$byeWeek[nfl_teams$byeWeek == 0] <- NA_integer_
-nfl_teams$name[nfl_teams$proTeamId == 0] <- "Free Agent"
+nfl_teams$name[nfl_teams$id == 0] <- "Free Agent"
 nfl_teams <- as_tibble(nfl_teams[order(nfl_teams$id), ])
 names(nfl_teams)[1] <- "proTeamId"
 
