@@ -2,10 +2,7 @@ Package: fflr
 Title: Retrieve ESPN Fantasy Football Data
 Version: 2.2.0
 Authors@R: 
-    person(given = "Kiernan",
-           family = "Nicholls",
-           role = c("aut", "cre", "cph"),
-           email = "kiernann@protonmail.com")
+    person("Kiernan", "Nicholls", , "kiernann@protonmail.com", role = c("aut", "cre", "cph"))
 Description: Format the raw data from the ESPN fantasy football API
     <https://fantasy.espn.com/apis/v3/games/ffl/> as data frames.
     Retrieve data on public leagues, rosters, athletes, and matches.
@@ -15,6 +12,7 @@ Depends:
 Imports: 
     httr (>= 1.4.2),
     jsonlite (>= 1.7.2),
+    stats,
     tibble (>= 3.1.3)
 Suggests: 
     knitr (>= 1.34),
