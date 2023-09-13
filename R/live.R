@@ -80,7 +80,7 @@ live_scoring <- function(leagueId = ffl_id(), yetToPlay = FALSE,
     )
     y <- data.frame(
       stringsAsFactors = FALSE,
-      team = names(y),
+      abbrev = names(y),
       toPlay = as.vector(y)
     )
     s <- ffl_merge(y, s)
