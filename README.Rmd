@@ -119,7 +119,7 @@ contributing, you agree to abide by its terms.
 [iss]: https://github.com/kiernann/fflr/issues
 [cran]: https://cran.r-project.org/package=fflr
 [gh]: https://github.com/kiernann/fflr
-[coc]: https://kiernann.com/fflr/CODE_OF_CONDUCT.html
+[coc]: https://kiernann.github.io/fflr/CODE_OF_CONDUCT.html
 [help]: https://web.archive.org/web/20211105212446/https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public
 [rprof]: https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html
 <!-- refs: end -->

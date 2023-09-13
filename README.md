@@ -136,7 +136,7 @@ nfl_teams
 ------------------------------------------------------------------------
 
 The fflr project is released with a [Contributor Code of
-Conduct](https://kiernann.com/fflr/CODE_OF_CONDUCT.html). By
+Conduct](https://kiernann.github.io/fflr/CODE_OF_CONDUCT.html). By
 contributing, you agree to abide by its terms.
 
 <!-- refs: start -->
