@@ -40,7 +40,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.0.9000</span>
       </span>
     </div>
 
@@ -91,7 +91,7 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">fflr</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html" class="external-link">packageVersion</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] '2.2.0'</span></span>
+<span><span class="co">#&gt; [1] '2.2.0.9000'</span></span>
 <span><span class="fu"><a href="../reference/ffl_id.html">ffl_id</a></span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Temporarily set `fflr.leagueId` option to 42654852</span></span>
 <span><span class="co">#&gt; [1] "42654852"</span></span></code></pre></div>
@@ -188,7 +188,7 @@ actual scores and ownership statistics.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> AUS    BE          4<span style="text-decoration: underline;">241</span>478 DeVonta   Smith      Phi     WR       A           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> AUS    BE          4<span style="text-decoration: underline;">360</span>238 Dameon    Pierce     Hou     RB       A           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> AUS    BE          3<span style="text-decoration: underline;">126</span>486 Deebo     Samuel     SF      WR       A           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">14</span> AUS    BE            <span style="text-decoration: underline;">15</span>795 DeAndre   Hopkins    Ten     WR       A           </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">14</span> AUS    BE            <span style="text-decoration: underline;">15</span>795 DeAndre   Hopkins    Ten     WR       Q           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">15</span> AUS    BE          3<span style="text-decoration: underline;">116</span>165 Chris     Godwin     TB      WR       A           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">16</span> AUS    BE          4<span style="text-decoration: underline;">567</span>048 Kenneth   Walker III Sea     RB       A           </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 5 more variables: projectedScore &lt;dbl&gt;, actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;,</span></span></span>
@@ -214,16 +214,14 @@ returns all the recent news on that player, including premium stories in
 HTML format.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/player_news.html">player_news</a></span><span class="op">(</span>playerId <span class="op">=</span> <span class="st">"3139477"</span>, parseHTML <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 7 × 6</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 6</span></span></span>
 <span><span class="co">#&gt;        id published           type     premium headline                              body </span></span>
 <span><span class="co">#&gt;     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 3<span style="text-decoration: underline;">139</span>477 2023-09-08 <span style="color: #949494;">03:41:25</span> Rotowire FALSE   Mahomes completed 21 of 39 passes fo… <span style="color: #949494;">"</span>Mah…</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> 3<span style="text-decoration: underline;">139</span>477 2023-09-07 <span style="color: #949494;">12:21:56</span> Story    FALSE   Erin Dolan's top betting storylines … <span style="color: #949494;">"</span>&lt;p&gt;…</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> 3<span style="text-decoration: underline;">139</span>477 2023-08-26 <span style="color: #949494;">15:22:45</span> Rotowire FALSE   Mahomes isn't in line to see action … <span style="color: #949494;">"</span>Per…</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> 3<span style="text-decoration: underline;">139</span>477 2023-08-20 <span style="color: #949494;">03:49:42</span> Rotowire FALSE   Mahomes completed 10 of 15 passes fo… <span style="color: #949494;">"</span>Mah…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> 3<span style="text-decoration: underline;">139</span>477 2023-08-17 <span style="color: #949494;">15:01:00</span> Rotowire FALSE   Coach Andy Reid said Thursday that M… <span style="color: #949494;">"</span>Mah…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> 3<span style="text-decoration: underline;">139</span>477 2023-08-14 <span style="color: #949494;">17:23:30</span> Story    FALSE   2023 NFL betting: Preseason props on… <span style="color: #949494;">"</span>&lt;p&gt;…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">7</span> 3<span style="text-decoration: underline;">139</span>477 2023-08-13 <span style="color: #949494;">20:45:55</span> Rotowire FALSE   Mahomes played only the opening driv… <span style="color: #949494;">"</span>Mah…</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> 3<span style="text-decoration: underline;">139</span>477 2023-08-17 <span style="color: #949494;">15:01:00</span> Rotowire FALSE   Coach Andy Reid said Thursday that M… <span style="color: #949494;">"</span>Mah…</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -255,9 +253,9 @@ settings.</p>
 <span><span class="co">#&gt;  $ finalScoringPeriod     : int 17</span></span>
 <span><span class="co">#&gt;  $ previousSeasons        :List of 1</span></span>
 <span><span class="co">#&gt;   ..$ : int [1:2] 2021 2022</span></span>
-<span><span class="co">#&gt;  $ standingsUpdateDate    : POSIXct[1:1], format: "2023-09-13 08:31:33"</span></span>
+<span><span class="co">#&gt;  $ standingsUpdateDate    : POSIXct[1:1], format: "2023-09-15 07:54:07"</span></span>
 <span><span class="co">#&gt;  $ teamsJoined            : int 4</span></span>
-<span><span class="co">#&gt;  $ waiverLastExecutionDate: POSIXct[1:1], format: "2023-09-13 08:31:33"</span></span>
+<span><span class="co">#&gt;  $ waiverLastExecutionDate: POSIXct[1:1], format: "2023-09-15 07:54:07"</span></span>
 <span><span class="co">#&gt;  $ waiverNextExecutionDate: POSIXct[1:1], format: NA</span></span>
 <span><span class="co">#&gt;  $ waiverProcessStatus    :List of 1</span></span>
 <span><span class="co">#&gt;   ..$ :'data.frame': 0 obs. of  1 variable:</span></span>
@@ -559,10 +557,10 @@ settings.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 4 × 6</span></span></span>
 <span><span class="co">#&gt;   currentMatchupPeriod matchupId teamId abbrev totalPointsLive totalProjectedPointsLive</span></span>
 <span><span class="co">#&gt;                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>                    2         3      3 CHI                  1                     145.</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>                    2         3      4 DEN                  0                     140.</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>                    2         4      1 AUS                  1                     122.</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>                    2         4      2 BOS                  0                     139.</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>                    2         3      3 CHI               51.1                     148.</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>                    2         3      4 DEN               32.5                     142.</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>                    2         4      1 AUS                1                       122.</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>                    2         4      2 BOS                0                       139.</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="standings">Standings<a class="anchor" aria-label="anchor" href="#standings"></a>
