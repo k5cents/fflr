@@ -19,6 +19,3 @@ A data frame of stat corrections.
 \description{
 Weekly retroactive stat corrections by player.
 }
-\examples{
-stat_corrections(date = "2021-09-13")
-}

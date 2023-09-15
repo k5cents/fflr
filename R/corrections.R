@@ -7,8 +7,6 @@
 #'   all. Defaults to 100, which is the default limit used by ESPN. Removing the
 #'   limit can make the request take a long time.
 #' @return A data frame of stat corrections.
-#' @examples
-#' stat_corrections(date = "2021-09-13")
 #' @export
 stat_corrections <- function(date = Sys.Date(), limit = 100) {
   if (!inherits(date, "Date")) {
