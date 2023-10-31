@@ -1,5 +1,7 @@
 # fflr (development version)
 
+* Use latest package dependencies.
+
 # fflr 2.2.0
 
 * **Package has been updated for the 2023 season!**

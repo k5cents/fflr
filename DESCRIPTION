@@ -1,6 +1,6 @@
 Package: fflr
 Title: Retrieve ESPN Fantasy Football Data
-Version: 2.2.0.9000
+Version: 2.2.0.9001
 Authors@R: 
     person("Kiernan", "Nicholls", , "kiernann@protonmail.com", role = c("aut", "cre", "cph"))
 Description: Format the raw data from the ESPN fantasy football API
@@ -10,10 +10,10 @@ License: MIT + file LICENSE
 Depends: 
     R (>= 2.10)
 Imports: 
-    httr (>= 1.4.2),
-    jsonlite (>= 1.7.2),
+    httr (>= 1.4.7),
+    jsonlite (>= 1.8.7),
     stats,
-    tibble (>= 3.1.3)
+    tibble (>= 3.2.1)
 Suggests: 
     knitr (>= 1.34),
     rmarkdown (>= 2.11),
