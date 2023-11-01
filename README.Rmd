@@ -106,14 +106,14 @@ The fflr project is released with a [Contributor Code of Conduct][coc]. By
 contributing, you agree to abide by its terms.
 
 <!-- refs: start -->
-[life_badge]: https://img.shields.io/badge/lifecycle-maturing-blue.svg
-[life_link]: https://lifecycle.r-lib.org/articles/stages.html
+[life_badge]: https://img.shields.io/badge/lifecycle-stable-brightgreen.svg
+[life_link]: https://lifecycle.r-lib.org/articles/stages.html#stable
 [cran_badge]: https://www.r-pkg.org/badges/version/fflr
 [cran_link]: https://CRAN.R-project.org/package=fflr
 [ga_badge]: https://github.com/kiernann/fflr/workflows/R-CMD-check/badge.svg
 [ga_link]: https://github.com/kiernann/fflr/actions
-[cov_badge]: https://codecov.io/gh/kiernann/fflr/branch/master/graph/badge.svg
-[cov_link]: https://app.codecov.io/gh/kiernann/fflr?branch=master
+[cov_badge]: https://img.shields.io/codecov/c/github/kiernann/fflr/master.svg
+[cov_link]: https://app.codecov.io/gh/kiernann/fflr?branch=master'
 [dl_badge]: https://cranlogs.r-pkg.org/badges/grand-total/fflr
 [api]: https://fantasy.espn.com/apis/v3/games/ffl/
 [iss]: https://github.com/kiernann/fflr/issues

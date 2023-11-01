@@ -6,12 +6,12 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html)
+experimental](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/fflr)](https://CRAN.R-project.org/package=fflr)
 ![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/fflr)
 [![Codecov test
-coverage](https://codecov.io/gh/kiernann/fflr/branch/master/graph/badge.svg)](https://app.codecov.io/gh/kiernann/fflr?branch=master)
+coverage](https://img.shields.io/codecov/c/github/kiernann/fflr/master.svg)](https://app.codecov.io/gh/kiernann/fflr?branch=master')
 [![R build
 status](https://github.com/kiernann/fflr/workflows/R-CMD-check/badge.svg)](https://github.com/kiernann/fflr/actions)
 <!-- badges: end -->
@@ -78,13 +78,13 @@ league_info()
 #>      <int>    <int> <chr>            <lgl>    <int>              <int>
 #> 1 42654852     2023 FFLR Test League TRUE         4                 17
 league_teams()
-#> # A tibble: 4 × 5
-#>   abbrev teamId location nickname   memberId                              
-#>   <fct>   <int> <chr>    <chr>      <chr>                                 
-#> 1 AUS         1 Austin   Astronauts {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}
-#> 2 BOS         2 Boston   Buzzards   {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}
-#> 3 CHI         3 Chicago  Crowns     {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}
-#> 4 DEN         4 Denver   Devils     {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}
+#> # A tibble: 4 × 3
+#>   abbrev teamId memberId                              
+#>   <fct>   <int> <chr>                                 
+#> 1 AUS         1 {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}
+#> 2 BOS         2 {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}
+#> 3 CHI         3 {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}
+#> 4 DEN         4 {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}
 ```
 
 The `scoringPeriodId` argument can be used to get data from past weeks.
