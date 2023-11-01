@@ -18,7 +18,7 @@ can be returned at a time."><meta property="og:image" content="/logo.png"><!-- m
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.0.9001</span>
       </span>
     </div>
 
@@ -92,20 +92,20 @@ can be returned at a time.</p>
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">player_news</span><span class="op">(</span>playerId <span class="op">=</span> <span class="st">"15847"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 30 × 6</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       id published           type     premium headline                     body </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> <span style="text-decoration: underline;">15</span>847 2023-09-15 <span style="color: #949494;">19:31:46</span> Rotowire FALSE   Kelce (knee) is officially … <span style="color: #949494;">"</span>Kel…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> <span style="text-decoration: underline;">15</span>847 2023-09-15 <span style="color: #949494;">18:12:04</span> Rotowire FALSE   Chiefs head coach Andy Reid… <span style="color: #949494;">"</span>Aft…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> <span style="text-decoration: underline;">15</span>847 2023-09-14 <span style="color: #949494;">20:58:53</span> Rotowire FALSE   Kelce (knee) remained a lim… <span style="color: #949494;">"</span>Chi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> <span style="text-decoration: underline;">15</span>847 2023-09-14 <span style="color: #949494;">17:23:10</span> Rotowire FALSE   Offensive coordinator Matt … <span style="color: #949494;">"</span>Wit…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> <span style="text-decoration: underline;">15</span>847 2023-09-13 <span style="color: #949494;">21:40:27</span> Rotowire FALSE   Kelce (knee) was a limited … <span style="color: #949494;">"</span>Aft…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> <span style="text-decoration: underline;">15</span>847 2023-09-13 <span style="color: #949494;">17:02:49</span> Rotowire FALSE   Kelce (knee) is slated to p… <span style="color: #949494;">"</span>Kel…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> <span style="text-decoration: underline;">15</span>847 2023-09-10 <span style="color: #949494;">16:34:56</span> Rotowire FALSE   Kelce has already begun the… <span style="color: #949494;">"</span>Gla…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> <span style="text-decoration: underline;">15</span>847 2023-09-08 <span style="color: #949494;">01:55:57</span> Story    TRUE    The Playbook, Week 1: Raven… <span style="color: #949494;">"</span>&lt;p&gt;…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> <span style="text-decoration: underline;">15</span>847 2023-09-07 <span style="color: #949494;">22:57:33</span> Rotowire FALSE   Kelce (knee) is officially … <span style="color: #949494;">"</span>Kel…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> <span style="text-decoration: underline;">15</span>847 2023-09-07 <span style="color: #949494;">22:22:24</span> Rotowire FALSE   Kelce (knee) is not slated … <span style="color: #949494;">"</span>Off…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 20 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 21 × 6</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       id published           type         premium headline                 body </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> <span style="text-decoration: underline;">15</span>847 2023-10-30 <span style="color: #949494;">00:40:18</span> Rotowire     FALSE   Kelce finished with six… <span style="color: #949494;">"</span>Pat…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> <span style="text-decoration: underline;">15</span>847 2023-10-23 <span style="color: #949494;">12:00:25</span> Story        TRUE    NFL Week 7 fantasy foot… <span style="color: #949494;">"</span>&lt;p&gt;…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> <span style="text-decoration: underline;">15</span>847 2023-10-22 <span style="color: #949494;">23:38:21</span> Rotowire     FALSE   Kelce secured 12 of 13 … <span style="color: #949494;">"</span>Kel…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> <span style="text-decoration: underline;">15</span>847 2023-10-20 <span style="color: #949494;">22:05:40</span> Media        FALSE   How fantasy managers wh… <span style="color: #949494;">"</span>Eri…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> <span style="text-decoration: underline;">15</span>847 2023-10-13 <span style="color: #949494;">03:17:57</span> Rotowire     FALSE   Kelce (ankle) secured a… <span style="color: #949494;">"</span>As …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> <span style="text-decoration: underline;">15</span>847 2023-10-12 <span style="color: #949494;">22:54:25</span> Rotowire     FALSE   Kelce (ankle) is listed… <span style="color: #949494;">"</span>The…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> <span style="text-decoration: underline;">15</span>847 2023-10-12 <span style="color: #949494;">20:06:47</span> Rotowire     FALSE   Kelce (ankle) is expect… <span style="color: #949494;">"</span>Per…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> <span style="text-decoration: underline;">15</span>847 2023-10-12 <span style="color: #949494;">15:29:20</span> Rotowire     FALSE   Kelce (ankle) is trendi… <span style="color: #949494;">"</span>Kel…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> <span style="text-decoration: underline;">15</span>847 2023-10-11 <span style="color: #949494;">22:23:04</span> HeadlineNews FALSE   Chiefs' Travis Kelce (a… <span style="color: #949494;">"</span>&lt;p&gt;…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> <span style="text-decoration: underline;">15</span>847 2023-10-11 <span style="color: #949494;">19:20:25</span> Rotowire     FALSE   Kelce (ankle) is listed… <span style="color: #949494;">"</span>Kel…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 11 more rows</span></span>
 </code></pre></div>
     </div>
   </div>
