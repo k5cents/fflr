@@ -186,7 +186,7 @@ actual scores and ownership statistics.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> AUS    K             <span style="text-decoration: underline;">15</span>683 Justin    Tucker     Bal     K        A           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> AUS    BE          4<span style="text-decoration: underline;">361</span>370 Chris     Olave      NO      WR       A           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> AUS    BE          4<span style="text-decoration: underline;">241</span>478 DeVonta   Smith      Phi     WR       A           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> AUS    BE          4<span style="text-decoration: underline;">360</span>238 Dameon    Pierce     Hou     RB       A           </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> AUS    BE          4<span style="text-decoration: underline;">360</span>238 Dameon    Pierce     Hou     RB       Q           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> AUS    BE          3<span style="text-decoration: underline;">126</span>486 Deebo     Samuel     SF      WR       O           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">14</span> AUS    BE            <span style="text-decoration: underline;">15</span>795 DeAndre   Hopkins    Ten     WR       Q           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">15</span> AUS    BE          3<span style="text-decoration: underline;">116</span>165 Chris     Godwin     TB      WR       A           </span></span>
@@ -220,19 +220,18 @@ returns all the recent news on that player, including premium stories in
 HTML format.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/player_news.html">player_news</a></span><span class="op">(</span>playerId <span class="op">=</span> <span class="st">"3139477"</span>, parseHTML <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 10 × 6</span></span></span>
-<span><span class="co">#&gt;         id published           type     premium headline                             body </span></span>
-<span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 3<span style="text-decoration: underline;">139</span>477 2023-10-30 <span style="color: #949494;">16:03:24</span> Media    FALSE   Should fantasy managers be worried … <span style="color: #949494;">"</span>Fie…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 3<span style="text-decoration: underline;">139</span>477 2023-10-30 <span style="color: #949494;">00:35:16</span> Story    TRUE    NFL Week 8 fantasy football winners… <span style="color: #949494;">"</span>&lt;p&gt;…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 3<span style="text-decoration: underline;">139</span>477 2023-10-30 <span style="color: #949494;">00:12:19</span> Rotowire FALSE   Mahomes completed 24 of 38 pass att… <span style="color: #949494;">"</span>Mah…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 3<span style="text-decoration: underline;">139</span>477 2023-10-29 <span style="color: #949494;">18:57:50</span> Rotowire FALSE   Mahomes (illness) is active for Sun… <span style="color: #949494;">"</span>Ian…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 3<span style="text-decoration: underline;">139</span>477 2023-10-29 <span style="color: #949494;">16:12:42</span> Rotowire FALSE   Mahomes was nauseous and dehydrated… <span style="color: #949494;">"</span>Mah…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 3<span style="text-decoration: underline;">139</span>477 2023-10-29 <span style="color: #949494;">15:45:54</span> Rotowire FALSE   Mahomes is dealing with an illness … <span style="color: #949494;">"</span>Acc…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 3<span style="text-decoration: underline;">139</span>477 2023-10-22 <span style="color: #949494;">23:33:46</span> Rotowire FALSE   Mahomes completed 32 of 42 passes f… <span style="color: #949494;">"</span>Mah…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 3<span style="text-decoration: underline;">139</span>477 2023-10-13 <span style="color: #949494;">03:25:07</span> Rotowire FALSE   Mahomes completed 30 of 40 passes f… <span style="color: #949494;">"</span>The…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 3<span style="text-decoration: underline;">139</span>477 2023-10-09 <span style="color: #949494;">02:04:37</span> Rotowire FALSE   Mahomes completed 31 of 41 passes f… <span style="color: #949494;">"</span>The…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 3<span style="text-decoration: underline;">139</span>477 2023-10-02 <span style="color: #949494;">03:58:33</span> Rotowire FALSE   Mahomes (ankle) completed 18 of 30 … <span style="color: #949494;">"</span>Mah…</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 9 × 6</span></span></span>
+<span><span class="co">#&gt;        id published           type     premium headline                              body </span></span>
+<span><span class="co">#&gt;     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 3<span style="text-decoration: underline;">139</span>477 2023-10-30 <span style="color: #949494;">16:03:24</span> Media    FALSE   Should fantasy managers be worried a… <span style="color: #949494;">"</span>Fie…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> 3<span style="text-decoration: underline;">139</span>477 2023-10-30 <span style="color: #949494;">00:35:16</span> Story    TRUE    NFL Week 8 fantasy football winners … <span style="color: #949494;">"</span>&lt;p&gt;…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> 3<span style="text-decoration: underline;">139</span>477 2023-10-30 <span style="color: #949494;">00:12:19</span> Rotowire FALSE   Mahomes completed 24 of 38 pass atte… <span style="color: #949494;">"</span>Mah…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> 3<span style="text-decoration: underline;">139</span>477 2023-10-29 <span style="color: #949494;">18:57:50</span> Rotowire FALSE   Mahomes (illness) is active for Sund… <span style="color: #949494;">"</span>Ian…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> 3<span style="text-decoration: underline;">139</span>477 2023-10-29 <span style="color: #949494;">16:12:42</span> Rotowire FALSE   Mahomes was nauseous and dehydrated … <span style="color: #949494;">"</span>Mah…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> 3<span style="text-decoration: underline;">139</span>477 2023-10-29 <span style="color: #949494;">15:45:54</span> Rotowire FALSE   Mahomes is dealing with an illness b… <span style="color: #949494;">"</span>Acc…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">7</span> 3<span style="text-decoration: underline;">139</span>477 2023-10-22 <span style="color: #949494;">23:33:46</span> Rotowire FALSE   Mahomes completed 32 of 42 passes fo… <span style="color: #949494;">"</span>Mah…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">8</span> 3<span style="text-decoration: underline;">139</span>477 2023-10-13 <span style="color: #949494;">03:25:07</span> Rotowire FALSE   Mahomes completed 30 of 40 passes fo… <span style="color: #949494;">"</span>The…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">9</span> 3<span style="text-decoration: underline;">139</span>477 2023-10-09 <span style="color: #949494;">02:04:37</span> Rotowire FALSE   Mahomes completed 31 of 41 passes fo… <span style="color: #949494;">"</span>The…</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -264,9 +263,9 @@ settings.</p>
 <span><span class="co">#&gt;  $ finalScoringPeriod     : int 17</span></span>
 <span><span class="co">#&gt;  $ previousSeasons        :List of 1</span></span>
 <span><span class="co">#&gt;   ..$ : int [1:2] 2021 2022</span></span>
-<span><span class="co">#&gt;  $ standingsUpdateDate    : POSIXct[1:1], format: "2023-10-31 08:59:21"</span></span>
+<span><span class="co">#&gt;  $ standingsUpdateDate    : POSIXct[1:1], format: "2023-11-01 08:22:25"</span></span>
 <span><span class="co">#&gt;  $ teamsJoined            : int 4</span></span>
-<span><span class="co">#&gt;  $ waiverLastExecutionDate: POSIXct[1:1], format: "2023-10-31 08:59:21"</span></span>
+<span><span class="co">#&gt;  $ waiverLastExecutionDate: POSIXct[1:1], format: "2023-11-01 08:22:24"</span></span>
 <span><span class="co">#&gt;  $ waiverNextExecutionDate: POSIXct[1:1], format: NA</span></span>
 <span><span class="co">#&gt;  $ waiverProcessStatus    :List of 1</span></span>
 <span><span class="co">#&gt;   ..$ :'data.frame': 0 obs. of  1 variable:</span></span>
@@ -557,8 +556,8 @@ settings.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>     <span style="text-decoration: underline;">2</span>023               9 4<span style="text-decoration: underline;">241</span>479 Tua       Tagovailoa Mia     QB             </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>     <span style="text-decoration: underline;">2</span>023               9 4<span style="text-decoration: underline;">429</span>160 De'Von    Achane     Mia     RB             </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>     <span style="text-decoration: underline;">2</span>023               9  -<span style="color: #BB0000; text-decoration: underline;">16</span><span style="color: #BB0000;">015</span> Dolphins  D/ST       Mia     D/ST           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>     <span style="text-decoration: underline;">2</span>023               9 3<span style="text-decoration: underline;">122</span>976 Jeff      Wilson Jr. Mia     RB             </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>     <span style="text-decoration: underline;">2</span>023               9 3<span style="text-decoration: underline;">124</span>679 Jason     Sanders    Mia     K              </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>     <span style="text-decoration: underline;">2</span>023               9 3<span style="text-decoration: underline;">124</span>679 Jason     Sanders    Mia     K              </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>     <span style="text-decoration: underline;">2</span>023               9 3<span style="text-decoration: underline;">122</span>976 Jeff      Wilson Jr. Mia     RB             </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>     <span style="text-decoration: underline;">2</span>023               9 4<span style="text-decoration: underline;">046</span>692 Chase     Claypool   Mia     WR             </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>     <span style="text-decoration: underline;">2</span>023               9 4<span style="text-decoration: underline;">243</span>315 Salvon    Ahmed      Mia     RB             </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 12 more variables: injuryStatus &lt;chr&gt;, percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;,</span></span></span>
@@ -574,10 +573,10 @@ settings.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 4 × 6</span></span></span>
 <span><span class="co">#&gt;   currentMatchupPeriod matchupId teamId abbrev totalPointsLive totalProjectedPointsLive</span></span>
 <span><span class="co">#&gt;                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>                    9        17      4 DEN                  1                    124. </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>                    9        17      1 AUS                  0                    112. </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>                    9        18      2 BOS                  1                    148. </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>                    9        18      3 CHI                  0                     83.2</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>                    9        17      4 DEN                  1                    123. </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>                    9        17      1 AUS                  0                    102. </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>                    9        18      2 BOS                  1                    147. </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>                    9        18      3 CHI                  0                     83.3</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="standings">Standings<a class="anchor" aria-label="anchor" href="#standings"></a>
@@ -588,9 +587,9 @@ settings.</p>
 <span><span class="co">#&gt;   seasonId scoringPeriodId teamId abbrev draftDayProjectedRank currentProjectedRank</span></span>
 <span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>     <span style="text-decoration: underline;">2</span>023               9      1 AUS                        3                    4</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>     <span style="text-decoration: underline;">2</span>023               9      2 BOS                        1                    3</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>     <span style="text-decoration: underline;">2</span>023               9      2 BOS                        1                    2</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>     <span style="text-decoration: underline;">2</span>023               9      3 CHI                        2                    1</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>     <span style="text-decoration: underline;">2</span>023               9      4 DEN                        4                    2</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>     <span style="text-decoration: underline;">2</span>023               9      4 DEN                        4                    3</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 11 more variables: playoffSeed &lt;int&gt;, rankCalculatedFinal &lt;int&gt;, gamesBack &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   losses &lt;int&gt;, percentage &lt;dbl&gt;, pointsAgainst &lt;dbl&gt;, pointsFor &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   streakLength &lt;int&gt;, streakType &lt;chr&gt;, ties &lt;int&gt;, wins &lt;int&gt;</span></span></span></code></pre></div>
