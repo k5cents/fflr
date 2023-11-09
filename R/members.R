@@ -12,6 +12,7 @@ league_members <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   dat <- ffl_api(
     leagueId = leagueId,
     leagueHistory = leagueHistory,
+    view = "mNav",
     ...
   )
   if (leagueHistory && is.list(dat$teams)) {
@@ -23,6 +24,8 @@ league_members <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
 }
 
 out_member <- function(x) {
+  x <- x[, c("id", "displayName", "firstName", "lastName",
+             "isLeagueCreator", "isLeagueManager")]
   x <- change_names(x, "id", "memberId")
   as_tibble(x)
 }

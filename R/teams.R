@@ -15,6 +15,7 @@ league_teams <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
   dat <- ffl_api(
     leagueId = leagueId,
     leagueHistory = leagueHistory,
+    view = "mNav",
     ...
   )
   if (leagueHistory && is.list(dat$teams)) {
@@ -26,6 +27,9 @@ league_teams <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
 }
 
 out_team <- function(z, trim = FALSE) {
+  if ("logoType" %in% names(z)) {
+    z <- z[, c("id", "abbrev", "name", "logo", "logoType", "owners")]
+  }
   z <- change_names(z, "id", "teamId")
   z <- change_names(z, "owners", "memberId")
   z$abbrev <- factor(z$teamId, labels = z$abbrev)
