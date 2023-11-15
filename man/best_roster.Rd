@@ -6,7 +6,7 @@
 \usage{
 best_roster(
   leagueId = ffl_id(),
-  useScore = c("actualScore", "projectedScore"),
+  useScore = c("actualScore", "projectedScore", "averageScore"),
   scoringPeriodId = NULL,
   ...
 )
@@ -15,7 +15,8 @@ best_roster(
 \item{leagueId}{Numeric league ID or ESPN fantasy page URL. Defaults to
 \code{getOption("fflr.leagueId")}. Function fails if no ID is found.}
 
-\item{useScore}{One of "projectedScore" or "actualScore" (default).}
+\item{useScore}{One of "projectedScore", "actualScore" (default), or
+"averageScore".}
 
 \item{scoringPeriodId}{Integer week of NFL season. By default, \code{NULL} will
 use the current week (see \code{\link[=ffl_week]{ffl_week()}}). Scoring periods are always one

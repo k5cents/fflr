@@ -67,7 +67,7 @@ out_roster <- function(entry, tid, tm, wk, yr, es = FALSE) {
     return(entry)
   }
   player <- entry$playerPoolEntry$player
-  proj_dbl <- score_dbl <- rep(NA, length(player$stats))
+  mean_dbl <- proj_dbl <- score_dbl <- rep(NA, length(player$stats))
   for (i in seq_along(player$stats)) {
     s <- player$stats[[i]]
     week_int <- wk
@@ -94,7 +94,9 @@ out_roster <- function(entry, tid, tm, wk, yr, es = FALSE) {
       }
       which_proj <- which(s$statSourceId == 1 & is_split & is_week)
       proj_dbl[i] <- s$appliedTotal[which_proj]
+      mean_dbl[i] <- s$appliedAverage[2]
     } else {
+      mean_dbl <- NA_real_
       score_dbl[i] <- s$appliedTotal
       proj_dbl[i] <- NA_real_
     }
@@ -119,6 +121,7 @@ out_roster <- function(entry, tid, tm, wk, yr, es = FALSE) {
     injuryStatus = injury_status,
     projectedScore  = proj_dbl,
     actualScore = score_dbl,
+    averageScore = mean_dbl,
     percentStarted = player$ownership$percentStarted,
     percentOwned = player$ownership$percentOwned,
     percentChange = round(player$ownership$percentChange, digits = 3)
@@ -149,14 +152,15 @@ start_roster <- function(roster) {
 #' For a given roster tibble, sum the starting scores.
 #'
 #' @param roster A roster data frame from [team_roster()].
-#' @param useScore One of "projectedScore" or "actualScore" (default).
+#' @param useScore One of "projectedScore", "actualScore" (default), or
+#'   "averageScore".
 #' @return A starting score as double.
 #' @examples
 #' roster_score(team_roster(leagueId = "42654852")[[1]])
 #' @family roster functions
 #' @export
 roster_score <- function(roster,
-                         useScore = c("actualScore", "projectedScore")) {
-  useScore <- match.arg(useScore, c("actualScore", "projectedScore"))
+                         useScore = c("actualScore", "projectedScore", "averageScore")) {
+  useScore <- match.arg(useScore, c("actualScore", "projectedScore", "averageScore"))
   sum(start_roster(roster)[[useScore]])
 }

@@ -4,12 +4,16 @@
 \alias{roster_score}
 \title{Sum of starting scores in a roster}
 \usage{
-roster_score(roster, useScore = c("actualScore", "projectedScore"))
+roster_score(
+  roster,
+  useScore = c("actualScore", "projectedScore", "averageScore")
+)
 }
 \arguments{
 \item{roster}{A roster data frame from \code{\link[=team_roster]{team_roster()}}.}
 
-\item{useScore}{One of "projectedScore" or "actualScore" (default).}
+\item{useScore}{One of "projectedScore", "actualScore" (default), or
+"averageScore".}
 }
 \value{
 A starting score as double.
