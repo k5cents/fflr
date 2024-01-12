@@ -1,5 +1,6 @@
-# fflr (development version)
+# fflr 2.2.1
 
+* Adjust tests for end of NFL season.
 * The functions `league_members()` and `league_teams()` have been adjusted to
   add new columns. The order of columns has also been rearranged to focus on
   the output of each function (all teams or all members), since some teams can

@@ -14,4 +14,4 @@
 
 ## Resubmission
 
-* Fixed broken link to https://kiernann.com/fflr in README
+* Updated test to account for end of the 2023 NFL season.

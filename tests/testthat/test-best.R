@@ -17,7 +17,7 @@ test_that("calculate best possible future roster", {
   b <- best_roster(
     leagueId = "42654852",
     useScore = "projectedScore",
-    scoringPeriodId = ffl_week()
+    scoringPeriodId = 1
   )
   b2 <- b[[2]]
   expect_s3_class(b2, "data.frame")
