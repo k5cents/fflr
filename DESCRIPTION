@@ -23,6 +23,8 @@ Suggests:
 VignetteBuilder: 
     knitr
 Config/testthat/edition: 3
+URL: https://kiernann.github.io/fflr/, https://github.com/kiernann/fflr
+BugReports: https://github.com/kiernann/fflr/issues
 Encoding: UTF-8
 Language: en-US
 LazyData: true
