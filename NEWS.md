@@ -1,3 +1,7 @@
+# fflr 2.2.2
+
+* Adjust more tests for the end of the NFL season and changes to API.
+
 # fflr 2.2.1
 
 * Adjust tests for end of NFL season.

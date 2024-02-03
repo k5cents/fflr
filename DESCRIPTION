@@ -1,6 +1,6 @@
 Package: fflr
 Title: Retrieve ESPN Fantasy Football Data
-Version: 2.2.1
+Version: 2.2.2
 Authors@R: 
     person("Kiernan", "Nicholls", , "kiernann@protonmail.com", role = c("aut", "cre", "cph"))
 Description: Format the raw data from the ESPN fantasy football API
