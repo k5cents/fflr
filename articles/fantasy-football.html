@@ -40,7 +40,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.3</span>
       </span>
     </div>
 
@@ -65,7 +65,14 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/k5cents/fflr/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -81,7 +88,7 @@
       <h1 data-toc-skip>Fantasy Football Data</h1>
             
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/k5cents/fflr/blob/HEAD/vignettes/fantasy-football.Rmd" class="external-link"><code>vignettes/fantasy-football.Rmd</code></a></small>
       <div class="hidden name"><code>fantasy-football.Rmd</code></div>
 
     </div>
@@ -89,9 +96,9 @@
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">fflr</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://k5cents.github.io/fflr/" class="external-link">fflr</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html" class="external-link">packageVersion</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] '2.2.2'</span></span>
+<span><span class="co">#&gt; [1] '2.2.3'</span></span>
 <span><span class="fu"><a href="../reference/ffl_id.html">ffl_id</a></span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Temporarily set `fflr.leagueId` option to 42654852</span></span>
 <span><span class="co">#&gt; [1] "42654852"</span></span></code></pre></div>
@@ -229,13 +236,10 @@ returns all the recent news on that player, including premium stories in
 HTML format.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/player_news.html">player_news</a></span><span class="op">(</span>playerId <span class="op">=</span> <span class="st">"3139477"</span>, parseHTML <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 4 × 6</span></span></span>
-<span><span class="co">#&gt;        id published           type         premium headline                          body </span></span>
-<span><span class="co">#&gt;     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 3<span style="text-decoration: underline;">139</span>477 2024-01-30 <span style="color: #949494;">23:02:11</span> HeadlineNews FALSE   Ravens' Justin Tucker downplays … <span style="color: #949494;">"</span>&lt;p&gt;…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> 3<span style="text-decoration: underline;">139</span>477 2024-01-29 <span style="color: #949494;">03:28:31</span> Story        FALSE   Kelce, defense lead Chiefs past … <span style="color: #949494;">"</span>\n&lt;…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> 3<span style="text-decoration: underline;">139</span>477 2024-01-28 <span style="color: #949494;">23:53:11</span> Rotowire     FALSE   Mahomes completed 30 of 39 pass … <span style="color: #949494;">"</span>Mah…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> 3<span style="text-decoration: underline;">139</span>477 2024-01-27 <span style="color: #949494;">18:08:33</span> Story        FALSE   NFL conference championship bett… <span style="color: #949494;">"</span>&lt;p&gt;…</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 6</span></span></span>
+<span><span class="co">#&gt;        id published           type  premium headline                                 body </span></span>
+<span><span class="co">#&gt;     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 3<span style="text-decoration: underline;">139</span>477 2024-02-28 <span style="color: #949494;">04:35:17</span> Story FALSE   Max Strus' buzzer-beater shocks Travis … <span style="color: #949494;">"</span>&lt;p&gt;…</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -565,8 +569,8 @@ settings.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>     <span style="text-decoration: underline;">2</span>023              19  -<span style="color: #BB0000; text-decoration: underline;">16</span><span style="color: #BB0000;">015</span> Dolphins  D/ST       Mia     D/ST           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>     <span style="text-decoration: underline;">2</span>023              19 3<span style="text-decoration: underline;">124</span>679 Jason     Sanders    Mia     K              </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>     <span style="text-decoration: underline;">2</span>023              19 3<span style="text-decoration: underline;">122</span>976 Jeff      Wilson Jr. Mia     RB             </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>     <span style="text-decoration: underline;">2</span>023              19 4<span style="text-decoration: underline;">046</span>692 Chase     Claypool   Mia     WR             </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>     <span style="text-decoration: underline;">2</span>023              19 4<span style="text-decoration: underline;">036</span>335 Cedrick   Wilson Jr. Mia     WR             </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>     <span style="text-decoration: underline;">2</span>023              19 3<span style="text-decoration: underline;">054</span>212 Jonnu     Smith      Mia     TE             </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>     <span style="text-decoration: underline;">2</span>023              19 4<span style="text-decoration: underline;">046</span>692 Chase     Claypool   Mia     WR             </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 12 more variables: injuryStatus &lt;chr&gt;, percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   percentChange &lt;dbl&gt;, positionalRanking &lt;int&gt;, totalRating &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   auctionValueAverage &lt;dbl&gt;, averageDraftPosition &lt;dbl&gt;, projectedScore &lt;dbl&gt;,</span></span></span>

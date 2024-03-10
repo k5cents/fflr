@@ -18,7 +18,7 @@ can be returned at a time."><meta property="og:image" content="/logo.png"><!-- m
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.3</span>
       </span>
     </div>
 
@@ -39,7 +39,13 @@ can be returned at a time."><meta property="og:image" content="/logo.png"><!-- m
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
-      </ul><ul class="nav navbar-nav navbar-right"></ul></div><!--/.nav-collapse -->
+      </ul><ul class="nav navbar-nav navbar-right"><li>
+  <a href="https://github.com/k5cents/fflr/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
@@ -49,7 +55,7 @@ can be returned at a time."><meta property="og:image" content="/logo.png"><!-- m
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Player news</h1>
-    
+    <small class="dont-index">Source: <a href="https://github.com/k5cents/fflr/blob/HEAD/R/news.R" class="external-link"><code>R/news.R</code></a></small>
     <div class="hidden name"><code>player_news.Rd</code></div>
     </div>
 
@@ -92,22 +98,19 @@ can be returned at a time.</p>
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">player_news</span><span class="op">(</span>playerId <span class="op">=</span> <span class="st">"15847"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 13 × 6</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       id published           type         premium headline                 body </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> <span style="text-decoration: underline;">15</span>847 2024-01-30 <span style="color: #949494;">23:02:11</span> HeadlineNews FALSE   Ravens' Justin Tucker d… <span style="color: #949494;">"</span>&lt;p&gt;…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> <span style="text-decoration: underline;">15</span>847 2024-01-29 <span style="color: #949494;">03:28:31</span> Story        FALSE   Kelce, defense lead Chi… <span style="color: #949494;">"</span>\n&lt;…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> <span style="text-decoration: underline;">15</span>847 2024-01-29 <span style="color: #949494;">02:17:54</span> HeadlineNews FALSE   Chiefs' Travis Kelce se… <span style="color: #949494;">"</span>&lt;p&gt;…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> <span style="text-decoration: underline;">15</span>847 2024-01-29 <span style="color: #949494;">00:20:14</span> Rotowire     FALSE   Kelce hauled in all 11 … <span style="color: #949494;">"</span>Kel…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> <span style="text-decoration: underline;">15</span>847 2024-01-22 <span style="color: #949494;">03:19:23</span> Rotowire     FALSE   Kelce recorded five rec… <span style="color: #949494;">"</span>Kel…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> <span style="text-decoration: underline;">15</span>847 2024-01-14 <span style="color: #949494;">05:27:54</span> Rotowire     FALSE   Kelce recorded seven re… <span style="color: #949494;">"</span>It …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> <span style="text-decoration: underline;">15</span>847 2024-01-07 <span style="color: #949494;">19:35:31</span> Rotowire     FALSE   Kelce (coach's decision… <span style="color: #949494;">"</span>Kel…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> <span style="text-decoration: underline;">15</span>847 2024-01-05 <span style="color: #949494;">21:14:26</span> Rotowire     FALSE   Kelce (neck) doesn't ha… <span style="color: #949494;">"</span>Kel…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> <span style="text-decoration: underline;">15</span>847 2024-01-04 <span style="color: #949494;">22:29:54</span> Rotowire     FALSE   Kelce (neck) remained l… <span style="color: #949494;">"</span>Aft…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> <span style="text-decoration: underline;">15</span>847 2024-01-03 <span style="color: #949494;">22:23:47</span> Rotowire     FALSE   Kelce was a limited par… <span style="color: #949494;">"</span>Kel…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> <span style="text-decoration: underline;">15</span>847 2024-01-01 <span style="color: #949494;">06:25:47</span> Story        TRUE    NFL Week 17 fantasy foo… <span style="color: #949494;">"</span>&lt;p&gt;…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> <span style="text-decoration: underline;">15</span>847 2024-01-01 <span style="color: #949494;">04:16:56</span> Rotowire     FALSE   Kelce recorded three ca… <span style="color: #949494;">"</span>Kan…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> <span style="text-decoration: underline;">15</span>847 2023-12-25 <span style="color: #949494;">22:11:17</span> Rotowire     FALSE   Kelce caught five of se… <span style="color: #949494;">"</span>Veg…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10 × 6</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       id published           type     premium headline                     body </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> <span style="text-decoration: underline;">15</span>847 2024-03-06 <span style="color: #949494;">16:41:31</span> Story    FALSE   How Jason Kelce's trainer i… <span style="color: #949494;">"</span>&lt;p&gt;…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> <span style="text-decoration: underline;">15</span>847 2024-02-28 <span style="color: #949494;">04:35:17</span> Story    FALSE   Max Strus' buzzer-beater sh… <span style="color: #949494;">"</span>&lt;p&gt;…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> <span style="text-decoration: underline;">15</span>847 2024-02-27 <span style="color: #949494;">23:56:42</span> Story    FALSE   Andy Reid misses out on Tay… <span style="color: #949494;">"</span>&lt;p&gt;…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> <span style="text-decoration: underline;">15</span>847 2024-02-14 <span style="color: #949494;">15:42:10</span> Story    FALSE   Travis Kelce to executive p… <span style="color: #949494;">"</span>&lt;p&gt;…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> <span style="text-decoration: underline;">15</span>847 2024-02-12 <span style="color: #949494;">17:17:32</span> Story    FALSE   Travis Kelce, an NFL season… <span style="color: #949494;">"</span>&lt;p&gt;…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> <span style="text-decoration: underline;">15</span>847 2024-02-12 <span style="color: #949494;">04:32:33</span> Rotowire FALSE   Kelce recorded nine recepti… <span style="color: #949494;">"</span>Kel…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> <span style="text-decoration: underline;">15</span>847 2024-02-08 <span style="color: #949494;">17:41:00</span> Story    FALSE   Super Bowl LVIII betting ro… <span style="color: #949494;">"</span>&lt;p&gt;…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> <span style="text-decoration: underline;">15</span>847 2024-02-07 <span style="color: #949494;">17:38:10</span> Story    FALSE   HS tales of Super Bowl star… <span style="color: #949494;">"</span>\n&lt;…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> <span style="text-decoration: underline;">15</span>847 2024-02-06 <span style="color: #949494;">21:40:34</span> Story    FALSE   Super Bowl LVIII betting ro… <span style="color: #949494;">"</span>&lt;p&gt;…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> <span style="text-decoration: underline;">15</span>847 2024-02-04 <span style="color: #949494;">13:19:34</span> Story    FALSE   NFL Super Bowl 2024 betting… <span style="color: #949494;">"</span>&lt;p&gt;…</span>
 </code></pre></div>
     </div>
   </div>

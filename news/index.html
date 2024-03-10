@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.2.3</span>
       </span>
     </div>
 
@@ -38,7 +38,13 @@
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
-      </ul><ul class="nav navbar-nav navbar-right"></ul></div><!--/.nav-collapse -->
+      </ul><ul class="nav navbar-nav navbar-right"><li>
+  <a href="https://github.com/k5cents/fflr/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
@@ -48,11 +54,16 @@
   <div class="col-md-9 contents">
     <div class="page-header">
       <h1 data-toc-skip>Changelog <small></small></h1>
-      
+      <small>Source: <a href="https://github.com/k5cents/fflr/blob/HEAD/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
     <div class="section level2">
-<h2 class="page-header" data-toc-text="2.2.2" id="fflr-222">fflr 2.2.2<a class="anchor" aria-label="anchor" href="#fflr-222"></a></h2>
+<h2 class="page-header" data-toc-text="2.2.3" id="fflr-223">fflr 2.2.3<a class="anchor" aria-label="anchor" href="#fflr-223"></a></h2>
+<ul><li>Update maintainer email, website URL, and GitHub URL.</li>
+<li>Switch from MIT license to GPL-3</li>
+</ul></div>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="2.2.2" id="fflr-222">fflr 2.2.2<small>2024-02-03</small><a class="anchor" aria-label="anchor" href="#fflr-222"></a></h2>
 <ul><li>Adjust more tests for the end of the NFL season and changes to API.</li>
 </ul></div>
     <div class="section level2">
@@ -95,22 +106,22 @@
 <h2 class="page-header" data-toc-text="2.0.0" id="fflr-200">fflr 2.0.0<small>2021-11-08</small><a class="anchor" aria-label="anchor" href="#fflr-200"></a></h2>
 <ul><li>Deprecate <code><a href="../reference/tidy_schedule.html">tidy_matchups()</a></code> and replace with <code><a href="../reference/tidy_schedule.html">tidy_schedule()</a></code>.</li>
 <li>Leave <code>items</code> nested in <code><a href="../reference/recent_activity.html">recent_activity()</a></code>.</li>
-<li>Fix bye week scoring for D/ST players in <code><a href="../reference/team_roster.html">team_roster()</a></code> (#40).</li>
+<li>Fix bye week scoring for D/ST players in <code><a href="../reference/team_roster.html">team_roster()</a></code> (<a href="https://github.com/k5cents/fflr/issues/40" class="external-link">#40</a>).</li>
 <li>Change <code>powerWins</code> to a normalized <code>expectedWins</code> in <code><a href="../reference/tidy_scores.html">tidy_scores()</a></code>.</li>
-<li>Add <code>scoringPeriodId</code> argument to functions like <code><a href="../reference/recent_activity.html">recent_activity()</a></code> (#32).</li>
+<li>Add <code>scoringPeriodId</code> argument to functions like <code><a href="../reference/recent_activity.html">recent_activity()</a></code> (<a href="https://github.com/k5cents/fflr/issues/32" class="external-link">#32</a>).</li>
 <li>Add <code><a href="../reference/transaction_counter.html">budget_summary()</a></code> version of <code><a href="../reference/transaction_counter.html">transaction_counter()</a></code>.</li>
 <li>Add <code>useMatchup</code> argument to <code><a href="../reference/tidy_scores.html">tidy_scores()</a></code> to allow for <code>scoringPeriodId</code>.</li>
 <li>Add transaction dates (and more) to <code><a href="../reference/recent_activity.html">recent_activity()</a></code> output.</li>
 <li>Add <code><a href="../reference/best_roster.html">best_roster()</a></code>, using <code><a href="../reference/team_roster.html">team_roster()</a></code> and sorting with slot settings.</li>
 <li>
 <code><a href="../reference/pro_schedule.html">pro_schedule()</a></code> (and <code>nfl_schedule</code>) are sorted by <code>date</code> and <code>matchupId</code>.</li>
-<li>Deprecate <code><a href="../reference/all_players.html">all_players()</a></code> in favor of more advance <code><a href="../reference/list_players.html">list_players()</a></code> (#21).</li>
+<li>Deprecate <code><a href="../reference/all_players.html">all_players()</a></code> in favor of more advance <code><a href="../reference/list_players.html">list_players()</a></code> (<a href="https://github.com/k5cents/fflr/issues/21" class="external-link">#21</a>).</li>
 <li>Manually override <code>teamId</code> in each <code><a href="../reference/team_roster.html">team_roster()</a></code> data frame.</li>
-<li>Clarify the name of many <code>*Id</code> columns (e.g., <code>teamId</code>, <code>matchupId</code>) (#31).</li>
+<li>Clarify the name of many <code>*Id</code> columns (e.g., <code>teamId</code>, <code>matchupId</code>) (<a href="https://github.com/k5cents/fflr/issues/31" class="external-link">#31</a>).</li>
 <li>Add <code><a href="../reference/combine_history.html">combine_history()</a></code> utility for <code>leagueHistory</code> functions.</li>
-<li>Improve handling of pre-draft and no-history edge cases (#35).</li>
-<li>Improve abbreviation techniques, add all roster slot and position IDs (#29).</li>
-<li>Fix error checking in <code><a href="../reference/ffl_api.html">ffl_api()</a></code>. Returns proper error message when there is a failure (e.g., non-public league) (#36).</li>
+<li>Improve handling of pre-draft and no-history edge cases (<a href="https://github.com/k5cents/fflr/issues/35" class="external-link">#35</a>).</li>
+<li>Improve abbreviation techniques, add all roster slot and position IDs (<a href="https://github.com/k5cents/fflr/issues/29" class="external-link">#29</a>).</li>
+<li>Fix error checking in <code><a href="../reference/ffl_api.html">ffl_api()</a></code>. Returns proper error message when there is a failure (e.g., non-public league) (<a href="https://github.com/k5cents/fflr/issues/36" class="external-link">#36</a>).</li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.9.2" id="fflr-192">fflr 1.9.2<small>2021-10-05</small><a class="anchor" aria-label="anchor" href="#fflr-192"></a></h2>
@@ -130,16 +141,16 @@
 <li>Add <code><a href="../reference/pro_events.html">pro_events()</a></code> and <code><a href="../reference/pro_scores.html">pro_scores()</a></code> for live NFL data.</li>
 <li>Add vignette listing the package functions as they relate to the sections of the ESPN website.</li>
 <li>Add spell checking.</li>
-<li>Rename some columns to match conversion (#31).</li>
+<li>Rename some columns to match conversion (<a href="https://github.com/k5cents/fflr/issues/31" class="external-link">#31</a>).</li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.9.0" id="fflr-190">fflr 1.9.0<a class="anchor" aria-label="anchor" href="#fflr-190"></a></h2>
-<ul><li>The package has entirely been re-written from the ground-up (#24).</li>
+<ul><li>The package has entirely been re-written from the ground-up (<a href="https://github.com/k5cents/fflr/issues/24" class="external-link">#24</a>).</li>
 <li>All functions use the new <code>try_json()</code> back-end, which uses <code>RETRY()</code> instead of <code>fromJSON()</code>.</li>
 <li>Use the same argument/column names as the API (<code>leagueId</code> instead of <code>lid</code>).</li>
 <li>Return single-row data frames instead of lists for a single season.</li>
-<li>Add <code>tidy_*</code> prefix to function names that manipulate data structure (#26).</li>
-<li>Pass the <code>...</code> arguments to <code>GET()</code> instead of <code>fromJSON()</code> (#25).</li>
+<li>Add <code>tidy_*</code> prefix to function names that manipulate data structure (<a href="https://github.com/k5cents/fflr/issues/26" class="external-link">#26</a>).</li>
+<li>Pass the <code>...</code> arguments to <code>GET()</code> instead of <code>fromJSON()</code> (<a href="https://github.com/k5cents/fflr/issues/25" class="external-link">#25</a>).</li>
 </ul></div>
   </div>
 
