@@ -1,3 +1,8 @@
+# fflr 2.2.3
+
+* Update maintainer email, website URL, and GitHub URL.
+* Switch from MIT license to GPL-3
+
 # fflr 2.2.2
 
 * Adjust more tests for the end of the NFL season and changes to API.
