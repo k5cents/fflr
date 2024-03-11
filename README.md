@@ -11,9 +11,9 @@ experimental](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](ht
 status](https://www.r-pkg.org/badges/version/fflr)](https://CRAN.R-project.org/package=fflr)
 ![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/fflr)
 [![Codecov test
-coverage](https://img.shields.io/codecov/c/github/kiernann/fflr/master.svg)](https://app.codecov.io/gh/kiernann/fflr?branch=master')
+coverage](https://img.shields.io/codecov/c/github/k5cents/fflr/master.svg)](https://app.codecov.io/gh/k5cents/fflr?branch=master')
 [![R build
-status](https://github.com/kiernann/fflr/workflows/R-CMD-check/badge.svg)](https://github.com/kiernann/fflr/actions)
+status](https://github.com/k5cents/fflr/workflows/R-CMD-check/badge.svg)](https://github.com/k5cents/fflr/actions)
 <!-- badges: end -->
 
 The fflr package is used to query the [ESPN Fantasy Football
@@ -22,7 +22,7 @@ football league members, teams, and individual athletes.
 
 This package has been tested with a narrow subset of possible league
 settings. If a function doesn’t work as intended, please file an [issue
-on GitHub](https://github.com/kiernann/fflr/issues).
+on GitHub](https://github.com/k5cents/fflr/issues).
 
 ## Installation
 
@@ -34,11 +34,11 @@ install.packages("fflr")
 ```
 
 The most recent development version can be installed from
-[GitHub](https://github.com/kiernann/fflr):
+[GitHub](https://github.com/k5cents/fflr):
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("kiernann/fflr")
+remotes::install_github("k5cents/fflr")
 ```
 
 ## Usage
@@ -136,7 +136,7 @@ nfl_teams
 ------------------------------------------------------------------------
 
 The fflr project is released with a [Contributor Code of
-Conduct](https://kiernann.github.io/fflr/CODE_OF_CONDUCT.html). By
+Conduct](https://k5cents.github.io/fflr/CODE_OF_CONDUCT.html). By
 contributing, you agree to abide by its terms.
 
 <!-- refs: start -->

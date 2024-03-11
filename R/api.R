@@ -59,7 +59,7 @@ try_json <- function(url, path = "", query = NULL, leagueHistory = NULL) {
     ),
     query = query,
     httr::accept_json(),
-    httr::user_agent("https://github.com/kiernann/fflr/"),
+    httr::user_agent("https://github.com/k5cents/fflr/"),
     terminate_on = c(400:417)
   )
   if (httr::http_type(resp) != "application/json") {
