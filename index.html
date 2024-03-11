@@ -110,7 +110,7 @@
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://k5cents.github.io/fflr/" class="external-link">fflr</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html" class="external-link">packageVersion</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] '2.2.0'</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] '2.2.3'</span></span></code></pre></div>
 <p>Data is only available for public leagues. See <a href="https://web.archive.org/web/20211105212446/https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public" class="external-link">this help page</a> on how to make a private league public</p>
 <p>Functions require a unique <code>leagueId</code>, which can be found in any ESPN page URL.</p>
 <pre>https://fantasy.espn.com/football/league?leagueId=<b>42654852</b></pre>
@@ -127,13 +127,13 @@
 <span><span class="co">#&gt;      &lt;int&gt;    &lt;int&gt; &lt;chr&gt;            &lt;lgl&gt;    &lt;int&gt;              &lt;int&gt;</span></span>
 <span><span class="co">#&gt; 1 42654852     2023 FFLR Test League TRUE         4                 17</span></span>
 <span><span class="fu"><a href="reference/league_teams.html">league_teams</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 4 × 3</span></span>
-<span><span class="co">#&gt;   abbrev teamId memberId                              </span></span>
-<span><span class="co">#&gt;   &lt;fct&gt;   &lt;int&gt; &lt;chr&gt;                                 </span></span>
-<span><span class="co">#&gt; 1 AUS         1 {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}</span></span>
-<span><span class="co">#&gt; 2 BOS         2 {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}</span></span>
-<span><span class="co">#&gt; 3 CHI         3 {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}</span></span>
-<span><span class="co">#&gt; 4 DEN         4 {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}</span></span></code></pre></div>
+<span><span class="co">#&gt; # A tibble: 4 × 6</span></span>
+<span><span class="co">#&gt;   teamId abbrev name              logo                                            logoType memberId</span></span>
+<span><span class="co">#&gt;    &lt;int&gt; &lt;fct&gt;  &lt;chr&gt;             &lt;chr&gt;                                           &lt;chr&gt;    &lt;chr&gt;   </span></span>
+<span><span class="co">#&gt; 1      1 AUS    Austin Astronauts https://g.espncdn.com/lm-static/logo-packs/cor… VECTOR   {22DFE7…</span></span>
+<span><span class="co">#&gt; 2      2 BOS    Boston Buzzards   https://g.espncdn.com/lm-static/logo-packs/cor… VECTOR   {22DFE7…</span></span>
+<span><span class="co">#&gt; 3      3 CHI    Chicago Crowns    https://g.espncdn.com/lm-static/logo-packs/cor… VECTOR   {22DFE7…</span></span>
+<span><span class="co">#&gt; 4      4 DEN    Denver Devils     https://g.espncdn.com/lm-static/logo-packs/cor… VECTOR   {22DFE7…</span></span></code></pre></div>
 <p>The <code>scoringPeriodId</code> argument can be used to get data from past weeks.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">all_rost</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/team_roster.html">team_roster</a></span><span class="op">(</span>scoringPeriodId <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
@@ -228,7 +228,7 @@
 <ul class="list-unstyled">
 <li><a href="https://lifecycle.r-lib.org/articles/stages.html#stable" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: experimental"></a></li>
 <li><a href="https://CRAN.R-project.org/package=fflr" class="external-link"><img src="https://www.r-pkg.org/badges/version/fflr" alt="CRAN status"></a></li>
-<li><a href="https://app.codecov.io/gh/k5cents/fflr?branch=master'" class="external-link"><img src="https://img.shields.io/codecov/c/github/k5cents/fflr/master.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://app.codecov.io/gh/k5cents/fflr?branch=master" class="external-link"><img src="https://codecov.io/gh/k5cents/fflr/graph/badge.svg?token=CMz6DIxJdH" alt="Codecov test coverage"></a></li>
 <li><a href="https://github.com/k5cents/fflr/actions" class="external-link"><img src="https://github.com/k5cents/fflr/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 </ul>
 </div>
