@@ -1,3 +1,7 @@
+# fflr 2.2.4
+
+Fix tests for post-season API data formats.
+
 # fflr 2.2.3
 
 * Update maintainer email, website URL, and GitHub URL.

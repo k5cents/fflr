@@ -45,6 +45,10 @@ live_scoring <- function(leagueId = ffl_id(), yetToPlay = FALSE,
       dat$schedule$away$totalProjectedPointsLive
     )
   )
+  if (all(is.na(s$totalProjectedPointsLive))) {
+    message("No live scoring available")
+    return(data.frame())
+  }
   s <- s[!is.na(s$totalProjectedPointsLive), ]
   s <- s[order(s$matchupId), ]
   tm <- out_team(dat$teams, trim = TRUE)
@@ -55,6 +59,16 @@ live_scoring <- function(leagueId = ffl_id(), yetToPlay = FALSE,
     s$bonusWin <- s$totalProjectedPointsLive > middle_point
   }
   if (yetToPlay) {
+    pro <- tryCatch(
+      expr = pro_schedule(),
+      error = function(e) {
+        return(NULL)
+      }
+    )
+    if (is.null(pro)) {
+      message("No pro schedule available to compare start times")
+      return(s)
+    }
     r <- do.call(
       "rbind",
       lapply(

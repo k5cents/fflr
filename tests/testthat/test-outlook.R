@@ -4,5 +4,9 @@ test_that("get individual player outlook", {
     limit = 1
   )
   expect_s3_class(o, "data.frame")
-  expect_length(o, 6)
+  if (is.na(o$outlook)) {
+    expect_length(o, 5)
+  } else {
+    expect_length(o, 6)
+  }
 })

@@ -12,9 +12,3 @@
 ## R CMD check results
 
 0 errors | 0 warnings | 0 note
-
-## Submission
-
-* Update email from kiernann@pronmail.com to k5cents@gmail.com
-* Update URLs from kiernann.com to k5cents.com
-* Update Github from @kiernann to @k5cents
