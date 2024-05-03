@@ -52,7 +52,7 @@ The most recent development version can be installed from [GitHub][gh]:
 
 ```{r remote, eval=FALSE}
 # install.packages("remotes")
-remotes::install_github("kiernann/fflr")
+remotes::install_github("k5cents/fflr")
 ```
 
 ## Usage
@@ -110,16 +110,21 @@ contributing, you agree to abide by its terms.
 [life_link]: https://lifecycle.r-lib.org/articles/stages.html#stable
 [cran_badge]: https://www.r-pkg.org/badges/version/fflr
 [cran_link]: https://CRAN.R-project.org/package=fflr
-[ga_badge]: https://github.com/kiernann/fflr/workflows/R-CMD-check/badge.svg
-[ga_link]: https://github.com/kiernann/fflr/actions
-[cov_badge]: https://img.shields.io/codecov/c/github/kiernann/fflr/master.svg
-[cov_link]: https://app.codecov.io/gh/kiernann/fflr?branch=master'
+[ga_badge]: https://github.com/k5cents/fflr/workflows/R-CMD-check/badge.svg
+[ga_link]: https://github.com/k5cents/fflr/actions
+[cov_badge]: https://codecov.io/gh/k5cents/fflr/graph/badge.svg?token=CMz6DIxJdH
+[cov_link]: https://app.codecov.io/gh/k5cents/fflr?branch=master
 [dl_badge]: https://cranlogs.r-pkg.org/badges/grand-total/fflr
+<<<<<<< HEAD
 [api]: https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/
 [iss]: https://github.com/kiernann/fflr/issues
+=======
+[api]: https://fantasy.espn.com/apis/v3/games/ffl/
+[iss]: https://github.com/k5cents/fflr/issues
+>>>>>>> 51d8f8313cb57960ba168ad9b476f2d226482453
 [cran]: https://cran.r-project.org/package=fflr
-[gh]: https://github.com/kiernann/fflr
-[coc]: https://kiernann.github.io/fflr/CODE_OF_CONDUCT.html
+[gh]: https://github.com/k5cents/fflr
+[coc]: https://k5cents.github.io/fflr/CODE_OF_CONDUCT.html
 [help]: https://web.archive.org/web/20211105212446/https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public
 [rprof]: https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html
 <!-- refs: end -->

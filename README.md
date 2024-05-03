@@ -11,9 +11,9 @@ experimental](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](ht
 status](https://www.r-pkg.org/badges/version/fflr)](https://CRAN.R-project.org/package=fflr)
 ![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/fflr)
 [![Codecov test
-coverage](https://img.shields.io/codecov/c/github/kiernann/fflr/master.svg)](https://app.codecov.io/gh/kiernann/fflr?branch=master')
+coverage](https://codecov.io/gh/k5cents/fflr/graph/badge.svg?token=CMz6DIxJdH)](https://app.codecov.io/gh/k5cents/fflr?branch=master)
 [![R build
-status](https://github.com/kiernann/fflr/workflows/R-CMD-check/badge.svg)](https://github.com/kiernann/fflr/actions)
+status](https://github.com/k5cents/fflr/workflows/R-CMD-check/badge.svg)](https://github.com/k5cents/fflr/actions)
 <!-- badges: end -->
 
 The fflr package is used to query the [ESPN Fantasy Football
@@ -22,7 +22,7 @@ football league members, teams, and individual athletes.
 
 This package has been tested with a narrow subset of possible league
 settings. If a function doesn’t work as intended, please file an [issue
-on GitHub](https://github.com/kiernann/fflr/issues).
+on GitHub](https://github.com/k5cents/fflr/issues).
 
 ## Installation
 
@@ -34,11 +34,11 @@ install.packages("fflr")
 ```
 
 The most recent development version can be installed from
-[GitHub](https://github.com/kiernann/fflr):
+[GitHub](https://github.com/k5cents/fflr):
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("kiernann/fflr")
+remotes::install_github("k5cents/fflr")
 ```
 
 ## Usage
@@ -46,7 +46,7 @@ remotes::install_github("kiernann/fflr")
 ``` r
 library(fflr)
 packageVersion("fflr")
-#> [1] '2.2.0'
+#> [1] '2.2.3'
 ```
 
 Data is only available for public leagues. See [this help
@@ -78,13 +78,13 @@ league_info()
 #>      <int>    <int> <chr>            <lgl>    <int>              <int>
 #> 1 42654852     2023 FFLR Test League TRUE         4                 17
 league_teams()
-#> # A tibble: 4 × 3
-#>   abbrev teamId memberId                              
-#>   <fct>   <int> <chr>                                 
-#> 1 AUS         1 {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}
-#> 2 BOS         2 {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}
-#> 3 CHI         3 {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}
-#> 4 DEN         4 {22DFE7FF-9DF2-4F3B-9FE7-FF9DF2AF3BD2}
+#> # A tibble: 4 × 6
+#>   teamId abbrev name              logo                                            logoType memberId
+#>    <int> <fct>  <chr>             <chr>                                           <chr>    <chr>   
+#> 1      1 AUS    Austin Astronauts https://g.espncdn.com/lm-static/logo-packs/cor… VECTOR   {22DFE7…
+#> 2      2 BOS    Boston Buzzards   https://g.espncdn.com/lm-static/logo-packs/cor… VECTOR   {22DFE7…
+#> 3      3 CHI    Chicago Crowns    https://g.espncdn.com/lm-static/logo-packs/cor… VECTOR   {22DFE7…
+#> 4      4 DEN    Denver Devils     https://g.espncdn.com/lm-static/logo-packs/cor… VECTOR   {22DFE7…
 ```
 
 The `scoringPeriodId` argument can be used to get data from past weeks.
@@ -136,7 +136,7 @@ nfl_teams
 ------------------------------------------------------------------------
 
 The fflr project is released with a [Contributor Code of
-Conduct](https://kiernann.github.io/fflr/CODE_OF_CONDUCT.html). By
+Conduct](https://k5cents.github.io/fflr/CODE_OF_CONDUCT.html). By
 contributing, you agree to abide by its terms.
 
 <!-- refs: start -->

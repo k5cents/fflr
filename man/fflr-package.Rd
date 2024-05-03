@@ -14,8 +14,17 @@ settings page on the ESPN website. Functions can then take the numeric league
 ID found in the URL to return data from the API. This league ID can be set as
 a global option named "fflr.leagueId" with \code{options()}.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://k5cents.github.io/fflr/}
+  \item \url{https://github.com/k5cents/fflr}
+  \item Report bugs at \url{https://github.com/k5cents/fflr/issues}
+}
+
+}
 \author{
-\strong{Maintainer}: Kiernan Nicholls \email{kiernann@protonmail.com} [copyright holder]
+\strong{Maintainer}: Kiernan Nicholls \email{k5cents@gmail.com} (\href{https://orcid.org/0000-0002-9229-7897}{ORCID}) [copyright holder]
 
 }
 \keyword{internal}
