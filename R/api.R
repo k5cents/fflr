@@ -29,7 +29,7 @@
 #' @keywords internal
 #' @export
 ffl_api <- function(leagueId = ffl_id(), view = NULL, leagueHistory = FALSE,
-                    seasonId = 2023, scoringPeriodId = NULL, ...) {
+                    seasonId = 2024, scoringPeriodId = NULL, ...) {
   dots <- list(..., scoringPeriodId = scoringPeriodId)
   age_path <- ifelse(
     test = isTRUE(leagueHistory),
@@ -42,7 +42,7 @@ ffl_api <- function(leagueId = ffl_id(), view = NULL, leagueHistory = FALSE,
     view <- c(view, dots)
   }
   try_json(
-    url = "https://fantasy.espn.com",
+    url = "https://lm-api-reads.fantasy.espn.com",
     path = paste("apis/v3/games/ffl", age_path, leagueId, sep = "/"),
     query = view,
     leagueHistory = leagueHistory

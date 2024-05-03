@@ -1,5 +1,6 @@
 test_that("All current team rosters as list", {
   r <- team_roster(leagueId = "42654852", scoringPeriodId = 1)
+  skip_empty(r)
   expect_type(r, "list")
   expect_length(r, 4)
   expect_s3_class(r[[1]], "data.frame")
@@ -9,6 +10,7 @@ test_that("All current team rosters as list", {
 
 test_that("All final period team rosters as list of list", {
   rh <- team_roster(leagueId = "252353", leagueHistory = TRUE)
+  skip_empty(rh)
   expect_gt(length(rh), 4)
   expect_length(rh[[1]], 8)
   expect_length(rh[[2]], 10)

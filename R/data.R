@@ -36,7 +36,7 @@
 #'   \item{conference}{NFL conference}
 #'   ...
 #' }
-#' @source \url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2023?view=proTeamSchedules_wl}
+#' @source \url{https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2023?view=proTeamSchedules_wl}
 "nfl_teams"
 
 #' 2023 NFL Schedule
@@ -54,5 +54,5 @@
 #'   \item{date}{Matchup start date and time}
 #'   ...
 #' }
-#' @source \url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2023?view=proTeamSchedules_wl}
+#' @source \url{https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2023?view=proTeamSchedules_wl}
 "nfl_schedule"

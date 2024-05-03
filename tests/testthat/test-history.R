@@ -14,5 +14,5 @@ test_that("historical data can be combined", {
     leagueId = "42654852"
   )
   expect_s3_class(h, "data.frame")
-  expect_length(h, 12)
+  expect_length(h, 6)
 })

@@ -14,7 +14,7 @@
 #' @family Game information
 #' @export
 ffl_info <- function() {
-  x <- try_json("https://fantasy.espn.com/apis/v3/games/ffl")
+  x <- try_json(url = "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl")
   list(
     abbrev = x$abbrev,
     active = x$active,
@@ -47,7 +47,7 @@ ffl_week <- function(offset = 0) {
 #' @family Game information
 #' @export
 ffl_seasons <- function() {
-  s <- try_json("https://fantasy.espn.com/apis/v3/games/ffl/seasons")
+  s <- try_json("https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons")
   s$startDate <- ffl_date(s$startDate)
   s$endDate <- ffl_date(s$endDate)
   s$currentScoringPeriod <- s$currentScoringPeriod$id
@@ -63,7 +63,7 @@ ffl_seasons <- function() {
 #' @family Game information
 #' @export
 espn_games <- function() {
-  g <- try_json("https://fantasy.espn.com/apis/v3/games")
+  g <- try_json("https://lm-api-reads.fantasy.espn.com/apis/v3/games/")
   g$currentSeason$startDate <- ffl_date(g$currentSeason$startDate)
   g$currentSeason$endDate <- ffl_date(g$currentSeason$endDate)
   g$currentSeason <- NULL

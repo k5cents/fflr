@@ -12,7 +12,7 @@
 pro_schedule <- function(seasonId = ffl_year()) {
   dat <- try_json(
     url = sprintf(
-      fmt = "https://fantasy.espn.com/apis/v3/games/ffl/seasons/%i", seasonId
+      fmt = "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/%i", seasonId
     ),
     query = list(view = "proTeamSchedules_wl")
   )

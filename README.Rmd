@@ -115,7 +115,7 @@ contributing, you agree to abide by its terms.
 [cov_badge]: https://img.shields.io/codecov/c/github/kiernann/fflr/master.svg
 [cov_link]: https://app.codecov.io/gh/kiernann/fflr?branch=master'
 [dl_badge]: https://cranlogs.r-pkg.org/badges/grand-total/fflr
-[api]: https://fantasy.espn.com/apis/v3/games/ffl/
+[api]: https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/
 [iss]: https://github.com/kiernann/fflr/issues
 [cran]: https://cran.r-project.org/package=fflr
 [gh]: https://github.com/kiernann/fflr

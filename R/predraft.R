@@ -15,3 +15,11 @@ skip_predraft <- function(dat) {
     }
   }
 }
+
+skip_empty <- function(dat) {
+  if (is_installed("testthat") & is.data.frame(dat)) {
+    if (nrow(dat) == 0) {
+      testthat::skip(message = "Function returned no data, likely predraft")
+    }
+  }
+}

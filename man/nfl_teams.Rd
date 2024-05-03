@@ -17,7 +17,7 @@ A data frame with 33 rows and 6 columns:
 }
 }
 \source{
-\url{https://fantasy.espn.com/apis/v3/games/ffl/seasons/2023?view=proTeamSchedules_wl}
+\url{https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2023?view=proTeamSchedules_wl}
 }
 \usage{
 nfl_teams

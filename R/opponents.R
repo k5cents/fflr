@@ -10,6 +10,9 @@
 opponent_ranks <- function(leagueId = ffl_id()) {
   dat <- ffl_api(leagueId, view = "kona_player_info")
   p <- dat$positionAgainstOpponent$positionalRatings
+  if (is.null(p)) {
+    return(data.frame())
+  }
   oprk <- rep(
     times = 32,
     x = list(list(

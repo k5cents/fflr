@@ -1,6 +1,6 @@
 ## code to prepare `nfl_teams` dataset goes here
 dat <- try_json(
-  url = "https://fantasy.espn.com/apis/v3/games/ffl/seasons/2022",
+  url = "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2024",
   query = list(view = "proTeamSchedules_wl")
 )
 

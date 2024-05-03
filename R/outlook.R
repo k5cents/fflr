@@ -20,7 +20,7 @@ player_outlook <- function(leagueId = ffl_id(), limit = 50) {
   all_get <- httr::RETRY(
     verb = "GET",
     url = paste0(
-      "https://fantasy.espn.com/apis/v3/games/ffl/seasons/2023/segments/0/leagues/",
+      "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2024/segments/0/leagues/",
       leagueId
     ),
     query = list(view = "kona_player_info"),

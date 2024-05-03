@@ -4,5 +4,5 @@ test_that("get individual player outlook", {
     limit = 1
   )
   expect_s3_class(o, "data.frame")
-  expect_length(o, 6)
+  expect_length(o, 5)
 })

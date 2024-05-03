@@ -23,6 +23,9 @@ best_roster <- function(leagueId = ffl_id(),
     scoringPeriodId = scoringPeriodId,
     ...
   )
+  if (is_predraft(dat)) {
+    return(data.frame())
+  }
   set <- out_roster_set(dat)
   slot_count <- set$lineupSlotCounts[[1]]
   do_slot <- as.integer(slot_count$position[slot_count$limit > 0])

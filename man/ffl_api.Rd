@@ -8,7 +8,7 @@ ffl_api(
   leagueId = ffl_id(),
   view = NULL,
   leagueHistory = FALSE,
-  seasonId = 2023,
+  seasonId = 2024,
   scoringPeriodId = NULL,
   ...
 )

@@ -4,7 +4,7 @@ Version: 2.2.0.9002
 Authors@R: 
     person("Kiernan", "Nicholls", , "kiernann@protonmail.com", role = c("aut", "cre", "cph"))
 Description: Format the raw data from the ESPN fantasy football API
-    <https://fantasy.espn.com/apis/v3/games/ffl/> as data frames.
+    <https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl> as data frames.
     Retrieve data on public leagues, rosters, athletes, and matches.
 License: MIT + file LICENSE
 Depends: 

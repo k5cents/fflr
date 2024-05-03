@@ -73,7 +73,7 @@ list_players <- function(leagueId = ffl_id(),
   resp <- httr::RETRY(
     verb = "GET",
     url = paste0(
-      "https://fantasy.espn.com",
+      "https://lm-api-reads.fantasy.espn.com",
       "/apis/v3/games/ffl/seasons/2023/segments/0/leagues/",
       leagueId
     ),

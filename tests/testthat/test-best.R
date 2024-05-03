@@ -4,6 +4,7 @@ test_that("calculate best possible past roster", {
     useScore = "actualScore",
     scoringPeriodId = 1
   )
+  skip_empty(b)
   b1 <- b[[1]]
   expect_s3_class(b1, "data.frame")
   expect_length(b1, 17)
@@ -19,6 +20,7 @@ test_that("calculate best possible future roster", {
     useScore = "projectedScore",
     scoringPeriodId = ffl_week()
   )
+  skip_empty(b)
   b2 <- b[[2]]
   expect_s3_class(b2, "data.frame")
   expect_length(b2, 17)
