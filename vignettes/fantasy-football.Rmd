@@ -88,8 +88,8 @@ website. Players are listed in order of their "slot" with name and team
 information followed by projected and actual scores and ownership statistics.
 
 ```{r team-roster}
-my_team <- team_roster(scoringPeriodId = 1)[[1]] # select first roster
-my_team[, -(1:3)]
+my_team <- team_roster(scoringPeriodId = 1, leagueHistory = TRUE)[[1]] # select first roster
+my_team[[1]][, -(1:3)]
 ```
 
 ### News
