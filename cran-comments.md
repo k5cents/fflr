@@ -12,3 +12,8 @@
 ## R CMD check results
 
 0 errors | 0 warnings | 0 note
+
+## Submission
+
+* The package now fails gracefully with an informative message, returning a data
+frame with zero rows that doesn't need to pass any tests.

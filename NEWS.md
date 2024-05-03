@@ -1,3 +1,8 @@
+# fflr 2.3.0
+
+* Update the package to work with the new API.
+* Update examples and tests for post-season without data.
+
 # fflr 2.2.4
 
 Fix tests for post-season API data formats.
