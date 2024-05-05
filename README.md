@@ -17,8 +17,8 @@ status](https://github.com/k5cents/fflr/workflows/R-CMD-check/badge.svg)](https:
 <!-- badges: end -->
 
 The fflr package is used to query the [ESPN Fantasy Football
-API](https://fantasy.espn.com/apis/v3/games/ffl/). Get data on fantasy
-football league members, teams, and individual athletes.
+API](https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/). Get data
+on fantasy football league members, teams, and individual athletes.
 
 This package has been tested with a narrow subset of possible league
 settings. If a function doesn’t work as intended, please file an [issue
@@ -46,7 +46,7 @@ remotes::install_github("k5cents/fflr")
 ``` r
 library(fflr)
 packageVersion("fflr")
-#> [1] '2.2.3'
+#> [1] '2.3.0'
 ```
 
 Data is only available for public leagues. See [this help
@@ -76,7 +76,7 @@ league_info()
 #> # A tibble: 1 × 6
 #>         id seasonId name             isPublic  size finalScoringPeriod
 #>      <int>    <int> <chr>            <lgl>    <int>              <int>
-#> 1 42654852     2023 FFLR Test League TRUE         4                 17
+#> 1 42654852     2024 FFLR Test League TRUE         4                 17
 league_teams()
 #> # A tibble: 4 × 6
 #>   teamId abbrev name              logo                                            logoType memberId
@@ -92,25 +92,7 @@ The `scoringPeriodId` argument can be used to get data from past weeks.
 ``` r
 all_rost <- team_roster(scoringPeriodId = 1)
 all_rost$CHI[, 5:13][-7]
-#> # A tibble: 16 × 8
-#>    lineupSlot playerId firstName lastName    proTeam position projectedScore actualScore
-#>    <fct>         <int> <chr>     <chr>       <fct>   <fct>             <dbl>       <dbl>
-#>  1 QB          4040715 Jalen     Hurts       Phi     QB                21.3        12.5 
-#>  2 RB          3929630 Saquon    Barkley     NYG     RB                16.9         9.3 
-#>  3 RB          4239996 Travis    Etienne Jr. Jax     RB                15.1        21.4 
-#>  4 WR          4262921 Justin    Jefferson   Min     WR                20.1        24   
-#>  5 WR          4569618 Garrett   Wilson      NYJ     WR                16.4        14.4 
-#>  6 TE            15847 Travis    Kelce       KC      TE                 0           0   
-#>  7 FLEX        4374302 Amon-Ra   St. Brown   Det     WR                16.7        19.1 
-#>  8 D/ST         -16025 49ers     D/ST        SF      D/ST               7.78       14   
-#>  9 K           3055899 Harrison  Butker      KC      K                  8.41        8   
-#> 10 BE          4429795 Jahmyr    Gibbs       Det     RB                14.0         8   
-#> 11 BE          3042519 Aaron     Jones       GB      RB                15.5        26.7 
-#> 12 BE          3915511 Joe       Burrow      Cin     QB                19.8         3.18
-#> 13 BE          2976499 Amari     Cooper      Cle     WR                13.6         6.7 
-#> 14 BE          4697815 Rachaad   White       TB      RB                13.9         6.9 
-#> 15 BE          3054850 Alvin     Kamara      NO      RB                 0           0   
-#> 16 BE          4038941 Justin    Herbert     LAC     QB                16.9        20.9
+#> NULL
 ```
 
 There are included objects for NFL teams and players.
