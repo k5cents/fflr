@@ -40,7 +40,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.3.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.3.0.9000</span>
       </span>
     </div>
 
@@ -89,7 +89,7 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>The fflr package is used to query the <a href="https://fantasy.espn.com/apis/v3/games/ffl/" class="external-link">ESPN Fantasy Football API</a>. Get data on fantasy football league members, teams, and individual athletes.</p>
+<p>The fflr package is used to query the <a href="https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/" class="external-link">ESPN Fantasy Football API</a>. Get data on fantasy football league members, teams, and individual athletes.</p>
 <p>This package has been tested with a narrow subset of possible league settings. If a function doesn’t work as intended, please file an <a href="https://github.com/k5cents/fflr/issues" class="external-link">issue on GitHub</a>.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -108,7 +108,7 @@
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://k5cents.github.io/fflr/" class="external-link">fflr</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html" class="external-link">packageVersion</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] '2.2.3'</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] '2.3.0'</span></span></code></pre></div>
 <p>Data is only available for public leagues. See <a href="https://web.archive.org/web/20211105212446/https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public" class="external-link">this help page</a> on how to make a private league public</p>
 <p>Functions require a unique <code>leagueId</code>, which can be found in any ESPN page URL.</p>
 <pre>https://fantasy.espn.com/football/league?leagueId=<b>42654852</b></pre>
@@ -123,7 +123,7 @@
 <span><span class="co">#&gt; # A tibble: 1 × 6</span></span>
 <span><span class="co">#&gt;         id seasonId name             isPublic  size finalScoringPeriod</span></span>
 <span><span class="co">#&gt;      &lt;int&gt;    &lt;int&gt; &lt;chr&gt;            &lt;lgl&gt;    &lt;int&gt;              &lt;int&gt;</span></span>
-<span><span class="co">#&gt; 1 42654852     2023 FFLR Test League TRUE         4                 17</span></span>
+<span><span class="co">#&gt; 1 42654852     2024 FFLR Test League TRUE         4                 17</span></span>
 <span><span class="fu"><a href="reference/league_teams.html">league_teams</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 4 × 6</span></span>
 <span><span class="co">#&gt;   teamId abbrev name              logo                                            logoType memberId</span></span>
@@ -136,25 +136,7 @@
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">all_rost</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/team_roster.html">team_roster</a></span><span class="op">(</span>scoringPeriodId <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
 <span><span class="va">all_rost</span><span class="op">$</span><span class="va">CHI</span><span class="op">[</span>, <span class="fl">5</span><span class="op">:</span><span class="fl">13</span><span class="op">]</span><span class="op">[</span><span class="op">-</span><span class="fl">7</span><span class="op">]</span></span>
-<span><span class="co">#&gt; # A tibble: 16 × 8</span></span>
-<span><span class="co">#&gt;    lineupSlot playerId firstName lastName    proTeam position projectedScore actualScore</span></span>
-<span><span class="co">#&gt;    &lt;fct&gt;         &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;       &lt;fct&gt;   &lt;fct&gt;             &lt;dbl&gt;       &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 QB          4040715 Jalen     Hurts       Phi     QB                21.3        12.5 </span></span>
-<span><span class="co">#&gt;  2 RB          3929630 Saquon    Barkley     NYG     RB                16.9         9.3 </span></span>
-<span><span class="co">#&gt;  3 RB          4239996 Travis    Etienne Jr. Jax     RB                15.1        21.4 </span></span>
-<span><span class="co">#&gt;  4 WR          4262921 Justin    Jefferson   Min     WR                20.1        24   </span></span>
-<span><span class="co">#&gt;  5 WR          4569618 Garrett   Wilson      NYJ     WR                16.4        14.4 </span></span>
-<span><span class="co">#&gt;  6 TE            15847 Travis    Kelce       KC      TE                 0           0   </span></span>
-<span><span class="co">#&gt;  7 FLEX        4374302 Amon-Ra   St. Brown   Det     WR                16.7        19.1 </span></span>
-<span><span class="co">#&gt;  8 D/ST         -16025 49ers     D/ST        SF      D/ST               7.78       14   </span></span>
-<span><span class="co">#&gt;  9 K           3055899 Harrison  Butker      KC      K                  8.41        8   </span></span>
-<span><span class="co">#&gt; 10 BE          4429795 Jahmyr    Gibbs       Det     RB                14.0         8   </span></span>
-<span><span class="co">#&gt; 11 BE          3042519 Aaron     Jones       GB      RB                15.5        26.7 </span></span>
-<span><span class="co">#&gt; 12 BE          3915511 Joe       Burrow      Cin     QB                19.8         3.18</span></span>
-<span><span class="co">#&gt; 13 BE          2976499 Amari     Cooper      Cle     WR                13.6         6.7 </span></span>
-<span><span class="co">#&gt; 14 BE          4697815 Rachaad   White       TB      RB                13.9         6.9 </span></span>
-<span><span class="co">#&gt; 15 BE          3054850 Alvin     Kamara      NO      RB                 0           0   </span></span>
-<span><span class="co">#&gt; 16 BE          4038941 Justin    Herbert     LAC     QB                16.9        20.9</span></span></code></pre></div>
+<span><span class="co">#&gt; NULL</span></span></code></pre></div>
 <p>There are included objects for NFL teams and players.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nfl_teams</span></span>
