@@ -42,13 +42,15 @@ If a function doesn't work as intended, please file an [issue on GitHub][iss].
 
 ## Installation
 
-You can install the release version of fflr from [CRAN][cran]:
+As of 2024-05-17, fflr was removed from [CRAN][cran] for failure to comply with 
+the policy on internet resources. This issue arose when ESPN changed their API
+format and adjusted andpoints to account for the end of the 2023 NFL season.
 
-```{r cran, eval=FALSE}
-install.packages("fflr")
-```
+I hope to work with CRAN to get the package published again before the 2024
+season, but it may not be possible.
 
-The most recent development version can be installed from [GitHub][gh]:
+In the meantime, the most recent development version can always be installed 
+from [GitHub][gh]:
 
 ```{r remote, eval=FALSE}
 # install.packages("remotes")

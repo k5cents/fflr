@@ -3,7 +3,7 @@ test_that("get NFL game schedule times", {
   skip_empty(e)
   expect_s3_class(e, "data.frame")
   # expect_type(e$competitors, "list")
-  expect_length(e, 7)
+  expect_length(e, 13)
 })
 
 test_that("get NFL game scores", {
