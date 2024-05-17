@@ -94,31 +94,30 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the release version of fflr from <a href="https://cran.r-project.org/package=fflr" class="external-link">CRAN</a>:</p>
+<p>As of 2024-05-17, fflr was removed from <a href="https://cran.r-project.org/package=fflr" class="external-link">CRAN</a> for failure to comply with the policy on internet resources. This issue arose when ESPN changed their API format and adjusted andpoints to account for the end of the 2023 NFL season.</p>
+<p>I hope to work with CRAN to get the package published again before the 2024 season, but it may not be possible.</p>
+<p>In the meantime, the most recent development version can always be installed from <a href="https://github.com/k5cents/fflr" class="external-link">GitHub</a>:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span></span></code></pre></div>
-<p>The most recent development version can be installed from <a href="https://github.com/k5cents/fflr" class="external-link">GitHub</a>:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"k5cents/fflr"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://k5cents.github.io/fflr/" class="external-link">fflr</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html" class="external-link">packageVersion</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] '2.3.0'</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] '2.3.0.9000'</span></span></code></pre></div>
 <p>Data is only available for public leagues. See <a href="https://web.archive.org/web/20211105212446/https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public" class="external-link">this help page</a> on how to make a private league public</p>
 <p>Functions require a unique <code>leagueId</code>, which can be found in any ESPN page URL.</p>
 <pre>https://fantasy.espn.com/football/league?leagueId=<b>42654852</b></pre>
 <p>Use <code><a href="reference/ffl_id.html">ffl_id()</a></code> to set a default <code>fflr.leagueId</code> option. Your <code>.Rprofile</code> file can <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html" class="external-link">set this option on startup</a>.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/ffl_id.html">ffl_id</a></span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Temporarily set `fflr.leagueId` option to 42654852</span></span>
 <span><span class="co">#&gt; [1] "42654852"</span></span></code></pre></div>
 <p>The <code>leagueId</code> argument defaults to <code><a href="reference/ffl_id.html">ffl_id()</a></code> and can be omitted once set.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/league_info.html">league_info</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 1 × 6</span></span>
 <span><span class="co">#&gt;         id seasonId name             isPublic  size finalScoringPeriod</span></span>
@@ -133,12 +132,12 @@
 <span><span class="co">#&gt; 3      3 CHI    Chicago Crowns    https://g.espncdn.com/lm-static/logo-packs/cor… VECTOR   {22DFE7…</span></span>
 <span><span class="co">#&gt; 4      4 DEN    Denver Devils     https://g.espncdn.com/lm-static/logo-packs/cor… VECTOR   {22DFE7…</span></span></code></pre></div>
 <p>The <code>scoringPeriodId</code> argument can be used to get data from past weeks.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">all_rost</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/team_roster.html">team_roster</a></span><span class="op">(</span>scoringPeriodId <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
 <span><span class="va">all_rost</span><span class="op">$</span><span class="va">CHI</span><span class="op">[</span>, <span class="fl">5</span><span class="op">:</span><span class="fl">13</span><span class="op">]</span><span class="op">[</span><span class="op">-</span><span class="fl">7</span><span class="op">]</span></span>
 <span><span class="co">#&gt; NULL</span></span></code></pre></div>
 <p>There are included objects for NFL teams and players.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nfl_teams</span></span>
 <span><span class="co">#&gt; # A tibble: 33 × 6</span></span>
 <span><span class="co">#&gt;    proTeamId abbrev location   name       byeWeek conference</span></span>

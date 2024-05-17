@@ -83,10 +83,27 @@ and broadcast information.</p>
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">pro_events</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> No scheduled professional football events</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 7</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 7 variables: id &lt;chr&gt;, date &lt;dttm&gt;, timeValid &lt;lgl&gt;, period &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   clock &lt;chr&gt;, status &lt;chr&gt;, summary &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 16 × 13</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    id        date                timeValid period clock status summary          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 401671789 2024-09-06 <span style="color: #949494;">00:20:00</span> TRUE           0 0:00  pre    9/5 - 8:20 PM EDT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 401671805 2024-09-07 <span style="color: #949494;">00:15:00</span> TRUE           0 0:00  pre    9/6 - 8:15 PM EDT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 401671744 2024-09-08 <span style="color: #949494;">17:00:00</span> TRUE           0 0:00  pre    9/8 - 1:00 PM EDT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 401671617 2024-09-08 <span style="color: #949494;">17:00:00</span> TRUE           0 0:00  pre    9/8 - 1:00 PM EDT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 401671719 2024-09-08 <span style="color: #949494;">17:00:00</span> TRUE           0 0:00  pre    9/8 - 1:00 PM EDT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 401671628 2024-09-08 <span style="color: #949494;">17:00:00</span> TRUE           0 0:00  pre    9/8 - 1:00 PM EDT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 401671861 2024-09-08 <span style="color: #949494;">17:00:00</span> TRUE           0 0:00  pre    9/8 - 1:00 PM EDT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 401671849 2024-09-08 <span style="color: #949494;">17:00:00</span> TRUE           0 0:00  pre    9/8 - 1:00 PM EDT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 401671734 2024-09-08 <span style="color: #949494;">17:00:00</span> TRUE           0 0:00  pre    9/8 - 1:00 PM EDT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 401671712 2024-09-08 <span style="color: #949494;">17:00:00</span> TRUE           0 0:00  pre    9/8 - 1:00 PM EDT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> 401671659 2024-09-08 <span style="color: #949494;">20:05:00</span> TRUE           0 0:00  pre    9/8 - 4:05 PM EDT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> 401671664 2024-09-08 <span style="color: #949494;">20:05:00</span> TRUE           0 0:00  pre    9/8 - 4:05 PM EDT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> 401671761 2024-09-08 <span style="color: #949494;">20:25:00</span> TRUE           0 0:00  pre    9/8 - 4:25 PM EDT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> 401671770 2024-09-08 <span style="color: #949494;">20:25:00</span> TRUE           0 0:00  pre    9/8 - 4:25 PM EDT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> 401671792 2024-09-09 <span style="color: #949494;">00:20:00</span> TRUE           0 0:00  pre    9/8 - 8:20 PM EDT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span> 401671696 2024-09-10 <span style="color: #949494;">00:20:00</span> TRUE           0 0:00  pre    9/9 - 8:20 PM EDT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 6 more variables: percentComplete &lt;int&gt;, odds &lt;chr&gt;, broadcast &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   competitors &lt;list&gt;, homeTeam &lt;fct&gt;, awayTeam &lt;fct&gt;</span></span>
 </code></pre></div>
     </div>
   </div>
