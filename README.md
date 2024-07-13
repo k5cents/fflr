@@ -26,17 +26,16 @@ on GitHub](https://github.com/k5cents/fflr/issues).
 
 ## Installation
 
-As of 2024-05-17, fflr was removed from
-[CRAN](https://cran.r-project.org/package=fflr) for failure to comply
-with the policy on internet resources. This issue arose when ESPN
-changed their API format and adjusted andpoints to account for the end
-of the 2023 NFL season.
+> \[!IMPORTANT\]  
+> As of 2024-05-17, fflr was removed from
+> [CRAN](https://cran.r-project.org/package=fflr) for failure to comply
+> with the policy on internet resources. This issue arose when ESPN
+> changed their API format and adjusted andpoints to account for the end
+> of the 2023 NFL season. I hope to work with CRAN to get the package
+> published again before the 2024 season, but it may not be possible.
 
-I hope to work with CRAN to get the package published again before the
-2024 season, but it may not be possible.
-
-In the meantime, the most recent development version can always be
-installed from [GitHub](https://github.com/k5cents/fflr):
+The most recent development version can always be installed from
+[GitHub](https://github.com/k5cents/fflr):
 
 ``` r
 # install.packages("remotes")
@@ -48,7 +47,7 @@ remotes::install_github("k5cents/fflr")
 ``` r
 library(fflr)
 packageVersion("fflr")
-#> [1] '2.3.0.9000'
+#> [1] '2.3.0'
 ```
 
 Data is only available for public leagues. See [this help
@@ -117,11 +116,10 @@ nfl_teams
 #> # ℹ 23 more rows
 ```
 
-------------------------------------------------------------------------
-
-The fflr project is released with a [Contributor Code of
-Conduct](https://k5cents.github.io/fflr/CODE_OF_CONDUCT.html). By
-contributing, you agree to abide by its terms.
+> \[!NOTE\]  
+> The fflr project is released with a [Contributor Code of
+> Conduct](https://k5cents.github.io/fflr/CODE_OF_CONDUCT.html). By
+> contributing, you agree to abide by its terms.
 
 <!-- refs: start -->
 <!-- refs: end -->

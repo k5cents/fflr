@@ -42,15 +42,14 @@ If a function doesn't work as intended, please file an [issue on GitHub][iss].
 
 ## Installation
 
-As of 2024-05-17, fflr was removed from [CRAN][cran] for failure to comply with 
-the policy on internet resources. This issue arose when ESPN changed their API
-format and adjusted andpoints to account for the end of the 2023 NFL season.
-
+> [!IMPORTANT]  
+> As of 2024-05-17, fflr was removed from [CRAN][cran] for failure to comply
+with the policy on internet resources. This issue arose when ESPN changed their
+API format and adjusted andpoints to account for the end of the 2023 NFL season.
 I hope to work with CRAN to get the package published again before the 2024
 season, but it may not be possible.
 
-In the meantime, the most recent development version can always be installed 
-from [GitHub][gh]:
+The most recent development version can always be installed from [GitHub][gh]:
 
 ```{r remote, eval=FALSE}
 # install.packages("remotes")
@@ -102,9 +101,8 @@ There are included objects for NFL teams and players.
 nfl_teams
 ```
 
-***
-
-The fflr project is released with a [Contributor Code of Conduct][coc]. By
+> [!NOTE]  
+> The fflr project is released with a [Contributor Code of Conduct][coc]. By
 contributing, you agree to abide by its terms.
 
 <!-- refs: start -->
