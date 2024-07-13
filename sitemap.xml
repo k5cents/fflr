@@ -1,183 +1,63 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/CODE_OF_CONDUCT.html</loc>
-  </url>
-  <url>
-    <loc>/CONTRIBUTING.html</loc>
-  </url>
-  <url>
-    <loc>/ISSUE_TEMPLATE.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>/SUPPORT.html</loc>
-  </url>
-  <url>
-    <loc>/articles/fantasy-football.html</loc>
-  </url>
-  <url>
-    <loc>/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/news/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/acquisition_settings.html</loc>
-  </url>
-  <url>
-    <loc>/reference/all_players.html</loc>
-  </url>
-  <url>
-    <loc>/reference/best_roster.html</loc>
-  </url>
-  <url>
-    <loc>/reference/combine_history.html</loc>
-  </url>
-  <url>
-    <loc>/reference/draft_recap.html</loc>
-  </url>
-  <url>
-    <loc>/reference/draft_settings.html</loc>
-  </url>
-  <url>
-    <loc>/reference/espn_games.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ffl_api.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ffl_id.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ffl_info.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ffl_seasons.html</loc>
-  </url>
-  <url>
-    <loc>/reference/fflr-package.html</loc>
-  </url>
-  <url>
-    <loc>/reference/finance_settings.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/league_info.html</loc>
-  </url>
-  <url>
-    <loc>/reference/league_members.html</loc>
-  </url>
-  <url>
-    <loc>/reference/league_messages.html</loc>
-  </url>
-  <url>
-    <loc>/reference/league_name.html</loc>
-  </url>
-  <url>
-    <loc>/reference/league_simulation.html</loc>
-  </url>
-  <url>
-    <loc>/reference/league_size.html</loc>
-  </url>
-  <url>
-    <loc>/reference/league_standings.html</loc>
-  </url>
-  <url>
-    <loc>/reference/league_status.html</loc>
-  </url>
-  <url>
-    <loc>/reference/league_teams.html</loc>
-  </url>
-  <url>
-    <loc>/reference/list_players.html</loc>
-  </url>
-  <url>
-    <loc>/reference/live_scoring.html</loc>
-  </url>
-  <url>
-    <loc>/reference/nfl_players.html</loc>
-  </url>
-  <url>
-    <loc>/reference/nfl_schedule.html</loc>
-  </url>
-  <url>
-    <loc>/reference/nfl_teams.html</loc>
-  </url>
-  <url>
-    <loc>/reference/opponent_ranks.html</loc>
-  </url>
-  <url>
-    <loc>/reference/player_acquire.html</loc>
-  </url>
-  <url>
-    <loc>/reference/player_info.html</loc>
-  </url>
-  <url>
-    <loc>/reference/player_news.html</loc>
-  </url>
-  <url>
-    <loc>/reference/player_outlook.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pro_events.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pro_schedule.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pro_scores.html</loc>
-  </url>
-  <url>
-    <loc>/reference/recent_activity.html</loc>
-  </url>
-  <url>
-    <loc>/reference/roster_score.html</loc>
-  </url>
-  <url>
-    <loc>/reference/roster_settings.html</loc>
-  </url>
-  <url>
-    <loc>/reference/schedule_settings.html</loc>
-  </url>
-  <url>
-    <loc>/reference/scoring_settings.html</loc>
-  </url>
-  <url>
-    <loc>/reference/start_roster.html</loc>
-  </url>
-  <url>
-    <loc>/reference/stat_corrections.html</loc>
-  </url>
-  <url>
-    <loc>/reference/team_abbrev.html</loc>
-  </url>
-  <url>
-    <loc>/reference/team_roster.html</loc>
-  </url>
-  <url>
-    <loc>/reference/tidy_schedule.html</loc>
-  </url>
-  <url>
-    <loc>/reference/tidy_scores.html</loc>
-  </url>
-  <url>
-    <loc>/reference/trade_settings.html</loc>
-  </url>
-  <url>
-    <loc>/reference/transaction_counter.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>/404.html</loc></url>
+<url><loc>/CODE_OF_CONDUCT.html</loc></url>
+<url><loc>/CONTRIBUTING.html</loc></url>
+<url><loc>/ISSUE_TEMPLATE.html</loc></url>
+<url><loc>/LICENSE.html</loc></url>
+<url><loc>/SUPPORT.html</loc></url>
+<url><loc>/articles/fantasy-football.html</loc></url>
+<url><loc>/articles/index.html</loc></url>
+<url><loc>/authors.html</loc></url>
+<url><loc>/index.html</loc></url>
+<url><loc>/news/index.html</loc></url>
+<url><loc>/reference/acquisition_settings.html</loc></url>
+<url><loc>/reference/all_players.html</loc></url>
+<url><loc>/reference/best_roster.html</loc></url>
+<url><loc>/reference/combine_history.html</loc></url>
+<url><loc>/reference/draft_recap.html</loc></url>
+<url><loc>/reference/draft_settings.html</loc></url>
+<url><loc>/reference/espn_games.html</loc></url>
+<url><loc>/reference/ffl_api.html</loc></url>
+<url><loc>/reference/ffl_id.html</loc></url>
+<url><loc>/reference/ffl_info.html</loc></url>
+<url><loc>/reference/ffl_seasons.html</loc></url>
+<url><loc>/reference/fflr-package.html</loc></url>
+<url><loc>/reference/finance_settings.html</loc></url>
+<url><loc>/reference/index.html</loc></url>
+<url><loc>/reference/league_info.html</loc></url>
+<url><loc>/reference/league_members.html</loc></url>
+<url><loc>/reference/league_messages.html</loc></url>
+<url><loc>/reference/league_name.html</loc></url>
+<url><loc>/reference/league_simulation.html</loc></url>
+<url><loc>/reference/league_size.html</loc></url>
+<url><loc>/reference/league_standings.html</loc></url>
+<url><loc>/reference/league_status.html</loc></url>
+<url><loc>/reference/league_teams.html</loc></url>
+<url><loc>/reference/list_players.html</loc></url>
+<url><loc>/reference/live_scoring.html</loc></url>
+<url><loc>/reference/nfl_players.html</loc></url>
+<url><loc>/reference/nfl_schedule.html</loc></url>
+<url><loc>/reference/nfl_teams.html</loc></url>
+<url><loc>/reference/opponent_ranks.html</loc></url>
+<url><loc>/reference/player_acquire.html</loc></url>
+<url><loc>/reference/player_info.html</loc></url>
+<url><loc>/reference/player_news.html</loc></url>
+<url><loc>/reference/player_outlook.html</loc></url>
+<url><loc>/reference/pro_events.html</loc></url>
+<url><loc>/reference/pro_schedule.html</loc></url>
+<url><loc>/reference/pro_scores.html</loc></url>
+<url><loc>/reference/recent_activity.html</loc></url>
+<url><loc>/reference/roster_score.html</loc></url>
+<url><loc>/reference/roster_settings.html</loc></url>
+<url><loc>/reference/schedule_settings.html</loc></url>
+<url><loc>/reference/scoring_settings.html</loc></url>
+<url><loc>/reference/start_roster.html</loc></url>
+<url><loc>/reference/stat_corrections.html</loc></url>
+<url><loc>/reference/team_abbrev.html</loc></url>
+<url><loc>/reference/team_roster.html</loc></url>
+<url><loc>/reference/tidy_schedule.html</loc></url>
+<url><loc>/reference/tidy_scores.html</loc></url>
+<url><loc>/reference/trade_settings.html</loc></url>
+<url><loc>/reference/transaction_counter.html</loc></url>
 </urlset>
+

@@ -6,12 +6,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Retrieve ESPN Fantasy Football Data • fflr</title>
-<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
@@ -26,7 +20,7 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -52,7 +46,7 @@
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
@@ -69,7 +63,7 @@
 <li>
   <a href="https://github.com/k5cents/fflr/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul>
@@ -80,7 +74,7 @@
 </div>
 <!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="contents col-md-9">
@@ -94,9 +88,11 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>As of 2024-05-17, fflr was removed from <a href="https://cran.r-project.org/package=fflr" class="external-link">CRAN</a> for failure to comply with the policy on internet resources. This issue arose when ESPN changed their API format and adjusted andpoints to account for the end of the 2023 NFL season.</p>
-<p>I hope to work with CRAN to get the package published again before the 2024 season, but it may not be possible.</p>
-<p>In the meantime, the most recent development version can always be installed from <a href="https://github.com/k5cents/fflr" class="external-link">GitHub</a>:</p>
+<blockquote>
+<p>[!IMPORTANT]<br>
+As of 2024-05-17, fflr was removed from <a href="https://cran.r-project.org/package=fflr" class="external-link">CRAN</a> for failure to comply with the policy on internet resources. This issue arose when ESPN changed their API format and adjusted andpoints to account for the end of the 2023 NFL season. I hope to work with CRAN to get the package published again before the 2024 season, but it may not be possible.</p>
+</blockquote>
+<p>The most recent development version can always be installed from <a href="https://github.com/k5cents/fflr" class="external-link">GitHub</a>:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"k5cents/fflr"</span><span class="op">)</span></span></code></pre></div>
@@ -107,7 +103,7 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://k5cents.github.io/fflr/" class="external-link">fflr</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html" class="external-link">packageVersion</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] '2.3.0.9000'</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] '2.3.0'</span></span></code></pre></div>
 <p>Data is only available for public leagues. See <a href="https://web.archive.org/web/20211105212446/https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public" class="external-link">this help page</a> on how to make a private league public</p>
 <p>Functions require a unique <code>leagueId</code>, which can be found in any ESPN page URL.</p>
 <pre>https://fantasy.espn.com/football/league?leagueId=<b>42654852</b></pre>
@@ -153,8 +149,10 @@
 <span><span class="co">#&gt;  9         8 Det    Detroit    Lions            6 NFC       </span></span>
 <span><span class="co">#&gt; 10         9 GB     Green Bay  Packers         14 NFC       </span></span>
 <span><span class="co">#&gt; # ℹ 23 more rows</span></span></code></pre></div>
-<hr>
-<p>The fflr project is released with a <a href="https://k5cents.github.io/fflr/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing, you agree to abide by its terms.</p>
+<blockquote>
+<p>[!NOTE]<br>
+The fflr project is released with a <a href="https://k5cents.github.io/fflr/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing, you agree to abide by its terms.</p>
+</blockquote>
 <!-- refs: start -->
 <!-- refs: end -->
 </div>
@@ -223,16 +221,16 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer>
 </div>
 
-  
 
 
-  
+
+
 
   </body>
 </html>
