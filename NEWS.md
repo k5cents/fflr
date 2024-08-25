@@ -1,4 +1,6 @@
-# fflr (development version)
+# fflr 2.3.1
+
+* Update `nfl_players` and `nfl_schedule` for 2024 season.
 
 # fflr 2.3.0
 
