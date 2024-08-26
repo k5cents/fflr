@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.3.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.3.1</span>
       </span>
     </div>
 
@@ -105,10 +105,12 @@ converted to a named list and passed to <code>query</code> alongside <code>view<
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">league_messages</span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 7</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   id       type  author          date                content messages viewableBy</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 5af42ec9 NOTE  {22DFE7FF-9DF2… 2021-09-13 <span style="color: #949494;">23:46:07</span> This [… <span style="color: #949494;">&lt;NULL&gt;</span>   <span style="color: #949494;">&lt;NULL&gt;</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 7</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   id       type           author date                content messages viewableBy</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 47a940be CHAT_ALL_MEMB… {22DF… 2024-08-26 <span style="color: #949494;">01:04:14</span> Ready … <span style="color: #949494;">&lt;NULL&gt;</span>   <span style="color: #949494;">&lt;NULL&gt;</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 65c56889 CHAT_ALL_MEMB… LM     2024-08-21 <span style="color: #949494;">15:25:45</span> <span style="color: #BB0000;">NA</span>      <span style="color: #949494;">&lt;NULL&gt;</span>   <span style="color: #949494;">&lt;NULL&gt;</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 5af42ec9 NOTE           {22DF… 2021-09-13 <span style="color: #949494;">23:46:07</span> This [… <span style="color: #949494;">&lt;NULL&gt;</span>   <span style="color: #949494;">&lt;NULL&gt;</span>    </span>
 </code></pre></div>
     </div>
   </div>
