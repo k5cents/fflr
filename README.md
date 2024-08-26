@@ -30,7 +30,7 @@ on GitHub](https://github.com/k5cents/fflr/issues).
 > As of 2024-05-17, fflr was removed from
 > [CRAN](https://cran.r-project.org/package=fflr) for failure to comply
 > with the policy on internet resources. This issue arose when ESPN
-> changed their API format and adjusted andpoints to account for the end
+> changed their API format and adjusted endpoints to account for the end
 > of the 2023 NFL season. I hope to work with CRAN to get the package
 > published again before the 2024 season, but it may not be possible.
 
@@ -47,7 +47,7 @@ remotes::install_github("k5cents/fflr")
 ``` r
 library(fflr)
 packageVersion("fflr")
-#> [1] '2.3.0'
+#> [1] '2.3.1'
 ```
 
 Data is only available for public leagues. See [this help
@@ -93,7 +93,25 @@ The `scoringPeriodId` argument can be used to get data from past weeks.
 ``` r
 all_rost <- team_roster(scoringPeriodId = 1)
 all_rost$CHI[, 5:13][-7]
-#> NULL
+#> # A tibble: 16 × 8
+#>    lineupSlot playerId firstName lastName     proTeam position projectedScore actualScore
+#>    <fct>         <int> <chr>     <chr>        <fct>   <fct>             <dbl>       <dbl>
+#>  1 QB          3918298 Josh      Allen        Buf     QB                23.6           NA
+#>  2 RB          4430807 Bijan     Robinson     Atl     RB                18.6           NA
+#>  3 RB          4239996 Travis    Etienne Jr.  Jax     RB                14.3           NA
+#>  4 WR          4262921 Justin    Jefferson    Min     WR                18.1           NA
+#>  5 WR          4569618 Garrett   Wilson       NYJ     WR                16.4           NA
+#>  6 TE          3116365 Mark      Andrews      Bal     TE                13.1           NA
+#>  7 FLEX        4426515 Puka      Nacua        LAR     WR                17.1           NA
+#>  8 D/ST         -16033 Ravens    D/ST         Bal     D/ST               3.94          NA
+#>  9 K             15683 Justin    Tucker       Bal     K                  8.23          NA
+#> 10 BE          4432708 Marvin    Harrison Jr. Ari     WR                15.4           NA
+#> 11 BE          4429160 De'Von    Achane       Mia     RB                13.9           NA
+#> 12 BE          4258173 Nico      Collins      Hou     WR                14.4           NA
+#> 13 BE          4360438 Brandon   Aiyuk        SF      WR                13.5           NA
+#> 14 BE          4567048 Kenneth   Walker III   Sea     RB                16.0           NA
+#> 15 BE          3042519 Aaron     Jones        Min     RB                13.7           NA
+#> 16 BE          4429615 Zay       Flowers      Bal     WR                14.8           NA
 ```
 
 There are included objects for NFL teams and players.

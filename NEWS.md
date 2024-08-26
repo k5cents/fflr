@@ -1,6 +1,7 @@
 # fflr 2.3.1
 
 * Update `nfl_players` and `nfl_schedule` for 2024 season.
+* Continue updates to switch from 2023 to 2024.
 
 # fflr 2.3.0
 

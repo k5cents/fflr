@@ -18,7 +18,7 @@ stat_corrections <- function(date = Sys.Date(), limit = 100) {
   dat <- try_json(
     url = paste0(
       "https://sports.core.api.espn.com",
-      "/v2/sports/football/leagues/nfl/seasons/2021/corrections"
+      "/v2/sports/football/leagues/nfl/seasons/2024/corrections"
     ),
     query = list(
       limit = limit,
@@ -54,3 +54,6 @@ stat_corrections <- function(date = Sys.Date(), limit = 100) {
   out <- cbind(date = date, out)
   as_tibble(out[order(out$playerId), ])
 }
+
+# 2023 --------------------------------------------------------------------
+

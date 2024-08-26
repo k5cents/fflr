@@ -11,7 +11,7 @@
 #'   be called? If `TRUE`, a list of results is returned, with one element for
 #'   each historical year of the league.
 #' @param seasonId Integer year of NFL season. By default, the season is
-#'   currently set to 2023. Use a recent year or set `leagueHistory` to `TRUE`
+#'   currently set to 2024. Use a recent year or set `leagueHistory` to `TRUE`
 #'   to obtain all past data.
 #' @param scoringPeriodId Integer week of NFL season. By default, `NULL` will
 #'   use the current week (see [ffl_week()]). Scoring periods are always one

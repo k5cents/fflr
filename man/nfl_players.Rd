@@ -3,7 +3,7 @@
 \docType{data}
 \name{nfl_players}
 \alias{nfl_players}
-\title{2023 NFL Players}
+\title{2024 NFL Players}
 \format{
 A data frame with 1,102 rows and 11 variables:
 \describe{
@@ -24,12 +24,12 @@ A data frame with 1,102 rows and 11 variables:
 }
 }
 \source{
-\url{http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2023/athletes/}
+\url{http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/athletes/}
 }
 \usage{
 nfl_players
 }
 \description{
-All available ESPN fantasy football players as of the 2023 season, week 1.
+All available ESPN fantasy football players as of the 2024 season, week 1.
 }
 \keyword{datasets}

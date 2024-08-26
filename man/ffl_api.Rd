@@ -25,7 +25,7 @@ be called? If \code{TRUE}, a list of results is returned, with one element for
 each historical year of the league.}
 
 \item{seasonId}{Integer year of NFL season. By default, the season is
-currently set to 2023. Use a recent year or set \code{leagueHistory} to \code{TRUE}
+currently set to 2024. Use a recent year or set \code{leagueHistory} to \code{TRUE}
 to obtain all past data.}
 
 \item{scoringPeriodId}{Integer week of NFL season. By default, \code{NULL} will

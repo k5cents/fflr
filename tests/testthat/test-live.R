@@ -3,6 +3,6 @@ test_that("live scoring returns 1 row per team", {
   skip_empty(l)
   expect_s3_class(l, "data.frame")
   # expect_true("toPlay" %in% names(l))
-  expect_length(l, 7)
+  expect_length(l, 8)
   expect_equal(nrow(l), 4)
 })

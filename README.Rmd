@@ -45,7 +45,7 @@ If a function doesn't work as intended, please file an [issue on GitHub][iss].
 > [!IMPORTANT]  
 > As of 2024-05-17, fflr was removed from [CRAN][cran] for failure to comply
 with the policy on internet resources. This issue arose when ESPN changed their
-API format and adjusted andpoints to account for the end of the 2023 NFL season.
+API format and adjusted endpoints to account for the end of the 2023 NFL season.
 I hope to work with CRAN to get the package published again before the 2024
 season, but it may not be possible.
 

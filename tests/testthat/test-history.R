@@ -10,9 +10,9 @@ test_that("historical data can be returned", {
 
 test_that("historical data can be combined", {
   h <- combine_history(
-    fun = league_simulation,
+    fun = league_standings,
     leagueId = "42654852"
   )
   expect_s3_class(h, "data.frame")
-  expect_length(h, 6)
+  expect_length(h, 17)
 })
