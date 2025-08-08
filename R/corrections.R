@@ -18,7 +18,7 @@ stat_corrections <- function(date = Sys.Date(), limit = 100) {
   dat <- try_json(
     url = paste0(
       "https://sports.core.api.espn.com",
-      "/v2/sports/football/leagues/nfl/seasons/2024/corrections"
+      "/v2/sports/football/leagues/nfl/seasons/2025/corrections"
     ),
     query = list(
       limit = limit,

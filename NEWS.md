@@ -1,3 +1,7 @@
+# fflr 2025.0.1
+
+* Update to 2025 API endpoints and update package data.
+
 # fflr 2.3.1
 
 * Update `nfl_players` and `nfl_schedule` for 2024 season.
