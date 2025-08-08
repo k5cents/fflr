@@ -10,6 +10,7 @@ ffl_api(
   leagueHistory = FALSE,
   seasonId = 2025,
   scoringPeriodId = NULL,
+  cookie = NULL,
   ...
 )
 }
@@ -31,6 +32,9 @@ to obtain all past data.}
 \item{scoringPeriodId}{Integer week of NFL season. By default, \code{NULL} will
 use the current week (see \code{\link[=ffl_week]{ffl_week()}}). Scoring periods are always one
 week in length, whereas matchups might be longer.}
+
+\item{cookie}{The alphanumeric \code{espn_s2} cookie string from a signed-inn
+session. As of 2025, this cookie is required to retrieve historical data.}
 
 \item{...}{Additional queries passed to \code{\link[httr:GET]{httr::GET()}}. Arguments are
 converted to a named list and passed to \code{query} alongside \code{view}.}

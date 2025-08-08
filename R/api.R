@@ -16,6 +16,8 @@
 #' @param scoringPeriodId Integer week of NFL season. By default, `NULL` will
 #'   use the current week (see [ffl_week()]). Scoring periods are always one
 #'   week in length, whereas matchups might be longer.
+#' @param cookie The alphanumeric `espn_s2` cookie string from a signed-inn
+#'   session. As of 2025, this cookie is required to retrieve historical data.
 #' @param ... Additional queries passed to [httr::GET()]. Arguments are
 #'   converted to a named list and passed to `query` alongside `view`.
 #' @examples
@@ -29,7 +31,8 @@
 #' @keywords internal
 #' @export
 ffl_api <- function(leagueId = ffl_id(), view = NULL, leagueHistory = FALSE,
-                    seasonId = 2025, scoringPeriodId = NULL, ...) {
+                    seasonId = 2025, scoringPeriodId = NULL, cookie = NULL,
+                    ...) {
   dots <- list(..., scoringPeriodId = scoringPeriodId)
   age_path <- ifelse(
     test = isTRUE(leagueHistory),
@@ -45,11 +48,12 @@ ffl_api <- function(leagueId = ffl_id(), view = NULL, leagueHistory = FALSE,
     url = "https://lm-api-reads.fantasy.espn.com",
     path = paste("apis/v3/games/ffl", age_path, leagueId, sep = "/"),
     query = view,
-    leagueHistory = leagueHistory
+    leagueHistory = leagueHistory,
+    cookie = cookie
   )
 }
 
-try_json <- function(url, path = "", query = NULL, leagueHistory = NULL) {
+try_json <- function(url, path = "", query = NULL, cookie = NULL, leagueHistory = NULL) {
   resp <- httr::RETRY(
     verb = "GET",
     url = ifelse(
@@ -60,7 +64,8 @@ try_json <- function(url, path = "", query = NULL, leagueHistory = NULL) {
     query = query,
     httr::accept_json(),
     httr::user_agent("https://github.com/k5cents/fflr/"),
-    terminate_on = c(400:417)
+    terminate_on = c(400:417),
+    httr::set_cookies(espn_s2 = cookie)
   )
   if (httr::http_type(resp) != "application/json") {
     stop("API did not return JSON", call. = FALSE)

@@ -1,6 +1,11 @@
 # fflr 2025.0.1
 
 * Update to 2025 API endpoints and update package data.
+* Added the `cookie` argument to `ffl_api()` which can be passed to any function
+  through the `...` argument. The cookie is needed to retrieve historical data
+  (using `leagueHistory = TRUE` is no longer enough). The `espn_s2` cookie can
+  be obtained from your browser's developer tools. This is a very clunky system
+  and I'm working on an easier system.
 
 # fflr 2.3.1
 
