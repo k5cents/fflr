@@ -49,6 +49,13 @@ API format and adjusted endpoints to account for the end of the 2023 NFL season.
 I hope to work with CRAN to get the package published again before the 2024
 season, but it may not be possible.
 
+> [!IMPORTANT]  
+> As of 2025-08-01, ESPN has changed their API to restrict access to historical
+data previously obtained via the `leagueHistory = TRUE` argument. Now you must
+sign into ESPN via your web browser and copy the "espn_s2" cookie using the
+inspect element tools. That cookie can then be passed to `ffl_api()` by
+providing the `cookie` argument to any function with the `...` argument.
+
 The most recent development version can always be installed from [GitHub][gh]:
 
 ```{r remote, eval=FALSE}

@@ -34,6 +34,14 @@ on GitHub](https://github.com/k5cents/fflr/issues).
 > of the 2023 NFL season. I hope to work with CRAN to get the package
 > published again before the 2024 season, but it may not be possible.
 
+> \[!IMPORTANT\]  
+> As of 2025-08-01, ESPN has changed their API to restrict access to
+> historical data previously obtained via the `leagueHistory = TRUE`
+> argument. Now you must sign into ESPN via your web browser and copy
+> the “espn_s2” cookie using the inspect element tools. That cookie can
+> then be passed to `ffl_api()` by providing the `cookie` argument to
+> any function with the `...` argument.
+
 The most recent development version can always be installed from
 [GitHub](https://github.com/k5cents/fflr):
 
@@ -47,7 +55,7 @@ remotes::install_github("k5cents/fflr")
 ``` r
 library(fflr)
 packageVersion("fflr")
-#> [1] '2.3.1'
+#> [1] '2025.0.1'
 ```
 
 Data is only available for public leagues. See [this help
@@ -77,7 +85,7 @@ league_info()
 #> # A tibble: 1 × 6
 #>         id seasonId name             isPublic  size finalScoringPeriod
 #>      <int>    <int> <chr>            <lgl>    <int>              <int>
-#> 1 42654852     2024 FFLR Test League TRUE         4                 17
+#> 1 42654852     2025 FFLR Test League TRUE         4                 17
 league_teams()
 #> # A tibble: 4 × 6
 #>   teamId abbrev name              logo                                            logoType memberId
@@ -94,24 +102,24 @@ The `scoringPeriodId` argument can be used to get data from past weeks.
 all_rost <- team_roster(scoringPeriodId = 1)
 all_rost$CHI[, 5:13][-7]
 #> # A tibble: 16 × 8
-#>    lineupSlot playerId firstName lastName     proTeam position projectedScore actualScore
-#>    <fct>         <int> <chr>     <chr>        <fct>   <fct>             <dbl>       <dbl>
-#>  1 QB          3918298 Josh      Allen        Buf     QB                23.6           NA
-#>  2 RB          4430807 Bijan     Robinson     Atl     RB                18.6           NA
-#>  3 RB          4239996 Travis    Etienne Jr.  Jax     RB                14.3           NA
-#>  4 WR          4262921 Justin    Jefferson    Min     WR                18.1           NA
-#>  5 WR          4569618 Garrett   Wilson       NYJ     WR                16.4           NA
-#>  6 TE          3116365 Mark      Andrews      Bal     TE                13.1           NA
-#>  7 FLEX        4426515 Puka      Nacua        LAR     WR                17.1           NA
-#>  8 D/ST         -16033 Ravens    D/ST         Bal     D/ST               3.94          NA
-#>  9 K             15683 Justin    Tucker       Bal     K                  8.23          NA
-#> 10 BE          4432708 Marvin    Harrison Jr. Ari     WR                15.4           NA
-#> 11 BE          4429160 De'Von    Achane       Mia     RB                13.9           NA
-#> 12 BE          4258173 Nico      Collins      Hou     WR                14.4           NA
-#> 13 BE          4360438 Brandon   Aiyuk        SF      WR                13.5           NA
-#> 14 BE          4567048 Kenneth   Walker III   Sea     RB                16.0           NA
-#> 15 BE          3042519 Aaron     Jones        Min     RB                13.7           NA
-#> 16 BE          4429615 Zay       Flowers      Bal     WR                14.8           NA
+#>    lineupSlot playerId firstName lastName proTeam position projectedScore actualScore
+#>    <fct>         <int> <chr>     <chr>    <fct>   <fct>             <dbl>       <dbl>
+#>  1 QB          4040715 Jalen     Hurts    Phi     QB                22.4           NA
+#>  2 RB          3929630 Saquon    Barkley  Phi     RB                20.0           NA
+#>  3 RB          4429160 De'Von    Achane   Mia     RB                17.5           NA
+#>  4 WR          4426515 Puka      Nacua    LAR     WR                17.3           NA
+#>  5 WR          4258173 Nico      Collins  Hou     WR                16.6           NA
+#>  6 TE          4432665 Brock     Bowers   LV      TE                14.9           NA
+#>  7 FLEX        4361307 Trey      McBride  Ari     TE                15.0           NA
+#>  8 D/ST         -16016 Vikings   D/ST     Min     D/ST               7.00          NA
+#>  9 K           4689936 Jake      Bates    Det     K                  8.50          NA
+#> 10 BE          3116406 Tyreek    Hill     Mia     WR                15.1           NA
+#> 11 BE          3121422 Terry     McLaurin Wsh     WR                13.8           NA
+#> 12 BE          4569618 Garrett   Wilson   NYJ     WR                13.1           NA
+#> 13 BE          4427366 Breece    Hall     NYJ     RB                12.6           NA
+#> 14 BE            16737 Mike      Evans    TB      WR                15.3           NA
+#> 15 BE          4259545 D'Andre   Swift    Chi     RB                12.6           NA
+#> 16 BE          4429615 Zay       Flowers  Bal     WR                14.4           NA
 ```
 
 There are included objects for NFL teams and players.
@@ -122,15 +130,15 @@ nfl_teams
 #>    proTeamId abbrev location   name       byeWeek conference
 #>        <int> <fct>  <chr>      <chr>        <int> <chr>     
 #>  1         0 FA     <NA>       Free Agent      NA <NA>      
-#>  2         1 Atl    Atlanta    Falcons         14 NFC       
+#>  2         1 Atl    Atlanta    Falcons          5 NFC       
 #>  3         2 Buf    Buffalo    Bills            7 AFC       
-#>  4         3 Chi    Chicago    Bears           14 NFC       
+#>  4         3 Chi    Chicago    Bears            5 NFC       
 #>  5         4 Cin    Cincinnati Bengals         10 AFC       
 #>  6         5 Cle    Cleveland  Browns           9 AFC       
-#>  7         6 Dal    Dallas     Cowboys          9 NFC       
-#>  8         7 Den    Denver     Broncos          9 AFC       
-#>  9         8 Det    Detroit    Lions            6 NFC       
-#> 10         9 GB     Green Bay  Packers         14 NFC       
+#>  7         6 Dal    Dallas     Cowboys         10 NFC       
+#>  8         7 Den    Denver     Broncos         12 AFC       
+#>  9         8 Det    Detroit    Lions            8 NFC       
+#> 10         9 GB     Green Bay  Packers          5 NFC       
 #> # ℹ 23 more rows
 ```
 
