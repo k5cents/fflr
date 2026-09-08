@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2025.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2026.0.1</span>
       </span>
     </div>
 
@@ -74,10 +74,20 @@
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">pro_scores</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> No scheduled professional football events</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 9 variables: id &lt;chr&gt;, type &lt;chr&gt;, homeAway &lt;chr&gt;, abbreviation &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   score &lt;int&gt;, winner &lt;lgl&gt;, record &lt;chr&gt;, name &lt;chr&gt;, lineup &lt;list&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 32 × 9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    id    type  homeAway abbreviation score winner record name       lineup    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 26    team  home     SEA             <span style="color: #BB0000;">NA</span> FALSE  0-0    Seahawks   <span style="color: #949494;">&lt;list [0]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 17    team  away     NE              <span style="color: #BB0000;">NA</span> FALSE  0-0    Patriots   <span style="color: #949494;">&lt;list [0]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 14    team  home     LAR             <span style="color: #BB0000;">NA</span> FALSE  0-0    Rams       <span style="color: #949494;">&lt;list [0]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 25    team  away     SF              <span style="color: #BB0000;">NA</span> FALSE  0-0    49ers      <span style="color: #949494;">&lt;list [0]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 4     team  home     CIN             <span style="color: #BB0000;">NA</span> FALSE  0-0    Bengals    <span style="color: #949494;">&lt;list [0]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 27    team  away     TB              <span style="color: #BB0000;">NA</span> FALSE  0-0    Buccaneers <span style="color: #949494;">&lt;list [0]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 8     team  home     DET             <span style="color: #BB0000;">NA</span> FALSE  0-0    Lions      <span style="color: #949494;">&lt;list [0]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 18    team  away     NO              <span style="color: #BB0000;">NA</span> FALSE  0-0    Saints     <span style="color: #949494;">&lt;list [0]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 10    team  home     TEN             <span style="color: #BB0000;">NA</span> FALSE  0-0    Titans     <span style="color: #949494;">&lt;list [0]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 20    team  away     NYJ             <span style="color: #BB0000;">NA</span> FALSE  0-0    Jets       <span style="color: #949494;">&lt;list [0]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 22 more rows</span></span>
 </code></pre></div>
     </div>
   </div>
@@ -92,7 +102,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
       </footer></div>

@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2025.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2026.0.1</span>
       </span>
     </div>
 
@@ -57,6 +57,24 @@
       <small>Source: <a href="https://github.com/k5cents/fflr/blob/master/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="2026.0.1" id="fflr-202601">fflr 2026.0.1<a class="anchor" aria-label="anchor" href="#fflr-202601"></a></h2>
+<ul><li>Update to 2026 API endpoints and update package data for the 2026 season.</li>
+<li>
+<strong>Breaking:</strong> ESPN now returns professional team abbreviations in all capital letters (<code>"MIA"</code> instead of <code>"Mia"</code>). This changes the <code>abbrev</code> levels in <code>nfl_teams</code>, the <code>proTeam</code> column in <code>nfl_players</code>, and everything derived from them, including <code>pro_abbrev()</code> and the <code>proTeam</code> argument of <code><a href="../reference/list_players.html">list_players()</a></code>. Code that matches on the old mixed-case spelling needs to be updated.</li>
+<li>
+<code><a href="../reference/stat_corrections.html">stat_corrections()</a></code> now takes the NFL season from the <code>date</code> argument rather than using a hard-coded year, so corrections from any past season can be retrieved. Dates in January and February belong to the previous season.</li>
+<li>Fix an error in <code><a href="../reference/stat_corrections.html">stat_corrections()</a></code> when ESPN returns corrections that carry no <code>splitStats</code>, which is now the case for some entries every week.</li>
+<li>
+<code><a href="../reference/league_messages.html">league_messages()</a></code> now parses whatever message topic types ESPN returns instead of a fixed list. ESPN renamed <code>CHAT</code> to <code>CHAT_ALL_MEMBERS</code> and added <code>ACTIVITY_STATUS</code>, which had reduced the output to three columns. An empty message board now returns a zero-row data frame with all seven columns.</li>
+<li>
+<code><a href="../reference/pro_events.html">pro_events()</a></code> drops the <code>pickcenter</code>, <code>againstTheSpread</code>, and <code>odds</code> columns newly added by ESPN. They are deeply nested and vary game to game. The <code>percentComplete</code> column is kept, so the result now has 14 columns. The post-season empty data frame gained the columns needed to match.</li>
+<li>Fix the <code>cookie</code> argument, which never actually worked (<a href="https://github.com/k5cents/fflr/issues/50" class="external-link">#50</a>). <code><a href="https://httr.r-lib.org/reference/set_cookies.html" class="external-link">httr::set_cookies()</a></code> percent-encodes the value it is given, so the already-encoded <code>espn_s2</code> string was double-encoded (<code>%2F</code> became <code>%252F</code>) and ESPN rejected every request with a 404. The cookie header is now set directly, and <code>leagueHistory = TRUE</code> works again for <code><a href="../reference/draft_recap.html">draft_recap()</a></code>, <code><a href="../reference/team_roster.html">team_roster()</a></code>, <code><a href="../reference/league_standings.html">league_standings()</a></code>, and the rest.</li>
+<li>New <code><a href="../reference/ffl_cookie.html">ffl_cookie()</a></code> reads the cookie from the <code>fflr.cookie</code> option or the <code>ESPN_S2</code> environment variable, and is the new default for the <code>cookie</code> argument of <code><a href="../reference/ffl_api.html">ffl_api()</a></code>. The cookie no longer has to be passed to every call.</li>
+<li>Only the <code>leagueHistory</code> endpoint requires the <code>espn_s2</code> cookie. A single past season can still be requested without one by passing an explicit <code>seasonId</code>.</li>
+<li>
+<code><a href="../reference/recent_activity.html">recent_activity()</a></code> converts the <code>expirationDate</code> and <code>acceptedDate</code> columns to date-times. ESPN returns these two columns, along with <code>teamActions</code>, only for signed-in requests, so the columns present depend on whether a cookie was sent.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="2025.0.1" id="fflr-202501">fflr 2025.0.1<a class="anchor" aria-label="anchor" href="#fflr-202501"></a></h2>
 <ul><li>Update to 2025 API endpoints and update package data.</li>
@@ -185,7 +203,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
       </footer></div>
