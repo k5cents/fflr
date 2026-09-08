@@ -3,5 +3,6 @@ test_that("get simulated season projections", {
     leagueId = "42654852"
   )
   expect_s3_class(s, "data.frame")
+  skip_empty(s)
   expect_length(s, 11)
 })

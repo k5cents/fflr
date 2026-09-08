@@ -17,13 +17,13 @@ The starting 9 man roster using standard roster slots. In the future this
 function may be adapted to take roster slots from \code{\link[=roster_settings]{roster_settings()}}.
 }
 \examples{
-rost <- team_roster(leagueId = "42654852", leagueHistory = TRUE)[[1]][[1]]
+rost <- team_roster(leagueId = "42654852")[[1]]
 start_roster(rost)
 }
 \seealso{
-Other roster functions: 
-\code{\link{best_roster}()},
-\code{\link{roster_score}()},
-\code{\link{team_roster}()}
+Other roster functions:
+\code{\link[=best_roster]{best_roster()}},
+\code{\link[=roster_score]{roster_score()}},
+\code{\link[=team_roster]{team_roster()}}
 }
 \concept{roster functions}

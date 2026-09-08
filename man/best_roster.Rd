@@ -39,9 +39,9 @@ might be incomplete (see \code{projectedScore} argument).
 best_roster(leagueId = "42654852", scoringPeriodId = 1)
 }
 \seealso{
-Other roster functions: 
-\code{\link{roster_score}()},
-\code{\link{start_roster}()},
-\code{\link{team_roster}()}
+Other roster functions:
+\code{\link[=roster_score]{roster_score()}},
+\code{\link[=start_roster]{start_roster()}},
+\code{\link[=team_roster]{team_roster()}}
 }
 \concept{roster functions}

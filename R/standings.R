@@ -78,6 +78,9 @@ league_simulation <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
         w = dat$scoringPeriodId[i]
       )
     }
+  } else if (is_predraft(dat)) {
+    # ESPN has nothing to simulate until the league drafts
+    return(data.frame())
   } else {
     out <- parse_sim(
       teams = dat$teams,

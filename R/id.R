@@ -37,3 +37,29 @@ ffl_id <- function(leagueId = getOption("fflr.leagueId"), overwrite = FALSE) {
   }
   return(as.character(leagueId))
 }
+
+#' Get ESPN authentication cookie
+#'
+#' Retrieve the `espn_s2` cookie from global options or an environment variable.
+#'
+#' The `leagueHistory` endpoint requires a cookie from a signed-in ESPN session.
+#' Rather than passing it to every call, the cookie can be set once as the
+#' `fflr.cookie` option or the `ESPN_S2` environment variable. The cookie is
+#' found in your browser's developer tools after signing into ESPN and should be
+#' copied exactly, including any percent-encoded characters.
+#'
+#' @param cookie The `espn_s2` string. Defaults to `getOption("fflr.cookie")`
+#'   and then `Sys.getenv("ESPN_S2")`.
+#' @examples
+#' ffl_cookie("abc123")
+#' @return The cookie as a character string, or `NULL` if none is set.
+#' @export
+ffl_cookie <- function(cookie = getOption("fflr.cookie")) {
+  if (length(cookie) != 1 || !nzchar(cookie)) {
+    cookie <- Sys.getenv("ESPN_S2")
+  }
+  if (length(cookie) != 1 || !nzchar(cookie)) {
+    return(NULL)
+  }
+  as.character(cookie)
+}

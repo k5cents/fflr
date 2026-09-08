@@ -88,15 +88,15 @@ and/or injury status. Sort and limit the responses in the same way as is
 done in the ESPN Fantasy Football website.
 }
 \examples{
-list_players("42654852", proTeam = "Mia", sort = "START", limit = 3)
+list_players("42654852", proTeam = "MIA", sort = "START", limit = 3)
 }
 \seealso{
-Other player functions: 
-\code{\link{all_players}()},
-\code{\link{player_info}()},
-\code{\link{player_news}()},
-\code{\link{player_outlook}()},
-\code{\link{recent_activity}()},
-\code{\link{transaction_counter}()}
+Other player functions:
+\code{\link[=all_players]{all_players()}},
+\code{\link[=player_info]{player_info()}},
+\code{\link[=player_news]{player_news()}},
+\code{\link[=player_outlook]{player_outlook()}},
+\code{\link[=recent_activity]{recent_activity()}},
+\code{\link[=transaction_counter]{transaction_counter()}}
 }
 \concept{player functions}

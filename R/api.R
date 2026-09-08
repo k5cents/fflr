@@ -11,13 +11,16 @@
 #'   be called? If `TRUE`, a list of results is returned, with one element for
 #'   each historical year of the league.
 #' @param seasonId Integer year of NFL season. By default, the season is
-#'   currently set to 2025. Use a recent year or set `leagueHistory` to `TRUE`
+#'   currently set to 2026. Use a recent year or set `leagueHistory` to `TRUE`
 #'   to obtain all past data.
 #' @param scoringPeriodId Integer week of NFL season. By default, `NULL` will
 #'   use the current week (see [ffl_week()]). Scoring periods are always one
 #'   week in length, whereas matchups might be longer.
-#' @param cookie The alphanumeric `espn_s2` cookie string from a signed-inn
-#'   session. As of 2025, this cookie is required to retrieve historical data.
+#' @param cookie The alphanumeric `espn_s2` cookie string from a signed-in
+#'   session, defaulting to [ffl_cookie()]. Since 2025, this cookie is required
+#'   by the `leagueHistory` endpoint. Past seasons can also be requested without
+#'   a cookie by passing an explicit `seasonId` instead of using
+#'   `leagueHistory = TRUE`.
 #' @param ... Additional queries passed to [httr::GET()]. Arguments are
 #'   converted to a named list and passed to `query` alongside `view`.
 #' @examples
@@ -25,13 +28,14 @@
 #' ffl_api()
 #' }
 #' @return A single JSON string.
-#' @importFrom httr RETRY accept_json add_headers user_agent http_type content
-#'   http_error status_code
+#' @importFrom httr RETRY accept_json add_headers config user_agent
+#' @importFrom httr http_type content http_error status_code
 #' @importFrom jsonlite fromJSON
 #' @keywords internal
 #' @export
 ffl_api <- function(leagueId = ffl_id(), view = NULL, leagueHistory = FALSE,
-                    seasonId = 2025, scoringPeriodId = NULL, cookie = NULL,
+                    seasonId = 2026, scoringPeriodId = NULL,
+                    cookie = ffl_cookie(),
                     ...) {
   dots <- list(..., scoringPeriodId = scoringPeriodId)
   age_path <- ifelse(
@@ -54,6 +58,14 @@ ffl_api <- function(leagueId = ffl_id(), view = NULL, leagueHistory = FALSE,
 }
 
 try_json <- function(url, path = "", query = NULL, cookie = NULL, leagueHistory = NULL) {
+  # `httr::set_cookies()` percent-encodes whatever value it is handed. The
+  # `espn_s2` cookie copied from a browser is already percent-encoded, so that
+  # turns "%2F" into "%252F" and ESPN rejects the request. Set the header
+  # directly to send the cookie through unchanged.
+  cookie_config <- NULL
+  if (length(cookie) == 1 && nzchar(cookie)) {
+    cookie_config <- httr::config(cookie = paste0("espn_s2=", cookie))
+  }
   resp <- httr::RETRY(
     verb = "GET",
     url = ifelse(
@@ -65,7 +77,7 @@ try_json <- function(url, path = "", query = NULL, cookie = NULL, leagueHistory 
     httr::accept_json(),
     httr::user_agent("https://github.com/k5cents/fflr/"),
     terminate_on = c(400:417),
-    httr::set_cookies(espn_s2 = cookie)
+    cookie_config
   )
   if (httr::http_type(resp) != "application/json") {
     stop("API did not return JSON", call. = FALSE)

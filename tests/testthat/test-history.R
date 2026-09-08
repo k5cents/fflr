@@ -1,4 +1,5 @@
 test_that("historical data can be returned", {
+  skip_no_cookie()
   h <- league_standings(
     leagueId = "42654852",
     leagueHistory = TRUE
@@ -9,6 +10,7 @@ test_that("historical data can be returned", {
 })
 
 test_that("historical data can be combined", {
+  skip_no_cookie()
   h <- combine_history(
     fun = league_standings,
     leagueId = "42654852"

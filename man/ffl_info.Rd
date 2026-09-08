@@ -30,8 +30,8 @@ ffl_year()
 ffl_week(-1)
 }
 \seealso{
-Other Game information: 
-\code{\link{espn_games}()},
-\code{\link{ffl_seasons}()}
+Other Game information:
+\code{\link[=espn_games]{espn_games()}},
+\code{\link[=ffl_seasons]{ffl_seasons()}}
 }
 \concept{Game information}

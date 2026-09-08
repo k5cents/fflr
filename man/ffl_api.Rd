@@ -8,9 +8,9 @@ ffl_api(
   leagueId = ffl_id(),
   view = NULL,
   leagueHistory = FALSE,
-  seasonId = 2025,
+  seasonId = 2026,
   scoringPeriodId = NULL,
-  cookie = NULL,
+  cookie = ffl_cookie(),
   ...
 )
 }
@@ -26,15 +26,18 @@ be called? If \code{TRUE}, a list of results is returned, with one element for
 each historical year of the league.}
 
 \item{seasonId}{Integer year of NFL season. By default, the season is
-currently set to 2025. Use a recent year or set \code{leagueHistory} to \code{TRUE}
+currently set to 2026. Use a recent year or set \code{leagueHistory} to \code{TRUE}
 to obtain all past data.}
 
 \item{scoringPeriodId}{Integer week of NFL season. By default, \code{NULL} will
 use the current week (see \code{\link[=ffl_week]{ffl_week()}}). Scoring periods are always one
 week in length, whereas matchups might be longer.}
 
-\item{cookie}{The alphanumeric \code{espn_s2} cookie string from a signed-inn
-session. As of 2025, this cookie is required to retrieve historical data.}
+\item{cookie}{The alphanumeric \code{espn_s2} cookie string from a signed-in
+session, defaulting to \code{\link[=ffl_cookie]{ffl_cookie()}}. Since 2025, this cookie is required
+by the \code{leagueHistory} endpoint. Past seasons can also be requested without
+a cookie by passing an explicit \code{seasonId} instead of using
+\code{leagueHistory = TRUE}.}
 
 \item{...}{Additional queries passed to \code{\link[httr:GET]{httr::GET()}}. Arguments are
 converted to a named list and passed to \code{query} alongside \code{view}.}

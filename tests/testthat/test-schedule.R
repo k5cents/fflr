@@ -4,6 +4,7 @@ test_that("obtain tidy fantasy schedule", {
 })
 
 test_that("obtain tidy fantasy schedule history", {
+  skip_no_cookie()
   s <- tidy_schedule(leagueId = "42654852", leagueHistory = TRUE)
   expect_type(s, "list")
   expect_s3_class(s[[1]], "data.frame")

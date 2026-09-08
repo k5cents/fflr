@@ -23,3 +23,9 @@ skip_empty <- function(dat) {
     }
   }
 }
+
+skip_no_cookie <- function() {
+  if (is_installed("testthat") && is.null(ffl_cookie())) {
+    testthat::skip("No `espn_s2` cookie set, cannot reach `leagueHistory`")
+  }
+}

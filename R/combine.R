@@ -8,7 +8,10 @@
 #' @param ... Additional arguments passed to the function used in `fun`.
 #' @return A data frame of combined outputs.
 #' @examples
+#' # requires an `espn_s2` cookie, see `ffl_cookie()`
+#' \dontrun{
 #' combine_history(tidy_scores, leagueId = "252353")
+#' }
 #' @export
 combine_history <- function(fun, ...) {
   stopifnot(is.function(fun))

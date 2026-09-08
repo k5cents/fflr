@@ -1,7 +1,7 @@
 #' Professional games
 #'
-#' Data on the status of NFL games, including scores and odds, kickoff time,
-#' and broadcast information.
+#' Data on the status of NFL games, including scores, kickoff time, venue,
+#' weather, and broadcast information.
 #'
 #' @return A data frame of NFL events.
 #' @examples
@@ -15,12 +15,19 @@ pro_events <- function() {
     return(
       tibble(
         id = character(),
-        date = ffl_timestamp(integer()),
+        date = ffl_timestamp(character()),
         timeValid = logical(),
         period = integer(),
         clock = character(),
         status = character(),
-        summary = character()
+        summary = character(),
+        percentComplete = double(),
+        venue = list(),
+        weather = list(),
+        broadcast = character(),
+        competitors = list(),
+        homeTeam = pro_abbrev(integer()),
+        awayTeam = pro_abbrev(integer())
       )
     )
   }
@@ -35,6 +42,10 @@ pro_events <- function() {
   out$fullStatus <- NULL
   out$broadcasts <- NULL
   out$fantasySource <- NULL
+  # betting lines are deeply nested and come and go by game
+  out$pickcenter <- NULL
+  out$againstTheSpread <- NULL
+  out$odds <- NULL
   out$date <- ffl_timestamp(out$date)
   comp <- do.call("rbind", out$competitors)
   out$homeTeam <- pro_abbrev(comp$id[comp$homeAway == "home"])

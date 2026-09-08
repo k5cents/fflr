@@ -198,7 +198,7 @@ recent_activity(scoringPeriodId = 1)
 ## Players
 
 ```{r all-players}
-list_players(limit = 10, proTeam = "Mia", status = "ALL")
+list_players(limit = 10, proTeam = "MIA", status = "ALL")
 ```
 
 ## Scoreboard

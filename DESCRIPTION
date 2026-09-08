@@ -1,6 +1,6 @@
 Package: fflr
 Title: Retrieve ESPN Fantasy Football Data
-Version: 2025.0.1
+Version: 2026.0.1
 Authors@R: 
     person("Kiernan", "Nicholls", email = "k5cents@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-9229-7897"))
@@ -30,4 +30,4 @@ Encoding: UTF-8
 Language: en-US
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+Config/roxygen2/version: 8.0.0

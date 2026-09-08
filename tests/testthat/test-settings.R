@@ -22,6 +22,7 @@ test_that("league info for a single season", {
 # league size -------------------------------------------------------------
 
 test_that("named vector of past seasons for league", {
+  skip_no_cookie()
   d <- league_size("252353", leagueHistory = TRUE)
   expect_s3_class(d, "data.frame")
   expect_length(d, 2)
@@ -68,6 +69,7 @@ test_that("roster settings for a single season", {
 })
 
 test_that("roster settings for a past seasons", {
+  skip_no_cookie()
   r <- roster_settings("42654852", leagueHistory = TRUE)
   expect_s3_class(r, "data.frame")
   expect_length(r, 8)
@@ -80,7 +82,7 @@ Sys.sleep(runif(1, 1, 2))
 test_that("schedule settings for a single season", {
   s <- schedule_settings("42654852", leagueHistory = FALSE)
   expect_s3_class(s, "data.frame")
-  expect_length(s, 13)
+  expect_length(s, 14)
   skip_empty(s)
   expect_s3_class(s$matchupPeriods[[1]], "data.frame")
   expect_s3_class(s$divisions[[1]], "data.frame")

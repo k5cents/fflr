@@ -3,9 +3,9 @@
 \docType{data}
 \name{nfl_players}
 \alias{nfl_players}
-\title{2025 NFL Players}
+\title{2026 NFL Players}
 \format{
-A data frame with 1,102 rows and 11 variables:
+A data frame with 1,036 rows and 13 variables:
 \describe{
 \item{playerId}{Unique ESPN player ID}
 \item{firstName}{First name}
@@ -24,12 +24,12 @@ A data frame with 1,102 rows and 11 variables:
 }
 }
 \source{
-\url{http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/}
+\url{http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/athletes/}
 }
 \usage{
 nfl_players
 }
 \description{
-All available ESPN fantasy football players as of the 2025 season, week 1.
+All available ESPN fantasy football players as of the 2026 season, week 1.
 }
 \keyword{datasets}

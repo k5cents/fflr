@@ -53,8 +53,22 @@ season, but it may not be possible.
 > As of 2025-08-01, ESPN has changed their API to restrict access to historical
 data previously obtained via the `leagueHistory = TRUE` argument. Now you must
 sign into ESPN via your web browser and copy the "espn_s2" cookie using the
-inspect element tools. That cookie can then be passed to `ffl_api()` by
-providing the `cookie` argument to any function with the `...` argument.
+inspect element tools.
+>
+> Rather than passing that cookie to every call, set it once as an option or an
+environment variable and `ffl_cookie()` will find it:
+>
+> ```r
+> options(fflr.cookie = "AEBxxxxx%2Fxxxxx...")
+> # or add ESPN_S2=AEBxxxxx%2Fxxxxx... to your .Renviron
+> ```
+>
+> Copy the cookie exactly, including any percent-encoded characters like `%2F`.
+>
+> Only the `leagueHistory` endpoint is restricted. A single past season can
+still be requested without any cookie by passing an explicit `seasonId`
+instead, for example `team_roster(seasonId = 2024)` rather than
+`team_roster(leagueHistory = TRUE)`.
 
 The most recent development version can always be installed from [GitHub][gh]:
 

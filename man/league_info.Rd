@@ -28,15 +28,15 @@ and season length.
 league_info(leagueId = "42654852")
 }
 \seealso{
-Other league settings functions: 
-\code{\link{acquisition_settings}()},
-\code{\link{draft_settings}()},
-\code{\link{finance_settings}()},
-\code{\link{league_name}()},
-\code{\link{league_size}()},
-\code{\link{roster_settings}()},
-\code{\link{schedule_settings}()},
-\code{\link{scoring_settings}()},
-\code{\link{trade_settings}()}
+Other league settings functions:
+\code{\link[=acquisition_settings]{acquisition_settings()}},
+\code{\link[=draft_settings]{draft_settings()}},
+\code{\link[=finance_settings]{finance_settings()}},
+\code{\link[=league_name]{league_name()}},
+\code{\link[=league_size]{league_size()}},
+\code{\link[=roster_settings]{roster_settings()}},
+\code{\link[=schedule_settings]{schedule_settings()}},
+\code{\link[=scoring_settings]{scoring_settings()}},
+\code{\link[=trade_settings]{trade_settings()}}
 }
 \concept{league settings functions}

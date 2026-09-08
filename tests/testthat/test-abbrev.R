@@ -69,11 +69,11 @@ test_that("pro-team abbreviation", {
   x <- pro_abbrev(1)
   expect_length(x, 1)
   expect_s3_class(x, "factor")
-  expect_equal(as.character(x), "Atl")
+  expect_equal(as.character(x), "ATL")
 })
 
 test_that("pro-team un-abbreviation", {
-  x <- pro_unabbrev("Atl")
+  x <- pro_unabbrev("ATL")
   expect_length(x, 1)
   expect_type(x, "integer")
   expect_equal(x, 1)

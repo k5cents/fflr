@@ -10,6 +10,13 @@ ffl_timestamp <- function(x) {
   as.POSIXlt(x, tz = "UTC", format = "%Y-%m-%dT%H:%M:%S")
 }
 
+# The NFL season is named for the calendar year it starts in, so the games
+# played in January and February belong to the previous year's season.
+season_of <- function(date) {
+  d <- as.POSIXlt(as.Date(date))
+  d$year + 1900L - (d$mon < 2L)
+}
+
 as_tibble <- function(x) {
   if (is_installed("tibble")) {
     tibble::as_tibble(x)

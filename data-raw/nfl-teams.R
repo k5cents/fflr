@@ -1,6 +1,6 @@
 ## code to prepare `nfl_teams` dataset goes here
 dat <- try_json(
-  url = "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2025",
+  url = "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2026",
   query = list(view = "proTeamSchedules_wl")
 )
 
@@ -26,5 +26,5 @@ nfl_teams$name[nfl_teams$id == 0] <- "Free Agent"
 nfl_teams <- as_tibble(nfl_teams[order(nfl_teams$id), ])
 names(nfl_teams)[1] <- "proTeamId"
 
-usethis::use_data(nfl_teams, overwrite = TRUE)
+usethis::use_data(nfl_teams, overwrite = TRUE, version = 2)
 readr::write_csv(nfl_teams, "data-raw/nfl_teams.csv", na = "")

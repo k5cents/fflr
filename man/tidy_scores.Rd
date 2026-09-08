@@ -38,7 +38,7 @@ earn 1 win and the lowest scoring team would expect to win 0 matchups.
 tidy_scores(leagueId = "42654852", useMatchup = FALSE)
 }
 \seealso{
-Other scoring functions: 
-\code{\link{live_scoring}()}
+Other scoring functions:
+\code{\link[=live_scoring]{live_scoring()}}
 }
 \concept{scoring functions}

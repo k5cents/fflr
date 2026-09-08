@@ -17,6 +17,7 @@ test_that("scores by scoring period", {
 })
 
 test_that("scores by past league history", {
+  skip_no_cookie()
   s <- tidy_scores(
     leagueId = "42654852",
     leagueHistory = TRUE,

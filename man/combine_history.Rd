@@ -20,5 +20,8 @@ once set to \code{FALSE}. Combined the output of both runs into a single data
 frame.
 }
 \examples{
+# requires an `espn_s2` cookie, see `ffl_cookie()`
+\dontrun{
 combine_history(tidy_scores, leagueId = "252353")
+}
 }

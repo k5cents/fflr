@@ -3,9 +3,9 @@
 \docType{data}
 \name{nfl_schedule}
 \alias{nfl_schedule}
-\title{2025 NFL Schedule}
+\title{2026 NFL Schedule}
 \format{
-A data frame with 544 rows and 6 variables:
+A data frame with 544 rows and 7 variables:
 \describe{
 \item{seasonId}{Season year}
 \item{scoringPeriodId}{Scoring period}
@@ -18,12 +18,12 @@ A data frame with 544 rows and 6 variables:
 }
 }
 \source{
-\url{https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2025?view=proTeamSchedules_wl}
+\url{https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2026?view=proTeamSchedules_wl}
 }
 \usage{
 nfl_schedule
 }
 \description{
-The 2025 NFL season schedule by team, as of September 10th.
+The 2026 NFL season schedule by team, as of September 10th.
 }
 \keyword{datasets}

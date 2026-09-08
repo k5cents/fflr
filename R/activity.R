@@ -32,8 +32,13 @@ recent_activity <- function(leagueId = ffl_id(), leagueHistory = FALSE,
     return(data.frame())
   }
   t <- dat$transactions
-  t$processDate <- ffl_date(t$processDate)
-  t$proposedDate <- ffl_date(t$proposedDate)
+  # `expirationDate` and `acceptedDate` are only returned for signed-in
+  # requests, so the columns present depend on whether a cookie was sent
+  for (d in c("processDate", "proposedDate", "expirationDate", "acceptedDate")) {
+    if (!is.null(t[[d]])) {
+      t[[d]] <- ffl_date(t[[d]])
+    }
+  }
   t$rating <- NULL
   t$subOrder <- NULL
   as_tibble(t)

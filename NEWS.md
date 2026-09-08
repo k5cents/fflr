@@ -1,3 +1,40 @@
+# fflr 2026.0.1
+
+* Update to 2026 API endpoints and update package data for the 2026 season.
+* **Breaking:** ESPN now returns professional team abbreviations in all capital
+  letters (`"MIA"` instead of `"Mia"`). This changes the `abbrev` levels in
+  `nfl_teams`, the `proTeam` column in `nfl_players`, and everything derived
+  from them, including `pro_abbrev()` and the `proTeam` argument of
+  `list_players()`. Code that matches on the old mixed-case spelling needs to be
+  updated.
+* `stat_corrections()` now takes the NFL season from the `date` argument rather
+  than using a hard-coded year, so corrections from any past season can be
+  retrieved. Dates in January and February belong to the previous season.
+* Fix an error in `stat_corrections()` when ESPN returns corrections that carry
+  no `splitStats`, which is now the case for some entries every week.
+* `league_messages()` now parses whatever message topic types ESPN returns
+  instead of a fixed list. ESPN renamed `CHAT` to `CHAT_ALL_MEMBERS` and added
+  `ACTIVITY_STATUS`, which had reduced the output to three columns. An empty
+  message board now returns a zero-row data frame with all seven columns.
+* `pro_events()` drops the `pickcenter`, `againstTheSpread`, and `odds` columns
+  newly added by ESPN. They are deeply nested and vary game to game. The
+  `percentComplete` column is kept, so the result now has 14 columns. The
+  post-season empty data frame gained the columns needed to match.
+* Fix the `cookie` argument, which never actually worked (#50). `httr::set_cookies()`
+  percent-encodes the value it is given, so the already-encoded `espn_s2` string
+  was double-encoded (`%2F` became `%252F`) and ESPN rejected every request with
+  a 404. The cookie header is now set directly, and `leagueHistory = TRUE` works
+  again for `draft_recap()`, `team_roster()`, `league_standings()`, and the rest.
+* New `ffl_cookie()` reads the cookie from the `fflr.cookie` option or the
+  `ESPN_S2` environment variable, and is the new default for the `cookie`
+  argument of `ffl_api()`. The cookie no longer has to be passed to every call.
+* Only the `leagueHistory` endpoint requires the `espn_s2` cookie. A single past
+  season can still be requested without one by passing an explicit `seasonId`.
+* `recent_activity()` converts the `expirationDate` and `acceptedDate` columns
+  to date-times. ESPN returns these two columns, along with `teamActions`, only
+  for signed-in requests, so the columns present depend on whether a cookie was
+  sent.
+
 # fflr 2025.0.1
 
 * Update to 2025 API endpoints and update package data.

@@ -9,6 +9,7 @@ test_that("All current team rosters as list", {
 })
 
 test_that("All final period team rosters as list of list", {
+  skip_no_cookie()
   rh <- team_roster(leagueId = "252353", leagueHistory = TRUE)
   skip_empty(rh)
   expect_gt(length(rh), 4)

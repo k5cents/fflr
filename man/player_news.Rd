@@ -9,7 +9,7 @@ player_news(playerId, parseHTML = FALSE)
 \arguments{
 \item{playerId}{A single player ID number.}
 
-\item{parseHTML}{Should HTML stories be parsed with \code{\link[xml2:read_xml]{xml2::read_html()}}?}
+\item{parseHTML}{Should HTML stories be parsed with \code{\link[xml2:read_html]{xml2::read_html()}}?}
 }
 \value{
 A data frame of news stories.
@@ -22,12 +22,12 @@ can be returned at a time.
 player_news(playerId = "15847")
 }
 \seealso{
-Other player functions: 
-\code{\link{all_players}()},
-\code{\link{list_players}()},
-\code{\link{player_info}()},
-\code{\link{player_outlook}()},
-\code{\link{recent_activity}()},
-\code{\link{transaction_counter}()}
+Other player functions:
+\code{\link[=all_players]{all_players()}},
+\code{\link[=list_players]{list_players()}},
+\code{\link[=player_info]{player_info()}},
+\code{\link[=player_outlook]{player_outlook()}},
+\code{\link[=recent_activity]{recent_activity()}},
+\code{\link[=transaction_counter]{transaction_counter()}}
 }
 \concept{player functions}

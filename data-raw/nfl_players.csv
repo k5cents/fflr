@@ -1,1047 +1,1037 @@
-playerId,firstName,lastName,proTeam,defaultPosition,jersey,weight,height,age,dateOfBirth,birthPlace,draftSelection,debutYear
-4362628,Ja'Marr,Chase,Cin,WR,1,205,72,25,2000-03-01,"Harvey, LA",5,
-3929630,Saquon,Barkley,Phi,RB,26,233,72,28,1997-02-09,"Coplay, PA",2,2018
-4429795,Jahmyr,Gibbs,Det,RB,0,202,69,23,2002-03-20,"Dalton, GA",12,
-4262921,Justin,Jefferson,Min,WR,18,195,73,26,1999-06-16,"Saint Rose, LA",22,2020
-4430807,Bijan,Robinson,Atl,RB,7,215,71,23,2002-01-30,"Tucson, AZ",8,
-4241389,CeeDee,Lamb,Dal,WR,88,200,74,26,1999-04-08,"Richmond, TX",17,2020
-4374302,Amon-Ra,St. Brown,Det,WR,14,202,72,25,1999-10-24,"Anaheim Hills, CA",112,
-3916387,Lamar,Jackson,Bal,QB,8,205,74,28,1997-01-07,"Pompano Beach, FL",32,2018
-3918298,Josh,Allen,Buf,QB,17,237,77,29,1996-05-21,"Firebaugh, CA",7,2018
-3043078,Derrick,Henry,Bal,RB,22,252,74,31,1994-01-04,"Yulee, FL",45,2016
-4432665,Brock,Bowers,LV,TE,89,235,76,22,2002-12-13,"Napa, CA",13,
-4426515,Puka,Nacua,LAR,WR,12,212,74,24,2001-05-29,"Provo, UT",177,
-3117251,Christian,McCaffrey,SF,RB,23,210,71,29,1996-06-07,"Castle Rock, CO",8,2017
-4595348,Malik,Nabers,NYG,WR,1,200,72,22,2003-07-28,"Youngsville, LA",6,
-4047646,A.J.,Brown,Phi,WR,11,226,73,28,1997-06-30,"Starkville, MS",51,2019
-4426348,Jayden,Daniels,Wsh,QB,5,210,76,24,2000-12-18,"San Bernardino, CA",2,
-4040715,Jalen,Hurts,Phi,QB,1,223,73,27,1998-08-07,"Houston, TX",53,2020
-4361307,Trey,McBride,Ari,TE,85,246,76,25,1999-11-22,"Fort Morgan, CO",55,
-3040151,George,Kittle,SF,TE,85,250,76,31,1993-10-09,"Norman, OK",146,2017
-4258173,Nico,Collins,Hou,WR,12,222,76,26,1999-03-19,"Birmingham, AL",89,
-4429160,De'Von,Achane,Mia,RB,28,191,69,23,2001-10-13,"Missouri City, TX",84,
-4047365,Josh,Jacobs,GB,RB,8,223,70,27,1998-02-11,"Tulsa, OK",24,2019
-4242335,Jonathan,Taylor,Ind,RB,28,226,70,26,1999-01-19,"Salem, NJ",41,2020
-3915511,Joe,Burrow,Cin,QB,9,215,76,28,1996-12-10,"Athens, OH",1,2020
-4432773,Brian,Thomas Jr.,Jax,WR,7,209,74,22,2002-10-08,"Walker, LA",23,
-4596448,Bucky,Irving,TB,RB,7,195,70,22,2002-08-19,"Chicago, IL",125,
-4239993,Tee,Higgins,Cin,WR,5,220,76,26,1999-01-18,"Oak Ridge, TN",33,2020
-4426502,Drake,London,Atl,WR,5,215,76,24,2001-07-24,"Moorpark, CA",8,
-4890973,Ashton,Jeanty,LV,RB,2,208,68,21,2003-12-02,"Jacksonville, FL",6,
-4430027,Sam,LaPorta,Det,TE,87,245,75,24,2001-01-12,"Highland, IL",34,
-4430737,Kyren,Williams,LAR,RB,23,202,69,24,2000-08-26,"St. Louis, MO",164,
-3116406,Tyreek,Hill,Mia,WR,10,191,70,31,1994-03-01,"Pearson, GA",165,2016
-4379399,James,Cook,Buf,RB,4,190,71,25,1999-09-25,"Miami, FL",63,
-4689936,Jake,Bates,Det,K,39,202,70,26,1999-03-03,"Tomball, TX",,
-4612826,Ladd,McConkey,LAC,WR,15,185,72,23,2001-11-11,"Chatsworth, GA",34,
-16800,Davante,Adams,LAR,WR,17,215,73,32,1992-12-24,"Palo Alto, CA",53,2014
-4430878,Jaxon,Smith-Njigba,Sea,WR,11,197,72,23,2002-02-14,"Rockwall, TX",20,
-16737,Mike,Evans,TB,WR,13,231,77,31,1993-08-21,"Galveston, TX",7,2014
-3121422,Terry,McLaurin,Wsh,WR,17,210,72,29,1995-09-15,"Indianapolis, IN",76,2019
-4362238,Chase,Brown,Cin,RB,30,210,70,25,2000-03-21,"London, ON",163,
-3054850,Alvin,Kamara,NO,RB,41,215,70,30,1995-07-25,"Norcross, GA",67,2017
-4567048,Kenneth,Walker III,Sea,RB,9,211,69,24,2000-10-20,"Arlington, TN",41,
-4047650,DK,Metcalf,Pit,WR,4,229,76,27,1997-12-14,"Oxford, MS",64,2019
-4569618,Garrett,Wilson,NYJ,WR,5,183,72,25,2000-07-22,"Austin, TX",10,
-3953687,Brandon,Aubrey,Dal,K,17,218,75,30,1995-03-14,,,
-4683062,Xavier,Worthy,KC,WR,1,165,71,22,2003-04-27,"Fresno, CA",28,
-4432708,Marvin,Harrison Jr.,Ari,WR,18,220,75,22,2002-08-11,"Philadelphia, PA",4,
-3150744,Chase,McLaughlin,TB,K,4,190,72,29,1996-04-09,"Cypress, TX",,2019
-4362081,Cameron,Dicker,LAC,K,11,216,73,25,2000-05-06,"Austin, TX",,
-3139477,Patrick,Mahomes,KC,QB,15,225,74,29,1995-09-17,"Whitehouse, TX",10,2017
-4427366,Breece,Hall,NYJ,RB,20,217,71,24,2001-05-31,"Wichita, KS",36,
-4241416,Chuba,Hubbard,Car,RB,30,210,73,26,1999-06-11,"Sherwood Park, AB",126,
-3116385,Joe,Mixon,Hou,RB,28,220,73,29,1996-07-24,"Oakley, CA",48,2017
-3045147,James,Conner,Ari,RB,6,233,73,30,1995-05-05,"Erie, PA",105,2017
-15847,Travis,Kelce,KC,TE,87,250,77,35,1989-10-05,"Cleveland Heights, OH",63,2013
-4685382,Omarion,Hampton,LAC,RB,8,220,72,22,2003-03-16,"Clayton, NC",22,
-3915416,DJ,Moore,Chi,WR,2,213,72,28,1997-04-14,"Philadelphia, PA",24,2018
-4036133,T.J.,Hockenson,Min,TE,87,248,77,28,1997-07-03,"Chariton, IA",8,2019
-3052587,Baker,Mayfield,TB,QB,6,215,73,30,1995-04-14,"Austin, TX",1,2018
-4685415,Travis,Hunter,Jax,WR,12,185,73,22,2003-05-18,"Suwanee, GA",2,
-4429615,Zay,Flowers,Bal,WR,4,183,69,24,2000-09-11,"Fort Lauderdale, FL",22,
-4035538,David,Montgomery,Det,RB,5,230,71,28,1997-06-07,"Cincinnati, OH",73,2019
-4428331,Rashee,Rice,KC,WR,4,204,73,25,2000-04-22,"North Richland Hills, TX",55,
-3128429,Courtland,Sutton,Den,WR,14,216,76,29,1995-10-10,"Brenham, TX",40,2018
-3123076,David,Njoku,Cle,TE,85,246,76,29,1996-07-10,"Cedar Grove, NJ",29,2017
-4241478,DeVonta,Smith,Phi,WR,6,170,72,26,1998-11-14,"Amite, LA",10,
-3116365,Mark,Andrews,Bal,TE,89,250,77,29,1995-09-06,"Scottsdale, AZ",86,2018
-4259545,D'Andre,Swift,Chi,RB,4,204,68,26,1999-01-14,"Philadelphia, PA",35,2020
-4426354,George,Pickens,Dal,WR,3,200,75,24,2001-03-04,"Hoover, AL",52,
-4426338,Bo,Nix,Den,QB,10,217,74,25,2000-02-25,"Pinson, AL",12,
-4241463,Jerry,Jeudy,Cle,WR,3,195,73,26,1999-04-24,"Deerfield Beach, FL",15,2020
-4426388,Jameson,Williams,Det,WR,1,182,73,24,2001-03-26,"St. Louis, MO",12,
-4372016,Jaylen,Waddle,Mia,WR,17,185,70,26,1998-11-25,"Houston, TX",6,
-3925357,Calvin,Ridley,Ten,WR,0,190,73,30,1994-12-20,"Fort Lauderdale, FL",26,2018
-3042519,Aaron,Jones Sr.,Min,RB,33,208,70,30,1994-12-02,"El Paso, TX",182,2017
-4361529,Isiah,Pacheco,KC,RB,10,216,70,26,1999-03-02,"Vineland, NJ",251,
-2977187,Cooper,Kupp,Sea,WR,10,205,73,32,1993-06-15,"Yakima, WA",69,2017
-4685472,Tetairoa,McMillan,Car,WR,4,212,77,22,2003-04-05,"Waimanalo, HI",8,
-4568490,RJ,Harvey,Den,RB,37,205,68,24,2001-02-04,"Orlando, FL",60,
-3051876,Evan,Engram,Den,TE,1,240,75,30,1994-09-02,"Powder Springs, GA",23,2017
-3917315,Kyler,Murray,Ari,QB,1,207,70,28,1997-08-07,"Allen, TX",1,2019
-4361741,Brock,Purdy,SF,QB,13,220,73,25,1999-12-27,"Gilbert, AZ",262,
-4432710,TreVeyon,Henderson,NE,RB,32,202,70,22,2002-10-22,"Hopewell, VA",38,
-4431299,Rome,Odunze,Chi,WR,15,214,75,23,2002-06-03,"Las Vegas, NV",9,
-3916148,Tony,Pollard,Ten,RB,20,209,72,28,1997-04-30,"Memphis, TN",128,2019
-4819231,Kaleb,Johnson,Pit,RB,20,224,73,21,2003-08-14,"Hamilton, OH",83,
-2976212,Stefon,Diggs,NE,WR,8,191,72,31,1993-11-29,"Gaithersburg, MD",146,2015
-4701936,Matthew,Golden,GB,WR,22,191,71,22,2003-08-01,"Houston, TX",23,
-4361370,Chris,Olave,NO,WR,12,187,72,25,2000-06-27,"San Ysidro, CA",11,
-3050478,Jake,Elliott,Phi,K,4,167,69,30,1995-01-21,"Western Springs, IL",153,2017
-3916433,Jakobi,Meyers,LV,WR,16,193,74,28,1996-11-09,"Lithonia, GA",,2019
-3126486,Deebo,Samuel,Wsh,WR,1,215,72,29,1996-01-15,"Inman, SC",36,2019
-3116165,Chris,Godwin,TB,WR,14,209,73,29,1996-02-27,"Middletown, DE",84,2017
-4241474,Brian,Robinson Jr.,Wsh,RB,8,228,73,26,1999-03-22,"Tuscaloosa, AL",98,
-4429205,Jordan,Addison,Min,WR,3,175,71,23,2002-01-27,"Frederick, MD",23,
-4038941,Justin,Herbert,LAC,QB,10,236,78,27,1998-03-10,"Eugene, OR",6,2020
-4360516,Tyrone,Tracy Jr.,NYG,RB,29,210,71,25,1999-11-23,"Indianapolis, IN",166,
-4361579,Javonte,Williams,Dal,RB,33,220,70,25,2000-04-25,"Wallace, NC",35,
-4373678,Khalil,Shakir,Buf,WR,10,190,72,25,2000-02-03,"Murrieta, CA",148,
-3886598,Jauan,Jennings,SF,WR,15,212,75,28,1997-07-10,"Murfreesboro, TN",217,2020
-4569987,Jaylen,Warren,Pit,RB,30,215,68,26,1998-11-01,"Salt Lake City, UT",,
-4569173,Rhamondre,Stevenson,NE,RB,38,227,72,27,1998-02-23,"Las Vegas, NV",120,
-4635008,Keon,Coleman,Buf,WR,0,215,76,22,2003-05-17,"Opelousas, LA",33,
-4696981,Cam,Skattebo,NYG,RB,44,215,71,23,2002-02-05,"Rio Linda, CA",105,
-4572680,Tucker,Kraft,GB,TE,85,259,77,24,2000-11-03,"Timber Lake, SD",78,
-3917232,Tyler,Bass,Buf,K,2,183,70,28,1997-02-14,"Irmo, SC",188,2020
-4239996,Travis,Etienne Jr.,Jax,RB,1,215,70,26,1999-01-26,"Jennings, LA",25,
-4428209,Ricky,Pearsall,SF,WR,1,189,73,24,2000-09-09,"Chandler, AZ",31,
-3124679,Jason,Sanders,Mia,K,7,195,71,29,1995-11-16,"Orange, CA",229,2018
-4362249,Jayden,Reed,GB,WR,11,187,71,25,2000-04-28,"Naperville, IL",50,
-17372,Chris,Boswell,Pit,K,9,185,74,34,1991-03-16,"Keller, TX",,2014
-4567750,Emeka,Egbuka,TB,WR,9,205,73,22,2002-10-14,"Steilacoom, WA",19,
-4035687,Michael,Pittman Jr.,Ind,WR,11,223,76,27,1997-10-05,"Woodland Hills, CA",34,2020
-4723086,Colston,Loveland,Chi,TE,84,241,78,21,2004-04-09,"Gooding, ID",10,
-3068267,Austin,Ekeler,Wsh,RB,30,200,69,30,1995-05-17,"Eaton, CO",,2017
-4431611,Caleb,Williams,Chi,QB,18,226,73,23,2001-11-18,"Washington, DC",1,
-4685702,Quinshon,Judkins,Cle,RB,10,221,71,21,2003-10-29,"Pike Road, AL",36,
-3121023,Dallas,Goedert,Phi,TE,88,256,77,30,1995-01-03,"Britton, SD",49,2018
-4431459,Tyler,Warren,Ind,TE,84,256,77,23,2002-05-24,"Mechanicsville, VA",14,
-2577417,Dak,Prescott,Dal,QB,4,238,74,32,1993-07-29,"Haughton, LA",135,2016
-4032473,Rashid,Shaheed,NO,WR,22,180,72,26,1998-08-31,"San Diego, CA",,
-4362887,Justin,Fields,NYJ,QB,7,227,75,26,1999-03-05,"Kennesaw, GA",11,
-4385690,Dalton,Kincaid,Buf,TE,86,240,76,25,1999-10-18,"Las Vegas, NV",25,
-4241985,J.K.,Dobbins,Den,RB,27,212,70,26,1998-12-17,"La Grange, TX",55,2020
-4429013,Tank,Bigsby,Jax,RB,4,215,71,22,2002-08-30,"LaGrange, GA",88,
-4697815,Rachaad,White,TB,RB,1,214,72,26,1999-01-12,"Kansas City, MO",91,
-4040655,Darnell,Mooney,Atl,WR,1,180,71,27,1997-10-29,"Gadsden, AL",173,2020
-4428557,Tyjae,Spears,Ten,RB,2,195,71,24,2001-06-15,"Ponchatoula, LA",81,
-3055899,Harrison,Butker,KC,K,7,205,76,30,1995-07-14,"Decatur, GA",233,2017
-3046779,Jared,Goff,Det,QB,16,217,76,30,1994-10-14,"Novato, CA",1,2016
-4877706,Jayden,Higgins,Hou,WR,81,215,76,22,2002-12-15,"South Miami, FL",34,
-4426385,Zach,Charbonnet,Sea,RB,26,214,73,24,2001-01-08,"Camarillo, CA",52,
-4360569,Jordan,Mason,Min,RB,27,223,71,26,1999-05-24,"Gallatin, TN",,
-4433970,J.J.,McCarthy,Min,QB,9,219,75,22,2003-01-20,"La Grange Park, IL",10,
-4372019,Jerome,Ford,Cle,RB,34,210,70,25,1999-09-12,"Tampa, FL",156,
-4241457,Najee,Harris,LAC,RB,22,242,73,27,1998-03-09,"Antioch, CA",24,
-4036378,Jordan,Love,GB,QB,10,219,76,26,1998-11-02,"Bakersfield, CA",26,2020
-4242355,Jake,Ferguson,Dal,TE,87,244,77,26,1999-01-18,"Madison, WI",129,
-4432577,C.J.,Stroud,Hou,QB,7,218,75,23,2001-10-03,"Inland Empire, CA",2,
-4431452,Drake,Maye,NE,QB,10,225,76,22,2002-08-30,"Huntersville, NC",3,
-4697745,Tyler,Loop,Bal,K,33,191,71,24,2001-08-04,"Lucas, TX",186,
-3054212,Jonnu,Smith,Pit,TE,81,248,75,29,1995-08-22,"Ocala, FL",100,2017
-4603186,Jack,Bech,LV,WR,18,214,73,22,2002-12-18,"Lafayette, LA",58,
-16460,Adam,Thielen,Car,WR,19,195,74,34,1990-08-22,"Detroit Lakes, MN",,2013
-4360248,Kyle,Pitts Sr.,Atl,TE,8,250,78,24,2000-10-06,"Philadelphia, PA",4,
-4241372,Hollywood,Brown,KC,WR,5,180,69,28,1997-06-04,"Hollywood, FL",25,2019
-4688813,Josh,Downs,Ind,WR,1,171,69,23,2001-08-12,"Suwanee, GA",79,
-2971573,Ka'imi,Fairbairn,Hou,K,15,183,72,31,1994-01-29,"Kailua, HI",,2016
-4685279,Jaydon,Blue,Dal,RB,34,196,69,21,2004-01-08,"Houston, TX",149,
-4430034,Xavier,Legette,Car,WR,17,227,75,24,2001-01-29,"Mullins, SC",32,
-4360438,Brandon,Aiyuk,SF,WR,11,200,72,27,1998-03-17,"Rocklin, CA",25,2020
-4429275,Trey,Benson,Ari,RB,33,220,72,23,2002-07-23,"Greenville, MS",66,
-4882093,Bhayshul,Tuten,Jax,RB,33,209,69,22,2003-02-14,"Paulsboro, NJ",104,
-4686472,Marvin,Mims Jr.,Den,WR,19,182,71,23,2002-03-19,"Frisco, TX",63,
-4373626,Tyler,Allgeier,Atl,RB,25,225,70,25,2000-04-15,"Fontana, CA",151,
-4372561,Isaac,Guerendo,SF,RB,31,221,72,25,2000-06-28,"Clayton, IN",129,
-17427,Cairo,Santos,Chi,K,8,173,68,33,1991-11-12,"Saint Augustine, FL",,2014
-3128720,Nick,Chubb,Hou,RB,21,227,71,29,1995-12-27,"Cedartown, GA",35,2018
-15818,Keenan,Allen,LAC,WR,13,211,74,33,1992-04-27,"Greensboro, NC",76,2013
-4686612,Tre,Harris,LAC,WR,9,210,75,23,2002-02-28,"Lafayette, LA",55,
-4688380,Cameron,Ward,Ten,QB,1,219,74,23,2002-05-25,"West Columbia, TX",1,
-4249087,Matt,Gay,Wsh,K,16,232,72,31,1994-03-15,"Orem, UT",145,2019
-3046439,Hunter,Henry,NE,TE,85,249,77,30,1994-12-07,"Little Rock, AR",35,2016
-15835,Zach,Ertz,Wsh,TE,86,250,77,34,1990-11-10,"Alamo, CA",35,2013
-5081397,Dylan,Sampson,Cle,RB,22,200,68,20,2004-09-14,"Baton Rouge, LA",126,
-4369863,Cedric,Tillman,Cle,WR,19,215,75,25,2000-04-19,"Las Vegas, NV",74,
-12483,Matthew,Stafford,LAR,QB,9,214,75,37,1988-02-07,"Dallas, TX",1,2009
-4361411,Pat,Freiermuth,Pit,TE,88,258,77,26,1998-10-25,"Merrimac, MA",55,
-4241479,Tua,Tagovailoa,Mia,QB,1,225,73,27,1998-03-02,"Ewa Beach, HI",5,2020
-4685278,Luther,Burden III,Chi,WR,87,210,72,21,2003-12-12,"St. Louis, MO",39,
-4360310,Trevor,Lawrence,Jax,QB,16,220,78,25,1999-10-06,"Cartersville, GA",1,
-3059915,Kareem,Hunt,KC,RB,29,216,71,30,1995-08-06,"Willoughby, OH",86,2017
-4430834,Jalen,McMillan,TB,WR,15,192,73,23,2001-12-07,"Fresno, CA",92,
-4429084,Anthony,Richardson Sr.,Ind,QB,5,244,76,23,2002-05-22,"Gainesville, FL",4,
-4429501,Ray,Davis,Buf,RB,22,220,68,25,1999-11-11,"San Francisco, CA",128,
-4566192,Joshua,Karty,LAR,K,16,207,74,23,2002-03-07,"Burlington, NC",209,
-4360939,Rashod,Bateman,Bal,WR,7,193,73,25,1999-11-29,"Tifton, GA",27,
-4360234,Evan,McPherson,Cin,K,2,185,71,26,1999-07-21,"Fort Payne, AL",149,
-4360423,Michael,Penix Jr.,Atl,QB,9,220,74,25,2000-05-08,"Tampa, FL",8,
-4613202,Kyle,Williams,NE,WR,18,190,71,22,2002-11-13,"Inglewood, CA",69,
-2576925,Darren,Waller,Mia,TE,83,238,78,32,1992-09-13,"Acworth, GA",204,2015
-4361050,Isaiah,Likely,Bal,TE,80,245,76,25,2000-04-18,"Cambridge, MA",139,
-4685720,Bryce,Young,Car,QB,9,204,70,24,2001-07-25,"Pasadena, CA",1,
-2985659,Wil,Lutz,Den,K,3,184,71,31,1994-07-07,"Newnan, GA",,2016
-4569587,Wan'Dale,Robinson,NYG,WR,17,185,68,24,2001-01-05,"Frankfort, KY",43,
-4426386,Roschon,Johnson,Chi,RB,23,227,72,24,2001-01-31,"Port Neches, TX",115,
-4243331,Cade,Otton,TB,TE,88,247,77,26,1999-04-15,"Tumwater, WA",106,
-3895856,Christian,Kirk,Hou,WR,13,200,71,28,1996-11-18,"Scottsdale, AZ",47,2018
-4429025,Quentin,Johnston,LAC,WR,1,208,74,23,2001-09-06,"Temple, TX",21,
-4685247,Braelon,Allen,NYJ,RB,0,235,73,21,2004-01-20,"Fond Du Lac, WI",134,
-3116164,Mike,Gesicki,Cin,TE,88,245,78,29,1995-10-03,"Manahawkin, NJ",42,2018
-15795,DeAndre,Hopkins,Bal,WR,10,210,73,33,1992-06-06,"Central, SC",27,2013
-4360635,Chig,Okonkwo,Ten,TE,85,238,75,25,1999-09-08,"Powder Springs, GA",143,
-4430539,Brenton,Strange,Jax,TE,85,253,76,24,2000-12-27,"Parkersburg, WV",61,
-16339,Brandon,McManus,GB,K,17,201,75,34,1991-07-25,"Hatfield, PA",,2014
-4429096,Blake,Corum,LAR,RB,22,210,68,24,2000-11-25,"Marshall, VA",83,
-3912547,Sam,Darnold,Sea,QB,14,225,75,28,1997-06-05,"Capistrano Beach, CA",3,2018
-4682745,Jaylen,Wright,Mia,RB,5,208,70,22,2003-04-01,"Durham, NC",120,
-3049899,Younghoe,Koo,Atl,K,6,195,70,31,1994-08-03,"Ridgewood, NJ",,2017
-4429023,MarShawn,Lloyd,GB,RB,32,220,69,24,2001-01-05,"Wilmington, DE",88,
-3051909,Daniel,Carlson,LV,K,8,215,77,30,1995-01-23,"Colorado Springs, CO",167,2018
-4038441,Justice,Hill,Bal,RB,43,205,70,27,1997-11-14,"Tulsa, OK",113,2019
-8439,Aaron,Rodgers,Pit,QB,8,223,74,41,1983-12-02,"Chico, CA",24,2005
-4432762,Shedeur,Sanders,Cle,QB,12,212,74,23,2002-02-07,"Dallas, TX",144,
-4361432,Romeo,Doubs,GB,WR,87,204,74,25,2000-04-13,"Los Angeles, CA",132,
-2577327,Tyler,Lockett,Ten,WR,4,182,70,32,1992-09-28,"Tulsa, OK",69,2015
-15864,Geno,Smith,LV,QB,7,221,75,34,1990-10-10,"Miami, FL",39,2013
-2473037,Jason,Myers,Sea,K,5,190,70,34,1991-05-12,"Chula Vista, CA",,2015
-4567104,Will,Reichard,Min,K,16,187,73,24,2001-01-09,"Hoover, AL",203,
-4678006,Elijah,Arroyo,Sea,TE,18,254,77,22,2003-04-05,"Frisco, TX",50,
-4038815,Rico,Dowdle,Car,RB,5,215,71,27,1998-06-14,"Asheville, NC",,2020
-4600981,Pat,Bryant,Den,WR,13,204,74,22,2002-12-10,"Jacksonville, FL",74,
-15683,Justin,Tucker,FA,K,9,191,73,35,1989-11-21,"Austin, TX",,2012
-4689114,Jaxson,Dart,NYG,QB,6,223,74,22,2003-05-13,"Kaysville, UT",25,
-4427095,DeMario,Douglas,NE,WR,3,192,68,24,2000-12-08,"Jacksonville, FL",210,
-2976499,Amari,Cooper,FA,WR,18,210,73,31,1994-06-18,"Miami, FL",4,2015
-4808766,Mason,Taylor,NYJ,TE,85,251,77,21,2004-05-08,"Plantation, FL",42,
-3117256,Dalton,Schultz,Hou,TE,86,242,77,29,1996-07-11,"South Jordan, UT",137,2018
-4431545,Will,Shipley,Phi,RB,28,209,71,22,2002-08-29,"Weddington, NC",127,
-2576414,Raheem,Mostert,LV,RB,31,212,70,33,1992-04-09,"New Smyrna Beach, FL",,2015
-14881,Russell,Wilson,NYG,QB,3,206,71,36,1988-11-29,"Richmond, VA",75,2012
-4432775,Dont'e,Thornton Jr.,LV,WR,10,205,77,22,2002-11-30,"Baltimore, MD",108,
-4360761,Michael,Wilson,Ari,WR,14,213,74,25,2000-02-23,"Simi Valley, CA",94,
-4429059,Woody,Marks,Hou,RB,27,208,70,24,2000-12-29,"Atlanta, GA",116,
-4686361,Cam,Little,Jax,K,39,172,73,21,2003-08-17,"Moore, OK",212,
-4242433,Joshua,Palmer,Buf,WR,5,210,73,25,1999-09-22,"Brampton, ON",77,
-4372066,Jake,Moody,SF,K,4,210,73,25,1999-11-23,"Northville, MI",99,
-4722893,Jaleel,McLaughlin,Den,RB,38,187,67,24,2000-09-13,"Marshville, NC",,
-3043234,Zane,Gonzalez,FA,K,47,202,72,30,1995-05-07,"Deer Park, TX",224,2017
-3916945,Darius,Slayton,NYG,WR,18,198,73,28,1997-01-12,"Norcross, GA",171,2019
-4599739,Kendre,Miller,NO,RB,5,220,72,23,2002-06-11,"Mount Enterprise, TX",71,
-2573401,Tyler,Higbee,LAR,TE,89,255,78,32,1993-01-01,"Clearwater, FL",110,2016
-16731,Brandin,Cooks,NO,WR,10,190,70,31,1993-09-25,"Stockton, CA",20,2014
-4045163,Miles,Sanders,Dal,RB,27,211,71,28,1997-05-01,"Pittsburgh, PA",53,2019
-4597500,Adonai,Mitchell,Ind,WR,10,205,74,22,2002-10-08,"Missouri City, TX",52,
-3929785,Nick,Westbrook-Ikhine,Mia,WR,18,211,74,28,1997-03-21,"Lake Mary, FL",,2020
-4243389,Calvin,Austin III,Pit,WR,19,162,69,26,1999-03-24,"Memphis, TN",138,
-4575131,Jacory,Croskey-Merritt,Wsh,RB,32,208,71,24,2001-04-12,"Montgomery, AL",245,
-3932905,Diontae,Johnson,Cle,WR,16,183,70,29,1996-07-05,"Ruskin, FL",66,2019
-4248528,Christian,Watson,GB,WR,9,208,76,26,1999-05-12,"Tampa, FL",34,
-4685350,Trevor,Etienne,Car,RB,23,198,68,21,2004-07-09,"Jennings, LA",114,
-4035676,Zack,Moss,FA,RB,31,220,70,27,1997-12-15,"Hialeah Gardens, FL",86,2020
-4569923,Andy,Borregales,NE,K,36,202,71,22,2003-01-02,"Miami, FL",182,
-3676833,KaVontae,Turpin,Dal,WR,9,153,69,29,1996-08-02,"Monroe, LA",,
-4366031,Tank,Dell,Hou,WR,3,165,70,25,1999-10-29,"Daytona Beach, FL",69,
-4360689,Tyler,Shough,NO,QB,6,219,77,25,1999-09-28,"Chandler, AZ",40,
-4432734,Jalen,Milroe,Sea,QB,6,216,74,22,2002-12-13,"Katy, TX",92,
-3728262,Ray-Ray,McCloud III,Atl,WR,34,185,69,28,1996-10-15,"Tampa, FL",187,2018
-4382466,Jalen,Nailor,Min,WR,1,190,71,26,1999-03-02,"Palmdale, CA",191,
-4596334,Keaton,Mitchell,Bal,RB,34,190,68,23,2002-01-17,"Mcdonough, GA",,
-3045138,Mike,Williams,LAC,WR,81,218,76,30,1994-10-04,"Vance, SC",7,2017
-4258595,Cole,Kmet,Chi,TE,85,257,78,26,1999-03-10,"Lake Barrington, IL",43,2020
-4429148,Theo,Johnson,NYG,TE,84,264,78,24,2001-02-26,"Windsor, ON",107,
-4874509,DJ,Giddens,Ind,RB,21,212,73,21,2003-08-26,"Junction City, KS",151,
-4431588,Ja'Tavion,Sanders,Car,TE,0,252,76,22,2003-03-27,"Denton, TX",101,
-4040761,Devin,Singletary,NYG,RB,26,203,67,27,1997-09-03,"Deerfield Beach, FL",74,2019
-4360078,Alec,Pierce,Ind,WR,14,211,75,25,2000-05-02,"Glen Ellyn, IL",53,
-5123663,Isaac,TeSlaa,Det,WR,18,214,76,23,2002-02-20,"Hudsonville, MI",70,
-4710341,Jarquez,Hunter,LAR,RB,35,204,69,22,2002-12-29,"Philadelphia, MS",117,
-4036131,Noah,Fant,Cin,TE,86,249,76,27,1997-11-20,"Omaha, NE",20,2019
-4586312,Jaylin,Noel,Hou,WR,82,201,71,22,2002-09-04,"Kansas City, MO",79,
-4368003,Andrei,Iosivas,Cin,WR,80,210,75,25,1999-10-15,"Honolulu, HI",206,
-4570037,Terrance,Ferguson,LAR,TE,18,247,77,22,2003-03-07,"Littleton, CO",46,
-4360797,Tutu,Atwell,LAR,WR,5,165,69,25,1999-10-07,"Miami, FL",57,
-3135321,Hunter,Renfrow,Car,WR,13,185,70,29,1995-12-21,"Myrtle Beach, SC",149,2019
-4360294,Antonio,Gibson,NE,RB,4,228,72,27,1998-06-23,"Stockbridge, GA",66,2020
-3128390,Allen,Lazard,NYJ,WR,10,227,77,29,1995-12-11,"Urbandale, IA",,2018
-4695883,Jalen,Coker,Car,WR,18,213,75,23,2001-10-30,"Sterling, VA",,
-4608686,Kyle,Monangai,Chi,RB,25,207,68,23,2002-06-06,"Roseland, NJ",233,
-5082630,Jalen,Royals,KC,WR,11,195,72,22,2003-02-18,"Powder Springs, GA",133,
-4249417,Jalen,Tolbert,Dal,WR,1,195,73,26,1999-02-27,"Mobile, AL",88,
-4708486,Jimmy,Horn Jr.,Car,WR,15,174,68,22,2002-09-12,"Sanford, FL",208,
-3929645,Juwan,Johnson,NO,TE,83,231,76,28,1996-09-13,"Glassboro, NJ",,2020
-4361577,Dyami,Brown,Jax,WR,5,195,72,25,1999-11-01,"Charlotte, NC",82,
-5083076,Harold,Fannin Jr.,Cle,TE,88,241,76,21,2004-07-20,"Canton, OH",67,
-4711533,Ollie,Gordon II,Mia,RB,31,225,74,21,2004-01-15,"Fort Worth, TX",179,
-4597703,Tory,Horton,Sea,WR,15,196,74,22,2002-11-29,"Fresno, CA",166,
-4240472,Noah,Gray,KC,TE,83,240,75,26,1999-04-30,"Leominster, MA",162,
-4241555,Elijah,Mitchell,KC,RB,25,200,70,27,1998-05-02,"Erath, LA",194,
-2468609,Taysom,Hill,NO,TE,7,221,74,34,1990-08-23,"Pocatello, ID",,2017
-3115306,Josh,Reynolds,NYJ,WR,83,192,75,30,1995-02-16,"San Antonio, TX",117,2017
-3930086,Dawson,Knox,Buf,TE,88,254,76,28,1996-11-14,"Brentwood, TN",96,2019
-4678008,Jonathon,Brooks,Car,RB,24,207,72,22,2003-07-21,"Hallettsville, TX",46,
-4430104,Sincere,McCormick,LV,RB,28,204,68,24,2000-09-10,"Converse, TX",,
-3917792,Daniel,Jones,Ind,QB,17,230,77,28,1997-05-27,"Charlotte, NC",6,2019
-4426948,Luke,McCaffrey,Wsh,WR,11,198,74,24,2001-04-02,"Highlands Ranch, CO",100,
-4239934,AJ,Dillon,Phi,RB,29,247,72,27,1998-05-02,"New London, CT",62,2020
-3915486,Tyler,Conklin,LAC,TE,83,248,75,30,1995-07-30,"Chesterfield, MI",157,2018
-3915411,Ty,Johnson,Buf,RB,26,210,70,27,1997-09-17,"Cumberland, MD",186,2019
-12460,Graham,Gano,NYG,K,9,202,74,38,1987-04-09,"Pensacola, FL",,2009
-4883647,Elic,Ayomanor,Ten,WR,5,206,74,22,2003-06-03,"Medicine Hat, AB",136,
-4240703,Kenny,Pickett,Cle,QB,8,220,75,27,1998-06-06,"Oakhurst, NJ",20,
-4596602,Brashard,Smith,KC,RB,30,196,70,22,2003-04-11,"Richmond Heights, FL",228,
-4430870,KeAndre,Lambert-Smith,LAC,WR,84,182,73,23,2002-07-29,"Norfolk, VA",158,
-14880,Kirk,Cousins,Atl,QB,18,205,75,36,1988-08-19,"Holland, MI",102,2012
-3121409,Noah,Brown,Wsh,WR,85,225,74,29,1996-01-06,"Flanders, NJ",239,2017
-4429299,Tahj,Brooks,Cin,RB,25,230,70,23,2002-05-13,"Manor, TX",193,
-4682652,Devin,Neal,NO,RB,30,213,71,21,2003-08-12,"Lawrence, KS",184,
-4431492,Roman,Wilson,Pit,WR,10,186,70,24,2001-06-19,"Honolulu, HI",84,
-4429086,Michael,Mayer,LV,TE,87,256,76,24,2001-07-06,"Independence, KY",35,
-4371733,Kenneth,Gainwell,Pit,RB,14,200,69,26,1999-03-14,"Yazoo City, MS",150,
-4428718,Tre,Tucker,LV,WR,1,182,68,24,2001-03-08,"Akron, OH",100,
-4571557,Spencer,Shrader,Ind,K,3,201,74,26,1999-05-19,"Lithia, FL",,
-4430871,Sean,Tucker,TB,RB,44,205,70,23,2001-10-25,"Owings Mills, MD",,
-4690923,Ben,Sinnott,Wsh,TE,82,247,76,23,2002-06-14,"Waterloo, IA",53,
-15965,Dustin,Hopkins,Cle,K,7,210,74,34,1990-10-01,"Houston, TX",177,2013
-16002,Kyle,Juszczyk,SF,RB,44,235,74,34,1991-04-23,"Medina, OH",130,2013
-4363538,Chad,Ryland,Ari,K,38,195,72,25,1999-10-15,"Lebanon, PA",112,
-4685397,Jordan,James,SF,RB,29,208,69,21,2004-03-29,"Nashville, TN",147,
-4431280,Troy,Franklin,Den,WR,11,180,75,22,2003-02-06,"East Palo Alto, CA",102,
-4243537,Gabe,Davis,FA,WR,0,225,74,26,1999-04-01,"Sanford, FL",128,2020
-3116389,Samaje,Perine,Cin,RB,34,240,71,29,1995-09-16,"Pflugerville, TX",114,2017
-4259619,Blake,Grupe,NO,K,19,156,67,26,1998-11-05,"Sedalia, MO",,
-4429955,Will,Howard,Pit,QB,18,236,76,23,2001-09-24,"Downingtown, PA",185,
-3120348,JuJu,Smith-Schuster,KC,WR,9,215,73,28,1996-11-22,"Long Beach, CA",62,2017
-4048244,Alexander,Mattison,Mia,RB,8,220,71,27,1998-06-19,"San Bernardino, CA",102,2019
-3051738,Marquez,Valdes-Scantling,Sea,WR,1,206,76,30,1994-10-10,"St. Petersburg, FL",174,2018
-11252,Joe,Flacco,Cle,QB,15,245,78,40,1985-01-16,"Audubon, NJ",18,2008
-4428850,Dontayvion,Wicks,GB,WR,13,206,73,24,2001-06-16,"Plaquemine, LA",159,
-4360698,Joe,Milton III,Dal,QB,10,246,77,25,2000-03-06,"Pahokee, FL",193,
-4569682,Audric,Estime,Den,RB,23,227,71,21,2003-09-06,"Nyack, NY",147,
-4427238,Dillon,Gabriel,Cle,QB,5,205,71,24,2000-12-28,"Mililani, HI",94,
-4361409,Jahan,Dotson,Phi,WR,2,184,71,25,2000-03-22,"Nazareth, PA",16,
-4428085,Luke,Musgrave,GB,TE,88,253,78,24,2000-09-02,"Bend, OR",42,
-4242214,Clyde,Edwards-Helaire,NO,RB,23,207,67,26,1999-04-11,"Baton Rouge, LA",32,2020
-4372414,Elijah,Moore,Buf,WR,18,178,70,25,2000-03-27,"Fort Lauderdale, FL",34,
-4569382,Jordan,Whittington,LAR,WR,88,202,73,24,2000-10-01,"Cuero, TX",213,
-3134353,Tim,Patrick,Det,WR,12,210,77,31,1993-11-23,"San Diego, CA",,2017
-3043116,Demarcus,Robinson,SF,WR,5,202,73,30,1994-09-21,"Fort Valley, GA",126,2016
-4602667,Jaylin,Lane,Wsh,WR,83,196,70,23,2002-05-01,"Clover, SC",128,
-2969939,Jameis,Winston,NYG,QB,19,231,76,31,1994-01-06,"Bessemer, AL",1,2015
-4431487,Savion,Williams,GB,WR,83,222,76,23,2001-11-22,"Marshall, TX",87,
-4426339,Spencer,Rattler,NO,QB,2,211,72,24,2000-09-28,"Phoenix, AZ",150,
-4429033,Jermaine,Burton,Cin,WR,81,204,72,24,2001-06-28,"Calabasas, CA",80,
-3121427,Curtis,Samuel,Buf,WR,1,195,71,28,1996-08-11,"Brooklyn, NY",40,2017
-3127292,Will,Dissly,LAC,TE,89,265,76,29,1996-07-08,"Bozeman, MT",120,2018
-4595342,Oronde,Gadsden II,LAC,TE,86,236,77,22,2003-06-25,"Fort Lauderdale, FL",165,
-4887558,Emanuel,Wilson,GB,RB,31,226,70,26,1999-05-08,"Charlotte, NC",,
-4565185,Tai,Felton,Min,WR,13,183,73,22,2003-03-15,"Ashburn, VA",102,
-4429022,Kayshon,Boutte,NE,WR,9,197,71,23,2002-05-07,"New Iberia, LA",187,
-4569603,Malik,Washington,Mia,WR,6,195,68,24,2001-01-04,"Lawrenceville, GA",184,
-4360238,Dameon,Pierce,Hou,RB,31,215,70,25,2000-02-19,"Bainbridge, GA",107,
-3930066,Van,Jefferson,Ten,WR,11,200,73,29,1996-07-26,"Brentwood, TN",57,2020
-4695404,Isaiah,Davis,NYJ,RB,32,220,73,23,2002-02-21,"Joplin, MO",173,
-4569559,Devaughn,Vele,Den,WR,17,210,77,27,1997-12-12,"San Diego, CA",235,
-4576297,AJ,Barner,Sea,TE,88,251,78,23,2002-05-03,"Aurora, OH",121,
-3043275,Austin,Hooper,NE,TE,81,254,76,30,1994-11-04,"San Ramon, CA",81,2016
-4037235,Greg,Dortch,Ari,WR,4,180,67,27,1998-05-29,"Richmond, VA",,2019
-3122840,Deshaun,Watson,Cle,QB,4,223,75,29,1995-09-14,"Gainesville, GA",12,2017
-4373684,Scott,Matlock,LAC,DT,44,296,76,25,2000-06-28,"Homedale, ID",200,
-3124084,Joey,Slye,Ten,K,6,213,71,29,1996-04-10,"Stafford, VA",,2019
-4568263,Ryan,Fitzgerald,Car,K,35,193,71,24,2000-08-13,"Coolidge, GA",,
-4692590,Jalin,Hyatt,NYG,WR,13,185,72,23,2001-09-25,"Irmo, SC",73,
-4361777,Zamir,White,LV,RB,3,227,71,25,1999-09-18,"Laurinburg, NC",122,
-4242431,Ty,Chandler,Min,RB,32,204,71,27,1998-05-12,"Nashville, TN",169,
-4432620,Parker,Washington,Jax,WR,11,204,70,23,2002-03-21,"Sugar Land, TX",185,
-3128444,Matthew,Wright,Car,K,37,174,71,29,1996-03-22,"Lancaster, PA",,2020
-4430637,Ja'Lynn,Polk,NE,WR,1,203,73,23,2002-04-11,"Lufkin, TX",37,
-3116407,Mason,Rudolph,Pit,QB,2,235,77,30,1995-07-17,"Rock Hill, SC",76,2018
-3045523,Kendrick,Bourne,NE,WR,84,205,73,30,1995-08-04,"Portland, OR",,2017
-4372096,Luke,Schoonmaker,Dal,TE,86,250,77,26,1998-09-28,"Hamden, CT",58,
-4362478,Emari,Demercado,Ari,RB,31,215,69,26,1999-01-20,"Inglewood, CA",,
-4431353,Xavier,Restrepo,Ten,WR,87,202,70,23,2002-04-22,"Coconut Creek, FL",,
-2991662,Mack,Hollins,NE,WR,13,221,76,31,1993-09-16,"Rockville, MD",118,2017
-4430802,Darnell,Washington,Pit,TE,80,264,79,23,2001-08-17,"Las Vegas, NV",93,
-4889929,Quinn,Ewers,Mia,QB,14,209,74,22,2003-03-15,"Southlake, TX",231,
-4035886,Khalil,Herbert,Ind,RB,26,212,69,27,1998-04-21,"Fort Lauderdale, FL",217,
-15807,Cordarrelle,Patterson,FA,RB,84,220,74,34,1991-03-17,"Rock Hill, SC",29,2013
-4608810,Tez,Johnson,TB,WR,83,165,70,23,2002-05-18,"Pinson, AL",235,
-2983509,Dare,Ogunbowale,Hou,RB,33,205,70,31,1994-05-04,"Milwaukee, WI",,2017
-4242512,Malik,Willis,GB,QB,2,225,73,26,1999-05-25,"Atlanta, GA",86,
-4372485,Rondale,Moore,Min,WR,4,181,67,25,2000-06-09,"New Albany, IN",49,
-3921690,Josh,Oliver,Min,TE,84,259,77,28,1997-03-21,"Paso Robles, CA",69,2019
-10621,Nick,Folk,NYJ,K,18,222,73,40,1984-11-05,"Sherman Oaks, CA",178,2007
-4426875,Sam,Howell,Min,QB,8,225,73,24,2000-09-16,"Indian Trail, NC",144,
-4361418,Will,Levis,Ten,QB,8,229,76,26,1999-06-27,"Madison, CT",33,
-3149687,Chris,Brooks,GB,RB,30,219,73,25,2000-01-11,"Oceanside, CA",,
-4431268,Chimere,Dike,Ten,WR,17,196,73,22,2002-12-14,"Waukesha, WI",103,
-4360405,Jake,Bobo,Sea,WR,19,207,76,27,1998-08-04,"North Andover, MA",,
-4430968,Kimani,Vidal,LAC,RB,30,215,68,23,2001-08-28,"Marietta, GA",181,
-3917668,Alec,Ingold,Mia,RB,30,232,73,29,1996-07-09,"Green Bay, WI",,2019
-4038524,Gardner,Minshew,KC,QB,17,225,73,29,1996-05-16,"Brandon, MS",178,2019
-4686728,Gunnar,Helm,Ten,TE,84,241,77,22,2002-09-06,"Englewood, CO",120,
-4426485,Jonathan,Mingo,Dal,WR,81,220,74,24,2001-04-20,"Brandon, MS",39,
-2973405,Kalif,Raymond,Det,WR,11,180,68,31,1994-08-08,"Lawrenceville, GA",,2016
-4426496,Cade,Stover,Hou,TE,87,251,76,25,2000-06-12,"Mansfield, OH",123,
-15880,Robert,Woods,Pit,WR,16,190,72,33,1992-04-10,"Carson, CA",41,2013
-4421446,Craig,Reynolds,Det,RB,13,216,71,29,1996-06-15,"Willow Grove, PA",,2019
-3917914,Olamide,Zaccheaus,Chi,WR,14,199,68,28,1997-07-23,"Plainfield, NJ",,2019
-4808830,Damien,Martinez,Sea,RB,22,217,72,21,2004-01-31,"Lewisville, TX",223,
-4613104,Malachi,Corley,NYJ,WR,6,215,71,23,2002-03-21,"Orange City, FL",65,
-16760,Jimmy,Garoppolo,LAR,QB,11,225,74,33,1991-11-02,"Arlington Heights, IL",62,2014
-4431466,Jordan,Watkins,SF,WR,17,196,71,23,2002-02-15,"Louisville, KY",138,
-5092436,Jude,McAtamney,NYG,K,99,205,74,25,2000-05-09,"Derry, ",,
-4241374,Grant,Calcaterra,Phi,TE,81,240,76,26,1998-12-04,"Rancho Santa Margarita, CA",198,
-4240858,Hendon,Hooker,Det,QB,2,220,75,27,1998-01-13,"Greensboro, NC",68,
-4372780,Tommy,Tremble,Car,TE,82,250,76,25,2000-06-02,"Johns Creek, GA",83,
-4690143,LaJohntay,Wester,Bal,WR,83,170,69,23,2002-03-29,"Palmetto, FL",203,
-4383396,Hunter,Luepke,Dal,RB,40,238,73,25,2000-02-28,"Spencer, WI",,
-4695193,Efton,Chism III,NE,WR,86,198,70,23,2001-10-26,"Monroe, WA",,
-2576980,Marcus,Mariota,Wsh,QB,18,222,76,31,1993-10-30,"Honolulu, HI",2,2015
-16733,Odell,Beckham Jr.,FA,WR,3,200,71,32,1992-11-05,"New Orleans, LA",12,2014
-4362477,Derius,Davis,LAC,WR,12,165,68,24,2000-09-11,"Saint Francisville, LA",125,
-3044720,Joshua,Dobbs,NE,QB,11,220,75,30,1995-01-26,"Alpharetta, GA",135,2017
-2972515,Cooper,Rush,Bal,QB,15,225,75,31,1993-11-21,"Charlotte, MI",,2017
-4242392,Brock,Wright,Det,TE,89,254,77,26,1998-11-27,"Cypress, TX",,
-3843945,Foster,Moreau,NO,TE,87,250,76,28,1997-05-06,"New Orleans, LA",137,2019
-3127586,Jeremy,McNichols,Wsh,RB,26,214,69,29,1995-12-26,"Long Beach, CA",162,2017
-3886812,Jake,Browning,Cin,QB,6,209,74,29,1996-04-11,"Folsom, CA",,2019
-4241464,Mac,Jones,SF,QB,10,220,75,26,1998-09-05,"Jacksonville, FL",15,
-4249836,Pierre,Strong Jr.,Cle,RB,20,215,71,26,1998-12-10,"Little Rock, AR",127,
-4567096,John,Metchie III,Hou,WR,8,195,72,25,2000-07-18,"Brampton, ON",44,
-4696882,Devontez,Walker,Bal,WR,81,198,73,24,2001-06-19,"Charlotte, NC",113,
-4685201,Tanner,McKee,Phi,QB,16,231,78,25,2000-04-27,"Corona, CA",188,
-4240021,Cam,Akers,NO,RB,26,217,70,26,1999-06-22,"Clinton, MS",52,2020
-4429105,Arian,Smith,NYJ,WR,82,179,72,23,2001-10-11,"Bradley, FL",110,
-3911853,Adam,Trautman,Den,TE,82,253,77,28,1997-02-05,"Williamsburg, MI",105,2020
-4051167,Parker,Romo,NE,K,37,190,71,27,1997-08-24,"Peachtree City, GA",,
-4361259,Zach,Wilson,Mia,QB,0,214,74,26,1999-08-03,"Draper, UT",2,
-16757,Derek,Carr,NO,QB,4,215,75,34,1991-03-28,"Bakersfield, CA",36,2014
-14163,Tyrod,Taylor,NYJ,QB,2,217,73,36,1989-08-03,"Hampton, VA",180,2011
-2976592,Sterling,Shepard,TB,WR,17,194,70,32,1993-02-10,"Oklahoma City, OK",40,2016
-4260394,Aidan,O'Connell,LV,QB,12,206,75,26,1998-09-01,"Long Grove, IL",135,
-4692022,Javon,Baker,NE,WR,6,202,73,23,2002-02-18,"Atlanta, GA",110,
-4360799,Jordan,Travis,FA,QB,3,200,73,25,2000-05-02,"West Palm Beach, FL",171,
-4575665,Jacob,Cowing,SF,WR,19,171,69,24,2001-02-04,"Maricopa, AZ",135,
-4361516,Daniel,Bellinger,NYG,TE,82,255,78,24,2000-09-22,"Las Vegas, NV",112,
-4570688,Caden,Davis,FA,K,,210,74,,,"Coppell, TX",,
-4431453,Deuce,Vaughn,Dal,RB,42,176,66,23,2001-11-02,"Round Rock, TX",212,
-4574716,Harrison,Mevis,NYJ,K,45,243,71,23,2002-03-27,"Warsaw, IN",,
-4567156,Treylon,Burks,Ten,WR,16,225,74,25,2000-03-23,"Warren, AR",18,
-14012,Andy,Dalton,Car,QB,14,220,74,37,1987-10-29,"Katy, TX",35,2011
-3039707,Mitchell,Trubisky,Buf,QB,11,222,75,30,1994-08-20,"Mentor, OH",2,2017
-4429676,Tyler,Goodson,Ind,RB,31,197,69,24,2000-11-10,"Suwanee, GA",,
-3051392,Ezekiel,Elliott,FA,RB,24,225,72,30,1995-07-22,"St. Louis, MO",4,2016
-4039050,Devin,Duvernay,Chi,WR,12,202,71,27,1997-09-12,"Sachse, TX",92,2020
-4714365,Carson,Steele,KC,RB,42,228,72,22,2002-10-21,"Greenwood, IN",,
-4383351,Trey,Lance,LAC,QB,5,226,76,25,2000-05-09,"Marshall, MN",3,
-4035004,Mecole,Hardman,GB,WR,6,187,70,27,1998-03-12,"Bowman, GA",56,2019
-4775196,Tommy,Mellott,LV,WR,19,206,71,23,2001-10-16,"Butte, MT",213,
-4686104,Johnny,Wilson,Phi,WR,89,228,78,24,2001-04-03,"Pacoima, CA",185,
-4690013,Rasheen,Ali,Bal,RB,26,210,71,24,2001-02-16,"Cleveland, OH",165,
-4365395,Julian,Hill,Mia,TE,89,251,76,25,2000-07-09,"Fayetteville, NC",,
-4012556,C.J.,Ham,Min,RB,30,250,71,32,1993-07-22,"Duluth, MN",,2016
-3059722,Zay,Jones,Ari,WR,17,200,74,30,1995-03-30,"Austin, TX",37,2017
-4434153,Tyson,Bagent,Chi,QB,17,212,75,25,2000-06-08,"Martinsburg, WV",,
-4034946,Kyle,Trask,TB,QB,2,236,77,27,1998-03-06,"Manvel, TX",64,
-4240391,Tommy,DeVito,NYG,QB,15,210,74,27,1998-08-07,"Cedar Grove, NJ",,
-4037457,Travis,Homer,Chi,RB,21,211,70,27,1998-08-07,"West Palm Beach, FL",204,2019
-4259308,Raheem,Blackshear,Car,RB,3,190,69,27,1998-06-05,"Philadelphia, PA",,
-4039358,Patrick,Taylor Jr.,SF,RB,32,217,74,27,1998-04-29,"Humble, TX",,2020
-4242557,Colby,Parkinson,LAR,TE,84,265,79,26,1999-01-08,"Simi Valley, CA",133,2020
-3924327,Drew,Lock,Sea,QB,2,228,76,28,1996-11-10,"Lee's Summit, MO",42,2019
-4426844,Elijah,Higgins,Ari,TE,84,245,75,24,2000-10-27,"Austin, TX",197,
-4241424,Tylan,Wallace,Bal,WR,16,200,71,26,1999-05-13,"Fort Worth, TX",131,
-4429121,Kalel,Mullings,Ten,RB,28,226,74,22,2002-10-04,"West Roxbury, MA",188,
-4367567,Julius,Chestnut,Ten,RB,36,228,71,24,2000-10-26,"Bowie, MD",,
-4426407,Trey,Palmer,TB,WR,10,190,73,24,2001-04-02,"Kentwood, LA",191,
-4431562,Phil,Mafah,Dal,RB,37,234,72,22,2002-10-24,"Loganville, GA",239,
-4427391,Kenny,McIntosh,Sea,RB,25,204,72,25,2000-03-03,"Fort Lauderdale, FL",237,
-4036348,Michael,Gallup,Wsh,WR,12,205,73,29,1996-03-04,"Monroe, GA",81,2018
-4372716,Nikko,Remigio,KC,WR,81,187,69,25,1999-11-04,"Orange, CA",,
-4257188,Charlie,Jones,Cin,WR,15,190,72,26,1998-10-29,"Deerfield, IL",131,
-3892775,Jarrett,Stidham,Den,QB,8,215,75,28,1996-08-08,"Stephenville, TX",133,2019
-3052096,Johnny,Mundt,Jax,TE,86,243,76,30,1994-11-23,"Modesto, CA",,2017
-4361372,Jeremy,Ruckert,NYJ,TE,89,250,77,24,2000-08-11,"Lindenhurst, NY",101,
-4428532,Ainias,Smith,Phi,WR,82,176,69,24,2001-05-31,"Missouri City, TX",152,
-2975417,Patrick,Ricard,Bal,RB,42,300,75,31,1994-05-27,"Spencer, MA",,2017
-4430191,Skyy,Moore,KC,WR,24,195,70,24,2000-09-10,"New Kensington, PA",54,
-3051926,Gus,Edwards,FA,RB,4,238,73,30,1995-04-13,"Staten Island, NY",,2018
-4427834,Erick,All Jr.,Cin,TE,83,255,77,24,2000-09-13,"Fairfield, OH",115,
-4683423,Riley,Leonard,Ind,QB,15,216,75,22,2002-09-13,"Fairhope, AL",189,
-4241263,Charlie,Kolar,Bal,TE,88,265,78,26,1999-02-10,"Norman, OK",128,
-4362630,Terrace,Marshall Jr.,Phi,WR,46,200,74,25,2000-06-09,"Bossier City, LA",59,
-3116593,Dalvin,Cook,FA,RB,20,210,70,29,1995-08-10,"Miami, FL",41,2017
-4372505,Payne,Durham,TB,TE,87,255,77,25,2000-06-15,"Suwanee, GA",171,
-4683243,Mitchell,Evans,Car,TE,84,258,77,22,2003-03-18,"Wadsworth, OH",163,
-3050481,Tanner,Hudson,Cin,TE,87,241,77,30,1994-11-12,"Big Sandy, TN",,2018
-4911851,LeQuint,Allen Jr.,Jax,RB,36,201,72,21,2004-08-05,"Millville, NJ",236,
-4240573,Ihmir,Smith-Marsette,NYG,WR,87,185,73,25,1999-08-29,"Newark, NJ",157,
-10636,Mason,Crosby,FA,K,21,212,73,40,1984-09-03,"Georgetown, TX",193,2007
-4570561,Eric,Gray,NYG,RB,20,211,70,25,1999-11-04,"Memphis, TN",172,
-3975763,Greg,Joseph,FA,K,3,208,72,31,1994-08-04,"Boca Raton, FL",,2018
-4427278,Xavier,Gipson,NYJ,WR,3,189,69,24,2001-03-08,"Dallas, TX",,
-4242526,John Samuel,Shenker,FA,TE,86,249,76,26,1998-09-02,"Albany, GA",,
-3127310,Drew,Sample,Cin,TE,89,260,77,29,1996-04-16,"Bellevue, WA",52,2019
-4374033,Jermar,Jefferson,Ten,RB,32,215,70,25,2000-04-15,"Harbor City, CA",257,
-4565908,Tyler,Scott,Chi,WR,10,182,70,23,2001-10-12,"Norton, OH",133,
-4040612,Luke,Farrell,SF,TE,89,250,77,27,1997-10-14,"Perry, OH",145,
-4427985,Bub,Means,NO,WR,16,215,74,24,2001-01-10,"Lovejoy, GA",170,
-4039057,Lil'Jordan,Humphrey,NYG,WR,81,225,76,27,1998-04-19,"Southlake, TX",,2019
-3118892,Justin,Watson,Hou,WR,84,215,74,29,1996-04-04,"Bridgeville, PA",144,2018
-4912274,Sione,Vaki,Det,RB,33,216,71,24,2001-07-30,"Antioch, CA",132,
-4212909,David,Moore,Car,WR,83,220,72,30,1995-01-15,"Gainesville, TX",226,2017
-4259305,Bo,Melton,GB,CB,16,189,71,26,1999-05-18,"Mays Landing, NJ",229,
-4708049,Gavin,Bartholomew,Min,TE,86,246,77,22,2003-04-30,"Schuylkill Haven, PA",202,
-3914397,Scotty,Miller,Pit,WR,13,174,69,28,1997-07-31,"Barrington, IL",208,2019
-2578570,Jacoby,Brissett,Ari,QB,7,235,76,32,1992-12-11,"West Palm Beach, FL",91,2016
-4428678,Jamari,Thrash,Cle,WR,80,190,72,24,2000-12-19,"LaGrange, GA",156,
-4360086,Josh,Whyle,Ten,TE,81,248,79,25,1999-09-08,"Cincinnati, OH",147,
-4243160,Laviska,Shenault Jr.,Buf,WR,15,227,73,26,1998-10-05,"Desoto, TX",42,2020
-4240600,Kadarius,Toney,FA,WR,87,193,72,26,1999-01-27,"Mobile, AL",20,
-13982,Julio,Jones,FA,WR,80,220,75,36,1989-02-08,"Foley, AL",6,2011
-5083754,Ryan,Flournoy,Dal,WR,19,200,73,25,1999-10-27,"Hazel Crest, IL",216,
-2998565,Mo,Alie-Cox,Ind,TE,81,267,77,31,1993-09-19,"Alexandria, VA",,2017
-3052897,Durham,Smythe,Chi,TE,81,248,77,29,1995-08-09,"Belton, TX",123,2018
-4034949,Eddy,Pineiro,FA,K,4,190,71,29,1995-09-13,"Miami, FL",,2018
-4048228,John,Bates,Wsh,TE,87,259,78,27,1997-11-06,"Lebanon, OR",124,
-4035020,Charlie,Woerner,Atl,TE,89,250,77,27,1997-10-16,"Tiger, GA",190,2020
-4366963,Dylan,Laube,LV,RB,23,204,69,25,1999-12-14,"Westhampton, NY",208,
-3047876,KhaDarel,Hodge,Atl,WR,4,210,74,30,1995-01-03,"D Lo, MS",,2018
-4570242,Nick,Nash,Atl,WR,80,195,75,26,1999-07-08,"Irvine, CA",,
-4259553,Stetson,Bennett IV,LAR,QB,13,190,71,27,1997-10-28,"Blackshear, GA",128,
-4048259,Avery,Williams,Phi,RB,18,195,69,27,1998-07-15,"Pasadena, CA",183,
-2576336,Ameer,Abdullah,SF,RB,,203,69,32,1993-06-13,"Homewood, AL",54,2015
-4241401,Trey,Sermon,Pit,RB,27,215,72,26,1999-01-30,"Marietta, GA",88,
-4372071,Hassan,Haskins,LAC,RB,28,228,74,25,1999-11-26,"St. Louis, MO",131,
-4430723,Jared,Wiley,KC,TE,12,249,78,24,2000-11-02,"Temple, TX",131,
-4244688,Nathan,Rourke,FA,QB,16,210,73,27,1998-05-24,"Oakville, ON",,
-4693331,Cam,Miller,LV,QB,5,211,73,24,2001-06-18,"Solon, IA",215,
-15168,Case,Keenum,Chi,QB,11,220,73,37,1988-02-17,"Abilene, TX",,2012
-4242546,Davis,Mills,Hou,QB,10,225,76,26,1998-10-21,"Duluth, GA",67,
-3115394,DJ,Chark,Atl,WR,16,198,75,28,1996-09-23,"Alexandria, LA",61,2018
-16728,Teddy,Bridgewater,TB,QB,16,210,74,32,1992-11-10,"Miami, FL",32,2014
-4039160,Kylen,Granson,Phi,TE,83,242,75,27,1998-03-27,"Austin, TX",127,
-4429202,Israel,Abanikanda,GB,RB,23,217,70,22,2002-10-05,"Brooklyn, NY",143,
-3059989,Nick,Mullens,Jax,QB,14,210,72,30,1995-03-21,"Hoover, AL",,2017
-3916566,K.J.,Osborn,Wsh,WR,13,203,71,28,1997-06-10,"Ypsilanti, MI",176,2020
-4596439,Dominic,Lovett,Det,WR,19,185,70,22,2002-11-08,"Belleville, IL",244,
-3895785,Ben,DiNucci,FA,QB,15,215,74,28,1996-11-24,"Wexford, PA",231,2020
-2515270,Michael,Burton,Den,RB,20,247,72,33,1992-02-01,"Long Valley, NJ",168,2015
-4362619,Chris,Rodriguez Jr.,Wsh,RB,36,224,71,25,1999-09-26,"Mcdonough, GA",193,
-4362748,Tyler,Badie,Den,RB,28,197,68,25,2000-02-07,"Memphis, TN",196,
-4427105,Max,Duggan,FA,QB,8,207,73,24,2001-03-12,"Council Bluffs, IA",239,
-4362504,Brevin,Jordan,Hou,TE,9,245,75,25,2000-07-16,"Las Vegas, NV",147,
-3045144,Tyler,Boyd,FA,WR,83,203,74,30,1994-11-15,"Clairton, PA",55,2016
-14993,Greg,Zuerlein,FA,K,9,195,72,37,1987-12-27,"Lincoln, NE",171,2012
-4429805,Frank,Gore Jr.,Buf,RB,20,195,68,23,2002-03-13,"Miami, FL",,
-4240631,DeeJay,Dallas,Ari,RB,20,225,70,26,1998-09-16,"Brunswick, GA",144,2020
-4367178,Dorian,Thompson-Robinson,Phi,QB,14,203,74,25,1999-11-14,"Las Vegas, NV",140,
-4386544,Xavier,Smith,LAR,WR,19,176,69,27,1997-09-21,"Haines City, FL",,
-2565969,Taylor,Heinicke,LAC,QB,4,210,73,32,1993-03-15,"Lawrenceville, GA",,2015
-4689334,Malik,Heath,GB,WR,18,213,74,25,2000-03-31,"Jackson, MS",,
-3821683,Austin,Seibert,FA,K,3,211,69,28,1996-11-15,"Belleville, IL",170,2019
-4429001,Jase,McClellan,FA,RB,30,215,71,23,2002-06-25,"Aledo, TX",186,
-3932442,Equanimeous,St. Brown,SF,WR,,214,77,28,1996-09-30,"Anaheim, CA",207,2018
-4362921,Tyquan,Thornton,KC,WR,2,185,74,25,2000-08-07,"Miami, FL",50,
-4433971,Kyle,McCord,Phi,QB,19,218,75,22,2002-09-19,"Mount Laurel, NJ",181,
-4710855,Konata,Mumpfield,LAR,WR,15,186,71,22,2002-10-24,"Hoschton, GA",242,
-4686781,Brenden,Rice,LAC,WR,82,210,75,23,2002-03-18,"Chandler, AZ",225,
-4691688,Robbie,Ouzts,Sea,RB,40,274,75,22,2002-09-06,"Rock Hill, SC",175,
-3126997,Tom,Kennedy,Det,WR,85,195,70,29,1996-07-29,"Farmingdale, NY",,2019
-4242519,Anders,Carlson,FA,K,18,220,77,27,1998-06-16,"Colorado Springs, CO",207,
-3123075,Braxton,Berrios,Hou,WR,17,185,69,29,1995-10-06,"Raleigh, NC",210,2018
-4035656,Ben,Skowronek,Pit,WR,15,224,75,28,1997-06-27,"Fort Wayne, IN",249,
-2580216,DeAndre,Carter,Cle,WR,2,190,68,32,1993-04-10,"San Jose, CA",,2015
-3121410,Parris,Campbell,FA,WR,80,208,72,28,1997-07-16,"Akron, OH",59,2019
-2971281,Pharaoh,Brown,Mia,TE,85,260,77,31,1994-05-04,"Lyndhurst, OH",,2017
-2980453,Jamaal,Williams,FA,RB,21,224,72,30,1995-04-03,"Fontana, CA",134,2017
-4427600,Terrell,Jennings,NE,RB,26,217,72,24,2001-03-01,"Jacksonville, FL",,
-4686422,Xavier,Hutchinson,Hou,WR,19,210,75,25,2000-06-01,"Jacksonville, FL",205,
-11122,Matt,Prater,FA,K,5,201,70,40,1984-08-10,"Mayfield Heights, OH",,2007
-4241961,Connor,Heyward,Pit,TE,83,230,72,26,1999-01-22,"Duluth, GA",208,
-4045305,Ian,Thomas,LV,TE,80,253,75,29,1996-06-06,"Baltimore, MD",101,2018
-2574511,Brandon,Allen,Ten,QB,10,209,74,32,1992-09-05,"Fayetteville, AR",201,2016
-4426364,Baylor,Cupp,Bal,TE,17,243,78,25,2000-05-10,"Brock, TX",,
-4429835,George,Holani,Sea,RB,36,210,71,25,1999-12-16,"Bellflower, CA",,
-4429262,Jaheim,Bell,NE,TE,88,241,74,24,2001-06-14,"Lake City, FL",231,
-4258195,Donovan,Peoples-Jones,NO,WR,14,204,74,26,1999-02-19,"Detroit, MI",187,2020
-4241410,Jelani,Woods,Ind,TE,80,253,79,26,1998-10-09,"Ellenwood, GA",73,
-4696700,Tip,Reiman,Ari,TE,87,271,77,23,2001-09-17,"Rapid City, SD",82,
-4239086,Desmond,Ridder,Cin,QB,4,215,76,25,1999-08-31,"Louisville, KY",74,
-4240657,Michael,Carter,Ari,RB,22,201,68,26,1999-05-07,"Navarre, FL",107,
-4692835,Jalen,Brooks,Dal,WR,83,205,74,25,2000-05-07,"Harrisburg, NC",244,
-3122168,Trent,Sherfield Sr.,Den,WR,5,205,73,29,1996-02-25,"Danville, IL",,2018
-2976316,Michael,Thomas,FA,WR,13,212,75,32,1993-03-03,"Los Angeles, CA",47,2016
-3915802,Lucky,Jackson,Min,WR,81,186,72,28,1997-07-17,,,
-4039607,J.J.,Taylor,Hou,RB,26,185,66,27,1998-01-04,"Corona, CA",,2020
-4250764,Stone,Smartt,NYJ,TE,84,226,76,26,1998-10-04,"Sacramento, CA",,
-4367209,Greg,Dulcich,NYG,TE,89,245,76,25,2000-03-26,"Glendale, CA",80,
-4248425,Carlos,Washington Jr.,Atl,RB,26,210,71,26,1998-12-26,"Clinton, MD",,
-3061612,Jamal,Agnew,Atl,WR,14,190,70,30,1995-04-03,"San Diego, CA",165,2017
-4245131,Tim,Jones,Min,WR,14,200,73,27,1998-05-15,"Biloxi, MS",,
-4061956,Ashton,Dulin,Ind,WR,16,215,74,28,1997-05-15,"Reynoldsburg, OH",,2019
-4245661,Lucas,Havrisik,FA,K,30,188,74,25,1999-09-29,"Riverside, CA",,
-2573079,Carson,Wentz,FA,QB,11,237,77,32,1992-12-30,"Bismarck, ND",2,2016
-4243003,Ronnie,Rivers,LAR,RB,20,192,69,26,1999-01-31,"Brentwood, CA",,
-3127306,Dante,Pettis,NO,WR,17,200,74,29,1995-10-23,"San Clemente, CA",44,2018
-4431479,Ricky,White III,Sea,WR,86,184,73,23,2002-02-06,"Marietta, GA",238,
-4244856,Austin,Trammell,Jax,WR,81,185,70,27,1998-07-04,"Spring, TX",,
-4569371,Isaiah,Williams,Cin,WR,18,185,70,24,2001-01-29,"St. Louis, MO",,
-4241802,Jalen,Reagor,LAC,WR,88,197,71,26,1999-01-01,"Waxahachie, TX",21,2020
-4372063,Ronnie,Bell,Det,WR,10,195,72,25,2000-01-28,"Kansas City, MO",253,
-2310331,Tyler,Johnson,NYJ,WR,16,208,73,26,1998-08-25,"Minneapolis, MN",161,2020
-4590292,Thomas,Fidone II,NYG,TE,86,255,78,22,2002-09-20,"Council Bluffs, IA",219,
-4372519,Jashaun,Corbin,Atl,RB,30,200,71,24,2000-08-20,"Rockledge, FL",,
-4036335,Cedrick,Wilson Jr.,NO,WR,11,197,74,30,1995-03-10,"Memphis, TN",208,2018
-4567095,Keilan,Robinson,Phi,RB,35,191,68,25,2000-02-16,"Washington, DC",167,
-4360967,Brevyn,Spann-Ford,Dal,TE,89,270,79,25,1999-12-27,"Saint Cloud, MN",,
-4040774,Harrison,Bryant,Phi,TE,85,243,77,27,1998-04-23,"Gray, GA",115,2020
-4360174,Michael,Woods II,FA,WR,81,204,73,25,2000-03-19,"Magnolia, TX",202,
-4239944,Hunter,Long,Jax,TE,84,243,77,26,1998-08-19,"Exeter, NH",81,
-3052177,John,Ross,FA,WR,38,190,71,29,1995-11-27,"Long Beach, CA",9,2017
-2531358,Chris,Manhertz,NYG,TE,85,235,78,33,1992-04-10,"Bronx, NY",,2016
-4431536,Donovan,Edwards,NYJ,RB,40,212,73,22,2003-02-25,"West Bloomfield, MI",,
-4570409,David,Bell,Cle,WR,18,212,73,24,2000-12-14,"Indianapolis, IN",99,
-2978109,Zach,Pascal,NYG,WR,83,219,74,30,1994-12-18,"Upper Marlboro, MD",,2017
-3115364,Leonard,Fournette,FA,RB,5,228,72,30,1995-01-18,"New Orleans, LA",4,2017
-4036431,Darrynton,Evans,Buf,RB,21,203,70,27,1998-07-09,"Oak Hill, FL",93,2020
-4429684,Anthony,Gould,Ind,WR,6,174,68,24,2001-04-06,"Leavenworth, KS",142,
-4573699,Jackson,Hawes,Buf,TE,85,253,76,24,2000-12-06,"Salt Lake City, UT",173,
-4043016,Dee,Eskridge,Mia,WR,82,190,69,28,1997-03-23,"Bluffton, IN",56,
-4035222,Trayveon,Williams,Cle,RB,36,206,68,27,1997-10-18,"Houston, TX",182,2019
-4362186,Erik,Ezukanma,Mia,WR,84,210,74,25,2000-01-25,"Fort Worth, TX",125,
-4361765,Brayden,Narveson,FA,K,7,215,71,25,1999-09-28,"Scottsdale, AZ",,
-4373632,Jaren,Hall,FA,QB,15,207,72,27,1998-03-24,"Spanish Fork, UT",164,
-4360231,Lucas,Krull,Den,TE,85,260,78,27,1998-07-11,"Shawnee, KS",,
-4248068,Aaron,Shampklin,FA,RB,33,195,70,25,1999-10-18,"Paramount, CA",,
-3926231,Britain,Covey,LAR,WR,10,173,68,28,1997-03-18,"Provo, UT",,
-4427575,Jha'Quan,Jackson,Ten,WR,19,188,69,25,2000-05-15,"Luling, LA",182,
-4696736,Tanner,Brown,FA,K,,180,72,25,1999-12-28,"Saugus, CA",,
-3115293,Kyle,Allen,Det,QB,8,210,75,29,1996-03-08,"Scottsdale, AZ",,2018
-3917960,Steven,Sims,Sea,WR,84,190,70,28,1997-03-31,"Houston, TX",,2019
-3722362,Brett,Rypien,Min,QB,11,210,74,29,1996-07-09,"Spokane, WA",,2019
-4722908,Drew,Ogletree,Ind,TE,85,260,77,27,1998-07-28,"Dayton, OH",192,
-4360739,Simi,Fehoko,Ari,WR,80,225,76,27,1997-11-05,"Sandy, UT",179,
-4698301,Jermaine,Jackson,FA,WR,80,170,67,25,2000-06-02,"Oakland, CA",,
-15091,Randy,Bullock,FA,K,46,208,69,35,1989-12-16,"Klein, TX",161,2012
-16486,Brett,Maher,FA,K,8,180,72,35,1989-11-21,"Kearney, NE",,2018
-4428963,Cade,York,FA,K,3,198,73,24,2001-01-27,"McKinney, TX",124,
-4608362,Shane,Zylstra,Det,TE,84,244,76,28,1996-11-16,"Spicer, MN",,
-4250360,Bailey,Zappe,KC,QB,14,215,73,26,1999-04-26,"Victoria, TX",137,
-2975863,Eric,Saubert,Sea,TE,81,253,77,31,1994-05-09,"Hoffman Estates, IL",174,2017
-4240911,Jacob,Kibodi,FA,RB,36,225,73,26,1998-10-04,"Baton Rouge, LA",,
-4050373,Quez,Watkins,Ari,WR,16,193,72,27,1998-06-09,"Athens, AL",200,2020
-4241820,Sam,Ehlinger,Den,QB,4,222,73,26,1998-09-30,"Austin, TX",218,
-4426553,Davis,Allen,LAR,TE,87,251,78,24,2001-02-03,"Calhoun, GA",175,
-4035312,Anthony,Brown Jr.,FA,QB,19,217,73,27,1998-07-27,"Cliffwood, NJ",,
-4259592,Sean,Clifford,GB,QB,16,218,74,27,1998-07-14,"Cincinnati, OH",149,
-4243322,Jake,Haener,NO,QB,3,200,73,26,1999-03-10,"Danville, CA",127,
-4036419,Skylar,Thompson,Pit,QB,17,219,74,28,1997-06-04,"Independence, MO",247,
-4362018,Blake,Whiteheart,Cle,TE,86,250,76,25,2000-03-22,"Winston-Salem, NC",,
-4035671,Tyler,Huntley,Cle,QB,7,205,73,27,1998-02-03,"Dania, FL",,2020
-4040980,Irv,Smith Jr.,Hou,TE,83,242,74,26,1998-08-09,"New Orleans, LA",50,2019
-3932423,Miles,Boykin,Chi,WR,80,231,75,28,1996-10-12,"Tinley Park, IL",93,2019
-4383440,Nate,Adkins,Den,TE,45,252,75,26,1999-07-09,"Knoxville, TN",,
+playerId,firstName,lastName,proTeam,defaultPosition,jersey,weight,height,age,dateOfBirth,birthPlace,debutYear,draftSelection
+4429795,Jahmyr,Gibbs,DET,RB,0,202,69,24,2002-03-20,"Dalton, GA",,12
+4374302,Amon-Ra,St. Brown,DET,WR,14,202,72,26,1999-10-24,"Anaheim Hills, CA",,112
+4430807,Bijan,Robinson,ATL,RB,7,215,71,24,2002-01-30,"Tucson, AZ",,8
+4426515,Puka,Nacua,LAR,WR,12,216,74,25,2001-05-29,"Provo, UT",,177
+4362628,Ja'Marr,Chase,CIN,WR,1,205,72,26,2000-03-01,"Harvey, LA",,5
+4430878,Jaxon,Smith-Njigba,SEA,WR,11,197,72,24,2002-02-14,"Rockwall, TX",,20
+3918298,Josh,Allen,BUF,QB,17,237,77,30,1996-05-21,"Firebaugh, CA",2018,7
+3117251,Christian,McCaffrey,SF,RB,23,210,71,30,1996-06-07,"Castle Rock, CO",2017,8
+4241389,CeeDee,Lamb,DAL,WR,88,198,74,27,1999-04-08,"Richmond, TX",2020,17
+4242335,Jonathan,Taylor,IND,RB,28,226,70,27,1999-01-19,"Salem, NJ",2020,41
+4262921,Justin,Jefferson,MIN,WR,18,195,73,27,1999-06-16,"Saint Rose, LA",2020,22
+4379399,James,Cook III,BUF,RB,4,190,71,26,1999-09-25,"Miami, FL",,63
+4361307,Trey,McBride,ARI,TE,85,246,76,26,1999-11-22,"Fort Morgan, CO",,55
+4432665,Brock,Bowers,LV,TE,89,235,76,23,2002-12-13,"Napa, CA",,13
+3929630,Saquon,Barkley,PHI,RB,26,233,72,29,1997-02-09,"Coplay, PA",2018,2
+4429160,De'Von,Achane,MIA,RB,28,191,69,24,2001-10-13,"Missouri City, TX",,84
+3043078,Derrick,Henry,BAL,RB,22,252,74,32,1994-01-04,"Yulee, FL",2016,45
+3953687,Brandon,Aubrey,DAL,K,17,218,75,31,1995-03-14,,,
+3916387,Lamar,Jackson,BAL,QB,8,205,74,29,1997-01-07,"Pompano Beach, FL",2018,32
+4426502,Drake,London,ATL,WR,5,215,76,25,2001-07-24,"Moorpark, CA",,8
+4047646,A.J.,Brown,NE,WR,1,226,73,29,1997-06-30,"Starkville, MS",2019,51
+4426354,George,Pickens,DAL,WR,3,200,75,25,2001-03-04,"Hoover, AL",,52
+4258173,Nico,Collins,HOU,WR,12,222,76,27,1999-03-19,"Birmingham, AL",,89
+4890973,Ashton,Jeanty,LV,RB,2,208,68,22,2003-12-02,"Jacksonville, FL",,6
+4723086,Colston,Loveland,CHI,TE,84,241,78,22,2004-04-09,"Gooding, ID",,10
+4362238,Chase,Brown,CIN,RB,30,210,70,26,2000-03-21,"London, ON",,163
+4567048,Kenneth,Walker III,KC,RB,9,211,69,25,2000-10-20,"Arlington, TN",,41
+4685382,Omarion,Hampton,LAC,RB,8,220,72,23,2003-03-16,"Clayton, NC",,22
+4428331,Rashee,Rice,KC,WR,4,204,73,26,2000-04-22,"North Richland Hills, TX",,55
+4431452,Drake,Maye,NE,QB,10,225,76,24,2002-08-30,"Huntersville, NC",,3
+4870808,Jeremiyah,Love,ARI,RB,4,212,72,21,2005-05-31,"St. Louis, MO",,3
+4361370,Chris,Olave,NO,WR,12,187,72,26,2000-06-27,"San Ysidro, CA",,11
+4241478,DeVonta,Smith,PHI,WR,6,170,72,27,1998-11-14,"Amite, LA",,10
+4595348,Malik,Nabers,NYG,WR,1,200,72,23,2003-07-28,"Youngsville, LA",,6
+4361579,Javonte,Williams,DAL,RB,33,222,70,26,2000-04-25,"Wallace, NC",,35
+4431459,Tyler,Warren,IND,TE,84,256,78,24,2002-05-24,"Mechanicsville, VA",,14
+4569618,Garrett,Wilson,NYJ,WR,5,183,72,26,2000-07-22,"Austin, TX",,10
+4426348,Jayden,Daniels,WSH,QB,5,210,76,25,2000-12-18,"San Bernardino, CA",,2
+4427366,Breece,Hall,NYJ,RB,20,217,71,25,2001-05-31,"Wichita, KS",,36
+4430737,Kyren,Williams,LAR,RB,23,207,69,26,2000-08-26,"St. Louis, MO",,164
+4685472,Tetairoa,McMillan,CAR,WR,4,212,77,23,2003-04-05,"Waimanalo, HI",,8
+16800,Davante,Adams,LAR,WR,17,204,73,33,1992-12-24,"Palo Alto, CA",2014,53
+4362081,Cameron,Dicker,LAC,K,11,216,73,26,2000-05-06,"Austin, TX",,
+4696981,Cam,Skattebo,NYG,RB,44,215,71,24,2002-02-05,"Rio Linda, CA",,105
+4429615,Zay,Flowers,BAL,WR,4,183,69,25,2000-09-11,"Fort Lauderdale, FL",,22
+4040715,Jalen,Hurts,PHI,QB,1,223,73,28,1998-08-07,"Houston, TX",2020,53
+2473037,Jason,Myers,SEA,K,5,190,70,35,1991-05-12,"Chula Vista, CA",2015,
+4239996,Travis,Etienne Jr.,NO,RB,3,215,70,27,1999-01-26,"Jennings, LA",,25
+3915511,Joe,Burrow,CIN,QB,9,215,76,29,1996-12-10,"Athens, OH",2020,1
+4567750,Emeka,Egbuka,TB,WR,2,205,73,23,2002-10-14,"Steilacoom, WA",,19
+4612826,Ladd,McConkey,LAC,WR,15,185,72,24,2001-11-11,"Chatsworth, GA",,34
+4239993,Tee,Higgins,CIN,WR,5,220,76,27,1999-01-18,"Oak Ridge, TN",2020,33
+4685702,Quinshon,Judkins,CLE,RB,10,221,72,22,2003-10-29,"Pike Road, AL",,36
+4372016,Jaylen,Waddle,DEN,WR,17,185,70,27,1998-11-25,"Houston, TX",,6
+4360248,Kyle,Pitts Sr.,ATL,TE,8,250,78,25,2000-10-06,"Philadelphia, PA",,4
+4596448,Bucky,Irving,TB,RB,7,195,70,24,2002-08-19,"Chicago, IL",,125
+3121422,Terry,McLaurin,WSH,WR,17,210,72,30,1995-09-15,"Indianapolis, IN",2019,76
+4259545,D'Andre,Swift,CHI,RB,4,204,68,27,1999-01-14,"Philadelphia, PA",2020,35
+3915416,DJ,Moore,BUF,WR,2,213,72,29,1997-04-14,"Philadelphia, PA",2018,24
+4430027,Sam,LaPorta,DET,TE,87,245,75,25,2001-01-12,"Highland, IL",,34
+2971573,Ka'imi,Fairbairn,HOU,K,15,183,72,32,1994-01-29,"Kailua, HI",2016,
+4426388,Jameson,Williams,DET,WR,1,184,73,25,2001-03-26,"St. Louis, MO",,12
+5083076,Harold,Fannin Jr.,CLE,TE,44,241,76,22,2004-07-20,"Canton, OH",,67
+4035538,David,Montgomery,HOU,RB,32,230,71,29,1997-06-07,"Cincinnati, OH",2019,73
+4431299,Rome,Odunze,CHI,WR,15,214,75,24,2002-06-03,"Las Vegas, NV",,9
+3040151,George,Kittle,SF,TE,85,250,76,32,1993-10-09,"Norman, OK",2017,146
+4689114,Jaxson,Dart,NYG,QB,6,223,74,23,2003-05-13,"Kaysville, UT",,25
+4685512,Jadarian,Price,SEA,RB,8,209,71,22,2003-10-09,"Denison, TX",,32
+2577417,Dak,Prescott,DAL,QB,4,230,74,33,1993-07-29,"Haughton, LA",2016,135
+4882093,Bhayshul,Tuten,JAX,RB,33,209,69,23,2003-02-14,"Paulsboro, NJ",,104
+4574716,Harrison,Mevis,LAR,K,92,245,72,24,2002-03-27,"Warsaw, IN",,
+4685278,Luther,Burden III,CHI,WR,10,210,72,22,2003-12-12,"St. Louis, MO",,39
+4871023,Carnell,Tate,TEN,WR,14,192,74,21,2005-01-19,"Chicago, IL",,4
+12483,Matthew,Stafford,LAR,QB,9,214,75,38,1988-02-07,"Dallas, TX",2009,1
+3128429,Courtland,Sutton,DEN,WR,14,216,76,30,1995-10-10,"Brenham, TX",2018,40
+4038941,Justin,Herbert,LAC,QB,10,236,78,28,1998-03-10,"Eugene, OR",2020,6
+4432708,Marvin,Harrison Jr.,ARI,WR,18,220,75,24,2002-08-11,"Philadelphia, PA",,4
+4432710,TreVeyon,Henderson,NE,RB,32,202,70,23,2002-10-22,"Hopewell, VA",,38
+4047650,DK,Metcalf,PIT,WR,4,229,76,28,1997-12-14,"Oxford, MS",2019,64
+4431611,Caleb,Williams,CHI,QB,18,226,73,24,2001-11-18,"Washington, DC",,1
+4569173,Rhamondre,Stevenson,NE,RB,38,227,72,28,1998-02-23,"Las Vegas, NV",,120
+15847,Travis,Kelce,KC,TE,87,250,77,36,1989-10-05,"Cleveland Heights, OH",2013,63
+4047365,Josh,Jacobs,GB,RB,8,223,70,28,1998-02-11,"Tulsa, OK",2019,24
+4572680,Tucker,Kraft,GB,TE,85,259,77,25,2000-11-03,"Timber Lake, SD",,78
+16737,Mike,Evans,SF,WR,5,231,77,33,1993-08-21,"Galveston, TX",2014,7
+4569987,Jaylen,Warren,PIT,RB,30,215,68,27,1998-11-01,"Salt Lake City, UT",,
+3121023,Dallas,Goedert,PHI,TE,88,256,77,31,1995-01-03,"Britton, SD",2018,49
+4035687,Michael,Pittman Jr.,PIT,WR,11,223,76,28,1997-10-05,"Woodland Hills, CA",2020,34
+3916148,Tony,Pollard,TEN,RB,20,209,72,29,1997-04-30,"Memphis, TN",2019,128
+4248528,Christian,Watson,GB,WR,9,215,76,27,1999-05-12,"Tampa, FL",,34
+4432620,Parker,Washington,JAX,WR,11,204,70,24,2002-03-21,"Sugar Land, TX",,185
+4038815,Rico,Dowdle,PIT,RB,13,215,71,28,1998-06-14,"Asheville, NC",2020,
+4426338,Bo,Nix,DEN,QB,10,217,74,26,2000-02-25,"Pinson, AL",,12
+4686361,Cam,Little,JAX,K,39,172,73,23,2003-08-17,"Moore, OK",,212
+4360310,Trevor,Lawrence,JAX,QB,16,220,78,26,1999-10-06,"Cartersville, GA",,1
+3139477,Patrick,Mahomes,KC,QB,15,225,74,30,1995-09-17,"Whitehouse, TX",2017,10
+4360761,Michael,Wilson,ARI,WR,14,213,74,26,2000-02-23,"Simi Valley, CA",,94
+4360078,Alec,Pierce,IND,WR,14,211,75,26,2000-05-02,"Glen Ellyn, IL",,53
+4371733,Kenny,Gainwell,TB,RB,1,200,69,27,1999-03-14,"Yazoo City, MS",,150
+4242355,Jake,Ferguson,DAL,TE,87,250,77,27,1999-01-18,"Madison, WI",,129
+4034949,Eddy,Pineiro,SF,K,18,190,71,30,1995-09-13,"Miami, FL",2018,
+4361741,Brock,Purdy,SF,QB,13,220,73,26,1999-12-27,"Gilbert, AZ",,262
+4701936,Matthew,Golden,GB,WR,0,191,71,23,2003-08-01,"Houston, TX",,23
+4241416,Chuba,Hubbard,CAR,RB,30,210,73,27,1999-06-11,"Sherwood Park, AB",,126
+4678008,Jonathon,Brooks,CAR,RB,25,207,72,23,2003-07-21,"Hallettsville, TX",,46
+4241985,J.K.,Dobbins,DEN,RB,27,212,70,27,1998-12-17,"La Grange, TX",2020,55
+4432773,Brian,Thomas Jr.,JAX,WR,7,209,74,23,2002-10-08,"Walker, LA",,23
+2976212,Stefon,Diggs,WSH,WR,3,191,72,32,1993-11-29,"Gaithersburg, MD",2015,146
+4569587,Wan'Dale,Robinson,TEN,WR,4,185,68,25,2001-01-05,"Frankfort, KY",,43
+3042519,Aaron,Jones Sr.,MIN,RB,33,208,70,31,1994-12-02,"El Paso, TX",2017,182
+3055899,Harrison,Butker,KC,K,7,205,76,31,1995-07-14,"Decatur, GA",2017,233
+3116365,Mark,Andrews,BAL,TE,89,250,77,31,1995-09-06,"Scottsdale, AZ",2018,86
+4361050,Isaiah,Likely,NYG,TE,9,241,76,26,2000-04-18,"Cambridge, MA",,139
+4429023,MarShawn,Lloyd,GB,RB,32,220,69,25,2001-01-05,"Wilmington, DE",,88
+4429205,Jordan,Addison,MIN,WR,3,179,71,24,2002-01-27,"Frederick, MD",,23
+3916433,Jakobi,Meyers,JAX,WR,3,200,74,29,1996-11-09,"Lithonia, GA",2019,
+4608686,Kyle,Monangai,CHI,RB,25,207,68,24,2002-06-06,"Roseland, NJ",,233
+4429096,Blake,Corum,LAR,RB,24,202,68,25,2000-11-25,"Marshall, VA",,83
+3116165,Chris,Godwin Jr.,TB,WR,14,209,73,30,1996-02-27,"Middletown, DE",2017,84
+4568490,RJ,Harvey,DEN,RB,12,205,68,25,2001-02-04,"Orlando, FL",,60
+4683062,Xavier,Worthy,KC,WR,1,165,71,23,2003-04-27,"Fresno, CA",,28
+4385690,Dalton,Kincaid,BUF,TE,86,246,75,26,1999-10-18,"Las Vegas, NV",,25
+4429025,Quentin,Johnston,LAC,WR,1,208,74,25,2001-09-06,"Temple, TX",,21
+4697815,Rachaad,White,WSH,RB,1,214,72,27,1999-01-12,"Kansas City, MO",,91
+4870795,Makai,Lemon,PHI,WR,9,192,71,22,2004-06-02,"Los Alamitos, CA",,20
+4685415,Travis,Hunter,JAX,WR,12,185,73,23,2003-05-18,"Suwanee, GA",,2
+4689936,Jake,Bates,DET,K,39,205,70,27,1999-03-03,"Tomball, TX",,
+4575131,Jacory,Croskey-Merritt,WSH,RB,22,208,71,25,2001-04-12,"Montgomery, AL",,245
+4362249,Jayden,Reed,GB,WR,11,187,71,26,2000-04-28,"Naperville, IL",,50
+4688813,Josh,Downs,IND,WR,2,171,69,25,2001-08-12,"Suwanee, GA",,79
+4373678,Khalil,Shakir,BUF,WR,10,190,72,26,2000-02-03,"Murrieta, CA",,148
+3046779,Jared,Goff,DET,QB,16,217,76,31,1994-10-14,"Novato, CA",2016,1
+4360569,Jordan,Mason,MIN,RB,27,230,71,27,1999-05-24,"Gallatin, TN",,
+3126486,Deebo,Samuel Sr.,SF,WR,19,215,72,30,1996-01-15,"Inman, SC",2019,36
+3917315,Kyler,Murray,MIN,QB,1,207,70,29,1997-08-07,"Allen, TX",2019,1
+4710714,De'Zhaun,Stribling,SF,WR,15,207,74,23,2002-12-18,"Kapolei, HI",,33
+4870653,KC,Concepcion,CLE,WR,1,190,72,21,2004-09-24,"Charlotte, NC",,24
+4361432,Romeo,Doubs,NE,WR,87,210,74,26,2000-04-13,"Los Angeles, CA",,132
+4036133,T.J.,Hockenson,MIN,TE,87,248,77,29,1997-07-03,"Chariton, IA",2019,8
+4429059,Woody,Marks,HOU,RB,4,208,70,25,2000-12-29,"Atlanta, GA",,116
+3052587,Baker,Mayfield,TB,QB,6,215,73,31,1995-04-14,"Austin, TX",2018,1
+4428557,Tyjae,Spears,TEN,RB,2,195,71,25,2001-06-15,"Ponchatoula, LA",,81
+3046439,Hunter,Henry,NE,TE,85,249,77,31,1994-12-07,"Little Rock, AR",2016,35
+4426385,Zach,Charbonnet,SEA,RB,26,220,73,25,2001-01-08,"Camarillo, CA",,52
+4697745,Tyler,Loop,BAL,K,33,191,71,25,2001-08-04,"Lucas, TX",,186
+4695883,Jalen,Coker,CAR,WR,18,213,75,24,2001-10-30,"Sterling, VA",,
+4360689,Tyler,Shough,NO,QB,6,219,77,26,1999-09-28,"Chandler, AZ",,40
+3929645,Juwan,Johnson,NO,TE,83,231,76,29,1996-09-13,"Glassboro, NJ",2020,
+4032473,Rashid,Shaheed,SEA,WR,22,180,72,28,1998-08-31,"San Diego, CA",,
+4036378,Jordan,Love,GB,QB,10,219,76,27,1998-11-02,"Bakersfield, CA",2020,26
+4686658,Mike,Washington Jr.,LV,RB,30,228,74,23,2003-07-03,"Utica, NY",,122
+5083315,Kenyon,Sadiq,NYJ,TE,16,241,75,21,2005-03-04,"Idaho Falls, ID",,16
+3054850,Alvin,Kamara,NO,RB,41,215,70,31,1995-07-25,"Norcross, GA",2017,67
+17372,Chris,Boswell,PIT,K,9,185,74,35,1991-03-16,"Keller, TX",2014,
+4373626,Tyler,Allgeier,ARI,RB,22,220,70,26,2000-04-15,"Fontana, CA",,151
+4880281,Jordyn,Tyson,NO,WR,0,203,74,22,2004-08-12,"Allen, TX",,8
+3917792,Daniel,Jones,IND,QB,17,230,77,29,1997-05-27,"Charlotte, NC",2019,6
+4361529,Isiah,Pacheco,DET,RB,10,210,70,27,1999-03-02,"Vineland, NJ",,251
+17427,Cairo,Santos,CHI,K,8,173,68,34,1991-11-12,"Saint Augustine, FL",2014,
+4366031,Tank,Dell,HOU,WR,1,165,70,26,1999-10-29,"Daytona Beach, FL",,69
+4430834,Jalen,McMillan,TB,WR,11,192,73,24,2001-12-07,"Fresno, CA",,92
+4567104,Will,Reichard,MIN,K,16,190,73,25,2001-01-09,"Hoover, AL",,203
+4362619,Chris,Rodriguez Jr.,JAX,RB,24,224,71,26,1999-09-26,"Mcdonough, GA",,193
+15818,Keenan,Allen,IND,WR,10,211,74,34,1992-04-27,"Greensboro, NC",2013,76
+4702555,Jonah,Coleman,DEN,RB,20,220,68,23,2003-08-20,"Stockton, CA",,108
+4241463,Jerry,Jeudy,CLE,WR,3,195,73,27,1999-04-24,"Deerfield Beach, FL",2020,15
+4241474,Brian,Robinson Jr.,ATL,RB,15,225,73,27,1999-03-22,"Tuscaloosa, AL",,98
+3912547,Sam,Darnold,SEA,QB,14,225,75,29,1997-06-05,"Capistrano Beach, CA",2018,3
+4428718,Tre,Tucker,LV,WR,1,182,68,25,2001-03-08,"Akron, OH",,100
+4570037,Terrance,Ferguson,LAR,TE,18,252,77,23,2003-03-07,"Littleton, CO",,46
+4832800,Denzel,Boston,CLE,WR,12,215,76,22,2003-12-06,"South Hill, WA",,39
+4432577,C.J.,Stroud,HOU,QB,7,218,75,24,2001-10-03,"Inland Empire, CA",,2
+3925357,Calvin,Ridley,TEN,WR,0,190,73,31,1994-12-20,"Fort Lauderdale, FL",2018,26
+4430539,Brenton,Strange,JAX,TE,85,253,76,25,2000-12-27,"Parkersburg, WV",,61
+4596334,Keaton,Mitchell,LAC,RB,34,191,68,24,2002-01-17,"Mcdonough, GA",,
+4242512,Malik,Willis,MIA,QB,2,225,73,27,1999-05-25,"Atlanta, GA",,86
+4360234,Evan,McPherson,CIN,K,2,185,71,27,1999-07-21,"Fort Payne, AL",,149
+5081397,Dylan,Sampson,CLE,RB,22,200,68,21,2004-09-14,"Baton Rouge, LA",,126
+4429013,Tank,Bigsby,PHI,RB,8,215,71,24,2002-08-30,"LaGrange, GA",,88
+4038441,Justice,Hill,BAL,RB,43,205,70,28,1997-11-14,"Tulsa, OK",2019,113
+3117256,Dalton,Schultz,HOU,TE,86,242,77,30,1996-07-11,"South Jordan, UT",2018,137
+4870847,Ja'Kobi,Lane,BAL,WR,6,200,76,22,2004-08-05,"Mesa, AZ",,80
+3150744,Chase,McLaughlin,TB,K,4,190,72,30,1996-04-09,"Cypress, TX",2019,
+4597500,Adonai,Mitchell,NYJ,WR,15,205,74,23,2002-10-08,"Missouri City, TX",,52
+4869645,Caleb,Douglas,MIA,WR,7,205,76,22,2003-09-09,"Missouri City, TX",,75
+4429022,Kayshon,Boutte,HOU,WR,88,197,72,24,2002-05-07,"New Iberia, LA",,187
+4869461,Trey,Smack,GB,K,28,188,73,23,2003-07-12,"Severna Park, MD",,216
+4361411,Pat,Freiermuth,PIT,TE,88,258,77,27,1998-10-25,"Merrimac, MA",,55
+4696044,Kaelon,Black,SF,RB,26,208,69,24,2001-10-17,"Virginia Beach, VA",,90
+4685247,Braelon,Allen,NYJ,RB,0,235,73,22,2004-01-20,"Fond Du Lac, WI",,134
+4382466,Jalen,Nailor,LV,WR,9,190,72,27,1999-03-02,"Palmdale, CA",,191
+4241457,Najee,Harris,NYG,RB,22,232,73,28,1998-03-09,"Antioch, CA",,24
+3116389,Samaje,Perine,CIN,RB,34,240,71,30,1995-09-16,"Pflugerville, TX",2017,114
+2977187,Cooper,Kupp,SEA,WR,10,205,73,33,1993-06-15,"Yakima, WA",2017,69
+4569559,Devaughn,Vele,NO,WR,14,210,77,28,1997-12-12,"San Diego, CA",,235
+4685720,Bryce,Young,CAR,QB,9,204,70,25,2001-07-25,"Pasadena, CA",,1
+4428850,Dontayvion,Wicks,PHI,WR,13,206,73,25,2001-06-16,"Plaquemine, LA",,159
+4429501,Ray,Davis,BUF,RB,7,211,68,26,1999-11-11,"San Francisco, CA",,128
+4688380,Cam,Ward,TEN,QB,1,219,74,24,2002-05-25,"West Columbia, TX",,1
+4360939,Rashod,Bateman,BAL,WR,7,193,73,26,1999-11-29,"Tifton, GA",,27
+4837248,Fernando,Mendoza,LV,QB,15,225,77,22,2003-10-01,"Miami, FL",,1
+3886598,Jauan,Jennings,MIN,WR,14,212,75,29,1997-07-10,"Murfreesboro, TN",2020,217
+4360635,Chig,Okonkwo,WSH,TE,85,238,75,27,1999-09-08,"Powder Springs, GA",,143
+3050478,Jake,Elliott,PHI,K,4,167,69,31,1995-01-21,"Western Springs, IL",2017,153
+4586312,Jaylin,Noel,HOU,WR,13,201,71,24,2002-09-04,"Kansas City, MO",,79
+4569603,Malik,Washington,MIA,WR,6,195,68,25,2001-01-04,"Lawrenceville, GA",,184
+3149687,Chris,Brooks,GB,RB,30,219,73,26,2000-01-11,"Oceanside, CA",,
+4819231,Kaleb,Johnson,GB,RB,,224,73,23,2003-08-14,"Hamilton, OH",,83
+8439,Aaron,Rodgers,PIT,QB,8,223,74,42,1983-12-02,"Chico, CA",2005,24
+4360516,Tyrone,Tracy Jr.,NYG,RB,29,210,71,26,1999-11-23,"Indianapolis, IN",,166
+4576297,AJ,Barner,SEA,TE,88,251,78,24,2002-05-03,"Aurora, OH",,121
+4832955,Emmett,Johnson,KC,RB,10,200,71,22,2003-10-10,"Minneapolis, MN",,161
+4682648,Malachi,Fields,NYG,WR,0,222,76,23,2003-08-26,"Charlottesville, VA",,74
+2985659,Wil,Lutz,DEN,K,3,184,71,32,1994-07-07,"Newnan, GA",2016,
+4685261,Germie,Bernard,PIT,WR,17,206,73,22,2003-12-02,"Las Vegas, NV",,47
+4686728,Gunnar,Helm,TEN,TE,84,241,77,24,2002-09-06,"Englewood, CO",,120
+4723820,Omar,Cooper Jr.,NYJ,WR,83,199,72,22,2003-12-14,"Indianapolis, IN",,30
+3917232,Tyler,Bass,BUF,K,16,183,70,29,1997-02-14,"Irmo, SC",2020,188
+2578570,Jacoby,Brissett,ARI,QB,7,235,76,33,1992-12-11,"West Palm Beach, FL",2016,91
+3123076,David,Njoku,LAC,TE,83,246,76,30,1996-07-10,"Cedar Grove, NJ",2017,29
+10621,Nick,Folk,ATL,K,6,225,73,41,1984-11-05,"Sherman Oaks, CA",2007,178
+4870612,Zachariah,Branch,ATL,WR,17,180,70,22,2004-03-29,"Las Vegas, NV",,79
+4912218,Cyrus,Allen,KC,WR,13,180,71,23,2003-02-11,"New Orleans, LA",,176
+4877706,Jayden,Higgins,HOU,WR,81,215,76,23,2002-12-15,"South Miami, FL",,34
+4686612,Tre',Harris,LAC,WR,9,210,75,24,2002-02-28,"Lafayette, LA",,55
+5083754,Ryan,Flournoy,DAL,WR,19,205,73,26,1999-10-27,"Hazel Crest, IL",,216
+16733,Odell,Beckham Jr.,NYG,WR,13,198,71,33,1992-11-05,"New Orleans, LA",2014,12
+15864,Geno,Smith,NYJ,QB,7,221,74,35,1990-10-10,"Miami, FL",2013,39
+4429835,George,Holani,SEA,RB,36,210,71,26,1999-12-16,"Bellflower, CA",,
+4869961,Chris,Bell,MIA,WR,18,220,74,22,2004-06-07,"Yazoo City, MS",,94
+2576925,Darren,Waller,CAR,TE,35,245,78,33,1992-09-13,"Acworth, GA",2015,204
+4428209,Ricky,Pearsall,SF,WR,1,189,73,25,2000-09-09,"Chandler, AZ",,31
+4571557,Spencer,Shrader,IND,K,3,201,74,27,1999-05-19,"Lithia, FL",,
+4430968,Kimani,Vidal,LAC,RB,28,215,68,25,2001-08-28,"Marietta, GA",,181
+4367209,Greg,Dulcich,MIA,TE,85,245,76,26,2000-03-26,"Glendale, CA",,80
+4240603,Malik,Davis,DAL,RB,20,205,70,27,1998-11-26,"Tampa, FL",,
+5123663,Isaac,TeSlaa,DET,WR,18,214,76,24,2002-02-20,"Hudsonville, MI",,70
+3051876,Evan,Engram,DEN,TE,1,240,75,32,1994-09-02,"Powder Springs, GA",2017,23
+14880,Kirk,Cousins,LV,QB,8,209,75,38,1988-08-19,"Holland, MI",2012,102
+3116406,Tyreek,Hill,FA,WR,10,191,70,32,1994-03-01,"Pearson, GA",2016,165
+4595342,Oronde,Gadsden,LAC,TE,86,236,77,23,2003-06-25,"Fort Lauderdale, FL",,165
+4682745,Jaylen,Wright,MIA,RB,5,208,70,23,2003-04-01,"Durham, NC",,120
+3045147,James,Conner,ARI,RB,6,233,73,31,1995-05-05,"Erie, PA",2017,105
+4569923,Andy,Borregales,NE,K,36,202,71,23,2003-01-02,"Miami, FL",,182
+4383429,Jacob,Saylors,DET,RB,25,195,71,26,2000-03-08,"Jasper, TN",,
+4243331,Cade,Otton,TB,TE,88,247,77,27,1999-04-15,"Tumwater, WA",,106
+4685397,Jordan,James,SF,RB,29,208,69,22,2004-03-29,"Nashville, TN",,147
+4432762,Shedeur,Sanders,CLE,QB,2,212,74,24,2002-02-07,"Dallas, TX",,144
+5081432,Antonio,Williams,WSH,WR,14,195,71,22,2004-07-14,"Irmo, SC",,71
+4635008,Keon,Coleman,BUF,WR,0,213,75,23,2003-05-17,"Opelousas, LA",,33
+3122840,Deshaun,Watson,CLE,QB,4,223,75,30,1995-09-14,"Gainesville, GA",2017,12
+4430034,Xavier,Legette,CAR,WR,17,227,75,25,2001-01-29,"Mullins, SC",,32
+5082424,Dominic,Zvada,NYG,K,34,187,75,22,2003-10-25,"Chandler, AZ",,
+4600981,Pat,Bryant,DEN,WR,13,204,74,23,2002-12-10,"Jacksonville, FL",,74
+3915411,Ty,Johnson,BUF,RB,26,210,70,28,1997-09-17,"Cumberland, MD",2019,186
+4241479,Tua,Tagovailoa,ATL,QB,1,225,73,28,1998-03-02,"Ewa Beach, HI",2020,5
+4040655,Darnell,Mooney,NYG,WR,17,177,71,28,1997-10-29,"Gadsden, AL",2020,173
+3676833,KaVontae,Turpin,DAL,WR,9,158,67,30,1996-08-02,"Monroe, LA",,
+4249087,Matt,Gay,LV,K,4,232,72,32,1994-03-15,"Orem, UT",2019,145
+4711533,Ollie,Gordon II,MIA,RB,0,225,74,22,2004-01-15,"Fort Worth, TX",,179
+4685555,Nicholas,Singleton,TEN,RB,32,219,72,22,2004-01-06,"Shillington, PA",,165
+3051909,Daniel,Carlson,NO,K,48,222,77,31,1995-01-23,"Colorado Springs, CO",2018,167
+3116164,Mike,Gesicki,CIN,TE,88,245,78,30,1995-10-03,"Manahawkin, NJ",2018,42
+4430802,Darnell,Washington,PIT,TE,80,264,79,25,2001-08-17,"Las Vegas, NV",,93
+4259147,Jake,Tonges,SF,TE,88,240,76,27,1999-07-08,"Los Gatos, CA",,
+4869748,Zavion,Thomas,CHI,WR,81,190,70,22,2004-02-14,"Woodmere, LA",,89
+4431268,Chimere,Dike,TEN,WR,17,196,73,23,2002-12-14,"Waukesha, WI",,103
+4431280,Troy,Franklin,DEN,WR,11,180,75,23,2003-02-06,"East Palo Alto, CA",,102
+4361409,Jahan,Dotson,ATL,WR,4,184,71,26,2000-03-22,"Nazareth, PA",,16
+4242557,Colby,Parkinson,LAR,TE,84,266,79,27,1999-01-08,"Simi Valley, CA",2020,133
+4685246,Kaytron,Allen,WSH,RB,31,217,71,23,2003-01-08,"Norfolk, VA",,187
+3916945,Darius,Slayton,FA,WR,18,198,73,29,1997-01-12,"Norcross, GA",2019,171
+4427095,DeMario,Douglas,NE,WR,3,185,68,25,2000-12-08,"Jacksonville, FL",,210
+4429086,Michael,Mayer,LV,TE,87,256,76,25,2001-07-06,"Independence, KY",,35
+4360423,Michael,Penix Jr.,ATL,QB,9,220,75,26,2000-05-08,"Tampa, FL",,8
+4596602,Brashard,Smith,KC,RB,24,196,70,23,2003-04-11,"Richmond Heights, FL",,228
+4249417,Jalen,Tolbert,MIA,WR,1,195,73,27,1999-02-27,"Mobile, AL",,88
+4686468,Seth,McGowan,IND,RB,20,223,72,24,2001-10-23,"Mesquite, TX",,237
+4685279,Jaydon,Blue,FA,RB,,198,69,22,2004-01-08,"Houston, TX",,149
+4258595,Cole,Kmet,CHI,TE,85,257,78,27,1999-03-10,"Lake Barrington, IL",2020,43
+4426386,Roschon,Johnson,CHI,RB,23,227,72,25,2001-01-31,"Port Neches, TX",,115
+4362921,Tyquan,Thornton,KC,WR,2,185,74,26,2000-08-07,"Miami, FL",,50
+4686472,Marvin,Mims Jr.,DEN,WR,19,182,71,24,2002-03-19,"Frisco, TX",,63
+5220680,Ted,Hurst III,TB,WR,17,185,75,22,2004-07-02,"Savannah, GA",,84
+3930086,Dawson,Knox,BUF,TE,88,254,76,29,1996-11-14,"Brentwood, TN",2019,96
+3124084,Joey,Slye,TEN,K,6,213,71,30,1996-04-10,"Stafford, VA",2019,
+4360438,Brandon,Aiyuk,SF,WR,11,200,72,28,1998-03-17,"Rocklin, CA",2020,25
+4686422,Xavier,Hutchinson,HOU,WR,19,210,75,26,2000-06-01,"Jacksonville, FL",,205
+4603186,Jack,Bech,LV,WR,18,214,73,23,2002-12-18,"Lafayette, LA",,58
+4430871,Sean,Tucker,TB,RB,44,205,70,24,2001-10-25,"Owings Mills, MD",,
+4430841,Carson,Beck,ARI,QB,19,220,76,23,2002-11-19,"Jacksonville, FL",,65
+4695404,Isaiah,Davis,NYJ,RB,32,220,73,24,2002-02-21,"Joplin, MO",,173
+4433970,J.J.,McCarthy,MIN,QB,9,219,75,23,2003-01-20,"La Grange Park, IL",,10
+4568263,Ryan,Fitzgerald,CAR,K,10,193,71,26,2000-08-13,"Coolidge, GA",,
+4683153,Skyler,Bell,BUF,WR,13,192,71,24,2002-07-05,"Bronx, NY",,125
+4597703,Tory,Horton,SEA,WR,15,196,74,23,2002-11-29,"Fresno, CA",,166
+4832846,Demond,Claiborne,MIN,RB,21,188,70,22,2003-10-09,"Aylett, VA",,198
+4362478,Emari,Demercado,DAL,RB,,215,69,27,1999-01-20,"Inglewood, CA",,
+3895856,Christian,Kirk,SF,WR,3,200,71,29,1996-11-18,"Scottsdale, AZ",2018,47
+4599739,Kendre,Miller,NO,RB,5,220,72,24,2002-06-11,"Mount Enterprise, TX",,71
+4431545,Will,Shipley,PHI,RB,28,209,71,24,2002-08-29,"Weddington, NC",,127
+5081335,Drew,Stevens,WSH,K,19,213,73,22,2003-12-09,"North Augusta, SC",,
+4911851,LeQuint,Allen Jr.,JAX,RB,5,201,72,22,2004-08-05,"Millville, NJ",,236
+4368003,Andrei,Iosivas,CIN,WR,80,210,75,26,1999-10-15,"Honolulu, HI",,206
+4685526,Adam,Randall,BAL,RB,23,232,75,22,2004-07-14,"Myrtle Beach, SC",,174
+4241372,Hollywood,Brown,PHI,WR,0,170,69,29,1997-06-04,"Hollywood, FL",2019,25
+4259619,Blake,Grupe,NYJ,K,,156,67,27,1998-11-05,"Sedalia, MO",,
+4887558,Emanuel,Wilson,SEA,RB,27,226,70,27,1999-05-08,"Charlotte, NC",,
+4431574,Eli,Stowers,PHI,TE,87,239,76,23,2003-04-15,"Denton, TX",,54
+4808766,Mason,Taylor,NYJ,TE,85,251,77,22,2004-05-08,"Plantation, FL",,42
+4429148,Theo,Johnson,NYG,TE,84,264,78,25,2001-02-26,"Windsor, ON",,107
+4258620,Andre,Szmyt,CLE,K,25,200,72,27,1998-09-26,"Vernon Hills, IL",,
+4362887,Justin,Fields,KC,QB,6,227,75,27,1999-03-05,"Kennesaw, GA",,11
+4678006,Elijah,Arroyo,SEA,TE,18,254,77,23,2003-04-05,"Frisco, TX",,50
+4243371,Riley,Patterson,MIA,K,47,190,72,27,1999-09-07,"Edwardsville, IL",,
+4874509,DJ,Giddens,IND,RB,21,212,72,23,2003-08-26,"Junction City, KS",,151
+4685350,Trevor,Etienne,CAR,RB,23,198,68,22,2004-07-09,"Jennings, LA",,114
+15683,Justin,Tucker,FA,K,,191,73,36,1989-11-21,"Austin, TX",2012,
+2573401,Tyler,Higbee,LAR,TE,89,253,78,33,1993-01-01,"Clearwater, FL",2016,110
+4685522,Ty,Simpson,LAR,QB,15,211,73,23,2002-12-21,"Martin, TN",,13
+4363538,Chad,Ryland,ARI,K,38,195,72,26,1999-10-15,"Lebanon, PA",,112
+5208518,Charlie,Smyth,FA,K,39,210,76,25,2001-06-26,"Newry, ",,
+16002,Kyle,Juszczyk,SF,RB,44,235,74,35,1991-04-23,"Medina, OH",2013,130
+4426948,Luke,McCaffrey,WSH,WR,11,195,74,25,2001-04-02,"Highlands Ranch, CO",,100
+4613202,Kyle,Williams,NE,WR,18,190,71,23,2002-11-13,"Inglewood, CA",,69
+4040761,Devin,Singletary,NYG,RB,26,203,67,29,1997-09-03,"Deerfield Beach, FL",2019,74
+3059915,Kareem,Hunt,FA,RB,29,216,71,31,1995-08-06,"Willoughby, OH",2017,86
+11252,Joe,Flacco,CIN,QB,16,245,78,41,1985-01-16,"Audubon, NJ",2008,18
+2991662,Mack,Hollins,NE,WR,13,221,76,32,1993-09-16,"Rockville, MD",2017,118
+3124679,Jason,Sanders,NYJ,K,19,186,71,30,1995-11-16,"Orange, CA",2018,229
+4240472,Noah,Gray,KC,TE,83,240,75,27,1999-04-30,"Leominster, MA",,162
+2969939,Jameis,Winston,NYG,QB,19,231,76,32,1994-01-06,"Bessemer, AL",2015,1
+4360797,Tutu,Atwell,LAR,WR,8,165,69,26,1999-10-07,"Miami, FL",,57
+4429299,Tahj,Brooks,CIN,RB,25,220,69,24,2002-05-13,"Manor, TX",,193
+3049899,Younghoe,Koo,FA,K,,185,69,32,1994-08-03,"Ridgewood, NJ",2017,
+5529,Philip,Rivers,IND,QB,17,228,77,44,1981-12-08,"Athens, AL",2004,4
+4912274,Sione,Vaki,DET,RB,33,216,71,25,2001-07-30,"Antioch, CA",,132
+4714771,Drew,Allar,PIT,QB,16,228,77,22,2004-03-08,"Medina, OH",,76
+4241464,Mac,Jones,SF,QB,10,220,75,28,1998-09-05,"Jacksonville, FL",,15
+5088338,Elijah,Sarratt,BAL,WR,13,210,74,23,2003-05-28,"Stafford, VA",,115
+4431487,Savion,Williams,GB,WR,83,222,76,24,2001-11-22,"Marshall, TX",,87
+4061956,Ashton,Dulin,IND,WR,16,215,74,29,1997-05-15,"Reynoldsburg, OH",2019,
+5081508,Eli,Heidenreich,PIT,RB,29,198,72,23,2003-07-28,"Pittsburgh, PA",,230
+4831959,Eli,Raridon,NE,TE,82,245,78,22,2004-02-12,"Des Moines, IA",,95
+4427728,Bam,Knight,ARI,RB,20,210,71,25,2001-04-11,"Bailey, NC",,
+4427834,Erick,All Jr.,CIN,TE,83,255,77,25,2000-09-13,"Fairfield, OH",,115
+4429275,Trey,Benson,ARI,RB,33,225,72,24,2002-07-23,"Greenville, MS",,66
+4685307,Kevin,Coleman Jr.,MIA,WR,83,180,70,22,2003-09-10,"St. Louis, MO",,177
+4690013,Rasheen,Ali,BAL,RB,26,210,71,25,2001-02-16,"Cleveland, OH",,165
+4431588,Ja'Tavion,Sanders,CAR,TE,0,252,76,23,2003-03-27,"Denton, TX",,101
+4242433,Joshua,Palmer,BUF,WR,5,210,73,26,1999-09-22,"Brampton, ON",,77
+4879276,Bryce,Lance,NO,WR,18,204,75,24,2002-08-20,"Marshall, MN",,136
+3054212,Jonnu,Smith,GB,TE,,248,75,31,1995-08-22,"Ocala, FL",2017,100
+3128720,Nick,Chubb,FA,RB,21,227,71,30,1995-12-27,"Cedartown, GA",2018,35
+4362748,Tyler,Badie,DEN,RB,28,197,68,26,2000-02-07,"Memphis, TN",,196
+4372561,Isaac,Guerendo,SF,RB,31,221,72,26,2000-06-28,"Clayton, IN",,129
+4372066,Jake,Moody,FA,K,16,210,73,26,1999-11-23,"Northville, MI",,99
+4566158,Ben,Sauls,NYG,K,30,185,70,25,2001-07-31,"Tipp City, OH",,
+4366963,Dylan,Laube,LV,RB,23,204,69,26,1999-12-14,"Westhampton, NY",,208
+4429084,Anthony,Richardson Sr.,IND,QB,5,244,76,24,2002-05-22,"Gainesville, FL",,4
+2973405,Kalif,Raymond,CHI,WR,14,160,69,32,1994-08-08,"Lawrenceville, GA",2016,
+4698597,Barion,Brown,NO,WR,19,177,71,22,2003-12-12,"Nashville, TN",,190
+4384852,Dohnte,Meyers,CIN,WR,81,186,71,26,2000-07-06,"Duluth, GA",,
+5081338,Kaden,Wetjen,PIT,WR,10,196,69,24,2002-03-09,"Williamsburg, IA",,121
+4035537,Kene,Nwangwu,NYJ,RB,3,210,73,28,1998-02-09,"Frisco, TX",,119
+4240391,Tommy,DeVito,NE,QB,16,210,74,28,1998-08-07,"Cedar Grove, NJ",,
+4431492,Roman,Wilson,PIT,WR,14,186,70,25,2001-06-19,"Honolulu, HI",,84
+4608810,Tez,Johnson,TB,WR,15,165,70,24,2002-05-18,"Pinson, AL",,235
+4695193,Efton,Chism III,NE,WR,86,198,70,24,2001-10-26,"Monroe, WA",,
+4808759,Camden,Brown,DAL,WR,6,204,74,22,2004-05-06,"Monroe, LA",,
+4241263,Charlie,Kolar,LAC,TE,88,250,78,27,1999-02-10,"Norman, OK",,128
+4808839,Isaiah,Bond,CLE,WR,0,180,71,22,2004-03-15,"Buford, GA",,
+5092508,Colbie,Young,CIN,WR,86,218,75,24,2002-07-24,"Binghamton, NY",,140
+4372096,Luke,Schoonmaker,DAL,TE,86,250,77,27,1998-09-28,"Hamden, CT",,58
+4883647,Elic,Ayomanor,TEN,WR,5,206,74,23,2003-06-03,"Medicine Hat, AB",,136
+5160110,Jahdae,Walker,CHI,WR,9,206,75,24,2002-07-05,"Cleveland, OH",,
+4039057,Lil'Jordan,Humphrey,DEN,WR,5,225,76,28,1998-04-19,"Southlake, TX",2019,
+4833029,Max,Klare,LAR,TE,86,246,76,23,2003-07-08,"Guilford, IN",,61
+5150247,Malik,Benson,LV,WR,19,195,73,23,2002-10-17,"Lansing, KS",,195
+3045523,Kendrick,Bourne,ARI,WR,17,205,73,31,1995-08-04,"Portland, OR",2017,
+4372780,Tommy,Tremble,CAR,TE,82,250,76,26,2000-06-02,"Johns Creek, GA",,83
+4242392,Brock,Wright,DET,TE,89,254,77,27,1998-11-27,"Cypress, TX",,
+3116385,Joe,Mixon,FA,RB,28,220,73,30,1996-07-24,"Oakley, CA",2017,48
+4434153,Tyson,Bagent,CHI,QB,17,212,75,26,2000-06-08,"Martinsburg, WV",,
+4426844,Elijah,Higgins,ARI,TE,84,245,75,25,2000-10-27,"Austin, TX",,197
+4569371,Isaiah,Williams,NYJ,WR,18,185,70,25,2001-01-29,"St. Louis, MO",,
+4685553,Brenen,Thompson,LAC,WR,89,170,69,23,2003-07-25,"Spearman, TX",,105
+4569382,Jordan,Whittington,LAR,WR,88,202,73,25,2000-10-01,"Cuero, TX",,213
+4708486,Jimmy,Horn Jr.,CAR,WR,15,174,68,23,2002-09-12,"Sanford, FL",,208
+4430656,Myles,Price,MIN,WR,4,183,69,24,2001-12-16,"Dallas, TX",,
+4036131,Noah,Fant,NO,TE,87,249,76,28,1997-11-20,"Omaha, NE",2019,20
+4383396,Hunter,Luepke,DAL,RB,30,250,73,26,2000-02-28,"Spencer, WI",,
+4431431,Corey,Kiner,NE,RB,,209,69,24,2002-01-21,"Cincinnati, OH",,
+5091739,Chris,Brazzell II,CAR,WR,19,198,76,22,2003-10-23,"Midland, TX",,83
+4596472,Jalon,Daniels,TB,QB,10,219,73,23,2002-10-29,"Lawndale, CA",,
+4426875,Sam,Howell,DAL,QB,16,225,73,25,2000-09-16,"Indian Trail, NC",,144
+4696882,Devontez,Walker,BAL,WR,81,198,73,25,2001-06-19,"Charlotte, NC",,113
+3921690,Josh,Oliver,MIN,TE,84,264,77,29,1997-03-21,"Paso Robles, CA",2019,69
+4702559,Oscar,Delp,NO,TE,88,245,76,23,2003-08-04,"Cumming, GA",,73
+4685413,Cade,Klubnik,NYJ,QB,10,207,74,22,2003-10-10,"Austin, TX",,110
+2576336,Ameer,Abdullah,JAX,RB,43,203,68,33,1993-06-13,"Homewood, AL",2015,54
+2576980,Marcus,Mariota,WSH,QB,8,222,76,32,1993-10-30,"Honolulu, HI",2015,2
+4361577,Dyami,Brown,WSH,WR,6,195,72,26,1999-11-01,"Charlotte, NC",,82
+3043275,Austin,Hooper,ATL,TE,81,254,76,31,1994-11-04,"San Ramon, CA",2016,81
+3917914,Olamide,Zaccheaus,ATL,WR,14,194,68,29,1997-07-23,"Plainfield, NJ",2019,
+5082630,Jalen,Royals,KC,WR,11,195,72,23,2003-02-18,"Powder Springs, GA",,133
+4695705,Marlin,Klein,HOU,TE,83,250,78,23,2002-09-17,"Cologne, ",,59
+3115293,Kyle,Allen,BUF,QB,11,210,75,30,1996-03-08,"Scottsdale, AZ",2018,
+4239934,AJ,Dillon,CAR,RB,28,247,72,28,1998-05-02,"New London, CT",2020,62
+4428085,Luke,Musgrave,GB,TE,88,253,78,26,2000-09-02,"Bend, OR",,42
+16339,Brandon,McManus,FA,K,17,201,75,35,1991-07-25,"Hatfield, PA",2014,
+11122,Matt,Prater,FA,K,15,175,70,42,1984-08-10,"Mayfield Heights, OH",2007,
+4360698,Joe,Milton III,FA,QB,10,236,77,26,2000-03-06,"Pahokee, FL",,193
+3127310,Drew,Sample,CIN,TE,89,260,77,30,1996-04-16,"Bellevue, WA",2019,52
+3892775,Jarrett,Stidham,DEN,QB,8,215,75,30,1996-08-08,"Stephenville, TX",2019,133
+4567156,Treylon,Burks,WSH,WR,13,225,74,26,2000-03-23,"Warren, AR",,18
+3911853,Adam,Trautman,DEN,TE,82,253,77,29,1997-02-05,"Williamsburg, MI",2020,105
+4710855,Konata,Mumpfield,LAR,WR,4,188,73,23,2002-10-24,"Hoschton, GA",,242
+3043116,Demarcus,Robinson,SF,WR,7,202,73,31,1994-09-21,"Fort Valley, GA",2016,126
+14163,Tyrod,Taylor,GB,QB,6,217,73,37,1989-08-03,"Hampton, VA",2011,180
+4240703,Kenny,Pickett,CAR,QB,12,220,75,28,1998-06-06,"Oakhurst, NJ",,20
+4565185,Tai,Felton,MIN,WR,13,186,73,23,2003-03-15,"Ashburn, VA",,102
+4685504,Sam,Roush,CHI,TE,87,267,77,23,2003-09-06,"Nashville, TN",,69
+3044720,Joshua,Dobbs,DET,QB,6,216,75,31,1995-01-26,"Alpharetta, GA",2017,135
+4715355,Darius,Cooper,PHI,WR,80,210,71,24,2001-11-22,"St. Louis, MO",,
+4426485,Jonathan,Mingo,DAL,WR,81,225,74,25,2001-04-20,"Brandon, MS",,39
+3924327,Drew,Lock,SEA,QB,2,228,76,29,1996-11-10,"Lee's Summit, MO",2019,42
+3123075,Braxton,Berrios,FA,WR,87,190,69,30,1995-10-06,"Raleigh, NC",2018,210
+4569682,Audric,Estime,NO,RB,30,227,71,23,2003-09-06,"Nyack, NY",,147
+4432734,Jalen,Milroe,SEA,QB,6,216,74,23,2002-12-13,"Katy, TX",,92
+4429955,Will,Howard,PIT,QB,18,236,76,24,2001-09-24,"Downingtown, PA",,185
+4605951,CJ,Daniels,LAR,WR,6,202,74,24,2002-01-04,"Lilburn, GA",,197
+4600597,Montorie,Foster Jr.,SEA,WR,87,188,71,25,2001-08-03,"Cleveland, OH",,
+15835,Zach,Ertz,FA,TE,,250,77,35,1990-11-10,"Alamo, CA",2013,35
+4429202,Israel,Abanikanda,FA,RB,30,217,70,23,2002-10-05,"Brooklyn, NY",,143
+4429939,Jawhar,Jordan,FA,RB,25,185,70,27,1999-08-18,"Long Island, NY",,205
+4693370,Riley,Nowakowski,PIT,RB,37,250,74,24,2002-06-30,"Milwaukee, WI",,169
+4685201,Tanner,McKee,PHI,QB,16,231,78,26,2000-04-27,"Corona, CA",,188
+4602667,Jaylin,Lane,WSH,WR,83,196,70,24,2002-05-01,"Clover, SC",,128
+2998565,Mo,Alie-Cox,IND,TE,81,267,77,32,1993-09-19,"Alexandria, VA",2017,
+4573699,Jackson,Hawes,BUF,TE,85,253,76,25,2000-12-06,"Salt Lake City, UT",,173
+4259305,Bo,Melton,GB,WR,16,189,71,27,1999-05-18,"Mays Landing, NJ",,229
+4360967,Brevyn,Spann-Ford,DAL,TE,89,265,78,26,1999-12-27,"Saint Cloud, MN",,
+4889929,Quinn,Ewers,JAX,QB,10,209,74,23,2003-03-15,"Southlake, TX",,231
+4035671,Tyler,Huntley,BAL,QB,5,204,73,28,1998-02-03,"Dania, FL",2020,
+2975417,Patrick,Ricard,NYG,RB,45,300,75,32,1994-05-27,"Spencer, MA",2017,
+4430191,Skyy,Moore,GB,WR,23,195,70,25,2000-09-10,"New Kensington, PA",,54
+4243389,Calvin,Austin III,NYG,WR,82,162,69,27,1999-03-24,"Memphis, TN",,138
+4259553,Stetson,Bennett IV,LAR,QB,13,192,71,28,1997-10-28,"Blackshear, GA",,128
+4360405,Jake,Bobo,SEA,WR,19,211,76,28,1998-08-04,"North Andover, MA",,
+4432775,Dont'e,Thornton Jr.,LV,WR,10,205,77,23,2002-11-30,"Baltimore, MD",,108
+2468609,Taysom,Hill,FA,TE,7,221,74,36,1990-08-23,"Pocatello, ID",2017,
+3043234,Zane,Gonzalez,FA,K,45,202,72,31,1995-05-07,"Deer Park, TX",2017,224
+3051392,Ezekiel,Elliott,FA,RB,24,225,72,31,1995-07-22,"St. Louis, MO",2016,4
+4880236,Will,Kacmarek,MIA,TE,82,258,78,23,2003-02-12,"St. Louis, MO",,87
+4426496,Cade,Stover,HOU,TE,8,251,76,26,2000-06-12,"Mansfield, OH",,123
+4430870,KeAndre,Lambert-Smith,LAC,WR,84,182,73,24,2002-07-29,"Norfolk, VA",,158
+4386544,Xavier,Smith,LAR,WR,19,180,69,28,1997-09-21,"Haines City, FL",,
+4383351,Trey,Lance,LAC,QB,5,226,76,26,2000-05-09,"Marshall, MN",,3
+4426339,Spencer,Rattler,NO,QB,2,211,72,25,2000-09-28,"Phoenix, AZ",,150
+4432260,Matthew,Hibner,BAL,TE,88,251,76,24,2002-03-09,"Burke, VA",,133
+4039505,Reggie,Gilliam,NE,RB,44,255,73,29,1997-08-20,"Columbus, OH",2020,
+4038524,Gardner,Minshew II,ARI,QB,15,225,73,30,1996-05-16,"Brandon, MS",2019,178
+3116407,Mason,Rudolph,PIT,QB,2,235,77,31,1995-07-17,"Rock Hill, SC",2018,76
+2573079,Carson,Wentz,MIN,QB,11,237,77,33,1992-12-30,"Bismarck, ND",2016,2
+4374033,Jermar,Jefferson,MIN,RB,17,215,70,26,2000-04-15,"Harbor City, CA",,257
+5344782,Jack,Strand,ATL,QB,18,240,77,22,2004-06-23,"Bloomer, WI",,
+3120348,JuJu,Smith-Schuster,FA,WR,8,215,73,29,1996-11-22,"Long Beach, CA",2017,62
+3929785,Nick,Westbrook-Ikhine,FA,WR,12,211,74,29,1997-03-21,"Lake Mary, FL",2020,
+4431562,Phil,Mafah,FA,RB,37,232,73,23,2002-10-24,"Loganville, GA",,239
+4682652,Devin,Neal,FA,RB,24,213,71,23,2003-08-12,"Lawrence, KS",,184
+4570688,Caden,Davis,FA,K,36,208,73,25,2001-02-27,"Coppell, TX",,
+4568024,Josh,Williams,FA,RB,18,210,69,25,2001-06-09,"Houston, TX",,
+4426689,Ulysses,Bentley IV,FA,RB,37,200,70,25,2000-12-30,"Houston, TX",,
+4594749,Michael,Trigg,FA,TE,46,240,76,24,2002-06-27,"Tampa, FL",,
+4685477,Jam,Miller,FA,RB,30,209,70,22,2004-04-29,"Tyler, TX",,245
+4690923,Ben,Sinnott,WSH,TE,82,245,76,24,2002-06-14,"Waterloo, IA",,53
+3052897,Durham,Smythe,BAL,TE,80,248,76,31,1995-08-09,"Belton, TX",2018,123
+4686248,Nate,Boerkircher,JAX,TE,87,245,77,25,2001-09-04,"Aurora, NE",,56
+4241961,Connor,Heyward,LV,RB,34,230,72,27,1999-01-22,"Duluth, GA",,208
+4878695,Max,Bredeson,MIN,RB,45,252,74,23,2002-10-04,"Hartland, WI",,159
+4683423,Riley,Leonard,IND,QB,15,213,76,23,2002-09-13,"Fairhope, AL",,189
+3915486,Tyler,Conklin,DET,TE,83,245,75,31,1995-07-30,"Chesterfield, MI",2018,157
+4035656,Ben,Skowronek,PIT,WR,15,224,75,29,1997-06-27,"Fort Wayne, IN",,249
+4570738,Ke'Shawn,Williams,CIN,WR,12,189,69,24,2001-12-27,"Philadelphia, PA",,
+4690143,LaJohntay,Wester,BAL,WR,10,170,69,24,2002-03-29,"Palmetto, FL",,203
+14012,Andy,Dalton,PHI,QB,14,220,74,38,1987-10-29,"Katy, TX",2011,35
+4372414,Elijah,Moore,PHI,WR,19,178,70,26,2000-03-27,"Fort Lauderdale, FL",,34
+4567096,John,Metchie III,CAR,WR,13,187,71,26,2000-07-18,"Brampton, ON",,44
+4243003,Ronnie,Rivers,LAR,RB,20,198,69,27,1999-01-31,"Brentwood, CA",,
+4427238,Dillon,Gabriel,CLE,QB,6,205,71,25,2000-12-28,"Mililani, HI",,94
+4601080,Raheim,Sanders,CLE,RB,35,230,72,24,2002-06-08,"Rockledge, FL",,
+4431325,Taylen,Green,CLE,QB,15,230,78,23,2002-10-18,"Lewisville, TX",,182
+4912052,Justin,Joly,MIA,TE,,241,75,22,2004-07-09,"Brewster, NY",,152
+4037235,Greg,Dortch,FA,WR,,183,67,28,1998-05-29,"Richmond, VA",2019,
+3068267,Austin,Ekeler,FA,RB,30,200,70,31,1995-05-17,"Eaton, CO",2017,
+15795,DeAndre,Hopkins,FA,WR,10,210,73,34,1992-06-06,"Central, SC",2013,27
+14881,Russell,Wilson,FA,QB,3,206,71,37,1988-11-29,"Richmond, VA",2012,75
+4240600,Kadarius,Toney,FA,WR,87,193,72,27,1999-01-27,"Mobile, AL",,20
+4372019,Jerome,Ford,FA,RB,34,210,70,26,1999-09-12,"Tampa, FL",,156
+4369863,Cedric,Tillman,FA,WR,,215,75,26,2000-04-19,"Las Vegas, NV",,74
+4430388,DeWayne,McBride,FA,RB,27,209,70,25,2001-07-08,"Starke, FL",,222
+4429805,Frank,Gore Jr.,FA,RB,20,201,68,24,2002-03-13,"Miami, FL",,
+4048228,John,Bates,WSH,TE,87,256,78,28,1997-11-06,"Lebanon, OR",,124
+4361516,Daniel,Bellinger,TEN,TE,82,255,78,25,2000-09-22,"Las Vegas, NV",,112
+4361372,Jeremy,Ruckert,NYJ,TE,89,250,77,26,2000-08-11,"Lindenhurst, NY",,101
+3917668,Alec,Ingold,LAC,RB,30,240,73,30,1996-07-09,"Green Bay, WI",2019,
+4613104,Malachi,Corley,CLE,WR,11,215,71,24,2002-03-21,"Orange City, FL",,65
+2515270,Michael,Burton,CLE,RB,34,247,72,34,1992-02-01,"Long Valley, NJ",2015,168
+4360086,Josh,Whyle,GB,TE,81,248,79,27,1999-09-08,"Cincinnati, OH",,147
+4879194,Josh,Cameron,JAX,WR,19,224,73,23,2003-03-18,"Cedar Park, TX",,191
+2975863,Eric,Saubert,SEA,TE,81,248,77,32,1994-05-09,"Hoffman Estates, IL",2017,174
+3125107,Andrew,Beck,NYJ,RB,47,255,75,30,1996-05-15,"Tampa, FL",2019,
+4242546,Davis,Mills,HOU,QB,10,225,76,27,1998-10-21,"Duluth, GA",,67
+3052096,Johnny,Mundt,PHI,TE,83,245,76,31,1994-11-23,"Modesto, CA",2017,
+4869132,Reggie,Virgil,ARI,WR,82,187,75,22,2004-05-14,"Apopka, FL",,143
+4433971,Kyle,McCord,MIA,QB,,218,75,23,2002-09-19,"Mount Laurel, NJ",,181
+3039707,Mitchell,Trubisky,TEN,QB,10,222,75,32,1994-08-20,"Mentor, OH",2017,2
+5097554,Kameron,Johnson,TB,WR,19,170,70,24,2002-03-17,"Rocky Mount, NC",,
+4373273,British,Brooks,HOU,RB,44,225,71,26,1999-11-18,"Gastonia, NC",,
+4039050,Devin,Duvernay,ARI,WR,81,202,71,28,1997-09-12,"Sachse, TX",2020,92
+4372716,Nikko,Remigio,KC,WR,81,187,69,26,1999-11-04,"Orange, CA",,
+4361259,Zach,Wilson,NO,QB,4,214,74,27,1999-08-03,"Draper, UT",,2
+4367567,Julius,Chestnut,TEN,RB,36,228,71,25,2000-10-26,"Bowie, MD",,
+4241476,Tyrell,Shavers,BUF,WR,14,211,76,27,1999-08-18,"Lewisville, TX",,
+4567747,Garrett,Nussmeier,KC,QB,14,205,73,24,2002-02-06,"Lake Charles, LA",,249
+3728262,Ray-Ray,McCloud III,FA,WR,26,190,69,29,1996-10-15,"Tampa, FL",2018,187
+3821683,Austin,Seibert,FA,K,3,211,69,29,1996-11-15,"Belleville, IL",2019,170
+3116593,Dalvin,Cook,FA,RB,20,210,70,31,1995-08-10,"Miami, FL",2017,41
+3123052,Michael,Badgley,FA,K,32,183,70,31,1995-07-28,"Summit, NJ",2018,
+3051738,Marquez,Valdes-Scantling,FA,WR,11,206,76,31,1994-10-10,"St. Petersburg, FL",2018,174
+2577327,Tyler,Lockett,FA,WR,17,182,70,33,1992-09-28,"Tulsa, OK",2015,69
+2976499,Amari,Cooper,LV,WR,19,210,73,32,1994-06-18,"Miami, FL",2015,4
+16760,Jimmy,Garoppolo,LAR,QB,11,225,74,34,1991-11-02,"Arlington Heights, IL",2014,62
+16728,Teddy,Bridgewater,DET,QB,5,217,74,33,1992-11-10,"Miami, FL",2014,32
+15965,Dustin,Hopkins,FA,K,7,210,74,35,1990-10-01,"Houston, TX",2013,177
+14993,Greg,Zuerlein,FA,K,9,195,72,38,1987-12-27,"Lincoln, NE",2012,171
+12460,Graham,Gano,FA,K,9,202,74,39,1987-04-09,"Pensacola, FL",2009,
+4240631,DeeJay,Dallas,FA,RB,,225,70,27,1998-09-16,"Brunswick, GA",2020,144
+4428963,Cade,York,FA,K,36,206,73,25,2001-01-27,"McKinney, TX",,124
+4361418,Will,Levis,FA,QB,8,229,76,27,1999-06-27,"Madison, CT",,33
+4722893,Jaleel,McLaughlin,FA,RB,,187,67,25,2000-09-13,"Marshville, NC",,
+4361182,Adrian,Martinez,FA,QB,4,220,74,26,2000-01-07,"Fresno, CA",,
+4242536,Sal,Cannella,FA,TE,87,242,77,29,1996-12-02,"Schaumburg, IL",,
+4426553,Davis,Allen,LAR,TE,87,253,78,25,2001-02-03,"Calhoun, GA",,175
+3843945,Foster,Moreau,HOU,TE,87,250,76,29,1997-05-06,"New Orleans, LA",2019,137
+4383440,Nate,Adkins,DEN,TE,45,252,75,27,1999-07-09,"Knoxville, TN",,
+4372505,Payne,Durham,TB,TE,87,255,77,26,2000-06-15,"Suwanee, GA",,171
+3051889,Laquon,Treadwell,IND,WR,13,215,74,31,1995-06-14,"Crete, IL",2016,23
+4362018,Blake,Whiteheart,CLE,TE,86,250,76,26,2000-03-22,"Winston-Salem, NC",,
+4245144,Tay,Martin,DET,WR,17,186,75,28,1997-12-14,"Houma, LA",,
+4362477,Derius,Davis,LAC,WR,12,165,68,25,2000-09-11,"Saint Francisville, LA",,125
+3929914,Adam,Prentice,FA,RB,46,245,72,29,1997-01-16,"Fresno, CA",,
+4575665,Jacob,Cowing,SF,WR,6,171,69,25,2001-02-04,"Maricopa, AZ",,135
+4040612,Luke,Farrell,SF,TE,89,250,77,28,1997-10-14,"Perry, OH",,145
+4722908,Drew,Ogletree,IND,TE,85,260,77,28,1998-07-28,"Dayton, OH",,192
+4876132,Josh,Cuevas,BAL,TE,85,245,75,23,2002-09-25,"Los Angeles, CA",,173
+2531358,Chris,Manhertz,NYG,TE,85,235,78,34,1992-04-10,"Bronx, NY",2016,
+4429105,Arian,Smith,NYJ,WR,82,179,72,24,2001-10-11,"Bradley, FL",,110
+2972515,Cooper,Rush,ATL,QB,13,224,75,32,1993-11-21,"Charlotte, MI",2017,
+4692835,Jalen,Brooks,ARI,WR,83,205,74,26,2000-05-07,"Harrisburg, NC",,244
+2975674,Robert,Tonyan,PIT,TE,83,240,77,32,1994-04-30,"Mchenry, IL",2017,
+3127586,Jeremy,McNichols,WSH,RB,26,205,69,30,1995-12-26,"Long Beach, CA",2017,162
+3134353,Tim,Patrick,NYJ,WR,17,210,77,32,1993-11-23,"San Diego, CA",2017,
+15168,Case,Keenum,CHI,QB,11,220,73,38,1988-02-17,"Abilene, TX",2012,
+4249030,D.J.,Montgomery,IND,WR,2,201,73,29,1996-11-17,"Durant, MS",2019,
+4036032,Brittain,Brown,CHI,RB,38,205,73,28,1997-10-10,"Canton, GA",,250
+4243176,Brady,Russell,SEA,RB,38,250,75,28,1998-08-31,"Fort Collins, CO",,
+4361088,Colson,Yankoff,WSH,TE,80,225,76,26,2000-03-01,"Coeur d'Alene, ID",,
+4708049,Gavin,Bartholomew,MIN,TE,86,249,77,23,2003-04-30,"Schuylkill Haven, PA",,202
+4683243,Mitchell,Evans,CAR,TE,84,258,77,23,2003-03-18,"Wadsworth, OH",,163
+4431466,Jordan,Watkins,SF,WR,17,196,71,24,2002-02-15,"Louisville, KY",,138
+4429435,Brady,Cook,MIA,QB,,215,74,24,2001-10-12,"St. Louis, MO",,
+4565859,Joe,Royer,CLE,TE,18,250,77,24,2002-02-25,"Cincinnati, OH",,170
+4683151,Deion,Burks,IND,WR,80,180,69,23,2003-01-08,"Inkster, MI",,254
+4428993,Haynes,King,CAR,QB,16,212,74,25,2001-01-09,"Longview, TX",,
+4635009,J. Michael,Sturdivant,GB,WR,87,207,75,24,2002-09-06,"Flower Mound, TX",,
+3118892,Justin,Watson,FA,WR,84,215,74,30,1996-04-04,"Bridgeville, PA",2018,144
+4012556,C.J.,Ham,MIN,RB,30,250,71,33,1993-07-22,"Duluth, MN",2016,
+4035222,Trayveon,Williams,FA,RB,47,206,68,28,1997-10-18,"Houston, TX",2019,182
+2576414,Raheem,Mostert,FA,RB,31,212,70,34,1992-04-09,"New Smyrna Beach, FL",2015,
+4035004,Mecole,Hardman Jr.,FA,WR,1,187,70,28,1998-03-12,"Bowman, GA",2019,56
+3932442,Equanimeous,St. Brown,FA,WR,7,214,77,29,1996-09-30,"Anaheim, CA",2018,207
+3975763,Greg,Joseph,FA,K,,208,72,32,1994-08-04,"Boca Raton, FL",2018,
+16757,Derek,Carr,NO,QB,4,215,75,35,1991-03-28,"Bakersfield, CA",2014,36
+16460,Adam,Thielen,PIT,WR,,195,74,36,1990-08-22,"Detroit Lakes, MN",2013,
+3930066,Van,Jefferson,FA,WR,12,200,73,30,1996-07-26,"Brentwood, TN",2020,57
+4039607,J.J.,Taylor,FA,RB,26,185,66,28,1998-01-04,"Corona, CA",2020,
+4240657,Michael,Carter,FA,RB,35,201,68,27,1999-05-07,"Navarre, FL",,107
+4360238,Dameon,Pierce,FA,RB,39,218,70,26,2000-02-19,"Bainbridge, GA",,107
+4361777,Zamir,White,FA,RB,33,227,72,26,1999-09-18,"Laurinburg, NC",,122
+4696736,Tanner,Brown,FA,K,46,177,72,26,1999-12-28,"Saugus, CA",,
+4690070,Mitchell,Tinsley,FA,WR,,205,73,26,1999-09-15,"Lee's Summit, MO",,
+3886812,Jake,Browning,FA,QB,5,209,74,30,1996-04-11,"Folsom, CA",2019,
+4566192,Joshua,Karty,FA,K,98,208,74,24,2002-03-07,"Burlington, NC",,209
+4714365,Carson,Steele,FA,RB,34,228,72,23,2002-10-21,"Greenwood, IN",,
+4051167,Parker,Romo,FA,K,39,175,71,29,1997-08-24,"Peachtree City, GA",,
+5092436,Jude,McAtamney,FA,K,99,205,74,26,2000-05-09,"Derry, ",,
+4710341,Jarquez,Hunter,FA,RB,31,211,71,23,2002-12-29,"Philadelphia, MS",,117
+4573398,Max,Brosmer,FA,QB,12,218,74,25,2001-03-28,"Roswell, GA",,
+4428943,Jacardia,Wright,FA,RB,31,218,72,25,2000-09-26,"Decatur, IL",,
+4429466,Drake,Dabney,FA,TE,49,246,77,24,2002-05-14,"Cypress, TX",,
+4683159,Lewis,Bond,FA,WR,82,190,71,23,2003-05-29,"Chicago, IL",,204
+4685381,Emmanuel,Henderson Jr.,FA,WR,84,185,73,23,2003-03-21,"Hartford, AL",,199
+4429053,AJ,Henning,FA,WR,88,192,70,24,2001-09-09,"Frankfort, IL",,
+4714379,Seydou,Traore,MIA,TE,49,235,76,24,2002-08-12,"London, ",,180
+4917427,Tanner,Koziol,JAX,TE,89,250,79,22,2004-01-28,"Bloomingdale, IL",,164
+4034779,Ko,Kieft,TB,TE,41,265,77,28,1998-01-20,"Sioux Center, IA",,218
+4239944,Hunter,Long,ARI,TE,,243,77,28,1998-08-19,"Exeter, NH",,81
+4045305,Ian,Thomas,LV,TE,80,253,75,30,1996-06-06,"Baltimore, MD",2018,101
+4401805,Dareke,Young,LV,WR,81,224,74,27,1999-06-04,"Raleigh, NC",,233
+4035020,Charlie,Woerner,ATL,TE,89,250,77,28,1997-10-16,"Tiger, GA",2020,190
+4685540,Carsen,Ryan,CLE,TE,48,255,75,23,2003-08-21,"Orem, UT",,248
+4360763,Brycen,Tremayne,CAR,WR,87,212,76,26,1999-11-18,"Los Angeles, CA",,
+4424106,Gunner,Olszewski,NYG,WR,80,190,72,29,1996-11-26,"Alvin, TX",2019,
+4241401,Trey,Sermon,ATL,RB,44,215,72,27,1999-01-30,"Marietta, GA",,88
+4241424,Tylan,Wallace,CLE,WR,16,200,71,27,1999-05-13,"Fort Worth, TX",,131
+4360739,Simi,Fehoko,ARI,WR,80,225,76,28,1997-11-05,"Sandy, UT",,179
+4241820,Sam,Ehlinger,DEN,QB,4,222,73,27,1998-09-30,"Austin, TX",,218
+4241374,Grant,Calcaterra,PHI,TE,81,240,76,27,1998-12-04,"Rancho Santa Margarita, CA",,198
+4242431,Ty,Chandler,NO,RB,32,205,71,28,1998-05-12,"Nashville, TN",,169
+4372026,Cameron,Latu,NE,TE,,244,77,26,2000-02-24,"Salt Lake City, UT",,101
+4373684,Scott,Matlock,LAC,RB,44,296,76,26,2000-06-28,"Homedale, ID",,200
+4260394,Aidan,O'Connell,LV,QB,12,206,75,28,1998-09-01,"Long Grove, IL",,135
+4373030,Ben,Sims,MIA,TE,89,250,77,26,2000-05-16,"San Antonio, TX",,
+4369886,Chris,Blair,ATL,WR,19,215,74,28,1997-10-06,"Louisville, MS",,
+4696700,Tip,Reiman,ARI,TE,87,271,77,24,2001-09-17,"Rapid City, SD",,82
+4430723,Jared,Wiley,KC,TE,12,249,78,25,2000-11-02,"Temple, TX",,131
+4573697,Mason,Tipton,NO,WR,15,187,71,25,2000-09-27,"Akron, OH",,
+4431210,Beaux,Collins,ATL,WR,88,206,75,23,2002-12-16,"Los Angeles, CA",,
+4360637,Jeshaun,Jones,MIN,WR,82,188,73,26,1999-12-22,"Fort Myers, FL",,
+4602788,Jackson,Meeks,DET,TE,13,235,74,23,2003-03-24,"Phenix City, AL",,
+4685441,Kendrick,Law,DET,WR,88,203,71,22,2004-06-13,"Shreveport, LA",,168
+4431465,Behren,Morton,NE,QB,15,218,74,24,2002-01-17,"Eastland, TX",,234
+4432722,Athan,Kaliakmanis,WSH,QB,16,216,74,23,2003-08-20,"Antioch, IL",,223
+4879250,Cole,Payton,PHI,QB,10,232,74,23,2002-10-26,"Omaha, NE",,178
+5085024,CJ,Williams,JAX,WR,18,205,73,23,2002-10-23,"Mission Viejo, CA",,203
+4429582,Joe,Fagnano,BAL,QB,12,226,75,25,2001-03-31,"Williamsport, PA",,
+2983509,Dare,Ogunbowale,FA,RB,32,205,70,32,1994-05-04,"Milwaukee, WI",2017,
+3135321,Hunter,Renfrow,FA,WR,13,185,70,30,1995-12-21,"Myrtle Beach, SC",2019,149
+15807,Cordarrelle,Patterson,FA,RB,84,220,74,35,1991-03-17,"Rock Hill, SC",2013,29
+3059989,Nick,Mullens,FA,QB,14,210,72,31,1995-03-21,"Hoover, AL",2017,
+3914397,Scotty,Miller,FA,WR,35,174,69,29,1997-07-31,"Barrington, IL",2019,208
+4037457,Travis,Homer,FA,RB,21,202,70,28,1998-08-07,"West Palm Beach, FL",2019,204
+4212909,David,Moore,FA,WR,83,220,72,31,1995-01-15,"Gainesville, TX",2017,226
+4045163,Miles,Sanders,FA,RB,24,211,71,29,1997-05-01,"Pittsburgh, PA",2019,53
+3052177,John,Ross,FA,WR,38,190,71,30,1995-11-27,"Long Beach, CA",2017,9
+3059722,Zay,Jones,FA,WR,18,200,74,31,1995-03-30,"Austin, TX",2017,37
+2980453,Jamaal,Williams,FA,RB,21,224,72,31,1995-04-03,"Fontana, CA",2017,134
+2976592,Sterling,Shepard,FA,WR,15,194,70,33,1993-02-10,"Oklahoma City, OK",2016,40
+16731,Brandin,Cooks,FA,WR,18,189,70,32,1993-09-25,"Stockton, CA",2014,20
+11394,Josh,Johnson,FA,QB,11,219,75,40,1986-05-15,"Oakland, CA",2008,160
+3050481,Tanner,Hudson,FA,TE,87,241,77,31,1994-11-12,"Big Sandy, TN",2018,
+3126997,Tom,Kennedy,FA,WR,85,195,70,30,1996-07-29,"Farmingdale, NY",2019,
+4242214,Clyde,Edwards-Helaire,FA,RB,26,207,67,27,1999-04-11,"Baton Rouge, LA",2020,32
+4240021,Cam,Akers,FA,RB,30,217,70,27,1999-06-22,"Clinton, MS",2020,52
+4035115,Albert,Okwuegbunam Jr.,FA,TE,85,258,77,28,1998-04-25,"Springfield, IL",2020,118
+4360294,Antonio,Gibson,FA,RB,4,228,72,28,1998-06-23,"Stockbridge, GA",2020,66
+4243315,Salvon,Ahmed,FA,RB,36,196,71,27,1998-12-30,"Kirkland, WA",2020,
+3128444,Matthew,Wright,FA,K,,174,71,30,1996-03-22,"Lancaster, PA",2020,
+4035886,Khalil,Herbert,FA,RB,40,212,69,28,1998-04-21,"Fort Lauderdale, FL",,217
+4249836,Pierre,Strong Jr.,FA,RB,22,207,71,27,1998-12-10,"Little Rock, AR",,127
+3926231,Britain,Covey,FA,WR,18,173,68,29,1997-03-18,"Provo, UT",,
+4431453,Deuce,Vaughn,FA,RB,31,176,66,24,2001-11-02,"Round Rock, TX",,212
+4240858,Hendon,Hooker,FA,QB,16,220,75,28,1998-01-13,"Greensboro, NC",,68
+4242519,Anders,Carlson,FA,K,18,220,77,28,1998-06-16,"Colorado Springs, CO",,207
 4361665,Christopher,Dunn,FA,K,,179,68,,,"Lexington, NC",,
-4685016,Ellis,Merriweather,FA,RB,38,220,73,26,1999-04-07,"Alpharetta, GA",,
-3123052,Michael,Badgley,FA,K,17,188,70,30,1995-07-28,"Summit, NJ",,2018
-3051381,Mike,White,Buf,QB,14,220,77,30,1995-03-25,"Pembroke Pines, FL",171,2018
-4039505,Reggie,Gilliam,Buf,RB,41,244,72,27,1997-08-20,"Columbus, OH",,2020
-3925347,Damien,Harris,Buf,RB,22,213,71,28,1997-02-11,"Richmond, KY",87,2019
-4601080,Raheim,Sanders,LAC,RB,35,230,72,23,2002-06-08,"Rockledge, FL",,
-3931391,Trenton,Irwin,Jax,WR,83,204,74,29,1995-12-10,"Valencia, CA",,2019
-4240380,KJ,Hamler,Buf,WR,19,178,69,26,1999-07-08,"Pontiac, MI",46,2020
-4249030,D.J.,Montgomery,Ind,WR,2,201,73,28,1996-11-17,"Durant, MS",,2019
-3919602,Matt,Ammendola,FA,K,16,195,69,28,1996-12-11,"Lansdale, PA",,
-14876,Ryan,Tannehill,FA,QB,17,217,76,37,1988-07-27,"Big Spring, TX",8,2012
-4034948,Feleipe,Franks,Atl,TE,84,241,78,27,1997-12-22,"Crawfordville, FL",,
-4373030,Ben,Sims,GB,TE,89,250,77,25,2000-05-16,"San Antonio, TX",,
-4430388,DeWayne,McBride,FA,RB,27,209,70,24,2001-07-08,"Starke, FL",222,
-4430431,Kurtis,Rourke,SF,QB,4,220,76,24,2000-10-25,"Oakville, ON",227,
-3125116,D'Onta,Foreman,FA,RB,27,235,72,29,1996-04-24,"Texas City, TX",89,2017
-4361604,Blake,Watson,Den,RB,25,195,69,25,1999-10-14,"Queens, NY",,
-3924365,Hayden,Hurst,FA,TE,88,245,76,31,1993-08-24,"Jacksonville, FL",25,2018
-4362162,SaRodorick,Thompson Jr.,FA,RB,27,220,72,25,1999-10-01,"Irving, TX",,
-5208436,Louis,Rees-Zammit,FA,RB,89,209,74,24,2001-02-02,"Penarth, ",,
-4046678,Ian,Book,FA,QB,13,206,72,27,1998-03-30,"El Dorado Hills, CA",133,
-4361112,Devin,Culp,TB,TE,82,237,76,25,2000-02-02,"Spokane, WA",246,
-4243176,Brady,Russell,Sea,RB,38,250,75,26,1998-08-31,"Fort Collins, CO",,
-15948,Matt,Barkley,FA,QB,19,227,74,34,1990-09-08,"Newport Beach, CA",98,2013
-13232,Jimmy,Graham,FA,TE,80,265,79,38,1986-11-24,"Goldsboro, NC",95,2010
-4035537,Kene,Nwangwu,NYJ,RB,34,210,73,27,1998-02-09,"Frisco, TX",119,
-3046401,Keith,Kirkwood,Bal,WR,18,210,75,31,1993-12-26,"Neptune, NJ",,2018
-3120590,Easton,Stick,Atl,QB,12,224,73,29,1995-09-15,"Omaha, NE",166,2019
-4362087,Keaontay,Ingram,KC,RB,38,220,72,25,1999-10-26,"Carthage, TX",201,
-4426893,Joshua,Cephus,Jax,WR,80,193,74,24,2001-03-05,"Houston, TX",,
-2576434,Melvin,Gordon III,FA,RB,33,215,73,32,1993-04-13,"Kenosha, WI",15,2015
-4372758,Kevin,Austin Jr.,NO,WR,81,200,74,25,2000-03-30,"Fort Lauderdale, FL",,
-4360794,Henry,Pearson,FA,TE,44,249,74,25,1999-11-23,"Ho-Ho-Kus, NJ",,
-4361008,Cole,Fotheringham,NE,TE,49,245,76,27,1997-10-11,"San Clemente, CA",,
-4044144,Kenny,Yeboah,Det,TE,88,250,76,26,1998-10-30,"Allentown, PA",,
-4035693,Velus,Jones Jr.,NO,RB,13,200,72,28,1997-05-11,"Saraland, AL",71,
-4567216,D.J.,Williams,FA,RB,30,225,72,25,1999-11-15,"Lake Placid, FL",,
-4383429,Jacob,Saylors,Det,RB,48,195,71,25,2000-03-08,"Jasper, TN",,
-2971618,Nelson,Agholor,FA,WR,15,200,72,32,1993-05-24,"Tampa, FL",20,2015
-4242540,Isaiah,Hodgins,SF,WR,18,200,75,26,1998-10-21,"Oakley, CA",207,2020
-4429006,Rakim,Jarrett,TB,WR,18,192,72,24,2001-01-24,"Palmer Park, MD",,
-4689546,Danny,Gray,FA,WR,80,200,72,26,1999-04-01,"Dallas, TX",105,
-4428116,Isaiah,Neyor,GB,WR,80,218,76,,,"Fort Worth, TX",,
-4426399,Ramel,Keyton,FA,WR,14,191,74,24,2000-09-14,"Marietta, GA",,
-4373634,Dallin,Holker,FA,TE,85,241,75,25,2000-04-07,"Lehi, UT",,
-4245645,Gary,Brightwell,Cin,RB,32,218,73,27,1998-02-28,"Chester, PA",196,
-4362874,Matt,Corral,FA,QB,17,205,74,26,1999-01-31,"Ventura, CA",94,
-4034779,Ko,Kieft,TB,TE,41,265,77,27,1998-01-20,"Sioux Center, IA",218,
-4243371,Riley,Patterson,FA,K,37,190,72,25,1999-09-07,"Edwardsville, IL",,
-4361653,Devin,Leary,Bal,QB,13,215,73,25,1999-09-10,"Sicklerville, NJ",218,
-2975674,Robert,Tonyan,KC,TE,85,240,77,31,1994-04-30,"Mchenry, IL",,2017
-4046692,Chase,Claypool,FA,WR,14,238,76,27,1998-07-07,"Abbotsford, BC",49,2020
-4428811,Xavier,Weaver,Ari,WR,89,185,73,24,2000-10-12,"Orlando, FL",,
-4379401,John,FitzPatrick,GB,TE,86,262,79,25,2000-03-09,"Atlanta, GA",213,
-4360175,Clayton,Tune,Ari,QB,15,220,75,26,1999-03-23,"Carrollton, TX",139,
-4589248,Tyreik,McAllister,FA,WR,32,185,70,27,1998-04-07,"Latta, SC",,
-4362019,A.T.,Perry,Den,WR,87,205,77,25,1999-10-26,"Lake Worth, FL",195,
-4372070,Ben,VanSumeren,Phi,RB,43,231,74,25,2000-05-05,"Bay City, MI",,
-3918639,Gerald,Everett,FA,TE,14,245,75,31,1994-06-25,"Lithonia, GA",44,2017
-4746079,Zach,Davidson,Buf,TE,84,251,79,27,1998-07-15,"Webb City, MO",168,
-3119195,Chase,Edmonds,FA,RB,22,201,69,29,1996-04-13,"Harrisburg, PA",134,2018
-4241983,Cody,White,Sea,WR,82,227,75,26,1998-11-28,"Novi, MI",,2020
-3051889,Laquon,Treadwell,Ind,WR,13,215,74,30,1995-06-14,"Crete, IL",23,2016
-4033806,James,McCourt,FA,K,14,216,73,27,1997-11-09,"Parkland, FL",,
-4035115,Albert,Okwuegbunam,LV,TE,86,258,77,27,1998-04-25,"Springfield, IL",118,2020
-4362489,John,Stephens Jr.,Dal,TE,49,221,77,25,1999-09-23,"Logansport, LA",,
-3125107,Andrew,Beck,NYJ,RB,47,255,75,29,1996-05-15,"Tampa, FL",,2019
-4243319,Terrell,Bynum,FA,WR,35,188,72,27,1998-08-03,"Long Beach, CA",,
-4685035,Zach,Evans,FA,RB,38,202,71,24,2001-05-30,"Houston, TX",215,
-4431506,Ja'Corey,Brooks,Wsh,WR,16,195,75,23,2001-10-31,"Bradenton, FL",,
-4362020,Nick,Sciba,FA,K,16,191,69,25,1999-10-02,"Clover, SC",,
-11394,Josh,Johnson,Wsh,QB,14,219,75,39,1986-05-15,"Oakland, CA",160,2008
-4426335,Graham,Mertz,Hou,QB,18,216,74,24,2000-12-06,"Overland Park, KS",197,
-3139602,D'Ernest,Johnson,Bal,RB,30,208,70,29,1996-02-27,"Immokalee, FL",,2019
-4241588,Elijah,Cooks,Phi,WR,86,215,76,26,1998-10-13,"Atascadero, CA",,
-4408988,Malik,Taylor,Det,WR,86,220,73,29,1995-12-21,"Flint, MI",,2019
-4036146,Caleb,Shudak,FA,K,6,177,67,27,1997-11-19,"Council Bluffs, IA",,
-4242558,Tucker,Fisk,LAC,TE,42,285,76,26,1999-01-19,"Davis, CA",,
-2574808,Robbie,Chosen,SF,WR,3,185,75,32,1993-05-09,"Fort Lauderdale, FL",,2016
-2576581,Chris,Moore,Wsh,WR,19,200,73,32,1993-06-16,"Tampa, FL",107,2016
-2576623,DeVante,Parker,Phi,WR,13,218,75,32,1993-01-20,"Louisville, KY",14,2015
-4887918,Junior,Bergen,SF,WR,86,184,69,22,2002-10-23,"Billings, MT",252,
-4039043,Collin,Johnson,LV,WR,17,220,77,27,1997-09-23,"San Jose, CA",165,2020
-4569390,Jonathan,Garibay,FA,K,1,217,71,25,1999-08-16,"Rubidoux, CA",,
-4039359,Darrell,Henderson Jr.,FA,RB,27,208,68,27,1997-08-19,"Batesville, MS",70,2019
-4426479,Cornelius,Johnson,GB,WR,84,212,75,24,2000-11-29,"Greenwich, CT",253,
-2579604,Phillip,Dorsett,LV,WR,13,185,70,32,1993-01-05,"Fort Lauderdale, FL",29,2015
-2972236,Nathan,Peterman,FA,QB,2,225,74,31,1994-05-04,"Jacksonville, FL",171,2017
-3912092,Donald,Parham Jr.,Pit,TE,89,237,80,27,1997-08-16,"Lakeland, FL",,2019
-4432338,Luke,Lachey,Hou,TE,42,247,78,24,2001-06-29,"Columbus, OH",255,
-4429012,Kendall,Milton,Cin,RB,36,230,73,23,2002-02-10,"Fresno, CA",,
-3040569,Trent,Taylor,SF,WR,81,180,68,31,1994-04-30,"Shreveport, LA",177,2017
-3916204,James,Proche II,Ten,WR,13,193,71,28,1996-09-21,"Dallas, TX",201,2020
-4243004,Jordan,Mims,Ten,RB,24,205,72,26,1999-06-16,"East Palo Alto, CA",,
-4360306,Justyn,Ross,FA,WR,8,210,76,25,1999-12-15,"Phenix City, AL",,
-4431509,Kaden,Prather,Buf,WR,81,204,75,22,2002-09-06,"Montgomery Village, MD",240,
-2979843,Kenyan,Drake,FA,RB,32,210,73,31,1994-01-26,"Powder Springs, GA",73,2016
-4391845,Cody,Schrader,LAR,RB,32,214,69,25,1999-09-08,"St. Louis, MO",,
-4057082,Mason,Kinsey,Ten,WR,12,200,71,26,1998-08-29,"Demorest, GA",,2020
-4240069,Malik,Cunningham,Bal,WR,12,190,73,26,1998-10-06,"Montgomery, AL",,
-4035793,Quintez,Cephus,Hou,WR,,208,73,27,1998-04-01,"Macon, GA",166,2020
-2979520,C.J.,Beathard,FA,QB,19,215,74,31,1993-11-16,"Franklin, TN",104,2017
-4250969,Rodney,Williams,FA,TE,87,235,76,27,1998-04-08,"Memphis, TN",,
-3948283,Stephen,Carlson,Chi,TE,88,248,76,28,1996-12-12,"Jamestown, NY",,2019
-4361088,Colson,Yankoff,Wsh,TE,41,225,76,25,2000-03-01,"Coeur d'Alene, ID",,
-4249616,Owen,Wright,TB,RB,49,217,69,26,1999-02-28,"Bethesda, MD",,
-4428796,Casey,Washington,Atl,WR,82,205,72,24,2001-03-06,"Round Rock, TX",187,
-3139925,Rashaad,Penny,FA,RB,28,220,71,29,1996-02-02,"Norwalk, CA",27,2018
-4243315,Salvon,Ahmed,Ind,RB,36,196,71,26,1998-12-30,"Kirkland, WA",,2020
-4361435,Carson,Strong,FA,QB,16,226,75,25,1999-09-14,"Vacaville, CA",,
-4685039,Michael,Pratt,TB,QB,11,217,74,23,2001-09-30,"Boca Raton, FL",245,
-3916430,Nyheim,Miller-Hines,LAC,RB,31,198,68,28,1996-11-12,"Garner, NC",104,2018
-4426475,Tyrion,Davis-Price,FA,RB,32,219,73,24,2000-10-23,"Baton Rouge, LA",93,
-3929637,Dan,Chisena,FA,WR,88,202,75,28,1997-02-25,"Downingtown, PA",,2020
-4036026,Dez,Fitzpatrick,LAC,WR,87,208,74,27,1997-12-17,"Farmington Hills, MI",109,
-4035776,Kendric,Pryor,Cin,WR,19,189,71,27,1998-01-06,"Hazel Crest, IL",,
-4367186,Chase,Cota,Cle,WR,81,205,76,25,1999-11-09,"Medford, OR",,
-4240689,Jake,Fromm,FA,QB,18,215,74,27,1998-07-30,"Warner Robins, GA",167,2020
-4044111,Chris,Oladokun,KC,QB,19,213,73,27,1997-09-03,"Tampa, FL",241,
-12477,Brian,Hoyer,LV,QB,7,215,74,39,1985-10-13,"North Olmsted, OH",,2009
-4372026,Cameron,Latu,Phi,TE,49,244,77,25,2000-02-24,"Salt Lake City, UT",101,
-4360290,Brayden,Willis,SF,TE,9,240,76,25,1999-11-11,"Arlington, TX",247,
-4432208,Caleb,Lohner,Den,TE,84,250,79,24,2001-01-01,"Flower Mound, TX",241,
-4240350,Xazavian,Valladay,FA,RB,28,198,72,27,1998-07-03,"Chicago, IL",,
-4361778,Kearis,Jackson,FA,WR,5,196,71,25,1999-12-09,"Fort Valley, GA",,
-4569609,Evan,Hull,Pit,RB,38,209,70,24,2000-10-26,"Maple Grove, MN",176,
-4698253,Lan,Larison,NE,RB,34,209,71,23,2001-10-11,"Caldwell, ID",,
-3045169,Tim,Boyle,Ten,QB,15,232,76,30,1994-10-03,"Middlefield, CT",,2018
-4258170,Tarik,Black,Mia,WR,86,213,75,27,1998-02-10,"Hamden, CT",,
-3124092,John,Wolford,Jax,QB,18,200,73,29,1995-10-16,"Jacksonville, FL",,2021
-3916564,Tyree,Jackson,Wsh,TE,80,249,79,27,1997-11-07,"Norton Shores, MI",,2021
-3919510,Alex,Bachman,LV,WR,81,190,72,29,1996-05-29,"Westlake Village, CA",,2019
-4367175,Kyle,Philips,FA,WR,15,179,71,26,1999-06-17,"San Marcos, CA",163,
-16140,Ryan,Griffin,FA,QB,4,218,76,35,1989-11-17,"Westlake Village, CA",,2013
-3122672,Royce,Freeman,FA,RB,36,238,72,29,1996-02-24,"Imperial, CA",71,2018
-3910176,Kristian,Wilkerson,Buf,WR,82,214,73,28,1997-01-10,"Memphis, TN",,2020
-4036448,Jalen,Virgil,Buf,WR,13,210,73,27,1998-07-13,"Lawrenceville, GA",,
-4573697,Mason,Tipton,NO,WR,15,187,71,24,2000-09-27,"Akron, OH",,
-16810,AJ,McCarron,Cin,QB,4,220,75,34,1990-09-13,"Mobile, AL",164,2014
-4361417,Zack,Kuntz,NYJ,TE,88,251,80,26,1999-06-06,"Camp Hill, PA",220,
-4374045,Teagan,Quitoriano,Atl,TE,85,259,78,25,2000-03-15,"Salem, OR",170,
-4426426,Joseph,Ngata,FA,WR,86,215,75,24,2001-01-09,"Folsom, CA",,
-4401805,Dareke,Young,Sea,WR,83,224,74,26,1999-06-04,"Raleigh, NC",233,
-4879650,Grant,DuBose,FA,WR,88,201,74,24,2001-06-20,"Montgomery, AL",256,
-4036595,Josh,Pederson,FA,TE,87,235,77,27,1997-09-22,"Morristown, NJ",,
-2577134,Ty,Montgomery II,FA,RB,14,220,72,32,1993-01-22,"Dallas, TX",94,2015
-4027873,Samori,Toure,Chi,WR,83,196,73,27,1998-03-24,"Portland, OR",258,
-4373266,Antoine,Green,FA,WR,18,199,74,25,1999-11-15,"Rockledge, FL",219,
-4361332,Shedrick,Jackson,LV,WR,4,198,73,25,1999-10-20,"Hoover, AL",,
-2511109,Trevor,Siemian,FA,QB,3,220,75,33,1991-12-26,"Windermere, FL",250,2015
-4056052,Armani,Rogers,FA,TE,88,227,77,27,1997-12-04,"Los Angeles, CA",,
-4240750,Mohamed,Ibrahim,FA,RB,36,203,68,26,1998-09-08,"Baltimore, MD",,
-4036224,Jake,Funk,FA,RB,36,205,70,27,1998-01-11,"Gaithersburg, MD",233,
-3122976,Jeff,Wilson Jr.,FA,RB,23,210,72,28,1996-11-16,"Elkhart, TX",,2018
-4689988,Jason,Brownlee,KC,WR,89,202,75,26,1999-01-30,"West Point, MS",,
-13987,Blaine,Gabbert,FA,QB,,235,77,35,1989-10-15,"Ballwin, MO",10,2011
-4242896,Curtis,Hodges,FA,TE,,240,80,26,1999-07-03,"Mesa, AZ",,
-3120303,Ross,Dwelley,SF,TE,82,235,77,30,1995-01-26,"El Dorado Hills, CA",,2018
-4240023,Tre',McKitty,FA,TE,87,246,76,26,1999-01-12,"Wesley Chapel, FL",97,
-4034862,Jack,Stoll,NO,TE,88,247,76,27,1998-01-28,"Lone Tree, CO",,
-4035826,Demetric,Felton,Wsh,RB,25,190,69,27,1998-07-16,"Temecula, CA",211,
-4248909,Elijah,Dotson,Atl,RB,41,202,69,26,1999-01-19,"Sacramento, CA",,
-4046715,Trishton,Jackson,Ari,WR,86,200,73,27,1998-03-09,"West Bloomfield, MI",,2020
-4567506,Tahj,Washington,Mia,WR,7,174,70,24,2001-05-16,"Marshall, TX",241,
-3051308,PJ,Walker,FA,QB,15,215,71,30,1995-02-26,"Elizabeth, NJ",,2017
-4039034,Shane,Buechele,Buf,QB,6,210,72,27,1998-01-08,"Arlington, TX",,
-4047422,Tanner,Conner,Mia,TE,80,237,75,27,1998-03-20,"Kent, WA",,
-4361988,James,Mitchell,Car,TE,85,249,76,25,1999-08-11,"Big Stone Gap, VA",177,
-3115349,Jakob,Johnson,Hou,RB,43,255,75,30,1994-12-15,"Stuttgart, ",,2019
-3928925,JaMycal,Hasty,NE,RB,39,205,68,28,1996-09-12,"Longview, TX",,2020
-4369886,Chris,Blair,Atl,WR,19,215,74,27,1997-10-06,"Louisville, MS",,
-4247812,Lance,McCutcheon,Pit,WR,82,202,75,26,1999-02-28,"Bozeman, MT",,
-2574630,Jeff,Driskel,FA,QB,16,231,76,32,1993-04-23,"Oviedo, FL",207,2016
-4259324,Travis,Vokolek,Ari,TE,81,260,78,27,1998-06-04,"Springfield, MO",,
-4362603,Brenden,Bates,Cle,TE,82,255,77,25,1999-10-16,"Cincinnati, OH",,
-4384171,Tanner,McLachlan,Cin,TE,84,244,77,26,1999-03-15,"Lethbridge, AB",194,
-17359,Damien,Williams,FA,RB,29,221,71,33,1992-04-03,"San Diego, CA",,2014
-16782,Jerick,McKinnon,FA,RB,1,209,69,33,1992-05-03,"Marietta, GA",96,2014
-3139033,Mike,Boone,FA,RB,34,206,70,30,1995-06-30,"Macclenny, FL",,2018
-4428119,Lew,Nichols,Pit,RB,35,220,70,23,2001-08-16,"Detroit, MI",235,
-3042749,Logan,Woodside,Pit,QB,6,201,74,30,1995-01-27,"Frankfort, KY",249,2018
-4052042,James,Robinson,FA,RB,26,219,69,26,1998-08-09,"Rockford, IL",,2020
-4427728,Bam,Knight,Ari,RB,35,210,71,24,2001-04-11,"Bailey, NC",,
-4034704,Michael,Bandy,Den,WR,83,190,70,27,1997-12-05,"La Mirada, CA",,
-4259908,Braylon,Sanders,Wsh,WR,86,194,73,26,1999-01-21,"Hogansville, GA",,
-4369466,Ryan,Miller,TB,WR,81,221,74,25,2000-02-20,"Jackson, TN",,
-4362617,Bryce,Oliver,Ten,WR,80,214,73,25,2000-05-19,"Fort Lauderdale, FL",,
-4690070,Mitchell,Tinsley,Cin,WR,82,205,73,25,1999-09-15,"Lee's Summit, MO",,
-4362523,Will,Mallory,Ind,TE,86,239,76,26,1999-06-22,"Jacksonville, FL",162,
-4367510,Dante,Miller,NYG,RB,25,200,69,26,1999-05-14,"Rockingham, NC",,
-4035198,Brandon,Johnson,Pit,WR,11,195,74,27,1998-07-26,"Fort Lauderdale, FL",,
-4360978,David,Martin-Robinson,Ten,TE,88,247,75,25,1999-12-26,"Landisville, PA",,
-4361426,Justin,Shorter,LV,TE,88,227,76,25,2000-04-17,"Monmouth Junction, NJ",150,
-4046530,Chris,Evans,FA,RB,25,215,71,27,1997-10-05,"Indianapolis, IN",202,
-4274040,Troy,Hairston,FA,RB,36,245,71,26,1998-12-08,"Birmingham, MI",,
-4698191,Chris,Collier,LV,RB,35,203,71,25,2000-03-24,"Lawrence, NY",,
-4039274,Jonathan,Ward,NYG,RB,23,202,72,27,1997-09-30,"Kankakee, IL",,2020
-3050487,Anthony,Miller,Bal,WR,6,195,71,30,1994-10-09,"Memphis, TN",51,2018
-4424106,Gunner,Olszewski,NYG,WR,0,190,72,28,1996-11-26,"Alvin, TX",,2019
-16813,Logan,Thomas,FA,TE,82,250,78,34,1991-07-01,"Lynchburg, VA",120,2014
-2574576,C.J.,Uzomah,FA,TE,47,262,78,32,1993-01-14,"Suwanee, GA",157,2015
-4248557,E.J.,Jenkins,Phi,TE,84,245,78,26,1998-11-03,"Fredericksburg, VA",,
-4700712,Cam,Grandy,Cin,TE,85,253,77,25,1999-11-19,"Benson, IL",,
-15920,Latavius,Murray,FA,RB,28,230,75,35,1990-01-18,"Nedrow, NY",181,2013
-4372526,Deneric,Prince,FA,RB,35,216,72,25,2000-04-11,"Manvel, TX",,
-3122154,Khari,Blasingame,FA,RB,48,233,72,29,1996-07-01,"Huntsville, AL",,2019
-4362452,Jaret,Patterson,LAC,RB,34,195,68,25,1999-12-23,"Glendale, MO",,
-4589245,Michael,Strachan,Wsh,WR,84,225,77,27,1997-08-13,"Freeport, GB",229,
-3871102,David,Sills V,Atl,WR,87,211,75,29,1996-05-29,"Wilmington, DE",,2019
-4248822,Montrell,Washington,NYG,WR,80,170,70,26,1999-03-16,"Canton, GA",162,
-4242442,Princeton,Fant,Dal,TE,85,235,74,26,1999-03-11,"Nashville, TN",,
-4432731,Moliki,Matavao,NO,TE,80,263,80,22,2003-03-17,"Henderson, NV",248,
-3045238,Godwin,Igwebuike,FA,RB,48,212,72,30,1994-09-10,"Columbus, OH",,2018
-4035912,Kwamie,Lassiter II,FA,WR,18,185,71,27,1998-01-21,"Chandler, AZ",,
-4569156,Michael,Wiley,FA,RB,34,209,70,23,2001-11-10,"Houston, TX",,
-4431431,Corey,Kiner,SF,RB,49,209,69,23,2002-01-21,"Cincinnati, OH",,
-4426891,Isaiah,Spiller,FA,RB,35,215,73,23,2001-08-09,"Spring, TX",123,
-4245639,Stanley,Berryhill,FA,WR,31,190,71,27,1998-06-09,"Tucson, AZ",,
-4362227,Bryce,Ford-Wheaton,NYG,WR,88,220,75,25,2000-03-09,"Fuquay-Varina, NC",,
-4241476,Tyrell,Shavers,Buf,WR,80,211,76,25,1999-08-18,"Lewisville, TX",,
-4249624,Nick,Muse,Phi,TE,87,252,77,26,1998-11-25,"Belmont, NC",227,
-3051439,Boston,Scott,FA,RB,33,203,66,30,1995-04-27,"Baton Rouge, LA",201,2018
-3886818,Myles,Gaskin,FA,RB,38,199,69,28,1997-02-15,"Lynnwood, WA",234,2019
-3910544,Joshua,Kelley,FA,RB,25,212,71,27,1997-11-20,"Lancaster, CA",112,2020
-3914307,Maurice,Alexander,Chi,WR,13,173,70,28,1997-01-10,"Florida City, FL",,
-4242504,Johnny,Johnson III,Hou,WR,88,199,73,26,1999-05-04,"Chandler, AZ",,
-3917849,Lawrence,Cager,Wsh,TE,89,220,77,27,1997-08-20,"Baltimore, MD",,2020
-4258248,Peyton,Hendershot,FA,TE,88,254,76,26,1999-04-23,"North Salem, IN",,
-3914151,Josiah,Deguara,Ari,TE,47,240,74,28,1997-02-14,"Folsom, CA",94,2020
-3916749,Giovanni,Ricci,Min,TE,49,240,75,28,1996-10-16,"Loveland, OH",,2020
-4567246,Snoop,Conner,FA,RB,32,222,70,25,2000-08-01,"Hattiesburg, MS",154,
-4240577,Brandon,Smith,NYJ,WR,87,218,73,26,1998-12-10,"Lake Cormorant, MS",,
-3929636,Irvin,Charles,NYJ,WR,19,219,76,28,1997-04-13,"Sicklerville, NJ",,
-4371974,Seth,Williams,LV,WR,83,211,75,25,2000-04-10,"Cottondale, AL",219,
-4242369,Matt,Bushman,KC,TE,49,245,77,29,1995-11-03,"Tucson, AZ",,
-3925346,Derrick,Gore,FA,RB,44,212,70,30,1994-12-13,"Syracuse, NY",,2019
-4429939,Jawhar,Jordan,Hou,RB,22,186,70,25,1999-08-18,"Long Island, NY",205,
-4373273,British,Brooks,Hou,RB,44,225,71,25,1999-11-18,"Gastonia, NC",,
-4036211,DJ,Turner,FA,WR,19,205,69,28,1997-01-18,"Glenarden, MD",,
-9614,Marcedes,Lewis,FA,TE,84,267,78,41,1984-05-19,"Long Beach, CA",28,2006
-4259147,Jake,Tonges,SF,TE,88,240,76,26,1999-07-08,"Los Gatos, CA",,
-4916349,Nikola,Kalinic,Atl,TE,88,248,76,28,1997-01-21,"Toronto, ON",,
-4241941,Anthony,McFarland Jr.,FA,RB,26,193,68,26,1999-03-04,"Hyattsville, MD",124,2020
-14053,Randall,Cobb,FA,WR,18,192,70,34,1990-08-22,"Alcoa, TN",64,2011
-3126115,Cody,Thompson,FA,WR,83,205,74,29,1996-01-11,"Huron, OH",,2019
-2576716,Jamison,Crowder,FA,WR,80,177,69,32,1993-06-17,"Monroe, NC",105,2015
-4572786,Dennis,Houston,TB,WR,89,190,73,26,1999-04-24,"San Antonio, TX",,
-4035526,Chase,Allen,FA,TE,87,251,78,28,1997-07-09,"Nixa, MO",,
-3923392,Mitchell,Wilcox,FA,TE,86,250,76,28,1996-11-07,"Tarpon Springs, FL",,2020
-4244049,Quintin,Morris,Jax,TE,45,243,74,26,1999-01-21,"Richmond, TX",,
-4036275,Sean,McKeon,Ind,TE,49,255,77,27,1997-12-28,"Dudley, MA",,2020
-14167,Taiwan,Jones,FA,RB,36,195,72,37,1988-07-26,"Antioch, CA",125,2011
-3915381,John,Kelly Jr.,FA,RB,42,208,70,28,1996-10-04,"Detroit, MI",176,2018
-15839,Marquise,Goodwin,FA,WR,3,185,69,34,1990-11-19,"Garland, TX",78,2013
-4427267,Kaylon,Geiger,FA,WR,80,180,70,27,1997-11-01,"Fort Worth, TX",,
-11387,Matthew,Slater,NE,WR,18,205,72,39,1985-09-09,"Orange, CA",153,2008
-4241273,Roger,Carter Jr.,FA,TE,49,250,74,26,1999-03-31,"Columbia, SC",,
-3123944,Qadree,Ollison,FA,RB,41,232,73,28,1996-09-08,"Niagara Falls, NY",152,2019
-2970262,J.P.,Holtz,FA,RB,86,255,75,31,1993-08-28,"Pittsburgh, PA",,2016
-4258190,Ben,Mason,FA,RB,44,254,75,26,1999-05-25,"Newtown, CT",184,
-4570674,Kevin,Harris,FA,RB,36,225,70,24,2000-11-17,"Hinesville, GA",183,
-4240603,Malik,Davis,FA,RB,34,202,71,26,1998-11-26,"Tampa, FL",,
-4239992,Amari,Rodgers,FA,WR,3,212,69,25,1999-09-23,"Knoxville, TN",85,
-3914328,Andy,Isabella,FA,WR,,188,69,28,1996-11-18,"Mayfield, OH",62,2019
-3115255,Brandon,Powell,FA,WR,4,181,68,29,1995-09-12,"Deerfield Beach, FL",,2018
-16799,Allen,Robinson,FA,WR,8,210,74,31,1993-08-24,"Southfield, MI",61,2014
-4360763,Brycen,Tremayne,Car,WR,87,212,76,25,1999-11-18,"Los Angeles, CA",,
-2582410,Tyler,Kroft,FA,TE,82,252,78,32,1992-10-15,"Downingtown, PA",85,2015
-2514206,Blake,Bell,FA,TE,81,252,78,34,1991-08-07,"Wichita, KS",117,2015
-3929924,Zach,Gentry,FA,TE,88,265,80,28,1996-09-10,"Albuquerque, NM",141,2019
-4036129,Dominique,Dafney,Car,TE,46,235,75,28,1997-06-03,"West Des Moines, IA",,2020
-3128452,Jordan,Akins,FA,TE,88,245,76,33,1992-04-19,"Atlanta, GA",98,2018
-2508256,MyCole,Pruitt,FA,TE,81,258,74,33,1992-03-24,"St. Louis, MO",143,2015
-17315,Keith,Smith,FA,RB,40,240,72,33,1992-04-08,"Covina, CA",,2014
-4036032,Brittain,Brown,FA,RB,,208,73,27,1997-10-10,"Canton, GA",250,
-3049916,Matt,Breida,FA,RB,31,195,70,30,1995-02-28,"Brooksville, FL",,2017
-4260406,Zander,Horvath,FA,RB,26,230,75,26,1998-12-10,"Mishawaka, IN",260,
-4360406,Mataeo,Durant,FA,RB,40,195,73,25,1999-12-04,"Plum Branch, SC",,
-3886809,Andre,Baccellia,Ari,WR,82,175,70,28,1997-01-07,"Thousand Oaks, CA",,2020
-4426990,Jalen,Cropper,Dal,WR,16,172,72,24,2001-05-03,"Parlier, CA",,
-4038952,Hunter,Kampmoyer,FA,TE,84,243,76,27,1998-02-06,"Bishop, CA",,
-2511973,Eric,Tomlinson,FA,TE,83,263,78,33,1992-04-22,"Klein, TX",,2015
-15478,Brandon,Bolden,FA,RB,34,220,71,35,1990-01-26,"Baton Rouge, LA",,2012
-3045260,Corey,Clement,FA,RB,23,220,70,30,1994-11-02,"Glassboro, NJ",,2017
-3917612,Ke'Shawn,Vaughn,FA,RB,49,214,70,28,1997-05-04,"Nashville, TN",76,2020
-4390717,Josh,Johnson,FA,RB,34,209,69,27,1997-12-26,"Hurtsboro, AL",,
-4242270,Kyric,McGowan,FA,WR,87,198,71,25,1999-11-01,"Dalton, GA",,
-4036416,Byron,Pringle,FA,WR,3,203,73,31,1993-11-17,"Tampa, FL",,2018
-3052056,River,Cracraft,FA,WR,,198,72,30,1994-11-01,"Rancho Santa Margarita, CA",,2017
-3144991,Parker,Hesse,FA,TE,43,251,75,30,1995-05-26,"Waukon, IA",,2019
-4034952,La'Mical,Perine,FA,RB,38,216,71,27,1998-01-30,"Mobile, AL",120,2020
-4244651,D'vonte,Price,FA,RB,27,210,73,26,1999-06-02,"Punta Gorda, FL",,
-3052083,Devon,Allen,FA,WR,82,190,73,30,1994-12-12,"Phoenix, AZ",,
-4259976,Josh,Ali,FA,WR,80,200,72,26,1999-03-03,"Hollywood, FL",,
-4371986,Anthony,Schwartz,FA,WR,84,186,72,24,2000-09-05,"Pembroke Pines, FL",91,
-5097554,Kameron,Johnson,TB,WR,19,170,70,23,2002-03-17,"Rocky Mount, NC",,
-3930298,Noah,Togiai,FA,TE,,244,76,28,1997-07-06,"West Valley City, UT",,2020
-4047839,N'Keal,Harry,FA,TE,84,228,75,27,1997-12-17,"Chandler, AZ",32,2019
-4428952,Jalen,Wydermyer,FA,TE,49,265,77,24,2000-12-20,"Dickinson, TX",,
-3699935,Devine,Ozigbo,FA,RB,33,225,72,28,1996-10-02,"Sachse, TX",,2019
-3929914,Adam,Prentice,FA,RB,46,245,72,28,1997-01-16,"Fresno, CA",,
-3122899,Richie,James,FA,WR,17,185,69,29,1995-09-05,"Sarasota, FL",240,2018
-15072,Marvin,Jones Jr.,FA,WR,0,199,74,35,1990-03-12,"Fontana, CA",166,2012
-3128724,Isaiah,McKenzie,FA,WR,3,173,67,30,1995-04-09,"Miami, FL",172,2017
-3932430,Jalen,Guyton,FA,WR,4,212,73,28,1997-06-07,"Allen, TX",,2019
-3932144,Jacob,Harris,TB,WR,30,211,77,28,1997-04-16,"Palm Harbor, FL",141,
-4245174,Easop,Winston Jr.,FA,WR,85,192,72,28,1996-12-17,"San Francisco, CA",,2020
-4250945,Colton,Dowell,FA,WR,14,212,75,26,1999-04-19,"Lebanon, TN",228,
-4240861,Dalton,Keene,Hou,TE,40,251,76,26,1999-04-14,"Littleton, CO",101,2020
-3002265,Dwayne,Washington,FA,RB,39,223,73,31,1994-04-24,"Lakewood, CA",236,2016
-4259169,Trestan,Ebner,FA,RB,25,206,71,26,1999-01-02,"Henderson, TX",203,
-4363551,Dylan,Drummond,Atl,WR,81,190,72,25,2000-01-17,"Cleveland, OH",,
-4875912,Tejhaun,Palmer,Ari,WR,83,210,73,25,2000-05-19,"Milwaukee, WI",191,
-5065495,Kaden,Davis,Cle,WR,89,193,73,26,1998-09-25,,,
-4035426,Stephen,Sullivan,FA,TE,85,245,77,28,1996-11-28,"Donaldsonville, LA",251,2020
-16763,Jordan,Matthews,FA,TE,81,182,74,33,1992-07-16,"Madison, AL",42,2014
-3916587,Tyler,Mabry,Car,TE,43,247,75,28,1996-11-21,"Ypsilanti, MI",,2020
-3121378,Matt,Sokol,Buf,TE,87,249,77,29,1995-11-09,"Rochester, MI",,2019
-4361438,Cole,Turner,Wsh,TE,88,240,78,25,2000-03-16,"Clackamas, OR",149,
-4361100,Jack,Westover,NE,TE,87,245,74,26,1999-06-09,"Bellevue, WA",,
-2576399,Nick,Vannett,Min,TE,45,257,77,32,1993-03-06,"Westerville, OH",94,2016
-3914240,Tyler,Davis,FA,TE,30,252,77,28,1997-04-02,"North Bellmore, NY",206,2020
-3125232,Nick,Bawden,FA,RB,,245,74,29,1996-06-22,"Los Gatos, CA",237,2018
-3915145,Kirk,Merritt,FA,RB,33,214,73,28,1997-01-05,"Destrehan, LA",,2020
-4240455,Deon,Jackson,FA,RB,38,218,72,26,1999-02-18,"Atlanta, GA",,
-4241224,Abram,Smith,FA,RB,41,221,71,26,1998-09-14,"Abilene, TX",,
-4062711,Ethan,Fernea,FA,WR,13,195,72,27,1998-03-02,"Dripping Springs, TX",,
-4411193,Deonte,Harty,FA,WR,3,170,66,27,1997-12-04,"Baltimore, MD",,2019
-3052166,Darrell,Daniels,FA,TE,86,256,75,30,1994-11-22,"Pittsburg, CA",,2017
-3116158,Jason,Cabinda,FA,RB,45,235,73,29,1996-03-17,"Flemington, NJ",,2018
-2980077,Jonathan,Williams,FA,RB,18,217,72,31,1994-02-02,"Allen, TX",156,2016
-4046676,Tony,Jones Jr.,FA,RB,37,224,71,27,1997-11-24,"St. Petersburg, FL",,2020
-3128451,Tre'Quan,Smith,FA,WR,10,210,74,29,1996-01-07,"Delray Beach, FL",91,2018
-4259979,Lynn,Bowden Jr.,FA,WR,5,204,73,27,1997-10-14,"Youngstown, OH",80,2020
-4911488,Jared,Bernhardt,FA,WR,83,195,73,27,1997-09-12,"Longwood, FL",,
-4035170,Marquez,Callaway,FA,WR,,204,74,27,1998-03-27,"Warner Robins, GA",,2020
-4373642,Dax,Milne,FA,WR,12,190,73,26,1999-06-23,"South Jordan, UT",258,
-4426535,Theo,Wease Jr.,Mia,WR,81,210,74,24,2001-06-25,"Allen, TX",,
-3049698,Anthony,Firkser,FA,TE,85,241,74,30,1995-02-19,"Manalapan, NJ",,2017
-4212884,Alex,Armah,FA,RB,40,255,73,31,1994-05-17,"Lawrenceville, GA",192,2017
-3915821,Tony,Brown,FA,WR,12,195,73,28,1997-08-08,"La Mirada, CA",,2020
-4262900,Daylen,Baldwin,FA,WR,86,219,74,25,1999-11-24,"Southfield, MI",,
-4243830,Jaelon,Darden,FA,WR,1,175,68,26,1999-01-14,"Houston, TX",129,
-4379405,Jaylen,Johnson,LAC,WR,39,194,74,25,2000-05-26,"Duluth, GA",,
-4245144,Tay,Martin,Wsh,WR,6,186,75,27,1997-12-14,"Houma, LA",,
-4408854,Jody,Fortson,FA,TE,89,226,76,29,1995-12-07,"Buffalo, NY",,2019
-4363554,Thomas,Odukoya,Ten,TE,89,253,78,28,1997-05-05,"Almere, ",,
-4047836,Frank,Darby,FA,WR,3,200,73,27,1997-09-08,"Jersey City, NJ",187,
-3119317,Nsimba,Webster,FA,WR,83,180,70,29,1996-01-27,"Antioch, CA",,2019
-2578533,Chris,Conley,FA,WR,18,205,75,32,1992-10-25,"Dallas, GA",76,2015
-4374187,Deven,Thompkins,FA,WR,13,155,68,25,1999-12-23,"Fort Myers, FL",,
-4430681,Jared,Wayne,FA,WR,14,210,75,24,2000-10-07,"Peterborough, ON",,
-4573243,Chandler,Brayboy,Jax,WR,15,199,73,23,2001-08-20,"Pembroke, NC",,
-2576854,Stephen,Anderson,FA,TE,40,230,74,32,1993-01-30,"San Jose, CA",,2016
-3918003,Brycen,Hopkins,FA,TE,88,245,76,28,1997-03-27,"Nashville, TN",136,2020
-4032247,Raleigh,Webb,FA,WR,17,204,74,27,1997-12-28,"Acworth, GA",,
-3699902,Stanley,Morgan Jr.,FA,WR,82,205,72,28,1996-09-07,"New Orleans, LA",,2019
-3940587,Jesper,Horsted,FA,TE,84,237,75,28,1997-02-27,"Shoreview, MN",,2019
-3049290,Kevin,Rader,FA,TE,88,250,76,30,1995-04-26,"Pittsburgh, PA",,2021
-3046704,Geoff,Swaim,FA,TE,84,260,76,31,1993-09-16,"Chico, CA",246,2015
-17258,Willie,Snead IV,FA,WR,82,195,71,32,1992-10-17,"Winter Park, FL",,2014
-3120980,Keelan,Doss,FA,WR,10,215,75,29,1996-03-21,"Alameda, CA",,2019
-3128317,Juwann,Winfree,FA,WR,9,210,73,28,1996-09-04,"Englewood, NJ",187,2019
-3047536,David,Wells,FA,TE,89,260,78,30,1995-05-02,"Clovis, CA",,2018
-4039253,Trevon,Wesco,FA,TE,48,267,75,29,1995-09-12,"Martinsburg, WV",121,2019
-2577667,Damiere,Byrd,FA,WR,89,175,69,32,1993-01-27,"Sicklerville, NJ",,2015
-2977800,Alex,Erickson,FA,WR,82,195,72,32,1992-11-06,"Darlington, WI",,2016
--16007,Broncos,D/ST,Den,D/ST,,,,,,,,
--16034,Texans,D/ST,Hou,D/ST,,,,,,,,
--16023,Steelers,D/ST,Pit,D/ST,,,,,,,,
--16016,Vikings,D/ST,Min,D/ST,,,,,,,,
--16033,Ravens,D/ST,Bal,D/ST,,,,,,,,
--16021,Eagles,D/ST,Phi,D/ST,,,,,,,,
--16008,Lions,D/ST,Det,D/ST,,,,,,,,
--16017,Patriots,D/ST,NE,D/ST,,,,,,,,
--16026,Seahawks,D/ST,Sea,D/ST,,,,,,,,
--16002,Bills,D/ST,Buf,D/ST,,,,,,,,
--16022,Cardinals,D/ST,Ari,D/ST,,,,,,,,
--16020,Jets,D/ST,NYJ,D/ST,,,,,,,,
--16009,Packers,D/ST,GB,D/ST,,,,,,,,
--16011,Colts,D/ST,Ind,D/ST,,,,,,,,
--16025,49ers,D/ST,SF,D/ST,,,,,,,,
--16019,Giants,D/ST,NYG,D/ST,,,,,,,,
--16012,Chiefs,D/ST,KC,D/ST,,,,,,,,
--16027,Buccaneers,D/ST,TB,D/ST,,,,,,,,
--16003,Bears,D/ST,Chi,D/ST,,,,,,,,
--16028,Commanders,D/ST,Wsh,D/ST,,,,,,,,
--16015,Dolphins,D/ST,Mia,D/ST,,,,,,,,
--16006,Cowboys,D/ST,Dal,D/ST,,,,,,,,
+4257188,Charlie,Jones,FA,WR,,190,72,27,1998-10-29,"Deerfield, IL",,131
+4427105,Max,Duggan,FA,QB,8,207,73,25,2001-03-12,"Council Bluffs, IA",,239
+4245661,Lucas,Havrisik,FA,K,35,185,74,26,1999-09-29,"Riverside, CA",,
+4362162,SaRodorick,Thompson Jr.,FA,RB,27,220,72,26,1999-10-01,"Irving, TX",,
+4429676,Tyler,Goodson,FA,RB,25,197,69,25,2000-11-10,"Suwanee, GA",,
+4430637,Ja'Lynn,Polk,NO,WR,13,203,73,24,2002-04-11,"Lufkin, TX",,37
+4686781,Brenden,Rice,FA,WR,89,208,74,24,2002-03-18,"Chandler, AZ",,225
+4429684,Anthony,Gould,FA,WR,6,174,68,25,2001-04-06,"Leavenworth, KS",,142
+4427985,Bub,Means,FA,WR,,215,74,25,2001-01-10,"Lovejoy, GA",,170
+4360799,Jordan,Travis,FA,QB,3,200,73,26,2000-05-02,"West Palm Beach, FL",,171
+4685039,Michael,Pratt,FA,QB,11,217,74,24,2001-09-30,"Boca Raton, FL",,245
+5208436,Louis,Rees-Zammit,FA,RB,89,209,74,25,2001-02-02,"Penarth, ",,
+4361765,Brayden,Narveson,FA,K,7,215,71,26,1999-09-28,"Scottsdale, AZ",,
+4430104,Sincere,McCormick,FA,RB,35,204,68,25,2000-09-10,"Converse, TX",,
+4427600,Terrell,Jennings,FA,RB,26,222,72,25,2001-03-01,"Jacksonville, FL",,
+4248068,Aaron,Shampklin,FA,RB,48,195,70,26,1999-10-18,"Paramount, CA",,
+4240911,Jacob,Kibodi,FA,RB,36,225,73,27,1998-10-04,"Baton Rouge, LA",,
+4242526,John Samuel,Shenker,FA,TE,86,249,76,28,1998-09-02,"Albany, GA",,
+4775196,Tommy,Mellott,FA,WR,,206,71,24,2001-10-16,"Butte, MT",,213
+4432338,Luke,Lachey,GB,TE,86,250,78,25,2001-06-29,"Columbus, OH",,255
+4596439,Dominic,Lovett,FA,WR,19,185,70,23,2002-11-08,"Belleville, IL",,244
+4431353,Xavier,Restrepo,FA,WR,87,202,70,24,2002-04-22,"Coconut Creek, FL",,
+4698253,Lan,Larison,FA,RB,34,209,71,24,2001-10-11,"Caldwell, ID",,
+4431506,Ja'Corey,Brooks,FA,WR,88,195,75,24,2001-10-31,"Bradenton, FL",,
+4257364,Zavier,Scott,FA,RB,,221,73,27,1999-07-17,"Fort Hood, TX",,
+4596545,CJ,Dippre,FA,TE,,256,77,24,2002-04-29,"Scranton, PA",,
+4428512,Kedon,Slovis,FA,QB,,223,74,25,2001-04-11,"Scottsdale, AZ",,
+4877824,Zach,Horton,FA,TE,43,256,76,23,2002-12-02,"Roanoke, VA",,
+4431342,Brennan,Presley,FA,WR,81,174,68,24,2002-02-02,"Tulsa, OK",,
+4878878,Amar,Johnson,FA,RB,35,205,70,23,2003-01-31,"O' Fallon, MO",,
+4685110,Anthony,Smith,FA,WR,83,197,74,24,2002-03-01,"Huntingtown, MD",,218
+4362504,Brevin,Jordan,HOU,TE,9,245,75,26,2000-07-16,"Las Vegas, NV",,147
+4039160,Kylen,Granson,TEN,TE,86,242,75,28,1998-03-27,"Austin, TX",,127
+4034948,Feleipe,Franks,CAR,TE,81,228,78,28,1997-12-22,"Crawfordville, FL",,
+3871102,David,Sills V,TB,WR,80,211,75,30,1996-05-29,"Wilmington, DE",2019,
+4241410,Jelani,Woods,NYJ,TE,86,253,79,27,1998-10-09,"Ellenwood, GA",,73
+4361438,Cole,Turner,MIA,TE,87,240,78,26,2000-03-16,"Clackamas, OR",,149
+4036419,Skylar,Thompson,BAL,QB,11,219,74,29,1997-06-04,"Independence, MO",,247
+4244049,Quintin,Morris,JAX,TE,80,243,74,27,1999-01-21,"Richmond, TX",,
+4916349,Nikola,Kalinic,CHI,TE,86,248,76,29,1997-01-21,"Toronto, ON",,
+4361426,Justin,Shorter,LV,WR,88,227,76,26,2000-04-17,"Monmouth Junction, NJ",,150
+4362523,Will,Mallory,IND,TE,86,239,76,27,1999-06-22,"Jacksonville, FL",,162
+4365395,Julian,Hill,NE,TE,80,251,76,26,2000-07-09,"Fayetteville, NC",,
+3929636,Irv,Charles,SEA,WR,85,219,76,29,1997-04-13,"Sicklerville, NJ",,
+4369466,Ryan,Miller,MIA,WR,84,221,74,26,2000-02-20,"Jackson, TN",,
+4242442,Princeton,Fant,DAL,TE,85,245,74,27,1999-03-11,"Nashville, TN",,
+4428678,Jamari,Thrash,CLE,WR,80,190,72,25,2000-12-19,"LaGrange, GA",,156
+4686104,Johnny,Wilson,PHI,WR,89,228,78,25,2001-04-03,"Pacoima, CA",,185
+4360978,David,Martin-Robinson,TEN,TE,88,247,75,26,1999-12-26,"Landisville, PA",,
+4698191,Chris,Collier,LV,RB,33,203,70,26,2000-03-24,"Lawrence, NY",,
+4430681,Jared,Wayne,HOU,WR,89,210,75,25,2000-10-07,"Peterborough, ON",,
+4248557,E.J.,Jenkins,PHI,TE,84,245,78,27,1998-11-03,"Fredericksburg, VA",,
+4426335,Graham,Mertz,HOU,QB,18,216,74,25,2000-12-06,"Overland Park, KS",,197
+4590292,Thomas,Fidone II,NYG,TE,86,255,78,23,2002-09-20,"Council Bluffs, IA",,219
+4430431,Kurtis,Rourke,SF,QB,14,220,76,25,2000-10-25,"Oakville, ON",,227
+4432208,Caleb,Lohner,DEN,TE,84,250,79,24,2001-10-01,"Flower Mound, TX",,241
+4432731,Moliki,Matavao,NO,TE,80,263,78,23,2003-03-17,"Henderson, NV",,248
+4691688,Robbie,Ouzts,SEA,RB,40,274,75,24,2002-09-06,"Rock Hill, SC",,175
+4431142,Jimmy,Holiday,KC,WR,82,211,73,24,2001-12-16,"Flora, MS",,
+4688552,Keleki,Latu,BUF,TE,83,249,78,24,2002-08-13,"Sacramento, CA",,
+4569372,Dalevon,Campbell,LAC,WR,81,220,76,24,2001-12-05,"Missouri City, TX",,
+4569547,Nick,Kallerup,SEA,TE,89,266,77,25,2001-03-27,"Wayzata, MN",,
+5083297,Jacoby,Jones,WSH,WR,84,228,75,25,2001-07-18,"Tunica, MS",,
+4578436,Coleman,Owen,FA,WR,9,181,70,25,2001-03-23,"Gilbert, AZ",,
+4433959,Ben,Yurosek,MIN,TE,85,251,76,24,2002-03-17,"Bakersfield, CA",,
+5155825,Carter,Runyon,LV,TE,84,243,76,25,2001-07-23,"Fairfax, VA",,
+4890373,Bauer,Sharp,TB,TE,84,246,76,23,2003-05-03,"Dothan, AL",,185
+4877034,Jaren,Kanak,TEN,TE,81,234,74,22,2004-02-10,"Hays, KS",,225
+5159802,Dallen,Bentley,DEN,TE,89,253,76,25,2000-12-31,"Taylorsville, UT",,256
+5085189,Jack,Endries,CIN,TE,84,245,77,22,2004-03-26,"Danville, CA",,221
+3061612,Jamal,Agnew,FA,WR,,190,70,31,1995-04-03,"San Diego, CA",2017,165
+2576581,Chris,Moore,FA,WR,17,200,73,33,1993-06-16,"Tampa, FL",2016,107
+3121409,Noah,Brown,FA,WR,33,225,74,30,1996-01-06,"Flanders, NJ",2017,239
+3115255,Brandon,Powell,FA,WR,4,181,68,30,1995-09-12,"Deerfield Beach, FL",2018,
+2978109,Zach,Pascal,FA,WR,83,219,74,31,1994-12-18,"Upper Marlboro, MD",2017,
+3122168,Trent,Sherfield,FA,WR,81,203,72,30,1996-02-25,"Danville, IL",2018,
+3128452,Jordan,Akins,FA,TE,,245,76,34,1992-04-19,"Atlanta, GA",2018,98
+2576399,Nick,Vannett,FA,TE,,261,78,33,1993-03-06,"Westerville, OH",2016,94
+3052056,River,Cracraft,FA,WR,88,198,72,31,1994-11-01,"Rancho Santa Margarita, CA",2017,
+3115378,Russell,Gage Jr.,FA,WR,14,184,72,30,1996-01-22,"Baton Rouge, LA",2018,194
+3040569,Trent,Taylor,FA,WR,81,180,68,32,1994-04-30,"Shreveport, LA",2017,177
+2580216,DeAndre,Carter,FA,WR,2,190,68,33,1993-04-10,"San Jose, CA",2015,
+2511973,Eric,Tomlinson,FA,TE,83,263,78,34,1992-04-22,"Klein, TX",2015,
+3049698,Anthony,Firkser,FA,TE,47,245,74,31,1995-02-19,"Manalapan, NJ",2017,
+4036335,Cedrick,Wilson Jr.,FA,WR,86,205,74,30,1995-11-20,"Memphis, TN",2018,208
+3115928,Malik,Turner,FA,WR,81,202,74,30,1996-01-30,"Springfield, IL",2018,
+2574511,Brandon,Allen,FA,QB,12,219,74,34,1992-09-05,"Fayetteville, AR",2016,201
+2574630,Jeff,Driskel,FA,QB,2,231,76,33,1993-04-23,"Oviedo, FL",2016,207
+2508256,MyCole,Pruitt,FA,TE,81,258,74,34,1992-03-24,"St. Louis, MO",2015,143
+3047876,KhaDarel,Hodge,FA,WR,86,210,74,31,1995-01-03,"D Lo, MS",2018,
+2565969,Taylor,Heinicke,FA,QB,4,210,73,33,1993-03-15,"Lawrenceville, GA",2015,
+3051381,Mike,White,FA,QB,,220,77,31,1995-03-25,"Pembroke Pines, FL",2018,171
+3128390,Allen,Lazard,FA,WR,10,227,77,30,1995-12-11,"Urbandale, IA",2018,
+2579604,Phillip,Dorsett II,FA,WR,13,185,70,33,1993-01-05,"Fort Lauderdale, FL",2015,29
+3115306,Josh,Reynolds,FA,WR,83,192,75,31,1995-02-16,"San Antonio, TX",2017,117
+2574576,C.J.,Uzomah,FA,TE,47,262,78,33,1993-01-14,"Suwanee, GA",2015,157
+9614,Marcedes,Lewis,FA,TE,89,265,78,42,1984-05-19,"Long Beach, CA",2006,28
+2511109,Trevor,Siemian,FA,QB,13,220,75,34,1991-12-26,"Windermere, FL",2015,250
+16140,Ryan,Griffin,FA,QB,4,218,76,36,1989-11-17,"Westlake Village, CA",2013,
+3722362,Brett,Rypien,FA,QB,16,202,74,30,1996-07-09,"Spokane, WA",2019,
+3915381,John,Kelly Jr.,FA,RB,42,208,70,29,1996-10-04,"Detroit, MI",2018,176
+3120590,Easton,Stick,FA,QB,,224,73,30,1995-09-15,"Omaha, NE",2019,166
+3122976,Jeff,Wilson Jr.,FA,RB,34,205,72,29,1996-11-16,"Elkhart, TX",2018,
+3045169,Tim,Boyle,FA,QB,15,232,76,31,1994-10-03,"Middlefield, CT",2018,
+16763,Jordan,Matthews,FA,TE,81,182,74,34,1992-07-16,"Madison, AL",2014,42
+3886818,Myles,Gaskin,FA,RB,33,200,70,29,1997-02-15,"Lynnwood, WA",2019,234
+3924365,Hayden,Hurst,FA,TE,88,245,76,33,1993-08-24,"Jacksonville, FL",2018,25
+3916430,Nyheim,Hines,FA,RB,19,198,68,29,1996-11-12,"Garner, NC",2018,104
+3121410,Parris,Campbell,DAL,WR,11,208,72,29,1997-07-16,"Akron, OH",2019,59
+3932905,Diontae,Johnson,FA,WR,16,183,70,30,1996-07-05,"Ruskin, FL",2019,66
+4048244,Alexander,Mattison,FA,RB,8,220,71,28,1998-06-19,"San Bernardino, CA",2019,102
+3127306,Dante,Pettis,FA,WR,87,195,73,30,1995-10-23,"San Clemente, CA",2018,44
+3127292,Will,Dissly,FA,TE,89,265,76,30,1996-07-08,"Bozeman, MT",2018,120
+3119195,Chase,Edmonds,FA,RB,38,205,69,30,1996-04-13,"Harrisburg, PA",2018,134
+3115394,DJ,Chark,FA,WR,16,198,75,29,1996-09-23,"Alexandria, LA",2018,61
+3139033,Mike,Boone,FA,RB,16,206,70,31,1995-06-30,"Macclenny, FL",2018,
+3121427,Curtis,Samuel,FA,WR,1,195,71,30,1996-08-11,"Brooklyn, NY",2017,40
+3125116,D'Onta,Foreman,FA,RB,27,235,72,30,1996-04-24,"Texas City, TX",2017,89
+3050487,Anthony,Miller,FA,WR,,195,71,31,1994-10-09,"Memphis, TN",2018,51
+3051926,Gus,Edwards,FA,RB,4,238,73,31,1995-04-13,"Staten Island, NY",2018,
+3045138,Mike,Williams,LAC,WR,81,218,76,31,1994-10-04,"Vance, SC",2017,7
+3045144,Tyler,Boyd,FA,WR,83,203,74,31,1994-11-15,"Clairton, PA",2016,55
+2971618,Nelson,Agholor,FA,WR,15,200,72,33,1993-05-24,"Tampa, FL",2015,20
+2574808,Robbie,Chosen,FA,WR,12,190,75,33,1993-05-09,"Fort Lauderdale, FL",2016,
+16799,Allen,Robinson,FA,WR,,210,74,33,1993-08-24,"Southfield, MI",2014,61
+15880,Robert,Woods,FA,WR,16,190,72,34,1992-04-10,"Carson, CA",2013,41
+3139602,D'Ernest,Johnson,FA,RB,21,205,71,30,1996-02-27,"Immokalee, FL",2019,
+3948283,Stephen,Carlson,FA,TE,88,248,76,29,1996-12-12,"Jamestown, NY",2019,
+3122154,Khari,Blasingame,FA,RB,48,233,72,30,1996-07-01,"Huntsville, AL",2019,
+3115349,Jakob,Johnson,FA,RB,,255,75,31,1994-12-15,"Stuttgart, ",2019,
+2971281,Pharaoh,Brown,FA,TE,49,246,77,32,1994-05-04,"Lyndhurst, OH",2017,
+4421446,Craig,Reynolds,FA,RB,24,225,71,30,1996-06-15,"Willow Grove, PA",2019,
+3931391,Trenton,Irwin,FA,WR,82,204,74,30,1995-12-10,"Valencia, CA",2019,
+4241802,Jalen,Reagor,FA,WR,17,197,71,27,1999-01-01,"Waxahachie, TX",2020,21
+3917612,Ke'Shawn,Vaughn,FA,RB,30,214,70,29,1997-05-04,"Nashville, TN",2020,76
+4035676,Zack,Moss,FA,RB,31,220,70,28,1997-12-15,"Hialeah Gardens, FL",2020,86
+4036431,Darrynton,Evans,FA,RB,21,203,70,28,1998-07-09,"Oak Hill, FL",2020,93
+3910544,Joshua,Kelley,FA,RB,25,212,71,28,1997-11-20,"Lancaster, CA",2020,112
+2310331,Tyler,Johnson,FA,WR,15,208,73,28,1998-08-25,"Minneapolis, MN",2020,161
+4243537,Gabe,Davis,FA,WR,13,225,74,27,1999-04-01,"Sanford, FL",2020,128
+4050373,Quez,Watkins,FA,WR,86,193,72,28,1998-06-09,"Athens, AL",2020,200
+3916566,K.J.,Osborn,FA,WR,85,203,71,29,1997-06-10,"Ypsilanti, MI",2020,176
+4242540,Isaiah,Hodgins,FA,WR,89,200,75,27,1998-10-21,"Oakley, CA",2020,207
+3928925,JaMycal,Hasty,FA,RB,39,205,68,29,1996-09-12,"Longview, TX",2020,
+3124092,John,Wolford,FA,QB,5,218,73,30,1995-10-16,"Jacksonville, FL",2021,
+4036275,Sean,McKeon,IND,TE,49,255,77,28,1997-12-28,"Dudley, MA",2020,
+3929637,Dan,Chisena,FA,WR,88,202,75,29,1997-02-25,"Downingtown, PA",2020,
+4039274,Jonathan,Ward,FA,RB,35,202,72,28,1997-09-30,"Kankakee, IL",2020,
+4046676,Tony,Jones Jr.,FA,RB,37,224,71,28,1997-11-24,"St. Petersburg, FL",2020,
+4362630,Terrace,Marshall Jr.,FA,WR,86,200,74,26,2000-06-09,"Bossier City, LA",,59
+4034946,Kyle,Trask,FA,QB,14,236,77,28,1998-03-06,"Manvel, TX",,64
+4241555,Elijah,Mitchell,FA,RB,38,200,70,28,1998-05-02,"Erath, LA",,194
+4245645,Gary,Brightwell,FA,RB,32,218,73,28,1998-02-28,"Chester, PA",,196
+4240573,Ihmir,Smith-Marsette,FA,WR,9,200,73,27,1999-08-29,"Newark, NJ",,157
+4048259,Avery,Williams,FA,RB,39,195,69,28,1998-07-15,"Pasadena, CA",,183
+4362452,Jaret,Patterson,FA,RB,32,195,68,26,1999-12-23,"Glendale, MO",,
+4044144,Kenny,Yeboah,FA,TE,48,250,75,27,1998-10-30,"Allentown, PA",,
+4241983,Cody,White,FA,WR,,227,75,27,1998-11-28,"Novi, MI",2020,
+4034862,Jack,Stoll,FA,TE,89,245,76,28,1998-01-28,"Lone Tree, CO",,
+4034704,Michael,Bandy,FA,WR,83,190,70,28,1997-12-05,"La Mirada, CA",,
+4039358,Patrick,Taylor Jr.,FA,RB,32,217,74,28,1998-04-29,"Humble, TX",2020,
+4057082,Mason,Kinsey,FA,WR,12,200,71,28,1998-08-29,"Demorest, GA",2020,
+4390717,Josh,Johnson,FA,RB,34,209,69,28,1997-12-26,"Hurtsboro, AL",,
+4035693,Velus,Jones Jr.,FA,RB,33,204,72,29,1997-05-11,"Saraland, AL",,71
+4372071,Hassan,Haskins,FA,RB,26,228,74,26,1999-11-26,"St. Louis, MO",,131
+4239086,Desmond,Ridder,FA,QB,18,211,75,27,1999-08-31,"Louisville, KY",,74
+4570409,David,Bell,CLE,WR,18,212,73,25,2000-12-14,"Indianapolis, IN",,99
+4362186,Erik,Ezukanma,FA,WR,49,206,74,26,2000-01-25,"Fort Worth, TX",,125
+4374045,Teagan,Quitoriano,FA,TE,47,259,78,26,2000-03-15,"Salem, OR",,170
+4379401,John,FitzPatrick,FA,TE,86,262,79,26,2000-03-09,"Atlanta, GA",,213
+4250360,Bailey,Zappe,FA,QB,11,220,73,27,1999-04-26,"Victoria, TX",,137
+4361988,James,Mitchell,FA,TE,,249,76,27,1999-08-11,"Big Stone Gap, VA",,177
+4044111,Chris,Oladokun,FA,QB,19,213,73,29,1997-09-03,"Tampa, FL",,241
+4240577,Brandon,Smith,FA,WR,87,220,74,27,1998-12-10,"Lake Cormorant, MS",,
+4374187,Deven,Thompkins,FA,WR,83,155,68,26,1999-12-23,"Fort Myers, FL",,
+4245131,Tim,Jones,FA,WR,13,200,73,28,1998-05-15,"Biloxi, MS",,
+4039034,Shane,Buechele,FA,QB,6,210,72,28,1998-01-08,"Arlington, TX",,
+4259308,Raheem,Blackshear,FA,RB,42,190,69,28,1998-06-05,"Philadelphia, PA",,
+4244856,Austin,Trammell,FA,WR,81,185,70,28,1998-07-04,"Spring, TX",,
+4035312,Anthony,Brown Jr.,FA,QB,19,217,73,28,1998-07-27,"Cliffwood, NJ",,
+4360231,Lucas,Krull,FA,TE,85,260,78,28,1998-07-11,"Shawnee, KS",,
+4572786,Dennis,Houston,TB,WR,89,190,73,27,1999-04-24,"San Antonio, TX",,
+4250764,Stone,Smartt,FA,TE,,226,76,27,1998-10-04,"Sacramento, CA",,
+3914307,Maurice,Alexander,FA,WR,13,173,70,29,1997-01-10,"Florida City, FL",,
+4685035,Zach,Evans,FA,RB,38,202,71,25,2001-05-30,"Houston, TX",,215
+4692590,Jalin,Hyatt,FA,WR,13,185,72,24,2001-09-25,"Irmo, SC",,73
+4259592,Sean,Clifford,FA,QB,4,212,74,28,1998-07-14,"Cincinnati, OH",,149
+4569609,Evan,Hull,FA,RB,43,209,70,25,2000-10-26,"Maple Grove, MN",,176
+4570561,Eric,Gray,FA,RB,20,211,70,26,1999-11-04,"Memphis, TN",,172
+4428119,Lew,Nichols,FA,RB,35,220,70,25,2001-08-16,"Detroit, MI",,235
+4565908,Tyler,Scott,FA,WR,82,185,71,24,2001-10-12,"Norton, OH",,133
+4361417,Zack,Kuntz,FA,TE,47,251,80,27,1999-06-06,"Camp Hill, PA",,220
+4427391,Kenny,McIntosh,FA,RB,25,204,72,26,2000-03-03,"Fort Lauderdale, FL",,237
+4243322,Jake,Haener,FA,QB,2,200,73,27,1999-03-10,"Danville, CA",,127
+4367178,Dorian,Thompson-Robinson,FA,QB,14,203,74,26,1999-11-14,"Las Vegas, NV",,140
+4372063,Ronnie,Bell,FA,WR,,192,72,26,2000-01-28,"Kansas City, MO",,253
+4373632,Jaren,Hall,FA,QB,15,207,72,28,1998-03-24,"Spanish Fork, UT",,164
+4426407,Trey,Palmer,FA,WR,10,190,73,25,2001-04-02,"Kentwood, LA",,191
+4360175,Clayton,Tune,FA,QB,6,220,75,27,1999-03-23,"Carrollton, TX",,139
+4360290,Brayden,Willis,FA,TE,9,240,76,26,1999-11-11,"Arlington, TX",,247
+4250945,Colton,Dowell,FA,WR,,212,75,27,1999-04-19,"Lebanon, TN",,228
+4372526,Deneric,Prince,FA,RB,,211,72,26,2000-04-11,"Manvel, TX",,
+4689988,Jason,Brownlee,FA,WR,89,202,75,27,1999-01-30,"West Point, MS",,
+4240750,Mohamed,Ibrahim,FA,RB,36,203,68,28,1998-09-08,"Baltimore, MD",,
+4248909,Elijah,Dotson,FA,RB,41,202,69,27,1999-01-19,"Sacramento, CA",,
+4367186,Chase,Cota,FA,WR,38,205,76,26,1999-11-09,"Medford, OR",,
+4240069,Malik,Cunningham,FA,WR,15,190,73,27,1998-10-06,"Montgomery, AL",,
+4241588,Elijah,Cooks,FA,WR,80,215,76,27,1998-10-13,"Atascadero, CA",,
+4240350,Xazavian,Valladay,FA,RB,,198,72,28,1998-07-03,"Chicago, IL",,
+4372070,Ben,VanSumeren,FA,RB,,250,74,26,2000-05-05,"Bay City, MI",,
+4242558,Tucker,Fisk,FA,TE,42,285,76,27,1999-01-19,"Davis, CA",,
+4244688,Nathan,Rourke,FA,QB,16,210,73,28,1998-05-24,"Oakville, ON",,
+4361332,Shedrick,Jackson,FA,WR,4,198,73,26,1999-10-20,"Hoover, AL",,
+4685016,Ellis,Merriweather,FA,RB,38,220,73,27,1999-04-07,"Alpharetta, GA",,
+4259324,Travis,Vokolek,FA,TE,81,260,78,28,1998-06-04,"Springfield, MO",,
+4249616,Owen,Wright,FA,RB,42,217,69,27,1999-02-28,"Bethesda, MD",,
+4243004,Jordan,Mims,FA,RB,41,205,72,27,1999-06-16,"East Palo Alto, CA",,
+4250969,Rodney,Williams,FA,TE,87,235,76,28,1998-04-08,"Memphis, TN",,
+4363551,Dylan,Drummond,FA,WR,80,190,72,26,2000-01-17,"Cleveland, OH",,
+4429033,Jermaine,Burton,FA,WR,81,204,72,25,2001-06-28,"Calabasas, CA",,80
+4429001,Jase,McClellan,FA,RB,39,212,71,24,2002-06-25,"Aledo, TX",,186
+4692022,Javon,Baker,FA,WR,,202,73,24,2002-02-18,"Atlanta, GA",,110
+4426479,Cornelius,Johnson,FA,WR,86,208,75,25,2000-11-29,"Greenwich, CT",,253
+4428532,Ainias,Smith,CAR,WR,80,176,69,25,2001-05-31,"Missouri City, TX",,152
+4361112,Devin,Culp,FA,TE,82,237,76,26,2000-02-02,"Spokane, WA",,246
+4427575,Jha'Quan,Jackson,FA,WR,39,188,69,26,2000-05-15,"Luling, LA",,182
+4567095,Keilan,Robinson,FA,RB,,191,68,26,2000-02-16,"Washington, DC",,167
+4567506,Tahj,Washington,FA,WR,,174,70,25,2001-05-16,"Marshall, TX",,241
+4429262,Jaheim,Bell,FA,TE,82,241,74,25,2001-06-14,"Lake City, FL",,231
+4361653,Devin,Leary,FA,QB,13,215,73,26,1999-09-10,"Sicklerville, NJ",,218
+4367510,Dante,Miller,FA,RB,25,200,69,27,1999-05-14,"Rockingham, NC",,
+4361604,Blake,Watson,FA,RB,32,195,69,26,1999-10-14,"Queens, NY",,
+4373634,Dallin,Holker,FA,TE,85,241,75,26,2000-04-07,"Lehi, UT",,
+4569156,Michael,Wiley,FA,RB,,209,72,24,2001-11-10,"Houston, TX",,
+4362227,Bryce,Ford-Wheaton,FA,WR,88,220,75,26,2000-03-09,"Fuquay-Varina, NC",,
+4428811,Xavier,Weaver,ARI,WR,89,185,72,25,2000-10-12,"Orlando, FL",,
+4391845,Cody,Schrader,FA,RB,25,214,69,27,1999-09-08,"St. Louis, MO",,
+4363554,Thomas,Odukoya,KC,TE,,253,78,29,1997-05-05,"Almere, ",,
+5065495,Kaden,Davis,FA,WR,27,193,73,27,1998-09-25,"Ellsworth, KS",,
+4567216,D.J.,Williams,FA,RB,30,225,72,26,1999-11-15,"Lake Placid, FL",,
+4426893,Joshua,Cephus,FA,WR,18,193,74,25,2001-03-05,"Houston, TX",,
+4372758,Kevin,Austin Jr.,FA,WR,81,200,74,26,2000-03-30,"Fort Lauderdale, FL",,
+4429012,Kendall,Milton,FA,RB,36,230,73,24,2002-02-10,"Fresno, CA",,
+4248425,Carlos,Washington Jr.,FA,RB,37,210,71,27,1998-12-26,"Clinton, MD",,
+4700712,Cam,Grandy,FA,TE,,253,77,26,1999-11-19,"Benson, IL",,
+4361100,Jack,Westover,WSH,RB,,252,75,27,1999-06-09,"Bellevue, WA",,
+4379405,Jaylen,Johnson,FA,WR,39,194,74,26,2000-05-26,"Duluth, GA",,
+4426364,Baylor,Cupp,FA,TE,83,243,78,26,2000-05-10,"Brock, TX",,
+4698301,Jermaine,Jackson,FA,WR,80,170,67,26,2000-06-02,"Oakland, CA",,
+4429121,Kalel,Mullings,FA,RB,31,226,74,23,2002-10-04,"West Roxbury, MA",,188
+4693331,Cam,Miller,FA,QB,15,211,73,25,2001-06-18,"Solon, IA",,215
+4431479,Ricky,White III,FA,WR,86,181,73,24,2002-02-06,"Marietta, GA",,238
+4808830,Damien,Martinez,FA,RB,26,217,72,22,2004-01-31,"Lewisville, TX",,223
+4887918,Junior,Bergen,FA,WR,30,184,69,23,2002-10-23,"Billings, MT",,252
+4570242,Nick,Nash,FA,WR,19,195,75,27,1999-07-08,"Irvine, CA",,
+4428116,Isaiah,Neyor,FA,WR,80,218,76,25,2001-06-07,"Fort Worth, TX",,
+4431536,Donovan,Edwards,FA,RB,36,212,73,23,2003-02-25,"West Bloomfield, MI",,
+4426535,Theo,Wease Jr.,FA,WR,82,210,74,25,2001-06-25,"Allen, TX",,
+4573243,Chandler,Brayboy,FA,WR,15,199,73,25,2001-08-20,"Pembroke, NC",,
+4605841,Nathan,Carter,FA,RB,,202,70,24,2002-05-22,"Rochester, NY",,
+4877203,Gage,Larvadain,FA,WR,84,171,68,23,2003-01-03,"Donaldsonville, LA",,
+4570296,Dalen,Cambre,FA,WR,83,192,72,25,2001-04-10,"Lafayette, LA",,
+4613050,Quentin,Skinner,FA,WR,18,195,77,24,2001-12-24,"Claremore, OK",,
+5178972,Jakobie,Keeney-James,FA,WR,23,195,73,25,2000-09-26,"Redlands, CA",,
+4428396,Hayden,Rucci,FA,TE,,247,77,25,2001-01-27,"Lititz, PA",,
+4430684,Treyton,Welch,FA,TE,82,240,76,25,2001-01-10,"Buffalo, MN",,
+4876006,Zaire,Mitchell-Paden,FA,TE,,257,77,27,1999-08-20,"Rockville, MD",,
+2977800,Alex,Erickson,FA,WR,82,195,72,33,1992-11-06,"Darlington, WI",2016,
+3120303,Ross,Dwelley,FA,TE,,240,77,31,1995-01-26,"El Dorado Hills, CA",2018,
+3918639,Gerald,Everett,FA,TE,14,245,75,32,1994-06-25,"Lithonia, GA",2017,44
+4040980,Irv,Smith Jr.,FA,TE,83,242,74,28,1998-08-09,"New Orleans, LA",2019,50
+3046704,Geoff,Swaim,FA,TE,84,260,76,32,1993-09-16,"Chico, CA",2015,246
+2578533,Chris,Conley,FA,WR,18,205,75,33,1992-10-25,"Dallas, GA",2015,76
+2576716,Jamison,Crowder,FA,WR,80,177,69,33,1993-06-17,"Monroe, NC",2015,105
+3916564,Tyree,Jackson,FA,TE,80,249,79,28,1997-11-07,"Norton Shores, MI",2021,
+3917960,Steven,Sims,FA,WR,80,190,70,29,1997-03-31,"Houston, TX",2019,
+4411193,Deonte,Harty,FA,WR,3,170,66,28,1997-12-04,"Baltimore, MD",2019,
+3912092,Donald,Parham Jr.,FA,TE,89,237,80,29,1997-08-16,"Lakeland, FL",2019,
+4243160,Laviska,Shenault Jr.,FA,WR,15,227,73,27,1998-10-05,"Desoto, TX",2020,42
+3914151,Josiah,Deguara,FA,TE,46,238,74,29,1997-02-14,"Folsom, CA",2020,94
+4040774,Harrison,Bryant,FA,TE,46,242,77,28,1998-04-23,"Gray, GA",2020,115
+4039043,Collin,Johnson,FA,WR,17,220,77,28,1997-09-23,"San Jose, CA",2020,165
+3916204,James,Proche II,FA,WR,13,193,71,29,1996-09-21,"Dallas, TX",2020,201
+4035426,Stephen,Sullivan,FA,TE,85,245,77,29,1996-11-28,"Donaldsonville, LA",2020,251
+4035170,Marquez,Callaway,FA,WR,15,204,74,28,1998-03-27,"Warner Robins, GA",2020,
+4046715,Trishton,Jackson,FA,WR,86,200,73,28,1998-03-09,"West Bloomfield, MI",2020,
+3917849,Lawrence,Cager,FA,TE,89,220,77,29,1997-08-20,"Baltimore, MD",2020,
+3910176,Kristian,Wilkerson,FA,WR,83,214,73,29,1997-01-10,"Memphis, TN",2020,
+3919510,Alex,Bachman,FA,WR,5,190,72,30,1996-05-29,"Westlake Village, CA",2019,
+3915821,Tony,Brown,FA,WR,12,195,73,29,1997-08-08,"La Mirada, CA",2020,
+4043016,Dee,Eskridge,FA,WR,82,190,69,29,1997-03-23,"Bluffton, IN",,56
+4036026,Dez,Fitzpatrick,FA,WR,87,208,74,28,1997-12-17,"Farmington Hills, MI",,109
+4243830,Jaelon,Darden,FA,WR,1,175,68,27,1999-01-14,"Houston, TX",,129
+4746079,Zach,Davidson,FA,TE,39,245,79,28,1998-07-15,"Webb City, MO",,168
+4408854,Jody,Fortson,FA,TE,89,226,76,30,1995-12-07,"Buffalo, NY",2019,
+3144991,Parker,Hesse,FA,TE,43,251,75,31,1995-05-26,"Waukon, IA",2019,
+3923392,Mitchell,Wilcox,FA,TE,86,250,76,29,1996-11-07,"Tarpon Springs, FL",2020,
+3916749,Giovanni,Ricci,FA,TE,88,240,75,29,1996-10-16,"Loveland, OH",2020,
+4608362,Shane,Zylstra,FA,TE,80,245,75,29,1996-11-16,"Spicer, MN",,
+3916587,Tyler,Mabry,FA,TE,43,247,75,29,1996-11-21,"Ypsilanti, MI",2020,
+3126115,Cody,Thompson,FA,WR,83,205,74,30,1996-01-11,"Huron, OH",2019,
+4426475,Tyrion,Davis-Price,FA,RB,44,211,72,25,2000-10-23,"Baton Rouge, LA",,93
+4689546,Danny,Gray,FA,WR,82,200,72,27,1999-04-01,"Dallas, TX",,105
+4362087,Keaontay,Ingram,FA,RB,30,220,72,26,1999-10-26,"Carthage, TX",,201
+4360174,Michael,Woods II,FA,WR,,204,73,26,2000-03-19,"Magnolia, TX",,202
+4249624,Nick,Muse,FA,TE,87,252,77,27,1998-11-25,"Belmont, NC",,227
+4248822,Montrell,Washington,FA,WR,16,170,70,27,1999-03-16,"Canton, GA",,162
+4027873,Samori,Toure,FA,WR,46,196,73,28,1998-03-24,"Portland, OR",,258
+4360306,Justyn,Ross,FA,WR,8,210,76,26,1999-12-15,"Phenix City, AL",,
+4036211,DJ,Turner,FA,WR,19,205,69,29,1997-01-18,"Glenarden, MD",,
+4258248,Peyton,Hendershot,FA,TE,88,254,76,27,1999-04-23,"North Salem, IN",,
+4036448,Jalen,Virgil,FA,WR,87,210,73,28,1998-07-13,"Lawrenceville, GA",,
+4047422,Tanner,Conner,FA,TE,48,232,75,28,1998-03-20,"Kent, WA",,
+4035776,Kendric,Pryor,FA,WR,19,189,71,28,1998-01-06,"Hazel Crest, IL",,
+4274040,Troy,Hairston,FA,RB,36,245,71,27,1998-12-08,"Birmingham, MI",,
+4035198,Brandon,Johnson,FA,WR,,195,74,28,1998-07-26,"Fort Lauderdale, FL",,
+3886809,Andre,Baccellia,FA,WR,82,180,70,29,1997-01-07,"Thousand Oaks, CA",2020,
+4879650,Grant,DuBose,FA,WR,16,201,74,25,2001-06-20,"Montgomery, AL",,256
+4373266,Antoine,Green,FA,WR,18,199,74,26,1999-11-15,"Rockledge, FL",,219
+4362019,A.T.,Perry,FA,WR,27,205,77,26,1999-10-26,"Lake Worth, FL",,195
+4426426,Joseph,Ngata,FA,WR,86,215,75,25,2001-01-09,"Folsom, CA",,
+4429006,Rakim,Jarrett,FA,WR,,192,72,25,2001-01-24,"Palmer Park, MD",,
+4689334,Malik,Heath,FA,WR,86,213,74,26,2000-03-31,"Jackson, MS",,
+4427278,Xavier,Gipson,FA,WR,88,189,69,25,2001-03-08,"Dallas, TX",,
+4361778,Kearis,Jackson,FA,WR,5,196,71,26,1999-12-09,"Fort Valley, GA",,
+4243319,Terrell,Bynum,FA,WR,35,188,72,28,1998-08-03,"Long Beach, CA",,
+4360794,Henry,Pearson,FA,TE,44,249,74,26,1999-11-23,"Ho-Ho-Kus, NJ",,
+4428796,Casey,Washington,FA,WR,88,200,72,25,2001-03-06,"Round Rock, TX",,187
+4875912,Tejhaun,Palmer,FA,WR,80,210,74,26,2000-05-19,"Milwaukee, WI",,191
+4384171,Tanner,McLachlan,FA,TE,,244,77,27,1999-03-15,"Lethbridge, AB",,194
+4362489,John,Stephens Jr.,FA,TE,49,221,77,26,1999-09-23,"Logansport, LA",,
+4426399,Ramel,Keyton,FA,WR,14,191,74,25,2000-09-14,"Marietta, GA",,
+4589248,Tyreik,McAllister,FA,WR,32,185,70,28,1998-04-07,"Latta, SC",,
+4362603,Brenden,Bates,FA,TE,82,255,77,26,1999-10-16,"Cincinnati, OH",,
+4362617,Bryce,Oliver,FA,WR,,214,73,26,2000-05-19,"Fort Lauderdale, FL",,
+4426990,Jalen,Moreno-Cropper,FA,WR,85,172,72,25,2001-05-03,"Parlier, CA",,
+4431509,Kaden,Prather,FA,WR,89,204,75,24,2002-09-06,"Montgomery Village, MD",,240
+-16034,Texans,D/ST,HOU,D/ST,,,,,,,,
+-16007,Broncos,D/ST,DEN,D/ST,,,,,,,,
+-16026,Seahawks,D/ST,SEA,D/ST,,,,,,,,
 -16014,Rams,D/ST,LAR,D/ST,,,,,,,,
+-16023,Steelers,D/ST,PIT,D/ST,,,,,,,,
+-16033,Ravens,D/ST,BAL,D/ST,,,,,,,,
+-16021,Eagles,D/ST,PHI,D/ST,,,,,,,,
+-16008,Lions,D/ST,DET,D/ST,,,,,,,,
+-16017,Patriots,D/ST,NE,D/ST,,,,,,,,
+-16005,Browns,D/ST,CLE,D/ST,,,,,,,,
+-16030,Jaguars,D/ST,JAX,D/ST,,,,,,,,
 -16024,Chargers,D/ST,LAC,D/ST,,,,,,,,
--16004,Bengals,D/ST,Cin,D/ST,,,,,,,,
--16005,Browns,D/ST,Cle,D/ST,,,,,,,,
--16030,Jaguars,D/ST,Jax,D/ST,,,,,,,,
--16013,Raiders,D/ST,LV,D/ST,,,,,,,,
--16001,Falcons,D/ST,Atl,D/ST,,,,,,,,
--16029,Panthers,D/ST,Car,D/ST,,,,,,,,
+-16012,Chiefs,D/ST,KC,D/ST,,,,,,,,
+-16009,Packers,D/ST,GB,D/ST,,,,,,,,
+-16027,Buccaneers,D/ST,TB,D/ST,,,,,,,,
+-16016,Vikings,D/ST,MIN,D/ST,,,,,,,,
+-16006,Cowboys,D/ST,DAL,D/ST,,,,,,,,
+-16003,Bears,D/ST,CHI,D/ST,,,,,,,,
+-16025,49ers,D/ST,SF,D/ST,,,,,,,,
+-16010,Titans,D/ST,TEN,D/ST,,,,,,,,
+-16002,Bills,D/ST,BUF,D/ST,,,,,,,,
+-16020,Jets,D/ST,NYJ,D/ST,,,,,,,,
 -16018,Saints,D/ST,NO,D/ST,,,,,,,,
--16010,Titans,D/ST,Ten,D/ST,,,,,,,,
+-16019,Giants,D/ST,NYG,D/ST,,,,,,,,
+-16011,Colts,D/ST,IND,D/ST,,,,,,,,
+-16004,Bengals,D/ST,CIN,D/ST,,,,,,,,
+-16013,Raiders,D/ST,LV,D/ST,,,,,,,,
+-16001,Falcons,D/ST,ATL,D/ST,,,,,,,,
+-16029,Panthers,D/ST,CAR,D/ST,,,,,,,,
+-16028,Commanders,D/ST,WSH,D/ST,,,,,,,,
+-16015,Dolphins,D/ST,MIA,D/ST,,,,,,,,
+-16022,Cardinals,D/ST,ARI,D/ST,,,,,,,,

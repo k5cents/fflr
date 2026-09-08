@@ -16,8 +16,8 @@ List all fantasy games
 espn_games()
 }
 \seealso{
-Other Game information: 
-\code{\link{ffl_info}()},
-\code{\link{ffl_seasons}()}
+Other Game information:
+\code{\link[=ffl_info]{ffl_info()}},
+\code{\link[=ffl_seasons]{ffl_seasons()}}
 }
 \concept{Game information}

@@ -7,6 +7,7 @@ test_that("obtain draft data", {
 })
 
 test_that("obtain draft data history", {
+  skip_no_cookie()
   d <- draft_recap(
     leagueId = "42654852",
     leagueHistory = TRUE

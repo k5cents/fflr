@@ -18,13 +18,13 @@ A starting score as double.
 For a given roster tibble, sum the starting scores.
 }
 \examples{
-rost <- team_roster(leagueId = "42654852", leagueHistory = TRUE)[[1]][[1]]
+rost <- team_roster(leagueId = "42654852")[[1]]
 roster_score(rost)
 }
 \seealso{
-Other roster functions: 
-\code{\link{best_roster}()},
-\code{\link{start_roster}()},
-\code{\link{team_roster}()}
+Other roster functions:
+\code{\link[=best_roster]{best_roster()}},
+\code{\link[=start_roster]{start_roster()}},
+\code{\link[=team_roster]{team_roster()}}
 }
 \concept{roster functions}

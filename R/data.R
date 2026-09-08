@@ -1,8 +1,8 @@
-#' 2025 NFL Players
+#' 2026 NFL Players
 #'
-#' All available ESPN fantasy football players as of the 2025 season, week 1.
+#' All available ESPN fantasy football players as of the 2026 season, week 1.
 #'
-#' @format A data frame with 1,102 rows and 11 variables:
+#' @format A data frame with 1,036 rows and 13 variables:
 #' \describe{
 #'   \item{playerId}{Unique ESPN player ID}
 #'   \item{firstName}{First name}
@@ -19,12 +19,12 @@
 #'   \item{draftSelection}{Overall pick number in the NFL draft}
 #'   ...
 #' }
-#' @source \url{http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/athletes/}
+#' @source \url{http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/athletes/}
 "nfl_players"
 
-#' 2025 NFL Teams
+#' 2026 NFL Teams
 #'
-#' The 32 professional NFL teams as of the 2025 season.
+#' The 32 professional NFL teams as of the 2026 season.
 #'
 #' @format A data frame with 33 rows and 6 columns:
 #' \describe{
@@ -36,14 +36,14 @@
 #'   \item{conference}{NFL conference}
 #'   ...
 #' }
-#' @source \url{https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2025?view=proTeamSchedules_wl}
+#' @source \url{https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2026?view=proTeamSchedules_wl}
 "nfl_teams"
 
-#' 2025 NFL Schedule
+#' 2026 NFL Schedule
 #'
-#' The 2025 NFL season schedule by team, as of September 10th.
+#' The 2026 NFL season schedule by team, as of September 10th.
 #'
-#' @format A data frame with 544 rows and 6 variables:
+#' @format A data frame with 544 rows and 7 variables:
 #' \describe{
 #'   \item{seasonId}{Season year}
 #'   \item{scoringPeriodId}{Scoring period}
@@ -54,5 +54,5 @@
 #'   \item{date}{Matchup start date and time}
 #'   ...
 #' }
-#' @source \url{https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2025?view=proTeamSchedules_wl}
+#' @source \url{https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2026?view=proTeamSchedules_wl}
 "nfl_schedule"

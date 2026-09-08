@@ -44,12 +44,12 @@ this package.
 recent_activity(leagueId = "42654852", scoringPeriodId = 2)
 }
 \seealso{
-Other player functions: 
-\code{\link{all_players}()},
-\code{\link{list_players}()},
-\code{\link{player_info}()},
-\code{\link{player_news}()},
-\code{\link{player_outlook}()},
-\code{\link{transaction_counter}()}
+Other player functions:
+\code{\link[=all_players]{all_players()}},
+\code{\link[=list_players]{list_players()}},
+\code{\link[=player_info]{player_info()}},
+\code{\link[=player_news]{player_news()}},
+\code{\link[=player_outlook]{player_outlook()}},
+\code{\link[=transaction_counter]{transaction_counter()}}
 }
 \concept{player functions}

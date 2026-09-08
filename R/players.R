@@ -54,10 +54,10 @@
 #'   limit can make the request take a long time.
 #' @return A data frame of players.
 #' @examples
-#' list_players("42654852", proTeam = "Mia", sort = "START", limit = 3)
+#' list_players("42654852", proTeam = "MIA", sort = "START", limit = 3)
 #' @importFrom jsonlite toJSON fromJSON unbox
-#' @importFrom httr RETRY add_headers accept_json content http_type http_error
-#'   status_code
+#' @importFrom httr RETRY add_headers accept_json content
+#' @importFrom httr http_type http_error status_code
 #' @family player functions
 #' @export
 list_players <- function(leagueId = ffl_id(),
@@ -74,7 +74,7 @@ list_players <- function(leagueId = ffl_id(),
     verb = "GET",
     url = paste0(
       "https://lm-api-reads.fantasy.espn.com",
-      "/apis/v3/games/ffl/seasons/2025/segments/0/leagues/",
+      "/apis/v3/games/ffl/seasons/2026/segments/0/leagues/",
       leagueId
     ),
     query = list(view = "kona_player_info"),
@@ -260,11 +260,11 @@ fantasy_filter <- function(sort, position, status, injured, scoringPeriodId,
       filterStatsForTopScoringPeriodIds = list(
         value = U(2),
         additionalValue = c(
-          "002025",
-          "102025",
+          "002026",
+          "102026",
           "002020",
-          paste0("112025", scoringPeriodId),
-          "022025"
+          paste0("112026", scoringPeriodId),
+          "022026"
         )
       )
     )
@@ -314,7 +314,7 @@ filter_sort <- function(sort = "ROST", scoringPeriodId) {
     sortAppliedStatTotal = list( # PROJ
       sortAsc = FALSE,
       sortPriority = 1,
-      value = paste0("112025", scoringPeriodId)
+      value = paste0("112026", scoringPeriodId)
     ),
     sortAppliedStatTotalForScoringPeriodId = list( # SCORE
       sortAsc = FALSE,
@@ -346,12 +346,12 @@ filter_sort <- function(sort = "ROST", scoringPeriodId) {
     sortAppliedStatTotal = list( # FPTS
       sortAsc = FALSE,
       sortPriority = 1,
-      value = "002025"
+      value = "002026"
     ),
     sortAppliedStatAverage = list( # AVG
       sortAsc = FALSE,
       sortPriority = 1,
-      value = "002025"
+      value = "002026"
     ),
     sortAppliedStatTotalForScoringPeriodId = list( # LAST
       sortAsc = FALSE,
@@ -400,7 +400,7 @@ player_info <- function(playerId) {
   dat <- try_json(
     url = paste0(
       "http://sports.core.api.espn.com/",
-      "v2/sports/football/leagues/nfl/seasons/2025/athletes/", playerId
+      "v2/sports/football/leagues/nfl/seasons/2026/athletes/", playerId
     )
   )
   out <- list(

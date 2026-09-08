@@ -26,7 +26,7 @@ on GitHub](https://github.com/k5cents/fflr/issues).
 
 ## Installation
 
-> \[!IMPORTANT\]  
+> \[!IMPORTANT\]\
 > As of 2024-05-17, fflr was removed from
 > [CRAN](https://cran.r-project.org/package=fflr) for failure to comply
 > with the policy on internet resources. This issue arose when ESPN
@@ -34,13 +34,27 @@ on GitHub](https://github.com/k5cents/fflr/issues).
 > of the 2023 NFL season. I hope to work with CRAN to get the package
 > published again before the 2024 season, but it may not be possible.
 
-> \[!IMPORTANT\]  
+> \[!IMPORTANT\]\
 > As of 2025-08-01, ESPN has changed their API to restrict access to
 > historical data previously obtained via the `leagueHistory = TRUE`
 > argument. Now you must sign into ESPN via your web browser and copy
-> the “espn_s2” cookie using the inspect element tools. That cookie can
-> then be passed to `ffl_api()` by providing the `cookie` argument to
-> any function with the `...` argument.
+> the “espn_s2” cookie using the inspect element tools.
+>
+> Rather than passing that cookie to every call, set it once as an
+> option or an environment variable and `ffl_cookie()` will find it:
+>
+> ``` r
+> options(fflr.cookie = "AEBxxxxx%2Fxxxxx...")
+> # or add ESPN_S2=AEBxxxxx%2Fxxxxx... to your .Renviron
+> ```
+>
+> Copy the cookie exactly, including any percent-encoded characters like
+> `%2F`.
+>
+> Only the `leagueHistory` endpoint is restricted. A single past season
+> can still be requested without any cookie by passing an explicit
+> `seasonId` instead, for example `team_roster(seasonId = 2024)` rather
+> than `team_roster(leagueHistory = TRUE)`.
 
 The most recent development version can always be installed from
 [GitHub](https://github.com/k5cents/fflr):
@@ -55,7 +69,7 @@ remotes::install_github("k5cents/fflr")
 ``` r
 library(fflr)
 packageVersion("fflr")
-#> [1] '2025.0.1'
+#> [1] '2026.0.1'
 ```
 
 Data is only available for public leagues. See [this help
@@ -85,7 +99,7 @@ league_info()
 #> # A tibble: 1 × 6
 #>         id seasonId name             isPublic  size finalScoringPeriod
 #>      <int>    <int> <chr>            <lgl>    <int>              <int>
-#> 1 42654852     2025 FFLR Test League TRUE         4                 17
+#> 1 42654852     2026 FFLR Test League TRUE         4                 17
 league_teams()
 #> # A tibble: 4 × 6
 #>   teamId abbrev name              logo                                            logoType memberId
@@ -104,22 +118,22 @@ all_rost$CHI[, 5:13][-7]
 #> # A tibble: 16 × 8
 #>    lineupSlot playerId firstName lastName proTeam position projectedScore actualScore
 #>    <fct>         <int> <chr>     <chr>    <fct>   <fct>             <dbl>       <dbl>
-#>  1 QB          4040715 Jalen     Hurts    Phi     QB                22.4           NA
-#>  2 RB          3929630 Saquon    Barkley  Phi     RB                20.0           NA
-#>  3 RB          4429160 De'Von    Achane   Mia     RB                17.5           NA
-#>  4 WR          4426515 Puka      Nacua    LAR     WR                17.3           NA
-#>  5 WR          4258173 Nico      Collins  Hou     WR                16.6           NA
-#>  6 TE          4432665 Brock     Bowers   LV      TE                14.9           NA
-#>  7 FLEX        4361307 Trey      McBride  Ari     TE                15.0           NA
-#>  8 D/ST         -16016 Vikings   D/ST     Min     D/ST               7.00          NA
-#>  9 K           4689936 Jake      Bates    Det     K                  8.50          NA
-#> 10 BE          3116406 Tyreek    Hill     Mia     WR                15.1           NA
-#> 11 BE          3121422 Terry     McLaurin Wsh     WR                13.8           NA
-#> 12 BE          4569618 Garrett   Wilson   NYJ     WR                13.1           NA
-#> 13 BE          4427366 Breece    Hall     NYJ     RB                12.6           NA
-#> 14 BE            16737 Mike      Evans    TB      WR                15.3           NA
-#> 15 BE          4259545 D'Andre   Swift    Chi     RB                12.6           NA
-#> 16 BE          4429615 Zay       Flowers  Bal     WR                14.4           NA
+#>  1 QB          4431452 Drake     Maye     NE      QB                16.3           NA
+#>  2 RB          4429795 Jahmyr    Gibbs    DET     RB                22.5           NA
+#>  3 RB          4242335 Jonathan  Taylor   IND     RB                17.8           NA
+#>  4 WR          4426502 Drake     London   ATL     WR                15.1           NA
+#>  5 WR          4047646 A.J.      Brown    NE      WR                14.2           NA
+#>  6 TE          4431459 Tyler     Warren   IND     TE                12.2           NA
+#>  7 FLEX        4379399 James     Cook III BUF     RB                14.9           NA
+#>  8 D/ST         -16034 Texans    D/ST     HOU     D/ST               5.25          NA
+#>  9 K           4574716 Harrison  Mevis    LAR     K                  9.41          NA
+#> 10 BE          4258173 Nico      Collins  HOU     WR                15.6           NA
+#> 11 BE          4361370 Chris     Olave    NO      WR                14.8           NA
+#> 12 BE          4430737 Kyren     Williams LAR     RB                13.7           NA
+#> 13 BE          4595348 Malik     Nabers   NYG     WR                13.8           NA
+#> 14 BE          4567750 Emeka     Egbuka   TB      WR                14.0           NA
+#> 15 BE          4685702 Quinshon  Judkins  CLE     RB                13.2           NA
+#> 16 BE          4372016 Jaylen    Waddle   DEN     WR                12.2           NA
 ```
 
 There are included objects for NFL teams and players.
@@ -130,22 +144,23 @@ nfl_teams
 #>    proTeamId abbrev location   name       byeWeek conference
 #>        <int> <fct>  <chr>      <chr>        <int> <chr>     
 #>  1         0 FA     <NA>       Free Agent      NA <NA>      
-#>  2         1 Atl    Atlanta    Falcons          5 NFC       
-#>  3         2 Buf    Buffalo    Bills            7 AFC       
-#>  4         3 Chi    Chicago    Bears            5 NFC       
-#>  5         4 Cin    Cincinnati Bengals         10 AFC       
-#>  6         5 Cle    Cleveland  Browns           9 AFC       
-#>  7         6 Dal    Dallas     Cowboys         10 NFC       
-#>  8         7 Den    Denver     Broncos         12 AFC       
-#>  9         8 Det    Detroit    Lions            8 NFC       
-#> 10         9 GB     Green Bay  Packers          5 NFC       
+#>  2         1 ATL    Atlanta    Falcons         11 NFC       
+#>  3         2 BUF    Buffalo    Bills            7 AFC       
+#>  4         3 CHI    Chicago    Bears           10 NFC       
+#>  5         4 CIN    Cincinnati Bengals          6 AFC       
+#>  6         5 CLE    Cleveland  Browns          11 AFC       
+#>  7         6 DAL    Dallas     Cowboys         14 NFC       
+#>  8         7 DEN    Denver     Broncos         10 AFC       
+#>  9         8 DET    Detroit    Lions            6 NFC       
+#> 10         9 GB     Green Bay  Packers         11 NFC       
 #> # ℹ 23 more rows
 ```
 
-> \[!NOTE\]  
+> \[!NOTE\]\
 > The fflr project is released with a [Contributor Code of
 > Conduct](https://k5cents.github.io/fflr/CODE_OF_CONDUCT.html). By
 > contributing, you agree to abide by its terms.
 
 <!-- refs: start -->
+
 <!-- refs: end -->

@@ -16,8 +16,8 @@ List past fantasy football seasons
 ffl_seasons()
 }
 \seealso{
-Other Game information: 
-\code{\link{espn_games}()},
-\code{\link{ffl_info}()}
+Other Game information:
+\code{\link[=espn_games]{espn_games()}},
+\code{\link[=ffl_info]{ffl_info()}}
 }
 \concept{Game information}

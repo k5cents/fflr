@@ -5,6 +5,7 @@ test_that("league members", {
 })
 
 test_that("league members history with names", {
+  skip_no_cookie()
   m <- league_members(leagueId = "42654852", leagueHistory = TRUE)
   expect_type(m, "list")
   expect_named(m)

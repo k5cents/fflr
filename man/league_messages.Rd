@@ -27,13 +27,13 @@ The emails, chats, notes, and messages sent by league members.
 league_messages(leagueId = "42654852")
 }
 \seealso{
-Other league functions: 
-\code{\link{draft_recap}()},
-\code{\link{league_members}()},
-\code{\link{league_standings}()},
-\code{\link{league_status}()},
-\code{\link{league_teams}()},
-\code{\link{tidy_schedule}()},
-\code{\link{transaction_counter}()}
+Other league functions:
+\code{\link[=draft_recap]{draft_recap()}},
+\code{\link[=league_members]{league_members()}},
+\code{\link[=league_standings]{league_standings()}},
+\code{\link[=league_status]{league_status()}},
+\code{\link[=league_teams]{league_teams()}},
+\code{\link[=tidy_schedule]{tidy_schedule()}},
+\code{\link[=transaction_counter]{transaction_counter()}}
 }
 \concept{league functions}

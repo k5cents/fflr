@@ -30,22 +30,22 @@ Summary of transactions and roster changes made during a season by team.
 transaction_counter(leagueId = "42654852")
 }
 \seealso{
-Other league functions: 
-\code{\link{draft_recap}()},
-\code{\link{league_members}()},
-\code{\link{league_messages}()},
-\code{\link{league_standings}()},
-\code{\link{league_status}()},
-\code{\link{league_teams}()},
-\code{\link{tidy_schedule}()}
+Other league functions:
+\code{\link[=draft_recap]{draft_recap()}},
+\code{\link[=league_members]{league_members()}},
+\code{\link[=league_messages]{league_messages()}},
+\code{\link[=league_standings]{league_standings()}},
+\code{\link[=league_status]{league_status()}},
+\code{\link[=league_teams]{league_teams()}},
+\code{\link[=tidy_schedule]{tidy_schedule()}}
 
-Other player functions: 
-\code{\link{all_players}()},
-\code{\link{list_players}()},
-\code{\link{player_info}()},
-\code{\link{player_news}()},
-\code{\link{player_outlook}()},
-\code{\link{recent_activity}()}
+Other player functions:
+\code{\link[=all_players]{all_players()}},
+\code{\link[=list_players]{list_players()}},
+\code{\link[=player_info]{player_info()}},
+\code{\link[=player_news]{player_news()}},
+\code{\link[=player_outlook]{player_outlook()}},
+\code{\link[=recent_activity]{recent_activity()}}
 }
 \concept{league functions}
 \concept{player functions}

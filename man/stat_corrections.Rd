@@ -7,7 +7,9 @@
 stat_corrections(date = Sys.Date(), limit = 100)
 }
 \arguments{
-\item{date}{A date in the scoring week to return. Defaults to system date.}
+\item{date}{A date in the scoring week to return. Defaults to system date.
+The NFL season is taken from the date, so dates in January and February
+belong to the season of the previous calendar year.}
 
 \item{limit}{The limit of corrections to return. Use \code{""} or \code{NULL} to return
 all. Defaults to 100, which is the default limit used by ESPN. Removing the

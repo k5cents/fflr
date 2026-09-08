@@ -3,6 +3,8 @@
 #' Weekly retroactive stat corrections by player.
 #'
 #' @param date A date in the scoring week to return. Defaults to system date.
+#'   The NFL season is taken from the date, so dates in January and February
+#'   belong to the season of the previous calendar year.
 #' @param limit The limit of corrections to return. Use `""` or `NULL` to return
 #'   all. Defaults to 100, which is the default limit used by ESPN. Removing the
 #'   limit can make the request take a long time.
@@ -10,6 +12,9 @@
 #' @export
 stat_corrections <- function(date = Sys.Date(), limit = 100) {
   if (!inherits(date, "Date")) {
+    if (!is.character(date)) {
+      stop(paste(date, "is not a date object"))
+    }
     date <- tryCatch(expr = as.Date(date), error = function(e) date)
     if (!inherits(date, "Date")) {
       stop(paste(date, "is not a date object"))
@@ -18,7 +23,7 @@ stat_corrections <- function(date = Sys.Date(), limit = 100) {
   dat <- try_json(
     url = paste0(
       "https://sports.core.api.espn.com",
-      "/v2/sports/football/leagues/nfl/seasons/2025/corrections"
+      "/v2/sports/football/leagues/nfl/seasons/", season_of(date), "/corrections"
     ),
     query = list(
       limit = limit,
@@ -29,7 +34,7 @@ stat_corrections <- function(date = Sys.Date(), limit = 100) {
     stop("Number of results exceeds limit")
   }
   x <- dat$items$splitStats$categories
-  if (is.null(x)) {
+  if (is.null(x) || all(lengths(x) == 0)) {
     warning("No stat corrections for this week (yet)")
     return(
       data.frame(
@@ -42,13 +47,17 @@ stat_corrections <- function(date = Sys.Date(), limit = 100) {
     )
   }
   player_id <- as.integer(sub(".*/(\\d+)\\?.*", "\\1", dat$items$athlete[[1]]))
-  out <- rep(list(NA), length(x))
+  out <- rep(list(NULL), length(x))
   for (i in seq_along(x)) {
+    if (length(x[[i]]) == 0) {
+      next # not every correction carries split stats
+    }
     for (k in seq_along(x[[i]]$stats)) {
       x[[i]]$stats[[k]] <- cbind(playerId = player_id[i], x[[i]]$stats[[k]])
     }
     out[[i]] <- x[[i]]$stats
   }
+  out <- out[lengths(out) > 0]
   out <- lapply(out, FUN = function(x) do.call("rbind", x))
   out <- do.call("rbind", out)[, c("playerId", "name", "abbreviation", "value")]
   out <- cbind(date = date, out)

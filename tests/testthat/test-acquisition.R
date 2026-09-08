@@ -6,6 +6,7 @@ test_that("player acquisition", {
 })
 
 test_that("player acquisition errors on historu", {
+  skip_no_cookie()
   expect_error(
     object = player_acquire(
       leagueId = "42654852",

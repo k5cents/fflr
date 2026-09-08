@@ -5,6 +5,7 @@ test_that("standings returns data frame", {
 })
 
 test_that("combine all historical standings", {
+  skip_no_cookie()
   s <- combine_history(league_standings, "252353")
   expect_s3_class(s, "data.frame")
   expect_gt(nrow(s), 10)

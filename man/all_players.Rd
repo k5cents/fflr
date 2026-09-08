@@ -18,12 +18,12 @@ all_players()
 }
 }
 \seealso{
-Other player functions: 
-\code{\link{list_players}()},
-\code{\link{player_info}()},
-\code{\link{player_news}()},
-\code{\link{player_outlook}()},
-\code{\link{recent_activity}()},
-\code{\link{transaction_counter}()}
+Other player functions:
+\code{\link[=list_players]{list_players()}},
+\code{\link[=player_info]{player_info()}},
+\code{\link[=player_news]{player_news()}},
+\code{\link[=player_outlook]{player_outlook()}},
+\code{\link[=recent_activity]{recent_activity()}},
+\code{\link[=transaction_counter]{transaction_counter()}}
 }
 \concept{player functions}

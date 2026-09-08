@@ -137,7 +137,7 @@ out_roster <- function(entry, tid, tm, wk, yr, es = FALSE) {
 #' @param roster A roster data frame from [team_roster()].
 #' @return A data frame of starters on a roster.
 #' @examples
-#' rost <- team_roster(leagueId = "42654852", leagueHistory = TRUE)[[1]][[1]]
+#' rost <- team_roster(leagueId = "42654852")[[1]]
 #' start_roster(rost)
 #' @family roster functions
 #' @export
@@ -153,7 +153,7 @@ start_roster <- function(roster) {
 #' @param useScore One of "projectedScore" or "actualScore" (default).
 #' @return A starting score as double.
 #' @examples
-#' rost <- team_roster(leagueId = "42654852", leagueHistory = TRUE)[[1]][[1]]
+#' rost <- team_roster(leagueId = "42654852")[[1]]
 #' roster_score(rost)
 #' @family roster functions
 #' @export

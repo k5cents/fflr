@@ -19,7 +19,7 @@ The opponents each team faces every week in a regular season.
 pro_schedule(seasonId = ffl_year(-2))
 }
 \seealso{
-Other professional football functions: 
-\code{\link{pro_events}()}
+Other professional football functions:
+\code{\link[=pro_events]{pro_events()}}
 }
 \concept{professional football functions}

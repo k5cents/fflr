@@ -10,14 +10,14 @@ pro_events()
 A data frame of NFL events.
 }
 \description{
-Data on the status of NFL games, including scores and odds, kickoff time,
-and broadcast information.
+Data on the status of NFL games, including scores, kickoff time, venue,
+weather, and broadcast information.
 }
 \examples{
 pro_events()
 }
 \seealso{
-Other professional football functions: 
-\code{\link{pro_schedule}()}
+Other professional football functions:
+\code{\link[=pro_schedule]{pro_schedule()}}
 }
 \concept{professional football functions}
