@@ -260,28 +260,6 @@ test_that("evaluate_trade asks ESPN for its own season, not ffl_api()'s", {
 })
 
 # a made-up week-10 roster: a lone QB on bye, one RB slot, one bench spot
-fake_player <- function(id, first, last, pos, proj, slot = "BE") {
-  data.frame(
-    seasonId = 2026L,
-    scoringPeriodId = 10L,
-    teamId = 1L,
-    abbrev = factor("AAA"),
-    lineupSlot = slot_abbrev(slot_unabbrev(slot)),
-    playerId = id,
-    firstName = first,
-    lastName = last,
-    proTeam = factor("FA"),
-    position = factor(pos),
-    injuryStatus = "A",
-    projectedScore = proj,
-    actualScore = NA_real_,
-    percentStarted = NA_real_,
-    percentOwned = NA_real_,
-    percentChange = NA_real_,
-    eligibleSlots = I(list(c(slot_unabbrev(pos), 20L, 21L)))
-  )
-}
-
 fake_side <- function(standins = NULL) {
   mine <- rbind(
     fake_player(1L, "Bo", "Nix", "QB", 0, "QB"),

@@ -19,6 +19,11 @@
   `replacementsBefore` and `replacementsAfter` columns, and never count
   towards the roster limit or `dropped`. `replacement = FALSE` gives the
   previous results.
+* `best_roster()` gains `replacement` (default `FALSE`) and
+  `replacementRank`: the same waiver-wire stand-ins as `evaluate_trade()` can
+  start wherever they beat the roster, marked by a `replacement` column, and
+  `overReplacement` gives each player's score minus the stand-in's at their
+  position.
 
 # fflr 2026.0.2
 

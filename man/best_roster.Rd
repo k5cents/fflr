@@ -8,6 +8,8 @@ best_roster(
   leagueId = ffl_id(),
   useScore = c("actualScore", "projectedScore"),
   scoringPeriodId = NULL,
+  replacement = FALSE,
+  replacementRank = 1,
   ...
 )
 }
@@ -21,11 +23,21 @@ best_roster(
 use the current week (see \code{\link[=ffl_week]{ffl_week()}}). Scoring periods are always one
 week in length, whereas matchups might be longer.}
 
+\item{replacement}{If \code{TRUE}, let each lineup start replacement-level
+stand-ins from the waiver wire, and add each player's score over
+replacement. Defaults to \code{FALSE}.}
+
+\item{replacementRank}{Which available player at each position is the
+stand-in: \code{1} (default) is the best one that week.}
+
 \item{...}{Additional queries passed to \code{\link[httr:GET]{httr::GET()}}. Arguments are
 converted to a named list and passed to \code{query} alongside \code{view}.}
 }
 \value{
-A dataframe (or list) with optimal rosters.
+A list of data frames with optimal rosters, one per team. With
+\code{replacement = TRUE}, stand-ins are rows with \code{replacement} set to \code{TRUE},
+and \code{overReplacement} is each player's score minus the stand-in's at the
+same position (\code{NA} for positions without one).
 }
 \description{
 Uses the roster settings for each league to find the best possible
@@ -34,6 +46,13 @@ combinations of players to score the most fantasy points.
 \details{
 If \code{scoringPeriodId} is the current week (the default), then actual scoring
 might be incomplete (see \code{projectedScore} argument).
+
+With \code{replacement = TRUE}, each lineup can also start a replacement-level
+stand-in from the waiver wire at each position, as in \code{\link[=evaluate_trade]{evaluate_trade()}}:
+the \code{replacementRank}-th best score that week among today's most-rostered
+available players at that position. A stand-in only appears where it
+beats every eligible player on the roster, so it shows where a lineup is
+below waiver level; \code{\link[=waiver_upgrades]{waiver_upgrades()}} says who to drop for them.
 }
 \examples{
 best_roster(leagueId = "42654852", scoringPeriodId = 1)
