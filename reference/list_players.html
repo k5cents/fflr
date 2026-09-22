@@ -19,7 +19,7 @@ done in the ESPN Fantasy Football website."><meta property="og:image" content="/
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2026.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2026.0.2</span>
       </span>
     </div>
 
@@ -158,13 +158,16 @@ limit can make the request take a long time.</p></dd>
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A data frame of players.</p>
+    <p>A data frame of players. If no players meet the filter criteria
+(e.g., <code>status = "FREEAGENT"</code> while all players are locked on waivers), a
+data frame with zero rows and the same columns.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
     <div class="dont-index"><p>Other player functions:
 <code><a href="all_players.html">all_players()</a></code>,
 <code><a href="player_info.html">player_info()</a></code>,
+<code><a href="player_lookup.html">player_lookup()</a></code>,
 <code><a href="player_news.html">player_news()</a></code>,
 <code><a href="player_outlook.html">player_outlook()</a></code>,
 <code><a href="recent_activity.html">recent_activity()</a></code>,
@@ -177,9 +180,9 @@ limit can make the request take a long time.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 17</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   seasonId scoringPeriodId      id firstName lastName   proTeam defaultPosition</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>     <span style="text-decoration: underline;">2</span>026               1 4<span style="text-decoration: underline;">242</span>512 Malik     Willis     MIA     QB             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>     <span style="text-decoration: underline;">2</span>026               1 4<span style="text-decoration: underline;">569</span>603 Malik     Washington MIA     WR             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>     <span style="text-decoration: underline;">2</span>026               1  -<span style="color: #BB0000; text-decoration: underline;">16</span><span style="color: #BB0000;">015</span> Dolphins  D/ST       MIA     D/ST           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>     <span style="text-decoration: underline;">2</span>026               3 4<span style="text-decoration: underline;">869</span>645 Caleb     Douglas    MIA     WR             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>     <span style="text-decoration: underline;">2</span>026               3 4<span style="text-decoration: underline;">242</span>512 Malik     Willis     MIA     QB             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>     <span style="text-decoration: underline;">2</span>026               3 4<span style="text-decoration: underline;">569</span>603 Malik     Washington MIA     WR             </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 10 more variables: injuryStatus &lt;chr&gt;, percentStarted &lt;dbl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;, auctionValueAverage &lt;dbl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   averageDraftPosition &lt;dbl&gt;, projectedScore &lt;dbl&gt;, lastScore &lt;dbl&gt;,</span></span>

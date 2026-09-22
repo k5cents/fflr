@@ -18,7 +18,7 @@ weather, and broadcast information."><meta property="og:image" content="/logo.pn
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2026.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2026.0.2</span>
       </span>
     </div>
 
@@ -82,24 +82,24 @@ weather, and broadcast information.</p>
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">pro_events</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 16 × 14</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    id        date                timeValid period clock status summary          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 401872656 2026-09-10 <span style="color: #949494;">00:20:00</span> TRUE           0 0:00  pre    9/9 - 8:20 PM EDT</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 401872657 2026-09-11 <span style="color: #949494;">00:35:00</span> TRUE           0 0:00  pre    9/10 - 8:35 PM E…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 401872925 2026-09-13 <span style="color: #949494;">17:00:00</span> TRUE           0 0:00  pre    9/13 - 1:00 PM E…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 401872923 2026-09-13 <span style="color: #949494;">17:00:00</span> TRUE           0 0:00  pre    9/13 - 1:00 PM E…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 401872924 2026-09-13 <span style="color: #949494;">17:00:00</span> TRUE           0 0:00  pre    9/13 - 1:00 PM E…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 401872659 2026-09-13 <span style="color: #949494;">17:00:00</span> TRUE           0 0:00  pre    9/13 - 1:00 PM E…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 401872658 2026-09-13 <span style="color: #949494;">17:00:00</span> TRUE           0 0:00  pre    9/13 - 1:00 PM E…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 401872661 2026-09-13 <span style="color: #949494;">17:00:00</span> TRUE           0 0:00  pre    9/13 - 1:00 PM E…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 401872922 2026-09-13 <span style="color: #949494;">17:00:00</span> TRUE           0 0:00  pre    9/13 - 1:00 PM E…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 401872660 2026-09-13 <span style="color: #949494;">17:00:00</span> TRUE           0 0:00  pre    9/13 - 1:00 PM E…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> 401872928 2026-09-13 <span style="color: #949494;">20:25:00</span> TRUE           0 0:00  pre    9/13 - 4:25 PM E…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> 401872927 2026-09-13 <span style="color: #949494;">20:25:00</span> TRUE           0 0:00  pre    9/13 - 4:25 PM E…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> 401872929 2026-09-13 <span style="color: #949494;">20:25:00</span> TRUE           0 0:00  pre    9/13 - 4:25 PM E…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> 401872926 2026-09-13 <span style="color: #949494;">20:25:00</span> TRUE           0 0:00  pre    9/13 - 4:25 PM E…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> 401872930 2026-09-14 <span style="color: #949494;">00:20:00</span> TRUE           0 0:00  pre    9/13 - 8:20 PM E…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span> 401872931 2026-09-15 <span style="color: #949494;">00:15:00</span> TRUE           0 0:00  pre    9/14 - 8:15 PM E…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    id        date                timeValid period clock status summary </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 401872932 2026-09-18 <span style="color: #949494;">00:15:00</span> TRUE           4 0:00  post   Final   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 401872933 2026-09-20 <span style="color: #949494;">17:00:00</span> TRUE           4 0:00  post   Final   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 401872937 2026-09-20 <span style="color: #949494;">17:00:00</span> TRUE           4 0:00  post   Final   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 401872939 2026-09-20 <span style="color: #949494;">17:00:00</span> TRUE           4 0:00  post   Final   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 401872946 2026-09-20 <span style="color: #949494;">17:00:00</span> TRUE           4 0:00  post   Final   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 401872936 2026-09-20 <span style="color: #949494;">17:00:00</span> TRUE           5 0:00  post   Final/OT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 401872935 2026-09-20 <span style="color: #949494;">17:00:00</span> TRUE           4 0:00  post   Final   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 401872938 2026-09-20 <span style="color: #949494;">17:00:00</span> TRUE           4 0:00  post   Final   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 401872934 2026-09-20 <span style="color: #949494;">17:00:00</span> TRUE           4 0:00  post   Final   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 401872940 2026-09-20 <span style="color: #949494;">20:05:00</span> TRUE           4 0:00  post   Final   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> 401872941 2026-09-20 <span style="color: #949494;">20:05:00</span> TRUE           4 0:00  post   Final   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> 401872944 2026-09-20 <span style="color: #949494;">20:25:00</span> TRUE           4 0:00  post   Final   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> 401872943 2026-09-20 <span style="color: #949494;">20:25:00</span> TRUE           4 0:00  post   Final   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> 401872942 2026-09-20 <span style="color: #949494;">20:25:00</span> TRUE           4 0:00  post   Final   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> 401872945 2026-09-21 <span style="color: #949494;">00:20:00</span> TRUE           5 0:00  post   Final/OT</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span> 401872947 2026-09-22 <span style="color: #949494;">00:15:00</span> TRUE           4 0:00  post   Final   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 7 more variables: percentComplete &lt;int&gt;, venue &lt;df[,2]&gt;, weather &lt;df[,2]&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   broadcast &lt;chr&gt;, competitors &lt;list&gt;, homeTeam &lt;fct&gt;, awayTeam &lt;fct&gt;</span></span>
 </code></pre></div>

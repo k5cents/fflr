@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2026.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2026.0.2</span>
       </span>
     </div>
 
@@ -91,6 +91,7 @@ limit can make the request take a long time.</p></dd>
 <code><a href="all_players.html">all_players()</a></code>,
 <code><a href="list_players.html">list_players()</a></code>,
 <code><a href="player_info.html">player_info()</a></code>,
+<code><a href="player_lookup.html">player_lookup()</a></code>,
 <code><a href="player_news.html">player_news()</a></code>,
 <code><a href="recent_activity.html">recent_activity()</a></code>,
 <code><a href="transaction_counter.html">transaction_counter()</a></code></p></div>
@@ -99,20 +100,20 @@ limit can make the request take a long time.</p></dd>
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">player_outlook</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 50 × 5</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    seasonId      id firstName lastName     outlook</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     <span style="text-decoration: underline;">2</span>026 4<span style="text-decoration: underline;">429</span>795 Jahmyr    Gibbs        <span style="color: #BB0000;">NA</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>     <span style="text-decoration: underline;">2</span>026 4<span style="text-decoration: underline;">374</span>302 Amon-Ra   St. Brown    <span style="color: #BB0000;">NA</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     <span style="text-decoration: underline;">2</span>026 4<span style="text-decoration: underline;">362</span>628 Ja'Marr   Chase        <span style="color: #BB0000;">NA</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     <span style="text-decoration: underline;">2</span>026 3<span style="text-decoration: underline;">918</span>298 Josh      Allen        <span style="color: #BB0000;">NA</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     <span style="text-decoration: underline;">2</span>026 4<span style="text-decoration: underline;">426</span>515 Puka      Nacua        <span style="color: #BB0000;">NA</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     <span style="text-decoration: underline;">2</span>026 4<span style="text-decoration: underline;">430</span>807 Bijan     Robinson     <span style="color: #BB0000;">NA</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>     <span style="text-decoration: underline;">2</span>026 4<span style="text-decoration: underline;">430</span>878 Jaxon     Smith-Njigba <span style="color: #BB0000;">NA</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     <span style="text-decoration: underline;">2</span>026 4<span style="text-decoration: underline;">241</span>389 CeeDee    Lamb         <span style="color: #BB0000;">NA</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     <span style="text-decoration: underline;">2</span>026 3<span style="text-decoration: underline;">117</span>251 Christian McCaffrey    <span style="color: #BB0000;">NA</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>     <span style="text-decoration: underline;">2</span>026 4<span style="text-decoration: underline;">379</span>399 James     Cook III     <span style="color: #BB0000;">NA</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 40 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 144 × 6</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    seasonId scoringPeriodId      id firstName lastName     outlook              </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     <span style="text-decoration: underline;">2</span>026               0 4<span style="text-decoration: underline;">374</span>302 Amon-Ra   St. Brown    The only player in N…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>     <span style="text-decoration: underline;">2</span>026               2 4<span style="text-decoration: underline;">374</span>302 Amon-Ra   St. Brown    Amon-Ra St. Brown wi…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     <span style="text-decoration: underline;">2</span>026               3 4<span style="text-decoration: underline;">374</span>302 Amon-Ra   St. Brown    Amon-Ra St. Brown wi…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     <span style="text-decoration: underline;">2</span>026               0 4<span style="text-decoration: underline;">429</span>795 Jahmyr    Gibbs        Gibbs has finished i…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     <span style="text-decoration: underline;">2</span>026               2 4<span style="text-decoration: underline;">429</span>795 Jahmyr    Gibbs        Jahmyr Gibbs will lo…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     <span style="text-decoration: underline;">2</span>026               3 4<span style="text-decoration: underline;">429</span>795 Jahmyr    Gibbs        Jahmyr Gibbs will ai…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>     <span style="text-decoration: underline;">2</span>026               0 3<span style="text-decoration: underline;">918</span>298 Josh      Allen        Allen enters his age…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     <span style="text-decoration: underline;">2</span>026               2 3<span style="text-decoration: underline;">918</span>298 Josh      Allen        Josh Allen appears t…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     <span style="text-decoration: underline;">2</span>026               3 3<span style="text-decoration: underline;">918</span>298 Josh      Allen        Josh Allen has the B…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>     <span style="text-decoration: underline;">2</span>026               0 4<span style="text-decoration: underline;">430</span>878 Jaxon     Smith-Njigba The reigning NFL Off…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 134 more rows</span></span>
 </code></pre></div>
     </div>
   </div>

@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2026.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2026.0.2</span>
       </span>
     </div>
 
@@ -90,7 +90,7 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://k5cents.github.io/fflr/" class="external-link">fflr</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html" class="external-link">packageVersion</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] '2026.0.1'</span></span>
+<span><span class="co">#&gt; [1] '2026.0.2'</span></span>
 <span><span class="fu"><a href="../reference/ffl_id.html">ffl_id</a></span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Temporarily set `fflr.leagueId` option to 42654852</span></span>
 <span><span class="co">#&gt; [1] "42654852"</span></span></code></pre></div>
@@ -174,22 +174,22 @@ actual scores and ownership statistics.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 16 × 13</span></span></span>
 <span><span class="co">#&gt;    abbrev lineupSlot playerId firstName lastName   proTeam position injuryStatus</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> AUS    QB          4<span style="text-decoration: underline;">426</span>348 Jayden    Daniels    WSH     QB       A           </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> AUS    QB          4<span style="text-decoration: underline;">426</span>348 Jayden    Daniels    WSH     QB       D           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> AUS    RB          4<span style="text-decoration: underline;">429</span>160 De'Von    Achane     MIA     RB       A           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> AUS    RB          4<span style="text-decoration: underline;">685</span>382 Omarion   Hampton    LAC     RB       A           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> AUS    WR          4<span style="text-decoration: underline;">426</span>515 Puka      Nacua      LAR     WR       A           </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> AUS    WR          4<span style="text-decoration: underline;">426</span>515 Puka      Nacua      LAR     WR       O           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> AUS    WR          4<span style="text-decoration: underline;">374</span>302 Amon-Ra   St. Brown  DET     WR       A           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> AUS    TE          4<span style="text-decoration: underline;">361</span>307 Trey      McBride    ARI     TE       A           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> AUS    FLEX        4<span style="text-decoration: underline;">870</span>808 Jeremiyah Love       ARI     RB       Q           </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> AUS    FLEX        4<span style="text-decoration: underline;">870</span>808 Jeremiyah Love       ARI     RB       A           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> AUS    D/ST         -<span style="color: #BB0000; text-decoration: underline;">16</span><span style="color: #BB0000;">026</span> Seahawks  D/ST       SEA     D/ST     A           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> AUS    K           3<span style="text-decoration: underline;">953</span>687 Brandon   Aubrey     DAL     K        A           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> AUS    BE          4<span style="text-decoration: underline;">567</span>048 Kenneth   Walker III KC      RB       A           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> AUS    BE          4<span style="text-decoration: underline;">569</span>618 Garrett   Wilson     NYJ     WR       A           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> AUS    BE          4<span style="text-decoration: underline;">685</span>472 Tetairoa  McMillan   CAR     WR       A           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> AUS    BE          4<span style="text-decoration: underline;">429</span>615 Zay       Flowers    BAL     WR       Q           </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> AUS    BE          4<span style="text-decoration: underline;">429</span>615 Zay       Flowers    BAL     WR       O           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">14</span> AUS    BE            <span style="text-decoration: underline;">16</span>800 Davante   Adams      LAR     WR       A           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">15</span> AUS    BE          4<span style="text-decoration: underline;">696</span>981 Cam       Skattebo   NYG     RB       A           </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">16</span> AUS    BE          3<span style="text-decoration: underline;">915</span>416 DJ        Moore      BUF     WR       A           </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">16</span> AUS    BE          3<span style="text-decoration: underline;">915</span>416 DJ        Moore      BUF     WR       Q           </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 5 more variables: projectedScore &lt;dbl&gt;, actualScore &lt;dbl&gt;, percentStarted &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   percentOwned &lt;dbl&gt;, percentChange &lt;dbl&gt;</span></span></span></code></pre></div>
 </div>
@@ -202,31 +202,34 @@ outlooks by player and week and cannot be refined beyond setting a
 <code>limit</code> of players to return (in order of rank).</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/player_outlook.html">player_outlook</a></span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 5</span></span></span>
-<span><span class="co">#&gt;   seasonId      id firstName lastName outlook</span></span>
-<span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>     <span style="text-decoration: underline;">2</span>026 4<span style="text-decoration: underline;">429</span>795 Jahmyr    Gibbs    <span style="color: #BB0000;">NA</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 3 × 6</span></span></span>
+<span><span class="co">#&gt;   seasonId scoringPeriodId      id firstName lastName  outlook                            </span></span>
+<span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                              </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>     <span style="text-decoration: underline;">2</span>026               0 4<span style="text-decoration: underline;">374</span>302 Amon-Ra   St. Brown The only player in NFL history wit…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>     <span style="text-decoration: underline;">2</span>026               2 4<span style="text-decoration: underline;">374</span>302 Amon-Ra   St. Brown Amon-Ra St. Brown will aim to keep…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>     <span style="text-decoration: underline;">2</span>026               3 4<span style="text-decoration: underline;">374</span>302 Amon-Ra   St. Brown Amon-Ra St. Brown will aim to stay…</span></span></code></pre></div>
 <p>The second fiction takes a single <code>playerId</code> value and
 returns all the recent news on that player, including premium stories in
 HTML format.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/player_news.html">player_news</a></span><span class="op">(</span>playerId <span class="op">=</span> <span class="st">"3139477"</span>, parseHTML <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 13 × 6</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 14 × 6</span></span></span>
 <span><span class="co">#&gt;         id published           type     premium headline                             body </span></span>
 <span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 3<span style="text-decoration: underline;">139</span>477 2026-09-08 <span style="color: #949494;">17:14:59</span> Rotowire FALSE   Chiefs head coach Andy Reid said Tu… <span style="color: #949494;">"</span>Mah…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 3<span style="text-decoration: underline;">139</span>477 2026-09-04 <span style="color: #949494;">16:47:20</span> Story    FALSE   Fantasy Football 'Do Draft' list: D… <span style="color: #949494;">"</span>&lt;p&gt;…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 3<span style="text-decoration: underline;">139</span>477 2026-09-04 <span style="color: #949494;">16:46:49</span> Story    FALSE   Fantasy football sleepers, busts an… <span style="color: #949494;">"</span>&lt;p&gt;…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 3<span style="text-decoration: underline;">139</span>477 2026-08-29 <span style="color: #949494;">17:08:09</span> Rotowire FALSE   Mahomes (knee) is on track to start… <span style="color: #949494;">"</span>Mah…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 3<span style="text-decoration: underline;">139</span>477 2026-08-26 <span style="color: #949494;">11:08:55</span> Story    FALSE   Fantasy football: Answering one key… <span style="color: #949494;">"</span>&lt;p&gt;…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 3<span style="text-decoration: underline;">139</span>477 2026-08-23 <span style="color: #949494;">01:37:05</span> Rotowire FALSE   Mahomes (knee) said during Saturday… <span style="color: #949494;">"</span>Mah…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 3<span style="text-decoration: underline;">139</span>477 2026-08-20 <span style="color: #949494;">14:48:44</span> Rotowire FALSE   Head coach Andy Reid said that Maho… <span style="color: #949494;">"</span>The…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 3<span style="text-decoration: underline;">139</span>477 2026-08-18 <span style="color: #949494;">03:46:29</span> Story    FALSE   Fantasy football superlatives: The … <span style="color: #949494;">"</span>&lt;p&gt;…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 3<span style="text-decoration: underline;">139</span>477 2026-08-13 <span style="color: #949494;">16:00:42</span> Rotowire FALSE   Mahomes (knee) won't play in Kansas… <span style="color: #949494;">"</span>Mah…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 3<span style="text-decoration: underline;">139</span>477 2026-08-07 <span style="color: #949494;">16:29:13</span> Rotowire FALSE   Chiefs coach Andy Reid said Friday … <span style="color: #949494;">"</span>Rei…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> 3<span style="text-decoration: underline;">139</span>477 2026-08-07 <span style="color: #949494;">15:29:09</span> Media    FALSE   Should fantasy managers be cautious… <span style="color: #949494;">"</span>Sho…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> 3<span style="text-decoration: underline;">139</span>477 2026-07-29 <span style="color: #949494;">15:04:39</span> Rotowire FALSE   Mahomes (knee) is participating in … <span style="color: #949494;">"</span>Chi…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> 3<span style="text-decoration: underline;">139</span>477 2026-07-24 <span style="color: #949494;">20:00:47</span> Rotowire FALSE   Chiefs head coach Andy Reid said Fr… <span style="color: #949494;">"</span>Rei…</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 3<span style="text-decoration: underline;">139</span>477 2026-09-21 <span style="color: #949494;">04:33:12</span> Rotowire FALSE   Mahomes completed 32 of 47 passes f… <span style="color: #949494;">"</span>Mah…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 3<span style="text-decoration: underline;">139</span>477 2026-09-21 <span style="color: #949494;">04:08:07</span> Media    FALSE   Patrick Mahomes spots Jalen Royals … <span style="color: #949494;">"</span>Pat…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 3<span style="text-decoration: underline;">139</span>477 2026-09-21 <span style="color: #949494;">03:57:59</span> Media    FALSE   Patrick Mahomes throws his second T… <span style="color: #949494;">"</span>Pat…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 3<span style="text-decoration: underline;">139</span>477 2026-09-21 <span style="color: #949494;">03:56:14</span> Media    FALSE   Mahomes fires to Kelce for a Chiefs… <span style="color: #949494;">"</span>Mah…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 3<span style="text-decoration: underline;">139</span>477 2026-09-16 <span style="color: #949494;">20:41:06</span> Story    FALSE   Rest-of-season rankings: Williams, … <span style="color: #949494;">"</span>&lt;p&gt;…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 3<span style="text-decoration: underline;">139</span>477 2026-09-15 <span style="color: #949494;">04:12:19</span> Rotowire FALSE   Mahomes completed 15 of 27 passes f… <span style="color: #949494;">"</span>Mak…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 3<span style="text-decoration: underline;">139</span>477 2026-09-12 <span style="color: #949494;">19:45:57</span> Rotowire FALSE   Mahomes (knee) does not have an inj… <span style="color: #949494;">"</span>Mah…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 3<span style="text-decoration: underline;">139</span>477 2026-09-11 <span style="color: #949494;">10:28:17</span> Story    FALSE   Start your Bucs, sit Mahomes and a … <span style="color: #949494;">"</span>&lt;p&gt;…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 3<span style="text-decoration: underline;">139</span>477 2026-09-10 <span style="color: #949494;">20:57:11</span> Rotowire FALSE   Mahomes (knee) opened Week 1 prep a… <span style="color: #949494;">"</span>Per…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 3<span style="text-decoration: underline;">139</span>477 2026-09-08 <span style="color: #949494;">17:14:59</span> Rotowire FALSE   Kansas City head coach Andy Reid sa… <span style="color: #949494;">"</span>Mah…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> 3<span style="text-decoration: underline;">139</span>477 2026-09-04 <span style="color: #949494;">16:47:20</span> Story    FALSE   Fantasy Football 'Do Draft' list: D… <span style="color: #949494;">"</span>&lt;p&gt;…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> 3<span style="text-decoration: underline;">139</span>477 2026-09-04 <span style="color: #949494;">16:46:49</span> Story    FALSE   Fantasy football sleepers, busts an… <span style="color: #949494;">"</span>&lt;p&gt;…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> 3<span style="text-decoration: underline;">139</span>477 2026-08-29 <span style="color: #949494;">17:08:09</span> Rotowire FALSE   Mahomes (knee) is on track to start… <span style="color: #949494;">"</span>Mah…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">14</span> 3<span style="text-decoration: underline;">139</span>477 2026-08-26 <span style="color: #949494;">11:08:55</span> Story    FALSE   Fantasy football: Answering one key… <span style="color: #949494;">"</span>&lt;p&gt;…</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -253,14 +256,14 @@ settings.</p>
 <span><span class="co">#&gt;  $ year                   : int 2026</span></span>
 <span><span class="co">#&gt;  $ isActive               : logi TRUE</span></span>
 <span><span class="co">#&gt;  $ activatedDate          : POSIXct[1:1], format: "2026-09-08 23:04:21"</span></span>
-<span><span class="co">#&gt;  $ scoringPeriodId        : int 1</span></span>
+<span><span class="co">#&gt;  $ scoringPeriodId        : int 3</span></span>
 <span><span class="co">#&gt;  $ firstScoringPeriod     : int 1</span></span>
 <span><span class="co">#&gt;  $ finalScoringPeriod     : int 17</span></span>
 <span><span class="co">#&gt;  $ previousSeasons        :List of 1</span></span>
 <span><span class="co">#&gt;   ..$ : int [1:5] 2021 2022 2023 2024 2025</span></span>
-<span><span class="co">#&gt;  $ standingsUpdateDate    : POSIXct[1:1], format: "2026-09-08 23:32:17"</span></span>
+<span><span class="co">#&gt;  $ standingsUpdateDate    : POSIXct[1:1], format: "2026-09-22 07:51:06"</span></span>
 <span><span class="co">#&gt;  $ teamsJoined            : int 4</span></span>
-<span><span class="co">#&gt;  $ waiverLastExecutionDate: POSIXct[1:1], format: "2026-09-08 23:04:21"</span></span>
+<span><span class="co">#&gt;  $ waiverLastExecutionDate: POSIXct[1:1], format: "2026-09-22 07:51:05"</span></span>
 <span><span class="co">#&gt;  $ waiverNextExecutionDate: POSIXct[1:1], format: NA</span></span>
 <span><span class="co">#&gt;  $ waiverProcessStatus    :List of 1</span></span>
 <span><span class="co">#&gt;   ..$ :'data.frame': 0 obs. of  1 variable:</span></span>
@@ -323,13 +326,14 @@ settings.</p>
 </h4>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/schedule_settings.html">schedule_settings</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 0 × 14</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 14 variables: seasonId &lt;int&gt;, consolationLadderDisabled &lt;lgl&gt;, divisions &lt;list&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   matchupPeriodCount &lt;int&gt;, matchupPeriodLength &lt;int&gt;, matchupPeriods &lt;list&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   periodTypeId &lt;int&gt;, playoffMatchupPeriodLength &lt;int&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   playoffMatchupPeriodLengthByRound &lt;named list&gt;, playoffReseed &lt;lgl&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   playoffSeedingRule &lt;chr&gt;, playoffSeedingRuleBy &lt;int&gt;, playoffTeamCount &lt;int&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   variablePlayoffMatchupPeriodLength &lt;lgl&gt;</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 14</span></span></span>
+<span><span class="co">#&gt;   seasonId consolationLadderDisabled divisions    matchupPeriodCount matchupPeriodLength</span></span>
+<span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>     <span style="text-decoration: underline;">2</span>026 FALSE                     <span style="color: #949494;">&lt;df [2 × 3]&gt;</span>                 17                   1</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 9 more variables: matchupPeriods &lt;list&gt;, periodTypeId &lt;int&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   playoffMatchupPeriodLength &lt;int&gt;, playoffMatchupPeriodLengthByRound &lt;list&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   playoffReseed &lt;lgl&gt;, playoffSeedingRule &lt;chr&gt;, playoffSeedingRuleBy &lt;int&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   playoffTeamCount &lt;int&gt;, variablePlayoffMatchupPeriodLength &lt;lgl&gt;</span></span></span></code></pre></div>
 </div>
 </div>
 <div class="section level3">
@@ -483,10 +487,10 @@ settings.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 4 × 14</span></span></span>
 <span><span class="co">#&gt;   seasonId scoringPeriodId teamId abbrev waiverRank acquisitionBudgetSpent acquisitions</span></span>
 <span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>     <span style="text-decoration: underline;">2</span>026               1      1 AUS             1                      0            0</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>     <span style="text-decoration: underline;">2</span>026               1      2 BOS             3                      0            0</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>     <span style="text-decoration: underline;">2</span>026               1      3 CHI             4                      0            0</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>     <span style="text-decoration: underline;">2</span>026               1      4 DEN             2                      0            0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>     <span style="text-decoration: underline;">2</span>026               3      1 AUS             3                      0            0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>     <span style="text-decoration: underline;">2</span>026               3      2 BOS             4                      0            0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>     <span style="text-decoration: underline;">2</span>026               3      3 CHI             2                      0            0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>     <span style="text-decoration: underline;">2</span>026               3      4 DEN             1                      0            0</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 7 more variables: drops &lt;int&gt;, misc &lt;int&gt;, moveToActive &lt;int&gt;, moveToIR &lt;int&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   paid &lt;dbl&gt;, teamCharges &lt;dbl&gt;, trades &lt;int&gt;</span></span></span></code></pre></div>
 </div>
@@ -543,16 +547,16 @@ settings.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 10 × 17</span></span></span>
 <span><span class="co">#&gt;    seasonId scoringPeriodId      id firstName lastName   proTeam defaultPosition</span></span>
 <span><span class="co">#&gt;       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>          </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>     <span style="text-decoration: underline;">2</span>026               1 4<span style="text-decoration: underline;">429</span>160 De'Von    Achane     MIA     RB             </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>     <span style="text-decoration: underline;">2</span>026               1 4<span style="text-decoration: underline;">242</span>512 Malik     Willis     MIA     QB             </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>     <span style="text-decoration: underline;">2</span>026               1 4<span style="text-decoration: underline;">869</span>645 Caleb     Douglas    MIA     WR             </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>     <span style="text-decoration: underline;">2</span>026               1 4<span style="text-decoration: underline;">569</span>603 Malik     Washington MIA     WR             </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>     <span style="text-decoration: underline;">2</span>026               1 4<span style="text-decoration: underline;">869</span>961 Chris     Bell       MIA     WR             </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>     <span style="text-decoration: underline;">2</span>026               1 4<span style="text-decoration: underline;">367</span>209 Greg      Dulcich    MIA     TE             </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>     <span style="text-decoration: underline;">2</span>026               1 4<span style="text-decoration: underline;">682</span>745 Jaylen    Wright     MIA     RB             </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>     <span style="text-decoration: underline;">2</span>026               1 4<span style="text-decoration: underline;">711</span>533 Ollie     Gordon II  MIA     RB             </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>     <span style="text-decoration: underline;">2</span>026               1 4<span style="text-decoration: underline;">249</span>417 Jalen     Tolbert    MIA     WR             </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>     <span style="text-decoration: underline;">2</span>026               1  -<span style="color: #BB0000; text-decoration: underline;">16</span><span style="color: #BB0000;">015</span> Dolphins  D/ST       MIA     D/ST           </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>     <span style="text-decoration: underline;">2</span>026               3 4<span style="text-decoration: underline;">429</span>160 De'Von    Achane     MIA     RB             </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>     <span style="text-decoration: underline;">2</span>026               3 4<span style="text-decoration: underline;">869</span>645 Caleb     Douglas    MIA     WR             </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>     <span style="text-decoration: underline;">2</span>026               3 4<span style="text-decoration: underline;">242</span>512 Malik     Willis     MIA     QB             </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>     <span style="text-decoration: underline;">2</span>026               3 4<span style="text-decoration: underline;">569</span>603 Malik     Washington MIA     WR             </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>     <span style="text-decoration: underline;">2</span>026               3 4<span style="text-decoration: underline;">869</span>961 Chris     Bell       MIA     WR             </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>     <span style="text-decoration: underline;">2</span>026               3 4<span style="text-decoration: underline;">367</span>209 Greg      Dulcich    MIA     TE             </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>     <span style="text-decoration: underline;">2</span>026               3 4<span style="text-decoration: underline;">682</span>745 Jaylen    Wright     MIA     RB             </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>     <span style="text-decoration: underline;">2</span>026               3 4<span style="text-decoration: underline;">711</span>533 Ollie     Gordon II  MIA     RB             </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>     <span style="text-decoration: underline;">2</span>026               3 4<span style="text-decoration: underline;">249</span>417 Jalen     Tolbert    MIA     WR             </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>     <span style="text-decoration: underline;">2</span>026               3  -<span style="color: #BB0000; text-decoration: underline;">16</span><span style="color: #BB0000;">015</span> Dolphins  D/ST       MIA     D/ST           </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 10 more variables: injuryStatus &lt;chr&gt;, percentStarted &lt;dbl&gt;, percentOwned &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   percentChange &lt;dbl&gt;, auctionValueAverage &lt;dbl&gt;, averageDraftPosition &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   projectedScore &lt;dbl&gt;, lastScore &lt;dbl&gt;, lastSeason &lt;dbl&gt;, currentSeason &lt;dbl&gt;</span></span></span></code></pre></div>
@@ -565,10 +569,10 @@ settings.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 4 × 6</span></span></span>
 <span><span class="co">#&gt;   currentMatchupPeriod matchupId teamId abbrev totalPointsLive totalProjectedPointsLive</span></span>
 <span><span class="co">#&gt;                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>                    1         1      1 AUS                  1                     140.</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>                    1         1      3 CHI                  0                     128.</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>                    1         2      2 BOS                  1                     137.</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>                    1         2      4 DEN                  0                     142.</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>                    3         5      4 DEN                  1                     131.</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>                    3         5      1 AUS                  0                     101.</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>                    3         6      2 BOS                  1                     140.</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>                    3         6      3 CHI                  0                     124.</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="standings">Standings<a class="anchor" aria-label="anchor" href="#standings"></a>
@@ -578,10 +582,10 @@ settings.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 4 × 17</span></span></span>
 <span><span class="co">#&gt;   seasonId scoringPeriodId teamId abbrev draftDayProjectedRank currentProjectedRank</span></span>
 <span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>     <span style="text-decoration: underline;">2</span>026               1      1 AUS                        2                    2</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>     <span style="text-decoration: underline;">2</span>026               1      2 BOS                        3                    3</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>     <span style="text-decoration: underline;">2</span>026               1      3 CHI                        4                    4</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>     <span style="text-decoration: underline;">2</span>026               1      4 DEN                        1                    1</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>     <span style="text-decoration: underline;">2</span>026               3      1 AUS                        2                    2</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>     <span style="text-decoration: underline;">2</span>026               3      2 BOS                        3                    1</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>     <span style="text-decoration: underline;">2</span>026               3      3 CHI                        4                    3</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>     <span style="text-decoration: underline;">2</span>026               3      4 DEN                        1                    4</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 11 more variables: playoffSeed &lt;int&gt;, rankCalculatedFinal &lt;int&gt;, gamesBack &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   losses &lt;int&gt;, percentage &lt;dbl&gt;, pointsAgainst &lt;dbl&gt;, pointsFor &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   streakLength &lt;int&gt;, streakType &lt;chr&gt;, ties &lt;int&gt;, wins &lt;int&gt;</span></span></span></code></pre></div>

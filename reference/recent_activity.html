@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fflr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2026.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2026.0.2</span>
       </span>
     </div>
 
@@ -116,6 +116,7 @@ this package.</p>
 <code><a href="all_players.html">all_players()</a></code>,
 <code><a href="list_players.html">list_players()</a></code>,
 <code><a href="player_info.html">player_info()</a></code>,
+<code><a href="player_lookup.html">player_lookup()</a></code>,
 <code><a href="player_news.html">player_news()</a></code>,
 <code><a href="player_outlook.html">player_outlook()</a></code>,
 <code><a href="transaction_counter.html">transaction_counter()</a></code></p></div>
@@ -124,22 +125,8 @@ this package.</p>
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">recent_activity</span><span class="op">(</span>leagueId <span class="op">=</span> <span class="st">"42654852"</span>, scoringPeriodId <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 64 × 13</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    bidAmount executionType id      isActingAsTeamOwner isLeagueManager isPending</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>         0 EXECUTE       90bf94… FALSE               FALSE           FALSE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>         0 EXECUTE       427e6b… FALSE               FALSE           FALSE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>         0 EXECUTE       d67801… FALSE               FALSE           FALSE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>         0 EXECUTE       4b42f0… FALSE               FALSE           FALSE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>         0 EXECUTE       7e2e26… FALSE               FALSE           FALSE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>         0 EXECUTE       d316cb… FALSE               FALSE           FALSE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>         0 EXECUTE       1fe241… FALSE               FALSE           FALSE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>         0 EXECUTE       72b5fc… FALSE               FALSE           FALSE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>         0 EXECUTE       0b7456… FALSE               FALSE           FALSE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>         0 EXECUTE       c6ffa2… FALSE               FALSE           FALSE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 54 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 7 more variables: items &lt;list&gt;, proposedDate &lt;dttm&gt;, scoringPeriodId &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   skipTransactionCounters &lt;lgl&gt;, status &lt;chr&gt;, teamId &lt;int&gt;, type &lt;chr&gt;</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> no roster moves for current period</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> data frame with 0 columns and 0 rows</span>
 </code></pre></div>
     </div>
   </div>
