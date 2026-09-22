@@ -57,7 +57,9 @@ ffl_api <- function(leagueId = ffl_id(), view = NULL, leagueHistory = FALSE,
   )
 }
 
-try_json <- function(url, path = "", query = NULL, cookie = NULL, leagueHistory = NULL) {
+try_json <- function(url, path = "", query = NULL, cookie = NULL,
+                     leagueHistory = NULL, headers = NULL,
+                     simplifyVector = TRUE) {
   # `httr::set_cookies()` percent-encodes whatever value it is handed. The
   # `espn_s2` cookie copied from a browser is already percent-encoded, so that
   # turns "%2F" into "%252F" and ESPN rejects the request. Set the header
@@ -65,6 +67,10 @@ try_json <- function(url, path = "", query = NULL, cookie = NULL, leagueHistory 
   cookie_config <- NULL
   if (length(cookie) == 1 && nzchar(cookie)) {
     cookie_config <- httr::config(cookie = paste0("espn_s2=", cookie))
+  }
+  header_config <- NULL
+  if (length(headers) > 0) {
+    header_config <- httr::add_headers(.headers = headers)
   }
   resp <- httr::RETRY(
     verb = "GET",
@@ -77,13 +83,14 @@ try_json <- function(url, path = "", query = NULL, cookie = NULL, leagueHistory 
     httr::accept_json(),
     httr::user_agent("https://github.com/k5cents/fflr/"),
     terminate_on = c(400:417),
-    cookie_config
+    cookie_config,
+    header_config
   )
   if (httr::http_type(resp) != "application/json") {
     stop("API did not return JSON", call. = FALSE)
   }
   raw <- httr::content(resp, as = "text", encoding = "UTF-8")
-  parsed <- jsonlite::fromJSON(raw)
+  parsed <- jsonlite::fromJSON(raw, simplifyVector = simplifyVector)
   if (httr::http_error(resp) && any(grepl("message", names(parsed)))) {
     if (!is.null(leagueHistory) && isTRUE(leagueHistory)) {
       parsed$message <- paste(parsed$message, "(No League History?)")

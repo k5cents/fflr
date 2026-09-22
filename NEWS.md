@@ -1,5 +1,19 @@
 # fflr (development version)
 
+* New `evaluate_trade()` scores both teams' optimal starting lineups before
+  and after a proposed `give`/`receive` swap, using the league's own lineup
+  optimizer (`best_roster()`'s internals) rather than an external trade value
+  chart, so results reflect the league's actual roster settings and ESPN's own
+  per-week projections. Each row lists who moves into and out of the starting
+  lineup, who a team would have to drop to stay under its roster limit, and
+  which traded players are on bye. Accepts a vector of `scoringPeriodId`s, or
+  `"rest"` for the rest of the regular season. Errors if a `receive` player is
+  a free agent and warns if the league's trade deadline has passed.
+* New `player_lookup()` looks up arbitrary player IDs -- rostered on any
+  team, a free agent, or a defense -- in the shape of a `team_roster()` row.
+  `player_info()` can't do this (it 404s on defenses' negative IDs); this is
+  the building block `evaluate_trade()` uses to resolve players a team
+  doesn't already roster.
 * Fix `player_outlook()` mislabeling weekly outlooks: ESPN keys them by week
   and can skip weeks, but they were numbered sequentially from 1, so each was
   tagged with the wrong `scoringPeriodId`.

@@ -26,6 +26,7 @@ Other player functions:
 \code{\link[=all_players]{all_players()}},
 \code{\link[=list_players]{list_players()}},
 \code{\link[=player_info]{player_info()}},
+\code{\link[=player_lookup]{player_lookup()}},
 \code{\link[=player_outlook]{player_outlook()}},
 \code{\link[=recent_activity]{recent_activity()}},
 \code{\link[=transaction_counter]{transaction_counter()}}

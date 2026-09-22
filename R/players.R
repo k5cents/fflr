@@ -428,3 +428,115 @@ player_info <- function(playerId) {
   }
   as_tibble(out)
 }
+
+# -------------------------------------------------------------------------
+
+#' Look up players by ID
+#'
+#' Player detail for any player ID in the league -- rostered, free agent, or
+#' on waivers, including defenses -- shaped like a row from [team_roster()].
+#'
+#' [player_info()] can't do this: it 404s on defenses, whose IDs are
+#' negative, and its upstream source drops fields inconsistently. This asks
+#' the same `kona_player_info` view [list_players()] uses, filtered to
+#' exactly these IDs with an `X-Fantasy-Filter` header, so it works for any
+#' player regardless of which team, if any, rosters them -- the building
+#' block for simulating a roster that doesn't exist yet, as [evaluate_trade()]
+#' does.
+#'
+#' @inheritParams ffl_api
+#' @param playerId Integer vector of player IDs. Defense IDs are negative. An
+#'   error is raised if any ID doesn't match a player.
+#' @return A tibble, one row per unique `playerId` in the order given, shaped
+#'   like a [team_roster()] row but without `teamId`, `abbrev`, or `lineupSlot` -- a looked-up
+#'   player isn't rostered by, or slotted on, any one team.
+#' @examples
+#' \dontrun{
+#' player_lookup(playerId = c(4427366, -16027))
+#' }
+#' @importFrom jsonlite toJSON
+#' @family player functions
+#' @export
+player_lookup <- function(playerId, leagueId = ffl_id(), seasonId = ffl_year(),
+                          scoringPeriodId = ffl_week(), cookie = ffl_cookie()) {
+  playerId <- as.integer(playerId)
+  filter <- list(players = list(filterIds = list(value = as.list(playerId))))
+  parsed <- try_json(
+    url = "https://lm-api-reads.fantasy.espn.com",
+    path = sprintf(
+      "apis/v3/games/ffl/seasons/%i/segments/0/leagues/%s",
+      seasonId, leagueId
+    ),
+    query = list(view = "kona_player_info", scoringPeriodId = scoringPeriodId),
+    cookie = cookie,
+    headers = c(
+      `X-Fantasy-Filter` = as.character(
+        jsonlite::toJSON(filter, auto_unbox = TRUE)
+      )
+    ),
+    simplifyVector = FALSE
+  )
+  found <- vapply(parsed$players, function(p) as.integer(p$player$id), integer(1))
+  missing <- setdiff(playerId, found)
+  if (length(missing) > 0) {
+    stop(
+      sprintf("no player found for ID(s) %s", paste(missing, collapse = ", ")),
+      call. = FALSE
+    )
+  }
+  rows <- lapply(
+    X = parsed$players[match(unique(playerId), found)],
+    FUN = out_lookup,
+    wk = scoringPeriodId,
+    yr = seasonId
+  )
+  bind_df(rows)
+}
+
+out_lookup <- function(p, wk, yr) {
+  player <- p$player
+  proj <- NA_real_
+  score <- NA_real_
+  has_week <- FALSE
+  for (s in player$stats) {
+    if (is.null(s$scoringPeriodId) || is.null(s$statSplitTypeId) || is.null(s$statSourceId)) {
+      next
+    }
+    if (s$scoringPeriodId != wk || s$statSplitTypeId != 1) {
+      next
+    }
+    has_week <- TRUE
+    if (s$statSourceId == 1) proj <- s$appliedTotal
+    if (s$statSourceId == 0) score <- s$appliedTotal
+  }
+  # match `out_roster()`: a defense with no stats that week is on bye
+  if (!has_week && player$defaultPositionId == 16) {
+    proj <- 0
+    score <- 0
+  }
+  injury_status <- player$injuryStatus
+  if (is.null(injury_status) || !nzchar(injury_status)) {
+    injury_status <- "ACTIVE"
+  }
+  own <- player$ownership
+  data.frame(
+    seasonId = yr,
+    scoringPeriodId = wk,
+    playerId = player$id,
+    firstName = player$firstName,
+    lastName = player$lastName,
+    proTeam = pro_abbrev(player$proTeamId),
+    position = pos_abbrev(player$defaultPositionId),
+    injuryStatus = abbreviate(injury_status, minlength = 1),
+    projectedScore = proj,
+    actualScore = score,
+    percentStarted = null_na(own$percentStarted),
+    percentOwned = null_na(own$percentOwned),
+    percentChange = round(null_na(own$percentChange), digits = 3),
+    eligibleSlots = I(list(unlist(player$eligibleSlots)))
+  )
+}
+
+null_na <- function(x) {
+  if (is.null(x)) NA_real_ else x
+}
