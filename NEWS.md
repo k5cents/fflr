@@ -1,4 +1,4 @@
-# fflr (development version)
+# fflr 2026.0.2
 
 * New `evaluate_trade()` scores both teams' optimal starting lineups before
   and after a proposed `give`/`receive` swap, using the league's own lineup
