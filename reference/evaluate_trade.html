@@ -76,8 +76,11 @@ per-week projections, not a generic consensus ranking.</p>
 <span>  <span class="va">teamId</span>,</span>
 <span>  give <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/integer.html" class="external-link">integer</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  receive <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/integer.html" class="external-link">integer</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  seasonId <span class="op">=</span> <span class="fu"><a href="ffl_info.html">ffl_year</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  scoringPeriodId <span class="op">=</span> <span class="fu"><a href="ffl_info.html">ffl_week</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  useScore <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"projectedScore"</span>, <span class="st">"actualScore"</span><span class="op">)</span>,</span>
+<span>  replacement <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  replacementRank <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>  cookie <span class="op">=</span> <span class="fu"><a href="ffl_cookie.html">ffl_cookie</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -105,6 +108,12 @@ ID must currently be on that roster.</p></dd>
 all currently rostered by other teams.</p></dd>
 
 
+<dt id="arg-seasonid">seasonId<a class="anchor" aria-label="anchor" href="#arg-seasonid"></a></dt>
+<dd><p>Integer year of the NFL season. Defaults to the current
+season (see <code><a href="ffl_info.html">ffl_year()</a></code>) rather than <code><a href="ffl_api.html">ffl_api()</a></code>'s fixed default, which
+is only right for the year of the fflr release.</p></dd>
+
+
 <dt id="arg-scoringperiodid">scoringPeriodId<a class="anchor" aria-label="anchor" href="#arg-scoringperiodid"></a></dt>
 <dd><p>Integer vector of one or more weeks to score, or
 "rest" for the rest of the regular season. Defaults to the current week
@@ -113,6 +122,19 @@ all currently rostered by other teams.</p></dd>
 
 <dt id="arg-usescore">useScore<a class="anchor" aria-label="anchor" href="#arg-usescore"></a></dt>
 <dd><p>One of "projectedScore" (default) or "actualScore".</p></dd>
+
+
+<dt id="arg-replacement">replacement<a class="anchor" aria-label="anchor" href="#arg-replacement"></a></dt>
+<dd><p>If <code>TRUE</code> (default), let every lineup start a
+replacement-level stand-in from the waiver wire at each position (see
+below). <code>FALSE</code> scores only the players on each roster.</p></dd>
+
+
+<dt id="arg-replacementrank">replacementRank<a class="anchor" aria-label="anchor" href="#arg-replacementrank"></a></dt>
+<dd><p>Which available player at each position is the
+stand-in: <code>1</code> (default) is the best one that week. The best is slightly
+optimistic, since only one team can claim them; use <code>2</code> or more for a
+more conservative baseline.</p></dd>
 
 
 <dt id="arg-cookie">cookie<a class="anchor" aria-label="anchor" href="#arg-cookie"></a></dt>
@@ -133,7 +155,9 @@ lineup; the bench players the team would have to drop to get back under
 the roster limit (<code>dropped</code>); and which traded players, on either side,
 are on bye that week (<code>byes</code>), from <a href="nfl_teams.html">nfl_teams</a> – <code>NA</code> for seasons other
 than the one that data covers. Player lists are comma-separated names, <code>NA</code>
-when empty.</p>
+when empty. A replacement stand-in in <code>startersIn</code> or <code>startersOut</code> is
+named with a <code>" (replacement)"</code> suffix, and the stand-ins each lineup
+starts are listed in <code>replacementsBefore</code> and <code>replacementsAfter</code>.</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -152,6 +176,34 @@ counting players on IR), its lowest-scoring non-starters are listed in
 <code>dropped</code>. Dropping non-starters never changes the starting score, so this
 says who you'd have to cut rather than changing the result. A warning is
 given if the league's trade deadline has passed.</p>
+    </div>
+    <div id="replacement-level">
+    <h2>Replacement level</h2>
+
+
+<p>Scoring only the players already on a roster treats an empty starting slot
+– a lone QB on bye, an injured kicker, a thin position – as worth 0, so a
+trade that fills it gets credit for points any manager would really pick
+up off waivers. With <code>replacement = TRUE</code> (the default), each week's before
+and after lineups, for both teams, can also start one stand-in per starting
+position (QB, RB, WR, TE, K, D/ST, or whichever single-position slots the
+league uses; FLEX-type slots are covered by those stand-ins): an available
+player, projected at their own number for that week. A stand-in is on both
+sides of the comparison, so it cancels out wherever the roster already has
+someone better, and only changes the result where a slot would otherwise
+score below waiver level. A trade is then valued above the waiver wire
+rather than above zero.</p>
+<p>The stand-ins are chosen from the most-rostered players who are available
+today (free agents and players on waivers), taking the
+<code>replacementRank</code>-th best score at each position for each week. The pool
+is today's, not a forecast: nobody knows who will be available in a later
+week. There's one stand-in per position rather than per slot, so a team
+with two RBs on bye can only fill one of the holes – modeling one
+pickup per position per week. The roster spot a pickup costs is ignored:
+it would be the worst bench player, who doesn't start, so the lineup score
+is unaffected. Stand-ins are never counted towards the roster limit,
+<code>dropped</code>, or <code>byes</code>. Fetching the pool adds one request per position,
+each covering every scored week.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
