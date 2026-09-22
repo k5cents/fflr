@@ -136,7 +136,7 @@ evaluate_trade <- function(leagueId = ffl_id(),
       leagueId = leagueId,
       seasonId = seasonId,
       weeks = scoringPeriodId,
-      slots = standin_slots(trade_slots(now)$do_slot),
+      slots = standin_slots(lineup_slots(now)$do_slot),
       limit = 10L + as.integer(replacementRank),
       cookie = cookie
     )
@@ -239,22 +239,10 @@ last_regular_week <- function(dat) {
   last
 }
 
-# the league's starting slots, in `out_best()`'s form, and the roster limit
-trade_slots <- function(dat) {
-  slot_count <- out_roster_set(dat)$lineupSlotCounts[[1]]
-  do_slot <- as.integer(slot_count$position[slot_count$limit > 0])
-  do_slot <- pos_ids$slot[pos_ids$slot %in% do_slot]
-  list(
-    slot_count = slot_count,
-    do_slot = do_slot,
-    size_limit = sum(slot_count$limit[slot_count$position != 21])
-  )
-}
-
 trade_at_week <- function(dat, teamId, partner, give, receive, useScore,
                           leagueId, cookie, standins = NULL) {
   wk <- dat$scoringPeriodId
-  slots <- trade_slots(dat)
+  slots <- lineup_slots(dat)
   slot_count <- slots$slot_count
   do_slot <- slots$do_slot
   size_limit <- slots$size_limit
@@ -332,20 +320,11 @@ trade_side <- function(r, out_id, arrive, tm, do_slot, slot_count, size_limit,
 
   # the same waiver-wire stand-ins can start in both lineups, but aren't
   # rostered: they never count towards the roster limit or `dropped`
-  with_standins <- function(x) {
-    if (is.null(standins) || nrow(standins) == 0) {
-      return(x)
-    }
-    x$replacement <- FALSE
-    s <- to_bench(standins)
-    s$replacement <- TRUE
-    rbind(x, s[, names(x)])
-  }
   before <- start_roster(
-    out_best(with_standins(r), do_slot, slot_count, score_col = useScore)
+    out_best(add_standins(r, standins), do_slot, slot_count, score_col = useScore)
   )
   after <- start_roster(
-    out_best(with_standins(hypo), do_slot, slot_count, score_col = useScore)
+    out_best(add_standins(hypo, standins), do_slot, slot_count, score_col = useScore)
   )
 
   n_over <- sum(hypo$lineupSlot != "IR") - size_limit
@@ -372,84 +351,6 @@ trade_side <- function(r, out_id, arrive, tm, do_slot, slot_count, size_limit,
     replacementsBefore = player_names(before[is_standin(before), ]),
     replacementsAfter = player_names(after[is_standin(after), ])
   )
-}
-
-is_standin <- function(r) {
-  if (!"replacement" %in% names(r)) {
-    return(rep(FALSE, nrow(r)))
-  }
-  r$replacement %in% TRUE
-}
-
-# single-position starting slots, which each get a stand-in; the flexible
-# slots (FLEX, OP, ...) are filled by those same stand-ins
-standin_slots <- function(do_slot) {
-  single <- pos_ids$slot[!is.na(pos_ids$position)]
-  do_slot[do_slot %in% single]
-}
-
-# the most-rostered available players at each slot, one row per player per
-# week, from one request per slot covering every week
-replacement_pool <- function(leagueId, seasonId, weeks, slots, limit, cookie) {
-  bind_df(lapply(
-    X = slots,
-    FUN = function(slot) {
-      filter <- list(players = list(
-        filterStatus = list(value = list("FREEAGENT", "WAIVERS")),
-        filterSlotIds = list(value = list(slot)),
-        limit = limit,
-        sortPercOwned = list(sortPriority = 1L, sortAsc = FALSE),
-        filterStatsForSourceIds = list(value = list(0L, 1L)),
-        filterStatsForSplitTypeIds = list(value = list(1L)),
-        filterStatsForScoringPeriodIds = list(value = as.list(weeks))
-      ))
-      parsed <- try_json(
-        url = "https://lm-api-reads.fantasy.espn.com",
-        path = sprintf(
-          "apis/v3/games/ffl/seasons/%i/segments/0/leagues/%s",
-          seasonId, leagueId
-        ),
-        query = list(view = "kona_player_info"),
-        cookie = cookie,
-        headers = c(
-          `X-Fantasy-Filter` = as.character(
-            jsonlite::toJSON(filter, auto_unbox = TRUE)
-          )
-        ),
-        simplifyVector = FALSE
-      )
-      rows <- lapply(weeks, function(wk) {
-        lapply(parsed$players, out_lookup, wk = wk, yr = seasonId)
-      })
-      out <- bind_df(unlist(rows, recursive = FALSE))
-      if (nrow(out) > 0) {
-        out$standinSlot <- slot
-      }
-      out
-    }
-  ))
-}
-
-# the `rank`-th best scorer at each slot in week `wk`, one player per slot
-pick_standins <- function(pool, wk, useScore, rank = 1) {
-  if (is.null(pool) || nrow(pool) == 0) {
-    return(NULL)
-  }
-  pool <- pool[pool$scoringPeriodId == wk & !is.na(pool[[useScore]]), ]
-  picks <- lapply(
-    X = split(pool, pool$standinSlot),
-    FUN = function(x) {
-      x <- x[order(x[[useScore]], decreasing = TRUE), ]
-      x[rank, ][rank <= nrow(x), ]
-    }
-  )
-  picks <- bind_df(unname(picks))
-  if (nrow(picks) == 0) {
-    return(NULL)
-  }
-  picks <- picks[!duplicated(picks$playerId), ]
-  picks$standinSlot <- NULL
-  picks
 }
 
 # traded players whose NFL team is on bye, from the bundled `nfl_teams` data,

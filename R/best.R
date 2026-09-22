@@ -59,6 +59,10 @@ out_best <- function(r,
   for (s in most_elig) {
     n_max <- slot_count$limit[slot_count$position == s]
     is_elig <- sapply(r$eligibleSlots, has_slot, s)
+    if (s == "20") {
+      # a replacement stand-in either starts or isn't there at all
+      is_elig <- is_elig & !is_standin(r)
+    }
     n_elig <- sum(is_elig)
     if (n_elig < n_max) {
       if (s != "20") {
@@ -82,6 +86,7 @@ out_best <- function(r,
     best <- rbind(best, can_max)
     r <- r[!(r$playerId %in% best$playerId), ]
   }
+  r <- r[!is_standin(r), ]
   if (nrow(r) > 0) {
     n_ir <- slot_count$limit[slot_count$position == 21]
     if (nrow(r) == n_ir & all(r$lineupSlot == "IR")) {
@@ -92,6 +97,18 @@ out_best <- function(r,
   best <- move_col(best, "actualSlot", 6)
   best$eligibleSlots <- NULL
   best[order(best$lineupSlot), ]
+}
+
+# the league's starting slots, in `out_best()`'s form, and the roster limit
+lineup_slots <- function(dat) {
+  slot_count <- out_roster_set(dat)$lineupSlotCounts[[1]]
+  do_slot <- as.integer(slot_count$position[slot_count$limit > 0])
+  do_slot <- pos_ids$slot[pos_ids$slot %in% do_slot]
+  list(
+    slot_count = slot_count,
+    do_slot = do_slot,
+    size_limit = sum(slot_count$limit[slot_count$position != 21])
+  )
 }
 
 has_slot <- function(eligibleSlots, slot) {
