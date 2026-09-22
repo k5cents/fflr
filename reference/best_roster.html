@@ -69,6 +69,8 @@ combinations of players to score the most fantasy points.</p>
 <span>  leagueId <span class="op">=</span> <span class="fu"><a href="ffl_id.html">ffl_id</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  useScore <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"actualScore"</span>, <span class="st">"projectedScore"</span><span class="op">)</span>,</span>
 <span>  scoringPeriodId <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  replacement <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  replacementRank <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -92,6 +94,17 @@ use the current week (see <code><a href="ffl_info.html">ffl_week()</a></code>). 
 week in length, whereas matchups might be longer.</p></dd>
 
 
+<dt id="arg-replacement">replacement<a class="anchor" aria-label="anchor" href="#arg-replacement"></a></dt>
+<dd><p>If <code>TRUE</code>, let each lineup start replacement-level
+stand-ins from the waiver wire, and add each player's score over
+replacement. Defaults to <code>FALSE</code>.</p></dd>
+
+
+<dt id="arg-replacementrank">replacementRank<a class="anchor" aria-label="anchor" href="#arg-replacementrank"></a></dt>
+<dd><p>Which available player at each position is the
+stand-in: <code>1</code> (default) is the best one that week.</p></dd>
+
+
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
 <dd><p>Additional queries passed to <code><a href="https://httr.r-lib.org/reference/GET.html" class="external-link">httr::GET()</a></code>. Arguments are
 converted to a named list and passed to <code>query</code> alongside <code>view</code>.</p></dd>
@@ -99,12 +112,21 @@ converted to a named list and passed to <code>query</code> alongside <code>view<
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A dataframe (or list) with optimal rosters.</p>
+    <p>A list of data frames with optimal rosters, one per team. With
+<code>replacement = TRUE</code>, stand-ins are rows with <code>replacement</code> set to <code>TRUE</code>,
+and <code>overReplacement</code> is each player's score minus the stand-in's at the
+same position (<code>NA</code> for positions without one).</p>
     </div>
     <div id="details">
     <h2>Details</h2>
     <p>If <code>scoringPeriodId</code> is the current week (the default), then actual scoring
 might be incomplete (see <code>projectedScore</code> argument).</p>
+<p>With <code>replacement = TRUE</code>, each lineup can also start a replacement-level
+stand-in from the waiver wire at each position, as in <code><a href="evaluate_trade.html">evaluate_trade()</a></code>:
+the <code>replacementRank</code>-th best score that week among today's most-rostered
+available players at that position. A stand-in only appears where it
+beats every eligible player on the roster, so it shows where a lineup is
+below waiver level; <code><a href="waiver_upgrades.html">waiver_upgrades()</a></code> says who to drop for them.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -112,7 +134,8 @@ might be incomplete (see <code>projectedScore</code> argument).</p>
 <code><a href="evaluate_trade.html">evaluate_trade()</a></code>,
 <code><a href="roster_score.html">roster_score()</a></code>,
 <code><a href="start_roster.html">start_roster()</a></code>,
-<code><a href="team_roster.html">team_roster()</a></code></p></div>
+<code><a href="team_roster.html">team_roster()</a></code>,
+<code><a href="waiver_upgrades.html">waiver_upgrades()</a></code></p></div>
     </div>
 
     <div id="ref-examples">
