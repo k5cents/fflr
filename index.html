@@ -113,7 +113,7 @@ As of 2025-08-01, ESPN has changed their API to restrict access to historical da
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://k5cents.github.io/fflr/" class="external-link">fflr</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html" class="external-link">packageVersion</a></span><span class="op">(</span><span class="st">"fflr"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] '2026.0.1'</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] '2026.0.2'</span></span></code></pre></div>
 <p>Data is only available for public leagues. See <a href="https://web.archive.org/web/20211105212446/https://support.espn.com/hc/en-us/articles/360000064451-Making-a-Private-League-Viewable-to-the-Public" class="external-link">this help page</a> on how to make a private league public</p>
 <p>Functions require a unique <code>leagueId</code>, which can be found in any ESPN page URL.</p>
 <pre>https://fantasy.espn.com/football/league?leagueId=<b>42654852</b></pre>
@@ -144,22 +144,22 @@ As of 2025-08-01, ESPN has changed their API to restrict access to historical da
 <span><span class="co">#&gt; # A tibble: 16 × 8</span></span>
 <span><span class="co">#&gt;    lineupSlot playerId firstName lastName proTeam position projectedScore actualScore</span></span>
 <span><span class="co">#&gt;    &lt;fct&gt;         &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;    &lt;fct&gt;   &lt;fct&gt;             &lt;dbl&gt;       &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 QB          4431452 Drake     Maye     NE      QB                16.3           NA</span></span>
-<span><span class="co">#&gt;  2 RB          4429795 Jahmyr    Gibbs    DET     RB                22.5           NA</span></span>
-<span><span class="co">#&gt;  3 RB          4242335 Jonathan  Taylor   IND     RB                17.8           NA</span></span>
-<span><span class="co">#&gt;  4 WR          4426502 Drake     London   ATL     WR                15.1           NA</span></span>
-<span><span class="co">#&gt;  5 WR          4047646 A.J.      Brown    NE      WR                14.2           NA</span></span>
-<span><span class="co">#&gt;  6 TE          4431459 Tyler     Warren   IND     TE                12.2           NA</span></span>
-<span><span class="co">#&gt;  7 FLEX        4379399 James     Cook III BUF     RB                14.9           NA</span></span>
-<span><span class="co">#&gt;  8 D/ST         -16034 Texans    D/ST     HOU     D/ST               5.25          NA</span></span>
-<span><span class="co">#&gt;  9 K           4574716 Harrison  Mevis    LAR     K                  9.41          NA</span></span>
-<span><span class="co">#&gt; 10 BE          4258173 Nico      Collins  HOU     WR                15.6           NA</span></span>
-<span><span class="co">#&gt; 11 BE          4361370 Chris     Olave    NO      WR                14.8           NA</span></span>
-<span><span class="co">#&gt; 12 BE          4430737 Kyren     Williams LAR     RB                13.7           NA</span></span>
-<span><span class="co">#&gt; 13 BE          4595348 Malik     Nabers   NYG     WR                13.8           NA</span></span>
-<span><span class="co">#&gt; 14 BE          4567750 Emeka     Egbuka   TB      WR                14.0           NA</span></span>
-<span><span class="co">#&gt; 15 BE          4685702 Quinshon  Judkins  CLE     RB                13.2           NA</span></span>
-<span><span class="co">#&gt; 16 BE          4372016 Jaylen    Waddle   DEN     WR                12.2           NA</span></span></code></pre></div>
+<span><span class="co">#&gt;  1 QB          4431452 Drake     Maye     NE      QB                16.3         9.82</span></span>
+<span><span class="co">#&gt;  2 RB          4429795 Jahmyr    Gibbs    DET     RB                22.4        33.6 </span></span>
+<span><span class="co">#&gt;  3 RB          4242335 Jonathan  Taylor   IND     RB                17.7        25.1 </span></span>
+<span><span class="co">#&gt;  4 WR          4426502 Drake     London   ATL     WR                13.8         5.5 </span></span>
+<span><span class="co">#&gt;  5 WR          4047646 A.J.      Brown    NE      WR                14.2         5.6 </span></span>
+<span><span class="co">#&gt;  6 TE          4431459 Tyler     Warren   IND     TE                12.2        10.3 </span></span>
+<span><span class="co">#&gt;  7 FLEX        4379399 James     Cook III BUF     RB                15.9         9.9 </span></span>
+<span><span class="co">#&gt;  8 D/ST         -16034 Texans    D/ST     HOU     D/ST               5.25       -4   </span></span>
+<span><span class="co">#&gt;  9 K           4574716 Harrison  Mevis    LAR     K                  9.41        1   </span></span>
+<span><span class="co">#&gt; 10 BE          4258173 Nico      Collins  HOU     WR                15.6        21.2 </span></span>
+<span><span class="co">#&gt; 11 BE          4361370 Chris     Olave    NO      WR                14.8        28.2 </span></span>
+<span><span class="co">#&gt; 12 BE          4430737 Kyren     Williams LAR     RB                13.7        15.5 </span></span>
+<span><span class="co">#&gt; 13 BE          4595348 Malik     Nabers   NYG     WR                12.7        12.9 </span></span>
+<span><span class="co">#&gt; 14 BE          4567750 Emeka     Egbuka   TB      WR                14.0        11.3 </span></span>
+<span><span class="co">#&gt; 15 BE          4685702 Quinshon  Judkins  CLE     RB                13.2         7   </span></span>
+<span><span class="co">#&gt; 16 BE          4372016 Jaylen    Waddle   DEN     WR                12.2         1.2</span></span></code></pre></div>
 <p>There are included objects for NFL teams and players.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nfl_teams</span></span>
