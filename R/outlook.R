@@ -45,14 +45,19 @@ player_outlook <- function(leagueId = ffl_id(), limit = 50) {
 
   y <- max(pl$player$stats[[1]]$seasonId)
   w <- length(pl$player$outlooks$outlooksByWeek)
-  if (!is.null(pl$player$outlook)) {
+  if (!is.null(pl$player$outlooks)) {
     x <- pl$player$outlooks$outlooksByWeek
-    x$`0` <- pl$player$seasonOutlook
-    x <- x[c(length(x), seq(length(x) - 1))]
-    outlooks <- as.vector(t(as.data.frame(x)))
+    # columns are named by the week they describe, which can skip weeks
+    weeks <- c(0L, as.integer(names(x)))
+    season <- pl$player$seasonOutlook
+    if (is.null(season)) {
+      season <- NA_character_
+    }
+    x <- cbind(season, as.matrix(x))
+    outlooks <- as.vector(t(x))
     out <- tibble::tibble(
       seasonId = y,
-      scoringPeriodId = rep(seq(0, w), length(outlooks) / (w + 1)),
+      scoringPeriodId = rep(weeks, times = nrow(x)),
       id = rep(pl$player$id, each = w + 1),
       firstName = rep(pl$player$firstName, each = w + 1),
       lastName = rep(pl$player$lastName, each = w + 1),

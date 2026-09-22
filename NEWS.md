@@ -1,3 +1,9 @@
+# fflr (development version)
+
+* Fix `player_outlook()` mislabeling weekly outlooks: ESPN keys them by week
+  and can skip weeks, but they were numbered sequentially from 1, so each was
+  tagged with the wrong `scoringPeriodId`.
+
 # fflr 2026.0.1
 
 * Update to 2026 API endpoints and update package data for the 2026 season.
