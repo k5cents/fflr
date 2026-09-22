@@ -227,8 +227,8 @@ fantasy_filter <- function(sort, position, status, injured, scoringPeriodId,
     choices = c("ALL", "AVAILABLE", "FREEAGENT", "WAIVERS", "ONTEAM"),
     several.ok = TRUE
   )
-  if (status == "AVAILABLE") {
-    status <- c("FREEAGENT", "WAIVERS")
+  if ("AVAILABLE" %in% status) {
+    status <- union(setdiff(status, "AVAILABLE"), c("FREEAGENT", "WAIVERS"))
   }
   scoreType <- match.arg(scoreType, c("STANDARD", "PPR"))
   sort_choice <- filter_sort(sort = sort, scoringPeriodId)
@@ -284,7 +284,7 @@ fantasy_filter <- function(sort, position, status, injured, scoringPeriodId,
       value = U(injured)
     )
   }
-  if (length(status) == 1 && status == "ALL") {
+  if ("ALL" %in% status) {
     out$players$filterStatus <- NULL
   } else {
     out$players$filterStatus <- list(

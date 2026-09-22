@@ -25,5 +25,61 @@ test_that("individual player bio info", {
 })
 
 test_that("player list API error", {
-  expect_error(list_players(leagueId = "1", times = 1))
+  expect_error(list_players(leagueId = "1"), "ESPN Fantasy API request failed")
+})
+
+filter_json <- function(...) {
+  args <- list(
+    sort = "ROST", position = NULL, status = "AVAILABLE", injured = NULL,
+    scoringPeriodId = 1, proTeam = NULL, scoreType = "STANDARD", limit = 1
+  )
+  args[names(list(...))] <- list(...)
+  jsonlite::fromJSON(do.call(fantasy_filter, args), simplifyVector = FALSE)
+}
+
+test_that("single filter values are sent as JSON arrays", {
+  f <- filter_json(status = "FREEAGENT", position = "QB", proTeam = "MIA")
+  expect_equal(f$players$filterStatus$value, list("FREEAGENT"))
+  expect_equal(f$players$filterSlotIds$value, list(0L))
+  expect_equal(f$players$filterProTeamIds$value, list(15L))
+  expect_equal(f$players$filterRanksForScoringPeriodIds$value, list(1L))
+})
+
+test_that("multiple and expanded statuses build the filter", {
+  expect_equal(
+    filter_json(status = "AVAILABLE")$players$filterStatus$value,
+    list("FREEAGENT", "WAIVERS")
+  )
+  expect_equal(
+    filter_json(status = c("FREEAGENT", "WAIVERS"))$players$filterStatus$value,
+    list("FREEAGENT", "WAIVERS")
+  )
+  expect_equal(
+    filter_json(status = c("AVAILABLE", "ONTEAM"))$players$filterStatus$value,
+    list("ONTEAM", "FREEAGENT", "WAIVERS")
+  )
+  expect_null(filter_json(status = "ALL")$players$filterStatus)
+})
+
+test_that("player list with a single status", {
+  for (s in c("WAIVERS", "ONTEAM")) {
+    p <- list_players("42654852", status = s, limit = 1)
+    expect_equal(nrow(p), 1)
+  }
+  # all unrostered players are on waivers between game day and waiver run,
+  # so free agents can legitimately be empty
+  p <- tryCatch(
+    list_players("42654852", status = "FREEAGENT", limit = 1),
+    error = function(e) {
+      expect_match(conditionMessage(e), "No players meet")
+      NULL
+    }
+  )
+  if (!is.null(p)) expect_equal(nrow(p), 1)
+})
+
+test_that("player list with a single position", {
+  p <- list_players("42654852", position = "QB", status = "ALL", limit = 5)
+  expect_equal(nrow(p), 5)
+  expect_true(all(p$defaultPosition == "QB"))
 })
