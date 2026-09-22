@@ -8,6 +8,17 @@
   The request URL and the stat keys behind its score columns and the "PROJ",
   "FPTS", and "AVG" sorts were fixed at 2026, and `lastSeason` asked for 2020
   rather than the season before `seasonId`.
+* `evaluate_trade()` gains a replacement-level baseline (`replacement = TRUE`,
+  the default). Scoring only rostered players treated an empty starting slot
+  -- a lone QB on bye, an injured kicker -- as worth 0, so a trade filling it
+  got credit for points any manager would pick up off waivers. Each lineup,
+  before and after, for both teams, can now also start one stand-in per
+  position: the `replacementRank`-th best available player that week, from
+  today's most-rostered free agents and waivers. Stand-ins are labelled
+  `"(replacement)"` in `startersIn`/`startersOut`, listed in the new
+  `replacementsBefore` and `replacementsAfter` columns, and never count
+  towards the roster limit or `dropped`. `replacement = FALSE` gives the
+  previous results.
 
 # fflr 2026.0.2
 

@@ -12,6 +12,8 @@ evaluate_trade(
   seasonId = ffl_year(),
   scoringPeriodId = ffl_week(),
   useScore = c("projectedScore", "actualScore"),
+  replacement = TRUE,
+  replacementRank = 1,
   cookie = ffl_cookie()
 )
 }
@@ -37,6 +39,15 @@ is only right for the year of the fflr release.}
 
 \item{useScore}{One of "projectedScore" (default) or "actualScore".}
 
+\item{replacement}{If \code{TRUE} (default), let every lineup start a
+replacement-level stand-in from the waiver wire at each position (see
+below). \code{FALSE} scores only the players on each roster.}
+
+\item{replacementRank}{Which available player at each position is the
+stand-in: \code{1} (default) is the best one that week. The best is slightly
+optimistic, since only one team can claim them; use \code{2} or more for a
+more conservative baseline.}
+
 \item{cookie}{The alphanumeric \code{espn_s2} cookie string from a signed-in
 session, defaulting to \code{\link[=ffl_cookie]{ffl_cookie()}}. Since 2025, this cookie is required
 by the \code{leagueHistory} endpoint. Past seasons can also be requested without
@@ -52,7 +63,9 @@ lineup; the bench players the team would have to drop to get back under
 the roster limit (\code{dropped}); and which traded players, on either side,
 are on bye that week (\code{byes}), from \link{nfl_teams} -- \code{NA} for seasons other
 than the one that data covers. Player lists are comma-separated names, \code{NA}
-when empty.
+when empty. A replacement stand-in in \code{startersIn} or \code{startersOut} is
+named with a \code{" (replacement)"} suffix, and the stand-ins each lineup
+starts are listed in \code{replacementsBefore} and \code{replacementsAfter}.
 }
 \description{
 Score both teams' optimal starting lineups before and after swapping the
@@ -80,6 +93,34 @@ counting players on IR), its lowest-scoring non-starters are listed in
 says who you'd have to cut rather than changing the result. A warning is
 given if the league's trade deadline has passed.
 }
+\section{Replacement level}{
+
+Scoring only the players already on a roster treats an empty starting slot
+-- a lone QB on bye, an injured kicker, a thin position -- as worth 0, so a
+trade that fills it gets credit for points any manager would really pick
+up off waivers. With \code{replacement = TRUE} (the default), each week's before
+and after lineups, for both teams, can also start one stand-in per starting
+position (QB, RB, WR, TE, K, D/ST, or whichever single-position slots the
+league uses; FLEX-type slots are covered by those stand-ins): an available
+player, projected at their own number for that week. A stand-in is on both
+sides of the comparison, so it cancels out wherever the roster already has
+someone better, and only changes the result where a slot would otherwise
+score below waiver level. A trade is then valued above the waiver wire
+rather than above zero.
+
+The stand-ins are chosen from the most-rostered players who are available
+today (free agents and players on waivers), taking the
+\code{replacementRank}-th best score at each position for each week. The pool
+is today's, not a forecast: nobody knows who will be available in a later
+week. There's one stand-in per position rather than per slot, so a team
+with two RBs on bye can only fill one of the holes -- modeling one
+pickup per position per week. The roster spot a pickup costs is ignored:
+it would be the worst bench player, who doesn't start, so the lineup score
+is unaffected. Stand-ins are never counted towards the roster limit,
+\code{dropped}, or \code{byes}. Fetching the pool adds one request per position,
+each covering every scored week.
+}
+
 \examples{
 \dontrun{
 evaluate_trade(teamId = 6, give = 4427366, receive = 4362628)

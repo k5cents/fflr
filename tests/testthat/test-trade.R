@@ -82,7 +82,7 @@ test_that("evaluate a trade for both sides", {
     scoringPeriodId = ffl_week()
   )
   expect_s3_class(e, "data.frame")
-  expect_length(e, 10)
+  expect_length(e, 12)
   expect_equal(e$teamId, c(unique(mine$teamId), unique(other$teamId)))
   expect_false(anyNA(e$delta))
   expect_equal(e$delta, e$scoreAfter - e$scoreBefore)
@@ -257,4 +257,111 @@ test_that("evaluate_trade asks ESPN for its own season, not ffl_api()'s", {
     "mocked"
   )
   expect_identical(asked, 2024L)
+})
+
+# a made-up week-10 roster: a lone QB on bye, one RB slot, one bench spot
+fake_player <- function(id, first, last, pos, proj, slot = "BE") {
+  data.frame(
+    seasonId = 2026L,
+    scoringPeriodId = 10L,
+    teamId = 1L,
+    abbrev = factor("AAA"),
+    lineupSlot = slot_abbrev(slot_unabbrev(slot)),
+    playerId = id,
+    firstName = first,
+    lastName = last,
+    proTeam = factor("FA"),
+    position = factor(pos),
+    injuryStatus = "A",
+    projectedScore = proj,
+    actualScore = NA_real_,
+    percentStarted = NA_real_,
+    percentOwned = NA_real_,
+    percentChange = NA_real_,
+    eligibleSlots = I(list(c(slot_unabbrev(pos), 20L, 21L)))
+  )
+}
+
+fake_side <- function(standins = NULL) {
+  mine <- rbind(
+    fake_player(1L, "Bo", "Nix", "QB", 0, "QB"),
+    fake_player(2L, "Run", "Ningback", "RB", 10, "RB"),
+    fake_player(3L, "Back", "Up", "RB", 5)
+  )
+  trade_side(
+    r = mine,
+    out_id = integer(),
+    arrive = fake_player(4L, "Joe", "Burrow", "QB", 17.3),
+    tm = data.frame(teamId = 1L, abbrev = factor("AAA")),
+    do_slot = c(0L, 2L),
+    slot_count = data.frame(
+      position = c("0", "2", "20", "21"),
+      limit = c(1L, 1L, 1L, 0L)
+    ),
+    size_limit = 3L,
+    useScore = "projectedScore",
+    byes = NA_character_,
+    standins = standins
+  )
+}
+
+test_that("without replacement, filling an empty slot gains the full projection", {
+  e <- fake_side()
+  expect_equal(e$scoreBefore, 10)
+  expect_equal(e$delta, 17.3)
+  expect_equal(e$startersIn, "Joe Burrow")
+  expect_equal(e$startersOut, "Bo Nix")
+  expect_equal(e$dropped, "Bo Nix")
+  expect_true(is.na(e$replacementsBefore))
+})
+
+test_that("a waiver-wire stand-in sets the baseline for an empty slot", {
+  shough <- fake_player(90L, "Tyler", "Shough", "QB", 19.3)
+  deep_rb <- fake_player(91L, "Deep", "Sleeper", "RB", 3)
+  e <- fake_side(standins = rbind(shough, deep_rb))
+  # the stand-in outprojects Burrow, so both lineups start him
+  expect_equal(e$scoreBefore, 29.3)
+  expect_equal(e$delta, 0)
+  expect_true(is.na(e$startersIn))
+  expect_equal(e$replacementsBefore, "Tyler Shough (replacement)")
+  expect_equal(e$replacementsAfter, "Tyler Shough (replacement)")
+  # stand-ins aren't rostered: the same one real player is cut, no stand-in
+  expect_equal(e$dropped, "Bo Nix")
+
+  # a weaker stand-in: Burrow is worth only what he adds above waiver level
+  shough$projectedScore <- 15
+  e <- fake_side(standins = rbind(shough, deep_rb))
+  expect_equal(e$delta, 2.3)
+  expect_equal(e$startersIn, "Joe Burrow")
+  expect_equal(e$startersOut, "Tyler Shough (replacement)")
+  expect_true(is.na(e$replacementsAfter))
+  expect_equal(e$dropped, "Bo Nix")
+})
+
+test_that("stand-ins are the Nth-best available score per slot and week", {
+  pool <- rbind(
+    fake_player(90L, "A", "QB", "QB", 19),
+    fake_player(91L, "B", "QB", "QB", 15),
+    fake_player(92L, "C", "QB", "QB", NA),
+    fake_player(93L, "D", "RB", "RB", 8)
+  )
+  pool$standinSlot <- c(0L, 0L, 0L, 2L)
+  wk9 <- pool
+  wk9$scoringPeriodId <- 9L
+  wk9$projectedScore <- c(0, 16, 20, 9)
+  pool <- rbind(pool, wk9)
+
+  s <- pick_standins(pool, wk = 10, useScore = "projectedScore")
+  expect_equal(s$playerId, c(90L, 93L))
+  expect_false("standinSlot" %in% names(s))
+  expect_equal(pick_standins(pool, 9, "projectedScore")$playerId, c(92L, 93L))
+  # there's no second-best RB, so that slot has no stand-in
+  expect_equal(pick_standins(pool, 10, "projectedScore", rank = 2)$playerId, 91L)
+  expect_null(pick_standins(NULL, 10, "projectedScore"))
+})
+
+test_that("stand-ins cover the league's single-position starting slots", {
+  # QB, RB, WR, TE, FLEX, D/ST, K, bench, IR
+  do_slot <- c(0L, 2L, 4L, 6L, 23L, 16L, 17L, 20L, 21L)
+  expect_equal(standin_slots(do_slot), c(0L, 2L, 4L, 6L, 16L, 17L))
 })
