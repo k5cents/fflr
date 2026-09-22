@@ -80,7 +80,9 @@ all. Defaults to 50, which is the default limit used by ESPN. Removing the
 limit can make the request take a long time.}
 }
 \value{
-A data frame of players.
+A data frame of players. If no players meet the filter criteria
+(e.g., \code{status = "FREEAGENT"} while all players are locked on waivers), a
+data frame with zero rows and the same columns.
 }
 \description{
 Filter fantasy players by their position, availability, professional team,

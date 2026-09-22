@@ -68,14 +68,18 @@ test_that("player list with a single status", {
   }
   # all unrostered players are on waivers between game day and waiver run,
   # so free agents can legitimately be empty
-  p <- tryCatch(
-    list_players("42654852", status = "FREEAGENT", limit = 1),
-    error = function(e) {
-      expect_match(conditionMessage(e), "No players meet")
-      NULL
-    }
-  )
-  if (!is.null(p)) expect_equal(nrow(p), 1)
+  p <- list_players("42654852", status = "FREEAGENT", limit = 1)
+  expect_s3_class(p, "tbl_df")
+  expect_lte(nrow(p), 1)
+})
+
+test_that("empty player list keeps the same columns and types", {
+  full <- list_players("42654852", status = "ALL", limit = 1)
+  empty <- empty_players(full$scoringPeriodId[1])
+  expect_equal(nrow(empty), 0)
+  expect_identical(lapply(empty, class), lapply(full, class))
+  expect_identical(levels(empty$proTeam), levels(full$proTeam))
+  expect_identical(levels(empty$defaultPosition), levels(full$defaultPosition))
 })
 
 test_that("player list with a single position", {

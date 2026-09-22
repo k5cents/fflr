@@ -22,6 +22,10 @@
   `matchupPeriods` now correctly maps each `matchupPeriod` to its
   `scoringPeriod`s (the columns were swapped), including multi-week playoff
   matchups that were garbled into periods like `"141"` and `"142"`.
+* `list_players()` now returns a zero-row data frame with the usual columns
+  instead of erroring when no players meet the filter criteria (e.g.,
+  `status = "FREEAGENT"` while all players are locked on waivers).
+* Fix `list_players()` erroring when `status` has more than one value.
 
 # fflr 2026.0.1
 

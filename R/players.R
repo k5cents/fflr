@@ -52,7 +52,9 @@
 #' @param limit The limit of players to return. Use `""` or `NULL` to return
 #'   all. Defaults to 50, which is the default limit used by ESPN. Removing the
 #'   limit can make the request take a long time.
-#' @return A data frame of players.
+#' @return A data frame of players. If no players meet the filter criteria
+#'   (e.g., `status = "FREEAGENT"` while all players are locked on waivers), a
+#'   data frame with zero rows and the same columns.
 #' @examples
 #' list_players("42654852", proTeam = "MIA", sort = "START", limit = 3)
 #' @importFrom jsonlite toJSON fromJSON unbox
@@ -108,7 +110,7 @@ list_players <- function(leagueId = ffl_id(),
   }
   pl <- parsed$players
   if (length(pl) == 0) {
-    stop("No players meet the filter criteria")
+    return(empty_players(scoringPeriodId))
   }
   z <- data.frame(
     id = pl$player$id,
@@ -212,6 +214,31 @@ all_players <- function(...) {
 }
 
 # -------------------------------------------------------------------------
+
+empty_players <- function(scoringPeriodId) {
+  as_tibble(
+    data.frame(
+      stringsAsFactors = FALSE,
+      seasonId = integer(),
+      scoringPeriodId = scoringPeriodId[0],
+      id = integer(),
+      firstName = character(),
+      lastName = character(),
+      proTeam = pro_abbrev(integer()),
+      defaultPosition = pos_abbrev(integer()),
+      injuryStatus = character(),
+      percentStarted = double(),
+      percentOwned = double(),
+      percentChange = double(),
+      auctionValueAverage = double(),
+      averageDraftPosition = double(),
+      projectedScore = double(),
+      lastScore = double(),
+      lastSeason = double(),
+      currentSeason = double()
+    )
+  )
+}
 
 U <- function(x) {
   jsonlite::unbox(x)
