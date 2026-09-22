@@ -1,3 +1,28 @@
+# fflr (development version)
+
+* New `evaluate_trade()` scores both teams' optimal starting lineups before
+  and after a proposed `give`/`receive` swap, using the league's own lineup
+  optimizer (`best_roster()`'s internals) rather than an external trade value
+  chart, so results reflect the league's actual roster settings and ESPN's own
+  per-week projections. Each row lists who moves into and out of the starting
+  lineup, who a team would have to drop to stay under its roster limit, and
+  which traded players are on bye. Accepts a vector of `scoringPeriodId`s, or
+  `"rest"` for the rest of the regular season. Errors if a `receive` player is
+  a free agent and warns if the league's trade deadline has passed.
+* New `player_lookup()` looks up arbitrary player IDs -- rostered on any
+  team, a free agent, or a defense -- in the shape of a `team_roster()` row.
+  `player_info()` can't do this (it 404s on defenses' negative IDs); this is
+  the building block `evaluate_trade()` uses to resolve players a team
+  doesn't already roster.
+* Fix `player_outlook()` mislabeling weekly outlooks: ESPN keys them by week
+  and can skip weeks, but they were numbered sequentially from 1, so each was
+  tagged with the wrong `scoringPeriodId`.
+* Fix `schedule_settings()` returning zero rows: an empty
+  `playoffMatchupPeriodLengthByRound` recycled the whole tibble to length 0.
+  `matchupPeriods` now correctly maps each `matchupPeriod` to its
+  `scoringPeriod`s (the columns were swapped), including multi-week playoff
+  matchups that were garbled into periods like `"141"` and `"142"`.
+
 # fflr 2026.0.1
 
 * Update to 2026 API endpoints and update package data for the 2026 season.

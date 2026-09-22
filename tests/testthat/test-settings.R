@@ -82,10 +82,36 @@ Sys.sleep(runif(1, 1, 2))
 test_that("schedule settings for a single season", {
   s <- schedule_settings("42654852", leagueHistory = FALSE)
   expect_s3_class(s, "data.frame")
+  expect_equal(nrow(s), 1)
   expect_length(s, 14)
-  skip_empty(s)
-  expect_s3_class(s$matchupPeriods[[1]], "data.frame")
   expect_s3_class(s$divisions[[1]], "data.frame")
+  m <- s$matchupPeriods[[1]]
+  expect_s3_class(m, "data.frame")
+  expect_named(m, c("matchupPeriod", "scoringPeriod"))
+  expect_type(m$matchupPeriod, "integer")
+  expect_type(m$scoringPeriod, "integer")
+  expect_equal(nrow(m), s$matchupPeriodCount)
+  expect_equal(m$matchupPeriod, m$scoringPeriod)
+})
+
+test_that("schedule settings with multi-week playoff matchups", {
+  s <- schedule_settings("252353", leagueHistory = FALSE)
+  expect_s3_class(s, "data.frame")
+  expect_equal(nrow(s), 1)
+  m <- s$matchupPeriods[[1]]
+  expect_false(anyDuplicated(m$scoringPeriod) > 0)
+  expect_equal(m$scoringPeriod, seq_len(nrow(m)))
+  expect_equal(m$scoringPeriod[m$matchupPeriod == 14], c(14L, 15L))
+  expect_equal(m$scoringPeriod[m$matchupPeriod == 15], c(16L, 17L))
+})
+
+test_that("schedule settings for a past seasons", {
+  skip_no_cookie()
+  s <- schedule_settings("42654852", leagueHistory = TRUE)
+  expect_s3_class(s, "data.frame")
+  expect_equal(nrow(s), length(s$matchupPeriods))
+  expect_s3_class(s$matchupPeriods[[1]], "data.frame")
+  expect_named(s$matchupPeriods[[1]], c("matchupPeriod", "scoringPeriod"))
 })
 
 # scoring settings --------------------------------------------------------
