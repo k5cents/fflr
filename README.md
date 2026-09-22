@@ -69,7 +69,7 @@ remotes::install_github("k5cents/fflr")
 ``` r
 library(fflr)
 packageVersion("fflr")
-#> [1] '2026.0.1'
+#> [1] '2026.0.2'
 ```
 
 Data is only available for public leagues. See [this help
@@ -118,22 +118,22 @@ all_rost$CHI[, 5:13][-7]
 #> # A tibble: 16 × 8
 #>    lineupSlot playerId firstName lastName proTeam position projectedScore actualScore
 #>    <fct>         <int> <chr>     <chr>    <fct>   <fct>             <dbl>       <dbl>
-#>  1 QB          4431452 Drake     Maye     NE      QB                16.3           NA
-#>  2 RB          4429795 Jahmyr    Gibbs    DET     RB                22.5           NA
-#>  3 RB          4242335 Jonathan  Taylor   IND     RB                17.8           NA
-#>  4 WR          4426502 Drake     London   ATL     WR                15.1           NA
-#>  5 WR          4047646 A.J.      Brown    NE      WR                14.2           NA
-#>  6 TE          4431459 Tyler     Warren   IND     TE                12.2           NA
-#>  7 FLEX        4379399 James     Cook III BUF     RB                14.9           NA
-#>  8 D/ST         -16034 Texans    D/ST     HOU     D/ST               5.25          NA
-#>  9 K           4574716 Harrison  Mevis    LAR     K                  9.41          NA
-#> 10 BE          4258173 Nico      Collins  HOU     WR                15.6           NA
-#> 11 BE          4361370 Chris     Olave    NO      WR                14.8           NA
-#> 12 BE          4430737 Kyren     Williams LAR     RB                13.7           NA
-#> 13 BE          4595348 Malik     Nabers   NYG     WR                13.8           NA
-#> 14 BE          4567750 Emeka     Egbuka   TB      WR                14.0           NA
-#> 15 BE          4685702 Quinshon  Judkins  CLE     RB                13.2           NA
-#> 16 BE          4372016 Jaylen    Waddle   DEN     WR                12.2           NA
+#>  1 QB          4431452 Drake     Maye     NE      QB                16.3         9.82
+#>  2 RB          4429795 Jahmyr    Gibbs    DET     RB                22.4        33.6 
+#>  3 RB          4242335 Jonathan  Taylor   IND     RB                17.7        25.1 
+#>  4 WR          4426502 Drake     London   ATL     WR                13.8         5.5 
+#>  5 WR          4047646 A.J.      Brown    NE      WR                14.2         5.6 
+#>  6 TE          4431459 Tyler     Warren   IND     TE                12.2        10.3 
+#>  7 FLEX        4379399 James     Cook III BUF     RB                15.9         9.9 
+#>  8 D/ST         -16034 Texans    D/ST     HOU     D/ST               5.25       -4   
+#>  9 K           4574716 Harrison  Mevis    LAR     K                  9.41        1   
+#> 10 BE          4258173 Nico      Collins  HOU     WR                15.6        21.2 
+#> 11 BE          4361370 Chris     Olave    NO      WR                14.8        28.2 
+#> 12 BE          4430737 Kyren     Williams LAR     RB                13.7        15.5 
+#> 13 BE          4595348 Malik     Nabers   NYG     WR                12.7        12.9 
+#> 14 BE          4567750 Emeka     Egbuka   TB      WR                14.0        11.3 
+#> 15 BE          4685702 Quinshon  Judkins  CLE     RB                13.2         7   
+#> 16 BE          4372016 Jaylen    Waddle   DEN     WR                12.2         1.2
 ```
 
 There are included objects for NFL teams and players.
