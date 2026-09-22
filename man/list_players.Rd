@@ -12,7 +12,8 @@ list_players(
   injured = NULL,
   proTeam = NULL,
   scoreType = c("STANDARD", "PPR"),
-  limit = 50
+  limit = 50,
+  seasonId = ffl_year()
 )
 }
 \arguments{
@@ -78,6 +79,9 @@ team abbreviations.}
 \item{limit}{The limit of players to return. Use \code{""} or \code{NULL} to return
 all. Defaults to 50, which is the default limit used by ESPN. Removing the
 limit can make the request take a long time.}
+
+\item{seasonId}{Integer year of the NFL season. Defaults to the current
+season (see \code{\link[=ffl_year]{ffl_year()}}).}
 }
 \value{
 A data frame of players. If no players meet the filter criteria

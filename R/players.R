@@ -52,6 +52,8 @@
 #' @param limit The limit of players to return. Use `""` or `NULL` to return
 #'   all. Defaults to 50, which is the default limit used by ESPN. Removing the
 #'   limit can make the request take a long time.
+#' @param seasonId Integer year of the NFL season. Defaults to the current
+#'   season (see [ffl_year()]).
 #' @return A data frame of players. If no players meet the filter criteria
 #'   (e.g., `status = "FREEAGENT"` while all players are locked on waivers), a
 #'   data frame with zero rows and the same columns.
@@ -69,14 +71,16 @@ list_players <- function(leagueId = ffl_id(),
                          injured = NULL,
                          proTeam = NULL,
                          scoreType = c("STANDARD", "PPR"),
-                         limit = 50) {
+                         limit = 50,
+                         seasonId = ffl_year()) {
+  seasonId <- as.integer(seasonId)
   scoringPeriodId <- ffl_week()
   if (is.null(limit)) limit <- ""
   resp <- httr::RETRY(
     verb = "GET",
     url = paste0(
       "https://lm-api-reads.fantasy.espn.com",
-      "/apis/v3/games/ffl/seasons/2026/segments/0/leagues/",
+      "/apis/v3/games/ffl/seasons/", seasonId, "/segments/0/leagues/",
       leagueId
     ),
     query = list(view = "kona_player_info"),
@@ -88,6 +92,7 @@ list_players <- function(leagueId = ffl_id(),
         status = status,
         injured = injured,
         scoringPeriodId = scoringPeriodId,
+        seasonId = seasonId,
         proTeam = proTeam,
         scoreType = scoreType,
         limit = limit
@@ -244,8 +249,12 @@ U <- function(x) {
   jsonlite::unbox(x)
 }
 
+stat_key <- function(source, split, seasonId, scoringPeriodId = NULL) {
+  paste0(source, split, seasonId, scoringPeriodId)
+}
+
 fantasy_filter <- function(sort, position, status, injured, scoringPeriodId,
-                           proTeam, scoreType, limit) {
+                           seasonId, proTeam, scoreType, limit) {
   if (is.null(position)) {
     position <- c(0:19, 23:24)
   }
@@ -258,7 +267,7 @@ fantasy_filter <- function(sort, position, status, injured, scoringPeriodId,
     status <- union(setdiff(status, "AVAILABLE"), c("FREEAGENT", "WAIVERS"))
   }
   scoreType <- match.arg(scoreType, c("STANDARD", "PPR"))
-  sort_choice <- filter_sort(sort = sort, scoringPeriodId)
+  sort_choice <- filter_sort(sort = sort, scoringPeriodId, seasonId)
   out <- list(
     players = list(
       filterStatus = NULL,
@@ -284,14 +293,17 @@ fantasy_filter <- function(sort, position, status, injured, scoringPeriodId,
       filterRanksForSlotIds = list(
         value = c(0, 2, 4, 6, 17, 16)
       ),
+      # stat keys are <statSourceId><statSplitTypeId><season>[<week>]:
+      # source 0 = actual, 1 = projected; split 0 = season, 1 = week,
+      # 2 = rest of season (projected only)
       filterStatsForTopScoringPeriodIds = list(
         value = U(2),
         additionalValue = c(
-          "002026",
-          "102026",
-          "002020",
-          paste0("112026", scoringPeriodId),
-          "022026"
+          stat_key(0, 0, seasonId),
+          stat_key(1, 0, seasonId),
+          stat_key(0, 0, seasonId - 1L),
+          stat_key(1, 1, seasonId, scoringPeriodId),
+          stat_key(0, 2, seasonId)
         )
       )
     )
@@ -325,7 +337,7 @@ fantasy_filter <- function(sort, position, status, injured, scoringPeriodId,
 
 # -------------------------------------------------------------------------
 
-filter_sort <- function(sort = "ROST", scoringPeriodId) {
+filter_sort <- function(sort = "ROST", scoringPeriodId, seasonId = ffl_year()) {
   sort_short <- c(
     "PLAYER", "PROJ", "SCORE", "OPRK", "START",
     "ROST", "CHANGE", "PRK", "FPTS", "AVG", "LAST"
@@ -341,7 +353,7 @@ filter_sort <- function(sort = "ROST", scoringPeriodId) {
     sortAppliedStatTotal = list( # PROJ
       sortAsc = FALSE,
       sortPriority = 1,
-      value = paste0("112026", scoringPeriodId)
+      value = stat_key(1, 1, seasonId, scoringPeriodId)
     ),
     sortAppliedStatTotalForScoringPeriodId = list( # SCORE
       sortAsc = FALSE,
@@ -373,12 +385,12 @@ filter_sort <- function(sort = "ROST", scoringPeriodId) {
     sortAppliedStatTotal = list( # FPTS
       sortAsc = FALSE,
       sortPriority = 1,
-      value = "002026"
+      value = stat_key(0, 0, seasonId)
     ),
     sortAppliedStatAverage = list( # AVG
       sortAsc = FALSE,
       sortPriority = 1,
-      value = "002026"
+      value = stat_key(0, 0, seasonId)
     ),
     sortAppliedStatTotalForScoringPeriodId = list( # LAST
       sortAsc = FALSE,

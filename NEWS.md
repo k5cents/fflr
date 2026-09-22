@@ -4,6 +4,10 @@
   It used to leave the season to `ffl_api()`'s default, which is fixed at the
   release year, so from the next season on it would have scored the wrong
   season's rosters without any error.
+* `list_players()` gains a `seasonId` argument, defaulting to `ffl_year()`.
+  The request URL and the stat keys behind its score columns and the "PROJ",
+  "FPTS", and "AVG" sorts were fixed at 2026, and `lastSeason` asked for 2020
+  rather than the season before `seasonId`.
 
 # fflr 2026.0.2
 

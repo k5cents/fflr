@@ -31,7 +31,8 @@ test_that("player list API error", {
 filter_json <- function(...) {
   args <- list(
     sort = "ROST", position = NULL, status = "AVAILABLE", injured = NULL,
-    scoringPeriodId = 1, proTeam = NULL, scoreType = "STANDARD", limit = 1
+    scoringPeriodId = 1, seasonId = 2026L, proTeam = NULL,
+    scoreType = "STANDARD", limit = 1
   )
   args[names(list(...))] <- list(...)
   jsonlite::fromJSON(do.call(fantasy_filter, args), simplifyVector = FALSE)
@@ -43,6 +44,34 @@ test_that("single filter values are sent as JSON arrays", {
   expect_equal(f$players$filterSlotIds$value, list(0L))
   expect_equal(f$players$filterProTeamIds$value, list(15L))
   expect_equal(f$players$filterRanksForScoringPeriodIds$value, list(1L))
+})
+
+test_that("stat keys ask for the requested season, not a fixed one", {
+  f <- filter_json(seasonId = 2031L, scoringPeriodId = 4, sort = "PROJ")
+  expect_equal(
+    unlist(f$players$filterStatsForTopScoringPeriodIds$additionalValue),
+    c("002031", "102031", "002030", "1120314", "022031")
+  )
+  expect_equal(f$players$sortAppliedStatTotal$value, "1120314")
+  f <- filter_json(seasonId = 2031L, sort = "FPTS")
+  expect_equal(f$players$sortAppliedStatTotal$value, "002031")
+})
+
+test_that("list_players requests its own season", {
+  # offline: record the URL asked for, then stop before any parsing
+  asked <- NULL
+  local_mocked_bindings(
+    RETRY = function(verb, url, ...) {
+      asked <<- url
+      stop("mocked")
+    },
+    .package = "httr"
+  )
+  local_mocked_bindings(ffl_year = function(...) 2031L, ffl_week = function(...) 1L)
+  expect_error(list_players(leagueId = "1"), "mocked")
+  expect_match(asked, "/seasons/2031/", fixed = TRUE)
+  expect_error(list_players(leagueId = "1", seasonId = 2024), "mocked")
+  expect_match(asked, "/seasons/2024/", fixed = TRUE)
 })
 
 test_that("multiple and expanded statuses build the filter", {
