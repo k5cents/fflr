@@ -17,6 +17,11 @@
 * Fix `player_outlook()` mislabeling weekly outlooks: ESPN keys them by week
   and can skip weeks, but they were numbered sequentially from 1, so each was
   tagged with the wrong `scoringPeriodId`.
+* Fix `schedule_settings()` returning zero rows: an empty
+  `playoffMatchupPeriodLengthByRound` recycled the whole tibble to length 0.
+  `matchupPeriods` now correctly maps each `matchupPeriod` to its
+  `scoringPeriod`s (the columns were swapped), including multi-week playoff
+  matchups that were garbled into periods like `"141"` and `"142"`.
 
 # fflr 2026.0.1
 

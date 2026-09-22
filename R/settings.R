@@ -253,28 +253,40 @@ schedule_settings <- function(leagueId = ffl_id(), leagueHistory = FALSE, ...) {
     ...
   )
   s <- dat$settings$scheduleSettings
-  s$seasonId <- dat$seasonId
-  s <- s[c(length(s), seq(s) - 1)]
   if (leagueHistory) {
-    sched <- rep(list(NA), nrow(s$matchupPeriods))
-    for (i in seq(nrow(s$matchupPeriods))) {
-      sched[[i]] <- data.frame(
-        matchupPeriod = unlist(s$matchupPeriods[i, ]),
-        scoringPeriod = substr(names(unlist(s$matchupPeriods[i, ])), 1, 2)
+    n <- nrow(s)
+    s <- as.list(s)
+    s$matchupPeriods <- lapply(seq_len(n), function(i) {
+      sched_periods(lapply(s$matchupPeriods, `[[`, i))
+    })
+    if (!is.null(s$playoffMatchupPeriodLengthByRound)) {
+      s$playoffMatchupPeriodLengthByRound <- lapply(
+        X = seq_len(n),
+        FUN = function(i) lapply(s$playoffMatchupPeriodLengthByRound, `[[`, i)
       )
-
     }
-    s$matchupPeriods <- sched
   } else {
-    s$divisions <- list(s$divisions)
-    s$matchupPeriods <- list(
-      data.frame(
-        matchupPeriod = unlist(s$matchupPeriods),
-        scoringPeriod = substr(names(unlist(s$matchupPeriods)), 1, 2)
-      )
-    )
+    s$matchupPeriods <- list(sched_periods(s$matchupPeriods))
   }
-  as_tibble(s)
+  # wrap any non-scalar (e.g., data frame, empty list) as a list column
+  s <- lapply(s, function(x) {
+    if (is.data.frame(x) || (is.list(x) && length(x) != length(dat$seasonId))) {
+      list(x)
+    } else {
+      x
+    }
+  })
+  as_tibble(c(list(seasonId = dat$seasonId), s))
+}
+
+# convert named list of scoring periods (names are matchup periods) to a
+# data frame with one row per scoring period
+sched_periods <- function(x) {
+  x <- lapply(x, function(p) p[!is.na(p)])
+  data.frame(
+    matchupPeriod = rep(as.integer(names(x)), lengths(x)),
+    scoringPeriod = as.integer(unlist(x, use.names = FALSE))
+  )
 }
 
 #' League scoring settings
