@@ -30,6 +30,9 @@
 #'   ID must currently be on that roster.
 #' @param receive Integer vector of player IDs arriving on `teamId`'s roster,
 #'   all currently rostered by other teams.
+#' @param seasonId Integer year of the NFL season. Defaults to the current
+#'   season (see [ffl_year()]) rather than [ffl_api()]'s fixed default, which
+#'   is only right for the year of the fflr release.
 #' @param scoringPeriodId Integer vector of one or more weeks to score, or
 #'   "rest" for the rest of the regular season. Defaults to the current week
 #'   (see [ffl_week()]).
@@ -55,11 +58,13 @@ evaluate_trade <- function(leagueId = ffl_id(),
                            teamId,
                            give = integer(),
                            receive = integer(),
+                           seasonId = ffl_year(),
                            scoringPeriodId = ffl_week(),
                            useScore = c("projectedScore", "actualScore"),
                            cookie = ffl_cookie()) {
   useScore <- match.arg(useScore, c("projectedScore", "actualScore"))
   teamId <- as.integer(teamId)
+  seasonId <- as.integer(seasonId)
   give <- as.integer(give)
   receive <- as.integer(receive)
   if (length(give) > 0 && length(receive) > 0 && any(give %in% receive)) {
@@ -71,6 +76,7 @@ evaluate_trade <- function(leagueId = ffl_id(),
     ffl_api(
       leagueId = leagueId,
       view = c("mRoster", "mSettings", "mTeam"),
+      seasonId = seasonId,
       scoringPeriodId = wk,
       cookie = cookie
     )

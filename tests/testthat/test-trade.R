@@ -232,3 +232,29 @@ test_that("traded players on bye are listed from the NFL schedule", {
   # the bundled bye weeks only describe one season
   expect_true(is.na(traded_byes(traded, wk = tb, yr = yr - 1)))
 })
+
+test_that("evaluate_trade asks ESPN for its own season, not ffl_api()'s", {
+  # ffl_api()'s seasonId default is fixed at the release year, so a request
+  # that doesn't pass one silently reads the wrong season the next year.
+  # Offline: record the season asked for, then stop before any parsing.
+  asked <- NULL
+  local_mocked_bindings(
+    ffl_api = function(..., seasonId) {
+      asked <<- seasonId
+      stop("mocked")
+    },
+    ffl_year = function(...) 2031L
+  )
+  expect_error(
+    evaluate_trade(leagueId = "1", teamId = 1, give = 1, scoringPeriodId = 1),
+    "mocked"
+  )
+  expect_identical(asked, 2031L)
+  expect_error(
+    evaluate_trade(
+      leagueId = "1", teamId = 1, give = 1, seasonId = 2024, scoringPeriodId = 1
+    ),
+    "mocked"
+  )
+  expect_identical(asked, 2024L)
+})

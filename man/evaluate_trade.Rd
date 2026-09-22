@@ -9,6 +9,7 @@ evaluate_trade(
   teamId,
   give = integer(),
   receive = integer(),
+  seasonId = ffl_year(),
   scoringPeriodId = ffl_week(),
   useScore = c("projectedScore", "actualScore"),
   cookie = ffl_cookie()
@@ -25,6 +26,10 @@ ID must currently be on that roster.}
 
 \item{receive}{Integer vector of player IDs arriving on \code{teamId}'s roster,
 all currently rostered by other teams.}
+
+\item{seasonId}{Integer year of the NFL season. Defaults to the current
+season (see \code{\link[=ffl_year]{ffl_year()}}) rather than \code{\link[=ffl_api]{ffl_api()}}'s fixed default, which
+is only right for the year of the fflr release.}
 
 \item{scoringPeriodId}{Integer vector of one or more weeks to score, or
 "rest" for the rest of the regular season. Defaults to the current week

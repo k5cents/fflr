@@ -1,3 +1,10 @@
+# fflr (development version)
+
+* `evaluate_trade()` gains a `seasonId` argument, defaulting to `ffl_year()`.
+  It used to leave the season to `ffl_api()`'s default, which is fixed at the
+  release year, so from the next season on it would have scored the wrong
+  season's rosters without any error.
+
 # fflr 2026.0.2
 
 * New `evaluate_trade()` scores both teams' optimal starting lineups before
