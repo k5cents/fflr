@@ -24,6 +24,11 @@
   start wherever they beat the roster, marked by a `replacement` column, and
   `overReplacement` gives each player's score minus the stand-in's at their
   position.
+* New `waiver_upgrades()` scores every add/drop a team could make from the
+  waiver wire, the pickup counterpart to `evaluate_trade()`: for each of the
+  most-rostered available players at each position, the drop that costs the
+  least and the optimal lineup's gain over one or more weeks (or `"rest"` of
+  the season), using ESPN's per-week projections.
 
 # fflr 2026.0.2
 

@@ -40,6 +40,7 @@ Other roster functions:
 \code{\link[=best_roster]{best_roster()}},
 \code{\link[=evaluate_trade]{evaluate_trade()}},
 \code{\link[=roster_score]{roster_score()}},
-\code{\link[=start_roster]{start_roster()}}
+\code{\link[=start_roster]{start_roster()}},
+\code{\link[=waiver_upgrades]{waiver_upgrades()}}
 }
 \concept{roster functions}
